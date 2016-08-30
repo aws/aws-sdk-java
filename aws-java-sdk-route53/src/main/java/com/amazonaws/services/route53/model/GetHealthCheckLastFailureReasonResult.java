@@ -18,8 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains information about the most recent failure for
- * the specified health check.
+ * A complex type that contains the response to a
+ * <code>GetHealthCheckLastFailureReason</code> request.
  * </p>
  */
 public class GetHealthCheckLastFailureReasonResult implements Serializable,
@@ -27,20 +27,21 @@ public class GetHealthCheckLastFailureReasonResult implements Serializable,
 
     /**
      * <p>
-     * A list that contains one <code>HealthCheckObservation</code> element for
-     * each Amazon Route 53 health checker.
+     * A list that contains one <code>Observation</code> element for each Amazon
+     * Route 53 health checker that is reporting a last failure reason.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<HealthCheckObservation> healthCheckObservations;
 
     /**
      * <p>
-     * A list that contains one <code>HealthCheckObservation</code> element for
-     * each Amazon Route 53 health checker.
+     * A list that contains one <code>Observation</code> element for each Amazon
+     * Route 53 health checker that is reporting a last failure reason.
      * </p>
      * 
-     * @return A list that contains one <code>HealthCheckObservation</code>
-     *         element for each Amazon Route 53 health checker.
+     * @return A list that contains one <code>Observation</code> element for
+     *         each Amazon Route 53 health checker that is reporting a last
+     *         failure reason.
      */
 
     public java.util.List<HealthCheckObservation> getHealthCheckObservations() {
@@ -52,13 +53,14 @@ public class GetHealthCheckLastFailureReasonResult implements Serializable,
 
     /**
      * <p>
-     * A list that contains one <code>HealthCheckObservation</code> element for
-     * each Amazon Route 53 health checker.
+     * A list that contains one <code>Observation</code> element for each Amazon
+     * Route 53 health checker that is reporting a last failure reason.
      * </p>
      * 
      * @param healthCheckObservations
-     *        A list that contains one <code>HealthCheckObservation</code>
-     *        element for each Amazon Route 53 health checker.
+     *        A list that contains one <code>Observation</code> element for each
+     *        Amazon Route 53 health checker that is reporting a last failure
+     *        reason.
      */
 
     public void setHealthCheckObservations(
@@ -74,8 +76,8 @@ public class GetHealthCheckLastFailureReasonResult implements Serializable,
 
     /**
      * <p>
-     * A list that contains one <code>HealthCheckObservation</code> element for
-     * each Amazon Route 53 health checker.
+     * A list that contains one <code>Observation</code> element for each Amazon
+     * Route 53 health checker that is reporting a last failure reason.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -85,8 +87,9 @@ public class GetHealthCheckLastFailureReasonResult implements Serializable,
      * </p>
      * 
      * @param healthCheckObservations
-     *        A list that contains one <code>HealthCheckObservation</code>
-     *        element for each Amazon Route 53 health checker.
+     *        A list that contains one <code>Observation</code> element for each
+     *        Amazon Route 53 health checker that is reporting a last failure
+     *        reason.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -105,13 +108,14 @@ public class GetHealthCheckLastFailureReasonResult implements Serializable,
 
     /**
      * <p>
-     * A list that contains one <code>HealthCheckObservation</code> element for
-     * each Amazon Route 53 health checker.
+     * A list that contains one <code>Observation</code> element for each Amazon
+     * Route 53 health checker that is reporting a last failure reason.
      * </p>
      * 
      * @param healthCheckObservations
-     *        A list that contains one <code>HealthCheckObservation</code>
-     *        element for each Amazon Route 53 health checker.
+     *        A list that contains one <code>Observation</code> element for each
+     *        Amazon Route 53 health checker that is reporting a last failure
+     *        reason.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -16,7 +16,7 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * The specified delegation set does not exist.
+ * A reusable delegation set with the specified ID does not exist.
  * </p>
  */
 public class NoSuchDelegationSetException extends

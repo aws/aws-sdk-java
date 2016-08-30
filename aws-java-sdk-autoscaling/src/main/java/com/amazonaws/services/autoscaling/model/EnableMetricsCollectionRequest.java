@@ -78,10 +78,6 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Note that the <code>GroupStandbyInstances</code> metric is not enabled by
-     * default. You must explicitly request this metric.
-     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> metrics;
     /**
@@ -181,10 +177,6 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Note that the <code>GroupStandbyInstances</code> metric is not enabled by
-     * default. You must explicitly request this metric.
-     * </p>
      * 
      * @return One or more of the following metrics. If you omit this parameter,
      *         all metrics are enabled.</p>
@@ -229,10 +221,6 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      *         <code>GroupTotalInstances</code>
      *         </p>
      *         </li>
-     *         </ul>
-     *         <p>
-     *         Note that the <code>GroupStandbyInstances</code> metric is not
-     *         enabled by default. You must explicitly request this metric.
      */
 
     public java.util.List<String> getMetrics() {
@@ -289,10 +277,6 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Note that the <code>GroupStandbyInstances</code> metric is not enabled by
-     * default. You must explicitly request this metric.
-     * </p>
      * 
      * @param metrics
      *        One or more of the following metrics. If you omit this parameter,
@@ -338,10 +322,6 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      *        <code>GroupTotalInstances</code>
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        Note that the <code>GroupStandbyInstances</code> metric is not
-     *        enabled by default. You must explicitly request this metric.
      */
 
     public void setMetrics(java.util.Collection<String> metrics) {
@@ -402,10 +382,6 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * Note that the <code>GroupStandbyInstances</code> metric is not enabled by
-     * default. You must explicitly request this metric.
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setMetrics(java.util.Collection)} or
      * {@link #withMetrics(java.util.Collection)} if you want to override the
@@ -456,10 +432,6 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      *        <code>GroupTotalInstances</code>
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        Note that the <code>GroupStandbyInstances</code> metric is not
-     *        enabled by default. You must explicitly request this metric.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -522,10 +494,6 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Note that the <code>GroupStandbyInstances</code> metric is not enabled by
-     * default. You must explicitly request this metric.
-     * </p>
      * 
      * @param metrics
      *        One or more of the following metrics. If you omit this parameter,
@@ -571,10 +539,6 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      *        <code>GroupTotalInstances</code>
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        Note that the <code>GroupStandbyInstances</code> metric is not
-     *        enabled by default. You must explicitly request this metric.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

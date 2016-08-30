@@ -18,32 +18,34 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains the response for the request.
+ * A complex type that contains the response to a <code>ListHealthChecks</code>
+ * request.
  * </p>
  */
 public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the health checks
-     * associated with the current AWS account.
+     * A complex type that contains one <code>HealthCheck</code> element for
+     * each health check that is associated with the current AWS account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<HealthCheck> healthChecks;
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * For the second and subsequent calls to <code>ListHealthChecks</code>,
+     * <code>Marker</code> is the value that you specified for the marker
+     * parameter in the previous request.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * A flag indicating whether there are more health checks to be listed. If
-     * your results were truncated, you can make a follow-up request for the
-     * next page of results by using the <code>Marker</code> element.
+     * A flag that indicates whether there are more health checks to be listed.
+     * If the response was truncated, you can get the next group of
+     * <code>maxitems</code> health checks by calling
+     * <code>ListHealthChecks</code> again and specifying the value of the
+     * <code>NextMarker</code> element in the marker parameter.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -52,35 +54,32 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
     private Boolean isTruncated;
     /**
      * <p>
-     * Indicates where to continue listing health checks. If
-     * <code>IsTruncated</code> is <code>true</code>, make another request to
-     * <code>ListHealthChecks</code> and include the value of the
-     * <code>NextMarker</code> element in the <code>Marker</code> element to get
-     * the next page of results.
+     * If <code>IsTruncated</code> is <code>true</code>, the value of
+     * <code>NextMarker</code> identifies the first health check in the next
+     * group of <code>maxitems</code> health checks. Call
+     * <code>ListHealthChecks</code> again and specify the value of
+     * <code>NextMarker</code> in the marker parameter.
      * </p>
      */
     private String nextMarker;
     /**
      * <p>
-     * The maximum number of health checks to be included in the response body.
-     * If the number of health checks associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
-     * response is <code>true</code>. Call <code>ListHealthChecks</code> again
-     * and specify the value of <code>NextMarker</code> from the last response
-     * in the <code>Marker</code> element of the next request to get the next
-     * page of results.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListHealthChecks</code> that produced the current
+     * response.
      * </p>
      */
     private String maxItems;
 
     /**
      * <p>
-     * A complex type that contains information about the health checks
-     * associated with the current AWS account.
+     * A complex type that contains one <code>HealthCheck</code> element for
+     * each health check that is associated with the current AWS account.
      * </p>
      * 
-     * @return A complex type that contains information about the health checks
-     *         associated with the current AWS account.
+     * @return A complex type that contains one <code>HealthCheck</code> element
+     *         for each health check that is associated with the current AWS
+     *         account.
      */
 
     public java.util.List<HealthCheck> getHealthChecks() {
@@ -92,13 +91,14 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the health checks
-     * associated with the current AWS account.
+     * A complex type that contains one <code>HealthCheck</code> element for
+     * each health check that is associated with the current AWS account.
      * </p>
      * 
      * @param healthChecks
-     *        A complex type that contains information about the health checks
-     *        associated with the current AWS account.
+     *        A complex type that contains one <code>HealthCheck</code> element
+     *        for each health check that is associated with the current AWS
+     *        account.
      */
 
     public void setHealthChecks(java.util.Collection<HealthCheck> healthChecks) {
@@ -113,8 +113,8 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the health checks
-     * associated with the current AWS account.
+     * A complex type that contains one <code>HealthCheck</code> element for
+     * each health check that is associated with the current AWS account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -124,8 +124,9 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param healthChecks
-     *        A complex type that contains information about the health checks
-     *        associated with the current AWS account.
+     *        A complex type that contains one <code>HealthCheck</code> element
+     *        for each health check that is associated with the current AWS
+     *        account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -143,13 +144,14 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the health checks
-     * associated with the current AWS account.
+     * A complex type that contains one <code>HealthCheck</code> element for
+     * each health check that is associated with the current AWS account.
      * </p>
      * 
      * @param healthChecks
-     *        A complex type that contains information about the health checks
-     *        associated with the current AWS account.
+     *        A complex type that contains one <code>HealthCheck</code> element
+     *        for each health check that is associated with the current AWS
+     *        account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -162,17 +164,16 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * For the second and subsequent calls to <code>ListHealthChecks</code>,
+     * <code>Marker</code> is the value that you specified for the marker
+     * parameter in the previous request.
      * </p>
      * 
      * @param marker
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextMarker</code>
-     *        from the last response in the <code>marker</code> parameter to get
-     *        the next page of results.
+     *        For the second and subsequent calls to
+     *        <code>ListHealthChecks</code>, <code>Marker</code> is the value
+     *        that you specified for the marker parameter in the previous
+     *        request.
      */
 
     public void setMarker(String marker) {
@@ -181,16 +182,15 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * For the second and subsequent calls to <code>ListHealthChecks</code>,
+     * <code>Marker</code> is the value that you specified for the marker
+     * parameter in the previous request.
      * </p>
      * 
-     * @return If the request returned more than one page of results, submit
-     *         another request and specify the value of <code>NextMarker</code>
-     *         from the last response in the <code>marker</code> parameter to
-     *         get the next page of results.
+     * @return For the second and subsequent calls to
+     *         <code>ListHealthChecks</code>, <code>Marker</code> is the value
+     *         that you specified for the marker parameter in the previous
+     *         request.
      */
 
     public String getMarker() {
@@ -199,17 +199,16 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * For the second and subsequent calls to <code>ListHealthChecks</code>,
+     * <code>Marker</code> is the value that you specified for the marker
+     * parameter in the previous request.
      * </p>
      * 
      * @param marker
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextMarker</code>
-     *        from the last response in the <code>marker</code> parameter to get
-     *        the next page of results.
+     *        For the second and subsequent calls to
+     *        <code>ListHealthChecks</code>, <code>Marker</code> is the value
+     *        that you specified for the marker parameter in the previous
+     *        request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -221,19 +220,22 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag indicating whether there are more health checks to be listed. If
-     * your results were truncated, you can make a follow-up request for the
-     * next page of results by using the <code>Marker</code> element.
+     * A flag that indicates whether there are more health checks to be listed.
+     * If the response was truncated, you can get the next group of
+     * <code>maxitems</code> health checks by calling
+     * <code>ListHealthChecks</code> again and specifying the value of the
+     * <code>NextMarker</code> element in the marker parameter.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param isTruncated
-     *        A flag indicating whether there are more health checks to be
-     *        listed. If your results were truncated, you can make a follow-up
-     *        request for the next page of results by using the
-     *        <code>Marker</code> element.</p>
+     *        A flag that indicates whether there are more health checks to be
+     *        listed. If the response was truncated, you can get the next group
+     *        of <code>maxitems</code> health checks by calling
+     *        <code>ListHealthChecks</code> again and specifying the value of
+     *        the <code>NextMarker</code> element in the marker parameter.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
@@ -244,18 +246,21 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag indicating whether there are more health checks to be listed. If
-     * your results were truncated, you can make a follow-up request for the
-     * next page of results by using the <code>Marker</code> element.
+     * A flag that indicates whether there are more health checks to be listed.
+     * If the response was truncated, you can get the next group of
+     * <code>maxitems</code> health checks by calling
+     * <code>ListHealthChecks</code> again and specifying the value of the
+     * <code>NextMarker</code> element in the marker parameter.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return A flag indicating whether there are more health checks to be
-     *         listed. If your results were truncated, you can make a follow-up
-     *         request for the next page of results by using the
-     *         <code>Marker</code> element.</p>
+     * @return A flag that indicates whether there are more health checks to be
+     *         listed. If the response was truncated, you can get the next group
+     *         of <code>maxitems</code> health checks by calling
+     *         <code>ListHealthChecks</code> again and specifying the value of
+     *         the <code>NextMarker</code> element in the marker parameter.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
@@ -266,19 +271,22 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag indicating whether there are more health checks to be listed. If
-     * your results were truncated, you can make a follow-up request for the
-     * next page of results by using the <code>Marker</code> element.
+     * A flag that indicates whether there are more health checks to be listed.
+     * If the response was truncated, you can get the next group of
+     * <code>maxitems</code> health checks by calling
+     * <code>ListHealthChecks</code> again and specifying the value of the
+     * <code>NextMarker</code> element in the marker parameter.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param isTruncated
-     *        A flag indicating whether there are more health checks to be
-     *        listed. If your results were truncated, you can make a follow-up
-     *        request for the next page of results by using the
-     *        <code>Marker</code> element.</p>
+     *        A flag that indicates whether there are more health checks to be
+     *        listed. If the response was truncated, you can get the next group
+     *        of <code>maxitems</code> health checks by calling
+     *        <code>ListHealthChecks</code> again and specifying the value of
+     *        the <code>NextMarker</code> element in the marker parameter.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be
@@ -292,18 +300,21 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag indicating whether there are more health checks to be listed. If
-     * your results were truncated, you can make a follow-up request for the
-     * next page of results by using the <code>Marker</code> element.
+     * A flag that indicates whether there are more health checks to be listed.
+     * If the response was truncated, you can get the next group of
+     * <code>maxitems</code> health checks by calling
+     * <code>ListHealthChecks</code> again and specifying the value of the
+     * <code>NextMarker</code> element in the marker parameter.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return A flag indicating whether there are more health checks to be
-     *         listed. If your results were truncated, you can make a follow-up
-     *         request for the next page of results by using the
-     *         <code>Marker</code> element.</p>
+     * @return A flag that indicates whether there are more health checks to be
+     *         listed. If the response was truncated, you can get the next group
+     *         of <code>maxitems</code> health checks by calling
+     *         <code>ListHealthChecks</code> again and specifying the value of
+     *         the <code>NextMarker</code> element in the marker parameter.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
@@ -314,19 +325,19 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates where to continue listing health checks. If
-     * <code>IsTruncated</code> is <code>true</code>, make another request to
-     * <code>ListHealthChecks</code> and include the value of the
-     * <code>NextMarker</code> element in the <code>Marker</code> element to get
-     * the next page of results.
+     * If <code>IsTruncated</code> is <code>true</code>, the value of
+     * <code>NextMarker</code> identifies the first health check in the next
+     * group of <code>maxitems</code> health checks. Call
+     * <code>ListHealthChecks</code> again and specify the value of
+     * <code>NextMarker</code> in the marker parameter.
      * </p>
      * 
      * @param nextMarker
-     *        Indicates where to continue listing health checks. If
-     *        <code>IsTruncated</code> is <code>true</code>, make another
-     *        request to <code>ListHealthChecks</code> and include the value of
-     *        the <code>NextMarker</code> element in the <code>Marker</code>
-     *        element to get the next page of results.
+     *        If <code>IsTruncated</code> is <code>true</code>, the value of
+     *        <code>NextMarker</code> identifies the first health check in the
+     *        next group of <code>maxitems</code> health checks. Call
+     *        <code>ListHealthChecks</code> again and specify the value of
+     *        <code>NextMarker</code> in the marker parameter.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -335,18 +346,18 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates where to continue listing health checks. If
-     * <code>IsTruncated</code> is <code>true</code>, make another request to
-     * <code>ListHealthChecks</code> and include the value of the
-     * <code>NextMarker</code> element in the <code>Marker</code> element to get
-     * the next page of results.
+     * If <code>IsTruncated</code> is <code>true</code>, the value of
+     * <code>NextMarker</code> identifies the first health check in the next
+     * group of <code>maxitems</code> health checks. Call
+     * <code>ListHealthChecks</code> again and specify the value of
+     * <code>NextMarker</code> in the marker parameter.
      * </p>
      * 
-     * @return Indicates where to continue listing health checks. If
-     *         <code>IsTruncated</code> is <code>true</code>, make another
-     *         request to <code>ListHealthChecks</code> and include the value of
-     *         the <code>NextMarker</code> element in the <code>Marker</code>
-     *         element to get the next page of results.
+     * @return If <code>IsTruncated</code> is <code>true</code>, the value of
+     *         <code>NextMarker</code> identifies the first health check in the
+     *         next group of <code>maxitems</code> health checks. Call
+     *         <code>ListHealthChecks</code> again and specify the value of
+     *         <code>NextMarker</code> in the marker parameter.
      */
 
     public String getNextMarker() {
@@ -355,19 +366,19 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates where to continue listing health checks. If
-     * <code>IsTruncated</code> is <code>true</code>, make another request to
-     * <code>ListHealthChecks</code> and include the value of the
-     * <code>NextMarker</code> element in the <code>Marker</code> element to get
-     * the next page of results.
+     * If <code>IsTruncated</code> is <code>true</code>, the value of
+     * <code>NextMarker</code> identifies the first health check in the next
+     * group of <code>maxitems</code> health checks. Call
+     * <code>ListHealthChecks</code> again and specify the value of
+     * <code>NextMarker</code> in the marker parameter.
      * </p>
      * 
      * @param nextMarker
-     *        Indicates where to continue listing health checks. If
-     *        <code>IsTruncated</code> is <code>true</code>, make another
-     *        request to <code>ListHealthChecks</code> and include the value of
-     *        the <code>NextMarker</code> element in the <code>Marker</code>
-     *        element to get the next page of results.
+     *        If <code>IsTruncated</code> is <code>true</code>, the value of
+     *        <code>NextMarker</code> identifies the first health check in the
+     *        next group of <code>maxitems</code> health checks. Call
+     *        <code>ListHealthChecks</code> again and specify the value of
+     *        <code>NextMarker</code> in the marker parameter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -379,24 +390,15 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of health checks to be included in the response body.
-     * If the number of health checks associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
-     * response is <code>true</code>. Call <code>ListHealthChecks</code> again
-     * and specify the value of <code>NextMarker</code> from the last response
-     * in the <code>Marker</code> element of the next request to get the next
-     * page of results.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListHealthChecks</code> that produced the current
+     * response.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of health checks to be included in the response
-     *        body. If the number of health checks associated with this AWS
-     *        account exceeds <code>MaxItems</code>, the value of
-     *        <code>IsTruncated</code> in the response is <code>true</code>.
-     *        Call <code>ListHealthChecks</code> again and specify the value of
-     *        <code>NextMarker</code> from the last response in the
-     *        <code>Marker</code> element of the next request to get the next
-     *        page of results.
+     *        The value that you specified for the <code>maxitems</code>
+     *        parameter in the call to <code>ListHealthChecks</code> that
+     *        produced the current response.
      */
 
     public void setMaxItems(String maxItems) {
@@ -405,23 +407,14 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of health checks to be included in the response body.
-     * If the number of health checks associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
-     * response is <code>true</code>. Call <code>ListHealthChecks</code> again
-     * and specify the value of <code>NextMarker</code> from the last response
-     * in the <code>Marker</code> element of the next request to get the next
-     * page of results.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListHealthChecks</code> that produced the current
+     * response.
      * </p>
      * 
-     * @return The maximum number of health checks to be included in the
-     *         response body. If the number of health checks associated with
-     *         this AWS account exceeds <code>MaxItems</code>, the value of
-     *         <code>IsTruncated</code> in the response is <code>true</code>.
-     *         Call <code>ListHealthChecks</code> again and specify the value of
-     *         <code>NextMarker</code> from the last response in the
-     *         <code>Marker</code> element of the next request to get the next
-     *         page of results.
+     * @return The value that you specified for the <code>maxitems</code>
+     *         parameter in the call to <code>ListHealthChecks</code> that
+     *         produced the current response.
      */
 
     public String getMaxItems() {
@@ -430,24 +423,15 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of health checks to be included in the response body.
-     * If the number of health checks associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
-     * response is <code>true</code>. Call <code>ListHealthChecks</code> again
-     * and specify the value of <code>NextMarker</code> from the last response
-     * in the <code>Marker</code> element of the next request to get the next
-     * page of results.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListHealthChecks</code> that produced the current
+     * response.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of health checks to be included in the response
-     *        body. If the number of health checks associated with this AWS
-     *        account exceeds <code>MaxItems</code>, the value of
-     *        <code>IsTruncated</code> in the response is <code>true</code>.
-     *        Call <code>ListHealthChecks</code> again and specify the value of
-     *        <code>NextMarker</code> from the last response in the
-     *        <code>Marker</code> element of the next request to get the next
-     *        page of results.
+     *        The value that you specified for the <code>maxitems</code>
+     *        parameter in the call to <code>ListHealthChecks</code> that
+     *        produced the current response.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

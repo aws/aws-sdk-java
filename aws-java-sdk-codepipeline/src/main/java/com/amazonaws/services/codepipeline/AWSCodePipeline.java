@@ -63,6 +63,12 @@ import com.amazonaws.services.codepipeline.model.*;
  * </li>
  * <li>
  * <p>
+ * <a>GetPipelineExecution</a>, which returns information about a specific
+ * execution of a pipeline.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetPipelineState</a>, which returns information about the current state of
  * the stages and actions of a pipeline.
  * </p>
@@ -514,6 +520,31 @@ public interface AWSCodePipeline {
      * @sample AWSCodePipeline.GetPipeline
      */
     GetPipelineResult getPipeline(GetPipelineRequest getPipelineRequest);
+
+    /**
+     * <p>
+     * Returns information about an execution of a pipeline, including details
+     * about artifacts, the pipeline execution ID, and the name, version, and
+     * status of the pipeline.
+     * </p>
+     * 
+     * @param getPipelineExecutionRequest
+     *        Represents the input of a get pipeline execution action.
+     * @return Result of the GetPipelineExecution operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @throws PipelineNotFoundException
+     *         The specified pipeline was specified in an invalid format or
+     *         cannot be found.
+     * @throws PipelineExecutionNotFoundException
+     *         The pipeline execution was specified in an invalid format or
+     *         cannot be found, or an execution ID does not belong to the
+     *         specified pipeline.
+     * @sample AWSCodePipeline.GetPipelineExecution
+     */
+    GetPipelineExecutionResult getPipelineExecution(
+            GetPipelineExecutionRequest getPipelineExecutionRequest);
 
     /**
      * <p>

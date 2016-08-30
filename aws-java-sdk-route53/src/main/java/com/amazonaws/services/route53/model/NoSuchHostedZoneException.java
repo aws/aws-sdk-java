@@ -15,7 +15,9 @@
 package com.amazonaws.services.route53.model;
 
 /**
- * 
+ * <p>
+ * No hosted zone exists with the ID that you specified.
+ * </p>
  */
 public class NoSuchHostedZoneException extends
         com.amazonaws.services.route53.model.AmazonRoute53Exception {

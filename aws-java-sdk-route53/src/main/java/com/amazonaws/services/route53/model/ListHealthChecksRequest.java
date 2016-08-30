@@ -20,51 +20,85 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * To retrieve a list of your health checks, send a <code>GET</code> request to
- * the <code>/<i>Route 53 API version</i>/healthcheck</code> resource. The
- * response to this request includes a <code>HealthChecks</code> element with
- * zero or more <code>HealthCheck</code> child elements. By default, the list of
- * health checks is displayed on a single page. You can control the length of
- * the page that is displayed by using the <code>MaxItems</code> parameter. You
- * can use the <code>Marker</code> parameter to control the health check that
- * the list begins with.
+ * the <code>/2013-04-01/healthcheck</code> resource. The response to this
+ * request includes a <code>HealthChecks</code> element with zero or more
+ * <code>HealthCheck</code> child elements. By default, the list of health
+ * checks is displayed on a single page. You can control the length of the page
+ * that is displayed by using the <code>MaxItems</code> parameter. You can use
+ * the <code>Marker</code> parameter to control the health check that the list
+ * begins with.
  * </p>
- * <note> Amazon Route 53 returns a maximum of 100 items. If you set
+ * <note>
+ * <p>
+ * Amazon Route 53 returns a maximum of 100 items. If you set
  * <code>MaxItems</code> to a value greater than 100, Amazon Route 53 returns
- * only the first 100.</note>
+ * only the first 100.
+ * </p>
+ * </note>
  */
 public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If the response to a <code>ListHealthChecks</code> is more than one page,
+     * marker is the health check ID for the first health check on the next page
+     * of results. For more information, see
+     * <a>ListHealthChecksResponse$MaxItems</a>.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Specify the maximum number of health checks to return per page of
-     * results.
+     * The maximum number of <code>HealthCheck</code> elements you want
+     * <code>ListHealthChecks</code> to return on each page of the response
+     * body. If the AWS account includes more <code>HealthCheck</code> elements
+     * than the value of <code>maxitems</code>, the response is broken into
+     * pages. Each page contains the number of <code>HealthCheck</code> elements
+     * specified by <code>maxitems</code>.
      * </p>
+     * <p>
+     * For example, suppose you specify <code>10</code> for
+     * <code>maxitems</code> and the current AWS account has <code>51</code>
+     * health checks. In the response, <code>ListHealthChecks</code> sets
+     * <a>ListHealthChecksResponse$IsTruncated</a> to true and includes the
+     * <a>ListHealthChecksResponse$NextMarker</a> element. To access the second
+     * and subsequent pages, you resend the <code>GET</code>
+     * <code>ListHealthChecks</code> request, add the
+     * <a>ListHealthChecksResponse$Marker</a> parameter to the request, and
+     * specify the value of the <a>ListHealthChecksResponse$NextMarker</a>
+     * element from the previous response. On the last (sixth) page of the
+     * response, which contains only one HealthCheck element:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <a>ListHealthChecksResponse$IsTruncated</a> is
+     * <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListHealthChecksResponse$NextMarker</a> is omitted.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String maxItems;
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If the response to a <code>ListHealthChecks</code> is more than one page,
+     * marker is the health check ID for the first health check on the next page
+     * of results. For more information, see
+     * <a>ListHealthChecksResponse$MaxItems</a>.
      * </p>
      * 
      * @param marker
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextMarker</code>
-     *        from the last response in the <code>marker</code> parameter to get
-     *        the next page of results.
+     *        If the response to a <code>ListHealthChecks</code> is more than
+     *        one page, marker is the health check ID for the first health check
+     *        on the next page of results. For more information, see
+     *        <a>ListHealthChecksResponse$MaxItems</a>.
      */
 
     public void setMarker(String marker) {
@@ -73,16 +107,16 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If the response to a <code>ListHealthChecks</code> is more than one page,
+     * marker is the health check ID for the first health check on the next page
+     * of results. For more information, see
+     * <a>ListHealthChecksResponse$MaxItems</a>.
      * </p>
      * 
-     * @return If the request returned more than one page of results, submit
-     *         another request and specify the value of <code>NextMarker</code>
-     *         from the last response in the <code>marker</code> parameter to
-     *         get the next page of results.
+     * @return If the response to a <code>ListHealthChecks</code> is more than
+     *         one page, marker is the health check ID for the first health
+     *         check on the next page of results. For more information, see
+     *         <a>ListHealthChecksResponse$MaxItems</a>.
      */
 
     public String getMarker() {
@@ -91,17 +125,17 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If the response to a <code>ListHealthChecks</code> is more than one page,
+     * marker is the health check ID for the first health check on the next page
+     * of results. For more information, see
+     * <a>ListHealthChecksResponse$MaxItems</a>.
      * </p>
      * 
      * @param marker
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextMarker</code>
-     *        from the last response in the <code>marker</code> parameter to get
-     *        the next page of results.
+     *        If the response to a <code>ListHealthChecks</code> is more than
+     *        one page, marker is the health check ID for the first health check
+     *        on the next page of results. For more information, see
+     *        <a>ListHealthChecksResponse$MaxItems</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -113,13 +147,75 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specify the maximum number of health checks to return per page of
-     * results.
+     * The maximum number of <code>HealthCheck</code> elements you want
+     * <code>ListHealthChecks</code> to return on each page of the response
+     * body. If the AWS account includes more <code>HealthCheck</code> elements
+     * than the value of <code>maxitems</code>, the response is broken into
+     * pages. Each page contains the number of <code>HealthCheck</code> elements
+     * specified by <code>maxitems</code>.
      * </p>
+     * <p>
+     * For example, suppose you specify <code>10</code> for
+     * <code>maxitems</code> and the current AWS account has <code>51</code>
+     * health checks. In the response, <code>ListHealthChecks</code> sets
+     * <a>ListHealthChecksResponse$IsTruncated</a> to true and includes the
+     * <a>ListHealthChecksResponse$NextMarker</a> element. To access the second
+     * and subsequent pages, you resend the <code>GET</code>
+     * <code>ListHealthChecks</code> request, add the
+     * <a>ListHealthChecksResponse$Marker</a> parameter to the request, and
+     * specify the value of the <a>ListHealthChecksResponse$NextMarker</a>
+     * element from the previous response. On the last (sixth) page of the
+     * response, which contains only one HealthCheck element:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <a>ListHealthChecksResponse$IsTruncated</a> is
+     * <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListHealthChecksResponse$NextMarker</a> is omitted.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param maxItems
-     *        Specify the maximum number of health checks to return per page of
-     *        results.
+     *        The maximum number of <code>HealthCheck</code> elements you want
+     *        <code>ListHealthChecks</code> to return on each page of the
+     *        response body. If the AWS account includes more
+     *        <code>HealthCheck</code> elements than the value of
+     *        <code>maxitems</code>, the response is broken into pages. Each
+     *        page contains the number of <code>HealthCheck</code> elements
+     *        specified by <code>maxitems</code>.</p>
+     *        <p>
+     *        For example, suppose you specify <code>10</code> for
+     *        <code>maxitems</code> and the current AWS account has
+     *        <code>51</code> health checks. In the response,
+     *        <code>ListHealthChecks</code> sets
+     *        <a>ListHealthChecksResponse$IsTruncated</a> to true and includes
+     *        the <a>ListHealthChecksResponse$NextMarker</a> element. To access
+     *        the second and subsequent pages, you resend the <code>GET</code>
+     *        <code>ListHealthChecks</code> request, add the
+     *        <a>ListHealthChecksResponse$Marker</a> parameter to the request,
+     *        and specify the value of the
+     *        <a>ListHealthChecksResponse$NextMarker</a> element from the
+     *        previous response. On the last (sixth) page of the response, which
+     *        contains only one HealthCheck element:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The value of <a>ListHealthChecksResponse$IsTruncated</a> is
+     *        <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ListHealthChecksResponse$NextMarker</a> is omitted.
+     *        </p>
+     *        </li>
      */
 
     public void setMaxItems(String maxItems) {
@@ -128,12 +224,74 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specify the maximum number of health checks to return per page of
-     * results.
+     * The maximum number of <code>HealthCheck</code> elements you want
+     * <code>ListHealthChecks</code> to return on each page of the response
+     * body. If the AWS account includes more <code>HealthCheck</code> elements
+     * than the value of <code>maxitems</code>, the response is broken into
+     * pages. Each page contains the number of <code>HealthCheck</code> elements
+     * specified by <code>maxitems</code>.
      * </p>
+     * <p>
+     * For example, suppose you specify <code>10</code> for
+     * <code>maxitems</code> and the current AWS account has <code>51</code>
+     * health checks. In the response, <code>ListHealthChecks</code> sets
+     * <a>ListHealthChecksResponse$IsTruncated</a> to true and includes the
+     * <a>ListHealthChecksResponse$NextMarker</a> element. To access the second
+     * and subsequent pages, you resend the <code>GET</code>
+     * <code>ListHealthChecks</code> request, add the
+     * <a>ListHealthChecksResponse$Marker</a> parameter to the request, and
+     * specify the value of the <a>ListHealthChecksResponse$NextMarker</a>
+     * element from the previous response. On the last (sixth) page of the
+     * response, which contains only one HealthCheck element:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <a>ListHealthChecksResponse$IsTruncated</a> is
+     * <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListHealthChecksResponse$NextMarker</a> is omitted.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Specify the maximum number of health checks to return per page of
-     *         results.
+     * @return The maximum number of <code>HealthCheck</code> elements you want
+     *         <code>ListHealthChecks</code> to return on each page of the
+     *         response body. If the AWS account includes more
+     *         <code>HealthCheck</code> elements than the value of
+     *         <code>maxitems</code>, the response is broken into pages. Each
+     *         page contains the number of <code>HealthCheck</code> elements
+     *         specified by <code>maxitems</code>.</p>
+     *         <p>
+     *         For example, suppose you specify <code>10</code> for
+     *         <code>maxitems</code> and the current AWS account has
+     *         <code>51</code> health checks. In the response,
+     *         <code>ListHealthChecks</code> sets
+     *         <a>ListHealthChecksResponse$IsTruncated</a> to true and includes
+     *         the <a>ListHealthChecksResponse$NextMarker</a> element. To access
+     *         the second and subsequent pages, you resend the <code>GET</code>
+     *         <code>ListHealthChecks</code> request, add the
+     *         <a>ListHealthChecksResponse$Marker</a> parameter to the request,
+     *         and specify the value of the
+     *         <a>ListHealthChecksResponse$NextMarker</a> element from the
+     *         previous response. On the last (sixth) page of the response,
+     *         which contains only one HealthCheck element:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The value of <a>ListHealthChecksResponse$IsTruncated</a> is
+     *         <code>false</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>ListHealthChecksResponse$NextMarker</a> is omitted.
+     *         </p>
+     *         </li>
      */
 
     public String getMaxItems() {
@@ -142,13 +300,75 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specify the maximum number of health checks to return per page of
-     * results.
+     * The maximum number of <code>HealthCheck</code> elements you want
+     * <code>ListHealthChecks</code> to return on each page of the response
+     * body. If the AWS account includes more <code>HealthCheck</code> elements
+     * than the value of <code>maxitems</code>, the response is broken into
+     * pages. Each page contains the number of <code>HealthCheck</code> elements
+     * specified by <code>maxitems</code>.
      * </p>
+     * <p>
+     * For example, suppose you specify <code>10</code> for
+     * <code>maxitems</code> and the current AWS account has <code>51</code>
+     * health checks. In the response, <code>ListHealthChecks</code> sets
+     * <a>ListHealthChecksResponse$IsTruncated</a> to true and includes the
+     * <a>ListHealthChecksResponse$NextMarker</a> element. To access the second
+     * and subsequent pages, you resend the <code>GET</code>
+     * <code>ListHealthChecks</code> request, add the
+     * <a>ListHealthChecksResponse$Marker</a> parameter to the request, and
+     * specify the value of the <a>ListHealthChecksResponse$NextMarker</a>
+     * element from the previous response. On the last (sixth) page of the
+     * response, which contains only one HealthCheck element:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <a>ListHealthChecksResponse$IsTruncated</a> is
+     * <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListHealthChecksResponse$NextMarker</a> is omitted.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param maxItems
-     *        Specify the maximum number of health checks to return per page of
-     *        results.
+     *        The maximum number of <code>HealthCheck</code> elements you want
+     *        <code>ListHealthChecks</code> to return on each page of the
+     *        response body. If the AWS account includes more
+     *        <code>HealthCheck</code> elements than the value of
+     *        <code>maxitems</code>, the response is broken into pages. Each
+     *        page contains the number of <code>HealthCheck</code> elements
+     *        specified by <code>maxitems</code>.</p>
+     *        <p>
+     *        For example, suppose you specify <code>10</code> for
+     *        <code>maxitems</code> and the current AWS account has
+     *        <code>51</code> health checks. In the response,
+     *        <code>ListHealthChecks</code> sets
+     *        <a>ListHealthChecksResponse$IsTruncated</a> to true and includes
+     *        the <a>ListHealthChecksResponse$NextMarker</a> element. To access
+     *        the second and subsequent pages, you resend the <code>GET</code>
+     *        <code>ListHealthChecks</code> request, add the
+     *        <a>ListHealthChecksResponse$Marker</a> parameter to the request,
+     *        and specify the value of the
+     *        <a>ListHealthChecksResponse$NextMarker</a> element from the
+     *        previous response. On the last (sixth) page of the response, which
+     *        contains only one HealthCheck element:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The value of <a>ListHealthChecksResponse$IsTruncated</a> is
+     *        <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ListHealthChecksResponse$NextMarker</a> is omitted.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

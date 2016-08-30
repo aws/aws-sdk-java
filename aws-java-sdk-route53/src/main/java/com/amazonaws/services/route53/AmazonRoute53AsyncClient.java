@@ -2132,6 +2132,41 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements
     }
 
     @Override
+    public java.util.concurrent.Future<TestDNSAnswerResult> testDNSAnswerAsync(
+            TestDNSAnswerRequest request) {
+
+        return testDNSAnswerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestDNSAnswerResult> testDNSAnswerAsync(
+            final TestDNSAnswerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TestDNSAnswerRequest, TestDNSAnswerResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<TestDNSAnswerResult>() {
+                    @Override
+                    public TestDNSAnswerResult call() throws Exception {
+                        TestDNSAnswerResult result;
+
+                        try {
+                            result = testDNSAnswer(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateHealthCheckResult> updateHealthCheckAsync(
             UpdateHealthCheckRequest request) {
 

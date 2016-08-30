@@ -16,7 +16,7 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * At least one of the specified arguments is invalid.
+ * Parameter name and problem.
  * </p>
  */
 public class InvalidArgumentException extends

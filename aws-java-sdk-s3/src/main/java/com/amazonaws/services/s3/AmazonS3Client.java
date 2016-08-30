@@ -31,15 +31,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.auth.AWSCredentialsProviderChain;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
-import com.amazonaws.auth.EnvironmentVariableCredentialsProvider;
-import com.amazonaws.auth.InstanceProfileCredentialsProvider;
 import com.amazonaws.auth.Presigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SignerFactory;
-import com.amazonaws.auth.SystemPropertiesCredentialsProvider;
-import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressInputStream;
 import com.amazonaws.event.ProgressListener;
@@ -230,7 +225,6 @@ import com.amazonaws.util.ServiceClientHolderInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.ValidationUtils;
 
-import com.amazonaws.util.json.Jackson;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.client.methods.HttpRequestBase;
@@ -943,7 +937,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          * *must* specify a location constraint. Try to derive the region from
          * the endpoint.
          */
-        if (!ServiceUtils.isS3USEastEndpiont(endpoint.getHost()) && StringUtils.isNullOrEmpty(region)) {
+        if (!(getSignerRegion() == null || getSignerRegion().equals("us-east-1"))) {
             region = AwsHostNameUtils.parseRegion(endpoint.getHost(), S3_SERVICE_NAME);
         }
 

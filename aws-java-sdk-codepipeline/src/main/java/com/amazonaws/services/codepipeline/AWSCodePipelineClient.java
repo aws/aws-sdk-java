@@ -87,6 +87,12 @@ import com.amazonaws.services.codepipeline.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <a>GetPipelineExecution</a>, which returns information about a specific
+ * execution of a pipeline.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetPipelineState</a>, which returns information about the current state of
  * the stages and actions of a pipeline.
  * </p>
@@ -291,6 +297,12 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
                                             "InvalidActionDeclarationException")
                                     .withModeledClass(
                                             com.amazonaws.services.codepipeline.model.InvalidActionDeclarationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "PipelineExecutionNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.PipelineExecutionNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -1122,6 +1134,65 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new GetPipelineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about an execution of a pipeline, including details
+     * about artifacts, the pipeline execution ID, and the name, version, and
+     * status of the pipeline.
+     * </p>
+     * 
+     * @param getPipelineExecutionRequest
+     *        Represents the input of a get pipeline execution action.
+     * @return Result of the GetPipelineExecution operation returned by the
+     *         service.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @throws PipelineNotFoundException
+     *         The specified pipeline was specified in an invalid format or
+     *         cannot be found.
+     * @throws PipelineExecutionNotFoundException
+     *         The pipeline execution was specified in an invalid format or
+     *         cannot be found, or an execution ID does not belong to the
+     *         specified pipeline.
+     * @sample AWSCodePipeline.GetPipelineExecution
+     */
+    @Override
+    public GetPipelineExecutionResult getPipelineExecution(
+            GetPipelineExecutionRequest getPipelineExecutionRequest) {
+        ExecutionContext executionContext = createExecutionContext(getPipelineExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPipelineExecutionRequest> request = null;
+        Response<GetPipelineExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPipelineExecutionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getPipelineExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPipelineExecutionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetPipelineExecutionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

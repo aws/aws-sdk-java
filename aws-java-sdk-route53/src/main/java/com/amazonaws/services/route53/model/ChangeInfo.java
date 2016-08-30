@@ -21,17 +21,12 @@ import java.io.Serializable;
  * A complex type that describes change information about changes made to your
  * hosted zone.
  * </p>
- * <p>
- * This element contains an ID that you use when performing a
- * <code>GetChange</code> action to get detailed information about the change.
- * </p>
  */
 public class ChangeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the request. Use this ID to track when the change has completed
-     * across all Amazon Route 53 DNS servers.
+     * The ID of the request.
      * </p>
      */
     private String id;
@@ -40,17 +35,14 @@ public class ChangeInfo implements Serializable, Cloneable {
      * The current state of the request. <code>PENDING</code> indicates that
      * this request has not yet been applied to all Amazon Route 53 DNS servers.
      * </p>
-     * <p>
-     * Valid Values: <code>PENDING</code> | <code>INSYNC</code>
-     * </p>
      */
     private String status;
     /**
      * <p>
-     * The date and time the change was submitted, in the format
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard
-     * (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time
-     * indicates that the time is listed in Coordinated Universal Time (UTC).
+     * The date and time the change request was submitted, in Coordinated
+     * Universal Time (UTC) format: <code>YYYY-MM-DDThh:mm:ssZ</code>. For more
+     * information, see the Wikipedia entry <a
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
      * </p>
      */
     private java.util.Date submittedAt;
@@ -61,8 +53,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      * </p>
      * <p>
      * This element contains an ID that you use when performing a
-     * <code>GetChange</code> action to get detailed information about the
-     * change.
+     * <a>GetChange</a> action to get detailed information about the change.
      * </p>
      */
     private String comment;
@@ -81,20 +72,16 @@ public class ChangeInfo implements Serializable, Cloneable {
      * members.
      * 
      * @param id
-     *        The ID of the request. Use this ID to track when the change has
-     *        completed across all Amazon Route 53 DNS servers.
+     *        The ID of the request.
      * @param status
      *        The current state of the request. <code>PENDING</code> indicates
      *        that this request has not yet been applied to all Amazon Route 53
-     *        DNS servers.</p>
-     *        <p>
-     *        Valid Values: <code>PENDING</code> | <code>INSYNC</code>
+     *        DNS servers.
      * @param submittedAt
-     *        The date and time the change was submitted, in the format
-     *        <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
-     *        standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code>
-     *        after the time indicates that the time is listed in Coordinated
-     *        Universal Time (UTC).
+     *        The date and time the change request was submitted, in Coordinated
+     *        Universal Time (UTC) format: <code>YYYY-MM-DDThh:mm:ssZ</code>.
+     *        For more information, see the Wikipedia entry <a
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
      */
     public ChangeInfo(String id, String status, java.util.Date submittedAt) {
         setId(id);
@@ -108,20 +95,16 @@ public class ChangeInfo implements Serializable, Cloneable {
      * members.
      * 
      * @param id
-     *        The ID of the request. Use this ID to track when the change has
-     *        completed across all Amazon Route 53 DNS servers.
+     *        The ID of the request.
      * @param status
      *        The current state of the request. <code>PENDING</code> indicates
      *        that this request has not yet been applied to all Amazon Route 53
-     *        DNS servers.</p>
-     *        <p>
-     *        Valid Values: <code>PENDING</code> | <code>INSYNC</code>
+     *        DNS servers.
      * @param submittedAt
-     *        The date and time the change was submitted, in the format
-     *        <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
-     *        standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code>
-     *        after the time indicates that the time is listed in Coordinated
-     *        Universal Time (UTC).
+     *        The date and time the change request was submitted, in Coordinated
+     *        Universal Time (UTC) format: <code>YYYY-MM-DDThh:mm:ssZ</code>.
+     *        For more information, see the Wikipedia entry <a
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
      */
     public ChangeInfo(String id, ChangeStatus status, java.util.Date submittedAt) {
         setId(id);
@@ -131,13 +114,11 @@ public class ChangeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the request. Use this ID to track when the change has completed
-     * across all Amazon Route 53 DNS servers.
+     * The ID of the request.
      * </p>
      * 
      * @param id
-     *        The ID of the request. Use this ID to track when the change has
-     *        completed across all Amazon Route 53 DNS servers.
+     *        The ID of the request.
      */
 
     public void setId(String id) {
@@ -146,12 +127,10 @@ public class ChangeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the request. Use this ID to track when the change has completed
-     * across all Amazon Route 53 DNS servers.
+     * The ID of the request.
      * </p>
      * 
-     * @return The ID of the request. Use this ID to track when the change has
-     *         completed across all Amazon Route 53 DNS servers.
+     * @return The ID of the request.
      */
 
     public String getId() {
@@ -160,13 +139,11 @@ public class ChangeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the request. Use this ID to track when the change has completed
-     * across all Amazon Route 53 DNS servers.
+     * The ID of the request.
      * </p>
      * 
      * @param id
-     *        The ID of the request. Use this ID to track when the change has
-     *        completed across all Amazon Route 53 DNS servers.
+     *        The ID of the request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -181,16 +158,11 @@ public class ChangeInfo implements Serializable, Cloneable {
      * The current state of the request. <code>PENDING</code> indicates that
      * this request has not yet been applied to all Amazon Route 53 DNS servers.
      * </p>
-     * <p>
-     * Valid Values: <code>PENDING</code> | <code>INSYNC</code>
-     * </p>
      * 
      * @param status
      *        The current state of the request. <code>PENDING</code> indicates
      *        that this request has not yet been applied to all Amazon Route 53
-     *        DNS servers.</p>
-     *        <p>
-     *        Valid Values: <code>PENDING</code> | <code>INSYNC</code>
+     *        DNS servers.
      * @see ChangeStatus
      */
 
@@ -203,15 +175,10 @@ public class ChangeInfo implements Serializable, Cloneable {
      * The current state of the request. <code>PENDING</code> indicates that
      * this request has not yet been applied to all Amazon Route 53 DNS servers.
      * </p>
-     * <p>
-     * Valid Values: <code>PENDING</code> | <code>INSYNC</code>
-     * </p>
      * 
      * @return The current state of the request. <code>PENDING</code> indicates
      *         that this request has not yet been applied to all Amazon Route 53
-     *         DNS servers.</p>
-     *         <p>
-     *         Valid Values: <code>PENDING</code> | <code>INSYNC</code>
+     *         DNS servers.
      * @see ChangeStatus
      */
 
@@ -224,16 +191,11 @@ public class ChangeInfo implements Serializable, Cloneable {
      * The current state of the request. <code>PENDING</code> indicates that
      * this request has not yet been applied to all Amazon Route 53 DNS servers.
      * </p>
-     * <p>
-     * Valid Values: <code>PENDING</code> | <code>INSYNC</code>
-     * </p>
      * 
      * @param status
      *        The current state of the request. <code>PENDING</code> indicates
      *        that this request has not yet been applied to all Amazon Route 53
-     *        DNS servers.</p>
-     *        <p>
-     *        Valid Values: <code>PENDING</code> | <code>INSYNC</code>
+     *        DNS servers.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ChangeStatus
@@ -249,16 +211,11 @@ public class ChangeInfo implements Serializable, Cloneable {
      * The current state of the request. <code>PENDING</code> indicates that
      * this request has not yet been applied to all Amazon Route 53 DNS servers.
      * </p>
-     * <p>
-     * Valid Values: <code>PENDING</code> | <code>INSYNC</code>
-     * </p>
      * 
      * @param status
      *        The current state of the request. <code>PENDING</code> indicates
      *        that this request has not yet been applied to all Amazon Route 53
-     *        DNS servers.</p>
-     *        <p>
-     *        Valid Values: <code>PENDING</code> | <code>INSYNC</code>
+     *        DNS servers.
      * @see ChangeStatus
      */
 
@@ -271,16 +228,11 @@ public class ChangeInfo implements Serializable, Cloneable {
      * The current state of the request. <code>PENDING</code> indicates that
      * this request has not yet been applied to all Amazon Route 53 DNS servers.
      * </p>
-     * <p>
-     * Valid Values: <code>PENDING</code> | <code>INSYNC</code>
-     * </p>
      * 
      * @param status
      *        The current state of the request. <code>PENDING</code> indicates
      *        that this request has not yet been applied to all Amazon Route 53
-     *        DNS servers.</p>
-     *        <p>
-     *        Valid Values: <code>PENDING</code> | <code>INSYNC</code>
+     *        DNS servers.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ChangeStatus
@@ -293,18 +245,17 @@ public class ChangeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the change was submitted, in the format
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard
-     * (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time
-     * indicates that the time is listed in Coordinated Universal Time (UTC).
+     * The date and time the change request was submitted, in Coordinated
+     * Universal Time (UTC) format: <code>YYYY-MM-DDThh:mm:ssZ</code>. For more
+     * information, see the Wikipedia entry <a
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
      * </p>
      * 
      * @param submittedAt
-     *        The date and time the change was submitted, in the format
-     *        <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
-     *        standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code>
-     *        after the time indicates that the time is listed in Coordinated
-     *        Universal Time (UTC).
+     *        The date and time the change request was submitted, in Coordinated
+     *        Universal Time (UTC) format: <code>YYYY-MM-DDThh:mm:ssZ</code>.
+     *        For more information, see the Wikipedia entry <a
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
      */
 
     public void setSubmittedAt(java.util.Date submittedAt) {
@@ -313,17 +264,17 @@ public class ChangeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the change was submitted, in the format
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard
-     * (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time
-     * indicates that the time is listed in Coordinated Universal Time (UTC).
+     * The date and time the change request was submitted, in Coordinated
+     * Universal Time (UTC) format: <code>YYYY-MM-DDThh:mm:ssZ</code>. For more
+     * information, see the Wikipedia entry <a
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
      * </p>
      * 
-     * @return The date and time the change was submitted, in the format
-     *         <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
-     *         standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code>
-     *         after the time indicates that the time is listed in Coordinated
-     *         Universal Time (UTC).
+     * @return The date and time the change request was submitted, in
+     *         Coordinated Universal Time (UTC) format:
+     *         <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the
+     *         Wikipedia entry <a
+     *         href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
      */
 
     public java.util.Date getSubmittedAt() {
@@ -332,18 +283,17 @@ public class ChangeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the change was submitted, in the format
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard
-     * (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time
-     * indicates that the time is listed in Coordinated Universal Time (UTC).
+     * The date and time the change request was submitted, in Coordinated
+     * Universal Time (UTC) format: <code>YYYY-MM-DDThh:mm:ssZ</code>. For more
+     * information, see the Wikipedia entry <a
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
      * </p>
      * 
      * @param submittedAt
-     *        The date and time the change was submitted, in the format
-     *        <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601
-     *        standard (for example, 2009-11-19T19:37:58Z). The <code>Z</code>
-     *        after the time indicates that the time is listed in Coordinated
-     *        Universal Time (UTC).
+     *        The date and time the change request was submitted, in Coordinated
+     *        Universal Time (UTC) format: <code>YYYY-MM-DDThh:mm:ssZ</code>.
+     *        For more information, see the Wikipedia entry <a
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -360,8 +310,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      * </p>
      * <p>
      * This element contains an ID that you use when performing a
-     * <code>GetChange</code> action to get detailed information about the
-     * change.
+     * <a>GetChange</a> action to get detailed information about the change.
      * </p>
      * 
      * @param comment
@@ -369,8 +318,8 @@ public class ChangeInfo implements Serializable, Cloneable {
      *        made to your hosted zone.</p>
      *        <p>
      *        This element contains an ID that you use when performing a
-     *        <code>GetChange</code> action to get detailed information about
-     *        the change.
+     *        <a>GetChange</a> action to get detailed information about the
+     *        change.
      */
 
     public void setComment(String comment) {
@@ -384,16 +333,15 @@ public class ChangeInfo implements Serializable, Cloneable {
      * </p>
      * <p>
      * This element contains an ID that you use when performing a
-     * <code>GetChange</code> action to get detailed information about the
-     * change.
+     * <a>GetChange</a> action to get detailed information about the change.
      * </p>
      * 
      * @return A complex type that describes change information about changes
      *         made to your hosted zone.</p>
      *         <p>
      *         This element contains an ID that you use when performing a
-     *         <code>GetChange</code> action to get detailed information about
-     *         the change.
+     *         <a>GetChange</a> action to get detailed information about the
+     *         change.
      */
 
     public String getComment() {
@@ -407,8 +355,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      * </p>
      * <p>
      * This element contains an ID that you use when performing a
-     * <code>GetChange</code> action to get detailed information about the
-     * change.
+     * <a>GetChange</a> action to get detailed information about the change.
      * </p>
      * 
      * @param comment
@@ -416,8 +363,8 @@ public class ChangeInfo implements Serializable, Cloneable {
      *        made to your hosted zone.</p>
      *        <p>
      *        This element contains an ID that you use when performing a
-     *        <code>GetChange</code> action to get detailed information about
-     *        the change.
+     *        <a>GetChange</a> action to get detailed information about the
+     *        change.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

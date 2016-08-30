@@ -269,6 +269,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers
                 .add(new InvalidOriginAccessIdentityExceptionUnmarshaller());
         exceptionUnmarshallers
+                .add(new InvalidQueryStringParametersExceptionUnmarshaller());
+        exceptionUnmarshallers
                 .add(new CNAMEAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IllegalUpdateExceptionUnmarshaller());
         exceptionUnmarshallers
@@ -326,6 +328,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
                 .add(new StreamingDistributionNotDisabledExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new PreconditionFailedExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TooManyQueryStringParametersExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new DistributionAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
@@ -493,6 +497,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
      * @throws InvalidTTLOrderException
      * @throws InvalidWebACLIdException
      * @throws TooManyOriginCustomHeadersException
+     * @throws TooManyQueryStringParametersException
+     * @throws InvalidQueryStringParametersException
      * @sample AmazonCloudFront.CreateDistribution
      */
     @Override
@@ -609,6 +615,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
      * @throws InvalidTaggingException
      *         The specified tagging for a CloudFront resource is invalid. For
      *         more information, see the error text.
+     * @throws TooManyQueryStringParametersException
+     * @throws InvalidQueryStringParametersException
      * @sample AmazonCloudFront.CreateDistributionWithTags
      */
     @Override
@@ -1850,6 +1858,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
      * @throws InvalidTTLOrderException
      * @throws InvalidWebACLIdException
      * @throws TooManyOriginCustomHeadersException
+     * @throws TooManyQueryStringParametersException
+     * @throws InvalidQueryStringParametersException
      * @sample AmazonCloudFront.UpdateDistribution
      */
     @Override

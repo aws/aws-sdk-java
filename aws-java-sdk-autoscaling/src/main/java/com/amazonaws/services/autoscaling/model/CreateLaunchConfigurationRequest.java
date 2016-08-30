@@ -157,17 +157,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
     /**
      * <p>
-     * Enables detailed monitoring if it is disabled. Detailed monitoring is
-     * enabled by default.
-     * </p>
-     * <p>
-     * When detailed monitoring is enabled, Amazon CloudWatch generates metrics
-     * every minute and your account is charged a fee. When you disable detailed
-     * monitoring, by specifying <code>False</code>, CloudWatch generates
-     * metrics every 5 minutes. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
-     * >Monitoring Your Auto Scaling Instances and Groups</a> in the <i>Auto
-     * Scaling User Guide</i>.
+     * Enables detailed monitoring (<code>true</code>) or basic monitoring (
+     * <code>false</code>) for the Auto Scaling instances.
      * </p>
      */
     private InstanceMonitoring instanceMonitoring;
@@ -1288,31 +1279,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Enables detailed monitoring if it is disabled. Detailed monitoring is
-     * enabled by default.
-     * </p>
-     * <p>
-     * When detailed monitoring is enabled, Amazon CloudWatch generates metrics
-     * every minute and your account is charged a fee. When you disable detailed
-     * monitoring, by specifying <code>False</code>, CloudWatch generates
-     * metrics every 5 minutes. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
-     * >Monitoring Your Auto Scaling Instances and Groups</a> in the <i>Auto
-     * Scaling User Guide</i>.
+     * Enables detailed monitoring (<code>true</code>) or basic monitoring (
+     * <code>false</code>) for the Auto Scaling instances.
      * </p>
      * 
      * @param instanceMonitoring
-     *        Enables detailed monitoring if it is disabled. Detailed monitoring
-     *        is enabled by default.</p>
-     *        <p>
-     *        When detailed monitoring is enabled, Amazon CloudWatch generates
-     *        metrics every minute and your account is charged a fee. When you
-     *        disable detailed monitoring, by specifying <code>False</code>,
-     *        CloudWatch generates metrics every 5 minutes. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
-     *        >Monitoring Your Auto Scaling Instances and Groups</a> in the
-     *        <i>Auto Scaling User Guide</i>.
+     *        Enables detailed monitoring (<code>true</code>) or basic
+     *        monitoring (<code>false</code>) for the Auto Scaling instances.
      */
 
     public void setInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
@@ -1321,30 +1294,12 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Enables detailed monitoring if it is disabled. Detailed monitoring is
-     * enabled by default.
-     * </p>
-     * <p>
-     * When detailed monitoring is enabled, Amazon CloudWatch generates metrics
-     * every minute and your account is charged a fee. When you disable detailed
-     * monitoring, by specifying <code>False</code>, CloudWatch generates
-     * metrics every 5 minutes. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
-     * >Monitoring Your Auto Scaling Instances and Groups</a> in the <i>Auto
-     * Scaling User Guide</i>.
+     * Enables detailed monitoring (<code>true</code>) or basic monitoring (
+     * <code>false</code>) for the Auto Scaling instances.
      * </p>
      * 
-     * @return Enables detailed monitoring if it is disabled. Detailed
-     *         monitoring is enabled by default.</p>
-     *         <p>
-     *         When detailed monitoring is enabled, Amazon CloudWatch generates
-     *         metrics every minute and your account is charged a fee. When you
-     *         disable detailed monitoring, by specifying <code>False</code>,
-     *         CloudWatch generates metrics every 5 minutes. For more
-     *         information, see <a href=
-     *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
-     *         >Monitoring Your Auto Scaling Instances and Groups</a> in the
-     *         <i>Auto Scaling User Guide</i>.
+     * @return Enables detailed monitoring (<code>true</code>) or basic
+     *         monitoring (<code>false</code>) for the Auto Scaling instances.
      */
 
     public InstanceMonitoring getInstanceMonitoring() {
@@ -1353,31 +1308,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Enables detailed monitoring if it is disabled. Detailed monitoring is
-     * enabled by default.
-     * </p>
-     * <p>
-     * When detailed monitoring is enabled, Amazon CloudWatch generates metrics
-     * every minute and your account is charged a fee. When you disable detailed
-     * monitoring, by specifying <code>False</code>, CloudWatch generates
-     * metrics every 5 minutes. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
-     * >Monitoring Your Auto Scaling Instances and Groups</a> in the <i>Auto
-     * Scaling User Guide</i>.
+     * Enables detailed monitoring (<code>true</code>) or basic monitoring (
+     * <code>false</code>) for the Auto Scaling instances.
      * </p>
      * 
      * @param instanceMonitoring
-     *        Enables detailed monitoring if it is disabled. Detailed monitoring
-     *        is enabled by default.</p>
-     *        <p>
-     *        When detailed monitoring is enabled, Amazon CloudWatch generates
-     *        metrics every minute and your account is charged a fee. When you
-     *        disable detailed monitoring, by specifying <code>False</code>,
-     *        CloudWatch generates metrics every 5 minutes. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
-     *        >Monitoring Your Auto Scaling Instances and Groups</a> in the
-     *        <i>Auto Scaling User Guide</i>.
+     *        Enables detailed monitoring (<code>true</code>) or basic
+     *        monitoring (<code>false</code>) for the Auto Scaling instances.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

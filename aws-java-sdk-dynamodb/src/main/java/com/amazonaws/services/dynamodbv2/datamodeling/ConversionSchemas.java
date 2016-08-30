@@ -315,8 +315,10 @@ public final class ConversionSchemas {
             // actually correct for @DynamoDBFlattened attributes, however,
             // its the best that can be done given only the method. The
             // proper way to get this information is using the model factory.
-            final StandardAnnotationMaps.FieldMap<?,?> annotations = StandardAnnotationMaps.of(void.class, getter);
-            return new DynamoDBMapperFieldModel.Builder(annotations).with(attributeType).build();
+            final StandardAnnotationMaps.FieldMap annotations = StandardAnnotationMaps.of(void.class, getter);
+            final DynamoDBMapperFieldModel.Builder builder = new DynamoDBMapperFieldModel.Builder(annotations);
+            builder.withAttributeType(attributeType);
+            return builder.build();
         }
 
         @Override
@@ -1302,7 +1304,7 @@ public final class ConversionSchemas {
             final DynamoDBMarshalling marshalling = annotations.get(DynamoDBMarshalling.class);
             if (marshalling != null) {
                 return new CustomMarshaller(marshalling.marshallerClass());
-            } else if (annotations.nativeBool()) {
+            } else if (annotations.nativeBoolean() != null) {
                 return BooleanToBooleanMarshaller.instance();
             }
             return wrapped.getMarshaller(getter);
@@ -1445,7 +1447,7 @@ public final class ConversionSchemas {
 
         @Override
         public Rule<V> getRule(final Bean<?,V> bean) {
-            if (typeConverters != null && (bean.typeConverter() != null || bean.scalarAttributeType() != null)) {
+            if (typeConverters != null && (bean.typeConverter() != null || bean.attributeType() != null)) {
                 return typeConverters.getRule(bean);
             } else {
                 return new ItemConverterRule(bean);
@@ -1466,9 +1468,9 @@ public final class ConversionSchemas {
                 return this;
             }
             @Override
-            public DynamoDBAttributeType getDynamoDBAttributeType() {
+            public DynamoDBAttributeType getAttributeType() {
                 try {
-                    return converter.getFieldModel(bean.getter()).getDynamoDBAttributeType();
+                    return converter.getFieldModel(bean.getter()).attributeType();
                 } catch (final DynamoDBMappingException no) {}
                 return DynamoDBAttributeType.NULL;
             }

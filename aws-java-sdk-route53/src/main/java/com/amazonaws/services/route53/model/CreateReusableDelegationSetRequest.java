@@ -25,55 +25,43 @@ public class CreateReusableDelegationSetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A unique string that identifies the request and that allows failed
-     * <code>CreateReusableDelegationSet</code> requests to be retried without
-     * the risk of executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you create a reusable
-     * delegation set. <code>CallerReference</code> can be any unique string;
-     * you might choose to use a string that identifies your project, such as
-     * <code>DNSMigration_01</code>.
-     * </p>
-     * <p>
-     * Valid characters are any Unicode code points that are legal in an XML 1.0
-     * document. The UTF-8 encoding of the value must be less than 128 bytes.
+     * A unique string that identifies the request, and that allows you to retry
+     * failed <code>CreateReusableDelegationSet</code> requests without the risk
+     * of executing the operation twice. You must use a unique
+     * <code>CallerReference</code> string every time you submit a
+     * <code>CreateReusableDelegationSet</code> request.
+     * <code>CallerReference</code> can be any unique string, for example a
+     * date/time stamp.
      * </p>
      */
     private String callerReference;
     /**
      * <p>
-     * The ID of the hosted zone whose delegation set you want to mark as
-     * reusable. It is an optional parameter.
+     * If you want to mark the delegation set for an existing hosted zone as
+     * reusable, the ID for that hosted zone.
      * </p>
      */
     private String hostedZoneId;
 
     /**
      * <p>
-     * A unique string that identifies the request and that allows failed
-     * <code>CreateReusableDelegationSet</code> requests to be retried without
-     * the risk of executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you create a reusable
-     * delegation set. <code>CallerReference</code> can be any unique string;
-     * you might choose to use a string that identifies your project, such as
-     * <code>DNSMigration_01</code>.
-     * </p>
-     * <p>
-     * Valid characters are any Unicode code points that are legal in an XML 1.0
-     * document. The UTF-8 encoding of the value must be less than 128 bytes.
+     * A unique string that identifies the request, and that allows you to retry
+     * failed <code>CreateReusableDelegationSet</code> requests without the risk
+     * of executing the operation twice. You must use a unique
+     * <code>CallerReference</code> string every time you submit a
+     * <code>CreateReusableDelegationSet</code> request.
+     * <code>CallerReference</code> can be any unique string, for example a
+     * date/time stamp.
      * </p>
      * 
      * @param callerReference
-     *        A unique string that identifies the request and that allows failed
-     *        <code>CreateReusableDelegationSet</code> requests to be retried
+     *        A unique string that identifies the request, and that allows you
+     *        to retry failed <code>CreateReusableDelegationSet</code> requests
      *        without the risk of executing the operation twice. You must use a
-     *        unique <code>CallerReference</code> string every time you create a
-     *        reusable delegation set. <code>CallerReference</code> can be any
-     *        unique string; you might choose to use a string that identifies
-     *        your project, such as <code>DNSMigration_01</code>.</p>
-     *        <p>
-     *        Valid characters are any Unicode code points that are legal in an
-     *        XML 1.0 document. The UTF-8 encoding of the value must be less
-     *        than 128 bytes.
+     *        unique <code>CallerReference</code> string every time you submit a
+     *        <code>CreateReusableDelegationSet</code> request.
+     *        <code>CallerReference</code> can be any unique string, for example
+     *        a date/time stamp.
      */
 
     public void setCallerReference(String callerReference) {
@@ -82,31 +70,22 @@ public class CreateReusableDelegationSetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A unique string that identifies the request and that allows failed
-     * <code>CreateReusableDelegationSet</code> requests to be retried without
-     * the risk of executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you create a reusable
-     * delegation set. <code>CallerReference</code> can be any unique string;
-     * you might choose to use a string that identifies your project, such as
-     * <code>DNSMigration_01</code>.
-     * </p>
-     * <p>
-     * Valid characters are any Unicode code points that are legal in an XML 1.0
-     * document. The UTF-8 encoding of the value must be less than 128 bytes.
+     * A unique string that identifies the request, and that allows you to retry
+     * failed <code>CreateReusableDelegationSet</code> requests without the risk
+     * of executing the operation twice. You must use a unique
+     * <code>CallerReference</code> string every time you submit a
+     * <code>CreateReusableDelegationSet</code> request.
+     * <code>CallerReference</code> can be any unique string, for example a
+     * date/time stamp.
      * </p>
      * 
-     * @return A unique string that identifies the request and that allows
-     *         failed <code>CreateReusableDelegationSet</code> requests to be
-     *         retried without the risk of executing the operation twice. You
-     *         must use a unique <code>CallerReference</code> string every time
-     *         you create a reusable delegation set.
-     *         <code>CallerReference</code> can be any unique string; you might
-     *         choose to use a string that identifies your project, such as
-     *         <code>DNSMigration_01</code>.</p>
-     *         <p>
-     *         Valid characters are any Unicode code points that are legal in an
-     *         XML 1.0 document. The UTF-8 encoding of the value must be less
-     *         than 128 bytes.
+     * @return A unique string that identifies the request, and that allows you
+     *         to retry failed <code>CreateReusableDelegationSet</code> requests
+     *         without the risk of executing the operation twice. You must use a
+     *         unique <code>CallerReference</code> string every time you submit
+     *         a <code>CreateReusableDelegationSet</code> request.
+     *         <code>CallerReference</code> can be any unique string, for
+     *         example a date/time stamp.
      */
 
     public String getCallerReference() {
@@ -115,31 +94,23 @@ public class CreateReusableDelegationSetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A unique string that identifies the request and that allows failed
-     * <code>CreateReusableDelegationSet</code> requests to be retried without
-     * the risk of executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you create a reusable
-     * delegation set. <code>CallerReference</code> can be any unique string;
-     * you might choose to use a string that identifies your project, such as
-     * <code>DNSMigration_01</code>.
-     * </p>
-     * <p>
-     * Valid characters are any Unicode code points that are legal in an XML 1.0
-     * document. The UTF-8 encoding of the value must be less than 128 bytes.
+     * A unique string that identifies the request, and that allows you to retry
+     * failed <code>CreateReusableDelegationSet</code> requests without the risk
+     * of executing the operation twice. You must use a unique
+     * <code>CallerReference</code> string every time you submit a
+     * <code>CreateReusableDelegationSet</code> request.
+     * <code>CallerReference</code> can be any unique string, for example a
+     * date/time stamp.
      * </p>
      * 
      * @param callerReference
-     *        A unique string that identifies the request and that allows failed
-     *        <code>CreateReusableDelegationSet</code> requests to be retried
+     *        A unique string that identifies the request, and that allows you
+     *        to retry failed <code>CreateReusableDelegationSet</code> requests
      *        without the risk of executing the operation twice. You must use a
-     *        unique <code>CallerReference</code> string every time you create a
-     *        reusable delegation set. <code>CallerReference</code> can be any
-     *        unique string; you might choose to use a string that identifies
-     *        your project, such as <code>DNSMigration_01</code>.</p>
-     *        <p>
-     *        Valid characters are any Unicode code points that are legal in an
-     *        XML 1.0 document. The UTF-8 encoding of the value must be less
-     *        than 128 bytes.
+     *        unique <code>CallerReference</code> string every time you submit a
+     *        <code>CreateReusableDelegationSet</code> request.
+     *        <code>CallerReference</code> can be any unique string, for example
+     *        a date/time stamp.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -152,13 +123,13 @@ public class CreateReusableDelegationSetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the hosted zone whose delegation set you want to mark as
-     * reusable. It is an optional parameter.
+     * If you want to mark the delegation set for an existing hosted zone as
+     * reusable, the ID for that hosted zone.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID of the hosted zone whose delegation set you want to mark as
-     *        reusable. It is an optional parameter.
+     *        If you want to mark the delegation set for an existing hosted zone
+     *        as reusable, the ID for that hosted zone.
      */
 
     public void setHostedZoneId(String hostedZoneId) {
@@ -167,12 +138,12 @@ public class CreateReusableDelegationSetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the hosted zone whose delegation set you want to mark as
-     * reusable. It is an optional parameter.
+     * If you want to mark the delegation set for an existing hosted zone as
+     * reusable, the ID for that hosted zone.
      * </p>
      * 
-     * @return The ID of the hosted zone whose delegation set you want to mark
-     *         as reusable. It is an optional parameter.
+     * @return If you want to mark the delegation set for an existing hosted
+     *         zone as reusable, the ID for that hosted zone.
      */
 
     public String getHostedZoneId() {
@@ -181,13 +152,13 @@ public class CreateReusableDelegationSetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the hosted zone whose delegation set you want to mark as
-     * reusable. It is an optional parameter.
+     * If you want to mark the delegation set for an existing hosted zone as
+     * reusable, the ID for that hosted zone.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID of the hosted zone whose delegation set you want to mark as
-     *        reusable. It is an optional parameter.
+     *        If you want to mark the delegation set for an existing hosted zone
+     *        as reusable, the ID for that hosted zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

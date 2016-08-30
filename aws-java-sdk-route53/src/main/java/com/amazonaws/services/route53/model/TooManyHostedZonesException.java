@@ -16,10 +16,9 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * This error indicates that you've reached the maximum number of hosted zones
- * that can be created for the current AWS account. You can request an increase
- * to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
- * Us</a> page.
+ * This hosted zone cannot be created because the hosted zone limit is exceeded.
+ * To request a limit increase, go to the Amazon Route 53 <a
+ * href="http://aws.amazon.com/route53-request/">Contact Us</a> page.
  * </p>
  */
 public class TooManyHostedZonesException extends

@@ -25,8 +25,7 @@ public class GeoLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a continent geo location. Note: only continent locations
-     * have a continent code.
+     * The two-letter code for the continent.
      * </p>
      * <p>
      * Valid values: <code>AF</code> | <code>AN</code> | <code>AS</code> |
@@ -41,32 +40,21 @@ public class GeoLocation implements Serializable, Cloneable {
     private String continentCode;
     /**
      * <p>
-     * The code for a country geo location. The default location uses '*' for
-     * the country code and will match all locations that are not matched by a
-     * geo location.
-     * </p>
-     * <p>
-     * The default geo location uses a <code>*</code> for the country code. All
-     * other country codes follow the ISO 3166 two-character code.
+     * The two-letter code for the country.
      * </p>
      */
     private String countryCode;
     /**
      * <p>
-     * The code for a country's subdivision (e.g., a province of Canada). A
-     * subdivision code is only valid with the appropriate country code.
-     * </p>
-     * <p>
-     * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
+     * The code for the subdivision, for example, a state in the United States
+     * or a province in Canada.
      * </p>
      */
     private String subdivisionCode;
 
     /**
      * <p>
-     * The code for a continent geo location. Note: only continent locations
-     * have a continent code.
+     * The two-letter code for the continent.
      * </p>
      * <p>
      * Valid values: <code>AF</code> | <code>AN</code> | <code>AS</code> |
@@ -79,8 +67,7 @@ public class GeoLocation implements Serializable, Cloneable {
      * </p>
      * 
      * @param continentCode
-     *        The code for a continent geo location. Note: only continent
-     *        locations have a continent code.</p>
+     *        The two-letter code for the continent.</p>
      *        <p>
      *        Valid values: <code>AF</code> | <code>AN</code> | <code>AS</code>
      *        | <code>EU</code> | <code>OC</code> | <code>NA</code> |
@@ -98,8 +85,7 @@ public class GeoLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a continent geo location. Note: only continent locations
-     * have a continent code.
+     * The two-letter code for the continent.
      * </p>
      * <p>
      * Valid values: <code>AF</code> | <code>AN</code> | <code>AS</code> |
@@ -111,8 +97,7 @@ public class GeoLocation implements Serializable, Cloneable {
      * <code>InvalidInput</code> error.
      * </p>
      * 
-     * @return The code for a continent geo location. Note: only continent
-     *         locations have a continent code.</p>
+     * @return The two-letter code for the continent.</p>
      *         <p>
      *         Valid values: <code>AF</code> | <code>AN</code> | <code>AS</code>
      *         | <code>EU</code> | <code>OC</code> | <code>NA</code> |
@@ -130,8 +115,7 @@ public class GeoLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a continent geo location. Note: only continent locations
-     * have a continent code.
+     * The two-letter code for the continent.
      * </p>
      * <p>
      * Valid values: <code>AF</code> | <code>AN</code> | <code>AS</code> |
@@ -144,8 +128,7 @@ public class GeoLocation implements Serializable, Cloneable {
      * </p>
      * 
      * @param continentCode
-     *        The code for a continent geo location. Note: only continent
-     *        locations have a continent code.</p>
+     *        The two-letter code for the continent.</p>
      *        <p>
      *        Valid values: <code>AF</code> | <code>AN</code> | <code>AS</code>
      *        | <code>EU</code> | <code>OC</code> | <code>NA</code> |
@@ -166,23 +149,11 @@ public class GeoLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a country geo location. The default location uses '*' for
-     * the country code and will match all locations that are not matched by a
-     * geo location.
-     * </p>
-     * <p>
-     * The default geo location uses a <code>*</code> for the country code. All
-     * other country codes follow the ISO 3166 two-character code.
+     * The two-letter code for the country.
      * </p>
      * 
      * @param countryCode
-     *        The code for a country geo location. The default location uses '*'
-     *        for the country code and will match all locations that are not
-     *        matched by a geo location.</p>
-     *        <p>
-     *        The default geo location uses a <code>*</code> for the country
-     *        code. All other country codes follow the ISO 3166 two-character
-     *        code.
+     *        The two-letter code for the country.
      */
 
     public void setCountryCode(String countryCode) {
@@ -191,22 +162,10 @@ public class GeoLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a country geo location. The default location uses '*' for
-     * the country code and will match all locations that are not matched by a
-     * geo location.
-     * </p>
-     * <p>
-     * The default geo location uses a <code>*</code> for the country code. All
-     * other country codes follow the ISO 3166 two-character code.
+     * The two-letter code for the country.
      * </p>
      * 
-     * @return The code for a country geo location. The default location uses
-     *         '*' for the country code and will match all locations that are
-     *         not matched by a geo location.</p>
-     *         <p>
-     *         The default geo location uses a <code>*</code> for the country
-     *         code. All other country codes follow the ISO 3166 two-character
-     *         code.
+     * @return The two-letter code for the country.
      */
 
     public String getCountryCode() {
@@ -215,23 +174,11 @@ public class GeoLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a country geo location. The default location uses '*' for
-     * the country code and will match all locations that are not matched by a
-     * geo location.
-     * </p>
-     * <p>
-     * The default geo location uses a <code>*</code> for the country code. All
-     * other country codes follow the ISO 3166 two-character code.
+     * The two-letter code for the country.
      * </p>
      * 
      * @param countryCode
-     *        The code for a country geo location. The default location uses '*'
-     *        for the country code and will match all locations that are not
-     *        matched by a geo location.</p>
-     *        <p>
-     *        The default geo location uses a <code>*</code> for the country
-     *        code. All other country codes follow the ISO 3166 two-character
-     *        code.
+     *        The two-letter code for the country.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -243,22 +190,13 @@ public class GeoLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a country's subdivision (e.g., a province of Canada). A
-     * subdivision code is only valid with the appropriate country code.
-     * </p>
-     * <p>
-     * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
+     * The code for the subdivision, for example, a state in the United States
+     * or a province in Canada.
      * </p>
      * 
      * @param subdivisionCode
-     *        The code for a country's subdivision (e.g., a province of Canada).
-     *        A subdivision code is only valid with the appropriate country
-     *        code.</p>
-     *        <p>
-     *        Constraint: Specifying <code>SubdivisionCode</code> without
-     *        <code>CountryCode</code> returns an <code>InvalidInput</code>
-     *        error.
+     *        The code for the subdivision, for example, a state in the United
+     *        States or a province in Canada.
      */
 
     public void setSubdivisionCode(String subdivisionCode) {
@@ -267,21 +205,12 @@ public class GeoLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a country's subdivision (e.g., a province of Canada). A
-     * subdivision code is only valid with the appropriate country code.
-     * </p>
-     * <p>
-     * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
+     * The code for the subdivision, for example, a state in the United States
+     * or a province in Canada.
      * </p>
      * 
-     * @return The code for a country's subdivision (e.g., a province of
-     *         Canada). A subdivision code is only valid with the appropriate
-     *         country code.</p>
-     *         <p>
-     *         Constraint: Specifying <code>SubdivisionCode</code> without
-     *         <code>CountryCode</code> returns an <code>InvalidInput</code>
-     *         error.
+     * @return The code for the subdivision, for example, a state in the United
+     *         States or a province in Canada.
      */
 
     public String getSubdivisionCode() {
@@ -290,22 +219,13 @@ public class GeoLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a country's subdivision (e.g., a province of Canada). A
-     * subdivision code is only valid with the appropriate country code.
-     * </p>
-     * <p>
-     * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
+     * The code for the subdivision, for example, a state in the United States
+     * or a province in Canada.
      * </p>
      * 
      * @param subdivisionCode
-     *        The code for a country's subdivision (e.g., a province of Canada).
-     *        A subdivision code is only valid with the appropriate country
-     *        code.</p>
-     *        <p>
-     *        Constraint: Specifying <code>SubdivisionCode</code> without
-     *        <code>CountryCode</code> returns an <code>InvalidInput</code>
-     *        error.
+     *        The code for the subdivision, for example, a state in the United
+     *        States or a province in Canada.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

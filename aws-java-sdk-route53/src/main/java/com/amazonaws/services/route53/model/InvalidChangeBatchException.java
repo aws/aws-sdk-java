@@ -16,8 +16,8 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * This error contains a list of one or more error messages. Each error message
- * indicates one error in the change batch.
+ * This exception contains a list of messages that might contain one or more
+ * error messages. Each error message indicates one error in the change batch.
  * </p>
  */
 public class InvalidChangeBatchException extends

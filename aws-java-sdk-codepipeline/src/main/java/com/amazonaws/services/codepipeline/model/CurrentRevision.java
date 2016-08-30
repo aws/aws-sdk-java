@@ -35,6 +35,19 @@ public class CurrentRevision implements Serializable, Cloneable {
      * </p>
      */
     private String changeIdentifier;
+    /**
+     * <p>
+     * The date and time when the most recent revision of the artifact was
+     * created, in timestamp format.
+     * </p>
+     */
+    private java.util.Date created;
+    /**
+     * <p>
+     * The summary of the most recent revision of the artifact.
+     * </p>
+     */
+    private String revisionSummary;
 
     /**
      * <p>
@@ -119,6 +132,94 @@ public class CurrentRevision implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date and time when the most recent revision of the artifact was
+     * created, in timestamp format.
+     * </p>
+     * 
+     * @param created
+     *        The date and time when the most recent revision of the artifact
+     *        was created, in timestamp format.
+     */
+
+    public void setCreated(java.util.Date created) {
+        this.created = created;
+    }
+
+    /**
+     * <p>
+     * The date and time when the most recent revision of the artifact was
+     * created, in timestamp format.
+     * </p>
+     * 
+     * @return The date and time when the most recent revision of the artifact
+     *         was created, in timestamp format.
+     */
+
+    public java.util.Date getCreated() {
+        return this.created;
+    }
+
+    /**
+     * <p>
+     * The date and time when the most recent revision of the artifact was
+     * created, in timestamp format.
+     * </p>
+     * 
+     * @param created
+     *        The date and time when the most recent revision of the artifact
+     *        was created, in timestamp format.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CurrentRevision withCreated(java.util.Date created) {
+        setCreated(created);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The summary of the most recent revision of the artifact.
+     * </p>
+     * 
+     * @param revisionSummary
+     *        The summary of the most recent revision of the artifact.
+     */
+
+    public void setRevisionSummary(String revisionSummary) {
+        this.revisionSummary = revisionSummary;
+    }
+
+    /**
+     * <p>
+     * The summary of the most recent revision of the artifact.
+     * </p>
+     * 
+     * @return The summary of the most recent revision of the artifact.
+     */
+
+    public String getRevisionSummary() {
+        return this.revisionSummary;
+    }
+
+    /**
+     * <p>
+     * The summary of the most recent revision of the artifact.
+     * </p>
+     * 
+     * @param revisionSummary
+     *        The summary of the most recent revision of the artifact.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CurrentRevision withRevisionSummary(String revisionSummary) {
+        setRevisionSummary(revisionSummary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -133,7 +234,11 @@ public class CurrentRevision implements Serializable, Cloneable {
         if (getRevision() != null)
             sb.append("Revision: " + getRevision() + ",");
         if (getChangeIdentifier() != null)
-            sb.append("ChangeIdentifier: " + getChangeIdentifier());
+            sb.append("ChangeIdentifier: " + getChangeIdentifier() + ",");
+        if (getCreated() != null)
+            sb.append("Created: " + getCreated() + ",");
+        if (getRevisionSummary() != null)
+            sb.append("RevisionSummary: " + getRevisionSummary());
         sb.append("}");
         return sb.toString();
     }
@@ -160,6 +265,17 @@ public class CurrentRevision implements Serializable, Cloneable {
                 && other.getChangeIdentifier().equals(
                         this.getChangeIdentifier()) == false)
             return false;
+        if (other.getCreated() == null ^ this.getCreated() == null)
+            return false;
+        if (other.getCreated() != null
+                && other.getCreated().equals(this.getCreated()) == false)
+            return false;
+        if (other.getRevisionSummary() == null
+                ^ this.getRevisionSummary() == null)
+            return false;
+        if (other.getRevisionSummary() != null
+                && other.getRevisionSummary().equals(this.getRevisionSummary()) == false)
+            return false;
         return true;
     }
 
@@ -173,6 +289,12 @@ public class CurrentRevision implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getChangeIdentifier() == null) ? 0 : getChangeIdentifier()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getCreated() == null) ? 0 : getCreated().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRevisionSummary() == null) ? 0 : getRevisionSummary()
                         .hashCode());
         return hashCode;
     }

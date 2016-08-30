@@ -115,6 +115,8 @@ public enum Route53Actions implements Action {
             "route53:ListTrafficPolicyInstancesByPolicy"),
     /** Action for the ListTrafficPolicyVersions operation. */
     ListTrafficPolicyVersions("route53:ListTrafficPolicyVersions"),
+    /** Action for the TestDNSAnswer operation. */
+    TestDNSAnswer("route53:TestDNSAnswer"),
     /** Action for the UpdateHealthCheck operation. */
     UpdateHealthCheck("route53:UpdateHealthCheck"),
     /** Action for the UpdateHostedZoneComment operation. */

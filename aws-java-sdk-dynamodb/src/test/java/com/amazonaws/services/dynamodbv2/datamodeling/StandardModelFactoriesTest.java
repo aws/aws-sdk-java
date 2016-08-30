@@ -17,6 +17,7 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.DynamoDBAttributeType;
 import com.amazonaws.services.dynamodbv2.pojos.AutoKeyAndVal;
 import com.amazonaws.services.dynamodbv2.pojos.Currency;
 import com.amazonaws.services.dynamodbv2.pojos.DateRange;
@@ -77,7 +78,7 @@ public class StandardModelFactoriesTest {
         };
         final DynamoDBMapperTableModel<Object> model = models.getTableModel((Class<Object>)obj.getClass());
         final DynamoDBMapperFieldModel<Object,TimeZone> val = model.field("val");
-        assertEquals(ScalarAttributeType.S, val.scalarAttributeType());
+        assertEquals(DynamoDBAttributeType.S, val.attributeType());
         assertEquals("America/New_York", val.convert(TimeZone.getTimeZone("America/New_York")).getS());
         assertEquals("America/New_York", val.unconvert(new AttributeValue().withS("America/New_York")).getID());
     }
@@ -96,7 +97,7 @@ public class StandardModelFactoriesTest {
         };
         final DynamoDBMapperTableModel<Object> model = models.getTableModel((Class<Object>)obj.getClass());
         final DynamoDBMapperFieldModel<Object,Locale> val = model.field("val");
-        assertEquals(ScalarAttributeType.S, val.scalarAttributeType());
+        assertEquals(DynamoDBAttributeType.S, val.attributeType());
         assertEquals("en-CA", val.convert(new Locale("en","CA")).getS());
         assertEquals("en-CA", val.unconvert(new AttributeValue().withS("en-CA")).toString().replaceAll("_","-"));
     }
@@ -114,7 +115,7 @@ public class StandardModelFactoriesTest {
             public void setVal(final UUID val) { super.setVal(val); }
         };
         final DynamoDBMapperTableModel<Object> model = models.getTableModel((Class<Object>)obj.getClass());
-        assertEquals(ScalarAttributeType.B, model.field("val").scalarAttributeType());
+        assertEquals(DynamoDBAttributeType.B, model.field("val").attributeType());
         final UUID val = UUID.randomUUID();
         final AttributeValue converted = model.field("val").convert(val);
         assertNotNull(converted.getB());
@@ -952,7 +953,7 @@ public class StandardModelFactoriesTest {
     public void testFindRelevantGettersWithBridgeMethod() {
         final DynamoDBMapperTableModel<SubClass> model = models.getTableModel(SubClass.class);
         assertEquals("only two getter should be returned", 2, model.fields().size());
-        assertEquals("return type should be Integer rather than Object", ScalarAttributeType.N, model.field("t").scalarAttributeType());
+        assertEquals("return type should be Integer rather than Object", DynamoDBAttributeType.N, model.field("t").attributeType());
     }
     @DynamoDBTable(tableName = "")
     private static abstract class SuperGenericClass<T> {

@@ -65,6 +65,12 @@ import com.amazonaws.annotation.ThreadSafe;
  * </li>
  * <li>
  * <p>
+ * <a>GetPipelineExecution</a>, which returns information about a specific
+ * execution of a pipeline.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetPipelineState</a>, which returns information about the current state of
  * the stages and actions of a pipeline.
  * </p>
@@ -796,6 +802,41 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
 
                         try {
                             result = getPipeline(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPipelineExecutionResult> getPipelineExecutionAsync(
+            GetPipelineExecutionRequest request) {
+
+        return getPipelineExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPipelineExecutionResult> getPipelineExecutionAsync(
+            final GetPipelineExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPipelineExecutionRequest, GetPipelineExecutionResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetPipelineExecutionResult>() {
+                    @Override
+                    public GetPipelineExecutionResult call() throws Exception {
+                        GetPipelineExecutionResult result;
+
+                        try {
+                            result = getPipelineExecution(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

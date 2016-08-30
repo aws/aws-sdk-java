@@ -16,7 +16,7 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * The geo location you are trying to get does not exist.
+ * Amazon Route 53 doesn't support the specified geolocation.
  * </p>
  */
 public class NoSuchGeoLocationException extends

@@ -16,8 +16,7 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * Some value specified in the request is invalid or the XML document is
- * malformed.
+ * The input is not valid.
  * </p>
  */
 public class InvalidInputException extends

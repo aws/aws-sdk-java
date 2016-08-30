@@ -18,68 +18,58 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains information about a <code>GeoLocation</code>.
+ * A complex type that contains the codes and full continent, country, and
+ * subdivision names for the specified <code>geolocation</code> code.
  * </p>
  */
 public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a continent geo location. Note: only continent locations
-     * have a continent code.
+     * The two-letter code for the continent.
      * </p>
      */
     private String continentCode;
     /**
      * <p>
-     * The name of the continent. This element is only present if
-     * <code>ContinentCode</code> is also present.
+     * The full name of the continent.
      * </p>
      */
     private String continentName;
     /**
      * <p>
-     * The code for a country geo location. The default location uses '*' for
-     * the country code and will match all locations that are not matched by a
-     * geo location.
-     * </p>
-     * <p>
-     * The default geo location uses a <code>*</code> for the country code. All
-     * other country codes follow the ISO 3166 two-character code.
+     * The two-letter code for the country.
      * </p>
      */
     private String countryCode;
     /**
      * <p>
-     * The name of the country. This element is only present if
-     * <code>CountryCode</code> is also present.
+     * The name of the country.
      * </p>
      */
     private String countryName;
     /**
      * <p>
-     * The code for a country's subdivision (e.g., a province of Canada). A
-     * subdivision code is only valid with the appropriate country code.
+     * The code for the subdivision, for example, a state in the United States
+     * or a province in Canada.
      * </p>
      */
     private String subdivisionCode;
     /**
      * <p>
-     * The name of the subdivision. This element is only present if
-     * <code>SubdivisionCode</code> is also present.
+     * The full name of the subdivision, for example, a state in the United
+     * States or a province in Canada.
      * </p>
      */
     private String subdivisionName;
 
     /**
      * <p>
-     * The code for a continent geo location. Note: only continent locations
-     * have a continent code.
+     * The two-letter code for the continent.
      * </p>
      * 
      * @param continentCode
-     *        The code for a continent geo location. Note: only continent
-     *        locations have a continent code.
+     *        The two-letter code for the continent.
      */
 
     public void setContinentCode(String continentCode) {
@@ -88,12 +78,10 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a continent geo location. Note: only continent locations
-     * have a continent code.
+     * The two-letter code for the continent.
      * </p>
      * 
-     * @return The code for a continent geo location. Note: only continent
-     *         locations have a continent code.
+     * @return The two-letter code for the continent.
      */
 
     public String getContinentCode() {
@@ -102,13 +90,11 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a continent geo location. Note: only continent locations
-     * have a continent code.
+     * The two-letter code for the continent.
      * </p>
      * 
      * @param continentCode
-     *        The code for a continent geo location. Note: only continent
-     *        locations have a continent code.
+     *        The two-letter code for the continent.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -120,13 +106,11 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the continent. This element is only present if
-     * <code>ContinentCode</code> is also present.
+     * The full name of the continent.
      * </p>
      * 
      * @param continentName
-     *        The name of the continent. This element is only present if
-     *        <code>ContinentCode</code> is also present.
+     *        The full name of the continent.
      */
 
     public void setContinentName(String continentName) {
@@ -135,12 +119,10 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the continent. This element is only present if
-     * <code>ContinentCode</code> is also present.
+     * The full name of the continent.
      * </p>
      * 
-     * @return The name of the continent. This element is only present if
-     *         <code>ContinentCode</code> is also present.
+     * @return The full name of the continent.
      */
 
     public String getContinentName() {
@@ -149,13 +131,11 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the continent. This element is only present if
-     * <code>ContinentCode</code> is also present.
+     * The full name of the continent.
      * </p>
      * 
      * @param continentName
-     *        The name of the continent. This element is only present if
-     *        <code>ContinentCode</code> is also present.
+     *        The full name of the continent.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -167,23 +147,11 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a country geo location. The default location uses '*' for
-     * the country code and will match all locations that are not matched by a
-     * geo location.
-     * </p>
-     * <p>
-     * The default geo location uses a <code>*</code> for the country code. All
-     * other country codes follow the ISO 3166 two-character code.
+     * The two-letter code for the country.
      * </p>
      * 
      * @param countryCode
-     *        The code for a country geo location. The default location uses '*'
-     *        for the country code and will match all locations that are not
-     *        matched by a geo location.</p>
-     *        <p>
-     *        The default geo location uses a <code>*</code> for the country
-     *        code. All other country codes follow the ISO 3166 two-character
-     *        code.
+     *        The two-letter code for the country.
      */
 
     public void setCountryCode(String countryCode) {
@@ -192,22 +160,10 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a country geo location. The default location uses '*' for
-     * the country code and will match all locations that are not matched by a
-     * geo location.
-     * </p>
-     * <p>
-     * The default geo location uses a <code>*</code> for the country code. All
-     * other country codes follow the ISO 3166 two-character code.
+     * The two-letter code for the country.
      * </p>
      * 
-     * @return The code for a country geo location. The default location uses
-     *         '*' for the country code and will match all locations that are
-     *         not matched by a geo location.</p>
-     *         <p>
-     *         The default geo location uses a <code>*</code> for the country
-     *         code. All other country codes follow the ISO 3166 two-character
-     *         code.
+     * @return The two-letter code for the country.
      */
 
     public String getCountryCode() {
@@ -216,23 +172,11 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a country geo location. The default location uses '*' for
-     * the country code and will match all locations that are not matched by a
-     * geo location.
-     * </p>
-     * <p>
-     * The default geo location uses a <code>*</code> for the country code. All
-     * other country codes follow the ISO 3166 two-character code.
+     * The two-letter code for the country.
      * </p>
      * 
      * @param countryCode
-     *        The code for a country geo location. The default location uses '*'
-     *        for the country code and will match all locations that are not
-     *        matched by a geo location.</p>
-     *        <p>
-     *        The default geo location uses a <code>*</code> for the country
-     *        code. All other country codes follow the ISO 3166 two-character
-     *        code.
+     *        The two-letter code for the country.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -244,13 +188,11 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the country. This element is only present if
-     * <code>CountryCode</code> is also present.
+     * The name of the country.
      * </p>
      * 
      * @param countryName
-     *        The name of the country. This element is only present if
-     *        <code>CountryCode</code> is also present.
+     *        The name of the country.
      */
 
     public void setCountryName(String countryName) {
@@ -259,12 +201,10 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the country. This element is only present if
-     * <code>CountryCode</code> is also present.
+     * The name of the country.
      * </p>
      * 
-     * @return The name of the country. This element is only present if
-     *         <code>CountryCode</code> is also present.
+     * @return The name of the country.
      */
 
     public String getCountryName() {
@@ -273,13 +213,11 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the country. This element is only present if
-     * <code>CountryCode</code> is also present.
+     * The name of the country.
      * </p>
      * 
      * @param countryName
-     *        The name of the country. This element is only present if
-     *        <code>CountryCode</code> is also present.
+     *        The name of the country.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -291,14 +229,13 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a country's subdivision (e.g., a province of Canada). A
-     * subdivision code is only valid with the appropriate country code.
+     * The code for the subdivision, for example, a state in the United States
+     * or a province in Canada.
      * </p>
      * 
      * @param subdivisionCode
-     *        The code for a country's subdivision (e.g., a province of Canada).
-     *        A subdivision code is only valid with the appropriate country
-     *        code.
+     *        The code for the subdivision, for example, a state in the United
+     *        States or a province in Canada.
      */
 
     public void setSubdivisionCode(String subdivisionCode) {
@@ -307,13 +244,12 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a country's subdivision (e.g., a province of Canada). A
-     * subdivision code is only valid with the appropriate country code.
+     * The code for the subdivision, for example, a state in the United States
+     * or a province in Canada.
      * </p>
      * 
-     * @return The code for a country's subdivision (e.g., a province of
-     *         Canada). A subdivision code is only valid with the appropriate
-     *         country code.
+     * @return The code for the subdivision, for example, a state in the United
+     *         States or a province in Canada.
      */
 
     public String getSubdivisionCode() {
@@ -322,14 +258,13 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for a country's subdivision (e.g., a province of Canada). A
-     * subdivision code is only valid with the appropriate country code.
+     * The code for the subdivision, for example, a state in the United States
+     * or a province in Canada.
      * </p>
      * 
      * @param subdivisionCode
-     *        The code for a country's subdivision (e.g., a province of Canada).
-     *        A subdivision code is only valid with the appropriate country
-     *        code.
+     *        The code for the subdivision, for example, a state in the United
+     *        States or a province in Canada.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -341,13 +276,13 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the subdivision. This element is only present if
-     * <code>SubdivisionCode</code> is also present.
+     * The full name of the subdivision, for example, a state in the United
+     * States or a province in Canada.
      * </p>
      * 
      * @param subdivisionName
-     *        The name of the subdivision. This element is only present if
-     *        <code>SubdivisionCode</code> is also present.
+     *        The full name of the subdivision, for example, a state in the
+     *        United States or a province in Canada.
      */
 
     public void setSubdivisionName(String subdivisionName) {
@@ -356,12 +291,12 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the subdivision. This element is only present if
-     * <code>SubdivisionCode</code> is also present.
+     * The full name of the subdivision, for example, a state in the United
+     * States or a province in Canada.
      * </p>
      * 
-     * @return The name of the subdivision. This element is only present if
-     *         <code>SubdivisionCode</code> is also present.
+     * @return The full name of the subdivision, for example, a state in the
+     *         United States or a province in Canada.
      */
 
     public String getSubdivisionName() {
@@ -370,13 +305,13 @@ public class GeoLocationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the subdivision. This element is only present if
-     * <code>SubdivisionCode</code> is also present.
+     * The full name of the subdivision, for example, a state in the United
+     * States or a province in Canada.
      * </p>
      * 
      * @param subdivisionName
-     *        The name of the subdivision. This element is only present if
-     *        <code>SubdivisionCode</code> is also present.
+     *        The full name of the subdivision, for example, a state in the
+     *        United States or a province in Canada.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

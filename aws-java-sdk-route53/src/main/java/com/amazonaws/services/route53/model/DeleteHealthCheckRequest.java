@@ -19,26 +19,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type containing the request information for delete health check.
+ * This action deletes a health check. Send a <code>DELETE</code> request to the
+ * <code>/2013-04-01/DeleteHealthCheckRequest</code> resource.
  * </p>
  */
 public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
-    /**
-     * <p>
-     * The ID of the health check to delete.
-     * </p>
-     */
     private String healthCheckId;
 
     /**
-     * <p>
-     * The ID of the health check to delete.
-     * </p>
-     * 
      * @param healthCheckId
-     *        The ID of the health check to delete.
      */
 
     public void setHealthCheckId(String healthCheckId) {
@@ -46,11 +37,7 @@ public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * <p>
-     * The ID of the health check to delete.
-     * </p>
-     * 
-     * @return The ID of the health check to delete.
+     * @return
      */
 
     public String getHealthCheckId() {
@@ -58,12 +45,7 @@ public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * <p>
-     * The ID of the health check to delete.
-     * </p>
-     * 
      * @param healthCheckId
-     *        The ID of the health check to delete.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

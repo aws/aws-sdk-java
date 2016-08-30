@@ -18,92 +18,84 @@ import java.io.Serializable;
 
 /**
  * <p>
- * For CLOUDWATCH_METRIC health checks, a complex type that contains information
- * about the CloudWatch alarm that you're associating with the health check.
+ * A complex type that contains information about the CloudWatch alarm that
+ * Amazon Route 53 is monitoring for this health check.
  * </p>
  */
 public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of periods over which data is compared to the specified
-     * threshold.
+     * For the metric that the CloudWatch alarm is associated with, the number
+     * of periods that the metric is compared to the threshold.
      * </p>
      */
     private Integer evaluationPeriods;
     /**
      * <p>
-     * The value that the metric is compared with to determine the state of the
-     * alarm. For example, if you want the health check to fail if the average
-     * TCP connection time is greater than 500 milliseconds for more than 60
-     * seconds, the threshold is 500.
+     * For the metric that the CloudWatch alarm is associated with, the value
+     * the metric is compared with.
      * </p>
      */
     private Double threshold;
     /**
      * <p>
-     * The arithmetic operation to use when comparing the specified Statistic
-     * and Threshold.
-     * </p>
-     * <p>
-     * Valid Values are <code>GreaterThanOrEqualToThreshold</code>,
-     * <code>GreaterThanThreshold</code>, <code>LessThanThreshold</code> and
-     * <code>LessThanOrEqualToThreshold</code>
+     * For the metric that the CloudWatch alarm is associated with, the
+     * arithmetic operation that is used for the comparison.
      * </p>
      */
     private String comparisonOperator;
     /**
      * <p>
-     * An integer that represents the period in seconds over which the statistic
-     * is applied.
+     * For the metric that the CloudWatch alarm is associated with, the duration
+     * of one evaluation period in seconds.
      * </p>
      */
     private Integer period;
     /**
      * <p>
-     * The name of the CloudWatch metric that is associated with the CloudWatch
-     * alarm.
+     * The name of the CloudWatch metric that the alarm is associated with.
      * </p>
      */
     private String metricName;
     /**
      * <p>
-     * The namespace of the CloudWatch metric that is associated with the
-     * CloudWatch alarm.
+     * The namespace of the metric that the alarm is associated with. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     * >Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in
+     * the <i>Amazon CloudWatch Developer Guide</i>.
      * </p>
      */
     private String namespace;
     /**
      * <p>
-     * The statistic to apply to the CloudWatch metric that is associated with
-     * the CloudWatch alarm.
-     * </p>
-     * <p>
-     * Valid Values are <code>SampleCount</code>, <code>Average</code>,
-     * <code>Sum</code>, <code>Minimum</code> and <code>Maximum</code>
+     * For the metric that the CloudWatch alarm is associated with, the
+     * statistic that is applied to the metric.
      * </p>
      */
     private String statistic;
     /**
      * <p>
-     * A list of <code>Dimension</code> elements for the CloudWatch metric that
-     * is associated with the CloudWatch alarm. For information about the
-     * metrics and dimensions that CloudWatch supports, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
-     * >Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a>.
+     * For the metric that the CloudWatch alarm is associated with, a complex
+     * type that contains information about the dimensions for the metric.For
+     * information, see <a href=
+     * " http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     * >Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in
+     * the <i>Amazon CloudWatch Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Dimension> dimensions;
 
     /**
      * <p>
-     * The number of periods over which data is compared to the specified
-     * threshold.
+     * For the metric that the CloudWatch alarm is associated with, the number
+     * of periods that the metric is compared to the threshold.
      * </p>
      * 
      * @param evaluationPeriods
-     *        The number of periods over which data is compared to the specified
-     *        threshold.
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        number of periods that the metric is compared to the threshold.
      */
 
     public void setEvaluationPeriods(Integer evaluationPeriods) {
@@ -112,12 +104,12 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of periods over which data is compared to the specified
-     * threshold.
+     * For the metric that the CloudWatch alarm is associated with, the number
+     * of periods that the metric is compared to the threshold.
      * </p>
      * 
-     * @return The number of periods over which data is compared to the
-     *         specified threshold.
+     * @return For the metric that the CloudWatch alarm is associated with, the
+     *         number of periods that the metric is compared to the threshold.
      */
 
     public Integer getEvaluationPeriods() {
@@ -126,13 +118,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of periods over which data is compared to the specified
-     * threshold.
+     * For the metric that the CloudWatch alarm is associated with, the number
+     * of periods that the metric is compared to the threshold.
      * </p>
      * 
      * @param evaluationPeriods
-     *        The number of periods over which data is compared to the specified
-     *        threshold.
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        number of periods that the metric is compared to the threshold.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -145,17 +137,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value that the metric is compared with to determine the state of the
-     * alarm. For example, if you want the health check to fail if the average
-     * TCP connection time is greater than 500 milliseconds for more than 60
-     * seconds, the threshold is 500.
+     * For the metric that the CloudWatch alarm is associated with, the value
+     * the metric is compared with.
      * </p>
      * 
      * @param threshold
-     *        The value that the metric is compared with to determine the state
-     *        of the alarm. For example, if you want the health check to fail if
-     *        the average TCP connection time is greater than 500 milliseconds
-     *        for more than 60 seconds, the threshold is 500.
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        value the metric is compared with.
      */
 
     public void setThreshold(Double threshold) {
@@ -164,16 +152,12 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value that the metric is compared with to determine the state of the
-     * alarm. For example, if you want the health check to fail if the average
-     * TCP connection time is greater than 500 milliseconds for more than 60
-     * seconds, the threshold is 500.
+     * For the metric that the CloudWatch alarm is associated with, the value
+     * the metric is compared with.
      * </p>
      * 
-     * @return The value that the metric is compared with to determine the state
-     *         of the alarm. For example, if you want the health check to fail
-     *         if the average TCP connection time is greater than 500
-     *         milliseconds for more than 60 seconds, the threshold is 500.
+     * @return For the metric that the CloudWatch alarm is associated with, the
+     *         value the metric is compared with.
      */
 
     public Double getThreshold() {
@@ -182,17 +166,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value that the metric is compared with to determine the state of the
-     * alarm. For example, if you want the health check to fail if the average
-     * TCP connection time is greater than 500 milliseconds for more than 60
-     * seconds, the threshold is 500.
+     * For the metric that the CloudWatch alarm is associated with, the value
+     * the metric is compared with.
      * </p>
      * 
      * @param threshold
-     *        The value that the metric is compared with to determine the state
-     *        of the alarm. For example, if you want the health check to fail if
-     *        the average TCP connection time is greater than 500 milliseconds
-     *        for more than 60 seconds, the threshold is 500.
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        value the metric is compared with.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -204,22 +184,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The arithmetic operation to use when comparing the specified Statistic
-     * and Threshold.
-     * </p>
-     * <p>
-     * Valid Values are <code>GreaterThanOrEqualToThreshold</code>,
-     * <code>GreaterThanThreshold</code>, <code>LessThanThreshold</code> and
-     * <code>LessThanOrEqualToThreshold</code>
+     * For the metric that the CloudWatch alarm is associated with, the
+     * arithmetic operation that is used for the comparison.
      * </p>
      * 
      * @param comparisonOperator
-     *        The arithmetic operation to use when comparing the specified
-     *        Statistic and Threshold.</p>
-     *        <p>
-     *        Valid Values are <code>GreaterThanOrEqualToThreshold</code>,
-     *        <code>GreaterThanThreshold</code>, <code>LessThanThreshold</code>
-     *        and <code>LessThanOrEqualToThreshold</code>
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        arithmetic operation that is used for the comparison.
      * @see ComparisonOperator
      */
 
@@ -229,21 +200,12 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The arithmetic operation to use when comparing the specified Statistic
-     * and Threshold.
-     * </p>
-     * <p>
-     * Valid Values are <code>GreaterThanOrEqualToThreshold</code>,
-     * <code>GreaterThanThreshold</code>, <code>LessThanThreshold</code> and
-     * <code>LessThanOrEqualToThreshold</code>
+     * For the metric that the CloudWatch alarm is associated with, the
+     * arithmetic operation that is used for the comparison.
      * </p>
      * 
-     * @return The arithmetic operation to use when comparing the specified
-     *         Statistic and Threshold.</p>
-     *         <p>
-     *         Valid Values are <code>GreaterThanOrEqualToThreshold</code>,
-     *         <code>GreaterThanThreshold</code>, <code>LessThanThreshold</code>
-     *         and <code>LessThanOrEqualToThreshold</code>
+     * @return For the metric that the CloudWatch alarm is associated with, the
+     *         arithmetic operation that is used for the comparison.
      * @see ComparisonOperator
      */
 
@@ -253,22 +215,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The arithmetic operation to use when comparing the specified Statistic
-     * and Threshold.
-     * </p>
-     * <p>
-     * Valid Values are <code>GreaterThanOrEqualToThreshold</code>,
-     * <code>GreaterThanThreshold</code>, <code>LessThanThreshold</code> and
-     * <code>LessThanOrEqualToThreshold</code>
+     * For the metric that the CloudWatch alarm is associated with, the
+     * arithmetic operation that is used for the comparison.
      * </p>
      * 
      * @param comparisonOperator
-     *        The arithmetic operation to use when comparing the specified
-     *        Statistic and Threshold.</p>
-     *        <p>
-     *        Valid Values are <code>GreaterThanOrEqualToThreshold</code>,
-     *        <code>GreaterThanThreshold</code>, <code>LessThanThreshold</code>
-     *        and <code>LessThanOrEqualToThreshold</code>
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        arithmetic operation that is used for the comparison.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ComparisonOperator
@@ -282,22 +235,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The arithmetic operation to use when comparing the specified Statistic
-     * and Threshold.
-     * </p>
-     * <p>
-     * Valid Values are <code>GreaterThanOrEqualToThreshold</code>,
-     * <code>GreaterThanThreshold</code>, <code>LessThanThreshold</code> and
-     * <code>LessThanOrEqualToThreshold</code>
+     * For the metric that the CloudWatch alarm is associated with, the
+     * arithmetic operation that is used for the comparison.
      * </p>
      * 
      * @param comparisonOperator
-     *        The arithmetic operation to use when comparing the specified
-     *        Statistic and Threshold.</p>
-     *        <p>
-     *        Valid Values are <code>GreaterThanOrEqualToThreshold</code>,
-     *        <code>GreaterThanThreshold</code>, <code>LessThanThreshold</code>
-     *        and <code>LessThanOrEqualToThreshold</code>
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        arithmetic operation that is used for the comparison.
      * @see ComparisonOperator
      */
 
@@ -307,22 +251,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The arithmetic operation to use when comparing the specified Statistic
-     * and Threshold.
-     * </p>
-     * <p>
-     * Valid Values are <code>GreaterThanOrEqualToThreshold</code>,
-     * <code>GreaterThanThreshold</code>, <code>LessThanThreshold</code> and
-     * <code>LessThanOrEqualToThreshold</code>
+     * For the metric that the CloudWatch alarm is associated with, the
+     * arithmetic operation that is used for the comparison.
      * </p>
      * 
      * @param comparisonOperator
-     *        The arithmetic operation to use when comparing the specified
-     *        Statistic and Threshold.</p>
-     *        <p>
-     *        Valid Values are <code>GreaterThanOrEqualToThreshold</code>,
-     *        <code>GreaterThanThreshold</code>, <code>LessThanThreshold</code>
-     *        and <code>LessThanOrEqualToThreshold</code>
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        arithmetic operation that is used for the comparison.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ComparisonOperator
@@ -336,13 +271,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An integer that represents the period in seconds over which the statistic
-     * is applied.
+     * For the metric that the CloudWatch alarm is associated with, the duration
+     * of one evaluation period in seconds.
      * </p>
      * 
      * @param period
-     *        An integer that represents the period in seconds over which the
-     *        statistic is applied.
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        duration of one evaluation period in seconds.
      */
 
     public void setPeriod(Integer period) {
@@ -351,12 +286,12 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An integer that represents the period in seconds over which the statistic
-     * is applied.
+     * For the metric that the CloudWatch alarm is associated with, the duration
+     * of one evaluation period in seconds.
      * </p>
      * 
-     * @return An integer that represents the period in seconds over which the
-     *         statistic is applied.
+     * @return For the metric that the CloudWatch alarm is associated with, the
+     *         duration of one evaluation period in seconds.
      */
 
     public Integer getPeriod() {
@@ -365,13 +300,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An integer that represents the period in seconds over which the statistic
-     * is applied.
+     * For the metric that the CloudWatch alarm is associated with, the duration
+     * of one evaluation period in seconds.
      * </p>
      * 
      * @param period
-     *        An integer that represents the period in seconds over which the
-     *        statistic is applied.
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        duration of one evaluation period in seconds.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -383,13 +318,12 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the CloudWatch metric that is associated with the CloudWatch
-     * alarm.
+     * The name of the CloudWatch metric that the alarm is associated with.
      * </p>
      * 
      * @param metricName
-     *        The name of the CloudWatch metric that is associated with the
-     *        CloudWatch alarm.
+     *        The name of the CloudWatch metric that the alarm is associated
+     *        with.
      */
 
     public void setMetricName(String metricName) {
@@ -398,12 +332,11 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the CloudWatch metric that is associated with the CloudWatch
-     * alarm.
+     * The name of the CloudWatch metric that the alarm is associated with.
      * </p>
      * 
-     * @return The name of the CloudWatch metric that is associated with the
-     *         CloudWatch alarm.
+     * @return The name of the CloudWatch metric that the alarm is associated
+     *         with.
      */
 
     public String getMetricName() {
@@ -412,13 +345,12 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the CloudWatch metric that is associated with the CloudWatch
-     * alarm.
+     * The name of the CloudWatch metric that the alarm is associated with.
      * </p>
      * 
      * @param metricName
-     *        The name of the CloudWatch metric that is associated with the
-     *        CloudWatch alarm.
+     *        The name of the CloudWatch metric that the alarm is associated
+     *        with.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -430,13 +362,19 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The namespace of the CloudWatch metric that is associated with the
-     * CloudWatch alarm.
+     * The namespace of the metric that the alarm is associated with. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     * >Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in
+     * the <i>Amazon CloudWatch Developer Guide</i>.
      * </p>
      * 
      * @param namespace
-     *        The namespace of the CloudWatch metric that is associated with the
-     *        CloudWatch alarm.
+     *        The namespace of the metric that the alarm is associated with. For
+     *        more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     *        >Amazon CloudWatch Namespaces, Dimensions, and Metrics
+     *        Reference</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      */
 
     public void setNamespace(String namespace) {
@@ -445,12 +383,18 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The namespace of the CloudWatch metric that is associated with the
-     * CloudWatch alarm.
+     * The namespace of the metric that the alarm is associated with. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     * >Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in
+     * the <i>Amazon CloudWatch Developer Guide</i>.
      * </p>
      * 
-     * @return The namespace of the CloudWatch metric that is associated with
-     *         the CloudWatch alarm.
+     * @return The namespace of the metric that the alarm is associated with.
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     *         >Amazon CloudWatch Namespaces, Dimensions, and Metrics
+     *         Reference</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      */
 
     public String getNamespace() {
@@ -459,13 +403,19 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The namespace of the CloudWatch metric that is associated with the
-     * CloudWatch alarm.
+     * The namespace of the metric that the alarm is associated with. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     * >Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in
+     * the <i>Amazon CloudWatch Developer Guide</i>.
      * </p>
      * 
      * @param namespace
-     *        The namespace of the CloudWatch metric that is associated with the
-     *        CloudWatch alarm.
+     *        The namespace of the metric that the alarm is associated with. For
+     *        more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     *        >Amazon CloudWatch Namespaces, Dimensions, and Metrics
+     *        Reference</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -477,20 +427,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The statistic to apply to the CloudWatch metric that is associated with
-     * the CloudWatch alarm.
-     * </p>
-     * <p>
-     * Valid Values are <code>SampleCount</code>, <code>Average</code>,
-     * <code>Sum</code>, <code>Minimum</code> and <code>Maximum</code>
+     * For the metric that the CloudWatch alarm is associated with, the
+     * statistic that is applied to the metric.
      * </p>
      * 
      * @param statistic
-     *        The statistic to apply to the CloudWatch metric that is associated
-     *        with the CloudWatch alarm.</p>
-     *        <p>
-     *        Valid Values are <code>SampleCount</code>, <code>Average</code>,
-     *        <code>Sum</code>, <code>Minimum</code> and <code>Maximum</code>
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        statistic that is applied to the metric.
      * @see Statistic
      */
 
@@ -500,19 +443,12 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The statistic to apply to the CloudWatch metric that is associated with
-     * the CloudWatch alarm.
-     * </p>
-     * <p>
-     * Valid Values are <code>SampleCount</code>, <code>Average</code>,
-     * <code>Sum</code>, <code>Minimum</code> and <code>Maximum</code>
+     * For the metric that the CloudWatch alarm is associated with, the
+     * statistic that is applied to the metric.
      * </p>
      * 
-     * @return The statistic to apply to the CloudWatch metric that is
-     *         associated with the CloudWatch alarm.</p>
-     *         <p>
-     *         Valid Values are <code>SampleCount</code>, <code>Average</code>,
-     *         <code>Sum</code>, <code>Minimum</code> and <code>Maximum</code>
+     * @return For the metric that the CloudWatch alarm is associated with, the
+     *         statistic that is applied to the metric.
      * @see Statistic
      */
 
@@ -522,20 +458,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The statistic to apply to the CloudWatch metric that is associated with
-     * the CloudWatch alarm.
-     * </p>
-     * <p>
-     * Valid Values are <code>SampleCount</code>, <code>Average</code>,
-     * <code>Sum</code>, <code>Minimum</code> and <code>Maximum</code>
+     * For the metric that the CloudWatch alarm is associated with, the
+     * statistic that is applied to the metric.
      * </p>
      * 
      * @param statistic
-     *        The statistic to apply to the CloudWatch metric that is associated
-     *        with the CloudWatch alarm.</p>
-     *        <p>
-     *        Valid Values are <code>SampleCount</code>, <code>Average</code>,
-     *        <code>Sum</code>, <code>Minimum</code> and <code>Maximum</code>
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        statistic that is applied to the metric.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Statistic
@@ -548,20 +477,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The statistic to apply to the CloudWatch metric that is associated with
-     * the CloudWatch alarm.
-     * </p>
-     * <p>
-     * Valid Values are <code>SampleCount</code>, <code>Average</code>,
-     * <code>Sum</code>, <code>Minimum</code> and <code>Maximum</code>
+     * For the metric that the CloudWatch alarm is associated with, the
+     * statistic that is applied to the metric.
      * </p>
      * 
      * @param statistic
-     *        The statistic to apply to the CloudWatch metric that is associated
-     *        with the CloudWatch alarm.</p>
-     *        <p>
-     *        Valid Values are <code>SampleCount</code>, <code>Average</code>,
-     *        <code>Sum</code>, <code>Minimum</code> and <code>Maximum</code>
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        statistic that is applied to the metric.
      * @see Statistic
      */
 
@@ -571,20 +493,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The statistic to apply to the CloudWatch metric that is associated with
-     * the CloudWatch alarm.
-     * </p>
-     * <p>
-     * Valid Values are <code>SampleCount</code>, <code>Average</code>,
-     * <code>Sum</code>, <code>Minimum</code> and <code>Maximum</code>
+     * For the metric that the CloudWatch alarm is associated with, the
+     * statistic that is applied to the metric.
      * </p>
      * 
      * @param statistic
-     *        The statistic to apply to the CloudWatch metric that is associated
-     *        with the CloudWatch alarm.</p>
-     *        <p>
-     *        Valid Values are <code>SampleCount</code>, <code>Average</code>,
-     *        <code>Sum</code>, <code>Minimum</code> and <code>Maximum</code>
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        statistic that is applied to the metric.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Statistic
@@ -597,20 +512,20 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code>Dimension</code> elements for the CloudWatch metric that
-     * is associated with the CloudWatch alarm. For information about the
-     * metrics and dimensions that CloudWatch supports, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
-     * >Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a>.
+     * For the metric that the CloudWatch alarm is associated with, a complex
+     * type that contains information about the dimensions for the metric.For
+     * information, see <a href=
+     * " http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     * >Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in
+     * the <i>Amazon CloudWatch Developer Guide</i>.
      * </p>
      * 
-     * @return A list of <code>Dimension</code> elements for the CloudWatch
-     *         metric that is associated with the CloudWatch alarm. For
-     *         information about the metrics and dimensions that CloudWatch
-     *         supports, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     * @return For the metric that the CloudWatch alarm is associated with, a
+     *         complex type that contains information about the dimensions for
+     *         the metric.For information, see <a href=
+     *         " http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
      *         >Amazon CloudWatch Namespaces, Dimensions, and Metrics
-     *         Reference</a>.
+     *         Reference</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      */
 
     public java.util.List<Dimension> getDimensions() {
@@ -622,21 +537,21 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code>Dimension</code> elements for the CloudWatch metric that
-     * is associated with the CloudWatch alarm. For information about the
-     * metrics and dimensions that CloudWatch supports, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
-     * >Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a>.
+     * For the metric that the CloudWatch alarm is associated with, a complex
+     * type that contains information about the dimensions for the metric.For
+     * information, see <a href=
+     * " http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     * >Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in
+     * the <i>Amazon CloudWatch Developer Guide</i>.
      * </p>
      * 
      * @param dimensions
-     *        A list of <code>Dimension</code> elements for the CloudWatch
-     *        metric that is associated with the CloudWatch alarm. For
-     *        information about the metrics and dimensions that CloudWatch
-     *        supports, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     *        For the metric that the CloudWatch alarm is associated with, a
+     *        complex type that contains information about the dimensions for
+     *        the metric.For information, see <a href=
+     *        " http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
      *        >Amazon CloudWatch Namespaces, Dimensions, and Metrics
-     *        Reference</a>.
+     *        Reference</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      */
 
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
@@ -651,11 +566,12 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code>Dimension</code> elements for the CloudWatch metric that
-     * is associated with the CloudWatch alarm. For information about the
-     * metrics and dimensions that CloudWatch supports, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
-     * >Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a>.
+     * For the metric that the CloudWatch alarm is associated with, a complex
+     * type that contains information about the dimensions for the metric.For
+     * information, see <a href=
+     * " http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     * >Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in
+     * the <i>Amazon CloudWatch Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -665,13 +581,12 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param dimensions
-     *        A list of <code>Dimension</code> elements for the CloudWatch
-     *        metric that is associated with the CloudWatch alarm. For
-     *        information about the metrics and dimensions that CloudWatch
-     *        supports, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     *        For the metric that the CloudWatch alarm is associated with, a
+     *        complex type that contains information about the dimensions for
+     *        the metric.For information, see <a href=
+     *        " http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
      *        >Amazon CloudWatch Namespaces, Dimensions, and Metrics
-     *        Reference</a>.
+     *        Reference</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -689,21 +604,21 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code>Dimension</code> elements for the CloudWatch metric that
-     * is associated with the CloudWatch alarm. For information about the
-     * metrics and dimensions that CloudWatch supports, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
-     * >Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a>.
+     * For the metric that the CloudWatch alarm is associated with, a complex
+     * type that contains information about the dimensions for the metric.For
+     * information, see <a href=
+     * " http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     * >Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in
+     * the <i>Amazon CloudWatch Developer Guide</i>.
      * </p>
      * 
      * @param dimensions
-     *        A list of <code>Dimension</code> elements for the CloudWatch
-     *        metric that is associated with the CloudWatch alarm. For
-     *        information about the metrics and dimensions that CloudWatch
-     *        supports, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     *        For the metric that the CloudWatch alarm is associated with, a
+     *        complex type that contains information about the dimensions for
+     *        the metric.For information, see <a href=
+     *        " http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
      *        >Amazon CloudWatch Namespaces, Dimensions, and Metrics
-     *        Reference</a>.
+     *        Reference</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

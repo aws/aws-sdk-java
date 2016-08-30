@@ -25,6 +25,7 @@ public enum RRType {
     NS("NS"),
     CNAME("CNAME"),
     MX("MX"),
+    NAPTR("NAPTR"),
     PTR("PTR"),
     SRV("SRV"),
     SPF("SPF"),

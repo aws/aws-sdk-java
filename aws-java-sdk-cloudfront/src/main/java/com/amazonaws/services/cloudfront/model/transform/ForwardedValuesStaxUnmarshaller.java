@@ -66,6 +66,13 @@ public class ForwardedValuesStaxUnmarshaller implements
                             .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("QueryStringCacheKeys", targetDepth)) {
+                    forwardedValues
+                            .setQueryStringCacheKeys(QueryStringCacheKeysStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return forwardedValues;

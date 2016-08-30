@@ -61,7 +61,7 @@ public class UpdateDistributionRequestMarshaller
                     .fromString(updateDistributionRequest.getIfMatch()));
         }
 
-        String uriResourcePath = "/2016-08-01/distribution/{Id}/config";
+        String uriResourcePath = "/2016-08-20/distribution/{Id}/config";
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
@@ -74,7 +74,7 @@ public class UpdateDistributionRequestMarshaller
         try {
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter,
-                    "http://cloudfront.amazonaws.com/doc/2016-08-01/");
+                    "http://cloudfront.amazonaws.com/doc/2016-08-20/");
 
             DistributionConfig distributionConfig = updateDistributionRequest
                     .getDistributionConfig();
@@ -381,6 +381,36 @@ public class UpdateDistributionRequestMarshaller
                             }
                             xmlWriter.endElement();
                         }
+
+                        QueryStringCacheKeys queryStringCacheKeys = forwardedValues
+                                .getQueryStringCacheKeys();
+                        if (queryStringCacheKeys != null) {
+                            xmlWriter.startElement("QueryStringCacheKeys");
+
+                            if (queryStringCacheKeys.getQuantity() != null) {
+                                xmlWriter
+                                        .startElement("Quantity")
+                                        .value(queryStringCacheKeys
+                                                .getQuantity()).endElement();
+                            }
+
+                            com.amazonaws.internal.SdkInternalList<String> queryStringCacheKeysItemsList = (com.amazonaws.internal.SdkInternalList<String>) queryStringCacheKeys
+                                    .getItems();
+                            if (!queryStringCacheKeysItemsList.isEmpty()
+                                    || !queryStringCacheKeysItemsList
+                                            .isAutoConstruct()) {
+                                xmlWriter.startElement("Items");
+
+                                for (String queryStringCacheKeysItemsListValue : queryStringCacheKeysItemsList) {
+                                    xmlWriter.startElement("Name");
+                                    xmlWriter
+                                            .value(queryStringCacheKeysItemsListValue);
+                                    xmlWriter.endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+                            xmlWriter.endElement();
+                        }
                         xmlWriter.endElement();
                     }
 
@@ -629,6 +659,39 @@ public class UpdateDistributionRequestMarshaller
                                             xmlWriter.startElement("Name");
                                             xmlWriter
                                                     .value(headersItemsListValue);
+                                            xmlWriter.endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
+                                }
+
+                                QueryStringCacheKeys queryStringCacheKeys = forwardedValues
+                                        .getQueryStringCacheKeys();
+                                if (queryStringCacheKeys != null) {
+                                    xmlWriter
+                                            .startElement("QueryStringCacheKeys");
+
+                                    if (queryStringCacheKeys.getQuantity() != null) {
+                                        xmlWriter
+                                                .startElement("Quantity")
+                                                .value(queryStringCacheKeys
+                                                        .getQuantity())
+                                                .endElement();
+                                    }
+
+                                    com.amazonaws.internal.SdkInternalList<String> queryStringCacheKeysItemsList = (com.amazonaws.internal.SdkInternalList<String>) queryStringCacheKeys
+                                            .getItems();
+                                    if (!queryStringCacheKeysItemsList
+                                            .isEmpty()
+                                            || !queryStringCacheKeysItemsList
+                                                    .isAutoConstruct()) {
+                                        xmlWriter.startElement("Items");
+
+                                        for (String queryStringCacheKeysItemsListValue : queryStringCacheKeysItemsList) {
+                                            xmlWriter.startElement("Name");
+                                            xmlWriter
+                                                    .value(queryStringCacheKeysItemsListValue);
                                             xmlWriter.endElement();
                                         }
                                         xmlWriter.endElement();

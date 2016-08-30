@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The input for a ListChangeBatchesByHostedZone request.
+ * A complex type containing the response information for the request.
  * </p>
  */
 @Deprecated
@@ -27,13 +27,17 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
 
     /**
      * <p>
-     * The maximum number of items on a page.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListHostedZones</code> that produced the current
+     * response.
      * </p>
      */
     private String maxItems;
     /**
      * <p>
-     * The page marker.
+     * For the second and subsequent calls to ListHostedZones, Marker is the
+     * value that you specified for the marker parameter in the request that
+     * produced the current response.
      * </p>
      */
     private String marker;
@@ -58,11 +62,15 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
 
     /**
      * <p>
-     * The maximum number of items on a page.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListHostedZones</code> that produced the current
+     * response.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of items on a page.
+     *        The value that you specified for the <code>maxitems</code>
+     *        parameter in the call to <code>ListHostedZones</code> that
+     *        produced the current response.
      */
 
     public void setMaxItems(String maxItems) {
@@ -71,10 +79,14 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
 
     /**
      * <p>
-     * The maximum number of items on a page.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListHostedZones</code> that produced the current
+     * response.
      * </p>
      * 
-     * @return The maximum number of items on a page.
+     * @return The value that you specified for the <code>maxitems</code>
+     *         parameter in the call to <code>ListHostedZones</code> that
+     *         produced the current response.
      */
 
     public String getMaxItems() {
@@ -83,11 +95,15 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
 
     /**
      * <p>
-     * The maximum number of items on a page.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListHostedZones</code> that produced the current
+     * response.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of items on a page.
+     *        The value that you specified for the <code>maxitems</code>
+     *        parameter in the call to <code>ListHostedZones</code> that
+     *        produced the current response.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -99,11 +115,15 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
 
     /**
      * <p>
-     * The page marker.
+     * For the second and subsequent calls to ListHostedZones, Marker is the
+     * value that you specified for the marker parameter in the request that
+     * produced the current response.
      * </p>
      * 
      * @param marker
-     *        The page marker.
+     *        For the second and subsequent calls to ListHostedZones, Marker is
+     *        the value that you specified for the marker parameter in the
+     *        request that produced the current response.
      */
 
     public void setMarker(String marker) {
@@ -112,10 +132,14 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
 
     /**
      * <p>
-     * The page marker.
+     * For the second and subsequent calls to ListHostedZones, Marker is the
+     * value that you specified for the marker parameter in the request that
+     * produced the current response.
      * </p>
      * 
-     * @return The page marker.
+     * @return For the second and subsequent calls to ListHostedZones, Marker is
+     *         the value that you specified for the marker parameter in the
+     *         request that produced the current response.
      */
 
     public String getMarker() {
@@ -124,11 +148,15 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
 
     /**
      * <p>
-     * The page marker.
+     * For the second and subsequent calls to ListHostedZones, Marker is the
+     * value that you specified for the marker parameter in the request that
+     * produced the current response.
      * </p>
      * 
      * @param marker
-     *        The page marker.
+     *        For the second and subsequent calls to ListHostedZones, Marker is
+     *        the value that you specified for the marker parameter in the
+     *        request that produced the current response.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

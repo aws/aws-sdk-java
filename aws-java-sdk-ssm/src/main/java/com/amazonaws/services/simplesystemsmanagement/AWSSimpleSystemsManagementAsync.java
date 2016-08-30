@@ -23,13 +23,12 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * This is the Amazon EC2 Simple Systems Manager (SSM) API Reference. SSM
- * enables you to remotely manage the configuration of your Amazon EC2
- * instances, virtual machines (VMs), or servers in your on-premises environment
- * or in an environment provided by other cloud providers using scripts,
- * commands, or the Amazon EC2 console. SSM includes an on-demand solution
- * called <i>Amazon EC2 Run Command</i> and a lightweight instance configuration
- * solution called <i>SSM Config</i>.
+ * Amazon EC2 Simple Systems Manager (SSM) enables you to remotely manage the
+ * configuration of your Amazon EC2 instances, virtual machines (VMs), or
+ * servers in your on-premises environment or in an environment provided by
+ * other cloud providers using scripts, commands, or the Amazon EC2 console. SSM
+ * includes an on-demand solution called <i>Amazon EC2 Run Command</i> and a
+ * lightweight instance configuration solution called <i>SSM Config</i>.
  * </p>
  * <p>
  * This references is intended to be used with the EC2 Run Command User Guide
@@ -395,8 +394,8 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * <p>
      * When you associate an SSM document with an instance, the configuration
-     * agent on the instance processes the document and configures the instance
-     * as specified.
+     * agent on the instance (SSM agent for Linux and EC2Config service for
+     * Windows) processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an
@@ -418,8 +417,8 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * <p>
      * When you associate an SSM document with an instance, the configuration
-     * agent on the instance processes the document and configures the instance
-     * as specified.
+     * agent on the instance (SSM agent for Linux and EC2Config service for
+     * Windows) processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an
@@ -447,8 +446,8 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * <p>
      * When you associate an SSM document with an instance, the configuration
-     * agent on the instance processes the document and configures the instance
-     * as specified.
+     * agent on the instance (SSM agent for Linux and EC2Config service for
+     * Windows) processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an
@@ -470,8 +469,8 @@ public interface AWSSimpleSystemsManagementAsync extends
      * </p>
      * <p>
      * When you associate an SSM document with an instance, the configuration
-     * agent on the instance processes the document and configures the instance
-     * as specified.
+     * agent on the instance (SSM agent for Linux and EC2Config service for
+     * Windows) processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an
@@ -841,11 +840,11 @@ public interface AWSSimpleSystemsManagementAsync extends
      * <p>
      * Describes one or more of your instances. You can use this to get
      * information about instances like the operating system platform, the SSM
-     * agent version, status etc. If you specify one or more instance IDs, it
-     * returns information for those instances. If you do not specify instance
-     * IDs, it returns information for all your instances. If you specify an
-     * instance ID that is not valid or an instance that you do not own, you
-     * receive an error.
+     * agent version (Linux), status etc. If you specify one or more instance
+     * IDs, it returns information for those instances. If you do not specify
+     * instance IDs, it returns information for all your instances. If you
+     * specify an instance ID that is not valid or an instance that you do not
+     * own, you receive an error.
      * </p>
      * 
      * @param describeInstanceInformationRequest
@@ -860,11 +859,11 @@ public interface AWSSimpleSystemsManagementAsync extends
      * <p>
      * Describes one or more of your instances. You can use this to get
      * information about instances like the operating system platform, the SSM
-     * agent version, status etc. If you specify one or more instance IDs, it
-     * returns information for those instances. If you do not specify instance
-     * IDs, it returns information for all your instances. If you specify an
-     * instance ID that is not valid or an instance that you do not own, you
-     * receive an error.
+     * agent version (Linux), status etc. If you specify one or more instance
+     * IDs, it returns information for those instances. If you do not specify
+     * instance IDs, it returns information for all your instances. If you
+     * specify an instance ID that is not valid or an instance that you do not
+     * own, you receive an error.
      * </p>
      * 
      * @param describeInstanceInformationRequest

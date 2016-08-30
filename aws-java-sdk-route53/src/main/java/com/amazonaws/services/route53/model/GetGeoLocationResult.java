@@ -18,28 +18,29 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type containing information about the specified geo location.
+ * A complex type that contains the response information for the specified
+ * geolocation code.
  * </p>
  */
 public class GetGeoLocationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the information about the specified geo
-     * location.
+     * A complex type that contains the codes and full continent, country, and
+     * subdivision names for the specified geolocation code.
      * </p>
      */
     private GeoLocationDetails geoLocationDetails;
 
     /**
      * <p>
-     * A complex type that contains the information about the specified geo
-     * location.
+     * A complex type that contains the codes and full continent, country, and
+     * subdivision names for the specified geolocation code.
      * </p>
      * 
      * @param geoLocationDetails
-     *        A complex type that contains the information about the specified
-     *        geo location.
+     *        A complex type that contains the codes and full continent,
+     *        country, and subdivision names for the specified geolocation code.
      */
 
     public void setGeoLocationDetails(GeoLocationDetails geoLocationDetails) {
@@ -48,12 +49,13 @@ public class GetGeoLocationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the information about the specified geo
-     * location.
+     * A complex type that contains the codes and full continent, country, and
+     * subdivision names for the specified geolocation code.
      * </p>
      * 
-     * @return A complex type that contains the information about the specified
-     *         geo location.
+     * @return A complex type that contains the codes and full continent,
+     *         country, and subdivision names for the specified geolocation
+     *         code.
      */
 
     public GeoLocationDetails getGeoLocationDetails() {
@@ -62,13 +64,13 @@ public class GetGeoLocationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the information about the specified geo
-     * location.
+     * A complex type that contains the codes and full continent, country, and
+     * subdivision names for the specified geolocation code.
      * </p>
      * 
      * @param geoLocationDetails
-     *        A complex type that contains the information about the specified
-     *        geo location.
+     *        A complex type that contains the codes and full continent,
+     *        country, and subdivision names for the specified geolocation code.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

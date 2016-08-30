@@ -43,7 +43,7 @@ public class InstanceInformation implements Serializable, Cloneable {
     private java.util.Date lastPingDateTime;
     /**
      * <p>
-     * The version of the SSM agent running on your instance.
+     * The version of the SSM agent running on your Linux instance.
      * </p>
      */
     private String agentVersion;
@@ -277,11 +277,11 @@ public class InstanceInformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of the SSM agent running on your instance.
+     * The version of the SSM agent running on your Linux instance.
      * </p>
      * 
      * @param agentVersion
-     *        The version of the SSM agent running on your instance.
+     *        The version of the SSM agent running on your Linux instance.
      */
 
     public void setAgentVersion(String agentVersion) {
@@ -290,10 +290,10 @@ public class InstanceInformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of the SSM agent running on your instance.
+     * The version of the SSM agent running on your Linux instance.
      * </p>
      * 
-     * @return The version of the SSM agent running on your instance.
+     * @return The version of the SSM agent running on your Linux instance.
      */
 
     public String getAgentVersion() {
@@ -302,11 +302,11 @@ public class InstanceInformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of the SSM agent running on your instance.
+     * The version of the SSM agent running on your Linux instance.
      * </p>
      * 
      * @param agentVersion
-     *        The version of the SSM agent running on your instance.
+     *        The version of the SSM agent running on your Linux instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

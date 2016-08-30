@@ -19,8 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the request to update a hosted
- * zone comment.
+ * A complex type that contains the hosted zone request information.
  * </p>
  */
 public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest
@@ -28,24 +27,27 @@ public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the hosted zone you want to update.
+     * The ID for the hosted zone for which you want to update the comment.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * A comment about your hosted zone.
+     * The new comment for the hosted zone. If you don't specify a value for
+     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
+     * <code>Comment</code> element, if any.
      * </p>
      */
     private String comment;
 
     /**
      * <p>
-     * The ID of the hosted zone you want to update.
+     * The ID for the hosted zone for which you want to update the comment.
      * </p>
      * 
      * @param id
-     *        The ID of the hosted zone you want to update.
+     *        The ID for the hosted zone for which you want to update the
+     *        comment.
      */
 
     public void setId(String id) {
@@ -54,10 +56,11 @@ public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the hosted zone you want to update.
+     * The ID for the hosted zone for which you want to update the comment.
      * </p>
      * 
-     * @return The ID of the hosted zone you want to update.
+     * @return The ID for the hosted zone for which you want to update the
+     *         comment.
      */
 
     public String getId() {
@@ -66,11 +69,12 @@ public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the hosted zone you want to update.
+     * The ID for the hosted zone for which you want to update the comment.
      * </p>
      * 
      * @param id
-     *        The ID of the hosted zone you want to update.
+     *        The ID for the hosted zone for which you want to update the
+     *        comment.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -82,11 +86,15 @@ public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A comment about your hosted zone.
+     * The new comment for the hosted zone. If you don't specify a value for
+     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
+     * <code>Comment</code> element, if any.
      * </p>
      * 
      * @param comment
-     *        A comment about your hosted zone.
+     *        The new comment for the hosted zone. If you don't specify a value
+     *        for <code>Comment</code>, Amazon Route 53 deletes the existing
+     *        value of the <code>Comment</code> element, if any.
      */
 
     public void setComment(String comment) {
@@ -95,10 +103,14 @@ public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A comment about your hosted zone.
+     * The new comment for the hosted zone. If you don't specify a value for
+     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
+     * <code>Comment</code> element, if any.
      * </p>
      * 
-     * @return A comment about your hosted zone.
+     * @return The new comment for the hosted zone. If you don't specify a value
+     *         for <code>Comment</code>, Amazon Route 53 deletes the existing
+     *         value of the <code>Comment</code> element, if any.
      */
 
     public String getComment() {
@@ -107,11 +119,15 @@ public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A comment about your hosted zone.
+     * The new comment for the hosted zone. If you don't specify a value for
+     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
+     * <code>Comment</code> element, if any.
      * </p>
      * 
      * @param comment
-     *        A comment about your hosted zone.
+     *        The new comment for the hosted zone. If you don't specify a value
+     *        for <code>Comment</code>, Amazon Route 53 deletes the existing
+     *        value of the <code>Comment</code> element, if any.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

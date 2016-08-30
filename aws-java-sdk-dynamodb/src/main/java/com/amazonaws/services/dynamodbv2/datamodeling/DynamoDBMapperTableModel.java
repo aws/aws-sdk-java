@@ -16,6 +16,7 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 
 import static com.amazonaws.services.dynamodbv2.model.KeyType.HASH;
 import static com.amazonaws.services.dynamodbv2.model.KeyType.RANGE;
+import static com.amazonaws.services.dynamodbv2.model.ProjectionType.KEYS_ONLY;
 
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.GlobalSecondaryIndex;
@@ -29,6 +30,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.EnumMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -151,7 +153,7 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
      */
     public Collection<GlobalSecondaryIndex> globalSecondaryIndexes() {
         if (globalSecondaryIndexes.isEmpty()) {
-            return Collections.emptyList();
+            return null;
         }
         final Collection<GlobalSecondaryIndex> copies = new ArrayList(globalSecondaryIndexes.size());
         for (final String indexName : globalSecondaryIndexes.keySet()) {
@@ -185,7 +187,7 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
      */
     public Collection<LocalSecondaryIndex> localSecondaryIndexes() {
         if (localSecondaryIndexes.isEmpty()) {
-            return Collections.emptyList();
+            return null;
         }
         final Collection<LocalSecondaryIndex> copies = new ArrayList(localSecondaryIndexes.size());
         for (final String indexName : localSecondaryIndexes.keySet()) {
@@ -219,7 +221,7 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
     public Map<String,AttributeValue> convert(final T object) {
         final Map<String,AttributeValue> map = new LinkedHashMap<String,AttributeValue>();
         for (final DynamoDBMapperFieldModel<T,Object> field : fields()) {
-            final AttributeValue value = field.getAndConvert(object);
+            final AttributeValue value = field.convert(field.get(object));
             if (value != null) {
                 map.put(field.name(), value);
             }
@@ -242,54 +244,11 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
             for (final DynamoDBMapperFieldModel<T,Object> field : fields()) {
                 final AttributeValue value = object.get(field.name());
                 if (value != null) {
-                    field.unconvertAndSet(result, value);
+                    field.set(result, field.unconvert(value));
                 }
             }
         }
         return result;
-    }
-
-    /**
-     * Creates a new key map from the specified object.
-     * @param object The object instance.
-     * @return The key map.
-     */
-    public Map<String,AttributeValue> convertKey(final T object) {
-        final Map<String,AttributeValue> key = new LinkedHashMap<String,AttributeValue>(4);
-        for (final DynamoDBMapperFieldModel<T,Object> field : keys()) {
-            final AttributeValue value = field.getAndConvert(object);
-            if (value != null) {
-                key.put(field.name(), value);
-            }
-        }
-        if (key.isEmpty()) {
-            throw new DynamoDBMappingException(id().err("no key value(s) present"));
-        }
-        return key;
-    }
-
-    /**
-     * Creates a new key map from the specified hash and range key.
-     * @param <H> The hash key type.
-     * @param <R> The range key type.
-     * @param hashKey The hash key.
-     * @param rangeKey The range key (optional if not present on table).
-     * @return The key map.
-     */
-    public <H,R> Map<String,AttributeValue> convertKey(final H hashKey, final R rangeKey) {
-        final Map<String,AttributeValue> key = new LinkedHashMap<String,AttributeValue>(4);
-        if (hashKey != null) {
-            final DynamoDBMapperFieldModel<T,H> hk = hashKey();
-            key.put(hk.name(), hk.convert(hashKey));
-        }
-        if (rangeKey != null) {
-            final DynamoDBMapperFieldModel<T,R> rk = rangeKey();
-            key.put(rk.name(), rk.convert(rangeKey));
-        }
-        if (key.isEmpty()) {
-            throw new DynamoDBMappingException(id().err("no key value(s) present"));
-        }
-        return key;
     }
 
     /**
@@ -319,18 +278,55 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
     }
 
     /**
-     * Determnes if any of the primary keys require auto-generation.
+     * Creates a new key map from the specified object.
+     * @param <H> The hash key type.
+     * @param <R> The range key type.
      * @param object The object instance.
-     * @param config The operation's config.
-     * @return True if any keys should be auto-generated.
+     * @return The key map.
      */
-    public boolean anyKeyGeneratable(final T object, final DynamoDBMapperConfig config) {
-        for (final DynamoDBMapperFieldModel<T,Object> field : keys()) {
-            if (field.canGenerate(object, config, null)) {
-                return true;
-            }
+    public <H,R> DynamoDBMapperTableModel<T>.Key<H,R> convertKey(final T key) {
+        final DynamoDBMapperFieldModel<T,H> hk = hashKey();
+        final DynamoDBMapperFieldModel<T,R> rk = rangeKeyIfExists();
+        return new Key().withHashKey(hk.get(key)).withRangeKey(rk == null ? (R)null : rk.get(key));
+    }
+
+    /**
+     * Creates a new key map from the specified hash and range key.
+     * @param <H> The hash key type.
+     * @param <R> The range key type.
+     * @param hashKey The hash key.
+     * @param rangeKey The range key (optional if not present on table).
+     * @return The key map.
+     */
+    public <H,R> DynamoDBMapperTableModel<T>.Key<H,R> convertKey(final H hashKey, final R rangeKey) {
+        return new Key().withHashKey(hashKey).withRangeKey(rangeKey);
+    }
+
+    /**
+     * Holds the hash and range key attribute value map.
+     */
+    public final class Key<H,R> extends LinkedHashMap<String,AttributeValue> {
+        private Key() {
+            super(4);
         }
-        return false;
+        private Key<H,R> withHashKey(final H hashKey) {
+            if (hashKey != null) {
+                final DynamoDBMapperFieldModel<T,H> hk = DynamoDBMapperTableModel.this.<H>hashKey();
+                put(hk.name(), hk.convert(hashKey));
+            } else {
+                throw new DynamoDBMappingException(hashKey().id().err("no HASH key value present"));
+            }
+            return this;
+        }
+        private Key<H,R> withRangeKey(final R rangeKey) {
+            if (rangeKey != null) {
+                final DynamoDBMapperFieldModel<T,R> rk = DynamoDBMapperTableModel.this.<R>rangeKey();
+                put(rk.name(), rk.convert(rangeKey));
+            } else if (DynamoDBMapperTableModel.this.rangeKeyIfExists() != null) {
+                throw new DynamoDBMappingException(rangeKey().id().err("no RANGE key value present"));
+            }
+            return this;
+        }
     }
 
     /**
@@ -403,13 +399,13 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
         public Builder(final DynamoDBMapperTableModel.Properties<T> ... defaults) {
             super(defaults);
             this.fields = new LinkedHashMap<String,DynamoDBMapperFieldModel<T,Object>>();
-            this.keys = new LinkedHashMap<KeyType,DynamoDBMapperFieldModel<T,Object>>(4);
+            this.keys = new EnumMap<KeyType,DynamoDBMapperFieldModel<T,Object>>(KeyType.class);
         }
 
         /**
          * Adds a field model to this builder.
          */
-        public final DynamoDBMapperTableModel.Builder<T> with(final DynamoDBMapperFieldModel field) {
+        public final Builder<T> with(final DynamoDBMapperFieldModel field) {
             if (fields.put(field.name(), field) != null) {
                 throw new DynamoDBMappingException(field.id().err(
                     "must not duplicate attribute name"));
@@ -425,9 +421,6 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
          * Builds the GSI mappings.
          */
         public final Map<String,GlobalSecondaryIndex> globalSecondaryIndexes() {
-            if (tableName() == null) {
-                return Collections.emptyMap();
-            }
             final Map<String,GlobalSecondaryIndex> map = new LinkedHashMap<String,GlobalSecondaryIndex>();
             for (final DynamoDBMapperFieldModel<T,Object> field : fields.values()) {
                 for (final String indexName : field.globalSecondaryIndexNames(HASH)) {
@@ -436,7 +429,7 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
                         throw new DynamoDBMappingException(field.id().err(
                             "must not contain duplicate GSI named %s", indexName));
                     }
-                    gsi.withProjection(new Projection().withProjectionType(ProjectionType.KEYS_ONLY));
+                    gsi.withProjection(new Projection().withProjectionType(KEYS_ONLY));
                     gsi.withKeySchema(new KeySchemaElement(field.name(), HASH));
                 }
             }
@@ -450,40 +443,41 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
                     gsi.withKeySchema(new KeySchemaElement(field.name(), RANGE));
                 }
             }
-            return Collections.unmodifiableMap(map);
+            if (!map.isEmpty()) {
+                return Collections.unmodifiableMap(map);
+            }
+            return Collections.emptyMap();
         }
 
         /**
          * Builds the LSI mappings.
          */
         public final Map<String,LocalSecondaryIndex> localSecondaryIndexes() {
-            if (tableName() == null) {
-                return Collections.emptyMap();
-            }
             final Map<String,LocalSecondaryIndex> map = new LinkedHashMap<String,LocalSecondaryIndex>();
             for (final DynamoDBMapperFieldModel<T,Object> field : fields.values()) {
                 for (final String indexName : field.localSecondaryIndexNames()) {
                     final LocalSecondaryIndex lsi = new LocalSecondaryIndex().withIndexName(indexName);
                     if (map.put(indexName, lsi) != null) {
                         throw new DynamoDBMappingException(field.id().err(
-                           "must not contain duplicate LocalSecondaryIndexes named %s", indexName));
+                            "must not contain duplicate LSI named %s", indexName));
                     }
-                    lsi.withProjection(new Projection().withProjectionType(ProjectionType.KEYS_ONLY));
+                    lsi.withProjection(new Projection().withProjectionType(KEYS_ONLY));
                     lsi.withKeySchema(new KeySchemaElement(keys.get(HASH).name(), HASH));
                     lsi.withKeySchema(new KeySchemaElement(field.name(), RANGE));
                 }
             }
-            return Collections.unmodifiableMap(map);
+            if (!map.isEmpty()) {
+                return Collections.unmodifiableMap(map);
+            }
+            return Collections.emptyMap();
         }
 
         /**
          * Builds the instance.
          */
         public final DynamoDBMapperTableModel<T> build() {
-            if (tableName() != null && !tableName().isEmpty()) {
-                if (keys.get(HASH) == null) {
-                    throw new DynamoDBMappingException(id().err("does not map HASH key on model"));
-                }
+            if (tableName() != null && keys.get(HASH) == null) {
+                throw new DynamoDBMappingException(id().err("does not map HASH key on model"));
             }
             return new DynamoDBMapperTableModel(this);
         }

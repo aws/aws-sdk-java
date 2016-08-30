@@ -16,7 +16,7 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * The VPC you specified is not currently associated with the hosted zone.
+ * The specified VPC and hosted zone are not currently associated.
  * </p>
  */
 public class VPCAssociationNotFoundException extends

@@ -25,18 +25,21 @@ public class StartPipelineExecutionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique system-generated ID of the pipeline that was started.
+     * The unique system-generated ID of the pipeline execution that was
+     * started.
      * </p>
      */
     private String pipelineExecutionId;
 
     /**
      * <p>
-     * The unique system-generated ID of the pipeline that was started.
+     * The unique system-generated ID of the pipeline execution that was
+     * started.
      * </p>
      * 
      * @param pipelineExecutionId
-     *        The unique system-generated ID of the pipeline that was started.
+     *        The unique system-generated ID of the pipeline execution that was
+     *        started.
      */
 
     public void setPipelineExecutionId(String pipelineExecutionId) {
@@ -45,10 +48,12 @@ public class StartPipelineExecutionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique system-generated ID of the pipeline that was started.
+     * The unique system-generated ID of the pipeline execution that was
+     * started.
      * </p>
      * 
-     * @return The unique system-generated ID of the pipeline that was started.
+     * @return The unique system-generated ID of the pipeline execution that was
+     *         started.
      */
 
     public String getPipelineExecutionId() {
@@ -57,11 +62,13 @@ public class StartPipelineExecutionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique system-generated ID of the pipeline that was started.
+     * The unique system-generated ID of the pipeline execution that was
+     * started.
      * </p>
      * 
      * @param pipelineExecutionId
-     *        The unique system-generated ID of the pipeline that was started.
+     *        The unique system-generated ID of the pipeline execution that was
+     *        started.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -27,12 +27,18 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      */
     private String resourceType;
     /**
@@ -52,20 +58,32 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resource.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
      * @see TagResourceType
      */
 
@@ -77,20 +95,31 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @return The type of the resource.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         - The resource type for health checks is <code>healthcheck</code>
-     *         .
+     *         The resource type for health checks is <code>healthcheck</code>.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         - The resource type for hosted zones is <code>hostedzone</code>.
+     *         The resource type for hosted zones is <code>hostedzone</code>.
+     *         </p>
+     *         </li>
      * @see TagResourceType
      */
 
@@ -102,20 +131,32 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resource.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TagResourceType
@@ -130,20 +171,32 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resource.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
      * @see TagResourceType
      */
 
@@ -155,20 +208,32 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resource.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TagResourceType

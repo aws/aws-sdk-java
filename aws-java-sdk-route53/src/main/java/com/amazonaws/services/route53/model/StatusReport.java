@@ -18,35 +18,39 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains information about the health check status for
- * the current observation.
+ * A complex type that contains the status that one Amazon Route 53 health
+ * checker reports and the time of the health check.
  * </p>
  */
 public class StatusReport implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The observed health check status.
+     * A description of the status of the health check endpoint as reported by
+     * one of the Amazon Route 53 health checkers.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The date and time the health check status was observed, in the format
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard
-     * (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time
-     * indicates that the time is listed in Coordinated Universal Time (UTC).
+     * The time at which the health checker performed the health check in <a
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
+     * Coordinated Universal Time (UTC). For example, the value
+     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
+     * 17:48:16.751 UTC.
      * </p>
      */
     private java.util.Date checkedTime;
 
     /**
      * <p>
-     * The observed health check status.
+     * A description of the status of the health check endpoint as reported by
+     * one of the Amazon Route 53 health checkers.
      * </p>
      * 
      * @param status
-     *        The observed health check status.
+     *        A description of the status of the health check endpoint as
+     *        reported by one of the Amazon Route 53 health checkers.
      */
 
     public void setStatus(String status) {
@@ -55,10 +59,12 @@ public class StatusReport implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The observed health check status.
+     * A description of the status of the health check endpoint as reported by
+     * one of the Amazon Route 53 health checkers.
      * </p>
      * 
-     * @return The observed health check status.
+     * @return A description of the status of the health check endpoint as
+     *         reported by one of the Amazon Route 53 health checkers.
      */
 
     public String getStatus() {
@@ -67,11 +73,13 @@ public class StatusReport implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The observed health check status.
+     * A description of the status of the health check endpoint as reported by
+     * one of the Amazon Route 53 health checkers.
      * </p>
      * 
      * @param status
-     *        The observed health check status.
+     *        A description of the status of the health check endpoint as
+     *        reported by one of the Amazon Route 53 health checkers.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -83,18 +91,19 @@ public class StatusReport implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the health check status was observed, in the format
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard
-     * (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time
-     * indicates that the time is listed in Coordinated Universal Time (UTC).
+     * The time at which the health checker performed the health check in <a
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
+     * Coordinated Universal Time (UTC). For example, the value
+     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
+     * 17:48:16.751 UTC.
      * </p>
      * 
      * @param checkedTime
-     *        The date and time the health check status was observed, in the
-     *        format <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO
-     *        8601 standard (for example, 2009-11-19T19:37:58Z). The
-     *        <code>Z</code> after the time indicates that the time is listed in
-     *        Coordinated Universal Time (UTC).
+     *        The time at which the health checker performed the health check in
+     *        <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601
+     *        format</a> and Coordinated Universal Time (UTC). For example, the
+     *        value <code>2014-10-27T17:48:16.751Z</code> represents October 27,
+     *        2014 at 17:48:16.751 UTC.
      */
 
     public void setCheckedTime(java.util.Date checkedTime) {
@@ -103,17 +112,18 @@ public class StatusReport implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the health check status was observed, in the format
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard
-     * (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time
-     * indicates that the time is listed in Coordinated Universal Time (UTC).
+     * The time at which the health checker performed the health check in <a
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
+     * Coordinated Universal Time (UTC). For example, the value
+     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
+     * 17:48:16.751 UTC.
      * </p>
      * 
-     * @return The date and time the health check status was observed, in the
-     *         format <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO
-     *         8601 standard (for example, 2009-11-19T19:37:58Z). The
-     *         <code>Z</code> after the time indicates that the time is listed
-     *         in Coordinated Universal Time (UTC).
+     * @return The time at which the health checker performed the health check
+     *         in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601
+     *         format</a> and Coordinated Universal Time (UTC). For example, the
+     *         value <code>2014-10-27T17:48:16.751Z</code> represents October
+     *         27, 2014 at 17:48:16.751 UTC.
      */
 
     public java.util.Date getCheckedTime() {
@@ -122,18 +132,19 @@ public class StatusReport implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the health check status was observed, in the format
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard
-     * (for example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time
-     * indicates that the time is listed in Coordinated Universal Time (UTC).
+     * The time at which the health checker performed the health check in <a
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
+     * Coordinated Universal Time (UTC). For example, the value
+     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
+     * 17:48:16.751 UTC.
      * </p>
      * 
      * @param checkedTime
-     *        The date and time the health check status was observed, in the
-     *        format <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO
-     *        8601 standard (for example, 2009-11-19T19:37:58Z). The
-     *        <code>Z</code> after the time indicates that the time is listed in
-     *        Coordinated Universal Time (UTC).
+     *        The time at which the health checker performed the health check in
+     *        <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601
+     *        format</a> and Coordinated Universal Time (UTC). For example, the
+     *        value <code>2014-10-27T17:48:16.751Z</code> represents October 27,
+     *        2014 at 17:48:16.751 UTC.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

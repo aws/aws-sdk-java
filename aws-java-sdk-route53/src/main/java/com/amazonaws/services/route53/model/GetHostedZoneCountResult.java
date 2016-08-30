@@ -18,27 +18,29 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains the count of hosted zones associated with the
- * current AWS account.
+ * A complex type that contains the response to a <code>hostedzonecount</code>
+ * request.
  * </p>
  */
 public class GetHostedZoneCountResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of hosted zones associated with the current AWS account.
+     * The total number of public and private hosted zones associated with the
+     * current AWS account.
      * </p>
      */
     private Long hostedZoneCount;
 
     /**
      * <p>
-     * The number of hosted zones associated with the current AWS account.
+     * The total number of public and private hosted zones associated with the
+     * current AWS account.
      * </p>
      * 
      * @param hostedZoneCount
-     *        The number of hosted zones associated with the current AWS
-     *        account.
+     *        The total number of public and private hosted zones associated
+     *        with the current AWS account.
      */
 
     public void setHostedZoneCount(Long hostedZoneCount) {
@@ -47,11 +49,12 @@ public class GetHostedZoneCountResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of hosted zones associated with the current AWS account.
+     * The total number of public and private hosted zones associated with the
+     * current AWS account.
      * </p>
      * 
-     * @return The number of hosted zones associated with the current AWS
-     *         account.
+     * @return The total number of public and private hosted zones associated
+     *         with the current AWS account.
      */
 
     public Long getHostedZoneCount() {
@@ -60,12 +63,13 @@ public class GetHostedZoneCountResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of hosted zones associated with the current AWS account.
+     * The total number of public and private hosted zones associated with the
+     * current AWS account.
      * </p>
      * 
      * @param hostedZoneCount
-     *        The number of hosted zones associated with the current AWS
-     *        account.
+     *        The total number of public and private hosted zones associated
+     *        with the current AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

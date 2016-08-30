@@ -18,30 +18,26 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type containing the response information for the new hosted zone.
+ * A complex type containing the response information for the hosted zone.
  * </p>
  */
 public class CreateHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains identifying information about the hosted
-     * zone.
+     * A complex type that contains general information about the hosted zone.
      * </p>
      */
     private HostedZone hostedZone;
     /**
      * <p>
-     * A complex type that contains information about the request to create a
-     * hosted zone. This includes an ID that you use when you call the
-     * <code>GetChange</code> action to get the current status of the change
-     * request.
+     * A complex type that describes the changes made to your hosted zone.
      * </p>
      */
     private ChangeInfo changeInfo;
     /**
      * <p>
-     * A complex type that contains name server information.
+     * A complex type that describes the name servers for this hosted zone.
      * </p>
      */
     private DelegationSet delegationSet;
@@ -56,13 +52,12 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains identifying information about the hosted
-     * zone.
+     * A complex type that contains general information about the hosted zone.
      * </p>
      * 
      * @param hostedZone
-     *        A complex type that contains identifying information about the
-     *        hosted zone.
+     *        A complex type that contains general information about the hosted
+     *        zone.
      */
 
     public void setHostedZone(HostedZone hostedZone) {
@@ -71,12 +66,11 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains identifying information about the hosted
-     * zone.
+     * A complex type that contains general information about the hosted zone.
      * </p>
      * 
-     * @return A complex type that contains identifying information about the
-     *         hosted zone.
+     * @return A complex type that contains general information about the hosted
+     *         zone.
      */
 
     public HostedZone getHostedZone() {
@@ -85,13 +79,12 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains identifying information about the hosted
-     * zone.
+     * A complex type that contains general information about the hosted zone.
      * </p>
      * 
      * @param hostedZone
-     *        A complex type that contains identifying information about the
-     *        hosted zone.
+     *        A complex type that contains general information about the hosted
+     *        zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -103,17 +96,12 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the request to create a
-     * hosted zone. This includes an ID that you use when you call the
-     * <code>GetChange</code> action to get the current status of the change
-     * request.
+     * A complex type that describes the changes made to your hosted zone.
      * </p>
      * 
      * @param changeInfo
-     *        A complex type that contains information about the request to
-     *        create a hosted zone. This includes an ID that you use when you
-     *        call the <code>GetChange</code> action to get the current status
-     *        of the change request.
+     *        A complex type that describes the changes made to your hosted
+     *        zone.
      */
 
     public void setChangeInfo(ChangeInfo changeInfo) {
@@ -122,16 +110,11 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the request to create a
-     * hosted zone. This includes an ID that you use when you call the
-     * <code>GetChange</code> action to get the current status of the change
-     * request.
+     * A complex type that describes the changes made to your hosted zone.
      * </p>
      * 
-     * @return A complex type that contains information about the request to
-     *         create a hosted zone. This includes an ID that you use when you
-     *         call the <code>GetChange</code> action to get the current status
-     *         of the change request.
+     * @return A complex type that describes the changes made to your hosted
+     *         zone.
      */
 
     public ChangeInfo getChangeInfo() {
@@ -140,17 +123,12 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the request to create a
-     * hosted zone. This includes an ID that you use when you call the
-     * <code>GetChange</code> action to get the current status of the change
-     * request.
+     * A complex type that describes the changes made to your hosted zone.
      * </p>
      * 
      * @param changeInfo
-     *        A complex type that contains information about the request to
-     *        create a hosted zone. This includes an ID that you use when you
-     *        call the <code>GetChange</code> action to get the current status
-     *        of the change request.
+     *        A complex type that describes the changes made to your hosted
+     *        zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -162,11 +140,12 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains name server information.
+     * A complex type that describes the name servers for this hosted zone.
      * </p>
      * 
      * @param delegationSet
-     *        A complex type that contains name server information.
+     *        A complex type that describes the name servers for this hosted
+     *        zone.
      */
 
     public void setDelegationSet(DelegationSet delegationSet) {
@@ -175,10 +154,11 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains name server information.
+     * A complex type that describes the name servers for this hosted zone.
      * </p>
      * 
-     * @return A complex type that contains name server information.
+     * @return A complex type that describes the name servers for this hosted
+     *         zone.
      */
 
     public DelegationSet getDelegationSet() {
@@ -187,11 +167,12 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains name server information.
+     * A complex type that describes the name servers for this hosted zone.
      * </p>
      * 
      * @param delegationSet
-     *        A complex type that contains name server information.
+     *        A complex type that describes the name servers for this hosted
+     *        zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -206,6 +206,8 @@ public interface AmazonCloudFront {
      * @throws InvalidTTLOrderException
      * @throws InvalidWebACLIdException
      * @throws TooManyOriginCustomHeadersException
+     * @throws TooManyQueryStringParametersException
+     * @throws InvalidQueryStringParametersException
      * @sample AmazonCloudFront.CreateDistribution
      */
     CreateDistributionResult createDistribution(
@@ -291,6 +293,8 @@ public interface AmazonCloudFront {
      * @throws InvalidTaggingException
      *         The specified tagging for a CloudFront resource is invalid. For
      *         more information, see the error text.
+     * @throws TooManyQueryStringParametersException
+     * @throws InvalidQueryStringParametersException
      * @sample AmazonCloudFront.CreateDistributionWithTags
      */
     CreateDistributionWithTagsResult createDistributionWithTags(
@@ -822,6 +826,8 @@ public interface AmazonCloudFront {
      * @throws InvalidTTLOrderException
      * @throws InvalidWebACLIdException
      * @throws TooManyOriginCustomHeadersException
+     * @throws TooManyQueryStringParametersException
+     * @throws InvalidQueryStringParametersException
      * @sample AmazonCloudFront.UpdateDistribution
      */
     UpdateDistributionResult updateDistribution(

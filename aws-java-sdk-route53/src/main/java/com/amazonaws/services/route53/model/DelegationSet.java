@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains name server information.
+ * A complex type that describes the name servers for this hosted zone.
  * </p>
  */
 public class DelegationSet implements Serializable, Cloneable {
@@ -28,10 +28,8 @@ public class DelegationSet implements Serializable, Cloneable {
     private String callerReference;
     /**
      * <p>
-     * A complex type that contains the authoritative name servers for the
-     * hosted zone. Use the method provided by your domain registrar to add an
-     * NS record to your domain for each <code>NameServer</code> that is
-     * assigned to your hosted zone.
+     * A complex type that contains a list of the authoritative name servers for
+     * the hosted zone.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> nameServers;
@@ -50,10 +48,8 @@ public class DelegationSet implements Serializable, Cloneable {
      * members.
      * 
      * @param nameServers
-     *        A complex type that contains the authoritative name servers for
-     *        the hosted zone. Use the method provided by your domain registrar
-     *        to add an NS record to your domain for each
-     *        <code>NameServer</code> that is assigned to your hosted zone.
+     *        A complex type that contains a list of the authoritative name
+     *        servers for the hosted zone.
      */
     public DelegationSet(java.util.List<String> nameServers) {
         setNameServers(nameServers);
@@ -115,16 +111,12 @@ public class DelegationSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the authoritative name servers for the
-     * hosted zone. Use the method provided by your domain registrar to add an
-     * NS record to your domain for each <code>NameServer</code> that is
-     * assigned to your hosted zone.
+     * A complex type that contains a list of the authoritative name servers for
+     * the hosted zone.
      * </p>
      * 
-     * @return A complex type that contains the authoritative name servers for
-     *         the hosted zone. Use the method provided by your domain registrar
-     *         to add an NS record to your domain for each
-     *         <code>NameServer</code> that is assigned to your hosted zone.
+     * @return A complex type that contains a list of the authoritative name
+     *         servers for the hosted zone.
      */
 
     public java.util.List<String> getNameServers() {
@@ -136,17 +128,13 @@ public class DelegationSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the authoritative name servers for the
-     * hosted zone. Use the method provided by your domain registrar to add an
-     * NS record to your domain for each <code>NameServer</code> that is
-     * assigned to your hosted zone.
+     * A complex type that contains a list of the authoritative name servers for
+     * the hosted zone.
      * </p>
      * 
      * @param nameServers
-     *        A complex type that contains the authoritative name servers for
-     *        the hosted zone. Use the method provided by your domain registrar
-     *        to add an NS record to your domain for each
-     *        <code>NameServer</code> that is assigned to your hosted zone.
+     *        A complex type that contains a list of the authoritative name
+     *        servers for the hosted zone.
      */
 
     public void setNameServers(java.util.Collection<String> nameServers) {
@@ -161,10 +149,8 @@ public class DelegationSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the authoritative name servers for the
-     * hosted zone. Use the method provided by your domain registrar to add an
-     * NS record to your domain for each <code>NameServer</code> that is
-     * assigned to your hosted zone.
+     * A complex type that contains a list of the authoritative name servers for
+     * the hosted zone.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -174,10 +160,8 @@ public class DelegationSet implements Serializable, Cloneable {
      * </p>
      * 
      * @param nameServers
-     *        A complex type that contains the authoritative name servers for
-     *        the hosted zone. Use the method provided by your domain registrar
-     *        to add an NS record to your domain for each
-     *        <code>NameServer</code> that is assigned to your hosted zone.
+     *        A complex type that contains a list of the authoritative name
+     *        servers for the hosted zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -195,17 +179,13 @@ public class DelegationSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the authoritative name servers for the
-     * hosted zone. Use the method provided by your domain registrar to add an
-     * NS record to your domain for each <code>NameServer</code> that is
-     * assigned to your hosted zone.
+     * A complex type that contains a list of the authoritative name servers for
+     * the hosted zone.
      * </p>
      * 
      * @param nameServers
-     *        A complex type that contains the authoritative name servers for
-     *        the hosted zone. Use the method provided by your domain registrar
-     *        to add an NS record to your domain for each
-     *        <code>NameServer</code> that is assigned to your hosted zone.
+     *        A complex type that contains a list of the authoritative name
+     *        servers for the hosted zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

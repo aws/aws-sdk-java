@@ -182,14 +182,14 @@ final class StandardAttributeTypes {
         };
 
         /**
-         * The DynamoDB attribute type.
-         */
-        private final DynamoDBAttributeType dynamoDBAttributeType;
-
-        /**
          * The scalar attribute type.
          */
         private final ScalarAttributeType scalarAttributeType;
+
+        /**
+         * The DynamoDB attribute type.
+         */
+        private final DynamoDBAttributeType attributeType;
 
         /**
          * The reflection function.
@@ -205,7 +205,7 @@ final class StandardAttributeTypes {
             } else {
                 this.scalarAttributeType = null;
             }
-            this.dynamoDBAttributeType = DynamoDBAttributeType.valueOf(name());
+            this.attributeType = DynamoDBAttributeType.valueOf(name());
             this.reflect = (Reflect<AttributeValue,Object>)reflect;
         }
 
@@ -219,8 +219,8 @@ final class StandardAttributeTypes {
         /**
          * Gets the DynamoDB attribute type.
          */
-        final DynamoDBAttributeType dynamoDBAttributeType() {
-            return this.dynamoDBAttributeType;
+        final DynamoDBAttributeType attributeType() {
+            return this.attributeType;
         }
 
         /**

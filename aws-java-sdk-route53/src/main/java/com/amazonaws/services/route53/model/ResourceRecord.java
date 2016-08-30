@@ -18,9 +18,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains the value of the <code>Value</code> element for
- * the current resource record set.
+ * Information specific to the resource record.
  * </p>
+ * <note>
+ * <p>
+ * If you are creating an alias resource record set, omit
+ * <code>ResourceRecord</code>.
+ * </p>
+ * </note>
  */
 public class ResourceRecord implements Serializable, Cloneable {
 
@@ -30,7 +35,7 @@ public class ResourceRecord implements Serializable, Cloneable {
      * the case of a <code>DELETE</code> action, if the current value does not
      * match the actual value, an error is returned. For descriptions about how
      * to format <code>Value</code> for different record types, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html"
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeveloperGuide/ResourceRecordTypes.html"
      * >Supported DNS Resource Record Types</a> in the <i>Amazon Route 53
      * Developer Guide</i>.
      * </p>
@@ -38,6 +43,12 @@ public class ResourceRecord implements Serializable, Cloneable {
      * You can specify more than one value for all record types except
      * <code>CNAME</code> and <code>SOA</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you are creating an alias resource record set, omit <code>Value</code>
+     * .
+     * </p>
+     * </note>
      */
     private String value;
 
@@ -60,12 +71,18 @@ public class ResourceRecord implements Serializable, Cloneable {
      *        current value does not match the actual value, an error is
      *        returned. For descriptions about how to format <code>Value</code>
      *        for different record types, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html"
+     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeveloperGuide/ResourceRecordTypes.html"
      *        >Supported DNS Resource Record Types</a> in the <i>Amazon Route 53
      *        Developer Guide</i>.</p>
      *        <p>
      *        You can specify more than one value for all record types except
      *        <code>CNAME</code> and <code>SOA</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you are creating an alias resource record set, omit
+     *        <code>Value</code>.
+     *        </p>
      */
     public ResourceRecord(String value) {
         setValue(value);
@@ -77,7 +94,7 @@ public class ResourceRecord implements Serializable, Cloneable {
      * the case of a <code>DELETE</code> action, if the current value does not
      * match the actual value, an error is returned. For descriptions about how
      * to format <code>Value</code> for different record types, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html"
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeveloperGuide/ResourceRecordTypes.html"
      * >Supported DNS Resource Record Types</a> in the <i>Amazon Route 53
      * Developer Guide</i>.
      * </p>
@@ -85,6 +102,12 @@ public class ResourceRecord implements Serializable, Cloneable {
      * You can specify more than one value for all record types except
      * <code>CNAME</code> and <code>SOA</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you are creating an alias resource record set, omit <code>Value</code>
+     * .
+     * </p>
+     * </note>
      * 
      * @param value
      *        The current or new DNS record value, not to exceed 4,000
@@ -92,12 +115,18 @@ public class ResourceRecord implements Serializable, Cloneable {
      *        current value does not match the actual value, an error is
      *        returned. For descriptions about how to format <code>Value</code>
      *        for different record types, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html"
+     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeveloperGuide/ResourceRecordTypes.html"
      *        >Supported DNS Resource Record Types</a> in the <i>Amazon Route 53
      *        Developer Guide</i>.</p>
      *        <p>
      *        You can specify more than one value for all record types except
      *        <code>CNAME</code> and <code>SOA</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you are creating an alias resource record set, omit
+     *        <code>Value</code>.
+     *        </p>
      */
 
     public void setValue(String value) {
@@ -110,7 +139,7 @@ public class ResourceRecord implements Serializable, Cloneable {
      * the case of a <code>DELETE</code> action, if the current value does not
      * match the actual value, an error is returned. For descriptions about how
      * to format <code>Value</code> for different record types, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html"
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeveloperGuide/ResourceRecordTypes.html"
      * >Supported DNS Resource Record Types</a> in the <i>Amazon Route 53
      * Developer Guide</i>.
      * </p>
@@ -118,18 +147,30 @@ public class ResourceRecord implements Serializable, Cloneable {
      * You can specify more than one value for all record types except
      * <code>CNAME</code> and <code>SOA</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you are creating an alias resource record set, omit <code>Value</code>
+     * .
+     * </p>
+     * </note>
      * 
      * @return The current or new DNS record value, not to exceed 4,000
      *         characters. In the case of a <code>DELETE</code> action, if the
      *         current value does not match the actual value, an error is
      *         returned. For descriptions about how to format <code>Value</code>
      *         for different record types, see <a href=
-     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html"
+     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeveloperGuide/ResourceRecordTypes.html"
      *         >Supported DNS Resource Record Types</a> in the <i>Amazon Route
      *         53 Developer Guide</i>.</p>
      *         <p>
      *         You can specify more than one value for all record types except
      *         <code>CNAME</code> and <code>SOA</code>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you are creating an alias resource record set, omit
+     *         <code>Value</code>.
+     *         </p>
      */
 
     public String getValue() {
@@ -142,7 +183,7 @@ public class ResourceRecord implements Serializable, Cloneable {
      * the case of a <code>DELETE</code> action, if the current value does not
      * match the actual value, an error is returned. For descriptions about how
      * to format <code>Value</code> for different record types, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html"
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeveloperGuide/ResourceRecordTypes.html"
      * >Supported DNS Resource Record Types</a> in the <i>Amazon Route 53
      * Developer Guide</i>.
      * </p>
@@ -150,6 +191,12 @@ public class ResourceRecord implements Serializable, Cloneable {
      * You can specify more than one value for all record types except
      * <code>CNAME</code> and <code>SOA</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you are creating an alias resource record set, omit <code>Value</code>
+     * .
+     * </p>
+     * </note>
      * 
      * @param value
      *        The current or new DNS record value, not to exceed 4,000
@@ -157,12 +204,18 @@ public class ResourceRecord implements Serializable, Cloneable {
      *        current value does not match the actual value, an error is
      *        returned. For descriptions about how to format <code>Value</code>
      *        for different record types, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html"
+     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeveloperGuide/ResourceRecordTypes.html"
      *        >Supported DNS Resource Record Types</a> in the <i>Amazon Route 53
      *        Developer Guide</i>.</p>
      *        <p>
      *        You can specify more than one value for all record types except
      *        <code>CNAME</code> and <code>SOA</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you are creating an alias resource record set, omit
+     *        <code>Value</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

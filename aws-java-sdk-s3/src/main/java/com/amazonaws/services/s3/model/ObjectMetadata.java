@@ -23,7 +23,6 @@ import java.util.TreeMap;
 import java.util.Map;
 
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
@@ -249,8 +248,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * associated object.
      *
      * @return The date and time at which Amazon S3 last recorded a modification
-     *         to the associated object. Returns <code>null</code> if
-     *         the Last-Modified header hasn't been set.
+     *         to the associated object.
      */
     public Date getLastModified() {
         return cloneDate((Date)metadata.get(Headers.LAST_MODIFIED));

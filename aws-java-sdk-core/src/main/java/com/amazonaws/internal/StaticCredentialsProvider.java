@@ -19,7 +19,10 @@ import com.amazonaws.auth.AWSCredentialsProvider;
 
 /**
  * Simple implementation of AWSCredentialsProvider that just wraps static AWSCredentials.
+ *
+ * @deprecated By {@link com.amazonaws.auth.AWSStaticCredentialsProvider}
  */
+@Deprecated
 public class StaticCredentialsProvider implements AWSCredentialsProvider {
 
     private final AWSCredentials credentials;
@@ -32,6 +35,7 @@ public class StaticCredentialsProvider implements AWSCredentialsProvider {
         return credentials;
     }
 
-    public void refresh() {}
+    public void refresh() {
+    }
 
 }

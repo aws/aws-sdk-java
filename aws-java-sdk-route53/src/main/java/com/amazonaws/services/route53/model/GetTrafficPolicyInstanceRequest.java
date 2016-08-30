@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * To get information about a traffic policy instance, send a <code>GET</code>
  * request to the
- * <code>/<i>Route 53 API version</i>/trafficpolicyinstance/<i>Id</i></code>
+ * <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance/<i>Id</i> </code>
  * resource.
  * </p>
  */

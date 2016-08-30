@@ -107,8 +107,8 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
     /**
      * <p>
-     * Controls whether instances in this group are launched with detailed
-     * monitoring.
+     * Controls whether instances in this group are launched with detailed (
+     * <code>true</code>) or basic (<code>false</code>) monitoring.
      * </p>
      */
     private InstanceMonitoring instanceMonitoring;
@@ -849,13 +849,14 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Controls whether instances in this group are launched with detailed
-     * monitoring.
+     * Controls whether instances in this group are launched with detailed (
+     * <code>true</code>) or basic (<code>false</code>) monitoring.
      * </p>
      * 
      * @param instanceMonitoring
      *        Controls whether instances in this group are launched with
-     *        detailed monitoring.
+     *        detailed (<code>true</code>) or basic (<code>false</code>)
+     *        monitoring.
      */
 
     public void setInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
@@ -864,12 +865,13 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Controls whether instances in this group are launched with detailed
-     * monitoring.
+     * Controls whether instances in this group are launched with detailed (
+     * <code>true</code>) or basic (<code>false</code>) monitoring.
      * </p>
      * 
      * @return Controls whether instances in this group are launched with
-     *         detailed monitoring.
+     *         detailed (<code>true</code>) or basic (<code>false</code>)
+     *         monitoring.
      */
 
     public InstanceMonitoring getInstanceMonitoring() {
@@ -878,13 +880,14 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Controls whether instances in this group are launched with detailed
-     * monitoring.
+     * Controls whether instances in this group are launched with detailed (
+     * <code>true</code>) or basic (<code>false</code>) monitoring.
      * </p>
      * 
      * @param instanceMonitoring
      *        Controls whether instances in this group are launched with
-     *        detailed monitoring.
+     *        detailed (<code>true</code>) or basic (<code>false</code>)
+     *        monitoring.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

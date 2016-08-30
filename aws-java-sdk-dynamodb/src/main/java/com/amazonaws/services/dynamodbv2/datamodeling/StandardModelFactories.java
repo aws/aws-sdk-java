@@ -100,7 +100,7 @@ final class StandardModelFactories {
     private static final class FieldModelBuilder<T,V> extends DynamoDBMapperFieldModel.Builder<T,V> {
         private FieldModelBuilder(final Bean<T,V> bean, final Rule<V> rule) {
             super(bean);
-            with(rule.getDynamoDBAttributeType());
+            withAttributeType(rule.getAttributeType());
             with(rule.newConverter(bean.type()));
             with(bean.reflect());
         }

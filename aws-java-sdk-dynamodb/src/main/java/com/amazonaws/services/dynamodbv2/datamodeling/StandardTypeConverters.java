@@ -348,12 +348,12 @@ final class StandardTypeConverters implements DynamoDBTypeConverterFactory {
          * {@link List}
          */
         static final class LIST {
-            static <S,T> DynamoDBTypeConverter<List<S>,List<T>> join(final DynamoDBTypeConverter<S,T> scalar) {
-                return new DynamoDBTypeConverter<List<S>,List<T>>() {
-                    public final List<S> convert(final List<T> o) {
+            static <S,T> DynamoDBTypeConverter<List<S>,Collection<T>> join(final DynamoDBTypeConverter<S,T> scalar) {
+                return new DynamoDBTypeConverter<List<S>,Collection<T>>() {
+                    public final List<S> convert(final Collection<T> o) {
                         return LIST.<S,T>convert(o, scalar);
                     }
-                    public final List<T> unconvert(final List<S> o) {
+                    public final Collection<T> unconvert(final List<S> o) {
                         return LIST.<S,T>unconvert(o, scalar);
                     }
                 };
@@ -420,12 +420,12 @@ final class StandardTypeConverters implements DynamoDBTypeConverterFactory {
          * {@link Set}
          */
         static final class SET {
-            static <S,T> DynamoDBTypeConverter<List<S>,Set<T>> join(final DynamoDBTypeConverter<S,T> target) {
-                return new DynamoDBTypeConverter<List<S>,Set<T>>() {
-                    public List<S> convert(final Set<T> o) {
+            static <S,T> DynamoDBTypeConverter<List<S>,Collection<T>> join(final DynamoDBTypeConverter<S,T> target) {
+                return new DynamoDBTypeConverter<List<S>,Collection<T>>() {
+                    public List<S> convert(final Collection<T> o) {
                         return LIST.<S,T>convert(o, target);
                     }
-                    public Set<T> unconvert(final List<S> o) {
+                    public Collection<T> unconvert(final List<S> o) {
                         return SET.<S,T>unconvert(o, target);
                     }
                 };

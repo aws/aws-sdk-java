@@ -18,8 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains the count of health checks associated with the
- * current AWS account.
+ * A complex type that contains the response to a <code>healthcheckcount</code>
+ * request.
  * </p>
  */
 public class GetHealthCheckCountResult implements Serializable, Cloneable {

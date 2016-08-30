@@ -19,8 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type containing information about a request to add, change, or
- * delete the tags that are associated with a resource.
+ * A complex type that contains information about the tags that you want to add,
+ * edit, or delete.
  * </p>
  */
 public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
@@ -30,12 +30,18 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      */
     private String resourceType;
     /**
@@ -46,16 +52,20 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
     private String resourceId;
     /**
      * <p>
-     * A complex type that contains a list of <code>Tag</code> elements. Each
-     * <code>Tag</code> element identifies a tag that you want to add or update
-     * for the specified resource.
+     * A complex type that contains a list of the tags that you want to add to
+     * the specified health check or hosted zone and/or the tags for which you
+     * want to edit the <code>Value</code> element.
+     * </p>
+     * <p>
+     * You can add a maximum of 10 tags to a health check or a hosted zone.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> addTags;
     /**
      * <p>
-     * A list of <code>Tag</code> keys that you want to remove from the
-     * specified resource.
+     * A complex type that contains a list of the tags that you want to delete
+     * from the specified health check or hosted zone. You can specify up to 10
+     * keys.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> removeTagKeys;
@@ -64,20 +74,32 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resource.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
      * @see TagResourceType
      */
 
@@ -89,20 +111,31 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @return The type of the resource.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         - The resource type for health checks is <code>healthcheck</code>
-     *         .
+     *         The resource type for health checks is <code>healthcheck</code>.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         - The resource type for hosted zones is <code>hostedzone</code>.
+     *         The resource type for hosted zones is <code>hostedzone</code>.
+     *         </p>
+     *         </li>
      * @see TagResourceType
      */
 
@@ -114,20 +147,32 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resource.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TagResourceType
@@ -142,20 +187,32 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resource.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
      * @see TagResourceType
      */
 
@@ -167,20 +224,32 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      * <p>
      * The type of the resource.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resource.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TagResourceType
@@ -238,14 +307,20 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A complex type that contains a list of <code>Tag</code> elements. Each
-     * <code>Tag</code> element identifies a tag that you want to add or update
-     * for the specified resource.
+     * A complex type that contains a list of the tags that you want to add to
+     * the specified health check or hosted zone and/or the tags for which you
+     * want to edit the <code>Value</code> element.
+     * </p>
+     * <p>
+     * You can add a maximum of 10 tags to a health check or a hosted zone.
      * </p>
      * 
-     * @return A complex type that contains a list of <code>Tag</code> elements.
-     *         Each <code>Tag</code> element identifies a tag that you want to
-     *         add or update for the specified resource.
+     * @return A complex type that contains a list of the tags that you want to
+     *         add to the specified health check or hosted zone and/or the tags
+     *         for which you want to edit the <code>Value</code> element.</p>
+     *         <p>
+     *         You can add a maximum of 10 tags to a health check or a hosted
+     *         zone.
      */
 
     public java.util.List<Tag> getAddTags() {
@@ -257,15 +332,21 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A complex type that contains a list of <code>Tag</code> elements. Each
-     * <code>Tag</code> element identifies a tag that you want to add or update
-     * for the specified resource.
+     * A complex type that contains a list of the tags that you want to add to
+     * the specified health check or hosted zone and/or the tags for which you
+     * want to edit the <code>Value</code> element.
+     * </p>
+     * <p>
+     * You can add a maximum of 10 tags to a health check or a hosted zone.
      * </p>
      * 
      * @param addTags
-     *        A complex type that contains a list of <code>Tag</code> elements.
-     *        Each <code>Tag</code> element identifies a tag that you want to
-     *        add or update for the specified resource.
+     *        A complex type that contains a list of the tags that you want to
+     *        add to the specified health check or hosted zone and/or the tags
+     *        for which you want to edit the <code>Value</code> element.</p>
+     *        <p>
+     *        You can add a maximum of 10 tags to a health check or a hosted
+     *        zone.
      */
 
     public void setAddTags(java.util.Collection<Tag> addTags) {
@@ -279,9 +360,12 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A complex type that contains a list of <code>Tag</code> elements. Each
-     * <code>Tag</code> element identifies a tag that you want to add or update
-     * for the specified resource.
+     * A complex type that contains a list of the tags that you want to add to
+     * the specified health check or hosted zone and/or the tags for which you
+     * want to edit the <code>Value</code> element.
+     * </p>
+     * <p>
+     * You can add a maximum of 10 tags to a health check or a hosted zone.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -291,9 +375,12 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param addTags
-     *        A complex type that contains a list of <code>Tag</code> elements.
-     *        Each <code>Tag</code> element identifies a tag that you want to
-     *        add or update for the specified resource.
+     *        A complex type that contains a list of the tags that you want to
+     *        add to the specified health check or hosted zone and/or the tags
+     *        for which you want to edit the <code>Value</code> element.</p>
+     *        <p>
+     *        You can add a maximum of 10 tags to a health check or a hosted
+     *        zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -311,15 +398,21 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A complex type that contains a list of <code>Tag</code> elements. Each
-     * <code>Tag</code> element identifies a tag that you want to add or update
-     * for the specified resource.
+     * A complex type that contains a list of the tags that you want to add to
+     * the specified health check or hosted zone and/or the tags for which you
+     * want to edit the <code>Value</code> element.
+     * </p>
+     * <p>
+     * You can add a maximum of 10 tags to a health check or a hosted zone.
      * </p>
      * 
      * @param addTags
-     *        A complex type that contains a list of <code>Tag</code> elements.
-     *        Each <code>Tag</code> element identifies a tag that you want to
-     *        add or update for the specified resource.
+     *        A complex type that contains a list of the tags that you want to
+     *        add to the specified health check or hosted zone and/or the tags
+     *        for which you want to edit the <code>Value</code> element.</p>
+     *        <p>
+     *        You can add a maximum of 10 tags to a health check or a hosted
+     *        zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -332,12 +425,14 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of <code>Tag</code> keys that you want to remove from the
-     * specified resource.
+     * A complex type that contains a list of the tags that you want to delete
+     * from the specified health check or hosted zone. You can specify up to 10
+     * keys.
      * </p>
      * 
-     * @return A list of <code>Tag</code> keys that you want to remove from the
-     *         specified resource.
+     * @return A complex type that contains a list of the tags that you want to
+     *         delete from the specified health check or hosted zone. You can
+     *         specify up to 10 keys.
      */
 
     public java.util.List<String> getRemoveTagKeys() {
@@ -349,13 +444,15 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of <code>Tag</code> keys that you want to remove from the
-     * specified resource.
+     * A complex type that contains a list of the tags that you want to delete
+     * from the specified health check or hosted zone. You can specify up to 10
+     * keys.
      * </p>
      * 
      * @param removeTagKeys
-     *        A list of <code>Tag</code> keys that you want to remove from the
-     *        specified resource.
+     *        A complex type that contains a list of the tags that you want to
+     *        delete from the specified health check or hosted zone. You can
+     *        specify up to 10 keys.
      */
 
     public void setRemoveTagKeys(java.util.Collection<String> removeTagKeys) {
@@ -370,8 +467,9 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of <code>Tag</code> keys that you want to remove from the
-     * specified resource.
+     * A complex type that contains a list of the tags that you want to delete
+     * from the specified health check or hosted zone. You can specify up to 10
+     * keys.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -381,8 +479,9 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param removeTagKeys
-     *        A list of <code>Tag</code> keys that you want to remove from the
-     *        specified resource.
+     *        A complex type that contains a list of the tags that you want to
+     *        delete from the specified health check or hosted zone. You can
+     *        specify up to 10 keys.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -401,13 +500,15 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of <code>Tag</code> keys that you want to remove from the
-     * specified resource.
+     * A complex type that contains a list of the tags that you want to delete
+     * from the specified health check or hosted zone. You can specify up to 10
+     * keys.
      * </p>
      * 
      * @param removeTagKeys
-     *        A list of <code>Tag</code> keys that you want to remove from the
-     *        specified resource.
+     *        A complex type that contains a list of the tags that you want to
+     *        delete from the specified health check or hosted zone. You can
+     *        specify up to 10 keys.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

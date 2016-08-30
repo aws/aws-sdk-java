@@ -18,9 +18,8 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>>
- * A complex type that contains information about the request to create a health
- * check.
+ * <p>
+ * A complex type that contains the health check request information.
  * </p>
  */
 public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
@@ -32,18 +31,13 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <code>CreateHealthCheck</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
      * <code>CallerReference</code> string every time you create a health check.
-     * <code>CallerReference</code> can be any unique string; you might choose
-     * to use a string that identifies your project.
-     * </p>
-     * <p>
-     * Valid characters are any Unicode code points that are legal in an XML 1.0
-     * document. The UTF-8 encoding of the value must be less than 128 bytes.
      * </p>
      */
     private String callerReference;
     /**
      * <p>
-     * A complex type that contains health check configuration.
+     * A complex type that contains the response to a
+     * <code>CreateHealthCheck</code> request.
      * </p>
      */
     private HealthCheckConfig healthCheckConfig;
@@ -54,12 +48,6 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <code>CreateHealthCheck</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
      * <code>CallerReference</code> string every time you create a health check.
-     * <code>CallerReference</code> can be any unique string; you might choose
-     * to use a string that identifies your project.
-     * </p>
-     * <p>
-     * Valid characters are any Unicode code points that are legal in an XML 1.0
-     * document. The UTF-8 encoding of the value must be less than 128 bytes.
      * </p>
      * 
      * @param callerReference
@@ -67,12 +55,7 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        <code>CreateHealthCheck</code> requests to be retried without the
      *        risk of executing the operation twice. You must use a unique
      *        <code>CallerReference</code> string every time you create a health
-     *        check. <code>CallerReference</code> can be any unique string; you
-     *        might choose to use a string that identifies your project.</p>
-     *        <p>
-     *        Valid characters are any Unicode code points that are legal in an
-     *        XML 1.0 document. The UTF-8 encoding of the value must be less
-     *        than 128 bytes.
+     *        check.
      */
 
     public void setCallerReference(String callerReference) {
@@ -85,25 +68,13 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <code>CreateHealthCheck</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
      * <code>CallerReference</code> string every time you create a health check.
-     * <code>CallerReference</code> can be any unique string; you might choose
-     * to use a string that identifies your project.
-     * </p>
-     * <p>
-     * Valid characters are any Unicode code points that are legal in an XML 1.0
-     * document. The UTF-8 encoding of the value must be less than 128 bytes.
      * </p>
      * 
      * @return A unique string that identifies the request and that allows
      *         failed <code>CreateHealthCheck</code> requests to be retried
      *         without the risk of executing the operation twice. You must use a
      *         unique <code>CallerReference</code> string every time you create
-     *         a health check. <code>CallerReference</code> can be any unique
-     *         string; you might choose to use a string that identifies your
-     *         project.</p>
-     *         <p>
-     *         Valid characters are any Unicode code points that are legal in an
-     *         XML 1.0 document. The UTF-8 encoding of the value must be less
-     *         than 128 bytes.
+     *         a health check.
      */
 
     public String getCallerReference() {
@@ -116,12 +87,6 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <code>CreateHealthCheck</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
      * <code>CallerReference</code> string every time you create a health check.
-     * <code>CallerReference</code> can be any unique string; you might choose
-     * to use a string that identifies your project.
-     * </p>
-     * <p>
-     * Valid characters are any Unicode code points that are legal in an XML 1.0
-     * document. The UTF-8 encoding of the value must be less than 128 bytes.
      * </p>
      * 
      * @param callerReference
@@ -129,12 +94,7 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        <code>CreateHealthCheck</code> requests to be retried without the
      *        risk of executing the operation twice. You must use a unique
      *        <code>CallerReference</code> string every time you create a health
-     *        check. <code>CallerReference</code> can be any unique string; you
-     *        might choose to use a string that identifies your project.</p>
-     *        <p>
-     *        Valid characters are any Unicode code points that are legal in an
-     *        XML 1.0 document. The UTF-8 encoding of the value must be less
-     *        than 128 bytes.
+     *        check.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -146,11 +106,13 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A complex type that contains health check configuration.
+     * A complex type that contains the response to a
+     * <code>CreateHealthCheck</code> request.
      * </p>
      * 
      * @param healthCheckConfig
-     *        A complex type that contains health check configuration.
+     *        A complex type that contains the response to a
+     *        <code>CreateHealthCheck</code> request.
      */
 
     public void setHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
@@ -159,10 +121,12 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A complex type that contains health check configuration.
+     * A complex type that contains the response to a
+     * <code>CreateHealthCheck</code> request.
      * </p>
      * 
-     * @return A complex type that contains health check configuration.
+     * @return A complex type that contains the response to a
+     *         <code>CreateHealthCheck</code> request.
      */
 
     public HealthCheckConfig getHealthCheckConfig() {
@@ -171,11 +135,13 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A complex type that contains health check configuration.
+     * A complex type that contains the response to a
+     * <code>CreateHealthCheck</code> request.
      * </p>
      * 
      * @param healthCheckConfig
-     *        A complex type that contains health check configuration.
+     *        A complex type that contains the response to a
+     *        <code>CreateHealthCheck</code> request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

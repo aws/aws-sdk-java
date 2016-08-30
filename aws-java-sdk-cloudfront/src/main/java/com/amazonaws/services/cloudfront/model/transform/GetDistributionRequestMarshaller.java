@@ -55,7 +55,7 @@ public class GetDistributionRequestMarshaller implements
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2016-08-01/distribution/{Id}";
+        String uriResourcePath = "/2016-08-20/distribution/{Id}";
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",

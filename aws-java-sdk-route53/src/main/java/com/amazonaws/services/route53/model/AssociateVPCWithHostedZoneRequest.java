@@ -19,8 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the request to associate a VPC
- * with an hosted zone.
+ * A complex type that contains information about the VPC and the hosted zone
+ * that you want to associate.
  * </p>
  */
 public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
@@ -38,14 +38,14 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
     private String hostedZoneId;
     /**
      * <p>
-     * The VPC that you want your hosted zone to be associated with.
+     * A complex type containing information about the Amazon VPC that you're
+     * associating with the specified hosted zone.
      * </p>
      */
     private VPC vPC;
     /**
      * <p>
-     * <i>Optional:</i> Any comments you want to include about a
-     * <code>AssociateVPCWithHostedZoneRequest</code>.
+     * <i>Optional:</i> A comment about the association request.
      * </p>
      */
     private String comment;
@@ -116,11 +116,13 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The VPC that you want your hosted zone to be associated with.
+     * A complex type containing information about the Amazon VPC that you're
+     * associating with the specified hosted zone.
      * </p>
      * 
      * @param vPC
-     *        The VPC that you want your hosted zone to be associated with.
+     *        A complex type containing information about the Amazon VPC that
+     *        you're associating with the specified hosted zone.
      */
 
     public void setVPC(VPC vPC) {
@@ -129,10 +131,12 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The VPC that you want your hosted zone to be associated with.
+     * A complex type containing information about the Amazon VPC that you're
+     * associating with the specified hosted zone.
      * </p>
      * 
-     * @return The VPC that you want your hosted zone to be associated with.
+     * @return A complex type containing information about the Amazon VPC that
+     *         you're associating with the specified hosted zone.
      */
 
     public VPC getVPC() {
@@ -141,11 +145,13 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The VPC that you want your hosted zone to be associated with.
+     * A complex type containing information about the Amazon VPC that you're
+     * associating with the specified hosted zone.
      * </p>
      * 
      * @param vPC
-     *        The VPC that you want your hosted zone to be associated with.
+     *        A complex type containing information about the Amazon VPC that
+     *        you're associating with the specified hosted zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -157,13 +163,11 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * <i>Optional:</i> Any comments you want to include about a
-     * <code>AssociateVPCWithHostedZoneRequest</code>.
+     * <i>Optional:</i> A comment about the association request.
      * </p>
      * 
      * @param comment
-     *        Optional:</i> Any comments you want to include about a
-     *        <code>AssociateVPCWithHostedZoneRequest
+     *        <i>Optional:</i> A comment about the association request.
      */
 
     public void setComment(String comment) {
@@ -172,12 +176,10 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * <i>Optional:</i> Any comments you want to include about a
-     * <code>AssociateVPCWithHostedZoneRequest</code>.
+     * <i>Optional:</i> A comment about the association request.
      * </p>
      * 
-     * @return Optional:</i> Any comments you want to include about a
-     *         <code>AssociateVPCWithHostedZoneRequest
+     * @return <i>Optional:</i> A comment about the association request.
      */
 
     public String getComment() {
@@ -186,13 +188,11 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * <i>Optional:</i> Any comments you want to include about a
-     * <code>AssociateVPCWithHostedZoneRequest</code>.
+     * <i>Optional:</i> A comment about the association request.
      * </p>
      * 
      * @param comment
-     *        Optional:</i> Any comments you want to include about a
-     *        <code>AssociateVPCWithHostedZoneRequest
+     *        <i>Optional:</i> A comment about the association request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

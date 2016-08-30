@@ -55,6 +55,12 @@
  * </li>
  * <li>
  * <p>
+ * <a>GetPipelineExecution</a>, which returns information about a specific
+ * execution of a pipeline.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetPipelineState</a>, which returns information about the current state of
  * the stages and actions of a pipeline.
  * </p>

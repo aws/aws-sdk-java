@@ -61,9 +61,6 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      * <code>TrafficPolicyInstanceTypeMarker</code> elements in the
      * corresponding request parameters.
      * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
-     * </p>
      */
     private Boolean isTruncated;
     /**
@@ -360,9 +357,6 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      * <code>TrafficPolicyInstanceTypeMarker</code> elements in the
      * corresponding request parameters.
      * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
-     * </p>
      * 
      * @param isTruncated
      *        A flag that indicates whether there are more traffic policy
@@ -373,9 +367,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *        <code>HostedZoneIdMarker</code>,
      *        <code>TrafficPolicyInstanceNameMarker</code>, and
      *        <code>TrafficPolicyInstanceTypeMarker</code> elements in the
-     *        corresponding request parameters.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        corresponding request parameters.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -393,9 +385,6 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      * <code>TrafficPolicyInstanceTypeMarker</code> elements in the
      * corresponding request parameters.
      * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
-     * </p>
      * 
      * @return A flag that indicates whether there are more traffic policy
      *         instances to be listed. If the response was truncated, you can
@@ -405,9 +394,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *         specifying the values of the <code>HostedZoneIdMarker</code>,
      *         <code>TrafficPolicyInstanceNameMarker</code>, and
      *         <code>TrafficPolicyInstanceTypeMarker</code> elements in the
-     *         corresponding request parameters.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     *         corresponding request parameters.
      */
 
     public Boolean getIsTruncated() {
@@ -425,9 +412,6 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      * <code>TrafficPolicyInstanceTypeMarker</code> elements in the
      * corresponding request parameters.
      * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
-     * </p>
      * 
      * @param isTruncated
      *        A flag that indicates whether there are more traffic policy
@@ -438,9 +422,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *        <code>HostedZoneIdMarker</code>,
      *        <code>TrafficPolicyInstanceNameMarker</code>, and
      *        <code>TrafficPolicyInstanceTypeMarker</code> elements in the
-     *        corresponding request parameters.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        corresponding request parameters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -462,9 +444,6 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      * <code>TrafficPolicyInstanceTypeMarker</code> elements in the
      * corresponding request parameters.
      * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
-     * </p>
      * 
      * @return A flag that indicates whether there are more traffic policy
      *         instances to be listed. If the response was truncated, you can
@@ -474,9 +453,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *         specifying the values of the <code>HostedZoneIdMarker</code>,
      *         <code>TrafficPolicyInstanceNameMarker</code>, and
      *         <code>TrafficPolicyInstanceTypeMarker</code> elements in the
-     *         corresponding request parameters.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     *         corresponding request parameters.
      */
 
     public Boolean isTruncated() {

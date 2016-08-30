@@ -16,7 +16,8 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * The health check you are trying to get or delete does not exist.
+ * No health check exists with the ID that you specified in the
+ * <code>DeleteHealthCheck</code> request.
  * </p>
  */
 public class NoSuchHealthCheckException extends

@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains an optional comment and the changes that you
- * want to make with a change batch request.
+ * The information for a change request.
  * </p>
  */
 public class ChangeBatch implements Serializable, Cloneable {
@@ -33,8 +32,7 @@ public class ChangeBatch implements Serializable, Cloneable {
     private String comment;
     /**
      * <p>
-     * A complex type that contains one <code>Change</code> element for each
-     * resource record set that you want to create or delete.
+     * Information about the changes to make to the record sets.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Change> changes;
@@ -53,8 +51,7 @@ public class ChangeBatch implements Serializable, Cloneable {
      * members.
      * 
      * @param changes
-     *        A complex type that contains one <code>Change</code> element for
-     *        each resource record set that you want to create or delete.
+     *        Information about the changes to make to the record sets.
      */
     public ChangeBatch(java.util.List<Change> changes) {
         setChanges(changes);
@@ -67,7 +64,8 @@ public class ChangeBatch implements Serializable, Cloneable {
      * </p>
      * 
      * @param comment
-     *        Optional:
+     *        <i>Optional:</i> Any comments you want to include about a change
+     *        batch request.
      */
 
     public void setComment(String comment) {
@@ -80,7 +78,8 @@ public class ChangeBatch implements Serializable, Cloneable {
      * request.
      * </p>
      * 
-     * @return Optional:
+     * @return <i>Optional:</i> Any comments you want to include about a change
+     *         batch request.
      */
 
     public String getComment() {
@@ -94,7 +93,8 @@ public class ChangeBatch implements Serializable, Cloneable {
      * </p>
      * 
      * @param comment
-     *        Optional:
+     *        <i>Optional:</i> Any comments you want to include about a change
+     *        batch request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -106,12 +106,10 @@ public class ChangeBatch implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains one <code>Change</code> element for each
-     * resource record set that you want to create or delete.
+     * Information about the changes to make to the record sets.
      * </p>
      * 
-     * @return A complex type that contains one <code>Change</code> element for
-     *         each resource record set that you want to create or delete.
+     * @return Information about the changes to make to the record sets.
      */
 
     public java.util.List<Change> getChanges() {
@@ -123,13 +121,11 @@ public class ChangeBatch implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains one <code>Change</code> element for each
-     * resource record set that you want to create or delete.
+     * Information about the changes to make to the record sets.
      * </p>
      * 
      * @param changes
-     *        A complex type that contains one <code>Change</code> element for
-     *        each resource record set that you want to create or delete.
+     *        Information about the changes to make to the record sets.
      */
 
     public void setChanges(java.util.Collection<Change> changes) {
@@ -144,8 +140,7 @@ public class ChangeBatch implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains one <code>Change</code> element for each
-     * resource record set that you want to create or delete.
+     * Information about the changes to make to the record sets.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -155,8 +150,7 @@ public class ChangeBatch implements Serializable, Cloneable {
      * </p>
      * 
      * @param changes
-     *        A complex type that contains one <code>Change</code> element for
-     *        each resource record set that you want to create or delete.
+     *        Information about the changes to make to the record sets.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -174,13 +168,11 @@ public class ChangeBatch implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains one <code>Change</code> element for each
-     * resource record set that you want to create or delete.
+     * Information about the changes to make to the record sets.
      * </p>
      * 
      * @param changes
-     *        A complex type that contains one <code>Change</code> element for
-     *        each resource record set that you want to create or delete.
+     *        Information about the changes to make to the record sets.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -18,9 +18,8 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>>
- * A complex type that contains information about the request to update a health
- * check.
+ * <p>
+ * A complex type that contains the health check request information.
  * </p>
  */
 public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
@@ -28,36 +27,82 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the health check to update.
+     * The ID for the health check for which you want detailed information. When
+     * you created the health check, <code>CreateHealthCheck</code> returned the
+     * ID in the response, in the <code>HealthCheckId</code> element.
      * </p>
      */
     private String healthCheckId;
     /**
      * <p>
-     * Optional. When you specify a health check version, Amazon Route 53
-     * compares this value with the current value in the health check, which
-     * prevents you from updating the health check when the versions don't
-     * match. Using <code>HealthCheckVersion</code> lets you prevent overwriting
-     * another change to the health check.
+     * A sequential counter that Amazon Route 53 sets to <code>1</code> when you
+     * create a health check and increments by <code>1</code> each time you
+     * update settings for the health check.
      * </p>
+     * <p>
+     * We recommend that you use <code>GetHealthCheck</code> or
+     * <code>ListHealthChecks</code> to get the current value of
+     * <code>HealthCheckVersion</code> for the health check that you want to
+     * update, and that you include that value in your
+     * <code>UpdateHealthCheck</code> request. This prevents Amazon Route 53
+     * from overwriting an intervening update:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * f the value in the <code>UpdateHealthCheck</code> request matches the
+     * value of <code>HealthCheckVersion</code> in the health check, Amazon
+     * Route 53 updates the health check with the new settings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the value of <code>HealthCheckVersion</code> in the health check is
+     * greater, the health check was changed after you got the version number.
+     * Amazon Route 53 does not update the health check, and it returns a
+     * <code>HealthCheckVersionMismatch</code> error.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Long healthCheckVersion;
     /**
      * <p>
-     * The IP address of the resource that you want to check.
+     * The IPv4 IP address of the endpoint on which you want Amazon Route 53 to
+     * perform health checks. If you don't specify a value for
+     * <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve
+     * the domain name that you specify in <code>FullyQualifiedDomainName</code>
+     * at the interval you specify in <code>RequestInterval</code>. Using an IP
+     * address that DNS returns, Amazon Route 53 then checks the health of the
+     * endpoint.
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * f the endpoint is an Amazon EC2 instance, we recommend that you create an
+     * Elastic IP address, associate it with your Amazon EC2 instance, and
+     * specify the Elastic IP address for <code>IPAddress</code>. This ensures
+     * that the IP address of your instance never changes. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
+     * >Elastic IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If a health check already has a value for <code>IPAddress</code>, you can
+     * change the value. However, you can't update an existing health check to
+     * add or remove the value of <code>IPAddress</code>.
+     * </p>
+     * </note>
+     * <p>
+     * For more information, see
+     * <a>UpdateHealthCheckRequest$FullyQualifiedDomainName</a>.
      * </p>
      */
     private String iPAddress;
     /**
      * <p>
-     * The port on which you want Amazon Route 53 to open a connection to
-     * perform health checks.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * The port on the endpoint on which you want Amazon Route 53 to perform
+     * health checks.
      * </p>
      */
     private Integer port;
@@ -75,10 +120,93 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     private String resourcePath;
     /**
      * <p>
-     * Fully qualified domain name of the instance to be health checked.
+     * Amazon Route 53 behavior depends on whether you specify a value for
+     * <code>IPAddress</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If a health check already has a value for <code>IPAddress</code>, you can
+     * change the value. However, you can't update an existing health check to
+     * add or remove the value of <code>IPAddress</code>.
+     * </p>
+     * </note>
+     * <p>
+     * <b>If you specify</b> <code>IPAddress</code>:
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * The value that you want Amazon Route 53 to pass in the <code>Host</code>
+     * header in all health checks except TCP health checks. This is typically
+     * the fully qualified DNS name of the endpoint on which you want Amazon
+     * Route 53 to perform health checks. When Amazon Route 53 checks the health
+     * of an endpoint, here is how it constructs the <code>Host</code> header:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a value of <code>80</code> for <code>Port</code> and
+     * <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for <code>Type</code>,
+     * Amazon Route 53 passes the value of <code>FullyQualifiedDomainName</code>
+     * to the endpoint in the <code>Host</code> header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a value of <code>443</code> for <code>Port</code> and
+     * <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for <code>Type</code>,
+     * Amazon Route 53 passes the value of <code>FullyQualifiedDomainName</code>
+     * to the endpoint in the Host header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify another value for <code>Port</code> and any value except
+     * <code>TCP</code> for <code>Type</code>, Amazon Route 53 passes <i>
+     * <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the
+     * endpoint in the Host header.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a value for <code>FullyQualifiedDomainName</code>,
+     * Amazon Route 53 substitutes the value of <code>IPAddress</code> in the
+     * <code>Host</code> header in each of the above cases.
+     * </p>
+     * <p>
+     * <b>If you don't specify</b> <code>IPAddress</code>:
+     * </p>
+     * <p>
+     * If you don't specify a value for <code>IPAddress</code>, Amazon Route 53
+     * sends a DNS request to the domain that you specify in
+     * <code>FullyQualifiedDomainName</code> at the interval you specify in
+     * <code>RequestInterval</code>. Using an IP address that DNS returns,
+     * Amazon Route 53 then checks the health of the endpoint.
+     * </p>
+     * <p>
+     * If you want to check the health of weighted, latency, or failover
+     * resource record sets and you choose to specify the endpoint only by
+     * <code>FullyQualifiedDomainName</code>, we recommend that you create a
+     * separate health check for each endpoint. For example, create a health
+     * check for each HTTP server that is serving content for www.example.com.
+     * For the value of <code>FullyQualifiedDomainName</code>, specify the
+     * domain name of the server (such as <code>us-east-1-www.example.com</code>
+     * ), not the name of the resource record sets (www.example.com).
+     * </p>
+     * <important>
+     * <p>
+     * In this configuration, if the value of
+     * <code>FullyQualifiedDomainName</code> matches the name of the resource
+     * record sets and you then associate the health check with those resource
+     * record sets, health check results will be unpredictable.
+     * </p>
+     * </important>
+     * <p>
+     * In addition, if the value of <code>Type</code> is <code>HTTP</code>,
+     * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
+     * <code>HTTPS_STR_MATCH</code>, Amazon Route 53 passes the value of
+     * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as
+     * it does when you specify a value for <code>IPAddress</code>. If the value
+     * of <code>Type</code> is <code>TCP</code>, Amazon Route 53 doesn't pass a
+     * <code>Host</code> header.
      * </p>
      */
     private String fullyQualifiedDomainName;
@@ -88,11 +216,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to
      * search for in the response body from the specified resource. If the
      * string appears in the response body, Amazon Route 53 considers the
-     * resource healthy. Amazon Route 53 considers case when searching for
-     * <code>SearchString</code> in the response body.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * resource healthy. (You can't change the value of <code>Type</code> when
+     * you update a health check.)
      * </p>
      */
     private String searchString;
@@ -100,48 +225,56 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <p>
      * The number of consecutive health checks that an endpoint must pass or
      * fail for Amazon Route 53 to change the current status of the endpoint
-     * from unhealthy to healthy or vice versa.
-     * </p>
-     * <p>
-     * Valid values are integers between 1 and 10. For more information, see
-     * "How Amazon Route 53 Determines Whether an Endpoint Is Healthy" in the
-     * Amazon Route 53 Developer Guide.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * from unhealthy to healthy or vice versa. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     * >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the
+     * <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      */
     private Integer failureThreshold;
     /**
      * <p>
-     * A boolean value that indicates whether the status of health check should
-     * be inverted. For example, if a health check is healthy but
-     * <code>Inverted</code> is <code>True</code>, then Amazon Route 53
-     * considers the health check to be unhealthy.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * Specify whether you want Amazon Route 53 to invert the status of a health
+     * check, for example, to consider a health check unhealthy when it
+     * otherwise would be considered healthy.
      * </p>
      */
     private Boolean inverted;
     /**
      * <p>
-     * The minimum number of child health checks that must be healthy for Amazon
-     * Route 53 to consider the parent health check to be healthy. Valid values
-     * are integers between 0 and 256, inclusive.
+     * The number of child health checks that are associated with a
+     * <code>CALCULATED</code> health that Amazon Route 53 must consider healthy
+     * for the <code>CALCULATED</code> health check to be considered healthy. To
+     * specify the child health checks that you want to associate with a
+     * <code>CALCULATED</code> health check, use the
+     * <code>ChildHealthChecks</code> and <code>ChildHealthCheck</code>
+     * elements.
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * Note the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a number greater than the number of child health checks,
+     * Amazon Route 53 always considers this health check to be unhealthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify <code>0</code>, Amazon Route 53 always considers this
+     * health check to be healthy.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer healthThreshold;
     /**
      * <p>
-     * For a specified parent health check, a list of <code>HealthCheckId</code>
-     * values for the associated child health checks.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * A complex type that contains one <code>ChildHealthCheck</code> element
+     * for each health check that you want to associate with a
+     * <code>CALCULATED</code> health check.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> childHealthChecks;
@@ -149,27 +282,39 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <p>
      * Specify whether you want Amazon Route 53 to send the value of
      * <code>FullyQualifiedDomainName</code> to the endpoint in the
-     * <code>client_hello</code> message during TLS negotiation. If you don't
-     * specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
-     * <code>true</code> when <code>Type</code> is <code>HTTPS</code> or
-     * <code>HTTPS_STR_MATCH</code> and defaults to <code>false</code> when
-     * <code>Type</code> is any other value.
+     * <code>client_hello</code> message during <code>TLS</code> negotiation.
+     * This allows the endpoint to respond to <code>HTTPS</code> health check
+     * requests with the applicable SSL/TLS certificate.
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * Some endpoints require that HTTPS requests include the host name in the
+     * <code>client_hello</code> message. If you don't enable SNI, the status of
+     * the health check will be SSL alert <code>handshake_failure</code>. A
+     * health check can also have that status for other reasons. If SNI is
+     * enabled and you're still getting the error, check the SSL/TLS
+     * configuration on your endpoint and confirm that your certificate is
+     * valid.
+     * </p>
+     * <p>
+     * The SSL/TLS certificate on your endpoint includes a domain name in the
+     * <code>Common Name</code> field and possibly several more in the
+     * <code>Subject Alternative Names</code> field. One of the domain names in
+     * the certificate should match the value that you specify for
+     * <code>FullyQualifiedDomainName</code>. If the endpoint responds to the
+     * <code>client_hello</code> message with a certificate that does not
+     * include the domain name that you specified in
+     * <code>FullyQualifiedDomainName</code>, a health checker will retry the
+     * handshake. In the second attempt, the health checker will omit
+     * <code>FullyQualifiedDomainName</code> from the <code>client_hello</code>
+     * message.
      * </p>
      */
     private Boolean enableSNI;
     /**
      * <p>
-     * A list of <code>HealthCheckRegion</code> values that specify the Amazon
-     * EC2 regions that you want Amazon Route 53 to use to perform health
-     * checks. You must specify at least three regions.
-     * </p>
-     * <note>When you remove a region from the list, Amazon Route 53 will
-     * briefly continue to check your endpoint from that region.</note>
-     * <p>
-     * Specify this value only if you want to change it.
+     * A complex type that contains one Region element for each region from
+     * which you want Amazon Route 53 health checkers to check the specified
+     * endpoint.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> regions;
@@ -180,11 +325,16 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the health check to update.
+     * The ID for the health check for which you want detailed information. When
+     * you created the health check, <code>CreateHealthCheck</code> returned the
+     * ID in the response, in the <code>HealthCheckId</code> element.
      * </p>
      * 
      * @param healthCheckId
-     *        The ID of the health check to update.
+     *        The ID for the health check for which you want detailed
+     *        information. When you created the health check,
+     *        <code>CreateHealthCheck</code> returned the ID in the response, in
+     *        the <code>HealthCheckId</code> element.
      */
 
     public void setHealthCheckId(String healthCheckId) {
@@ -193,10 +343,15 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the health check to update.
+     * The ID for the health check for which you want detailed information. When
+     * you created the health check, <code>CreateHealthCheck</code> returned the
+     * ID in the response, in the <code>HealthCheckId</code> element.
      * </p>
      * 
-     * @return The ID of the health check to update.
+     * @return The ID for the health check for which you want detailed
+     *         information. When you created the health check,
+     *         <code>CreateHealthCheck</code> returned the ID in the response,
+     *         in the <code>HealthCheckId</code> element.
      */
 
     public String getHealthCheckId() {
@@ -205,11 +360,16 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the health check to update.
+     * The ID for the health check for which you want detailed information. When
+     * you created the health check, <code>CreateHealthCheck</code> returned the
+     * ID in the response, in the <code>HealthCheckId</code> element.
      * </p>
      * 
      * @param healthCheckId
-     *        The ID of the health check to update.
+     *        The ID for the health check for which you want detailed
+     *        information. When you created the health check,
+     *        <code>CreateHealthCheck</code> returned the ID in the response, in
+     *        the <code>HealthCheckId</code> element.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -221,19 +381,64 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Optional. When you specify a health check version, Amazon Route 53
-     * compares this value with the current value in the health check, which
-     * prevents you from updating the health check when the versions don't
-     * match. Using <code>HealthCheckVersion</code> lets you prevent overwriting
-     * another change to the health check.
+     * A sequential counter that Amazon Route 53 sets to <code>1</code> when you
+     * create a health check and increments by <code>1</code> each time you
+     * update settings for the health check.
      * </p>
+     * <p>
+     * We recommend that you use <code>GetHealthCheck</code> or
+     * <code>ListHealthChecks</code> to get the current value of
+     * <code>HealthCheckVersion</code> for the health check that you want to
+     * update, and that you include that value in your
+     * <code>UpdateHealthCheck</code> request. This prevents Amazon Route 53
+     * from overwriting an intervening update:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * f the value in the <code>UpdateHealthCheck</code> request matches the
+     * value of <code>HealthCheckVersion</code> in the health check, Amazon
+     * Route 53 updates the health check with the new settings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the value of <code>HealthCheckVersion</code> in the health check is
+     * greater, the health check was changed after you got the version number.
+     * Amazon Route 53 does not update the health check, and it returns a
+     * <code>HealthCheckVersionMismatch</code> error.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param healthCheckVersion
-     *        Optional. When you specify a health check version, Amazon Route 53
-     *        compares this value with the current value in the health check,
-     *        which prevents you from updating the health check when the
-     *        versions don't match. Using <code>HealthCheckVersion</code> lets
-     *        you prevent overwriting another change to the health check.
+     *        A sequential counter that Amazon Route 53 sets to <code>1</code>
+     *        when you create a health check and increments by <code>1</code>
+     *        each time you update settings for the health check.</p>
+     *        <p>
+     *        We recommend that you use <code>GetHealthCheck</code> or
+     *        <code>ListHealthChecks</code> to get the current value of
+     *        <code>HealthCheckVersion</code> for the health check that you want
+     *        to update, and that you include that value in your
+     *        <code>UpdateHealthCheck</code> request. This prevents Amazon Route
+     *        53 from overwriting an intervening update:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        f the value in the <code>UpdateHealthCheck</code> request matches
+     *        the value of <code>HealthCheckVersion</code> in the health check,
+     *        Amazon Route 53 updates the health check with the new settings.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the value of <code>HealthCheckVersion</code> in the health
+     *        check is greater, the health check was changed after you got the
+     *        version number. Amazon Route 53 does not update the health check,
+     *        and it returns a <code>HealthCheckVersionMismatch</code> error.
+     *        </p>
+     *        </li>
      */
 
     public void setHealthCheckVersion(Long healthCheckVersion) {
@@ -242,18 +447,63 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Optional. When you specify a health check version, Amazon Route 53
-     * compares this value with the current value in the health check, which
-     * prevents you from updating the health check when the versions don't
-     * match. Using <code>HealthCheckVersion</code> lets you prevent overwriting
-     * another change to the health check.
+     * A sequential counter that Amazon Route 53 sets to <code>1</code> when you
+     * create a health check and increments by <code>1</code> each time you
+     * update settings for the health check.
      * </p>
+     * <p>
+     * We recommend that you use <code>GetHealthCheck</code> or
+     * <code>ListHealthChecks</code> to get the current value of
+     * <code>HealthCheckVersion</code> for the health check that you want to
+     * update, and that you include that value in your
+     * <code>UpdateHealthCheck</code> request. This prevents Amazon Route 53
+     * from overwriting an intervening update:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * f the value in the <code>UpdateHealthCheck</code> request matches the
+     * value of <code>HealthCheckVersion</code> in the health check, Amazon
+     * Route 53 updates the health check with the new settings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the value of <code>HealthCheckVersion</code> in the health check is
+     * greater, the health check was changed after you got the version number.
+     * Amazon Route 53 does not update the health check, and it returns a
+     * <code>HealthCheckVersionMismatch</code> error.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Optional. When you specify a health check version, Amazon Route
-     *         53 compares this value with the current value in the health
-     *         check, which prevents you from updating the health check when the
-     *         versions don't match. Using <code>HealthCheckVersion</code> lets
-     *         you prevent overwriting another change to the health check.
+     * @return A sequential counter that Amazon Route 53 sets to <code>1</code>
+     *         when you create a health check and increments by <code>1</code>
+     *         each time you update settings for the health check.</p>
+     *         <p>
+     *         We recommend that you use <code>GetHealthCheck</code> or
+     *         <code>ListHealthChecks</code> to get the current value of
+     *         <code>HealthCheckVersion</code> for the health check that you
+     *         want to update, and that you include that value in your
+     *         <code>UpdateHealthCheck</code> request. This prevents Amazon
+     *         Route 53 from overwriting an intervening update:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         f the value in the <code>UpdateHealthCheck</code> request matches
+     *         the value of <code>HealthCheckVersion</code> in the health check,
+     *         Amazon Route 53 updates the health check with the new settings.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the value of <code>HealthCheckVersion</code> in the health
+     *         check is greater, the health check was changed after you got the
+     *         version number. Amazon Route 53 does not update the health check,
+     *         and it returns a <code>HealthCheckVersionMismatch</code> error.
+     *         </p>
+     *         </li>
      */
 
     public Long getHealthCheckVersion() {
@@ -262,19 +512,64 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Optional. When you specify a health check version, Amazon Route 53
-     * compares this value with the current value in the health check, which
-     * prevents you from updating the health check when the versions don't
-     * match. Using <code>HealthCheckVersion</code> lets you prevent overwriting
-     * another change to the health check.
+     * A sequential counter that Amazon Route 53 sets to <code>1</code> when you
+     * create a health check and increments by <code>1</code> each time you
+     * update settings for the health check.
      * </p>
+     * <p>
+     * We recommend that you use <code>GetHealthCheck</code> or
+     * <code>ListHealthChecks</code> to get the current value of
+     * <code>HealthCheckVersion</code> for the health check that you want to
+     * update, and that you include that value in your
+     * <code>UpdateHealthCheck</code> request. This prevents Amazon Route 53
+     * from overwriting an intervening update:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * f the value in the <code>UpdateHealthCheck</code> request matches the
+     * value of <code>HealthCheckVersion</code> in the health check, Amazon
+     * Route 53 updates the health check with the new settings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the value of <code>HealthCheckVersion</code> in the health check is
+     * greater, the health check was changed after you got the version number.
+     * Amazon Route 53 does not update the health check, and it returns a
+     * <code>HealthCheckVersionMismatch</code> error.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param healthCheckVersion
-     *        Optional. When you specify a health check version, Amazon Route 53
-     *        compares this value with the current value in the health check,
-     *        which prevents you from updating the health check when the
-     *        versions don't match. Using <code>HealthCheckVersion</code> lets
-     *        you prevent overwriting another change to the health check.
+     *        A sequential counter that Amazon Route 53 sets to <code>1</code>
+     *        when you create a health check and increments by <code>1</code>
+     *        each time you update settings for the health check.</p>
+     *        <p>
+     *        We recommend that you use <code>GetHealthCheck</code> or
+     *        <code>ListHealthChecks</code> to get the current value of
+     *        <code>HealthCheckVersion</code> for the health check that you want
+     *        to update, and that you include that value in your
+     *        <code>UpdateHealthCheck</code> request. This prevents Amazon Route
+     *        53 from overwriting an intervening update:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        f the value in the <code>UpdateHealthCheck</code> request matches
+     *        the value of <code>HealthCheckVersion</code> in the health check,
+     *        Amazon Route 53 updates the health check with the new settings.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the value of <code>HealthCheckVersion</code> in the health
+     *        check is greater, the health check was changed after you got the
+     *        version number. Amazon Route 53 does not update the health check,
+     *        and it returns a <code>HealthCheckVersionMismatch</code> error.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -287,16 +582,65 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The IP address of the resource that you want to check.
+     * The IPv4 IP address of the endpoint on which you want Amazon Route 53 to
+     * perform health checks. If you don't specify a value for
+     * <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve
+     * the domain name that you specify in <code>FullyQualifiedDomainName</code>
+     * at the interval you specify in <code>RequestInterval</code>. Using an IP
+     * address that DNS returns, Amazon Route 53 then checks the health of the
+     * endpoint.
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * f the endpoint is an Amazon EC2 instance, we recommend that you create an
+     * Elastic IP address, associate it with your Amazon EC2 instance, and
+     * specify the Elastic IP address for <code>IPAddress</code>. This ensures
+     * that the IP address of your instance never changes. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
+     * >Elastic IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If a health check already has a value for <code>IPAddress</code>, you can
+     * change the value. However, you can't update an existing health check to
+     * add or remove the value of <code>IPAddress</code>.
+     * </p>
+     * </note>
+     * <p>
+     * For more information, see
+     * <a>UpdateHealthCheckRequest$FullyQualifiedDomainName</a>.
      * </p>
      * 
      * @param iPAddress
-     *        The IP address of the resource that you want to check.</p>
+     *        The IPv4 IP address of the endpoint on which you want Amazon Route
+     *        53 to perform health checks. If you don't specify a value for
+     *        <code>IPAddress</code>, Amazon Route 53 sends a DNS request to
+     *        resolve the domain name that you specify in
+     *        <code>FullyQualifiedDomainName</code> at the interval you specify
+     *        in <code>RequestInterval</code>. Using an IP address that DNS
+     *        returns, Amazon Route 53 then checks the health of the
+     *        endpoint.</p>
      *        <p>
-     *        Specify this value only if you want to change it.
+     *        f the endpoint is an Amazon EC2 instance, we recommend that you
+     *        create an Elastic IP address, associate it with your Amazon EC2
+     *        instance, and specify the Elastic IP address for
+     *        <code>IPAddress</code>. This ensures that the IP address of your
+     *        instance never changes. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
+     *        >Elastic IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide
+     *        for Linux Instances</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If a health check already has a value for <code>IPAddress</code>,
+     *        you can change the value. However, you can't update an existing
+     *        health check to add or remove the value of <code>IPAddress</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information, see
+     *        <a>UpdateHealthCheckRequest$FullyQualifiedDomainName</a>.
      */
 
     public void setIPAddress(String iPAddress) {
@@ -305,15 +649,65 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The IP address of the resource that you want to check.
+     * The IPv4 IP address of the endpoint on which you want Amazon Route 53 to
+     * perform health checks. If you don't specify a value for
+     * <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve
+     * the domain name that you specify in <code>FullyQualifiedDomainName</code>
+     * at the interval you specify in <code>RequestInterval</code>. Using an IP
+     * address that DNS returns, Amazon Route 53 then checks the health of the
+     * endpoint.
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * f the endpoint is an Amazon EC2 instance, we recommend that you create an
+     * Elastic IP address, associate it with your Amazon EC2 instance, and
+     * specify the Elastic IP address for <code>IPAddress</code>. This ensures
+     * that the IP address of your instance never changes. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
+     * >Elastic IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If a health check already has a value for <code>IPAddress</code>, you can
+     * change the value. However, you can't update an existing health check to
+     * add or remove the value of <code>IPAddress</code>.
+     * </p>
+     * </note>
+     * <p>
+     * For more information, see
+     * <a>UpdateHealthCheckRequest$FullyQualifiedDomainName</a>.
      * </p>
      * 
-     * @return The IP address of the resource that you want to check.</p>
+     * @return The IPv4 IP address of the endpoint on which you want Amazon
+     *         Route 53 to perform health checks. If you don't specify a value
+     *         for <code>IPAddress</code>, Amazon Route 53 sends a DNS request
+     *         to resolve the domain name that you specify in
+     *         <code>FullyQualifiedDomainName</code> at the interval you specify
+     *         in <code>RequestInterval</code>. Using an IP address that DNS
+     *         returns, Amazon Route 53 then checks the health of the
+     *         endpoint.</p>
      *         <p>
-     *         Specify this value only if you want to change it.
+     *         f the endpoint is an Amazon EC2 instance, we recommend that you
+     *         create an Elastic IP address, associate it with your Amazon EC2
+     *         instance, and specify the Elastic IP address for
+     *         <code>IPAddress</code>. This ensures that the IP address of your
+     *         instance never changes. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
+     *         >Elastic IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide
+     *         for Linux Instances</i>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If a health check already has a value for <code>IPAddress</code>,
+     *         you can change the value. However, you can't update an existing
+     *         health check to add or remove the value of <code>IPAddress</code>
+     *         .
+     *         </p>
+     *         </note>
+     *         <p>
+     *         For more information, see
+     *         <a>UpdateHealthCheckRequest$FullyQualifiedDomainName</a>.
      */
 
     public String getIPAddress() {
@@ -322,16 +716,65 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The IP address of the resource that you want to check.
+     * The IPv4 IP address of the endpoint on which you want Amazon Route 53 to
+     * perform health checks. If you don't specify a value for
+     * <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve
+     * the domain name that you specify in <code>FullyQualifiedDomainName</code>
+     * at the interval you specify in <code>RequestInterval</code>. Using an IP
+     * address that DNS returns, Amazon Route 53 then checks the health of the
+     * endpoint.
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * f the endpoint is an Amazon EC2 instance, we recommend that you create an
+     * Elastic IP address, associate it with your Amazon EC2 instance, and
+     * specify the Elastic IP address for <code>IPAddress</code>. This ensures
+     * that the IP address of your instance never changes. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
+     * >Elastic IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If a health check already has a value for <code>IPAddress</code>, you can
+     * change the value. However, you can't update an existing health check to
+     * add or remove the value of <code>IPAddress</code>.
+     * </p>
+     * </note>
+     * <p>
+     * For more information, see
+     * <a>UpdateHealthCheckRequest$FullyQualifiedDomainName</a>.
      * </p>
      * 
      * @param iPAddress
-     *        The IP address of the resource that you want to check.</p>
+     *        The IPv4 IP address of the endpoint on which you want Amazon Route
+     *        53 to perform health checks. If you don't specify a value for
+     *        <code>IPAddress</code>, Amazon Route 53 sends a DNS request to
+     *        resolve the domain name that you specify in
+     *        <code>FullyQualifiedDomainName</code> at the interval you specify
+     *        in <code>RequestInterval</code>. Using an IP address that DNS
+     *        returns, Amazon Route 53 then checks the health of the
+     *        endpoint.</p>
      *        <p>
-     *        Specify this value only if you want to change it.
+     *        f the endpoint is an Amazon EC2 instance, we recommend that you
+     *        create an Elastic IP address, associate it with your Amazon EC2
+     *        instance, and specify the Elastic IP address for
+     *        <code>IPAddress</code>. This ensures that the IP address of your
+     *        instance never changes. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
+     *        >Elastic IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide
+     *        for Linux Instances</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If a health check already has a value for <code>IPAddress</code>,
+     *        you can change the value. However, you can't update an existing
+     *        health check to add or remove the value of <code>IPAddress</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information, see
+     *        <a>UpdateHealthCheckRequest$FullyQualifiedDomainName</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -343,18 +786,13 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The port on which you want Amazon Route 53 to open a connection to
-     * perform health checks.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * The port on the endpoint on which you want Amazon Route 53 to perform
+     * health checks.
      * </p>
      * 
      * @param port
-     *        The port on which you want Amazon Route 53 to open a connection to
-     *        perform health checks.</p>
-     *        <p>
-     *        Specify this value only if you want to change it.
+     *        The port on the endpoint on which you want Amazon Route 53 to
+     *        perform health checks.
      */
 
     public void setPort(Integer port) {
@@ -363,17 +801,12 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The port on which you want Amazon Route 53 to open a connection to
-     * perform health checks.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * The port on the endpoint on which you want Amazon Route 53 to perform
+     * health checks.
      * </p>
      * 
-     * @return The port on which you want Amazon Route 53 to open a connection
-     *         to perform health checks.</p>
-     *         <p>
-     *         Specify this value only if you want to change it.
+     * @return The port on the endpoint on which you want Amazon Route 53 to
+     *         perform health checks.
      */
 
     public Integer getPort() {
@@ -382,18 +815,13 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The port on which you want Amazon Route 53 to open a connection to
-     * perform health checks.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * The port on the endpoint on which you want Amazon Route 53 to perform
+     * health checks.
      * </p>
      * 
      * @param port
-     *        The port on which you want Amazon Route 53 to open a connection to
-     *        perform health checks.</p>
-     *        <p>
-     *        Specify this value only if you want to change it.
+     *        The port on the endpoint on which you want Amazon Route 53 to
+     *        perform health checks.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -482,17 +910,188 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Fully qualified domain name of the instance to be health checked.
+     * Amazon Route 53 behavior depends on whether you specify a value for
+     * <code>IPAddress</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If a health check already has a value for <code>IPAddress</code>, you can
+     * change the value. However, you can't update an existing health check to
+     * add or remove the value of <code>IPAddress</code>.
+     * </p>
+     * </note>
+     * <p>
+     * <b>If you specify</b> <code>IPAddress</code>:
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * The value that you want Amazon Route 53 to pass in the <code>Host</code>
+     * header in all health checks except TCP health checks. This is typically
+     * the fully qualified DNS name of the endpoint on which you want Amazon
+     * Route 53 to perform health checks. When Amazon Route 53 checks the health
+     * of an endpoint, here is how it constructs the <code>Host</code> header:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a value of <code>80</code> for <code>Port</code> and
+     * <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for <code>Type</code>,
+     * Amazon Route 53 passes the value of <code>FullyQualifiedDomainName</code>
+     * to the endpoint in the <code>Host</code> header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a value of <code>443</code> for <code>Port</code> and
+     * <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for <code>Type</code>,
+     * Amazon Route 53 passes the value of <code>FullyQualifiedDomainName</code>
+     * to the endpoint in the Host header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify another value for <code>Port</code> and any value except
+     * <code>TCP</code> for <code>Type</code>, Amazon Route 53 passes <i>
+     * <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the
+     * endpoint in the Host header.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a value for <code>FullyQualifiedDomainName</code>,
+     * Amazon Route 53 substitutes the value of <code>IPAddress</code> in the
+     * <code>Host</code> header in each of the above cases.
+     * </p>
+     * <p>
+     * <b>If you don't specify</b> <code>IPAddress</code>:
+     * </p>
+     * <p>
+     * If you don't specify a value for <code>IPAddress</code>, Amazon Route 53
+     * sends a DNS request to the domain that you specify in
+     * <code>FullyQualifiedDomainName</code> at the interval you specify in
+     * <code>RequestInterval</code>. Using an IP address that DNS returns,
+     * Amazon Route 53 then checks the health of the endpoint.
+     * </p>
+     * <p>
+     * If you want to check the health of weighted, latency, or failover
+     * resource record sets and you choose to specify the endpoint only by
+     * <code>FullyQualifiedDomainName</code>, we recommend that you create a
+     * separate health check for each endpoint. For example, create a health
+     * check for each HTTP server that is serving content for www.example.com.
+     * For the value of <code>FullyQualifiedDomainName</code>, specify the
+     * domain name of the server (such as <code>us-east-1-www.example.com</code>
+     * ), not the name of the resource record sets (www.example.com).
+     * </p>
+     * <important>
+     * <p>
+     * In this configuration, if the value of
+     * <code>FullyQualifiedDomainName</code> matches the name of the resource
+     * record sets and you then associate the health check with those resource
+     * record sets, health check results will be unpredictable.
+     * </p>
+     * </important>
+     * <p>
+     * In addition, if the value of <code>Type</code> is <code>HTTP</code>,
+     * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
+     * <code>HTTPS_STR_MATCH</code>, Amazon Route 53 passes the value of
+     * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as
+     * it does when you specify a value for <code>IPAddress</code>. If the value
+     * of <code>Type</code> is <code>TCP</code>, Amazon Route 53 doesn't pass a
+     * <code>Host</code> header.
      * </p>
      * 
      * @param fullyQualifiedDomainName
-     *        Fully qualified domain name of the instance to be health
-     *        checked.</p>
+     *        Amazon Route 53 behavior depends on whether you specify a value
+     *        for <code>IPAddress</code>.</p> <note>
      *        <p>
-     *        Specify this value only if you want to change it.
+     *        If a health check already has a value for <code>IPAddress</code>,
+     *        you can change the value. However, you can't update an existing
+     *        health check to add or remove the value of <code>IPAddress</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        <b>If you specify</b> <code>IPAddress</code>:
+     *        </p>
+     *        <p>
+     *        The value that you want Amazon Route 53 to pass in the
+     *        <code>Host</code> header in all health checks except TCP health
+     *        checks. This is typically the fully qualified DNS name of the
+     *        endpoint on which you want Amazon Route 53 to perform health
+     *        checks. When Amazon Route 53 checks the health of an endpoint,
+     *        here is how it constructs the <code>Host</code> header:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you specify a value of <code>80</code> for <code>Port</code>
+     *        and <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for
+     *        <code>Type</code>, Amazon Route 53 passes the value of
+     *        <code>FullyQualifiedDomainName</code> to the endpoint in the
+     *        <code>Host</code> header.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify a value of <code>443</code> for <code>Port</code>
+     *        and <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for
+     *        <code>Type</code>, Amazon Route 53 passes the value of
+     *        <code>FullyQualifiedDomainName</code> to the endpoint in the Host
+     *        header.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify another value for <code>Port</code> and any value
+     *        except <code>TCP</code> for <code>Type</code>, Amazon Route 53
+     *        passes <i> <code>FullyQualifiedDomainName</code>:<code>Port</code>
+     *        </i> to the endpoint in the Host header.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a value for
+     *        <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes
+     *        the value of <code>IPAddress</code> in the <code>Host</code>
+     *        header in each of the above cases.
+     *        </p>
+     *        <p>
+     *        <b>If you don't specify</b> <code>IPAddress</code>:
+     *        </p>
+     *        <p>
+     *        If you don't specify a value for <code>IPAddress</code>, Amazon
+     *        Route 53 sends a DNS request to the domain that you specify in
+     *        <code>FullyQualifiedDomainName</code> at the interval you specify
+     *        in <code>RequestInterval</code>. Using an IP address that DNS
+     *        returns, Amazon Route 53 then checks the health of the endpoint.
+     *        </p>
+     *        <p>
+     *        If you want to check the health of weighted, latency, or failover
+     *        resource record sets and you choose to specify the endpoint only
+     *        by <code>FullyQualifiedDomainName</code>, we recommend that you
+     *        create a separate health check for each endpoint. For example,
+     *        create a health check for each HTTP server that is serving content
+     *        for www.example.com. For the value of
+     *        <code>FullyQualifiedDomainName</code>, specify the domain name of
+     *        the server (such as <code>us-east-1-www.example.com</code>), not
+     *        the name of the resource record sets (www.example.com).
+     *        </p>
+     *        <important>
+     *        <p>
+     *        In this configuration, if the value of
+     *        <code>FullyQualifiedDomainName</code> matches the name of the
+     *        resource record sets and you then associate the health check with
+     *        those resource record sets, health check results will be
+     *        unpredictable.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        In addition, if the value of <code>Type</code> is
+     *        <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>
+     *        , or <code>HTTPS_STR_MATCH</code>, Amazon Route 53 passes the
+     *        value of <code>FullyQualifiedDomainName</code> in the
+     *        <code>Host</code> header, as it does when you specify a value for
+     *        <code>IPAddress</code>. If the value of <code>Type</code> is
+     *        <code>TCP</code>, Amazon Route 53 doesn't pass a <code>Host</code>
+     *        header.
      */
 
     public void setFullyQualifiedDomainName(String fullyQualifiedDomainName) {
@@ -501,16 +1100,189 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Fully qualified domain name of the instance to be health checked.
+     * Amazon Route 53 behavior depends on whether you specify a value for
+     * <code>IPAddress</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If a health check already has a value for <code>IPAddress</code>, you can
+     * change the value. However, you can't update an existing health check to
+     * add or remove the value of <code>IPAddress</code>.
+     * </p>
+     * </note>
+     * <p>
+     * <b>If you specify</b> <code>IPAddress</code>:
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * The value that you want Amazon Route 53 to pass in the <code>Host</code>
+     * header in all health checks except TCP health checks. This is typically
+     * the fully qualified DNS name of the endpoint on which you want Amazon
+     * Route 53 to perform health checks. When Amazon Route 53 checks the health
+     * of an endpoint, here is how it constructs the <code>Host</code> header:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a value of <code>80</code> for <code>Port</code> and
+     * <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for <code>Type</code>,
+     * Amazon Route 53 passes the value of <code>FullyQualifiedDomainName</code>
+     * to the endpoint in the <code>Host</code> header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a value of <code>443</code> for <code>Port</code> and
+     * <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for <code>Type</code>,
+     * Amazon Route 53 passes the value of <code>FullyQualifiedDomainName</code>
+     * to the endpoint in the Host header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify another value for <code>Port</code> and any value except
+     * <code>TCP</code> for <code>Type</code>, Amazon Route 53 passes <i>
+     * <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the
+     * endpoint in the Host header.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a value for <code>FullyQualifiedDomainName</code>,
+     * Amazon Route 53 substitutes the value of <code>IPAddress</code> in the
+     * <code>Host</code> header in each of the above cases.
+     * </p>
+     * <p>
+     * <b>If you don't specify</b> <code>IPAddress</code>:
+     * </p>
+     * <p>
+     * If you don't specify a value for <code>IPAddress</code>, Amazon Route 53
+     * sends a DNS request to the domain that you specify in
+     * <code>FullyQualifiedDomainName</code> at the interval you specify in
+     * <code>RequestInterval</code>. Using an IP address that DNS returns,
+     * Amazon Route 53 then checks the health of the endpoint.
+     * </p>
+     * <p>
+     * If you want to check the health of weighted, latency, or failover
+     * resource record sets and you choose to specify the endpoint only by
+     * <code>FullyQualifiedDomainName</code>, we recommend that you create a
+     * separate health check for each endpoint. For example, create a health
+     * check for each HTTP server that is serving content for www.example.com.
+     * For the value of <code>FullyQualifiedDomainName</code>, specify the
+     * domain name of the server (such as <code>us-east-1-www.example.com</code>
+     * ), not the name of the resource record sets (www.example.com).
+     * </p>
+     * <important>
+     * <p>
+     * In this configuration, if the value of
+     * <code>FullyQualifiedDomainName</code> matches the name of the resource
+     * record sets and you then associate the health check with those resource
+     * record sets, health check results will be unpredictable.
+     * </p>
+     * </important>
+     * <p>
+     * In addition, if the value of <code>Type</code> is <code>HTTP</code>,
+     * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
+     * <code>HTTPS_STR_MATCH</code>, Amazon Route 53 passes the value of
+     * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as
+     * it does when you specify a value for <code>IPAddress</code>. If the value
+     * of <code>Type</code> is <code>TCP</code>, Amazon Route 53 doesn't pass a
+     * <code>Host</code> header.
      * </p>
      * 
-     * @return Fully qualified domain name of the instance to be health
-     *         checked.</p>
+     * @return Amazon Route 53 behavior depends on whether you specify a value
+     *         for <code>IPAddress</code>.</p> <note>
      *         <p>
-     *         Specify this value only if you want to change it.
+     *         If a health check already has a value for <code>IPAddress</code>,
+     *         you can change the value. However, you can't update an existing
+     *         health check to add or remove the value of <code>IPAddress</code>
+     *         .
+     *         </p>
+     *         </note>
+     *         <p>
+     *         <b>If you specify</b> <code>IPAddress</code>:
+     *         </p>
+     *         <p>
+     *         The value that you want Amazon Route 53 to pass in the
+     *         <code>Host</code> header in all health checks except TCP health
+     *         checks. This is typically the fully qualified DNS name of the
+     *         endpoint on which you want Amazon Route 53 to perform health
+     *         checks. When Amazon Route 53 checks the health of an endpoint,
+     *         here is how it constructs the <code>Host</code> header:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you specify a value of <code>80</code> for <code>Port</code>
+     *         and <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for
+     *         <code>Type</code>, Amazon Route 53 passes the value of
+     *         <code>FullyQualifiedDomainName</code> to the endpoint in the
+     *         <code>Host</code> header.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you specify a value of <code>443</code> for <code>Port</code>
+     *         and <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for
+     *         <code>Type</code>, Amazon Route 53 passes the value of
+     *         <code>FullyQualifiedDomainName</code> to the endpoint in the Host
+     *         header.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you specify another value for <code>Port</code> and any value
+     *         except <code>TCP</code> for <code>Type</code>, Amazon Route 53
+     *         passes <i> <code>FullyQualifiedDomainName</code>:
+     *         <code>Port</code> </i> to the endpoint in the Host header.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you don't specify a value for
+     *         <code>FullyQualifiedDomainName</code>, Amazon Route 53
+     *         substitutes the value of <code>IPAddress</code> in the
+     *         <code>Host</code> header in each of the above cases.
+     *         </p>
+     *         <p>
+     *         <b>If you don't specify</b> <code>IPAddress</code>:
+     *         </p>
+     *         <p>
+     *         If you don't specify a value for <code>IPAddress</code>, Amazon
+     *         Route 53 sends a DNS request to the domain that you specify in
+     *         <code>FullyQualifiedDomainName</code> at the interval you specify
+     *         in <code>RequestInterval</code>. Using an IP address that DNS
+     *         returns, Amazon Route 53 then checks the health of the endpoint.
+     *         </p>
+     *         <p>
+     *         If you want to check the health of weighted, latency, or failover
+     *         resource record sets and you choose to specify the endpoint only
+     *         by <code>FullyQualifiedDomainName</code>, we recommend that you
+     *         create a separate health check for each endpoint. For example,
+     *         create a health check for each HTTP server that is serving
+     *         content for www.example.com. For the value of
+     *         <code>FullyQualifiedDomainName</code>, specify the domain name of
+     *         the server (such as <code>us-east-1-www.example.com</code>), not
+     *         the name of the resource record sets (www.example.com).
+     *         </p>
+     *         <important>
+     *         <p>
+     *         In this configuration, if the value of
+     *         <code>FullyQualifiedDomainName</code> matches the name of the
+     *         resource record sets and you then associate the health check with
+     *         those resource record sets, health check results will be
+     *         unpredictable.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         In addition, if the value of <code>Type</code> is
+     *         <code>HTTP</code>, <code>HTTPS</code>,
+     *         <code>HTTP_STR_MATCH</code>, or <code>HTTPS_STR_MATCH</code>,
+     *         Amazon Route 53 passes the value of
+     *         <code>FullyQualifiedDomainName</code> in the <code>Host</code>
+     *         header, as it does when you specify a value for
+     *         <code>IPAddress</code>. If the value of <code>Type</code> is
+     *         <code>TCP</code>, Amazon Route 53 doesn't pass a
+     *         <code>Host</code> header.
      */
 
     public String getFullyQualifiedDomainName() {
@@ -519,17 +1291,188 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Fully qualified domain name of the instance to be health checked.
+     * Amazon Route 53 behavior depends on whether you specify a value for
+     * <code>IPAddress</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If a health check already has a value for <code>IPAddress</code>, you can
+     * change the value. However, you can't update an existing health check to
+     * add or remove the value of <code>IPAddress</code>.
+     * </p>
+     * </note>
+     * <p>
+     * <b>If you specify</b> <code>IPAddress</code>:
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * The value that you want Amazon Route 53 to pass in the <code>Host</code>
+     * header in all health checks except TCP health checks. This is typically
+     * the fully qualified DNS name of the endpoint on which you want Amazon
+     * Route 53 to perform health checks. When Amazon Route 53 checks the health
+     * of an endpoint, here is how it constructs the <code>Host</code> header:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a value of <code>80</code> for <code>Port</code> and
+     * <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for <code>Type</code>,
+     * Amazon Route 53 passes the value of <code>FullyQualifiedDomainName</code>
+     * to the endpoint in the <code>Host</code> header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a value of <code>443</code> for <code>Port</code> and
+     * <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for <code>Type</code>,
+     * Amazon Route 53 passes the value of <code>FullyQualifiedDomainName</code>
+     * to the endpoint in the Host header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify another value for <code>Port</code> and any value except
+     * <code>TCP</code> for <code>Type</code>, Amazon Route 53 passes <i>
+     * <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the
+     * endpoint in the Host header.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a value for <code>FullyQualifiedDomainName</code>,
+     * Amazon Route 53 substitutes the value of <code>IPAddress</code> in the
+     * <code>Host</code> header in each of the above cases.
+     * </p>
+     * <p>
+     * <b>If you don't specify</b> <code>IPAddress</code>:
+     * </p>
+     * <p>
+     * If you don't specify a value for <code>IPAddress</code>, Amazon Route 53
+     * sends a DNS request to the domain that you specify in
+     * <code>FullyQualifiedDomainName</code> at the interval you specify in
+     * <code>RequestInterval</code>. Using an IP address that DNS returns,
+     * Amazon Route 53 then checks the health of the endpoint.
+     * </p>
+     * <p>
+     * If you want to check the health of weighted, latency, or failover
+     * resource record sets and you choose to specify the endpoint only by
+     * <code>FullyQualifiedDomainName</code>, we recommend that you create a
+     * separate health check for each endpoint. For example, create a health
+     * check for each HTTP server that is serving content for www.example.com.
+     * For the value of <code>FullyQualifiedDomainName</code>, specify the
+     * domain name of the server (such as <code>us-east-1-www.example.com</code>
+     * ), not the name of the resource record sets (www.example.com).
+     * </p>
+     * <important>
+     * <p>
+     * In this configuration, if the value of
+     * <code>FullyQualifiedDomainName</code> matches the name of the resource
+     * record sets and you then associate the health check with those resource
+     * record sets, health check results will be unpredictable.
+     * </p>
+     * </important>
+     * <p>
+     * In addition, if the value of <code>Type</code> is <code>HTTP</code>,
+     * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
+     * <code>HTTPS_STR_MATCH</code>, Amazon Route 53 passes the value of
+     * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as
+     * it does when you specify a value for <code>IPAddress</code>. If the value
+     * of <code>Type</code> is <code>TCP</code>, Amazon Route 53 doesn't pass a
+     * <code>Host</code> header.
      * </p>
      * 
      * @param fullyQualifiedDomainName
-     *        Fully qualified domain name of the instance to be health
-     *        checked.</p>
+     *        Amazon Route 53 behavior depends on whether you specify a value
+     *        for <code>IPAddress</code>.</p> <note>
      *        <p>
-     *        Specify this value only if you want to change it.
+     *        If a health check already has a value for <code>IPAddress</code>,
+     *        you can change the value. However, you can't update an existing
+     *        health check to add or remove the value of <code>IPAddress</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        <b>If you specify</b> <code>IPAddress</code>:
+     *        </p>
+     *        <p>
+     *        The value that you want Amazon Route 53 to pass in the
+     *        <code>Host</code> header in all health checks except TCP health
+     *        checks. This is typically the fully qualified DNS name of the
+     *        endpoint on which you want Amazon Route 53 to perform health
+     *        checks. When Amazon Route 53 checks the health of an endpoint,
+     *        here is how it constructs the <code>Host</code> header:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you specify a value of <code>80</code> for <code>Port</code>
+     *        and <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for
+     *        <code>Type</code>, Amazon Route 53 passes the value of
+     *        <code>FullyQualifiedDomainName</code> to the endpoint in the
+     *        <code>Host</code> header.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify a value of <code>443</code> for <code>Port</code>
+     *        and <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for
+     *        <code>Type</code>, Amazon Route 53 passes the value of
+     *        <code>FullyQualifiedDomainName</code> to the endpoint in the Host
+     *        header.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify another value for <code>Port</code> and any value
+     *        except <code>TCP</code> for <code>Type</code>, Amazon Route 53
+     *        passes <i> <code>FullyQualifiedDomainName</code>:<code>Port</code>
+     *        </i> to the endpoint in the Host header.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a value for
+     *        <code>FullyQualifiedDomainName</code>, Amazon Route 53 substitutes
+     *        the value of <code>IPAddress</code> in the <code>Host</code>
+     *        header in each of the above cases.
+     *        </p>
+     *        <p>
+     *        <b>If you don't specify</b> <code>IPAddress</code>:
+     *        </p>
+     *        <p>
+     *        If you don't specify a value for <code>IPAddress</code>, Amazon
+     *        Route 53 sends a DNS request to the domain that you specify in
+     *        <code>FullyQualifiedDomainName</code> at the interval you specify
+     *        in <code>RequestInterval</code>. Using an IP address that DNS
+     *        returns, Amazon Route 53 then checks the health of the endpoint.
+     *        </p>
+     *        <p>
+     *        If you want to check the health of weighted, latency, or failover
+     *        resource record sets and you choose to specify the endpoint only
+     *        by <code>FullyQualifiedDomainName</code>, we recommend that you
+     *        create a separate health check for each endpoint. For example,
+     *        create a health check for each HTTP server that is serving content
+     *        for www.example.com. For the value of
+     *        <code>FullyQualifiedDomainName</code>, specify the domain name of
+     *        the server (such as <code>us-east-1-www.example.com</code>), not
+     *        the name of the resource record sets (www.example.com).
+     *        </p>
+     *        <important>
+     *        <p>
+     *        In this configuration, if the value of
+     *        <code>FullyQualifiedDomainName</code> matches the name of the
+     *        resource record sets and you then associate the health check with
+     *        those resource record sets, health check results will be
+     *        unpredictable.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        In addition, if the value of <code>Type</code> is
+     *        <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>
+     *        , or <code>HTTPS_STR_MATCH</code>, Amazon Route 53 passes the
+     *        value of <code>FullyQualifiedDomainName</code> in the
+     *        <code>Host</code> header, as it does when you specify a value for
+     *        <code>IPAddress</code>. If the value of <code>Type</code> is
+     *        <code>TCP</code>, Amazon Route 53 doesn't pass a <code>Host</code>
+     *        header.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -546,11 +1489,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to
      * search for in the response body from the specified resource. If the
      * string appears in the response body, Amazon Route 53 considers the
-     * resource healthy. Amazon Route 53 considers case when searching for
-     * <code>SearchString</code> in the response body.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * resource healthy. (You can't change the value of <code>Type</code> when
+     * you update a health check.)
      * </p>
      * 
      * @param searchString
@@ -558,11 +1498,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        or <code>HTTP_STR_MATCH</code>, the string that you want Amazon
      *        Route 53 to search for in the response body from the specified
      *        resource. If the string appears in the response body, Amazon Route
-     *        53 considers the resource healthy. Amazon Route 53 considers case
-     *        when searching for <code>SearchString</code> in the response
-     *        body.</p>
-     *        <p>
-     *        Specify this value only if you want to change it.
+     *        53 considers the resource healthy. (You can't change the value of
+     *        <code>Type</code> when you update a health check.)
      */
 
     public void setSearchString(String searchString) {
@@ -575,22 +1512,16 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to
      * search for in the response body from the specified resource. If the
      * string appears in the response body, Amazon Route 53 considers the
-     * resource healthy. Amazon Route 53 considers case when searching for
-     * <code>SearchString</code> in the response body.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * resource healthy. (You can't change the value of <code>Type</code> when
+     * you update a health check.)
      * </p>
      * 
      * @return If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code>
      *         or <code>HTTP_STR_MATCH</code>, the string that you want Amazon
      *         Route 53 to search for in the response body from the specified
      *         resource. If the string appears in the response body, Amazon
-     *         Route 53 considers the resource healthy. Amazon Route 53
-     *         considers case when searching for <code>SearchString</code> in
-     *         the response body.</p>
-     *         <p>
-     *         Specify this value only if you want to change it.
+     *         Route 53 considers the resource healthy. (You can't change the
+     *         value of <code>Type</code> when you update a health check.)
      */
 
     public String getSearchString() {
@@ -603,11 +1534,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to
      * search for in the response body from the specified resource. If the
      * string appears in the response body, Amazon Route 53 considers the
-     * resource healthy. Amazon Route 53 considers case when searching for
-     * <code>SearchString</code> in the response body.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * resource healthy. (You can't change the value of <code>Type</code> when
+     * you update a health check.)
      * </p>
      * 
      * @param searchString
@@ -615,11 +1543,8 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        or <code>HTTP_STR_MATCH</code>, the string that you want Amazon
      *        Route 53 to search for in the response body from the specified
      *        resource. If the string appears in the response body, Amazon Route
-     *        53 considers the resource healthy. Amazon Route 53 considers case
-     *        when searching for <code>SearchString</code> in the response
-     *        body.</p>
-     *        <p>
-     *        Specify this value only if you want to change it.
+     *        53 considers the resource healthy. (You can't change the value of
+     *        <code>Type</code> when you update a health check.)
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -633,29 +1558,21 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <p>
      * The number of consecutive health checks that an endpoint must pass or
      * fail for Amazon Route 53 to change the current status of the endpoint
-     * from unhealthy to healthy or vice versa.
-     * </p>
-     * <p>
-     * Valid values are integers between 1 and 10. For more information, see
-     * "How Amazon Route 53 Determines Whether an Endpoint Is Healthy" in the
-     * Amazon Route 53 Developer Guide.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * from unhealthy to healthy or vice versa. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     * >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the
+     * <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param failureThreshold
      *        The number of consecutive health checks that an endpoint must pass
      *        or fail for Amazon Route 53 to change the current status of the
-     *        endpoint from unhealthy to healthy or vice versa.</p>
-     *        <p>
-     *        Valid values are integers between 1 and 10. For more information,
-     *        see
-     *        "How Amazon Route 53 Determines Whether an Endpoint Is Healthy" in
-     *        the Amazon Route 53 Developer Guide.
-     *        </p>
-     *        <p>
-     *        Specify this value only if you want to change it.
+     *        endpoint from unhealthy to healthy or vice versa. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
+     *        in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
     public void setFailureThreshold(Integer failureThreshold) {
@@ -666,28 +1583,20 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <p>
      * The number of consecutive health checks that an endpoint must pass or
      * fail for Amazon Route 53 to change the current status of the endpoint
-     * from unhealthy to healthy or vice versa.
-     * </p>
-     * <p>
-     * Valid values are integers between 1 and 10. For more information, see
-     * "How Amazon Route 53 Determines Whether an Endpoint Is Healthy" in the
-     * Amazon Route 53 Developer Guide.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * from unhealthy to healthy or vice versa. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     * >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the
+     * <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @return The number of consecutive health checks that an endpoint must
      *         pass or fail for Amazon Route 53 to change the current status of
-     *         the endpoint from unhealthy to healthy or vice versa.</p>
-     *         <p>
-     *         Valid values are integers between 1 and 10. For more information,
-     *         see
-     *         "How Amazon Route 53 Determines Whether an Endpoint Is Healthy"
-     *         in the Amazon Route 53 Developer Guide.
-     *         </p>
-     *         <p>
-     *         Specify this value only if you want to change it.
+     *         the endpoint from unhealthy to healthy or vice versa. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *         >How Amazon Route 53 Determines Whether an Endpoint Is
+     *         Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
     public Integer getFailureThreshold() {
@@ -698,29 +1607,21 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <p>
      * The number of consecutive health checks that an endpoint must pass or
      * fail for Amazon Route 53 to change the current status of the endpoint
-     * from unhealthy to healthy or vice versa.
-     * </p>
-     * <p>
-     * Valid values are integers between 1 and 10. For more information, see
-     * "How Amazon Route 53 Determines Whether an Endpoint Is Healthy" in the
-     * Amazon Route 53 Developer Guide.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * from unhealthy to healthy or vice versa. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     * >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the
+     * <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param failureThreshold
      *        The number of consecutive health checks that an endpoint must pass
      *        or fail for Amazon Route 53 to change the current status of the
-     *        endpoint from unhealthy to healthy or vice versa.</p>
-     *        <p>
-     *        Valid values are integers between 1 and 10. For more information,
-     *        see
-     *        "How Amazon Route 53 Determines Whether an Endpoint Is Healthy" in
-     *        the Amazon Route 53 Developer Guide.
-     *        </p>
-     *        <p>
-     *        Specify this value only if you want to change it.
+     *        endpoint from unhealthy to healthy or vice versa. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
+     *        in the <i>Amazon Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -733,22 +1634,15 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A boolean value that indicates whether the status of health check should
-     * be inverted. For example, if a health check is healthy but
-     * <code>Inverted</code> is <code>True</code>, then Amazon Route 53
-     * considers the health check to be unhealthy.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * Specify whether you want Amazon Route 53 to invert the status of a health
+     * check, for example, to consider a health check unhealthy when it
+     * otherwise would be considered healthy.
      * </p>
      * 
      * @param inverted
-     *        A boolean value that indicates whether the status of health check
-     *        should be inverted. For example, if a health check is healthy but
-     *        <code>Inverted</code> is <code>True</code>, then Amazon Route 53
-     *        considers the health check to be unhealthy.</p>
-     *        <p>
-     *        Specify this value only if you want to change it.
+     *        Specify whether you want Amazon Route 53 to invert the status of a
+     *        health check, for example, to consider a health check unhealthy
+     *        when it otherwise would be considered healthy.
      */
 
     public void setInverted(Boolean inverted) {
@@ -757,21 +1651,14 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A boolean value that indicates whether the status of health check should
-     * be inverted. For example, if a health check is healthy but
-     * <code>Inverted</code> is <code>True</code>, then Amazon Route 53
-     * considers the health check to be unhealthy.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * Specify whether you want Amazon Route 53 to invert the status of a health
+     * check, for example, to consider a health check unhealthy when it
+     * otherwise would be considered healthy.
      * </p>
      * 
-     * @return A boolean value that indicates whether the status of health check
-     *         should be inverted. For example, if a health check is healthy but
-     *         <code>Inverted</code> is <code>True</code>, then Amazon Route 53
-     *         considers the health check to be unhealthy.</p>
-     *         <p>
-     *         Specify this value only if you want to change it.
+     * @return Specify whether you want Amazon Route 53 to invert the status of
+     *         a health check, for example, to consider a health check unhealthy
+     *         when it otherwise would be considered healthy.
      */
 
     public Boolean getInverted() {
@@ -780,22 +1667,15 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A boolean value that indicates whether the status of health check should
-     * be inverted. For example, if a health check is healthy but
-     * <code>Inverted</code> is <code>True</code>, then Amazon Route 53
-     * considers the health check to be unhealthy.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * Specify whether you want Amazon Route 53 to invert the status of a health
+     * check, for example, to consider a health check unhealthy when it
+     * otherwise would be considered healthy.
      * </p>
      * 
      * @param inverted
-     *        A boolean value that indicates whether the status of health check
-     *        should be inverted. For example, if a health check is healthy but
-     *        <code>Inverted</code> is <code>True</code>, then Amazon Route 53
-     *        considers the health check to be unhealthy.</p>
-     *        <p>
-     *        Specify this value only if you want to change it.
+     *        Specify whether you want Amazon Route 53 to invert the status of a
+     *        health check, for example, to consider a health check unhealthy
+     *        when it otherwise would be considered healthy.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -807,21 +1687,14 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A boolean value that indicates whether the status of health check should
-     * be inverted. For example, if a health check is healthy but
-     * <code>Inverted</code> is <code>True</code>, then Amazon Route 53
-     * considers the health check to be unhealthy.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * Specify whether you want Amazon Route 53 to invert the status of a health
+     * check, for example, to consider a health check unhealthy when it
+     * otherwise would be considered healthy.
      * </p>
      * 
-     * @return A boolean value that indicates whether the status of health check
-     *         should be inverted. For example, if a health check is healthy but
-     *         <code>Inverted</code> is <code>True</code>, then Amazon Route 53
-     *         considers the health check to be unhealthy.</p>
-     *         <p>
-     *         Specify this value only if you want to change it.
+     * @return Specify whether you want Amazon Route 53 to invert the status of
+     *         a health check, for example, to consider a health check unhealthy
+     *         when it otherwise would be considered healthy.
      */
 
     public Boolean isInverted() {
@@ -830,20 +1703,57 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The minimum number of child health checks that must be healthy for Amazon
-     * Route 53 to consider the parent health check to be healthy. Valid values
-     * are integers between 0 and 256, inclusive.
+     * The number of child health checks that are associated with a
+     * <code>CALCULATED</code> health that Amazon Route 53 must consider healthy
+     * for the <code>CALCULATED</code> health check to be considered healthy. To
+     * specify the child health checks that you want to associate with a
+     * <code>CALCULATED</code> health check, use the
+     * <code>ChildHealthChecks</code> and <code>ChildHealthCheck</code>
+     * elements.
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * Note the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a number greater than the number of child health checks,
+     * Amazon Route 53 always considers this health check to be unhealthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify <code>0</code>, Amazon Route 53 always considers this
+     * health check to be healthy.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param healthThreshold
-     *        The minimum number of child health checks that must be healthy for
-     *        Amazon Route 53 to consider the parent health check to be healthy.
-     *        Valid values are integers between 0 and 256, inclusive.</p>
+     *        The number of child health checks that are associated with a
+     *        <code>CALCULATED</code> health that Amazon Route 53 must consider
+     *        healthy for the <code>CALCULATED</code> health check to be
+     *        considered healthy. To specify the child health checks that you
+     *        want to associate with a <code>CALCULATED</code> health check, use
+     *        the <code>ChildHealthChecks</code> and
+     *        <code>ChildHealthCheck</code> elements.</p>
      *        <p>
-     *        Specify this value only if you want to change it.
+     *        Note the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you specify a number greater than the number of child health
+     *        checks, Amazon Route 53 always considers this health check to be
+     *        unhealthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify <code>0</code>, Amazon Route 53 always considers
+     *        this health check to be healthy.
+     *        </p>
+     *        </li>
      */
 
     public void setHealthThreshold(Integer healthThreshold) {
@@ -852,20 +1762,56 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The minimum number of child health checks that must be healthy for Amazon
-     * Route 53 to consider the parent health check to be healthy. Valid values
-     * are integers between 0 and 256, inclusive.
+     * The number of child health checks that are associated with a
+     * <code>CALCULATED</code> health that Amazon Route 53 must consider healthy
+     * for the <code>CALCULATED</code> health check to be considered healthy. To
+     * specify the child health checks that you want to associate with a
+     * <code>CALCULATED</code> health check, use the
+     * <code>ChildHealthChecks</code> and <code>ChildHealthCheck</code>
+     * elements.
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * Note the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a number greater than the number of child health checks,
+     * Amazon Route 53 always considers this health check to be unhealthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify <code>0</code>, Amazon Route 53 always considers this
+     * health check to be healthy.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The minimum number of child health checks that must be healthy
-     *         for Amazon Route 53 to consider the parent health check to be
-     *         healthy. Valid values are integers between 0 and 256,
-     *         inclusive.</p>
+     * @return The number of child health checks that are associated with a
+     *         <code>CALCULATED</code> health that Amazon Route 53 must consider
+     *         healthy for the <code>CALCULATED</code> health check to be
+     *         considered healthy. To specify the child health checks that you
+     *         want to associate with a <code>CALCULATED</code> health check,
+     *         use the <code>ChildHealthChecks</code> and
+     *         <code>ChildHealthCheck</code> elements.</p>
      *         <p>
-     *         Specify this value only if you want to change it.
+     *         Note the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you specify a number greater than the number of child health
+     *         checks, Amazon Route 53 always considers this health check to be
+     *         unhealthy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you specify <code>0</code>, Amazon Route 53 always considers
+     *         this health check to be healthy.
+     *         </p>
+     *         </li>
      */
 
     public Integer getHealthThreshold() {
@@ -874,20 +1820,57 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The minimum number of child health checks that must be healthy for Amazon
-     * Route 53 to consider the parent health check to be healthy. Valid values
-     * are integers between 0 and 256, inclusive.
+     * The number of child health checks that are associated with a
+     * <code>CALCULATED</code> health that Amazon Route 53 must consider healthy
+     * for the <code>CALCULATED</code> health check to be considered healthy. To
+     * specify the child health checks that you want to associate with a
+     * <code>CALCULATED</code> health check, use the
+     * <code>ChildHealthChecks</code> and <code>ChildHealthCheck</code>
+     * elements.
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * Note the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a number greater than the number of child health checks,
+     * Amazon Route 53 always considers this health check to be unhealthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify <code>0</code>, Amazon Route 53 always considers this
+     * health check to be healthy.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param healthThreshold
-     *        The minimum number of child health checks that must be healthy for
-     *        Amazon Route 53 to consider the parent health check to be healthy.
-     *        Valid values are integers between 0 and 256, inclusive.</p>
+     *        The number of child health checks that are associated with a
+     *        <code>CALCULATED</code> health that Amazon Route 53 must consider
+     *        healthy for the <code>CALCULATED</code> health check to be
+     *        considered healthy. To specify the child health checks that you
+     *        want to associate with a <code>CALCULATED</code> health check, use
+     *        the <code>ChildHealthChecks</code> and
+     *        <code>ChildHealthCheck</code> elements.</p>
      *        <p>
-     *        Specify this value only if you want to change it.
+     *        Note the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you specify a number greater than the number of child health
+     *        checks, Amazon Route 53 always considers this health check to be
+     *        unhealthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify <code>0</code>, Amazon Route 53 always considers
+     *        this health check to be healthy.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -899,18 +1882,14 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * For a specified parent health check, a list of <code>HealthCheckId</code>
-     * values for the associated child health checks.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * A complex type that contains one <code>ChildHealthCheck</code> element
+     * for each health check that you want to associate with a
+     * <code>CALCULATED</code> health check.
      * </p>
      * 
-     * @return For a specified parent health check, a list of
-     *         <code>HealthCheckId</code> values for the associated child health
-     *         checks.</p>
-     *         <p>
-     *         Specify this value only if you want to change it.
+     * @return A complex type that contains one <code>ChildHealthCheck</code>
+     *         element for each health check that you want to associate with a
+     *         <code>CALCULATED</code> health check.
      */
 
     public java.util.List<String> getChildHealthChecks() {
@@ -922,19 +1901,15 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * For a specified parent health check, a list of <code>HealthCheckId</code>
-     * values for the associated child health checks.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * A complex type that contains one <code>ChildHealthCheck</code> element
+     * for each health check that you want to associate with a
+     * <code>CALCULATED</code> health check.
      * </p>
      * 
      * @param childHealthChecks
-     *        For a specified parent health check, a list of
-     *        <code>HealthCheckId</code> values for the associated child health
-     *        checks.</p>
-     *        <p>
-     *        Specify this value only if you want to change it.
+     *        A complex type that contains one <code>ChildHealthCheck</code>
+     *        element for each health check that you want to associate with a
+     *        <code>CALCULATED</code> health check.
      */
 
     public void setChildHealthChecks(
@@ -950,11 +1925,9 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * For a specified parent health check, a list of <code>HealthCheckId</code>
-     * values for the associated child health checks.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * A complex type that contains one <code>ChildHealthCheck</code> element
+     * for each health check that you want to associate with a
+     * <code>CALCULATED</code> health check.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -964,11 +1937,9 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param childHealthChecks
-     *        For a specified parent health check, a list of
-     *        <code>HealthCheckId</code> values for the associated child health
-     *        checks.</p>
-     *        <p>
-     *        Specify this value only if you want to change it.
+     *        A complex type that contains one <code>ChildHealthCheck</code>
+     *        element for each health check that you want to associate with a
+     *        <code>CALCULATED</code> health check.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -987,19 +1958,15 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * For a specified parent health check, a list of <code>HealthCheckId</code>
-     * values for the associated child health checks.
-     * </p>
-     * <p>
-     * Specify this value only if you want to change it.
+     * A complex type that contains one <code>ChildHealthCheck</code> element
+     * for each health check that you want to associate with a
+     * <code>CALCULATED</code> health check.
      * </p>
      * 
      * @param childHealthChecks
-     *        For a specified parent health check, a list of
-     *        <code>HealthCheckId</code> values for the associated child health
-     *        checks.</p>
-     *        <p>
-     *        Specify this value only if you want to change it.
+     *        A complex type that contains one <code>ChildHealthCheck</code>
+     *        element for each health check that you want to associate with a
+     *        <code>CALCULATED</code> health check.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1014,26 +1981,61 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <p>
      * Specify whether you want Amazon Route 53 to send the value of
      * <code>FullyQualifiedDomainName</code> to the endpoint in the
-     * <code>client_hello</code> message during TLS negotiation. If you don't
-     * specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
-     * <code>true</code> when <code>Type</code> is <code>HTTPS</code> or
-     * <code>HTTPS_STR_MATCH</code> and defaults to <code>false</code> when
-     * <code>Type</code> is any other value.
+     * <code>client_hello</code> message during <code>TLS</code> negotiation.
+     * This allows the endpoint to respond to <code>HTTPS</code> health check
+     * requests with the applicable SSL/TLS certificate.
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * Some endpoints require that HTTPS requests include the host name in the
+     * <code>client_hello</code> message. If you don't enable SNI, the status of
+     * the health check will be SSL alert <code>handshake_failure</code>. A
+     * health check can also have that status for other reasons. If SNI is
+     * enabled and you're still getting the error, check the SSL/TLS
+     * configuration on your endpoint and confirm that your certificate is
+     * valid.
+     * </p>
+     * <p>
+     * The SSL/TLS certificate on your endpoint includes a domain name in the
+     * <code>Common Name</code> field and possibly several more in the
+     * <code>Subject Alternative Names</code> field. One of the domain names in
+     * the certificate should match the value that you specify for
+     * <code>FullyQualifiedDomainName</code>. If the endpoint responds to the
+     * <code>client_hello</code> message with a certificate that does not
+     * include the domain name that you specified in
+     * <code>FullyQualifiedDomainName</code>, a health checker will retry the
+     * handshake. In the second attempt, the health checker will omit
+     * <code>FullyQualifiedDomainName</code> from the <code>client_hello</code>
+     * message.
      * </p>
      * 
      * @param enableSNI
      *        Specify whether you want Amazon Route 53 to send the value of
      *        <code>FullyQualifiedDomainName</code> to the endpoint in the
-     *        <code>client_hello</code> message during TLS negotiation. If you
-     *        don't specify a value for <code>EnableSNI</code>, Amazon Route 53
-     *        defaults to <code>true</code> when <code>Type</code> is
-     *        <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and defaults to
-     *        <code>false</code> when <code>Type</code> is any other value.</p>
+     *        <code>client_hello</code> message during <code>TLS</code>
+     *        negotiation. This allows the endpoint to respond to
+     *        <code>HTTPS</code> health check requests with the applicable
+     *        SSL/TLS certificate.</p>
      *        <p>
-     *        Specify this value only if you want to change it.
+     *        Some endpoints require that HTTPS requests include the host name
+     *        in the <code>client_hello</code> message. If you don't enable SNI,
+     *        the status of the health check will be SSL alert
+     *        <code>handshake_failure</code>. A health check can also have that
+     *        status for other reasons. If SNI is enabled and you're still
+     *        getting the error, check the SSL/TLS configuration on your
+     *        endpoint and confirm that your certificate is valid.
+     *        </p>
+     *        <p>
+     *        The SSL/TLS certificate on your endpoint includes a domain name in
+     *        the <code>Common Name</code> field and possibly several more in
+     *        the <code>Subject Alternative Names</code> field. One of the
+     *        domain names in the certificate should match the value that you
+     *        specify for <code>FullyQualifiedDomainName</code>. If the endpoint
+     *        responds to the <code>client_hello</code> message with a
+     *        certificate that does not include the domain name that you
+     *        specified in <code>FullyQualifiedDomainName</code>, a health
+     *        checker will retry the handshake. In the second attempt, the
+     *        health checker will omit <code>FullyQualifiedDomainName</code>
+     *        from the <code>client_hello</code> message.
      */
 
     public void setEnableSNI(Boolean enableSNI) {
@@ -1044,26 +2046,60 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <p>
      * Specify whether you want Amazon Route 53 to send the value of
      * <code>FullyQualifiedDomainName</code> to the endpoint in the
-     * <code>client_hello</code> message during TLS negotiation. If you don't
-     * specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
-     * <code>true</code> when <code>Type</code> is <code>HTTPS</code> or
-     * <code>HTTPS_STR_MATCH</code> and defaults to <code>false</code> when
-     * <code>Type</code> is any other value.
+     * <code>client_hello</code> message during <code>TLS</code> negotiation.
+     * This allows the endpoint to respond to <code>HTTPS</code> health check
+     * requests with the applicable SSL/TLS certificate.
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * Some endpoints require that HTTPS requests include the host name in the
+     * <code>client_hello</code> message. If you don't enable SNI, the status of
+     * the health check will be SSL alert <code>handshake_failure</code>. A
+     * health check can also have that status for other reasons. If SNI is
+     * enabled and you're still getting the error, check the SSL/TLS
+     * configuration on your endpoint and confirm that your certificate is
+     * valid.
+     * </p>
+     * <p>
+     * The SSL/TLS certificate on your endpoint includes a domain name in the
+     * <code>Common Name</code> field and possibly several more in the
+     * <code>Subject Alternative Names</code> field. One of the domain names in
+     * the certificate should match the value that you specify for
+     * <code>FullyQualifiedDomainName</code>. If the endpoint responds to the
+     * <code>client_hello</code> message with a certificate that does not
+     * include the domain name that you specified in
+     * <code>FullyQualifiedDomainName</code>, a health checker will retry the
+     * handshake. In the second attempt, the health checker will omit
+     * <code>FullyQualifiedDomainName</code> from the <code>client_hello</code>
+     * message.
      * </p>
      * 
      * @return Specify whether you want Amazon Route 53 to send the value of
      *         <code>FullyQualifiedDomainName</code> to the endpoint in the
-     *         <code>client_hello</code> message during TLS negotiation. If you
-     *         don't specify a value for <code>EnableSNI</code>, Amazon Route 53
-     *         defaults to <code>true</code> when <code>Type</code> is
-     *         <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and defaults
-     *         to <code>false</code> when <code>Type</code> is any other
-     *         value.</p>
+     *         <code>client_hello</code> message during <code>TLS</code>
+     *         negotiation. This allows the endpoint to respond to
+     *         <code>HTTPS</code> health check requests with the applicable
+     *         SSL/TLS certificate.</p>
      *         <p>
-     *         Specify this value only if you want to change it.
+     *         Some endpoints require that HTTPS requests include the host name
+     *         in the <code>client_hello</code> message. If you don't enable
+     *         SNI, the status of the health check will be SSL alert
+     *         <code>handshake_failure</code>. A health check can also have that
+     *         status for other reasons. If SNI is enabled and you're still
+     *         getting the error, check the SSL/TLS configuration on your
+     *         endpoint and confirm that your certificate is valid.
+     *         </p>
+     *         <p>
+     *         The SSL/TLS certificate on your endpoint includes a domain name
+     *         in the <code>Common Name</code> field and possibly several more
+     *         in the <code>Subject Alternative Names</code> field. One of the
+     *         domain names in the certificate should match the value that you
+     *         specify for <code>FullyQualifiedDomainName</code>. If the
+     *         endpoint responds to the <code>client_hello</code> message with a
+     *         certificate that does not include the domain name that you
+     *         specified in <code>FullyQualifiedDomainName</code>, a health
+     *         checker will retry the handshake. In the second attempt, the
+     *         health checker will omit <code>FullyQualifiedDomainName</code>
+     *         from the <code>client_hello</code> message.
      */
 
     public Boolean getEnableSNI() {
@@ -1074,26 +2110,61 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <p>
      * Specify whether you want Amazon Route 53 to send the value of
      * <code>FullyQualifiedDomainName</code> to the endpoint in the
-     * <code>client_hello</code> message during TLS negotiation. If you don't
-     * specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
-     * <code>true</code> when <code>Type</code> is <code>HTTPS</code> or
-     * <code>HTTPS_STR_MATCH</code> and defaults to <code>false</code> when
-     * <code>Type</code> is any other value.
+     * <code>client_hello</code> message during <code>TLS</code> negotiation.
+     * This allows the endpoint to respond to <code>HTTPS</code> health check
+     * requests with the applicable SSL/TLS certificate.
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * Some endpoints require that HTTPS requests include the host name in the
+     * <code>client_hello</code> message. If you don't enable SNI, the status of
+     * the health check will be SSL alert <code>handshake_failure</code>. A
+     * health check can also have that status for other reasons. If SNI is
+     * enabled and you're still getting the error, check the SSL/TLS
+     * configuration on your endpoint and confirm that your certificate is
+     * valid.
+     * </p>
+     * <p>
+     * The SSL/TLS certificate on your endpoint includes a domain name in the
+     * <code>Common Name</code> field and possibly several more in the
+     * <code>Subject Alternative Names</code> field. One of the domain names in
+     * the certificate should match the value that you specify for
+     * <code>FullyQualifiedDomainName</code>. If the endpoint responds to the
+     * <code>client_hello</code> message with a certificate that does not
+     * include the domain name that you specified in
+     * <code>FullyQualifiedDomainName</code>, a health checker will retry the
+     * handshake. In the second attempt, the health checker will omit
+     * <code>FullyQualifiedDomainName</code> from the <code>client_hello</code>
+     * message.
      * </p>
      * 
      * @param enableSNI
      *        Specify whether you want Amazon Route 53 to send the value of
      *        <code>FullyQualifiedDomainName</code> to the endpoint in the
-     *        <code>client_hello</code> message during TLS negotiation. If you
-     *        don't specify a value for <code>EnableSNI</code>, Amazon Route 53
-     *        defaults to <code>true</code> when <code>Type</code> is
-     *        <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and defaults to
-     *        <code>false</code> when <code>Type</code> is any other value.</p>
+     *        <code>client_hello</code> message during <code>TLS</code>
+     *        negotiation. This allows the endpoint to respond to
+     *        <code>HTTPS</code> health check requests with the applicable
+     *        SSL/TLS certificate.</p>
      *        <p>
-     *        Specify this value only if you want to change it.
+     *        Some endpoints require that HTTPS requests include the host name
+     *        in the <code>client_hello</code> message. If you don't enable SNI,
+     *        the status of the health check will be SSL alert
+     *        <code>handshake_failure</code>. A health check can also have that
+     *        status for other reasons. If SNI is enabled and you're still
+     *        getting the error, check the SSL/TLS configuration on your
+     *        endpoint and confirm that your certificate is valid.
+     *        </p>
+     *        <p>
+     *        The SSL/TLS certificate on your endpoint includes a domain name in
+     *        the <code>Common Name</code> field and possibly several more in
+     *        the <code>Subject Alternative Names</code> field. One of the
+     *        domain names in the certificate should match the value that you
+     *        specify for <code>FullyQualifiedDomainName</code>. If the endpoint
+     *        responds to the <code>client_hello</code> message with a
+     *        certificate that does not include the domain name that you
+     *        specified in <code>FullyQualifiedDomainName</code>, a health
+     *        checker will retry the handshake. In the second attempt, the
+     *        health checker will omit <code>FullyQualifiedDomainName</code>
+     *        from the <code>client_hello</code> message.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1107,26 +2178,60 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * <p>
      * Specify whether you want Amazon Route 53 to send the value of
      * <code>FullyQualifiedDomainName</code> to the endpoint in the
-     * <code>client_hello</code> message during TLS negotiation. If you don't
-     * specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
-     * <code>true</code> when <code>Type</code> is <code>HTTPS</code> or
-     * <code>HTTPS_STR_MATCH</code> and defaults to <code>false</code> when
-     * <code>Type</code> is any other value.
+     * <code>client_hello</code> message during <code>TLS</code> negotiation.
+     * This allows the endpoint to respond to <code>HTTPS</code> health check
+     * requests with the applicable SSL/TLS certificate.
      * </p>
      * <p>
-     * Specify this value only if you want to change it.
+     * Some endpoints require that HTTPS requests include the host name in the
+     * <code>client_hello</code> message. If you don't enable SNI, the status of
+     * the health check will be SSL alert <code>handshake_failure</code>. A
+     * health check can also have that status for other reasons. If SNI is
+     * enabled and you're still getting the error, check the SSL/TLS
+     * configuration on your endpoint and confirm that your certificate is
+     * valid.
+     * </p>
+     * <p>
+     * The SSL/TLS certificate on your endpoint includes a domain name in the
+     * <code>Common Name</code> field and possibly several more in the
+     * <code>Subject Alternative Names</code> field. One of the domain names in
+     * the certificate should match the value that you specify for
+     * <code>FullyQualifiedDomainName</code>. If the endpoint responds to the
+     * <code>client_hello</code> message with a certificate that does not
+     * include the domain name that you specified in
+     * <code>FullyQualifiedDomainName</code>, a health checker will retry the
+     * handshake. In the second attempt, the health checker will omit
+     * <code>FullyQualifiedDomainName</code> from the <code>client_hello</code>
+     * message.
      * </p>
      * 
      * @return Specify whether you want Amazon Route 53 to send the value of
      *         <code>FullyQualifiedDomainName</code> to the endpoint in the
-     *         <code>client_hello</code> message during TLS negotiation. If you
-     *         don't specify a value for <code>EnableSNI</code>, Amazon Route 53
-     *         defaults to <code>true</code> when <code>Type</code> is
-     *         <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and defaults
-     *         to <code>false</code> when <code>Type</code> is any other
-     *         value.</p>
+     *         <code>client_hello</code> message during <code>TLS</code>
+     *         negotiation. This allows the endpoint to respond to
+     *         <code>HTTPS</code> health check requests with the applicable
+     *         SSL/TLS certificate.</p>
      *         <p>
-     *         Specify this value only if you want to change it.
+     *         Some endpoints require that HTTPS requests include the host name
+     *         in the <code>client_hello</code> message. If you don't enable
+     *         SNI, the status of the health check will be SSL alert
+     *         <code>handshake_failure</code>. A health check can also have that
+     *         status for other reasons. If SNI is enabled and you're still
+     *         getting the error, check the SSL/TLS configuration on your
+     *         endpoint and confirm that your certificate is valid.
+     *         </p>
+     *         <p>
+     *         The SSL/TLS certificate on your endpoint includes a domain name
+     *         in the <code>Common Name</code> field and possibly several more
+     *         in the <code>Subject Alternative Names</code> field. One of the
+     *         domain names in the certificate should match the value that you
+     *         specify for <code>FullyQualifiedDomainName</code>. If the
+     *         endpoint responds to the <code>client_hello</code> message with a
+     *         certificate that does not include the domain name that you
+     *         specified in <code>FullyQualifiedDomainName</code>, a health
+     *         checker will retry the handshake. In the second attempt, the
+     *         health checker will omit <code>FullyQualifiedDomainName</code>
+     *         from the <code>client_hello</code> message.
      */
 
     public Boolean isEnableSNI() {
@@ -1135,24 +2240,14 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of <code>HealthCheckRegion</code> values that specify the Amazon
-     * EC2 regions that you want Amazon Route 53 to use to perform health
-     * checks. You must specify at least three regions.
-     * </p>
-     * <note>When you remove a region from the list, Amazon Route 53 will
-     * briefly continue to check your endpoint from that region.</note>
-     * <p>
-     * Specify this value only if you want to change it.
+     * A complex type that contains one Region element for each region from
+     * which you want Amazon Route 53 health checkers to check the specified
+     * endpoint.
      * </p>
      * 
-     * @return A list of <code>HealthCheckRegion</code> values that specify the
-     *         Amazon EC2 regions that you want Amazon Route 53 to use to
-     *         perform health checks. You must specify at least three
-     *         regions.</p> <note>When you remove a region from the list, Amazon
-     *         Route 53 will briefly continue to check your endpoint from that
-     *         region.</note>
-     *         <p>
-     *         Specify this value only if you want to change it.
+     * @return A complex type that contains one Region element for each region
+     *         from which you want Amazon Route 53 health checkers to check the
+     *         specified endpoint.
      * @see HealthCheckRegion
      */
 
@@ -1165,24 +2260,15 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of <code>HealthCheckRegion</code> values that specify the Amazon
-     * EC2 regions that you want Amazon Route 53 to use to perform health
-     * checks. You must specify at least three regions.
-     * </p>
-     * <note>When you remove a region from the list, Amazon Route 53 will
-     * briefly continue to check your endpoint from that region.</note>
-     * <p>
-     * Specify this value only if you want to change it.
+     * A complex type that contains one Region element for each region from
+     * which you want Amazon Route 53 health checkers to check the specified
+     * endpoint.
      * </p>
      * 
      * @param regions
-     *        A list of <code>HealthCheckRegion</code> values that specify the
-     *        Amazon EC2 regions that you want Amazon Route 53 to use to perform
-     *        health checks. You must specify at least three regions.</p>
-     *        <note>When you remove a region from the list, Amazon Route 53 will
-     *        briefly continue to check your endpoint from that region.</note>
-     *        <p>
-     *        Specify this value only if you want to change it.
+     *        A complex type that contains one Region element for each region
+     *        from which you want Amazon Route 53 health checkers to check the
+     *        specified endpoint.
      * @see HealthCheckRegion
      */
 
@@ -1198,14 +2284,9 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of <code>HealthCheckRegion</code> values that specify the Amazon
-     * EC2 regions that you want Amazon Route 53 to use to perform health
-     * checks. You must specify at least three regions.
-     * </p>
-     * <note>When you remove a region from the list, Amazon Route 53 will
-     * briefly continue to check your endpoint from that region.</note>
-     * <p>
-     * Specify this value only if you want to change it.
+     * A complex type that contains one Region element for each region from
+     * which you want Amazon Route 53 health checkers to check the specified
+     * endpoint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1215,13 +2296,9 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param regions
-     *        A list of <code>HealthCheckRegion</code> values that specify the
-     *        Amazon EC2 regions that you want Amazon Route 53 to use to perform
-     *        health checks. You must specify at least three regions.</p>
-     *        <note>When you remove a region from the list, Amazon Route 53 will
-     *        briefly continue to check your endpoint from that region.</note>
-     *        <p>
-     *        Specify this value only if you want to change it.
+     *        A complex type that contains one Region element for each region
+     *        from which you want Amazon Route 53 health checkers to check the
+     *        specified endpoint.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see HealthCheckRegion
@@ -1240,24 +2317,15 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of <code>HealthCheckRegion</code> values that specify the Amazon
-     * EC2 regions that you want Amazon Route 53 to use to perform health
-     * checks. You must specify at least three regions.
-     * </p>
-     * <note>When you remove a region from the list, Amazon Route 53 will
-     * briefly continue to check your endpoint from that region.</note>
-     * <p>
-     * Specify this value only if you want to change it.
+     * A complex type that contains one Region element for each region from
+     * which you want Amazon Route 53 health checkers to check the specified
+     * endpoint.
      * </p>
      * 
      * @param regions
-     *        A list of <code>HealthCheckRegion</code> values that specify the
-     *        Amazon EC2 regions that you want Amazon Route 53 to use to perform
-     *        health checks. You must specify at least three regions.</p>
-     *        <note>When you remove a region from the list, Amazon Route 53 will
-     *        briefly continue to check your endpoint from that region.</note>
-     *        <p>
-     *        Specify this value only if you want to change it.
+     *        A complex type that contains one Region element for each region
+     *        from which you want Amazon Route 53 health checkers to check the
+     *        specified endpoint.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see HealthCheckRegion
@@ -1271,24 +2339,15 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of <code>HealthCheckRegion</code> values that specify the Amazon
-     * EC2 regions that you want Amazon Route 53 to use to perform health
-     * checks. You must specify at least three regions.
-     * </p>
-     * <note>When you remove a region from the list, Amazon Route 53 will
-     * briefly continue to check your endpoint from that region.</note>
-     * <p>
-     * Specify this value only if you want to change it.
+     * A complex type that contains one Region element for each region from
+     * which you want Amazon Route 53 health checkers to check the specified
+     * endpoint.
      * </p>
      * 
      * @param regions
-     *        A list of <code>HealthCheckRegion</code> values that specify the
-     *        Amazon EC2 regions that you want Amazon Route 53 to use to perform
-     *        health checks. You must specify at least three regions.</p>
-     *        <note>When you remove a region from the list, Amazon Route 53 will
-     *        briefly continue to check your endpoint from that region.</note>
-     *        <p>
-     *        Specify this value only if you want to change it.
+     *        A complex type that contains one Region element for each region
+     *        from which you want Amazon Route 53 health checkers to check the
+     *        specified endpoint.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see HealthCheckRegion

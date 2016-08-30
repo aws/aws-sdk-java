@@ -16,7 +16,7 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * This error indicates that the specified domain name is not valid.
+ * The specified domain name is not valid.
  * </p>
  */
 public class InvalidDomainNameException extends

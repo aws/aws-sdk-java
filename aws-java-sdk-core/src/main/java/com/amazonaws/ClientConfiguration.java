@@ -22,6 +22,9 @@ import org.apache.http.annotation.NotThreadSafe;
 
 import java.net.InetAddress;
 import java.security.SecureRandom;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Client configuration options such as proxy settings, user agent string, max retry attempts, etc.
@@ -277,6 +280,11 @@ public class ClientConfiguration {
      * if it is set to null or not explicitly configured.
      */
     private SecureRandom secureRandom;
+
+    /**
+     * Headers to be added to all requests
+     */
+    private Map<String, String> headers = new HashMap<String, String>();
 
     /**
      * Optional override to enable/disable support for HTTP/1.1 handshake utilizing EXPECT:
@@ -1892,5 +1900,41 @@ public class ClientConfiguration {
         setUseExpectContinue(useExpectContinue);
 
         return this;
+    }
+
+    /**
+     * Adds a header to be added on all requests and returns the {@link ClientConfiguration} object
+     *
+     * @param name
+     *            the name of the header
+     * @param value
+     *            the value of the header
+     *
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withHeader(String name, String value) {
+        addHeader(name, value);
+        return this;
+    }
+
+    /**
+     * Adds a header to be added on all requests
+     *
+     * @param name
+     *            the name of the header
+     * @param value
+     *            the value of the header
+     */
+    public void addHeader(String name, String value) {
+        headers.put(name, value);
+    }
+
+    /**
+     * Returns headers to be added to all requests
+     *
+     * @return headers to be added to all requests
+     */
+    public Map<String, String> getHeaders() {
+        return Collections.unmodifiableMap(headers);
     }
 }

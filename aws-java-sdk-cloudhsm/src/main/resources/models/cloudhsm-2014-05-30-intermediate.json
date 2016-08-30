@@ -15045,6 +15045,6 @@
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cloudhsm.model.AWSCloudHSMException",
   "hasWaiters" : false,
-  "exceptionUnmarshallerImpl" : null,
-  "sdkModeledExceptionBaseClassName" : "AWSCloudHSMException"
+  "sdkModeledExceptionBaseClassName" : "AWSCloudHSMException",
+  "exceptionUnmarshallerImpl" : null
 }

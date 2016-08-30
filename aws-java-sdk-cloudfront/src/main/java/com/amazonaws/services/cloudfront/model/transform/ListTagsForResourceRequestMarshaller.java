@@ -56,7 +56,7 @@ public class ListTagsForResourceRequestMarshaller
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2016-08-01/tagging";
+        String uriResourcePath = "/2016-08-20/tagging";
 
         request.setResourcePath(uriResourcePath);
 

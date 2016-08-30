@@ -57,8 +57,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      * </p>
      * <p>
      * This element contains an ID that you use when performing a
-     * <code>GetChange</code> action to get detailed information about the
-     * change.
+     * <a>GetChange</a> action to get detailed information about the change.
      * </p>
      */
     private String comment;
@@ -306,8 +305,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      * </p>
      * <p>
      * This element contains an ID that you use when performing a
-     * <code>GetChange</code> action to get detailed information about the
-     * change.
+     * <a>GetChange</a> action to get detailed information about the change.
      * </p>
      * 
      * @param comment
@@ -315,8 +313,8 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      *        made to your hosted zone.</p>
      *        <p>
      *        This element contains an ID that you use when performing a
-     *        <code>GetChange</code> action to get detailed information about
-     *        the change.
+     *        <a>GetChange</a> action to get detailed information about the
+     *        change.
      */
 
     public void setComment(String comment) {
@@ -330,16 +328,15 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      * </p>
      * <p>
      * This element contains an ID that you use when performing a
-     * <code>GetChange</code> action to get detailed information about the
-     * change.
+     * <a>GetChange</a> action to get detailed information about the change.
      * </p>
      * 
      * @return A complex type that describes change information about changes
      *         made to your hosted zone.</p>
      *         <p>
      *         This element contains an ID that you use when performing a
-     *         <code>GetChange</code> action to get detailed information about
-     *         the change.
+     *         <a>GetChange</a> action to get detailed information about the
+     *         change.
      */
 
     public String getComment() {
@@ -353,8 +350,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      * </p>
      * <p>
      * This element contains an ID that you use when performing a
-     * <code>GetChange</code> action to get detailed information about the
-     * change.
+     * <a>GetChange</a> action to get detailed information about the change.
      * </p>
      * 
      * @param comment
@@ -362,8 +358,8 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      *        made to your hosted zone.</p>
      *        <p>
      *        This element contains an ID that you use when performing a
-     *        <code>GetChange</code> action to get detailed information about
-     *        the change.
+     *        <a>GetChange</a> action to get detailed information about the
+     *        change.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

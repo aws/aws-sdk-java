@@ -50,12 +50,16 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      * the following configurations:
      * </p>
      * <ul>
-     * <li>You're checking the health of the resource record sets in a weighted,
+     * <li>
+     * <p>
+     * You're checking the health of the resource record sets in a weighted,
      * latency, geolocation, or failover resource record set, and you specify
      * health check IDs for all of the resource record sets. If the health check
      * for one resource record set specifies an endpoint that is not healthy,
      * Amazon Route 53 stops responding to queries using the value for that
-     * resource record set.</li>
+     * resource record set.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * You set <code>EvaluateTargetHealth</code> to <code>true</code> for the
@@ -96,11 +100,14 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      * server (such as <code>us-east-1-www.example.com</code>), not the name of
      * the resource record sets (example.com).
      * </p>
-     * <important>In this configuration, if you create a health check for which
-     * the value of <code>FullyQualifiedDomainName</code> matches the name of
-     * the resource record sets and then associate the health check with those
-     * resource record sets, health check results will be
-     * unpredictable.</important>
+     * <important>
+     * <p>
+     * In this configuration, if you create a health check for which the value
+     * of <code>FullyQualifiedDomainName</code> matches the name of the resource
+     * record sets and then associate the health check with those resource
+     * record sets, health check results will be unpredictable.
+     * </p>
+     * </important>
      */
     private String healthCheckId;
 
@@ -128,12 +135,16 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      * the following configurations:
      * </p>
      * <ul>
-     * <li>You're checking the health of the resource record sets in a weighted,
+     * <li>
+     * <p>
+     * You're checking the health of the resource record sets in a weighted,
      * latency, geolocation, or failover resource record set, and you specify
      * health check IDs for all of the resource record sets. If the health check
      * for one resource record set specifies an endpoint that is not healthy,
      * Amazon Route 53 stops responding to queries using the value for that
-     * resource record set.</li>
+     * resource record set.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * You set <code>EvaluateTargetHealth</code> to <code>true</code> for the
@@ -174,11 +185,14 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      * server (such as <code>us-east-1-www.example.com</code>), not the name of
      * the resource record sets (example.com).
      * </p>
-     * <important>In this configuration, if you create a health check for which
-     * the value of <code>FullyQualifiedDomainName</code> matches the name of
-     * the resource record sets and then associate the health check with those
-     * resource record sets, health check results will be
-     * unpredictable.</important>
+     * <important>
+     * <p>
+     * In this configuration, if you create a health check for which the value
+     * of <code>FullyQualifiedDomainName</code> matches the name of the resource
+     * record sets and then associate the health check with those resource
+     * record sets, health check results will be unpredictable.
+     * </p>
+     * </important>
      * 
      * @param healthCheckId
      *        If you want Amazon Route 53 to return this resource record set in
@@ -203,12 +217,16 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      *        checks only makes sense in the following configurations:
      *        </p>
      *        <ul>
-     *        <li>You're checking the health of the resource record sets in a
+     *        <li>
+     *        <p>
+     *        You're checking the health of the resource record sets in a
      *        weighted, latency, geolocation, or failover resource record set,
      *        and you specify health check IDs for all of the resource record
      *        sets. If the health check for one resource record set specifies an
      *        endpoint that is not healthy, Amazon Route 53 stops responding to
-     *        queries using the value for that resource record set.</li>
+     *        queries using the value for that resource record set.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        You set <code>EvaluateTargetHealth</code> to <code>true</code> for
@@ -251,11 +269,14 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      *        the server (such as <code>us-east-1-www.example.com</code>), not
      *        the name of the resource record sets (example.com).
      *        </p>
-     *        <important>In this configuration, if you create a health check for
-     *        which the value of <code>FullyQualifiedDomainName</code> matches
-     *        the name of the resource record sets and then associate the health
-     *        check with those resource record sets, health check results will
-     *        be unpredictable.
+     *        <important>
+     *        <p>
+     *        In this configuration, if you create a health check for which the
+     *        value of <code>FullyQualifiedDomainName</code> matches the name of
+     *        the resource record sets and then associate the health check with
+     *        those resource record sets, health check results will be
+     *        unpredictable.
+     *        </p>
      */
 
     public void setHealthCheckId(String healthCheckId) {
@@ -286,12 +307,16 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      * the following configurations:
      * </p>
      * <ul>
-     * <li>You're checking the health of the resource record sets in a weighted,
+     * <li>
+     * <p>
+     * You're checking the health of the resource record sets in a weighted,
      * latency, geolocation, or failover resource record set, and you specify
      * health check IDs for all of the resource record sets. If the health check
      * for one resource record set specifies an endpoint that is not healthy,
      * Amazon Route 53 stops responding to queries using the value for that
-     * resource record set.</li>
+     * resource record set.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * You set <code>EvaluateTargetHealth</code> to <code>true</code> for the
@@ -332,11 +357,14 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      * server (such as <code>us-east-1-www.example.com</code>), not the name of
      * the resource record sets (example.com).
      * </p>
-     * <important>In this configuration, if you create a health check for which
-     * the value of <code>FullyQualifiedDomainName</code> matches the name of
-     * the resource record sets and then associate the health check with those
-     * resource record sets, health check results will be
-     * unpredictable.</important>
+     * <important>
+     * <p>
+     * In this configuration, if you create a health check for which the value
+     * of <code>FullyQualifiedDomainName</code> matches the name of the resource
+     * record sets and then associate the health check with those resource
+     * record sets, health check results will be unpredictable.
+     * </p>
+     * </important>
      * 
      * @return If you want Amazon Route 53 to return this resource record set in
      *         response to a DNS query only when a health check is passing,
@@ -360,12 +388,16 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      *         health checks only makes sense in the following configurations:
      *         </p>
      *         <ul>
-     *         <li>You're checking the health of the resource record sets in a
+     *         <li>
+     *         <p>
+     *         You're checking the health of the resource record sets in a
      *         weighted, latency, geolocation, or failover resource record set,
      *         and you specify health check IDs for all of the resource record
      *         sets. If the health check for one resource record set specifies
      *         an endpoint that is not healthy, Amazon Route 53 stops responding
-     *         to queries using the value for that resource record set.</li>
+     *         to queries using the value for that resource record set.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         You set <code>EvaluateTargetHealth</code> to <code>true</code>
@@ -408,11 +440,14 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      *         the server (such as <code>us-east-1-www.example.com</code>), not
      *         the name of the resource record sets (example.com).
      *         </p>
-     *         <important>In this configuration, if you create a health check
-     *         for which the value of <code>FullyQualifiedDomainName</code>
-     *         matches the name of the resource record sets and then associate
-     *         the health check with those resource record sets, health check
-     *         results will be unpredictable.
+     *         <important>
+     *         <p>
+     *         In this configuration, if you create a health check for which the
+     *         value of <code>FullyQualifiedDomainName</code> matches the name
+     *         of the resource record sets and then associate the health check
+     *         with those resource record sets, health check results will be
+     *         unpredictable.
+     *         </p>
      */
 
     public String getHealthCheckId() {
@@ -443,12 +478,16 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      * the following configurations:
      * </p>
      * <ul>
-     * <li>You're checking the health of the resource record sets in a weighted,
+     * <li>
+     * <p>
+     * You're checking the health of the resource record sets in a weighted,
      * latency, geolocation, or failover resource record set, and you specify
      * health check IDs for all of the resource record sets. If the health check
      * for one resource record set specifies an endpoint that is not healthy,
      * Amazon Route 53 stops responding to queries using the value for that
-     * resource record set.</li>
+     * resource record set.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * You set <code>EvaluateTargetHealth</code> to <code>true</code> for the
@@ -489,11 +528,14 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      * server (such as <code>us-east-1-www.example.com</code>), not the name of
      * the resource record sets (example.com).
      * </p>
-     * <important>In this configuration, if you create a health check for which
-     * the value of <code>FullyQualifiedDomainName</code> matches the name of
-     * the resource record sets and then associate the health check with those
-     * resource record sets, health check results will be
-     * unpredictable.</important>
+     * <important>
+     * <p>
+     * In this configuration, if you create a health check for which the value
+     * of <code>FullyQualifiedDomainName</code> matches the name of the resource
+     * record sets and then associate the health check with those resource
+     * record sets, health check results will be unpredictable.
+     * </p>
+     * </important>
      * 
      * @param healthCheckId
      *        If you want Amazon Route 53 to return this resource record set in
@@ -518,12 +560,16 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      *        checks only makes sense in the following configurations:
      *        </p>
      *        <ul>
-     *        <li>You're checking the health of the resource record sets in a
+     *        <li>
+     *        <p>
+     *        You're checking the health of the resource record sets in a
      *        weighted, latency, geolocation, or failover resource record set,
      *        and you specify health check IDs for all of the resource record
      *        sets. If the health check for one resource record set specifies an
      *        endpoint that is not healthy, Amazon Route 53 stops responding to
-     *        queries using the value for that resource record set.</li>
+     *        queries using the value for that resource record set.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        You set <code>EvaluateTargetHealth</code> to <code>true</code> for
@@ -566,11 +612,14 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      *        the server (such as <code>us-east-1-www.example.com</code>), not
      *        the name of the resource record sets (example.com).
      *        </p>
-     *        <important>In this configuration, if you create a health check for
-     *        which the value of <code>FullyQualifiedDomainName</code> matches
-     *        the name of the resource record sets and then associate the health
-     *        check with those resource record sets, health check results will
-     *        be unpredictable.
+     *        <important>
+     *        <p>
+     *        In this configuration, if you create a health check for which the
+     *        value of <code>FullyQualifiedDomainName</code> matches the name of
+     *        the resource record sets and then associate the health check with
+     *        those resource record sets, health check results will be
+     *        unpredictable.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

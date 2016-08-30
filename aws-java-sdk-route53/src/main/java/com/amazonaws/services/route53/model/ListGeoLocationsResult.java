@@ -18,74 +18,76 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains information about the geo locations that are
- * returned by the request and information about the response.
+ * A complex type containing the response information for the request.
  * </p>
  */
 public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the geo locations that are
-     * returned by the request.
+     * A complex type that contains one <code>GeoLocationDetails</code> element
+     * for each location that Amazon Route 53 supports for geolocation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<GeoLocationDetails> geoLocationDetailsList;
     /**
      * <p>
-     * A flag that indicates whether there are more geo locations to be listed.
-     * If your results were truncated, you can make a follow-up request for the
-     * next page of results by using the values included in the
-     * <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
-     * <code>NextSubdivisionCode</code> elements.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A value that indicates whether more locations remain to be listed after
+     * the last location in this response. If so, the value of
+     * <code>IsTruncated</code> is <code>true</code>. To get more values, submit
+     * another request and include the values of <code>NextContinentCode</code>,
+     * <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the
+     * <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
+     * <code>StartSubdivisionCode</code>, as applicable.
      * </p>
      */
     private Boolean isTruncated;
     /**
      * <p>
-     * If the results were truncated, the continent code of the next geo
-     * location in the list. This element is present only if
-     * <code>IsTruncated</code> is true and the next geo location to list is a
-     * continent location.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a
+     * follow-up request to display more locations. Enter the value of
+     * <code>NextContinentCode</code> in the <code>StartContinentCode</code>
+     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
+     * request.
      * </p>
      */
     private String nextContinentCode;
     /**
      * <p>
-     * If the results were truncated, the country code of the next geo location
-     * in the list. This element is present only if <code>IsTruncated</code> is
-     * true and the next geo location to list is not a continent location.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a
+     * follow-up request to display more locations. Enter the value of
+     * <code>NextCountryCode</code> in the <code>StartCountryCode</code>
+     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
+     * request.
      * </p>
      */
     private String nextCountryCode;
     /**
      * <p>
-     * If the results were truncated, the subdivision code of the next geo
-     * location in the list. This element is present only if
-     * <code>IsTruncated</code> is true and the next geo location has a
-     * subdivision.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a
+     * follow-up request to display more locations. Enter the value of
+     * <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
+     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
+     * request.
      * </p>
      */
     private String nextSubdivisionCode;
     /**
      * <p>
-     * The maximum number of records you requested. The maximum value of
-     * <code>MaxItems</code> is 100.
+     * The value that you specified for <code>MaxItems</code> in the request.
      * </p>
      */
     private String maxItems;
 
     /**
      * <p>
-     * A complex type that contains information about the geo locations that are
-     * returned by the request.
+     * A complex type that contains one <code>GeoLocationDetails</code> element
+     * for each location that Amazon Route 53 supports for geolocation.
      * </p>
      * 
-     * @return A complex type that contains information about the geo locations
-     *         that are returned by the request.
+     * @return A complex type that contains one <code>GeoLocationDetails</code>
+     *         element for each location that Amazon Route 53 supports for
+     *         geolocation.
      */
 
     public java.util.List<GeoLocationDetails> getGeoLocationDetailsList() {
@@ -97,13 +99,14 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the geo locations that are
-     * returned by the request.
+     * A complex type that contains one <code>GeoLocationDetails</code> element
+     * for each location that Amazon Route 53 supports for geolocation.
      * </p>
      * 
      * @param geoLocationDetailsList
-     *        A complex type that contains information about the geo locations
-     *        that are returned by the request.
+     *        A complex type that contains one <code>GeoLocationDetails</code>
+     *        element for each location that Amazon Route 53 supports for
+     *        geolocation.
      */
 
     public void setGeoLocationDetailsList(
@@ -119,8 +122,8 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the geo locations that are
-     * returned by the request.
+     * A complex type that contains one <code>GeoLocationDetails</code> element
+     * for each location that Amazon Route 53 supports for geolocation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -130,8 +133,9 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param geoLocationDetailsList
-     *        A complex type that contains information about the geo locations
-     *        that are returned by the request.
+     *        A complex type that contains one <code>GeoLocationDetails</code>
+     *        element for each location that Amazon Route 53 supports for
+     *        geolocation.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -150,13 +154,14 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the geo locations that are
-     * returned by the request.
+     * A complex type that contains one <code>GeoLocationDetails</code> element
+     * for each location that Amazon Route 53 supports for geolocation.
      * </p>
      * 
      * @param geoLocationDetailsList
-     *        A complex type that contains information about the geo locations
-     *        that are returned by the request.
+     *        A complex type that contains one <code>GeoLocationDetails</code>
+     *        element for each location that Amazon Route 53 supports for
+     *        geolocation.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -169,25 +174,24 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether there are more geo locations to be listed.
-     * If your results were truncated, you can make a follow-up request for the
-     * next page of results by using the values included in the
-     * <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
-     * <code>NextSubdivisionCode</code> elements.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A value that indicates whether more locations remain to be listed after
+     * the last location in this response. If so, the value of
+     * <code>IsTruncated</code> is <code>true</code>. To get more values, submit
+     * another request and include the values of <code>NextContinentCode</code>,
+     * <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the
+     * <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
+     * <code>StartSubdivisionCode</code>, as applicable.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more geo locations to be
-     *        listed. If your results were truncated, you can make a follow-up
-     *        request for the next page of results by using the values included
-     *        in the <code>NextContinentCode</code>,
-     *        <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code>
-     *        elements.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        A value that indicates whether more locations remain to be listed
+     *        after the last location in this response. If so, the value of
+     *        <code>IsTruncated</code> is <code>true</code>. To get more values,
+     *        submit another request and include the values of
+     *        <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
+     *        <code>NextSubdivisionCode</code> in the
+     *        <code>StartContinentCode</code>, <code>StartCountryCode</code>,
+     *        and <code>StartSubdivisionCode</code>, as applicable.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -196,24 +200,23 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether there are more geo locations to be listed.
-     * If your results were truncated, you can make a follow-up request for the
-     * next page of results by using the values included in the
-     * <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
-     * <code>NextSubdivisionCode</code> elements.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A value that indicates whether more locations remain to be listed after
+     * the last location in this response. If so, the value of
+     * <code>IsTruncated</code> is <code>true</code>. To get more values, submit
+     * another request and include the values of <code>NextContinentCode</code>,
+     * <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the
+     * <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
+     * <code>StartSubdivisionCode</code>, as applicable.
      * </p>
      * 
-     * @return A flag that indicates whether there are more geo locations to be
-     *         listed. If your results were truncated, you can make a follow-up
-     *         request for the next page of results by using the values included
-     *         in the <code>NextContinentCode</code>,
-     *         <code>NextCountryCode</code>, and
-     *         <code>NextSubdivisionCode</code> elements.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     * @return A value that indicates whether more locations remain to be listed
+     *         after the last location in this response. If so, the value of
+     *         <code>IsTruncated</code> is <code>true</code>. To get more
+     *         values, submit another request and include the values of
+     *         <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
+     *         <code>NextSubdivisionCode</code> in the
+     *         <code>StartContinentCode</code>, <code>StartCountryCode</code>,
+     *         and <code>StartSubdivisionCode</code>, as applicable.
      */
 
     public Boolean getIsTruncated() {
@@ -222,25 +225,24 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether there are more geo locations to be listed.
-     * If your results were truncated, you can make a follow-up request for the
-     * next page of results by using the values included in the
-     * <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
-     * <code>NextSubdivisionCode</code> elements.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A value that indicates whether more locations remain to be listed after
+     * the last location in this response. If so, the value of
+     * <code>IsTruncated</code> is <code>true</code>. To get more values, submit
+     * another request and include the values of <code>NextContinentCode</code>,
+     * <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the
+     * <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
+     * <code>StartSubdivisionCode</code>, as applicable.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more geo locations to be
-     *        listed. If your results were truncated, you can make a follow-up
-     *        request for the next page of results by using the values included
-     *        in the <code>NextContinentCode</code>,
-     *        <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code>
-     *        elements.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        A value that indicates whether more locations remain to be listed
+     *        after the last location in this response. If so, the value of
+     *        <code>IsTruncated</code> is <code>true</code>. To get more values,
+     *        submit another request and include the values of
+     *        <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
+     *        <code>NextSubdivisionCode</code> in the
+     *        <code>StartContinentCode</code>, <code>StartCountryCode</code>,
+     *        and <code>StartSubdivisionCode</code>, as applicable.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -252,24 +254,23 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether there are more geo locations to be listed.
-     * If your results were truncated, you can make a follow-up request for the
-     * next page of results by using the values included in the
-     * <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
-     * <code>NextSubdivisionCode</code> elements.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A value that indicates whether more locations remain to be listed after
+     * the last location in this response. If so, the value of
+     * <code>IsTruncated</code> is <code>true</code>. To get more values, submit
+     * another request and include the values of <code>NextContinentCode</code>,
+     * <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the
+     * <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
+     * <code>StartSubdivisionCode</code>, as applicable.
      * </p>
      * 
-     * @return A flag that indicates whether there are more geo locations to be
-     *         listed. If your results were truncated, you can make a follow-up
-     *         request for the next page of results by using the values included
-     *         in the <code>NextContinentCode</code>,
-     *         <code>NextCountryCode</code>, and
-     *         <code>NextSubdivisionCode</code> elements.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     * @return A value that indicates whether more locations remain to be listed
+     *         after the last location in this response. If so, the value of
+     *         <code>IsTruncated</code> is <code>true</code>. To get more
+     *         values, submit another request and include the values of
+     *         <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
+     *         <code>NextSubdivisionCode</code> in the
+     *         <code>StartContinentCode</code>, <code>StartCountryCode</code>,
+     *         and <code>StartSubdivisionCode</code>, as applicable.
      */
 
     public Boolean isTruncated() {
@@ -278,17 +279,19 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the results were truncated, the continent code of the next geo
-     * location in the list. This element is present only if
-     * <code>IsTruncated</code> is true and the next geo location to list is a
-     * continent location.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a
+     * follow-up request to display more locations. Enter the value of
+     * <code>NextContinentCode</code> in the <code>StartContinentCode</code>
+     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
+     * request.
      * </p>
      * 
      * @param nextContinentCode
-     *        If the results were truncated, the continent code of the next geo
-     *        location in the list. This element is present only if
-     *        <code>IsTruncated</code> is true and the next geo location to list
-     *        is a continent location.
+     *        If <code>IsTruncated</code> is <code>true</code>, you can make a
+     *        follow-up request to display more locations. Enter the value of
+     *        <code>NextContinentCode</code> in the
+     *        <code>StartContinentCode</code> parameter in another
+     *        <code>GET</code> <code>ListGeoLocations</code> request.
      */
 
     public void setNextContinentCode(String nextContinentCode) {
@@ -297,16 +300,18 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the results were truncated, the continent code of the next geo
-     * location in the list. This element is present only if
-     * <code>IsTruncated</code> is true and the next geo location to list is a
-     * continent location.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a
+     * follow-up request to display more locations. Enter the value of
+     * <code>NextContinentCode</code> in the <code>StartContinentCode</code>
+     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
+     * request.
      * </p>
      * 
-     * @return If the results were truncated, the continent code of the next geo
-     *         location in the list. This element is present only if
-     *         <code>IsTruncated</code> is true and the next geo location to
-     *         list is a continent location.
+     * @return If <code>IsTruncated</code> is <code>true</code>, you can make a
+     *         follow-up request to display more locations. Enter the value of
+     *         <code>NextContinentCode</code> in the
+     *         <code>StartContinentCode</code> parameter in another
+     *         <code>GET</code> <code>ListGeoLocations</code> request.
      */
 
     public String getNextContinentCode() {
@@ -315,17 +320,19 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the results were truncated, the continent code of the next geo
-     * location in the list. This element is present only if
-     * <code>IsTruncated</code> is true and the next geo location to list is a
-     * continent location.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a
+     * follow-up request to display more locations. Enter the value of
+     * <code>NextContinentCode</code> in the <code>StartContinentCode</code>
+     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
+     * request.
      * </p>
      * 
      * @param nextContinentCode
-     *        If the results were truncated, the continent code of the next geo
-     *        location in the list. This element is present only if
-     *        <code>IsTruncated</code> is true and the next geo location to list
-     *        is a continent location.
+     *        If <code>IsTruncated</code> is <code>true</code>, you can make a
+     *        follow-up request to display more locations. Enter the value of
+     *        <code>NextContinentCode</code> in the
+     *        <code>StartContinentCode</code> parameter in another
+     *        <code>GET</code> <code>ListGeoLocations</code> request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -337,16 +344,19 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the results were truncated, the country code of the next geo location
-     * in the list. This element is present only if <code>IsTruncated</code> is
-     * true and the next geo location to list is not a continent location.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a
+     * follow-up request to display more locations. Enter the value of
+     * <code>NextCountryCode</code> in the <code>StartCountryCode</code>
+     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
+     * request.
      * </p>
      * 
      * @param nextCountryCode
-     *        If the results were truncated, the country code of the next geo
-     *        location in the list. This element is present only if
-     *        <code>IsTruncated</code> is true and the next geo location to list
-     *        is not a continent location.
+     *        If <code>IsTruncated</code> is <code>true</code>, you can make a
+     *        follow-up request to display more locations. Enter the value of
+     *        <code>NextCountryCode</code> in the <code>StartCountryCode</code>
+     *        parameter in another <code>GET</code>
+     *        <code>ListGeoLocations</code> request.
      */
 
     public void setNextCountryCode(String nextCountryCode) {
@@ -355,15 +365,18 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the results were truncated, the country code of the next geo location
-     * in the list. This element is present only if <code>IsTruncated</code> is
-     * true and the next geo location to list is not a continent location.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a
+     * follow-up request to display more locations. Enter the value of
+     * <code>NextCountryCode</code> in the <code>StartCountryCode</code>
+     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
+     * request.
      * </p>
      * 
-     * @return If the results were truncated, the country code of the next geo
-     *         location in the list. This element is present only if
-     *         <code>IsTruncated</code> is true and the next geo location to
-     *         list is not a continent location.
+     * @return If <code>IsTruncated</code> is <code>true</code>, you can make a
+     *         follow-up request to display more locations. Enter the value of
+     *         <code>NextCountryCode</code> in the <code>StartCountryCode</code>
+     *         parameter in another <code>GET</code>
+     *         <code>ListGeoLocations</code> request.
      */
 
     public String getNextCountryCode() {
@@ -372,16 +385,19 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the results were truncated, the country code of the next geo location
-     * in the list. This element is present only if <code>IsTruncated</code> is
-     * true and the next geo location to list is not a continent location.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a
+     * follow-up request to display more locations. Enter the value of
+     * <code>NextCountryCode</code> in the <code>StartCountryCode</code>
+     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
+     * request.
      * </p>
      * 
      * @param nextCountryCode
-     *        If the results were truncated, the country code of the next geo
-     *        location in the list. This element is present only if
-     *        <code>IsTruncated</code> is true and the next geo location to list
-     *        is not a continent location.
+     *        If <code>IsTruncated</code> is <code>true</code>, you can make a
+     *        follow-up request to display more locations. Enter the value of
+     *        <code>NextCountryCode</code> in the <code>StartCountryCode</code>
+     *        parameter in another <code>GET</code>
+     *        <code>ListGeoLocations</code> request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -393,17 +409,19 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the results were truncated, the subdivision code of the next geo
-     * location in the list. This element is present only if
-     * <code>IsTruncated</code> is true and the next geo location has a
-     * subdivision.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a
+     * follow-up request to display more locations. Enter the value of
+     * <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
+     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
+     * request.
      * </p>
      * 
      * @param nextSubdivisionCode
-     *        If the results were truncated, the subdivision code of the next
-     *        geo location in the list. This element is present only if
-     *        <code>IsTruncated</code> is true and the next geo location has a
-     *        subdivision.
+     *        If <code>IsTruncated</code> is <code>true</code>, you can make a
+     *        follow-up request to display more locations. Enter the value of
+     *        <code>NextSubdivisionCode</code> in the
+     *        <code>StartSubdivisionCode</code> parameter in another
+     *        <code>GET</code> <code>ListGeoLocations</code> request.
      */
 
     public void setNextSubdivisionCode(String nextSubdivisionCode) {
@@ -412,16 +430,18 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the results were truncated, the subdivision code of the next geo
-     * location in the list. This element is present only if
-     * <code>IsTruncated</code> is true and the next geo location has a
-     * subdivision.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a
+     * follow-up request to display more locations. Enter the value of
+     * <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
+     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
+     * request.
      * </p>
      * 
-     * @return If the results were truncated, the subdivision code of the next
-     *         geo location in the list. This element is present only if
-     *         <code>IsTruncated</code> is true and the next geo location has a
-     *         subdivision.
+     * @return If <code>IsTruncated</code> is <code>true</code>, you can make a
+     *         follow-up request to display more locations. Enter the value of
+     *         <code>NextSubdivisionCode</code> in the
+     *         <code>StartSubdivisionCode</code> parameter in another
+     *         <code>GET</code> <code>ListGeoLocations</code> request.
      */
 
     public String getNextSubdivisionCode() {
@@ -430,17 +450,19 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the results were truncated, the subdivision code of the next geo
-     * location in the list. This element is present only if
-     * <code>IsTruncated</code> is true and the next geo location has a
-     * subdivision.
+     * If <code>IsTruncated</code> is <code>true</code>, you can make a
+     * follow-up request to display more locations. Enter the value of
+     * <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
+     * parameter in another <code>GET</code> <code>ListGeoLocations</code>
+     * request.
      * </p>
      * 
      * @param nextSubdivisionCode
-     *        If the results were truncated, the subdivision code of the next
-     *        geo location in the list. This element is present only if
-     *        <code>IsTruncated</code> is true and the next geo location has a
-     *        subdivision.
+     *        If <code>IsTruncated</code> is <code>true</code>, you can make a
+     *        follow-up request to display more locations. Enter the value of
+     *        <code>NextSubdivisionCode</code> in the
+     *        <code>StartSubdivisionCode</code> parameter in another
+     *        <code>GET</code> <code>ListGeoLocations</code> request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -453,13 +475,12 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of records you requested. The maximum value of
-     * <code>MaxItems</code> is 100.
+     * The value that you specified for <code>MaxItems</code> in the request.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of records you requested. The maximum value of
-     *        <code>MaxItems</code> is 100.
+     *        The value that you specified for <code>MaxItems</code> in the
+     *        request.
      */
 
     public void setMaxItems(String maxItems) {
@@ -468,12 +489,11 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of records you requested. The maximum value of
-     * <code>MaxItems</code> is 100.
+     * The value that you specified for <code>MaxItems</code> in the request.
      * </p>
      * 
-     * @return The maximum number of records you requested. The maximum value of
-     *         <code>MaxItems</code> is 100.
+     * @return The value that you specified for <code>MaxItems</code> in the
+     *         request.
      */
 
     public String getMaxItems() {
@@ -482,13 +502,12 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of records you requested. The maximum value of
-     * <code>MaxItems</code> is 100.
+     * The value that you specified for <code>MaxItems</code> in the request.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of records you requested. The maximum value of
-     *        <code>MaxItems</code> is 100.
+     *        The value that you specified for <code>MaxItems</code> in the
+     *        request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

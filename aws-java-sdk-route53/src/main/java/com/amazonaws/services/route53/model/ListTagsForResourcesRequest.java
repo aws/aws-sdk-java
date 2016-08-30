@@ -19,8 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type containing information about a request for a list of the tags
- * that are associated with up to 10 specified resources.
+ * A complex type that contains information about the health checks or hosted
+ * zones for which you want to list tags.
  * </p>
  */
 public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
@@ -30,12 +30,18 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      * <p>
      * The type of the resources.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      */
     private String resourceType;
     /**
@@ -50,20 +56,32 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      * <p>
      * The type of the resources.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resources.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
      * @see TagResourceType
      */
 
@@ -75,20 +93,31 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      * <p>
      * The type of the resources.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @return The type of the resources.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         - The resource type for health checks is <code>healthcheck</code>
-     *         .
+     *         The resource type for health checks is <code>healthcheck</code>.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         - The resource type for hosted zones is <code>hostedzone</code>.
+     *         The resource type for hosted zones is <code>hostedzone</code>.
+     *         </p>
+     *         </li>
      * @see TagResourceType
      */
 
@@ -100,20 +129,32 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      * <p>
      * The type of the resources.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resources.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TagResourceType
@@ -128,20 +169,32 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      * <p>
      * The type of the resources.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resources.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
      * @see TagResourceType
      */
 
@@ -153,20 +206,32 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      * <p>
      * The type of the resources.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * - The resource type for health checks is <code>healthcheck</code>.
+     * The resource type for health checks is <code>healthcheck</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * - The resource type for hosted zones is <code>hostedzone</code>.
+     * The resource type for hosted zones is <code>hostedzone</code>.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of the resources.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        - The resource type for health checks is <code>healthcheck</code>.
+     *        The resource type for health checks is <code>healthcheck</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        - The resource type for hosted zones is <code>hostedzone</code>.
+     *        The resource type for hosted zones is <code>hostedzone</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TagResourceType

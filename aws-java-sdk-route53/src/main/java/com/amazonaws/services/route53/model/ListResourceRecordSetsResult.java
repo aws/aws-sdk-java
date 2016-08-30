@@ -18,34 +18,30 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains information about the resource record sets that
- * are returned by the request and information about the response.
+ * A complex type that contains list information for the resource record set.
  * </p>
  */
 public class ListResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the resource record sets
-     * that are returned by the request.
+     * Information about multiple resource record sets.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ResourceRecordSet> resourceRecordSets;
     /**
      * <p>
-     * A flag that indicates whether there are more resource record sets to be
-     * listed. If your results were truncated, you can make a follow-up request
-     * for the next page of results by using the <code>NextRecordName</code>
-     * element.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether more resource record sets remain to be
+     * listed. If your results were truncated, you can make a follow-up
+     * pagination request by using the <code>NextRecordName</code> element.
      * </p>
      */
     private Boolean isTruncated;
     /**
      * <p>
      * If the results were truncated, the name of the next record in the list.
+     * </p>
+     * <p>
      * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      */
@@ -53,34 +49,34 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the type of the next record in the list.
+     * </p>
+     * <p>
      * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      */
     private String nextRecordType;
     /**
      * <p>
-     * <i>Weighted resource record sets only:</i> If results were truncated for
-     * a given DNS name and type, the value of <code>SetIdentifier</code> for
-     * the next resource record set that has the current DNS name and type.
+     * <i>Weighted, latency, geolocation, and failover resource record sets
+     * only</i>: If results were truncated for a given DNS name and type, the
+     * value of <code>SetIdentifier</code> for the next resource record set that
+     * has the current DNS name and type.
      * </p>
      */
     private String nextRecordIdentifier;
     /**
      * <p>
-     * The maximum number of records you requested. The maximum value of
-     * <code>MaxItems</code> is 100.
+     * The maximum number of records you requested.
      * </p>
      */
     private String maxItems;
 
     /**
      * <p>
-     * A complex type that contains information about the resource record sets
-     * that are returned by the request.
+     * Information about multiple resource record sets.
      * </p>
      * 
-     * @return A complex type that contains information about the resource
-     *         record sets that are returned by the request.
+     * @return Information about multiple resource record sets.
      */
 
     public java.util.List<ResourceRecordSet> getResourceRecordSets() {
@@ -92,13 +88,11 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the resource record sets
-     * that are returned by the request.
+     * Information about multiple resource record sets.
      * </p>
      * 
      * @param resourceRecordSets
-     *        A complex type that contains information about the resource record
-     *        sets that are returned by the request.
+     *        Information about multiple resource record sets.
      */
 
     public void setResourceRecordSets(
@@ -114,8 +108,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the resource record sets
-     * that are returned by the request.
+     * Information about multiple resource record sets.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -125,8 +118,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param resourceRecordSets
-     *        A complex type that contains information about the resource record
-     *        sets that are returned by the request.
+     *        Information about multiple resource record sets.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -145,13 +137,11 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the resource record sets
-     * that are returned by the request.
+     * Information about multiple resource record sets.
      * </p>
      * 
      * @param resourceRecordSets
-     *        A complex type that contains information about the resource record
-     *        sets that are returned by the request.
+     *        Information about multiple resource record sets.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -164,22 +154,16 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether there are more resource record sets to be
-     * listed. If your results were truncated, you can make a follow-up request
-     * for the next page of results by using the <code>NextRecordName</code>
-     * element.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether more resource record sets remain to be
+     * listed. If your results were truncated, you can make a follow-up
+     * pagination request by using the <code>NextRecordName</code> element.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more resource record sets
-     *        to be listed. If your results were truncated, you can make a
-     *        follow-up request for the next page of results by using the
-     *        <code>NextRecordName</code> element.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        A flag that indicates whether more resource record sets remain to
+     *        be listed. If your results were truncated, you can make a
+     *        follow-up pagination request by using the
+     *        <code>NextRecordName</code> element.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -188,21 +172,15 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether there are more resource record sets to be
-     * listed. If your results were truncated, you can make a follow-up request
-     * for the next page of results by using the <code>NextRecordName</code>
-     * element.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether more resource record sets remain to be
+     * listed. If your results were truncated, you can make a follow-up
+     * pagination request by using the <code>NextRecordName</code> element.
      * </p>
      * 
-     * @return A flag that indicates whether there are more resource record sets
-     *         to be listed. If your results were truncated, you can make a
-     *         follow-up request for the next page of results by using the
-     *         <code>NextRecordName</code> element.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     * @return A flag that indicates whether more resource record sets remain to
+     *         be listed. If your results were truncated, you can make a
+     *         follow-up pagination request by using the
+     *         <code>NextRecordName</code> element.
      */
 
     public Boolean getIsTruncated() {
@@ -211,22 +189,16 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether there are more resource record sets to be
-     * listed. If your results were truncated, you can make a follow-up request
-     * for the next page of results by using the <code>NextRecordName</code>
-     * element.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether more resource record sets remain to be
+     * listed. If your results were truncated, you can make a follow-up
+     * pagination request by using the <code>NextRecordName</code> element.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more resource record sets
-     *        to be listed. If your results were truncated, you can make a
-     *        follow-up request for the next page of results by using the
-     *        <code>NextRecordName</code> element.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        A flag that indicates whether more resource record sets remain to
+     *        be listed. If your results were truncated, you can make a
+     *        follow-up pagination request by using the
+     *        <code>NextRecordName</code> element.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -238,21 +210,15 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether there are more resource record sets to be
-     * listed. If your results were truncated, you can make a follow-up request
-     * for the next page of results by using the <code>NextRecordName</code>
-     * element.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether more resource record sets remain to be
+     * listed. If your results were truncated, you can make a follow-up
+     * pagination request by using the <code>NextRecordName</code> element.
      * </p>
      * 
-     * @return A flag that indicates whether there are more resource record sets
-     *         to be listed. If your results were truncated, you can make a
-     *         follow-up request for the next page of results by using the
-     *         <code>NextRecordName</code> element.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     * @return A flag that indicates whether more resource record sets remain to
+     *         be listed. If your results were truncated, you can make a
+     *         follow-up pagination request by using the
+     *         <code>NextRecordName</code> element.
      */
 
     public Boolean isTruncated() {
@@ -262,13 +228,16 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the name of the next record in the list.
+     * </p>
+     * <p>
      * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @param nextRecordName
      *        If the results were truncated, the name of the next record in the
-     *        list. This element is present only if <code>IsTruncated</code> is
-     *        true.
+     *        list.</p>
+     *        <p>
+     *        This element is present only if <code>IsTruncated</code> is true.
      */
 
     public void setNextRecordName(String nextRecordName) {
@@ -278,12 +247,15 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the name of the next record in the list.
+     * </p>
+     * <p>
      * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @return If the results were truncated, the name of the next record in the
-     *         list. This element is present only if <code>IsTruncated</code> is
-     *         true.
+     *         list.</p>
+     *         <p>
+     *         This element is present only if <code>IsTruncated</code> is true.
      */
 
     public String getNextRecordName() {
@@ -293,13 +265,16 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the name of the next record in the list.
+     * </p>
+     * <p>
      * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @param nextRecordName
      *        If the results were truncated, the name of the next record in the
-     *        list. This element is present only if <code>IsTruncated</code> is
-     *        true.
+     *        list.</p>
+     *        <p>
+     *        This element is present only if <code>IsTruncated</code> is true.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -312,13 +287,16 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the type of the next record in the list.
+     * </p>
+     * <p>
      * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @param nextRecordType
      *        If the results were truncated, the type of the next record in the
-     *        list. This element is present only if <code>IsTruncated</code> is
-     *        true.
+     *        list.</p>
+     *        <p>
+     *        This element is present only if <code>IsTruncated</code> is true.
      * @see RRType
      */
 
@@ -329,12 +307,15 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the type of the next record in the list.
+     * </p>
+     * <p>
      * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @return If the results were truncated, the type of the next record in the
-     *         list. This element is present only if <code>IsTruncated</code> is
-     *         true.
+     *         list.</p>
+     *         <p>
+     *         This element is present only if <code>IsTruncated</code> is true.
      * @see RRType
      */
 
@@ -345,13 +326,16 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the type of the next record in the list.
+     * </p>
+     * <p>
      * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @param nextRecordType
      *        If the results were truncated, the type of the next record in the
-     *        list. This element is present only if <code>IsTruncated</code> is
-     *        true.
+     *        list.</p>
+     *        <p>
+     *        This element is present only if <code>IsTruncated</code> is true.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RRType
@@ -365,13 +349,16 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the type of the next record in the list.
+     * </p>
+     * <p>
      * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @param nextRecordType
      *        If the results were truncated, the type of the next record in the
-     *        list. This element is present only if <code>IsTruncated</code> is
-     *        true.
+     *        list.</p>
+     *        <p>
+     *        This element is present only if <code>IsTruncated</code> is true.
      * @see RRType
      */
 
@@ -382,13 +369,16 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the type of the next record in the list.
+     * </p>
+     * <p>
      * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @param nextRecordType
      *        If the results were truncated, the type of the next record in the
-     *        list. This element is present only if <code>IsTruncated</code> is
-     *        true.
+     *        list.</p>
+     *        <p>
+     *        This element is present only if <code>IsTruncated</code> is true.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RRType
@@ -401,14 +391,17 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Weighted resource record sets only:</i> If results were truncated for
-     * a given DNS name and type, the value of <code>SetIdentifier</code> for
-     * the next resource record set that has the current DNS name and type.
+     * <i>Weighted, latency, geolocation, and failover resource record sets
+     * only</i>: If results were truncated for a given DNS name and type, the
+     * value of <code>SetIdentifier</code> for the next resource record set that
+     * has the current DNS name and type.
      * </p>
      * 
      * @param nextRecordIdentifier
-     *        Weighted resource record sets only:</i> If results were truncated
-     *        for a given DNS name and type, the value of <code>SetIdentifier
+     *        <i>Weighted, latency, geolocation, and failover resource record
+     *        sets only</i>: If results were truncated for a given DNS name and
+     *        type, the value of <code>SetIdentifier</code> for the next
+     *        resource record set that has the current DNS name and type.
      */
 
     public void setNextRecordIdentifier(String nextRecordIdentifier) {
@@ -417,13 +410,16 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Weighted resource record sets only:</i> If results were truncated for
-     * a given DNS name and type, the value of <code>SetIdentifier</code> for
-     * the next resource record set that has the current DNS name and type.
+     * <i>Weighted, latency, geolocation, and failover resource record sets
+     * only</i>: If results were truncated for a given DNS name and type, the
+     * value of <code>SetIdentifier</code> for the next resource record set that
+     * has the current DNS name and type.
      * </p>
      * 
-     * @return Weighted resource record sets only:</i> If results were truncated
-     *         for a given DNS name and type, the value of <code>SetIdentifier
+     * @return <i>Weighted, latency, geolocation, and failover resource record
+     *         sets only</i>: If results were truncated for a given DNS name and
+     *         type, the value of <code>SetIdentifier</code> for the next
+     *         resource record set that has the current DNS name and type.
      */
 
     public String getNextRecordIdentifier() {
@@ -432,14 +428,17 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Weighted resource record sets only:</i> If results were truncated for
-     * a given DNS name and type, the value of <code>SetIdentifier</code> for
-     * the next resource record set that has the current DNS name and type.
+     * <i>Weighted, latency, geolocation, and failover resource record sets
+     * only</i>: If results were truncated for a given DNS name and type, the
+     * value of <code>SetIdentifier</code> for the next resource record set that
+     * has the current DNS name and type.
      * </p>
      * 
      * @param nextRecordIdentifier
-     *        Weighted resource record sets only:</i> If results were truncated
-     *        for a given DNS name and type, the value of <code>SetIdentifier
+     *        <i>Weighted, latency, geolocation, and failover resource record
+     *        sets only</i>: If results were truncated for a given DNS name and
+     *        type, the value of <code>SetIdentifier</code> for the next
+     *        resource record set that has the current DNS name and type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -452,13 +451,11 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of records you requested. The maximum value of
-     * <code>MaxItems</code> is 100.
+     * The maximum number of records you requested.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of records you requested. The maximum value of
-     *        <code>MaxItems</code> is 100.
+     *        The maximum number of records you requested.
      */
 
     public void setMaxItems(String maxItems) {
@@ -467,12 +464,10 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of records you requested. The maximum value of
-     * <code>MaxItems</code> is 100.
+     * The maximum number of records you requested.
      * </p>
      * 
-     * @return The maximum number of records you requested. The maximum value of
-     *         <code>MaxItems</code> is 100.
+     * @return The maximum number of records you requested.
      */
 
     public String getMaxItems() {
@@ -481,13 +476,11 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of records you requested. The maximum value of
-     * <code>MaxItems</code> is 100.
+     * The maximum number of records you requested.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of records you requested. The maximum value of
-     *        <code>MaxItems</code> is 100.
+     *        The maximum number of records you requested.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

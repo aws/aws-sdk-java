@@ -63,6 +63,12 @@ import com.amazonaws.services.codepipeline.model.*;
  * </li>
  * <li>
  * <p>
+ * <a>GetPipelineExecution</a>, which returns information about a specific
+ * execution of a pipeline.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetPipelineState</a>, which returns information about the current state of
  * the stages and actions of a pipeline.
  * </p>
@@ -608,6 +614,44 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
     java.util.concurrent.Future<GetPipelineResult> getPipelineAsync(
             GetPipelineRequest getPipelineRequest,
             com.amazonaws.handlers.AsyncHandler<GetPipelineRequest, GetPipelineResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about an execution of a pipeline, including details
+     * about artifacts, the pipeline execution ID, and the name, version, and
+     * status of the pipeline.
+     * </p>
+     * 
+     * @param getPipelineExecutionRequest
+     *        Represents the input of a get pipeline execution action.
+     * @return A Java Future containing the result of the GetPipelineExecution
+     *         operation returned by the service.
+     * @sample AWSCodePipelineAsync.GetPipelineExecution
+     */
+    java.util.concurrent.Future<GetPipelineExecutionResult> getPipelineExecutionAsync(
+            GetPipelineExecutionRequest getPipelineExecutionRequest);
+
+    /**
+     * <p>
+     * Returns information about an execution of a pipeline, including details
+     * about artifacts, the pipeline execution ID, and the name, version, and
+     * status of the pipeline.
+     * </p>
+     * 
+     * @param getPipelineExecutionRequest
+     *        Represents the input of a get pipeline execution action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPipelineExecution
+     *         operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.GetPipelineExecution
+     */
+    java.util.concurrent.Future<GetPipelineExecutionResult> getPipelineExecutionAsync(
+            GetPipelineExecutionRequest getPipelineExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPipelineExecutionRequest, GetPipelineExecutionResult> asyncHandler);
 
     /**
      * <p>

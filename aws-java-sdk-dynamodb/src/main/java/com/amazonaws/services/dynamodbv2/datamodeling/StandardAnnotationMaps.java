@@ -15,6 +15,8 @@
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.DynamoDBAttributeType;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardAttributeTypes.AttributeType;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
 import com.amazonaws.services.dynamodbv2.model.ScalarAttributeType;
 import com.amazonaws.util.StringUtils;
@@ -25,7 +27,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.EnumMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -85,7 +88,7 @@ final class StandardAnnotationMaps {
      * Map of annotation type to annotation instance.
      */
     static abstract class AnnotationMap<T> {
-        private final Map<Class<? extends Annotation>,Annotation> map = new HashMap<Class<? extends Annotation>,Annotation>();
+        private final Map<Class<? extends Annotation>,Annotation> map = new LinkedHashMap<Class<? extends Annotation>,Annotation>();
 
         /**
          * Put all the DynamoDB annotations present on the annotated element.
@@ -94,7 +97,7 @@ final class StandardAnnotationMaps {
          */
         final AnnotationMap putAll(final AnnotatedElement annotated) {
             if (annotated != null && annotated.getAnnotations().length > 0) {
-                final Map<Class<? extends Annotation>,Annotation> tmp = new HashMap<Class<? extends Annotation>,Annotation>();
+                final Map<Class<? extends Annotation>,Annotation> tmp = new LinkedHashMap<Class<? extends Annotation>,Annotation>();
                 for (final Annotation a1 : annotated.getAnnotations()) {
                     if (a1.annotationType().isAnnotationPresent(DynamoDB.class)) {
                         if (tmp.containsKey(a1.annotationType())) {
@@ -204,7 +207,7 @@ final class StandardAnnotationMaps {
          */
         @Override
         public final String tableName() {
-            if (table() != null) {
+            if (table() != null && !table().tableName().isEmpty()) {
                 return table().tableName();
             }
             return defaults.tableName();
@@ -247,6 +250,14 @@ final class StandardAnnotationMaps {
          */
         final DynamoDBAttribute attribute() {
             return get(DynamoDBAttribute.class);
+        }
+
+        /**
+         * Gets the annotation {@code DynamoDBDocument} if present.
+         * @return The annotation if present, null otherwise.
+         */
+        final DynamoDBDocument document() {
+            return get(DynamoDBDocument.class);
         }
 
         /**
@@ -338,7 +349,7 @@ final class StandardAnnotationMaps {
                 if (flattened().attributes().length == 0) {
                     throw new DynamoDBMappingException(id().err("must specify one or more attributes"));
                 }
-                final Map<String,String> attributes = new HashMap<String,String>();
+                final Map<String,String> attributes = new LinkedHashMap<String,String>();
                 for (final DynamoDBAttribute a : flattened().attributes()) {
                     if (a.mappedBy().isEmpty() || a.attributeName().isEmpty()) {
                         throw new DynamoDBMappingException(id().err("must specify mappedBy and attributeName"));
@@ -371,28 +382,6 @@ final class StandardAnnotationMaps {
          * {@inheritDoc}
          */
         @Override
-        public final ScalarAttributeType scalarAttributeType() {
-            if (scalarAttribute() != null) {
-                return scalarAttribute().type();
-            }
-            return defaults.scalarAttributeType();
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public final boolean nativeBool() {
-            if (nativeBoolean() != null) {
-                return Boolean.TRUE;
-            }
-            return defaults.nativeBool();
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
         public final String attributeName() {
             if (hashKey() != null && !hashKey().attributeName().isEmpty()) {
                 return hashKey().attributeName();
@@ -408,6 +397,25 @@ final class StandardAnnotationMaps {
                 return version().attributeName();
             }
             return defaults.attributeName();
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        @Override
+        public final DynamoDBAttributeType attributeType() {
+            if (nativeBoolean() != null) {
+                return AttributeType.BOOL.attributeType();
+            } else if (document() != null) {
+                return AttributeType.M.attributeType();
+            } else if (scalarAttribute() != null) {
+                String name = scalarAttribute().type().name();
+                if (StandardTypeConverters.Vector.SET.is(targetType())) {
+                    name += "S";
+                }
+                return AttributeType.valueOf(name).attributeType();
+            }
+            return defaults.attributeType();
         }
 
         /**
@@ -440,7 +448,7 @@ final class StandardAnnotationMaps {
         @Override
         public final Map<KeyType,List<String>> globalSecondaryIndexNames() {
             if (indexHashKey() != null || indexRangeKey() != null) {
-                final Map<KeyType,List<String>> gsis = new HashMap<KeyType,List<String>>(4);
+                final Map<KeyType,List<String>> gsis = new EnumMap<KeyType,List<String>>(KeyType.class);
                 if (indexHashKey() != null) {
                     if (!indexHashKey().globalSecondaryIndexName().isEmpty()) {
                         if (indexHashKey().globalSecondaryIndexNames().length > 0) {
@@ -465,7 +473,9 @@ final class StandardAnnotationMaps {
                         throw new DynamoDBMappingException(id().err("must specify RANGE GSI and/or LSI name/names"));
                     }
                 }
-                return gsis;
+                if (!gsis.isEmpty()) {
+                    return Collections.unmodifiableMap(gsis);
+                }
             }
             return defaults.globalSecondaryIndexNames();
         }

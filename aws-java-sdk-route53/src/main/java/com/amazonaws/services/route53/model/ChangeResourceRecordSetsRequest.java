@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains a change batch.
+ * A complex type that contains change information for the resource record set.
  * </p>
  */
 public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest

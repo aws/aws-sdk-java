@@ -44,8 +44,8 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
     private String name;
     /**
      * <p>
-     * The TTL that you want Amazon Route 53 to assign to all of the resource
-     * record sets that it creates in the specified hosted zone.
+     * (Optional) The TTL that you want Amazon Route 53 to assign to all of the
+     * resource record sets that it creates in the specified hosted zone.
      * </p>
      */
     private Long tTL;
@@ -176,13 +176,14 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The TTL that you want Amazon Route 53 to assign to all of the resource
-     * record sets that it creates in the specified hosted zone.
+     * (Optional) The TTL that you want Amazon Route 53 to assign to all of the
+     * resource record sets that it creates in the specified hosted zone.
      * </p>
      * 
      * @param tTL
-     *        The TTL that you want Amazon Route 53 to assign to all of the
-     *        resource record sets that it creates in the specified hosted zone.
+     *        (Optional) The TTL that you want Amazon Route 53 to assign to all
+     *        of the resource record sets that it creates in the specified
+     *        hosted zone.
      */
 
     public void setTTL(Long tTL) {
@@ -191,13 +192,13 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The TTL that you want Amazon Route 53 to assign to all of the resource
-     * record sets that it creates in the specified hosted zone.
+     * (Optional) The TTL that you want Amazon Route 53 to assign to all of the
+     * resource record sets that it creates in the specified hosted zone.
      * </p>
      * 
-     * @return The TTL that you want Amazon Route 53 to assign to all of the
-     *         resource record sets that it creates in the specified hosted
-     *         zone.
+     * @return (Optional) The TTL that you want Amazon Route 53 to assign to all
+     *         of the resource record sets that it creates in the specified
+     *         hosted zone.
      */
 
     public Long getTTL() {
@@ -206,13 +207,14 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The TTL that you want Amazon Route 53 to assign to all of the resource
-     * record sets that it creates in the specified hosted zone.
+     * (Optional) The TTL that you want Amazon Route 53 to assign to all of the
+     * resource record sets that it creates in the specified hosted zone.
      * </p>
      * 
      * @param tTL
-     *        The TTL that you want Amazon Route 53 to assign to all of the
-     *        resource record sets that it creates in the specified hosted zone.
+     *        (Optional) The TTL that you want Amazon Route 53 to assign to all
+     *        of the resource record sets that it creates in the specified
+     *        hosted zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

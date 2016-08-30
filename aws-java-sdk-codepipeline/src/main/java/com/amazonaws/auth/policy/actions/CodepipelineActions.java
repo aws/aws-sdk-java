@@ -45,6 +45,8 @@ public enum CodepipelineActions implements Action {
     GetJobDetails("codepipeline:GetJobDetails"),
     /** Action for the GetPipeline operation. */
     GetPipeline("codepipeline:GetPipeline"),
+    /** Action for the GetPipelineExecution operation. */
+    GetPipelineExecution("codepipeline:GetPipelineExecution"),
     /** Action for the GetPipelineState operation. */
     GetPipelineState("codepipeline:GetPipelineState"),
     /** Action for the GetThirdPartyJobDetails operation. */

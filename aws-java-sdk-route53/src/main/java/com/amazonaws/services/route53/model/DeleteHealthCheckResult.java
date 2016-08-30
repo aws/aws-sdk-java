@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Empty response for the request.
+ * An empty element.
  * </p>
  */
 public class DeleteHealthCheckResult implements Serializable, Cloneable {

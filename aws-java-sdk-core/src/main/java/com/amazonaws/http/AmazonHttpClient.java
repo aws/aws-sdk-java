@@ -443,6 +443,7 @@ public class AmazonHttpClient {
 
         ProgressListener listener = awsreq.getGeneralProgressListener();
         // add custom headers
+        request.getHeaders().putAll(config.getHeaders());
         Map<String, String> customHeaders = awsreq.getCustomRequestHeaders();
         if (customHeaders != null) {
             request.getHeaders().putAll(customHeaders);

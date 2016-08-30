@@ -361,6 +361,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    public TestDNSAnswerResult testDNSAnswer(TestDNSAnswerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateHealthCheckResult updateHealthCheck(
             UpdateHealthCheckRequest request) {
         throw new java.lang.UnsupportedOperationException();

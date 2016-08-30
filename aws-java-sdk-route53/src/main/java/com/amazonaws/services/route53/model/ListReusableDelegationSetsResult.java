@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains the response for the request.
+ * A complex type that contains information about the reusable delegation sets
+ * that are associated with the current AWS account.
  * </p>
  */
 public class ListReusableDelegationSetsResult implements Serializable,
@@ -26,62 +27,58 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * A complex type that contains information about the reusable delegation
-     * sets associated with the current AWS account.
+     * A complex type that contains one <code>DelegationSet</code> element for
+     * each reusable delegation set that was created by the current AWS account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DelegationSet> delegationSets;
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * For the second and subsequent calls to
+     * <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value
+     * that you specified for the marker parameter in the request that produced
+     * the current response.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * A flag indicating whether there are more reusable delegation sets to be
-     * listed. If your results were truncated, you can make a follow-up request
-     * for the next page of results by using the <code>Marker</code> element.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether there are more reusable delegation sets to
+     * be listed. If the response is truncated, you can get the next group of
+     * <code>maxitems</code> reusable delegation sets by calling
+     * <code>ListReusableDelegationSets</code> again and specifying the value of
+     * the <code>NextMarker</code> element in the <code>marker</code> parameter.
      * </p>
      */
     private Boolean isTruncated;
     /**
      * <p>
-     * Indicates where to continue listing reusable delegation sets. If
-     * <code>IsTruncated</code> is <code>true</code>, make another request to
-     * <code>ListReusableDelegationSets</code> and include the value of the
-     * <code>NextMarker</code> element in the <code>Marker</code> element of the
-     * previous response to get the next page of results.
+     * If <code>IsTruncated</code> is <code>true</code>, the value of
+     * <code>NextMarker</code> identifies the first reusable delegation set in
+     * the next group of <code>maxitems</code> reusable delegation sets. Call
+     * <code>ListReusableDelegationSets</code> again and specify the value of
+     * <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      */
     private String nextMarker;
     /**
      * <p>
-     * The maximum number of reusable delegation sets to be included in the
-     * response body. If the number of reusable delegation sets associated with
-     * this AWS account exceeds <code>MaxItems</code>, the value of
-     * <code>IsTruncated</code> in the response is <code>true</code>. To get the
-     * next page of results, call <code>ListReusableDelegationSets</code> again
-     * and specify the value of <code>NextMarker</code> from the previous
-     * response in the <code>Marker</code> element of the request.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListReusableDelegationSets</code> that produced the
+     * current response.
      * </p>
      */
     private String maxItems;
 
     /**
      * <p>
-     * A complex type that contains information about the reusable delegation
-     * sets associated with the current AWS account.
+     * A complex type that contains one <code>DelegationSet</code> element for
+     * each reusable delegation set that was created by the current AWS account.
      * </p>
      * 
-     * @return A complex type that contains information about the reusable
-     *         delegation sets associated with the current AWS account.
+     * @return A complex type that contains one <code>DelegationSet</code>
+     *         element for each reusable delegation set that was created by the
+     *         current AWS account.
      */
 
     public java.util.List<DelegationSet> getDelegationSets() {
@@ -93,13 +90,14 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * A complex type that contains information about the reusable delegation
-     * sets associated with the current AWS account.
+     * A complex type that contains one <code>DelegationSet</code> element for
+     * each reusable delegation set that was created by the current AWS account.
      * </p>
      * 
      * @param delegationSets
-     *        A complex type that contains information about the reusable
-     *        delegation sets associated with the current AWS account.
+     *        A complex type that contains one <code>DelegationSet</code>
+     *        element for each reusable delegation set that was created by the
+     *        current AWS account.
      */
 
     public void setDelegationSets(
@@ -115,8 +113,8 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * A complex type that contains information about the reusable delegation
-     * sets associated with the current AWS account.
+     * A complex type that contains one <code>DelegationSet</code> element for
+     * each reusable delegation set that was created by the current AWS account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -126,8 +124,9 @@ public class ListReusableDelegationSetsResult implements Serializable,
      * </p>
      * 
      * @param delegationSets
-     *        A complex type that contains information about the reusable
-     *        delegation sets associated with the current AWS account.
+     *        A complex type that contains one <code>DelegationSet</code>
+     *        element for each reusable delegation set that was created by the
+     *        current AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -146,13 +145,14 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * A complex type that contains information about the reusable delegation
-     * sets associated with the current AWS account.
+     * A complex type that contains one <code>DelegationSet</code> element for
+     * each reusable delegation set that was created by the current AWS account.
      * </p>
      * 
      * @param delegationSets
-     *        A complex type that contains information about the reusable
-     *        delegation sets associated with the current AWS account.
+     *        A complex type that contains one <code>DelegationSet</code>
+     *        element for each reusable delegation set that was created by the
+     *        current AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -165,17 +165,17 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * For the second and subsequent calls to
+     * <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value
+     * that you specified for the marker parameter in the request that produced
+     * the current response.
      * </p>
      * 
      * @param marker
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextMarker</code>
-     *        from the last response in the <code>marker</code> parameter to get
-     *        the next page of results.
+     *        For the second and subsequent calls to
+     *        <code>ListReusableDelegationSets</code>, <code>Marker</code> is
+     *        the value that you specified for the marker parameter in the
+     *        request that produced the current response.
      */
 
     public void setMarker(String marker) {
@@ -184,16 +184,16 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * For the second and subsequent calls to
+     * <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value
+     * that you specified for the marker parameter in the request that produced
+     * the current response.
      * </p>
      * 
-     * @return If the request returned more than one page of results, submit
-     *         another request and specify the value of <code>NextMarker</code>
-     *         from the last response in the <code>marker</code> parameter to
-     *         get the next page of results.
+     * @return For the second and subsequent calls to
+     *         <code>ListReusableDelegationSets</code>, <code>Marker</code> is
+     *         the value that you specified for the marker parameter in the
+     *         request that produced the current response.
      */
 
     public String getMarker() {
@@ -202,17 +202,17 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * For the second and subsequent calls to
+     * <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value
+     * that you specified for the marker parameter in the request that produced
+     * the current response.
      * </p>
      * 
      * @param marker
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextMarker</code>
-     *        from the last response in the <code>marker</code> parameter to get
-     *        the next page of results.
+     *        For the second and subsequent calls to
+     *        <code>ListReusableDelegationSets</code>, <code>Marker</code> is
+     *        the value that you specified for the marker parameter in the
+     *        request that produced the current response.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -224,21 +224,20 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * A flag indicating whether there are more reusable delegation sets to be
-     * listed. If your results were truncated, you can make a follow-up request
-     * for the next page of results by using the <code>Marker</code> element.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether there are more reusable delegation sets to
+     * be listed. If the response is truncated, you can get the next group of
+     * <code>maxitems</code> reusable delegation sets by calling
+     * <code>ListReusableDelegationSets</code> again and specifying the value of
+     * the <code>NextMarker</code> element in the <code>marker</code> parameter.
      * </p>
      * 
      * @param isTruncated
-     *        A flag indicating whether there are more reusable delegation sets
-     *        to be listed. If your results were truncated, you can make a
-     *        follow-up request for the next page of results by using the
-     *        <code>Marker</code> element.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        A flag that indicates whether there are more reusable delegation
+     *        sets to be listed. If the response is truncated, you can get the
+     *        next group of <code>maxitems</code> reusable delegation sets by
+     *        calling <code>ListReusableDelegationSets</code> again and
+     *        specifying the value of the <code>NextMarker</code> element in the
+     *        <code>marker</code> parameter.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -247,20 +246,19 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * A flag indicating whether there are more reusable delegation sets to be
-     * listed. If your results were truncated, you can make a follow-up request
-     * for the next page of results by using the <code>Marker</code> element.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether there are more reusable delegation sets to
+     * be listed. If the response is truncated, you can get the next group of
+     * <code>maxitems</code> reusable delegation sets by calling
+     * <code>ListReusableDelegationSets</code> again and specifying the value of
+     * the <code>NextMarker</code> element in the <code>marker</code> parameter.
      * </p>
      * 
-     * @return A flag indicating whether there are more reusable delegation sets
-     *         to be listed. If your results were truncated, you can make a
-     *         follow-up request for the next page of results by using the
-     *         <code>Marker</code> element.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     * @return A flag that indicates whether there are more reusable delegation
+     *         sets to be listed. If the response is truncated, you can get the
+     *         next group of <code>maxitems</code> reusable delegation sets by
+     *         calling <code>ListReusableDelegationSets</code> again and
+     *         specifying the value of the <code>NextMarker</code> element in
+     *         the <code>marker</code> parameter.
      */
 
     public Boolean getIsTruncated() {
@@ -269,21 +267,20 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * A flag indicating whether there are more reusable delegation sets to be
-     * listed. If your results were truncated, you can make a follow-up request
-     * for the next page of results by using the <code>Marker</code> element.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether there are more reusable delegation sets to
+     * be listed. If the response is truncated, you can get the next group of
+     * <code>maxitems</code> reusable delegation sets by calling
+     * <code>ListReusableDelegationSets</code> again and specifying the value of
+     * the <code>NextMarker</code> element in the <code>marker</code> parameter.
      * </p>
      * 
      * @param isTruncated
-     *        A flag indicating whether there are more reusable delegation sets
-     *        to be listed. If your results were truncated, you can make a
-     *        follow-up request for the next page of results by using the
-     *        <code>Marker</code> element.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        A flag that indicates whether there are more reusable delegation
+     *        sets to be listed. If the response is truncated, you can get the
+     *        next group of <code>maxitems</code> reusable delegation sets by
+     *        calling <code>ListReusableDelegationSets</code> again and
+     *        specifying the value of the <code>NextMarker</code> element in the
+     *        <code>marker</code> parameter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -295,20 +292,19 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * A flag indicating whether there are more reusable delegation sets to be
-     * listed. If your results were truncated, you can make a follow-up request
-     * for the next page of results by using the <code>Marker</code> element.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether there are more reusable delegation sets to
+     * be listed. If the response is truncated, you can get the next group of
+     * <code>maxitems</code> reusable delegation sets by calling
+     * <code>ListReusableDelegationSets</code> again and specifying the value of
+     * the <code>NextMarker</code> element in the <code>marker</code> parameter.
      * </p>
      * 
-     * @return A flag indicating whether there are more reusable delegation sets
-     *         to be listed. If your results were truncated, you can make a
-     *         follow-up request for the next page of results by using the
-     *         <code>Marker</code> element.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     * @return A flag that indicates whether there are more reusable delegation
+     *         sets to be listed. If the response is truncated, you can get the
+     *         next group of <code>maxitems</code> reusable delegation sets by
+     *         calling <code>ListReusableDelegationSets</code> again and
+     *         specifying the value of the <code>NextMarker</code> element in
+     *         the <code>marker</code> parameter.
      */
 
     public Boolean isTruncated() {
@@ -317,20 +313,20 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * Indicates where to continue listing reusable delegation sets. If
-     * <code>IsTruncated</code> is <code>true</code>, make another request to
-     * <code>ListReusableDelegationSets</code> and include the value of the
-     * <code>NextMarker</code> element in the <code>Marker</code> element of the
-     * previous response to get the next page of results.
+     * If <code>IsTruncated</code> is <code>true</code>, the value of
+     * <code>NextMarker</code> identifies the first reusable delegation set in
+     * the next group of <code>maxitems</code> reusable delegation sets. Call
+     * <code>ListReusableDelegationSets</code> again and specify the value of
+     * <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @param nextMarker
-     *        Indicates where to continue listing reusable delegation sets. If
-     *        <code>IsTruncated</code> is <code>true</code>, make another
-     *        request to <code>ListReusableDelegationSets</code> and include the
-     *        value of the <code>NextMarker</code> element in the
-     *        <code>Marker</code> element of the previous response to get the
-     *        next page of results.
+     *        If <code>IsTruncated</code> is <code>true</code>, the value of
+     *        <code>NextMarker</code> identifies the first reusable delegation
+     *        set in the next group of <code>maxitems</code> reusable delegation
+     *        sets. Call <code>ListReusableDelegationSets</code> again and
+     *        specify the value of <code>NextMarker</code> in the
+     *        <code>marker</code> parameter.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -339,19 +335,19 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * Indicates where to continue listing reusable delegation sets. If
-     * <code>IsTruncated</code> is <code>true</code>, make another request to
-     * <code>ListReusableDelegationSets</code> and include the value of the
-     * <code>NextMarker</code> element in the <code>Marker</code> element of the
-     * previous response to get the next page of results.
+     * If <code>IsTruncated</code> is <code>true</code>, the value of
+     * <code>NextMarker</code> identifies the first reusable delegation set in
+     * the next group of <code>maxitems</code> reusable delegation sets. Call
+     * <code>ListReusableDelegationSets</code> again and specify the value of
+     * <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
-     * @return Indicates where to continue listing reusable delegation sets. If
-     *         <code>IsTruncated</code> is <code>true</code>, make another
-     *         request to <code>ListReusableDelegationSets</code> and include
-     *         the value of the <code>NextMarker</code> element in the
-     *         <code>Marker</code> element of the previous response to get the
-     *         next page of results.
+     * @return If <code>IsTruncated</code> is <code>true</code>, the value of
+     *         <code>NextMarker</code> identifies the first reusable delegation
+     *         set in the next group of <code>maxitems</code> reusable
+     *         delegation sets. Call <code>ListReusableDelegationSets</code>
+     *         again and specify the value of <code>NextMarker</code> in the
+     *         <code>marker</code> parameter.
      */
 
     public String getNextMarker() {
@@ -360,20 +356,20 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * Indicates where to continue listing reusable delegation sets. If
-     * <code>IsTruncated</code> is <code>true</code>, make another request to
-     * <code>ListReusableDelegationSets</code> and include the value of the
-     * <code>NextMarker</code> element in the <code>Marker</code> element of the
-     * previous response to get the next page of results.
+     * If <code>IsTruncated</code> is <code>true</code>, the value of
+     * <code>NextMarker</code> identifies the first reusable delegation set in
+     * the next group of <code>maxitems</code> reusable delegation sets. Call
+     * <code>ListReusableDelegationSets</code> again and specify the value of
+     * <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @param nextMarker
-     *        Indicates where to continue listing reusable delegation sets. If
-     *        <code>IsTruncated</code> is <code>true</code>, make another
-     *        request to <code>ListReusableDelegationSets</code> and include the
-     *        value of the <code>NextMarker</code> element in the
-     *        <code>Marker</code> element of the previous response to get the
-     *        next page of results.
+     *        If <code>IsTruncated</code> is <code>true</code>, the value of
+     *        <code>NextMarker</code> identifies the first reusable delegation
+     *        set in the next group of <code>maxitems</code> reusable delegation
+     *        sets. Call <code>ListReusableDelegationSets</code> again and
+     *        specify the value of <code>NextMarker</code> in the
+     *        <code>marker</code> parameter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -385,24 +381,15 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * The maximum number of reusable delegation sets to be included in the
-     * response body. If the number of reusable delegation sets associated with
-     * this AWS account exceeds <code>MaxItems</code>, the value of
-     * <code>IsTruncated</code> in the response is <code>true</code>. To get the
-     * next page of results, call <code>ListReusableDelegationSets</code> again
-     * and specify the value of <code>NextMarker</code> from the previous
-     * response in the <code>Marker</code> element of the request.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListReusableDelegationSets</code> that produced the
+     * current response.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of reusable delegation sets to be included in
-     *        the response body. If the number of reusable delegation sets
-     *        associated with this AWS account exceeds <code>MaxItems</code>,
-     *        the value of <code>IsTruncated</code> in the response is
-     *        <code>true</code>. To get the next page of results, call
-     *        <code>ListReusableDelegationSets</code> again and specify the
-     *        value of <code>NextMarker</code> from the previous response in the
-     *        <code>Marker</code> element of the request.
+     *        The value that you specified for the <code>maxitems</code>
+     *        parameter in the call to <code>ListReusableDelegationSets</code>
+     *        that produced the current response.
      */
 
     public void setMaxItems(String maxItems) {
@@ -411,23 +398,14 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * The maximum number of reusable delegation sets to be included in the
-     * response body. If the number of reusable delegation sets associated with
-     * this AWS account exceeds <code>MaxItems</code>, the value of
-     * <code>IsTruncated</code> in the response is <code>true</code>. To get the
-     * next page of results, call <code>ListReusableDelegationSets</code> again
-     * and specify the value of <code>NextMarker</code> from the previous
-     * response in the <code>Marker</code> element of the request.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListReusableDelegationSets</code> that produced the
+     * current response.
      * </p>
      * 
-     * @return The maximum number of reusable delegation sets to be included in
-     *         the response body. If the number of reusable delegation sets
-     *         associated with this AWS account exceeds <code>MaxItems</code>,
-     *         the value of <code>IsTruncated</code> in the response is
-     *         <code>true</code>. To get the next page of results, call
-     *         <code>ListReusableDelegationSets</code> again and specify the
-     *         value of <code>NextMarker</code> from the previous response in
-     *         the <code>Marker</code> element of the request.
+     * @return The value that you specified for the <code>maxitems</code>
+     *         parameter in the call to <code>ListReusableDelegationSets</code>
+     *         that produced the current response.
      */
 
     public String getMaxItems() {
@@ -436,24 +414,15 @@ public class ListReusableDelegationSetsResult implements Serializable,
 
     /**
      * <p>
-     * The maximum number of reusable delegation sets to be included in the
-     * response body. If the number of reusable delegation sets associated with
-     * this AWS account exceeds <code>MaxItems</code>, the value of
-     * <code>IsTruncated</code> in the response is <code>true</code>. To get the
-     * next page of results, call <code>ListReusableDelegationSets</code> again
-     * and specify the value of <code>NextMarker</code> from the previous
-     * response in the <code>Marker</code> element of the request.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListReusableDelegationSets</code> that produced the
+     * current response.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of reusable delegation sets to be included in
-     *        the response body. If the number of reusable delegation sets
-     *        associated with this AWS account exceeds <code>MaxItems</code>,
-     *        the value of <code>IsTruncated</code> in the response is
-     *        <code>true</code>. To get the next page of results, call
-     *        <code>ListReusableDelegationSets</code> again and specify the
-     *        value of <code>NextMarker</code> from the previous response in the
-     *        <code>Marker</code> element of the request.
+     *        The value that you specified for the <code>maxitems</code>
+     *        parameter in the call to <code>ListReusableDelegationSets</code>
+     *        that produced the current response.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

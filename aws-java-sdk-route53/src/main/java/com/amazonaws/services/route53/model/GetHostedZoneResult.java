@@ -18,22 +18,20 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type containing information about the specified hosted zone.
+ * A complex type containing the response information for the hosted zone.
  * </p>
  */
 public class GetHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the information about the specified hosted
-     * zone.
+     * A complex type that contains general information about the hosted zone.
      * </p>
      */
     private HostedZone hostedZone;
     /**
      * <p>
-     * A complex type that contains information about the name servers for the
-     * specified hosted zone.
+     * A complex type that describes the name servers for this hosted zone.
      * </p>
      */
     private DelegationSet delegationSet;
@@ -47,13 +45,12 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the information about the specified hosted
-     * zone.
+     * A complex type that contains general information about the hosted zone.
      * </p>
      * 
      * @param hostedZone
-     *        A complex type that contains the information about the specified
-     *        hosted zone.
+     *        A complex type that contains general information about the hosted
+     *        zone.
      */
 
     public void setHostedZone(HostedZone hostedZone) {
@@ -62,12 +59,11 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the information about the specified hosted
-     * zone.
+     * A complex type that contains general information about the hosted zone.
      * </p>
      * 
-     * @return A complex type that contains the information about the specified
-     *         hosted zone.
+     * @return A complex type that contains general information about the hosted
+     *         zone.
      */
 
     public HostedZone getHostedZone() {
@@ -76,13 +72,12 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the information about the specified hosted
-     * zone.
+     * A complex type that contains general information about the hosted zone.
      * </p>
      * 
      * @param hostedZone
-     *        A complex type that contains the information about the specified
-     *        hosted zone.
+     *        A complex type that contains general information about the hosted
+     *        zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -94,13 +89,12 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the name servers for the
-     * specified hosted zone.
+     * A complex type that describes the name servers for this hosted zone.
      * </p>
      * 
      * @param delegationSet
-     *        A complex type that contains information about the name servers
-     *        for the specified hosted zone.
+     *        A complex type that describes the name servers for this hosted
+     *        zone.
      */
 
     public void setDelegationSet(DelegationSet delegationSet) {
@@ -109,12 +103,11 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the name servers for the
-     * specified hosted zone.
+     * A complex type that describes the name servers for this hosted zone.
      * </p>
      * 
-     * @return A complex type that contains information about the name servers
-     *         for the specified hosted zone.
+     * @return A complex type that describes the name servers for this hosted
+     *         zone.
      */
 
     public DelegationSet getDelegationSet() {
@@ -123,13 +116,12 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the name servers for the
-     * specified hosted zone.
+     * A complex type that describes the name servers for this hosted zone.
      * </p>
      * 
      * @param delegationSet
-     *        A complex type that contains information about the name servers
-     *        for the specified hosted zone.
+     *        A complex type that describes the name servers for this hosted
+     *        zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -18,48 +18,50 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contain information about the specified hosted zone.
+ * A complex type that contains general information about the hosted zone.
  * </p>
  */
 public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the specified hosted zone.
+     * The ID that Amazon Route 53 assigned to the hosted zone when you created
+     * it.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The name of the domain. This must be a fully-specified domain, for
-     * example, www.example.com. The trailing dot is optional; Amazon Route 53
-     * assumes that the domain name is fully qualified. This means that Amazon
-     * Route 53 treats www.example.com (without a trailing dot) and
-     * www.example.com. (with a trailing dot) as identical.
+     * The name of the domain. For public hosted zones, this is the name that
+     * you have registered with your DNS registrar.
      * </p>
      * <p>
-     * This is the name you have registered with your DNS registrar. You should
-     * ask your registrar to change the authoritative name servers for your
-     * domain to the set of <code>NameServers</code> elements returned in
-     * <code>DelegationSet</code>.
+     * For information about how to specify characters other than
+     * <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how
+     * to specify internationalized domain names, see <a>CreateHostedZone</a>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A unique string that identifies the request to create the hosted zone.
+     * The value that you specified for <code>CallerReference</code> when you
+     * created the hosted zone.
      * </p>
      */
     private String callerReference;
     /**
      * <p>
-     * A complex type that contains the <code>Comment</code> element.
+     * A complex type that includes the <code>Comment</code> and
+     * <code>PrivateZone</code> elements. If you omitted the
+     * <code>HostedZoneConfig</code> and <code>Comment</code> elements from the
+     * request, the <code>Config</code> and <code>Comment</code> elements don't
+     * appear in the response.
      * </p>
      */
     private HostedZoneConfig config;
     /**
      * <p>
-     * Total number of resource record sets in the hosted zone.
+     * The number of resource record sets in the hosted zone.
      * </p>
      */
     private Long resourceRecordSetCount;
@@ -78,22 +80,19 @@ public class HostedZone implements Serializable, Cloneable {
      * members.
      * 
      * @param id
-     *        The ID of the specified hosted zone.
+     *        The ID that Amazon Route 53 assigned to the hosted zone when you
+     *        created it.
      * @param name
-     *        The name of the domain. This must be a fully-specified domain, for
-     *        example, www.example.com. The trailing dot is optional; Amazon
-     *        Route 53 assumes that the domain name is fully qualified. This
-     *        means that Amazon Route 53 treats www.example.com (without a
-     *        trailing dot) and www.example.com. (with a trailing dot) as
-     *        identical.</p>
+     *        The name of the domain. For public hosted zones, this is the name
+     *        that you have registered with your DNS registrar.</p>
      *        <p>
-     *        This is the name you have registered with your DNS registrar. You
-     *        should ask your registrar to change the authoritative name servers
-     *        for your domain to the set of <code>NameServers</code> elements
-     *        returned in <code>DelegationSet</code>.
+     *        For information about how to specify characters other than
+     *        <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen)
+     *        and how to specify internationalized domain names, see
+     *        <a>CreateHostedZone</a>.
      * @param callerReference
-     *        A unique string that identifies the request to create the hosted
-     *        zone.
+     *        The value that you specified for <code>CallerReference</code> when
+     *        you created the hosted zone.
      */
     public HostedZone(String id, String name, String callerReference) {
         setId(id);
@@ -103,11 +102,13 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the specified hosted zone.
+     * The ID that Amazon Route 53 assigned to the hosted zone when you created
+     * it.
      * </p>
      * 
      * @param id
-     *        The ID of the specified hosted zone.
+     *        The ID that Amazon Route 53 assigned to the hosted zone when you
+     *        created it.
      */
 
     public void setId(String id) {
@@ -116,10 +117,12 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the specified hosted zone.
+     * The ID that Amazon Route 53 assigned to the hosted zone when you created
+     * it.
      * </p>
      * 
-     * @return The ID of the specified hosted zone.
+     * @return The ID that Amazon Route 53 assigned to the hosted zone when you
+     *         created it.
      */
 
     public String getId() {
@@ -128,11 +131,13 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the specified hosted zone.
+     * The ID that Amazon Route 53 assigned to the hosted zone when you created
+     * it.
      * </p>
      * 
      * @param id
-     *        The ID of the specified hosted zone.
+     *        The ID that Amazon Route 53 assigned to the hosted zone when you
+     *        created it.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -144,31 +149,23 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the domain. This must be a fully-specified domain, for
-     * example, www.example.com. The trailing dot is optional; Amazon Route 53
-     * assumes that the domain name is fully qualified. This means that Amazon
-     * Route 53 treats www.example.com (without a trailing dot) and
-     * www.example.com. (with a trailing dot) as identical.
+     * The name of the domain. For public hosted zones, this is the name that
+     * you have registered with your DNS registrar.
      * </p>
      * <p>
-     * This is the name you have registered with your DNS registrar. You should
-     * ask your registrar to change the authoritative name servers for your
-     * domain to the set of <code>NameServers</code> elements returned in
-     * <code>DelegationSet</code>.
+     * For information about how to specify characters other than
+     * <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how
+     * to specify internationalized domain names, see <a>CreateHostedZone</a>.
      * </p>
      * 
      * @param name
-     *        The name of the domain. This must be a fully-specified domain, for
-     *        example, www.example.com. The trailing dot is optional; Amazon
-     *        Route 53 assumes that the domain name is fully qualified. This
-     *        means that Amazon Route 53 treats www.example.com (without a
-     *        trailing dot) and www.example.com. (with a trailing dot) as
-     *        identical.</p>
+     *        The name of the domain. For public hosted zones, this is the name
+     *        that you have registered with your DNS registrar.</p>
      *        <p>
-     *        This is the name you have registered with your DNS registrar. You
-     *        should ask your registrar to change the authoritative name servers
-     *        for your domain to the set of <code>NameServers</code> elements
-     *        returned in <code>DelegationSet</code>.
+     *        For information about how to specify characters other than
+     *        <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen)
+     *        and how to specify internationalized domain names, see
+     *        <a>CreateHostedZone</a>.
      */
 
     public void setName(String name) {
@@ -177,30 +174,22 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the domain. This must be a fully-specified domain, for
-     * example, www.example.com. The trailing dot is optional; Amazon Route 53
-     * assumes that the domain name is fully qualified. This means that Amazon
-     * Route 53 treats www.example.com (without a trailing dot) and
-     * www.example.com. (with a trailing dot) as identical.
+     * The name of the domain. For public hosted zones, this is the name that
+     * you have registered with your DNS registrar.
      * </p>
      * <p>
-     * This is the name you have registered with your DNS registrar. You should
-     * ask your registrar to change the authoritative name servers for your
-     * domain to the set of <code>NameServers</code> elements returned in
-     * <code>DelegationSet</code>.
+     * For information about how to specify characters other than
+     * <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how
+     * to specify internationalized domain names, see <a>CreateHostedZone</a>.
      * </p>
      * 
-     * @return The name of the domain. This must be a fully-specified domain,
-     *         for example, www.example.com. The trailing dot is optional;
-     *         Amazon Route 53 assumes that the domain name is fully qualified.
-     *         This means that Amazon Route 53 treats www.example.com (without a
-     *         trailing dot) and www.example.com. (with a trailing dot) as
-     *         identical.</p>
+     * @return The name of the domain. For public hosted zones, this is the name
+     *         that you have registered with your DNS registrar.</p>
      *         <p>
-     *         This is the name you have registered with your DNS registrar. You
-     *         should ask your registrar to change the authoritative name
-     *         servers for your domain to the set of <code>NameServers</code>
-     *         elements returned in <code>DelegationSet</code>.
+     *         For information about how to specify characters other than
+     *         <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen)
+     *         and how to specify internationalized domain names, see
+     *         <a>CreateHostedZone</a>.
      */
 
     public String getName() {
@@ -209,31 +198,23 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the domain. This must be a fully-specified domain, for
-     * example, www.example.com. The trailing dot is optional; Amazon Route 53
-     * assumes that the domain name is fully qualified. This means that Amazon
-     * Route 53 treats www.example.com (without a trailing dot) and
-     * www.example.com. (with a trailing dot) as identical.
+     * The name of the domain. For public hosted zones, this is the name that
+     * you have registered with your DNS registrar.
      * </p>
      * <p>
-     * This is the name you have registered with your DNS registrar. You should
-     * ask your registrar to change the authoritative name servers for your
-     * domain to the set of <code>NameServers</code> elements returned in
-     * <code>DelegationSet</code>.
+     * For information about how to specify characters other than
+     * <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how
+     * to specify internationalized domain names, see <a>CreateHostedZone</a>.
      * </p>
      * 
      * @param name
-     *        The name of the domain. This must be a fully-specified domain, for
-     *        example, www.example.com. The trailing dot is optional; Amazon
-     *        Route 53 assumes that the domain name is fully qualified. This
-     *        means that Amazon Route 53 treats www.example.com (without a
-     *        trailing dot) and www.example.com. (with a trailing dot) as
-     *        identical.</p>
+     *        The name of the domain. For public hosted zones, this is the name
+     *        that you have registered with your DNS registrar.</p>
      *        <p>
-     *        This is the name you have registered with your DNS registrar. You
-     *        should ask your registrar to change the authoritative name servers
-     *        for your domain to the set of <code>NameServers</code> elements
-     *        returned in <code>DelegationSet</code>.
+     *        For information about how to specify characters other than
+     *        <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen)
+     *        and how to specify internationalized domain names, see
+     *        <a>CreateHostedZone</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -245,12 +226,13 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique string that identifies the request to create the hosted zone.
+     * The value that you specified for <code>CallerReference</code> when you
+     * created the hosted zone.
      * </p>
      * 
      * @param callerReference
-     *        A unique string that identifies the request to create the hosted
-     *        zone.
+     *        The value that you specified for <code>CallerReference</code> when
+     *        you created the hosted zone.
      */
 
     public void setCallerReference(String callerReference) {
@@ -259,11 +241,12 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique string that identifies the request to create the hosted zone.
+     * The value that you specified for <code>CallerReference</code> when you
+     * created the hosted zone.
      * </p>
      * 
-     * @return A unique string that identifies the request to create the hosted
-     *         zone.
+     * @return The value that you specified for <code>CallerReference</code>
+     *         when you created the hosted zone.
      */
 
     public String getCallerReference() {
@@ -272,12 +255,13 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique string that identifies the request to create the hosted zone.
+     * The value that you specified for <code>CallerReference</code> when you
+     * created the hosted zone.
      * </p>
      * 
      * @param callerReference
-     *        A unique string that identifies the request to create the hosted
-     *        zone.
+     *        The value that you specified for <code>CallerReference</code> when
+     *        you created the hosted zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -289,11 +273,19 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the <code>Comment</code> element.
+     * A complex type that includes the <code>Comment</code> and
+     * <code>PrivateZone</code> elements. If you omitted the
+     * <code>HostedZoneConfig</code> and <code>Comment</code> elements from the
+     * request, the <code>Config</code> and <code>Comment</code> elements don't
+     * appear in the response.
      * </p>
      * 
      * @param config
-     *        A complex type that contains the <code>Comment</code> element.
+     *        A complex type that includes the <code>Comment</code> and
+     *        <code>PrivateZone</code> elements. If you omitted the
+     *        <code>HostedZoneConfig</code> and <code>Comment</code> elements
+     *        from the request, the <code>Config</code> and <code>Comment</code>
+     *        elements don't appear in the response.
      */
 
     public void setConfig(HostedZoneConfig config) {
@@ -302,10 +294,18 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the <code>Comment</code> element.
+     * A complex type that includes the <code>Comment</code> and
+     * <code>PrivateZone</code> elements. If you omitted the
+     * <code>HostedZoneConfig</code> and <code>Comment</code> elements from the
+     * request, the <code>Config</code> and <code>Comment</code> elements don't
+     * appear in the response.
      * </p>
      * 
-     * @return A complex type that contains the <code>Comment</code> element.
+     * @return A complex type that includes the <code>Comment</code> and
+     *         <code>PrivateZone</code> elements. If you omitted the
+     *         <code>HostedZoneConfig</code> and <code>Comment</code> elements
+     *         from the request, the <code>Config</code> and
+     *         <code>Comment</code> elements don't appear in the response.
      */
 
     public HostedZoneConfig getConfig() {
@@ -314,11 +314,19 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the <code>Comment</code> element.
+     * A complex type that includes the <code>Comment</code> and
+     * <code>PrivateZone</code> elements. If you omitted the
+     * <code>HostedZoneConfig</code> and <code>Comment</code> elements from the
+     * request, the <code>Config</code> and <code>Comment</code> elements don't
+     * appear in the response.
      * </p>
      * 
      * @param config
-     *        A complex type that contains the <code>Comment</code> element.
+     *        A complex type that includes the <code>Comment</code> and
+     *        <code>PrivateZone</code> elements. If you omitted the
+     *        <code>HostedZoneConfig</code> and <code>Comment</code> elements
+     *        from the request, the <code>Config</code> and <code>Comment</code>
+     *        elements don't appear in the response.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -330,11 +338,11 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Total number of resource record sets in the hosted zone.
+     * The number of resource record sets in the hosted zone.
      * </p>
      * 
      * @param resourceRecordSetCount
-     *        Total number of resource record sets in the hosted zone.
+     *        The number of resource record sets in the hosted zone.
      */
 
     public void setResourceRecordSetCount(Long resourceRecordSetCount) {
@@ -343,10 +351,10 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Total number of resource record sets in the hosted zone.
+     * The number of resource record sets in the hosted zone.
      * </p>
      * 
-     * @return Total number of resource record sets in the hosted zone.
+     * @return The number of resource record sets in the hosted zone.
      */
 
     public Long getResourceRecordSetCount() {
@@ -355,11 +363,11 @@ public class HostedZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Total number of resource record sets in the hosted zone.
+     * The number of resource record sets in the hosted zone.
      * </p>
      * 
      * @param resourceRecordSetCount
-     *        Total number of resource record sets in the hosted zone.
+     *        The number of resource record sets in the hosted zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

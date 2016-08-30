@@ -16,9 +16,9 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * There are resource records associated with this health check. Before you can
- * delete the health check, you must disassociate it from the resource record
- * sets.
+ * The health check ID for this health check is referenced in the
+ * <code>HealthCheckId</code> element in one of the resource record sets in one
+ * of the hosted zones that are owned by the current AWS account.
  * </p>
  */
 public class HealthCheckInUseException extends

@@ -18,29 +18,29 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type containing information about the specified reusable delegation
- * set.
+ * A complex type that contains the response to the
+ * <code>GetReusableDelegationSet</code> request.
  * </p>
  */
 public class GetReusableDelegationSetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the information about the nameservers for
-     * the specified delegation set ID.
+     * A complex type that contains information about the reusable delegation
+     * set.
      * </p>
      */
     private DelegationSet delegationSet;
 
     /**
      * <p>
-     * A complex type that contains the information about the nameservers for
-     * the specified delegation set ID.
+     * A complex type that contains information about the reusable delegation
+     * set.
      * </p>
      * 
      * @param delegationSet
-     *        A complex type that contains the information about the nameservers
-     *        for the specified delegation set ID.
+     *        A complex type that contains information about the reusable
+     *        delegation set.
      */
 
     public void setDelegationSet(DelegationSet delegationSet) {
@@ -49,12 +49,12 @@ public class GetReusableDelegationSetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the information about the nameservers for
-     * the specified delegation set ID.
+     * A complex type that contains information about the reusable delegation
+     * set.
      * </p>
      * 
-     * @return A complex type that contains the information about the
-     *         nameservers for the specified delegation set ID.
+     * @return A complex type that contains information about the reusable
+     *         delegation set.
      */
 
     public DelegationSet getDelegationSet() {
@@ -63,13 +63,13 @@ public class GetReusableDelegationSetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the information about the nameservers for
-     * the specified delegation set ID.
+     * A complex type that contains information about the reusable delegation
+     * set.
      * </p>
      * 
      * @param delegationSet
-     *        A complex type that contains the information about the nameservers
-     *        for the specified delegation set ID.
+     *        A complex type that contains information about the reusable
+     *        delegation set.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

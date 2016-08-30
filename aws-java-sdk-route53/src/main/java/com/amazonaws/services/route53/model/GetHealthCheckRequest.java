@@ -19,8 +19,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the request to get a health
- * check.
+ * This action gets information about a specified health check.
+ * </p>
+ * <p>
+ * Send a <code>GET</code> request to the
+ * <code>/<i>Amazon Route 53 API version</i>/gethealthcheckrequest</code>
+ * resource.
+ * </p>
+ * <p>
+ * For information about getting information about a health check using the
+ * Amazon Route 53 console, see <a href=
+ * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html"
+ * >Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53
+ * Developer Guide</i>.
  * </p>
  */
 public class GetHealthCheckRequest extends AmazonWebServiceRequest implements
@@ -28,18 +39,27 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the health check to retrieve.
+     * The identifier that Amazon Route 53 assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this
+     * value to specify which health check to use. The value can be up to 64
+     * characters long.
      * </p>
      */
     private String healthCheckId;
 
     /**
      * <p>
-     * The ID of the health check to retrieve.
+     * The identifier that Amazon Route 53 assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this
+     * value to specify which health check to use. The value can be up to 64
+     * characters long.
      * </p>
      * 
      * @param healthCheckId
-     *        The ID of the health check to retrieve.
+     *        The identifier that Amazon Route 53 assigned to the health check
+     *        when you created it. When you add or update a resource record set,
+     *        you use this value to specify which health check to use. The value
+     *        can be up to 64 characters long.
      */
 
     public void setHealthCheckId(String healthCheckId) {
@@ -48,10 +68,16 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the health check to retrieve.
+     * The identifier that Amazon Route 53 assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this
+     * value to specify which health check to use. The value can be up to 64
+     * characters long.
      * </p>
      * 
-     * @return The ID of the health check to retrieve.
+     * @return The identifier that Amazon Route 53 assigned to the health check
+     *         when you created it. When you add or update a resource record
+     *         set, you use this value to specify which health check to use. The
+     *         value can be up to 64 characters long.
      */
 
     public String getHealthCheckId() {
@@ -60,11 +86,17 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the health check to retrieve.
+     * The identifier that Amazon Route 53 assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this
+     * value to specify which health check to use. The value can be up to 64
+     * characters long.
      * </p>
      * 
      * @param healthCheckId
-     *        The ID of the health check to retrieve.
+     *        The identifier that Amazon Route 53 assigned to the health check
+     *        when you created it. When you add or update a resource record set,
+     *        you use this value to specify which health check to use. The value
+     *        can be up to 64 characters long.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

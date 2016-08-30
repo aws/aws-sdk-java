@@ -73,6 +73,7 @@ import com.amazonaws.services.dynamodbv2.model.PutRequest;
 import com.amazonaws.services.dynamodbv2.model.QueryRequest;
 import com.amazonaws.services.dynamodbv2.model.QueryResult;
 import com.amazonaws.services.dynamodbv2.model.ReturnValue;
+import com.amazonaws.services.dynamodbv2.model.ScalarAttributeType;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.amazonaws.services.dynamodbv2.model.Select;
@@ -576,7 +577,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
          * to be auto-generated.
          */
         boolean forcePut = (finalConfig.getSaveBehavior() == SaveBehavior.CLOBBER)
-                || model.anyKeyGeneratable(object, finalConfig);
+                || anyKeyGeneratable(model, object, finalConfig.getSaveBehavior());
 
         SaveObjectHandler saveObjectHandler;
 
@@ -772,7 +773,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         public void execute() {
             final DynamoDBMapperTableModel<Object> model = getTableModel((Class<Object>)clazz, saveConfig);
             for ( final DynamoDBMapperFieldModel<Object,Object> field : model.fields() ) {
-                if ( field.canGenerate(object, saveConfig, model) ) {
+                if ( canGenerate(model, object, getLocalSaveBehavior(), field) ) {
                     if ( field.anyKey() ) {
                         onAutoGenerateAssignableKey(field);
                     } else if ( field.versioned() ) {
@@ -781,7 +782,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                         onAutoGenerate(field);
                     }
                 } else if ( field.keyType() != null ) {
-                    AttributeValue newAttributeValue = field.getAndConvert(object);
+                    AttributeValue newAttributeValue = field.convert(field.get(object));
                     if ( newAttributeValue == null ) {
                         throw new DynamoDBMappingException(field.id().err("null or empty value for primary key"));
                     }
@@ -794,7 +795,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                     }
                     onPrimaryKeyAttributeValue(field.name(), newAttributeValue);
                 } else {
-                    AttributeValue currentValue = field.getAndConvert(object);
+                    AttributeValue currentValue = field.convert(field.get(object));
                     if ( currentValue != null ) {
                         onNonKeyAttribute(field.name(), currentValue);
                     } else {
@@ -964,7 +965,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
          * @param mapping The mapping details.
          */
         private void onAutoGenerate(DynamoDBMapperFieldModel<Object,Object> field) {
-            AttributeValue value = field.convert(field.getAndGenerate(object));
+            AttributeValue value = field.convert(field.generate(field.get(object)));
             updateValues.put(field.name(),  new AttributeValueUpdate().withAction("PUT").withValue(value));
             inMemoryUpdates.add(new ValueUpdate(field, value, object));
         }
@@ -1125,11 +1126,11 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             final DynamoDBMapperTableModel<Object> model = getTableModel(clazz, config);
             for ( final DynamoDBMapperFieldModel<Object,Object> field : model.fields() ) {
                 AttributeValue currentValue = null;
-                if ( field.canGenerate(toWrite, config, model) && !field.versioned() ) {
-                    currentValue = field.convert(field.getAndGenerate(toWrite));
+                if ( canGenerate(model, toWrite, config.getSaveBehavior(), field) && !field.versioned() ) {
+                    currentValue = field.convert(field.generate(field.get(toWrite)));
                     inMemoryUpdates.add(new ValueUpdate(field, currentValue, toWrite));
                 } else {
-                    currentValue = field.getAndConvert(toWrite);
+                    currentValue = field.convert(field.get(toWrite));
                 }
                 if ( currentValue != null ) {
                     attributeValues.put(field.name(), currentValue);
@@ -1492,6 +1493,49 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         
     }
 
+    /**
+     * Determnes if any of the primary keys require auto-generation.
+     */
+    private static <T> boolean anyKeyGeneratable(
+        final DynamoDBMapperTableModel<T> model,
+        final T object,
+        final SaveBehavior saveBehavior
+    ) {
+        for (final DynamoDBMapperFieldModel<T,Object> field : model.keys()) {
+            if (canGenerate(model, object, saveBehavior, field)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Determines if the mapping value can be auto-generated.
+     */
+    private static <T> boolean canGenerate(
+        final DynamoDBMapperTableModel<T> model,
+        final T object,
+        final SaveBehavior saveBehavior,
+        final DynamoDBMapperFieldModel<T,Object> field
+    ) {
+        if (field.getGenerateStrategy() == null) {
+            return false;
+        } else if (field.getGenerateStrategy() == DynamoDBAutoGenerateStrategy.ALWAYS) {
+            return true;
+        } else if (field.get(object) != null) {
+            return false;
+        } else if (field.anyKey() == true) {
+            return true;
+        } else if (saveBehavior == SaveBehavior.CLOBBER) {
+            return true;
+        } else if (saveBehavior == SaveBehavior.UPDATE) {
+            return true;
+        } else if (anyKeyGeneratable(model, object, saveBehavior)) {
+            return true;
+        }
+        return false;
+    }
+
     private final class ValueUpdate {
         private final DynamoDBMapperFieldModel<Object,Object> field;
         private final AttributeValue newValue;
@@ -1508,7 +1552,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         }
 
         public void apply() {
-            field.unconvertAndSet(target, newValue);
+            field.set(target, field.unconvert(newValue));
         }
     }
 
@@ -2383,25 +2427,25 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
         CreateTableRequest createTableRequest = new CreateTableRequest();
         createTableRequest.setTableName(getTableName(clazz, config));
-        createTableRequest.withKeySchema(new KeySchemaElement(model.hashKey().name(), HASH));
 
+        createTableRequest.withKeySchema(new KeySchemaElement(model.hashKey().name(), HASH));
         if (model.rangeKeyIfExists() != null) {
             createTableRequest.withKeySchema(new KeySchemaElement(model.rangeKey().name(), RANGE));
         }
 
-        final Collection<GlobalSecondaryIndex> gsis = model.globalSecondaryIndexes();
-        if (gsis.isEmpty() == false) {
-            createTableRequest.setGlobalSecondaryIndexes(gsis);
-        }
-
-        final Collection<LocalSecondaryIndex> lsis = model.localSecondaryIndexes();
-        if (lsis.isEmpty() == false ) {
-            createTableRequest.setLocalSecondaryIndexes(lsis);
-        }
+        createTableRequest.setGlobalSecondaryIndexes(model.globalSecondaryIndexes());
+        createTableRequest.setLocalSecondaryIndexes(model.localSecondaryIndexes());
 
         for (final DynamoDBMapperFieldModel<Object,Object> field : model.fields()) {
             if (field.anyKey()) {
-                createTableRequest.withAttributeDefinitions(new AttributeDefinition(field.name(), field.scalarAttributeType()));
+                final ScalarAttributeType scalarAttributeType;
+                try {
+                    scalarAttributeType = ScalarAttributeType.valueOf(field.attributeType().name());
+                } catch (final RuntimeException e) {
+                    throw new DynamoDBMappingException(field.id().err(
+                        "must be scalar (B, N, or S) but is %s", field.attributeType()), e);
+                }
+                createTableRequest.withAttributeDefinitions(new AttributeDefinition(field.name(), scalarAttributeType));
             }
         }
 

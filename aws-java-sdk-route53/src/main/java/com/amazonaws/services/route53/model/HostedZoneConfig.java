@@ -19,45 +19,32 @@ import java.io.Serializable;
 /**
  * <p>
  * A complex type that contains an optional comment about your hosted zone. If
- * you don't want to specify a comment, you can omit the
- * <code>HostedZoneConfig</code> and <code>Comment</code> elements from the XML
- * document.
+ * you don't want to specify a comment, omit both the
+ * <code>HostedZoneConfig</code> and <code>Comment</code> elements.
  * </p>
  */
 public class HostedZoneConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment about your hosted zone. If you don't want to specify
-     * a comment, you can omit the <code>HostedZoneConfig</code> and
-     * <code>Comment</code> elements from the XML document.
+     * Any comments that you want to include about the hosted zone.
      * </p>
      */
     private String comment;
     /**
      * <p>
-     * <code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
-     * Boolean value that indicates whether a hosted zone is private.
-     * </p>
-     * <p>
-     * <code>CreateHostedZone</code> requests: When you're creating a private
-     * hosted zone (when you specify values for VPCId and VPCRegion), you can
-     * optionally specify true for PrivateZone.
+     * A value that indicates whether this is a private hosted zone.
      * </p>
      */
     private Boolean privateZone;
 
     /**
      * <p>
-     * An optional comment about your hosted zone. If you don't want to specify
-     * a comment, you can omit the <code>HostedZoneConfig</code> and
-     * <code>Comment</code> elements from the XML document.
+     * Any comments that you want to include about the hosted zone.
      * </p>
      * 
      * @param comment
-     *        An optional comment about your hosted zone. If you don't want to
-     *        specify a comment, you can omit the <code>HostedZoneConfig</code>
-     *        and <code>Comment</code> elements from the XML document.
+     *        Any comments that you want to include about the hosted zone.
      */
 
     public void setComment(String comment) {
@@ -66,14 +53,10 @@ public class HostedZoneConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment about your hosted zone. If you don't want to specify
-     * a comment, you can omit the <code>HostedZoneConfig</code> and
-     * <code>Comment</code> elements from the XML document.
+     * Any comments that you want to include about the hosted zone.
      * </p>
      * 
-     * @return An optional comment about your hosted zone. If you don't want to
-     *         specify a comment, you can omit the <code>HostedZoneConfig</code>
-     *         and <code>Comment</code> elements from the XML document.
+     * @return Any comments that you want to include about the hosted zone.
      */
 
     public String getComment() {
@@ -82,15 +65,11 @@ public class HostedZoneConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment about your hosted zone. If you don't want to specify
-     * a comment, you can omit the <code>HostedZoneConfig</code> and
-     * <code>Comment</code> elements from the XML document.
+     * Any comments that you want to include about the hosted zone.
      * </p>
      * 
      * @param comment
-     *        An optional comment about your hosted zone. If you don't want to
-     *        specify a comment, you can omit the <code>HostedZoneConfig</code>
-     *        and <code>Comment</code> elements from the XML document.
+     *        Any comments that you want to include about the hosted zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -102,20 +81,11 @@ public class HostedZoneConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
-     * Boolean value that indicates whether a hosted zone is private.
-     * </p>
-     * <p>
-     * <code>CreateHostedZone</code> requests: When you're creating a private
-     * hosted zone (when you specify values for VPCId and VPCRegion), you can
-     * optionally specify true for PrivateZone.
+     * A value that indicates whether this is a private hosted zone.
      * </p>
      * 
      * @param privateZone
-     *        GetHostedZone</code> and <code>ListHostedZone</code> responses: A
-     *        Boolean value that indicates whether a hosted zone is private.</p>
-     *        <p>
-     *        <code>CreateHostedZone
+     *        A value that indicates whether this is a private hosted zone.
      */
 
     public void setPrivateZone(Boolean privateZone) {
@@ -124,20 +94,10 @@ public class HostedZoneConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
-     * Boolean value that indicates whether a hosted zone is private.
-     * </p>
-     * <p>
-     * <code>CreateHostedZone</code> requests: When you're creating a private
-     * hosted zone (when you specify values for VPCId and VPCRegion), you can
-     * optionally specify true for PrivateZone.
+     * A value that indicates whether this is a private hosted zone.
      * </p>
      * 
-     * @return GetHostedZone</code> and <code>ListHostedZone</code> responses: A
-     *         Boolean value that indicates whether a hosted zone is
-     *         private.</p>
-     *         <p>
-     *         <code>CreateHostedZone
+     * @return A value that indicates whether this is a private hosted zone.
      */
 
     public Boolean getPrivateZone() {
@@ -146,20 +106,11 @@ public class HostedZoneConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
-     * Boolean value that indicates whether a hosted zone is private.
-     * </p>
-     * <p>
-     * <code>CreateHostedZone</code> requests: When you're creating a private
-     * hosted zone (when you specify values for VPCId and VPCRegion), you can
-     * optionally specify true for PrivateZone.
+     * A value that indicates whether this is a private hosted zone.
      * </p>
      * 
      * @param privateZone
-     *        GetHostedZone</code> and <code>ListHostedZone</code> responses: A
-     *        Boolean value that indicates whether a hosted zone is private.</p>
-     *        <p>
-     *        <code>CreateHostedZone
+     *        A value that indicates whether this is a private hosted zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -171,20 +122,10 @@ public class HostedZoneConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
-     * Boolean value that indicates whether a hosted zone is private.
-     * </p>
-     * <p>
-     * <code>CreateHostedZone</code> requests: When you're creating a private
-     * hosted zone (when you specify values for VPCId and VPCRegion), you can
-     * optionally specify true for PrivateZone.
+     * A value that indicates whether this is a private hosted zone.
      * </p>
      * 
-     * @return GetHostedZone</code> and <code>ListHostedZone</code> responses: A
-     *         Boolean value that indicates whether a hosted zone is
-     *         private.</p>
-     *         <p>
-     *         <code>CreateHostedZone
+     * @return A value that indicates whether this is a private hosted zone.
      */
 
     public Boolean isPrivateZone() {

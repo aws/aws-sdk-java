@@ -30,9 +30,13 @@ public class DeleteTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * <p>
      * The ID of the traffic policy instance that you want to delete.
      * </p>
-     * <important>When you delete a traffic policy instance, Amazon Route 53
-     * also deletes all of the resource record sets that were created when you
-     * created the traffic policy instance.</important>
+     * <important>
+     * <p>
+     * When you delete a traffic policy instance, Amazon Route 53 also deletes
+     * all of the resource record sets that were created when you created the
+     * traffic policy instance.
+     * </p>
+     * </important>
      */
     private String id;
 
@@ -40,15 +44,22 @@ public class DeleteTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * <p>
      * The ID of the traffic policy instance that you want to delete.
      * </p>
-     * <important>When you delete a traffic policy instance, Amazon Route 53
-     * also deletes all of the resource record sets that were created when you
-     * created the traffic policy instance.</important>
+     * <important>
+     * <p>
+     * When you delete a traffic policy instance, Amazon Route 53 also deletes
+     * all of the resource record sets that were created when you created the
+     * traffic policy instance.
+     * </p>
+     * </important>
      * 
      * @param id
      *        The ID of the traffic policy instance that you want to delete.
-     *        </p> <important>When you delete a traffic policy instance, Amazon
-     *        Route 53 also deletes all of the resource record sets that were
-     *        created when you created the traffic policy instance.
+     *        </p> <important>
+     *        <p>
+     *        When you delete a traffic policy instance, Amazon Route 53 also
+     *        deletes all of the resource record sets that were created when you
+     *        created the traffic policy instance.
+     *        </p>
      */
 
     public void setId(String id) {
@@ -59,14 +70,21 @@ public class DeleteTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * <p>
      * The ID of the traffic policy instance that you want to delete.
      * </p>
-     * <important>When you delete a traffic policy instance, Amazon Route 53
-     * also deletes all of the resource record sets that were created when you
-     * created the traffic policy instance.</important>
+     * <important>
+     * <p>
+     * When you delete a traffic policy instance, Amazon Route 53 also deletes
+     * all of the resource record sets that were created when you created the
+     * traffic policy instance.
+     * </p>
+     * </important>
      * 
      * @return The ID of the traffic policy instance that you want to delete.
-     *         </p> <important>When you delete a traffic policy instance, Amazon
-     *         Route 53 also deletes all of the resource record sets that were
-     *         created when you created the traffic policy instance.
+     *         </p> <important>
+     *         <p>
+     *         When you delete a traffic policy instance, Amazon Route 53 also
+     *         deletes all of the resource record sets that were created when
+     *         you created the traffic policy instance.
+     *         </p>
      */
 
     public String getId() {
@@ -77,15 +95,22 @@ public class DeleteTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * <p>
      * The ID of the traffic policy instance that you want to delete.
      * </p>
-     * <important>When you delete a traffic policy instance, Amazon Route 53
-     * also deletes all of the resource record sets that were created when you
-     * created the traffic policy instance.</important>
+     * <important>
+     * <p>
+     * When you delete a traffic policy instance, Amazon Route 53 also deletes
+     * all of the resource record sets that were created when you created the
+     * traffic policy instance.
+     * </p>
+     * </important>
      * 
      * @param id
      *        The ID of the traffic policy instance that you want to delete.
-     *        </p> <important>When you delete a traffic policy instance, Amazon
-     *        Route 53 also deletes all of the resource record sets that were
-     *        created when you created the traffic policy instance.
+     *        </p> <important>
+     *        <p>
+     *        When you delete a traffic policy instance, Amazon Route 53 also
+     *        deletes all of the resource record sets that were created when you
+     *        created the traffic policy instance.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

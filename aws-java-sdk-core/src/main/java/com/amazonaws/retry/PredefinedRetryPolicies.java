@@ -20,7 +20,6 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 
 import java.io.IOException;
-import java.util.Random;
 
 /**
  * This class includes a set of pre-defined retry policies, including default
@@ -67,21 +66,26 @@ public class PredefinedRetryPolicies {
      *       clock skew errors.
      * </ul>
      */
-    public static final RetryPolicy.RetryCondition DEFAULT_RETRY_CONDITION = new SDKDefaultRetryCondition();
+    public static final RetryPolicy.RetryCondition DEFAULT_RETRY_CONDITION =
+            new SDKDefaultRetryCondition();
 
     /**
      * The SDK default back-off strategy, which increases exponentially up to a
      * max amount of delay. It also applies a larger scale factor upon service
      * throttling exception.
      */
-    public static final RetryPolicy.BackoffStrategy DEFAULT_BACKOFF_STRATEGY = new SDKDefaultBackoffStrategy();
+    public static final RetryPolicy.BackoffStrategy DEFAULT_BACKOFF_STRATEGY =
+            new PredefinedBackoffStrategies.SDKDefaultBackoffStrategy();
 
     /**
      * The default back-off strategy for DynamoDB client, which increases
      * exponentially up to a max amount of delay. Compared to the SDK default
      * back-off strategy, it applies a smaller scale factor.
      */
-    public static final RetryPolicy.BackoffStrategy DYNAMODB_DEFAULT_BACKOFF_STRATEGY = new DynamoDBDefaultBackoffStrategy();
+    public static final RetryPolicy.BackoffStrategy DYNAMODB_DEFAULT_BACKOFF_STRATEGY =
+            new PredefinedBackoffStrategies.SDKDefaultBackoffStrategy(PredefinedBackoffStrategies.DYNAMODB_DEFAULT_BASE_DELAY,
+                                                                      PredefinedBackoffStrategies.SDK_DEFAULT_THROTTLED_BASE_DELAY,
+                                                                      PredefinedBackoffStrategies.SDK_DEFAULT_MAX_BACKOFF_IN_MILLISECONDS);
 
     static {
         DEFAULT = getDefaultRetryPolicy();
@@ -187,48 +191,5 @@ public class PredefinedRetryPolicies {
             return false;
         }
 
-    }
-
-    /** A private class that implements the default back-off strategy. **/
-    private static class SDKDefaultBackoffStrategy implements RetryPolicy.BackoffStrategy {
-
-        /** Base sleep time (milliseconds) for all exceptions. **/
-        private static final int BASE_DELAY = 100;
-
-        /** Maximum exponential back-off time before retrying a request */
-        private static final int MAX_BACKOFF_IN_MILLISECONDS = 20 * 1000;
-
-        /** For generating a random scale factor **/
-        private final Random random = new Random();
-
-        /** {@inheritDoc} */
-        @Override
-        public final long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
-                                               AmazonClientException exception,
-                                               int retriesAttempted) {
-            return (retriesAttempted < 0) ? 0 : RetryUtils.calculateFullJitterBackoff(retriesAttempted,
-                    BASE_DELAY, MAX_BACKOFF_IN_MILLISECONDS, random);
-        }
-    }
-
-    /** A private class that implements the default back-off strategy for DynamoDB client. **/
-    private static class DynamoDBDefaultBackoffStrategy implements RetryPolicy.BackoffStrategy {
-
-        /** Base sleep time (milliseconds) **/
-        private static final int BASE_DELAY = 25;
-
-        /** Maximum exponential back-off time before retrying a request */
-        private static final int MAX_BACKOFF_IN_MILLISECONDS = 20 * 1000;
-
-        /** For generating a random scale factor **/
-        private final Random random = new Random();
-
-        @Override
-        public final long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
-                                               AmazonClientException exception,
-                                               int retriesAttempted) {
-            return (retriesAttempted < 0) ? 0 : RetryUtils.calculateFullJitterBackoff(retriesAttempted,
-                    BASE_DELAY, MAX_BACKOFF_IN_MILLISECONDS, random);
-        }
     }
 }

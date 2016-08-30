@@ -19,8 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the request to disassociate a
- * VPC from an hosted zone.
+ * A complex type that contains information about the VPC and the hosted zone
+ * that you want to disassociate.
  * </p>
  */
 public class DisassociateVPCFromHostedZoneRequest extends
@@ -28,40 +28,34 @@ public class DisassociateVPCFromHostedZoneRequest extends
 
     /**
      * <p>
-     * The ID of the hosted zone you want to disassociate your VPC from.
-     * </p>
-     * <p>
-     * Note that you cannot disassociate the last VPC from a hosted zone.
+     * The ID of the VPC that you want to disassociate from an Amazon Route 53
+     * hosted zone.
      * </p>
      */
     private String hostedZoneId;
     /**
      * <p>
-     * The VPC that you want your hosted zone to be disassociated from.
+     * A complex type containing information about the Amazon VPC that you're
+     * disassociating from the specified hosted zone.
      * </p>
      */
     private VPC vPC;
     /**
      * <p>
-     * <i>Optional:</i> Any comments you want to include about a
-     * <code>DisassociateVPCFromHostedZoneRequest</code>.
+     * <i>Optional:</i> A comment about the disassociation request.
      * </p>
      */
     private String comment;
 
     /**
      * <p>
-     * The ID of the hosted zone you want to disassociate your VPC from.
-     * </p>
-     * <p>
-     * Note that you cannot disassociate the last VPC from a hosted zone.
+     * The ID of the VPC that you want to disassociate from an Amazon Route 53
+     * hosted zone.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID of the hosted zone you want to disassociate your VPC
-     *        from.</p>
-     *        <p>
-     *        Note that you cannot disassociate the last VPC from a hosted zone.
+     *        The ID of the VPC that you want to disassociate from an Amazon
+     *        Route 53 hosted zone.
      */
 
     public void setHostedZoneId(String hostedZoneId) {
@@ -70,17 +64,12 @@ public class DisassociateVPCFromHostedZoneRequest extends
 
     /**
      * <p>
-     * The ID of the hosted zone you want to disassociate your VPC from.
-     * </p>
-     * <p>
-     * Note that you cannot disassociate the last VPC from a hosted zone.
+     * The ID of the VPC that you want to disassociate from an Amazon Route 53
+     * hosted zone.
      * </p>
      * 
-     * @return The ID of the hosted zone you want to disassociate your VPC
-     *         from.</p>
-     *         <p>
-     *         Note that you cannot disassociate the last VPC from a hosted
-     *         zone.
+     * @return The ID of the VPC that you want to disassociate from an Amazon
+     *         Route 53 hosted zone.
      */
 
     public String getHostedZoneId() {
@@ -89,17 +78,13 @@ public class DisassociateVPCFromHostedZoneRequest extends
 
     /**
      * <p>
-     * The ID of the hosted zone you want to disassociate your VPC from.
-     * </p>
-     * <p>
-     * Note that you cannot disassociate the last VPC from a hosted zone.
+     * The ID of the VPC that you want to disassociate from an Amazon Route 53
+     * hosted zone.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID of the hosted zone you want to disassociate your VPC
-     *        from.</p>
-     *        <p>
-     *        Note that you cannot disassociate the last VPC from a hosted zone.
+     *        The ID of the VPC that you want to disassociate from an Amazon
+     *        Route 53 hosted zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -112,11 +97,13 @@ public class DisassociateVPCFromHostedZoneRequest extends
 
     /**
      * <p>
-     * The VPC that you want your hosted zone to be disassociated from.
+     * A complex type containing information about the Amazon VPC that you're
+     * disassociating from the specified hosted zone.
      * </p>
      * 
      * @param vPC
-     *        The VPC that you want your hosted zone to be disassociated from.
+     *        A complex type containing information about the Amazon VPC that
+     *        you're disassociating from the specified hosted zone.
      */
 
     public void setVPC(VPC vPC) {
@@ -125,10 +112,12 @@ public class DisassociateVPCFromHostedZoneRequest extends
 
     /**
      * <p>
-     * The VPC that you want your hosted zone to be disassociated from.
+     * A complex type containing information about the Amazon VPC that you're
+     * disassociating from the specified hosted zone.
      * </p>
      * 
-     * @return The VPC that you want your hosted zone to be disassociated from.
+     * @return A complex type containing information about the Amazon VPC that
+     *         you're disassociating from the specified hosted zone.
      */
 
     public VPC getVPC() {
@@ -137,11 +126,13 @@ public class DisassociateVPCFromHostedZoneRequest extends
 
     /**
      * <p>
-     * The VPC that you want your hosted zone to be disassociated from.
+     * A complex type containing information about the Amazon VPC that you're
+     * disassociating from the specified hosted zone.
      * </p>
      * 
      * @param vPC
-     *        The VPC that you want your hosted zone to be disassociated from.
+     *        A complex type containing information about the Amazon VPC that
+     *        you're disassociating from the specified hosted zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -153,13 +144,11 @@ public class DisassociateVPCFromHostedZoneRequest extends
 
     /**
      * <p>
-     * <i>Optional:</i> Any comments you want to include about a
-     * <code>DisassociateVPCFromHostedZoneRequest</code>.
+     * <i>Optional:</i> A comment about the disassociation request.
      * </p>
      * 
      * @param comment
-     *        Optional:</i> Any comments you want to include about a
-     *        <code>DisassociateVPCFromHostedZoneRequest
+     *        <i>Optional:</i> A comment about the disassociation request.
      */
 
     public void setComment(String comment) {
@@ -168,12 +157,10 @@ public class DisassociateVPCFromHostedZoneRequest extends
 
     /**
      * <p>
-     * <i>Optional:</i> Any comments you want to include about a
-     * <code>DisassociateVPCFromHostedZoneRequest</code>.
+     * <i>Optional:</i> A comment about the disassociation request.
      * </p>
      * 
-     * @return Optional:</i> Any comments you want to include about a
-     *         <code>DisassociateVPCFromHostedZoneRequest
+     * @return <i>Optional:</i> A comment about the disassociation request.
      */
 
     public String getComment() {
@@ -182,13 +169,11 @@ public class DisassociateVPCFromHostedZoneRequest extends
 
     /**
      * <p>
-     * <i>Optional:</i> Any comments you want to include about a
-     * <code>DisassociateVPCFromHostedZoneRequest</code>.
+     * <i>Optional:</i> A comment about the disassociation request.
      * </p>
      * 
      * @param comment
-     *        Optional:</i> Any comments you want to include about a
-     *        <code>DisassociateVPCFromHostedZoneRequest
+     *        <i>Optional:</i> A comment about the disassociation request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -18,35 +18,57 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains information to uniquely identify the CloudWatch
- * alarm that you're associating with a Route 53 health check.
+ * A complex type that identifies the CloudWatch alarm that you want Amazon
+ * Route 53 health checkers to use to determine whether this health check is
+ * healthy.
  * </p>
  */
 public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>CloudWatchRegion</code> that the CloudWatch alarm was created
-     * in.
+     * A complex type that identifies the CloudWatch alarm that you want Amazon
+     * Route 53 health checkers to use to determine whether this health check is
+     * healthy.
+     * </p>
+     * <p>
+     * For the current list of CloudWatch regions, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
+     * >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
+     * <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String region;
     /**
      * <p>
-     * The name of the CloudWatch alarm.
+     * The name of the CloudWatch alarm that you want Amazon Route 53 health
+     * checkers to use to determine whether this health check is healthy.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The <code>CloudWatchRegion</code> that the CloudWatch alarm was created
-     * in.
+     * A complex type that identifies the CloudWatch alarm that you want Amazon
+     * Route 53 health checkers to use to determine whether this health check is
+     * healthy.
+     * </p>
+     * <p>
+     * For the current list of CloudWatch regions, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
+     * >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
+     * <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param region
-     *        The <code>CloudWatchRegion</code> that the CloudWatch alarm was
-     *        created in.
+     *        A complex type that identifies the CloudWatch alarm that you want
+     *        Amazon Route 53 health checkers to use to determine whether this
+     *        health check is healthy.</p>
+     *        <p>
+     *        For the current list of CloudWatch regions, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
+     *        >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
+     *        <i>Amazon Web Services General Reference</i>.
      * @see CloudWatchRegion
      */
 
@@ -56,12 +78,25 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>CloudWatchRegion</code> that the CloudWatch alarm was created
-     * in.
+     * A complex type that identifies the CloudWatch alarm that you want Amazon
+     * Route 53 health checkers to use to determine whether this health check is
+     * healthy.
+     * </p>
+     * <p>
+     * For the current list of CloudWatch regions, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
+     * >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
+     * <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @return The <code>CloudWatchRegion</code> that the CloudWatch alarm was
-     *         created in.
+     * @return A complex type that identifies the CloudWatch alarm that you want
+     *         Amazon Route 53 health checkers to use to determine whether this
+     *         health check is healthy.</p>
+     *         <p>
+     *         For the current list of CloudWatch regions, see <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
+     *         >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
+     *         <i>Amazon Web Services General Reference</i>.
      * @see CloudWatchRegion
      */
 
@@ -71,13 +106,26 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>CloudWatchRegion</code> that the CloudWatch alarm was created
-     * in.
+     * A complex type that identifies the CloudWatch alarm that you want Amazon
+     * Route 53 health checkers to use to determine whether this health check is
+     * healthy.
+     * </p>
+     * <p>
+     * For the current list of CloudWatch regions, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
+     * >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
+     * <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param region
-     *        The <code>CloudWatchRegion</code> that the CloudWatch alarm was
-     *        created in.
+     *        A complex type that identifies the CloudWatch alarm that you want
+     *        Amazon Route 53 health checkers to use to determine whether this
+     *        health check is healthy.</p>
+     *        <p>
+     *        For the current list of CloudWatch regions, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
+     *        >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
+     *        <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CloudWatchRegion
@@ -90,13 +138,26 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>CloudWatchRegion</code> that the CloudWatch alarm was created
-     * in.
+     * A complex type that identifies the CloudWatch alarm that you want Amazon
+     * Route 53 health checkers to use to determine whether this health check is
+     * healthy.
+     * </p>
+     * <p>
+     * For the current list of CloudWatch regions, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
+     * >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
+     * <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param region
-     *        The <code>CloudWatchRegion</code> that the CloudWatch alarm was
-     *        created in.
+     *        A complex type that identifies the CloudWatch alarm that you want
+     *        Amazon Route 53 health checkers to use to determine whether this
+     *        health check is healthy.</p>
+     *        <p>
+     *        For the current list of CloudWatch regions, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
+     *        >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
+     *        <i>Amazon Web Services General Reference</i>.
      * @see CloudWatchRegion
      */
 
@@ -106,13 +167,26 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>CloudWatchRegion</code> that the CloudWatch alarm was created
-     * in.
+     * A complex type that identifies the CloudWatch alarm that you want Amazon
+     * Route 53 health checkers to use to determine whether this health check is
+     * healthy.
+     * </p>
+     * <p>
+     * For the current list of CloudWatch regions, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
+     * >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
+     * <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param region
-     *        The <code>CloudWatchRegion</code> that the CloudWatch alarm was
-     *        created in.
+     *        A complex type that identifies the CloudWatch alarm that you want
+     *        Amazon Route 53 health checkers to use to determine whether this
+     *        health check is healthy.</p>
+     *        <p>
+     *        For the current list of CloudWatch regions, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region"
+     *        >Amazon CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the
+     *        <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CloudWatchRegion
@@ -125,11 +199,14 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the CloudWatch alarm.
+     * The name of the CloudWatch alarm that you want Amazon Route 53 health
+     * checkers to use to determine whether this health check is healthy.
      * </p>
      * 
      * @param name
-     *        The name of the CloudWatch alarm.
+     *        The name of the CloudWatch alarm that you want Amazon Route 53
+     *        health checkers to use to determine whether this health check is
+     *        healthy.
      */
 
     public void setName(String name) {
@@ -138,10 +215,13 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the CloudWatch alarm.
+     * The name of the CloudWatch alarm that you want Amazon Route 53 health
+     * checkers to use to determine whether this health check is healthy.
      * </p>
      * 
-     * @return The name of the CloudWatch alarm.
+     * @return The name of the CloudWatch alarm that you want Amazon Route 53
+     *         health checkers to use to determine whether this health check is
+     *         healthy.
      */
 
     public String getName() {
@@ -150,11 +230,14 @@ public class AlarmIdentifier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the CloudWatch alarm.
+     * The name of the CloudWatch alarm that you want Amazon Route 53 health
+     * checkers to use to determine whether this health check is healthy.
      * </p>
      * 
      * @param name
-     *        The name of the CloudWatch alarm.
+     *        The name of the CloudWatch alarm that you want Amazon Route 53
+     *        health checkers to use to determine whether this health check is
+     *        healthy.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

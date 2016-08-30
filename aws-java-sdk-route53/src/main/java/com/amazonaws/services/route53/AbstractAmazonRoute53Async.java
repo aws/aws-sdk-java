@@ -996,6 +996,21 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     }
 
     @Override
+    public java.util.concurrent.Future<TestDNSAnswerResult> testDNSAnswerAsync(
+            TestDNSAnswerRequest request) {
+
+        return testDNSAnswerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestDNSAnswerResult> testDNSAnswerAsync(
+            TestDNSAnswerRequest request,
+            com.amazonaws.handlers.AsyncHandler<TestDNSAnswerRequest, TestDNSAnswerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateHealthCheckResult> updateHealthCheckAsync(
             UpdateHealthCheckRequest request) {
 

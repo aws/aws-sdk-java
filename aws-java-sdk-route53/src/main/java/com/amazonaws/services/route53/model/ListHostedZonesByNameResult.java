@@ -18,87 +18,91 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains the response for the request.
+ * A complex type that contains the response information for the request.
  * </p>
  */
 public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the hosted zones
-     * associated with the current AWS account.
+     * A complex type that contains general information about the hosted zone.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<HostedZone> hostedZones;
     /**
      * <p>
-     * The <code>DNSName</code> value sent in the request.
+     * For the second and subsequent calls to <code>ListHostedZonesByName</code>, <code>DNSName</code> is the value that you specified for the
+     * <code>dnsname</code> parameter in the request that produced the current
+     * response.
      * </p>
      */
     private String dNSName;
     /**
      * <p>
-     * The <code>HostedZoneId</code> value sent in the request.
+     * The ID that Amazon Route 53 assigned to the hosted zone when you created
+     * it.
      * </p>
      */
     private String hostedZoneId;
     /**
      * <p>
-     * A flag indicating whether there are more hosted zones to be listed. If
-     * your results were truncated, you can make a follow-up request for the
-     * next page of results by using the <code>NextDNSName</code> and
-     * <code>NextHostedZoneId</code> elements.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether there are more hosted zones to be listed.
+     * If the response was truncated, you can get the next group of
+     * <code>maxitems</code> hosted zones by calling
+     * <code>ListHostedZonesByName</code> again and specifying the values of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in
+     * the <code>dnsname</code> and <code>hostedzoneid</code> parameters.
      * </p>
      */
     private Boolean isTruncated;
     /**
      * <p>
-     * If the value of <code>IsTruncated</code> in the
-     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there
-     * are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
-     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.
+     * If <code>IsTruncated</code> is true, the value of
+     * <code>NextDNSName</code> is the name of the first hosted zone in the next
+     * group of <code>maxitems</code> hosted zones. Call
+     * <code>ListHostedZonesByName</code> again and specify the value of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the
+     * <code>dnsname</code> and <code>hostedzoneid</code> parameters,
+     * respectively.
+     * </p>
+     * <p>
+     * This element is present only if <code>IsTruncated</code> is
+     * <code>true</code>.
      * </p>
      */
     private String nextDNSName;
     /**
      * <p>
-     * If the value of <code>IsTruncated</code> in the
-     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there
-     * are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
-     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.
+     * If <code>IsTruncated</code> is <code>true</code>, the value of
+     * <code>NextHostedZoneId</code> identifies the first hosted zone in the
+     * next group of <code>maxitems</code> hosted zones. Call
+     * <code>ListHostedZonesByName</code> again and specify the value of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the
+     * <code>dnsname</code> and <code>hostedzoneid</code> parameters,
+     * respectively.
+     * </p>
+     * <p>
+     * This element is present only if <code>IsTruncated</code> is
+     * <code>true</code>.
      * </p>
      */
     private String nextHostedZoneId;
     /**
      * <p>
-     * The maximum number of hosted zones to be included in the response body.
-     * If the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
-     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>. Call
-     * <code>ListHostedZonesByName</code> again and specify the value of
-     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements from
-     * the previous response to get the next page of results.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListHostedZonesByName</code> that produced the current
+     * response.
      * </p>
      */
     private String maxItems;
 
     /**
      * <p>
-     * A complex type that contains information about the hosted zones
-     * associated with the current AWS account.
+     * A complex type that contains general information about the hosted zone.
      * </p>
      * 
-     * @return A complex type that contains information about the hosted zones
-     *         associated with the current AWS account.
+     * @return A complex type that contains general information about the hosted
+     *         zone.
      */
 
     public java.util.List<HostedZone> getHostedZones() {
@@ -110,13 +114,12 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the hosted zones
-     * associated with the current AWS account.
+     * A complex type that contains general information about the hosted zone.
      * </p>
      * 
      * @param hostedZones
-     *        A complex type that contains information about the hosted zones
-     *        associated with the current AWS account.
+     *        A complex type that contains general information about the hosted
+     *        zone.
      */
 
     public void setHostedZones(java.util.Collection<HostedZone> hostedZones) {
@@ -131,8 +134,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the hosted zones
-     * associated with the current AWS account.
+     * A complex type that contains general information about the hosted zone.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -142,8 +144,8 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param hostedZones
-     *        A complex type that contains information about the hosted zones
-     *        associated with the current AWS account.
+     *        A complex type that contains general information about the hosted
+     *        zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -162,13 +164,12 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains information about the hosted zones
-     * associated with the current AWS account.
+     * A complex type that contains general information about the hosted zone.
      * </p>
      * 
      * @param hostedZones
-     *        A complex type that contains information about the hosted zones
-     *        associated with the current AWS account.
+     *        A complex type that contains general information about the hosted
+     *        zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -181,11 +182,16 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>DNSName</code> value sent in the request.
+     * For the second and subsequent calls to <code>ListHostedZonesByName</code>, <code>DNSName</code> is the value that you specified for the
+     * <code>dnsname</code> parameter in the request that produced the current
+     * response.
      * </p>
      * 
      * @param dNSName
-     *        The <code>DNSName</code> value sent in the request.
+     *        For the second and subsequent calls to
+     *        <code>ListHostedZonesByName</code>, <code>DNSName</code> is the
+     *        value that you specified for the <code>dnsname</code> parameter in
+     *        the request that produced the current response.
      */
 
     public void setDNSName(String dNSName) {
@@ -194,10 +200,15 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>DNSName</code> value sent in the request.
+     * For the second and subsequent calls to <code>ListHostedZonesByName</code>, <code>DNSName</code> is the value that you specified for the
+     * <code>dnsname</code> parameter in the request that produced the current
+     * response.
      * </p>
      * 
-     * @return The <code>DNSName</code> value sent in the request.
+     * @return For the second and subsequent calls to
+     *         <code>ListHostedZonesByName</code>, <code>DNSName</code> is the
+     *         value that you specified for the <code>dnsname</code> parameter
+     *         in the request that produced the current response.
      */
 
     public String getDNSName() {
@@ -206,11 +217,16 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>DNSName</code> value sent in the request.
+     * For the second and subsequent calls to <code>ListHostedZonesByName</code>, <code>DNSName</code> is the value that you specified for the
+     * <code>dnsname</code> parameter in the request that produced the current
+     * response.
      * </p>
      * 
      * @param dNSName
-     *        The <code>DNSName</code> value sent in the request.
+     *        For the second and subsequent calls to
+     *        <code>ListHostedZonesByName</code>, <code>DNSName</code> is the
+     *        value that you specified for the <code>dnsname</code> parameter in
+     *        the request that produced the current response.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -222,11 +238,13 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>HostedZoneId</code> value sent in the request.
+     * The ID that Amazon Route 53 assigned to the hosted zone when you created
+     * it.
      * </p>
      * 
      * @param hostedZoneId
-     *        The <code>HostedZoneId</code> value sent in the request.
+     *        The ID that Amazon Route 53 assigned to the hosted zone when you
+     *        created it.
      */
 
     public void setHostedZoneId(String hostedZoneId) {
@@ -235,10 +253,12 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>HostedZoneId</code> value sent in the request.
+     * The ID that Amazon Route 53 assigned to the hosted zone when you created
+     * it.
      * </p>
      * 
-     * @return The <code>HostedZoneId</code> value sent in the request.
+     * @return The ID that Amazon Route 53 assigned to the hosted zone when you
+     *         created it.
      */
 
     public String getHostedZoneId() {
@@ -247,11 +267,13 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>HostedZoneId</code> value sent in the request.
+     * The ID that Amazon Route 53 assigned to the hosted zone when you created
+     * it.
      * </p>
      * 
      * @param hostedZoneId
-     *        The <code>HostedZoneId</code> value sent in the request.
+     *        The ID that Amazon Route 53 assigned to the hosted zone when you
+     *        created it.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -263,23 +285,22 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag indicating whether there are more hosted zones to be listed. If
-     * your results were truncated, you can make a follow-up request for the
-     * next page of results by using the <code>NextDNSName</code> and
-     * <code>NextHostedZoneId</code> elements.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether there are more hosted zones to be listed.
+     * If the response was truncated, you can get the next group of
+     * <code>maxitems</code> hosted zones by calling
+     * <code>ListHostedZonesByName</code> again and specifying the values of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in
+     * the <code>dnsname</code> and <code>hostedzoneid</code> parameters.
      * </p>
      * 
      * @param isTruncated
-     *        A flag indicating whether there are more hosted zones to be
-     *        listed. If your results were truncated, you can make a follow-up
-     *        request for the next page of results by using the
-     *        <code>NextDNSName</code> and <code>NextHostedZoneId</code>
-     *        elements.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        A flag that indicates whether there are more hosted zones to be
+     *        listed. If the response was truncated, you can get the next group
+     *        of <code>maxitems</code> hosted zones by calling
+     *        <code>ListHostedZonesByName</code> again and specifying the values
+     *        of <code>NextDNSName</code> and <code>NextHostedZoneId</code>
+     *        elements in the <code>dnsname</code> and <code>hostedzoneid</code>
+     *        parameters.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -288,22 +309,21 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag indicating whether there are more hosted zones to be listed. If
-     * your results were truncated, you can make a follow-up request for the
-     * next page of results by using the <code>NextDNSName</code> and
-     * <code>NextHostedZoneId</code> elements.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether there are more hosted zones to be listed.
+     * If the response was truncated, you can get the next group of
+     * <code>maxitems</code> hosted zones by calling
+     * <code>ListHostedZonesByName</code> again and specifying the values of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in
+     * the <code>dnsname</code> and <code>hostedzoneid</code> parameters.
      * </p>
      * 
-     * @return A flag indicating whether there are more hosted zones to be
-     *         listed. If your results were truncated, you can make a follow-up
-     *         request for the next page of results by using the
-     *         <code>NextDNSName</code> and <code>NextHostedZoneId</code>
-     *         elements.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     * @return A flag that indicates whether there are more hosted zones to be
+     *         listed. If the response was truncated, you can get the next group
+     *         of <code>maxitems</code> hosted zones by calling
+     *         <code>ListHostedZonesByName</code> again and specifying the
+     *         values of <code>NextDNSName</code> and
+     *         <code>NextHostedZoneId</code> elements in the
+     *         <code>dnsname</code> and <code>hostedzoneid</code> parameters.
      */
 
     public Boolean getIsTruncated() {
@@ -312,23 +332,22 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag indicating whether there are more hosted zones to be listed. If
-     * your results were truncated, you can make a follow-up request for the
-     * next page of results by using the <code>NextDNSName</code> and
-     * <code>NextHostedZoneId</code> elements.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether there are more hosted zones to be listed.
+     * If the response was truncated, you can get the next group of
+     * <code>maxitems</code> hosted zones by calling
+     * <code>ListHostedZonesByName</code> again and specifying the values of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in
+     * the <code>dnsname</code> and <code>hostedzoneid</code> parameters.
      * </p>
      * 
      * @param isTruncated
-     *        A flag indicating whether there are more hosted zones to be
-     *        listed. If your results were truncated, you can make a follow-up
-     *        request for the next page of results by using the
-     *        <code>NextDNSName</code> and <code>NextHostedZoneId</code>
-     *        elements.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        A flag that indicates whether there are more hosted zones to be
+     *        listed. If the response was truncated, you can get the next group
+     *        of <code>maxitems</code> hosted zones by calling
+     *        <code>ListHostedZonesByName</code> again and specifying the values
+     *        of <code>NextDNSName</code> and <code>NextHostedZoneId</code>
+     *        elements in the <code>dnsname</code> and <code>hostedzoneid</code>
+     *        parameters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -340,22 +359,21 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag indicating whether there are more hosted zones to be listed. If
-     * your results were truncated, you can make a follow-up request for the
-     * next page of results by using the <code>NextDNSName</code> and
-     * <code>NextHostedZoneId</code> elements.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * A flag that indicates whether there are more hosted zones to be listed.
+     * If the response was truncated, you can get the next group of
+     * <code>maxitems</code> hosted zones by calling
+     * <code>ListHostedZonesByName</code> again and specifying the values of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in
+     * the <code>dnsname</code> and <code>hostedzoneid</code> parameters.
      * </p>
      * 
-     * @return A flag indicating whether there are more hosted zones to be
-     *         listed. If your results were truncated, you can make a follow-up
-     *         request for the next page of results by using the
-     *         <code>NextDNSName</code> and <code>NextHostedZoneId</code>
-     *         elements.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     * @return A flag that indicates whether there are more hosted zones to be
+     *         listed. If the response was truncated, you can get the next group
+     *         of <code>maxitems</code> hosted zones by calling
+     *         <code>ListHostedZonesByName</code> again and specifying the
+     *         values of <code>NextDNSName</code> and
+     *         <code>NextHostedZoneId</code> elements in the
+     *         <code>dnsname</code> and <code>hostedzoneid</code> parameters.
      */
 
     public Boolean isTruncated() {
@@ -364,24 +382,30 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the value of <code>IsTruncated</code> in the
-     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there
-     * are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
-     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.
+     * If <code>IsTruncated</code> is true, the value of
+     * <code>NextDNSName</code> is the name of the first hosted zone in the next
+     * group of <code>maxitems</code> hosted zones. Call
+     * <code>ListHostedZonesByName</code> again and specify the value of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the
+     * <code>dnsname</code> and <code>hostedzoneid</code> parameters,
+     * respectively.
+     * </p>
+     * <p>
+     * This element is present only if <code>IsTruncated</code> is
+     * <code>true</code>.
      * </p>
      * 
      * @param nextDNSName
-     *        If the value of <code>IsTruncated</code> in the
-     *        <code>ListHostedZonesByNameResponse</code> is <code>true</code>,
-     *        there are more hosted zones associated with the current AWS
-     *        account. To get the next page of results, make another request to
-     *        <code>ListHostedZonesByName</code>. Specify the value of
-     *        <code>NextDNSName</code> in the <code>DNSName</code> parameter.
-     *        Specify <code>NextHostedZoneId</code> in the
-     *        <code>HostedZoneId</code> parameter.
+     *        If <code>IsTruncated</code> is true, the value of
+     *        <code>NextDNSName</code> is the name of the first hosted zone in
+     *        the next group of <code>maxitems</code> hosted zones. Call
+     *        <code>ListHostedZonesByName</code> again and specify the value of
+     *        <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the
+     *        <code>dnsname</code> and <code>hostedzoneid</code> parameters,
+     *        respectively.</p>
+     *        <p>
+     *        This element is present only if <code>IsTruncated</code> is
+     *        <code>true</code>.
      */
 
     public void setNextDNSName(String nextDNSName) {
@@ -390,23 +414,29 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the value of <code>IsTruncated</code> in the
-     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there
-     * are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
-     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.
+     * If <code>IsTruncated</code> is true, the value of
+     * <code>NextDNSName</code> is the name of the first hosted zone in the next
+     * group of <code>maxitems</code> hosted zones. Call
+     * <code>ListHostedZonesByName</code> again and specify the value of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the
+     * <code>dnsname</code> and <code>hostedzoneid</code> parameters,
+     * respectively.
+     * </p>
+     * <p>
+     * This element is present only if <code>IsTruncated</code> is
+     * <code>true</code>.
      * </p>
      * 
-     * @return If the value of <code>IsTruncated</code> in the
-     *         <code>ListHostedZonesByNameResponse</code> is <code>true</code>,
-     *         there are more hosted zones associated with the current AWS
-     *         account. To get the next page of results, make another request to
-     *         <code>ListHostedZonesByName</code>. Specify the value of
-     *         <code>NextDNSName</code> in the <code>DNSName</code> parameter.
-     *         Specify <code>NextHostedZoneId</code> in the
-     *         <code>HostedZoneId</code> parameter.
+     * @return If <code>IsTruncated</code> is true, the value of
+     *         <code>NextDNSName</code> is the name of the first hosted zone in
+     *         the next group of <code>maxitems</code> hosted zones. Call
+     *         <code>ListHostedZonesByName</code> again and specify the value of
+     *         <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the
+     *         <code>dnsname</code> and <code>hostedzoneid</code> parameters,
+     *         respectively.</p>
+     *         <p>
+     *         This element is present only if <code>IsTruncated</code> is
+     *         <code>true</code>.
      */
 
     public String getNextDNSName() {
@@ -415,24 +445,30 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the value of <code>IsTruncated</code> in the
-     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there
-     * are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
-     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.
+     * If <code>IsTruncated</code> is true, the value of
+     * <code>NextDNSName</code> is the name of the first hosted zone in the next
+     * group of <code>maxitems</code> hosted zones. Call
+     * <code>ListHostedZonesByName</code> again and specify the value of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the
+     * <code>dnsname</code> and <code>hostedzoneid</code> parameters,
+     * respectively.
+     * </p>
+     * <p>
+     * This element is present only if <code>IsTruncated</code> is
+     * <code>true</code>.
      * </p>
      * 
      * @param nextDNSName
-     *        If the value of <code>IsTruncated</code> in the
-     *        <code>ListHostedZonesByNameResponse</code> is <code>true</code>,
-     *        there are more hosted zones associated with the current AWS
-     *        account. To get the next page of results, make another request to
-     *        <code>ListHostedZonesByName</code>. Specify the value of
-     *        <code>NextDNSName</code> in the <code>DNSName</code> parameter.
-     *        Specify <code>NextHostedZoneId</code> in the
-     *        <code>HostedZoneId</code> parameter.
+     *        If <code>IsTruncated</code> is true, the value of
+     *        <code>NextDNSName</code> is the name of the first hosted zone in
+     *        the next group of <code>maxitems</code> hosted zones. Call
+     *        <code>ListHostedZonesByName</code> again and specify the value of
+     *        <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the
+     *        <code>dnsname</code> and <code>hostedzoneid</code> parameters,
+     *        respectively.</p>
+     *        <p>
+     *        This element is present only if <code>IsTruncated</code> is
+     *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -444,24 +480,30 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the value of <code>IsTruncated</code> in the
-     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there
-     * are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
-     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.
+     * If <code>IsTruncated</code> is <code>true</code>, the value of
+     * <code>NextHostedZoneId</code> identifies the first hosted zone in the
+     * next group of <code>maxitems</code> hosted zones. Call
+     * <code>ListHostedZonesByName</code> again and specify the value of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the
+     * <code>dnsname</code> and <code>hostedzoneid</code> parameters,
+     * respectively.
+     * </p>
+     * <p>
+     * This element is present only if <code>IsTruncated</code> is
+     * <code>true</code>.
      * </p>
      * 
      * @param nextHostedZoneId
-     *        If the value of <code>IsTruncated</code> in the
-     *        <code>ListHostedZonesByNameResponse</code> is <code>true</code>,
-     *        there are more hosted zones associated with the current AWS
-     *        account. To get the next page of results, make another request to
-     *        <code>ListHostedZonesByName</code>. Specify the value of
-     *        <code>NextDNSName</code> in the <code>DNSName</code> parameter.
-     *        Specify <code>NextHostedZoneId</code> in the
-     *        <code>HostedZoneId</code> parameter.
+     *        If <code>IsTruncated</code> is <code>true</code>, the value of
+     *        <code>NextHostedZoneId</code> identifies the first hosted zone in
+     *        the next group of <code>maxitems</code> hosted zones. Call
+     *        <code>ListHostedZonesByName</code> again and specify the value of
+     *        <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the
+     *        <code>dnsname</code> and <code>hostedzoneid</code> parameters,
+     *        respectively.</p>
+     *        <p>
+     *        This element is present only if <code>IsTruncated</code> is
+     *        <code>true</code>.
      */
 
     public void setNextHostedZoneId(String nextHostedZoneId) {
@@ -470,23 +512,29 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the value of <code>IsTruncated</code> in the
-     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there
-     * are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
-     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.
+     * If <code>IsTruncated</code> is <code>true</code>, the value of
+     * <code>NextHostedZoneId</code> identifies the first hosted zone in the
+     * next group of <code>maxitems</code> hosted zones. Call
+     * <code>ListHostedZonesByName</code> again and specify the value of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the
+     * <code>dnsname</code> and <code>hostedzoneid</code> parameters,
+     * respectively.
+     * </p>
+     * <p>
+     * This element is present only if <code>IsTruncated</code> is
+     * <code>true</code>.
      * </p>
      * 
-     * @return If the value of <code>IsTruncated</code> in the
-     *         <code>ListHostedZonesByNameResponse</code> is <code>true</code>,
-     *         there are more hosted zones associated with the current AWS
-     *         account. To get the next page of results, make another request to
-     *         <code>ListHostedZonesByName</code>. Specify the value of
-     *         <code>NextDNSName</code> in the <code>DNSName</code> parameter.
-     *         Specify <code>NextHostedZoneId</code> in the
-     *         <code>HostedZoneId</code> parameter.
+     * @return If <code>IsTruncated</code> is <code>true</code>, the value of
+     *         <code>NextHostedZoneId</code> identifies the first hosted zone in
+     *         the next group of <code>maxitems</code> hosted zones. Call
+     *         <code>ListHostedZonesByName</code> again and specify the value of
+     *         <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the
+     *         <code>dnsname</code> and <code>hostedzoneid</code> parameters,
+     *         respectively.</p>
+     *         <p>
+     *         This element is present only if <code>IsTruncated</code> is
+     *         <code>true</code>.
      */
 
     public String getNextHostedZoneId() {
@@ -495,24 +543,30 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the value of <code>IsTruncated</code> in the
-     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there
-     * are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
-     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.
+     * If <code>IsTruncated</code> is <code>true</code>, the value of
+     * <code>NextHostedZoneId</code> identifies the first hosted zone in the
+     * next group of <code>maxitems</code> hosted zones. Call
+     * <code>ListHostedZonesByName</code> again and specify the value of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the
+     * <code>dnsname</code> and <code>hostedzoneid</code> parameters,
+     * respectively.
+     * </p>
+     * <p>
+     * This element is present only if <code>IsTruncated</code> is
+     * <code>true</code>.
      * </p>
      * 
      * @param nextHostedZoneId
-     *        If the value of <code>IsTruncated</code> in the
-     *        <code>ListHostedZonesByNameResponse</code> is <code>true</code>,
-     *        there are more hosted zones associated with the current AWS
-     *        account. To get the next page of results, make another request to
-     *        <code>ListHostedZonesByName</code>. Specify the value of
-     *        <code>NextDNSName</code> in the <code>DNSName</code> parameter.
-     *        Specify <code>NextHostedZoneId</code> in the
-     *        <code>HostedZoneId</code> parameter.
+     *        If <code>IsTruncated</code> is <code>true</code>, the value of
+     *        <code>NextHostedZoneId</code> identifies the first hosted zone in
+     *        the next group of <code>maxitems</code> hosted zones. Call
+     *        <code>ListHostedZonesByName</code> again and specify the value of
+     *        <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the
+     *        <code>dnsname</code> and <code>hostedzoneid</code> parameters,
+     *        respectively.</p>
+     *        <p>
+     *        This element is present only if <code>IsTruncated</code> is
+     *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -525,25 +579,15 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of hosted zones to be included in the response body.
-     * If the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
-     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>. Call
-     * <code>ListHostedZonesByName</code> again and specify the value of
-     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements from
-     * the previous response to get the next page of results.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListHostedZonesByName</code> that produced the current
+     * response.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of hosted zones to be included in the response
-     *        body. If the number of hosted zones associated with this AWS
-     *        account exceeds <code>MaxItems</code>, the value of
-     *        <code>IsTruncated</code> in the
-     *        <code>ListHostedZonesByNameResponse</code> is <code>true</code>.
-     *        Call <code>ListHostedZonesByName</code> again and specify the
-     *        value of <code>NextDNSName</code> and
-     *        <code>NextHostedZoneId</code> elements from the previous response
-     *        to get the next page of results.
+     *        The value that you specified for the <code>maxitems</code>
+     *        parameter in the call to <code>ListHostedZonesByName</code> that
+     *        produced the current response.
      */
 
     public void setMaxItems(String maxItems) {
@@ -552,24 +596,14 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of hosted zones to be included in the response body.
-     * If the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
-     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>. Call
-     * <code>ListHostedZonesByName</code> again and specify the value of
-     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements from
-     * the previous response to get the next page of results.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListHostedZonesByName</code> that produced the current
+     * response.
      * </p>
      * 
-     * @return The maximum number of hosted zones to be included in the response
-     *         body. If the number of hosted zones associated with this AWS
-     *         account exceeds <code>MaxItems</code>, the value of
-     *         <code>IsTruncated</code> in the
-     *         <code>ListHostedZonesByNameResponse</code> is <code>true</code>.
-     *         Call <code>ListHostedZonesByName</code> again and specify the
-     *         value of <code>NextDNSName</code> and
-     *         <code>NextHostedZoneId</code> elements from the previous response
-     *         to get the next page of results.
+     * @return The value that you specified for the <code>maxitems</code>
+     *         parameter in the call to <code>ListHostedZonesByName</code> that
+     *         produced the current response.
      */
 
     public String getMaxItems() {
@@ -578,25 +612,15 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of hosted zones to be included in the response body.
-     * If the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
-     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>. Call
-     * <code>ListHostedZonesByName</code> again and specify the value of
-     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements from
-     * the previous response to get the next page of results.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the call to <code>ListHostedZonesByName</code> that produced the current
+     * response.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of hosted zones to be included in the response
-     *        body. If the number of hosted zones associated with this AWS
-     *        account exceeds <code>MaxItems</code>, the value of
-     *        <code>IsTruncated</code> in the
-     *        <code>ListHostedZonesByNameResponse</code> is <code>true</code>.
-     *        Call <code>ListHostedZonesByName</code> again and specify the
-     *        value of <code>NextDNSName</code> and
-     *        <code>NextHostedZoneId</code> elements from the previous response
-     *        to get the next page of results.
+     *        The value that you specified for the <code>maxitems</code>
+     *        parameter in the call to <code>ListHostedZonesByName</code> that
+     *        produced the current response.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -18,8 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains information about the status of the specified
- * health check.
+ * A complex type that contains the response to a <code>GetHealthCheck</code>
+ * request.
  * </p>
  */
 public class GetHealthCheckStatusResult implements Serializable, Cloneable {
@@ -27,7 +27,8 @@ public class GetHealthCheckStatusResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list that contains one <code>HealthCheckObservation</code> element for
-     * each Amazon Route 53 health checker.
+     * each Amazon Route 53 health checker that is reporting a status about the
+     * health check endpoint.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<HealthCheckObservation> healthCheckObservations;
@@ -35,11 +36,13 @@ public class GetHealthCheckStatusResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list that contains one <code>HealthCheckObservation</code> element for
-     * each Amazon Route 53 health checker.
+     * each Amazon Route 53 health checker that is reporting a status about the
+     * health check endpoint.
      * </p>
      * 
      * @return A list that contains one <code>HealthCheckObservation</code>
-     *         element for each Amazon Route 53 health checker.
+     *         element for each Amazon Route 53 health checker that is reporting
+     *         a status about the health check endpoint.
      */
 
     public java.util.List<HealthCheckObservation> getHealthCheckObservations() {
@@ -52,12 +55,14 @@ public class GetHealthCheckStatusResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list that contains one <code>HealthCheckObservation</code> element for
-     * each Amazon Route 53 health checker.
+     * each Amazon Route 53 health checker that is reporting a status about the
+     * health check endpoint.
      * </p>
      * 
      * @param healthCheckObservations
      *        A list that contains one <code>HealthCheckObservation</code>
-     *        element for each Amazon Route 53 health checker.
+     *        element for each Amazon Route 53 health checker that is reporting
+     *        a status about the health check endpoint.
      */
 
     public void setHealthCheckObservations(
@@ -74,7 +79,8 @@ public class GetHealthCheckStatusResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list that contains one <code>HealthCheckObservation</code> element for
-     * each Amazon Route 53 health checker.
+     * each Amazon Route 53 health checker that is reporting a status about the
+     * health check endpoint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -85,7 +91,8 @@ public class GetHealthCheckStatusResult implements Serializable, Cloneable {
      * 
      * @param healthCheckObservations
      *        A list that contains one <code>HealthCheckObservation</code>
-     *        element for each Amazon Route 53 health checker.
+     *        element for each Amazon Route 53 health checker that is reporting
+     *        a status about the health check endpoint.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -105,12 +112,14 @@ public class GetHealthCheckStatusResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list that contains one <code>HealthCheckObservation</code> element for
-     * each Amazon Route 53 health checker.
+     * each Amazon Route 53 health checker that is reporting a status about the
+     * health check endpoint.
      * </p>
      * 
      * @param healthCheckObservations
      *        A list that contains one <code>HealthCheckObservation</code>
-     *        element for each Amazon Route 53 health checker.
+     *        element for each Amazon Route 53 health checker that is reporting
+     *        a status about the health check endpoint.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

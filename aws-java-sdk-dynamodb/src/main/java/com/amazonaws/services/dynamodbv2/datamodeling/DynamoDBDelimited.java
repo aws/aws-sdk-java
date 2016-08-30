@@ -168,7 +168,7 @@ public @interface DynamoDBDelimited {
                 if (value != null) {
                     if (value.contains(delimiter)) {
                         throw new DynamoDBMappingException(fields[i].bean.id().err(
-                            "must not contain delimiter %s" + delimiter));
+                            "field value \"%s\" must not contain delimiter %s", value, delimiter));
                     }
                     string.append(value);
                 }

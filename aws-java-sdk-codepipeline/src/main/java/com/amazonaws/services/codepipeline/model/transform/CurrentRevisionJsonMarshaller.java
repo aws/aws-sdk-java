@@ -53,6 +53,14 @@ public class CurrentRevisionJsonMarshaller {
                 jsonGenerator.writeFieldName("changeIdentifier").writeValue(
                         currentRevision.getChangeIdentifier());
             }
+            if (currentRevision.getCreated() != null) {
+                jsonGenerator.writeFieldName("created").writeValue(
+                        currentRevision.getCreated());
+            }
+            if (currentRevision.getRevisionSummary() != null) {
+                jsonGenerator.writeFieldName("revisionSummary").writeValue(
+                        currentRevision.getRevisionSummary());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

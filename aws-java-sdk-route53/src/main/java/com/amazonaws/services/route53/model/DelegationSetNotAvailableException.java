@@ -16,12 +16,11 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * Amazon Route 53 allows some duplicate domain names, but there is a maximum
- * number of duplicate names. This error indicates that you have reached that
- * maximum. If you want to create another hosted zone with the same name and
- * Amazon Route 53 generates this error, you can request an increase to the
- * limit on the <a href="http://aws.amazon.com/route53-request/">Contact Us</a>
- * page.
+ * You can create a hosted zone that has the same name as an existing hosted
+ * zone (example.com is common), but there is a limit to the number of hosted
+ * zones that have the same name. If you get this error, Amazon Route 53 has
+ * reached that limit. If you own the domain name and Amazon Route 53 generates
+ * this error, contact Customer Support.
  * </p>
  */
 public class DelegationSetNotAvailableException extends

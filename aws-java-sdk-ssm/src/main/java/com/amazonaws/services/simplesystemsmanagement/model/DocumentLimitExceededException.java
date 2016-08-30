@@ -16,7 +16,7 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 /**
  * <p>
- * You can have at most 100 active SSM documents.
+ * You can have at most 200 active SSM documents.
  * </p>
  */
 public class DocumentLimitExceededException

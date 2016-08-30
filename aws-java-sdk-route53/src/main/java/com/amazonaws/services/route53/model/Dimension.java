@@ -18,31 +18,36 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The name and value of a dimension for a CloudWatch metric.
+ * For the metric that the CloudWatch alarm is associated with, a complex type
+ * that contains information about one dimension.
  * </p>
  */
 public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the dimension.
+     * For the metric that the CloudWatch alarm is associated with, the name of
+     * one dimension.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The value of the dimension.
+     * For the metric that the CloudWatch alarm is associated with, the value of
+     * one dimension.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The name of the dimension.
+     * For the metric that the CloudWatch alarm is associated with, the name of
+     * one dimension.
      * </p>
      * 
      * @param name
-     *        The name of the dimension.
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        name of one dimension.
      */
 
     public void setName(String name) {
@@ -51,10 +56,12 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the dimension.
+     * For the metric that the CloudWatch alarm is associated with, the name of
+     * one dimension.
      * </p>
      * 
-     * @return The name of the dimension.
+     * @return For the metric that the CloudWatch alarm is associated with, the
+     *         name of one dimension.
      */
 
     public String getName() {
@@ -63,11 +70,13 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the dimension.
+     * For the metric that the CloudWatch alarm is associated with, the name of
+     * one dimension.
      * </p>
      * 
      * @param name
-     *        The name of the dimension.
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        name of one dimension.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -79,11 +88,13 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the dimension.
+     * For the metric that the CloudWatch alarm is associated with, the value of
+     * one dimension.
      * </p>
      * 
      * @param value
-     *        The value of the dimension.
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        value of one dimension.
      */
 
     public void setValue(String value) {
@@ -92,10 +103,12 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the dimension.
+     * For the metric that the CloudWatch alarm is associated with, the value of
+     * one dimension.
      * </p>
      * 
-     * @return The value of the dimension.
+     * @return For the metric that the CloudWatch alarm is associated with, the
+     *         value of one dimension.
      */
 
     public String getValue() {
@@ -104,11 +117,13 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the dimension.
+     * For the metric that the CloudWatch alarm is associated with, the value of
+     * one dimension.
      * </p>
      * 
      * @param value
-     *        The value of the dimension.
+     *        For the metric that the CloudWatch alarm is associated with, the
+     *        value of one dimension.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

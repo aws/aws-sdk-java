@@ -41,24 +41,45 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
     private String startRecordName;
     /**
      * <p>
-     * The DNS type at which to begin the listing of resource record sets.
+     * The type of resource record set to begin the record listing from.
      * </p>
      * <p>
-     * Valid values: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     * <code>MX</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * Valid values for basic resource record sets: <code>A</code> |
+     * <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for Weighted Resource Record Sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     * Values for weighted, latency, geo, and failover resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CNAME</code> | <code>MX</code>
+     * | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
+     * <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for Regional Resource Record Sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     * Values for alias resource record sets:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Values for Alias Resource Record Sets: <code>A</code> | <code>AAAA</code>
+     * <b>CloudFront distribution</b>: A
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ELB load balancer</b>: A | AAAA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon S3 bucket</b>: A
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Constraint: Specifying <code>type</code> without specifying
      * <code>name</code> returns an <code>InvalidInput</code> error.
@@ -76,7 +97,14 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
     private String startRecordIdentifier;
     /**
      * <p>
-     * The maximum number of records you want in the response body.
+     * (Optional) The maximum number of resource records sets to include in the
+     * response body for this request. If the response includes more than
+     * <code>maxitems</code> resource record sets, the value of the
+     * <code>IsTruncated</code> element in the response is <code>true</code>,
+     * and the values of the <code>NextRecordName</code> and
+     * <code>NextRecordType</code> elements in the response identify the first
+     * resource record set in the next group of <code>maxitems</code> resource
+     * record sets.
      * </p>
      */
     private String maxItems;
@@ -199,50 +227,92 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The DNS type at which to begin the listing of resource record sets.
+     * The type of resource record set to begin the record listing from.
      * </p>
      * <p>
-     * Valid values: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     * <code>MX</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * Valid values for basic resource record sets: <code>A</code> |
+     * <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for Weighted Resource Record Sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     * Values for weighted, latency, geo, and failover resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CNAME</code> | <code>MX</code>
+     * | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
+     * <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for Regional Resource Record Sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     * Values for alias resource record sets:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Values for Alias Resource Record Sets: <code>A</code> | <code>AAAA</code>
+     * <b>CloudFront distribution</b>: A
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ELB load balancer</b>: A | AAAA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon S3 bucket</b>: A
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Constraint: Specifying <code>type</code> without specifying
      * <code>name</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @param startRecordType
-     *        The DNS type at which to begin the listing of resource record
-     *        sets. </p>
+     *        The type of resource record set to begin the record listing
+     *        from.</p>
      *        <p>
-     *        Valid values: <code>A</code> | <code>AAAA</code> |
-     *        <code>CNAME</code> | <code>MX</code> | <code>NS</code> |
-     *        <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
-     *        <code>SRV</code> | <code>TXT</code>
+     *        Valid values for basic resource record sets: <code>A</code> |
+     *        <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> |
+     *        <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
      *        </p>
      *        <p>
-     *        Values for Weighted Resource Record Sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     *        Values for weighted, latency, geo, and failover resource record
+     *        sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
-     *        Values for Regional Resource Record Sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     *        Values for alias resource record sets:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Values for Alias Resource Record Sets: <code>A</code> |
-     *        <code>AAAA</code>
+     *        <b>CloudFront distribution</b>: A
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Elastic Beanstalk environment that has a regionalized
+     *        subdomain</b>: A
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ELB load balancer</b>: A | AAAA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon S3 bucket</b>: A
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Constraint: Specifying <code>type</code> without specifying
      *        <code>name</code> returns an <code>InvalidInput</code> error.
@@ -255,49 +325,91 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The DNS type at which to begin the listing of resource record sets.
+     * The type of resource record set to begin the record listing from.
      * </p>
      * <p>
-     * Valid values: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     * <code>MX</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * Valid values for basic resource record sets: <code>A</code> |
+     * <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for Weighted Resource Record Sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     * Values for weighted, latency, geo, and failover resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CNAME</code> | <code>MX</code>
+     * | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
+     * <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for Regional Resource Record Sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     * Values for alias resource record sets:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Values for Alias Resource Record Sets: <code>A</code> | <code>AAAA</code>
+     * <b>CloudFront distribution</b>: A
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ELB load balancer</b>: A | AAAA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon S3 bucket</b>: A
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Constraint: Specifying <code>type</code> without specifying
      * <code>name</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
-     * @return The DNS type at which to begin the listing of resource record
-     *         sets. </p>
+     * @return The type of resource record set to begin the record listing
+     *         from.</p>
      *         <p>
-     *         Valid values: <code>A</code> | <code>AAAA</code> |
-     *         <code>CNAME</code> | <code>MX</code> | <code>NS</code> |
-     *         <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
-     *         <code>SRV</code> | <code>TXT</code>
+     *         Valid values for basic resource record sets: <code>A</code> |
+     *         <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> |
+     *         <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     *         <code>SOA</code> | <code>SPF</code> | <code>SRV</code> |
+     *         <code>TXT</code>
      *         </p>
      *         <p>
-     *         Values for Weighted Resource Record Sets: <code>A</code> |
-     *         <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     *         Values for weighted, latency, geo, and failover resource record
+     *         sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     *         <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     *         <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *         </p>
      *         <p>
-     *         Values for Regional Resource Record Sets: <code>A</code> |
-     *         <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     *         Values for alias resource record sets:
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         Values for Alias Resource Record Sets: <code>A</code> |
-     *         <code>AAAA</code>
+     *         <b>CloudFront distribution</b>: A
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Elastic Beanstalk environment that has a regionalized
+     *         subdomain</b>: A
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>ELB load balancer</b>: A | AAAA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon S3 bucket</b>: A
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         Constraint: Specifying <code>type</code> without specifying
      *         <code>name</code> returns an <code>InvalidInput</code> error.
@@ -310,50 +422,92 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The DNS type at which to begin the listing of resource record sets.
+     * The type of resource record set to begin the record listing from.
      * </p>
      * <p>
-     * Valid values: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     * <code>MX</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * Valid values for basic resource record sets: <code>A</code> |
+     * <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for Weighted Resource Record Sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     * Values for weighted, latency, geo, and failover resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CNAME</code> | <code>MX</code>
+     * | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
+     * <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for Regional Resource Record Sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     * Values for alias resource record sets:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Values for Alias Resource Record Sets: <code>A</code> | <code>AAAA</code>
+     * <b>CloudFront distribution</b>: A
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ELB load balancer</b>: A | AAAA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon S3 bucket</b>: A
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Constraint: Specifying <code>type</code> without specifying
      * <code>name</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @param startRecordType
-     *        The DNS type at which to begin the listing of resource record
-     *        sets. </p>
+     *        The type of resource record set to begin the record listing
+     *        from.</p>
      *        <p>
-     *        Valid values: <code>A</code> | <code>AAAA</code> |
-     *        <code>CNAME</code> | <code>MX</code> | <code>NS</code> |
-     *        <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
-     *        <code>SRV</code> | <code>TXT</code>
+     *        Valid values for basic resource record sets: <code>A</code> |
+     *        <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> |
+     *        <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
      *        </p>
      *        <p>
-     *        Values for Weighted Resource Record Sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     *        Values for weighted, latency, geo, and failover resource record
+     *        sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
-     *        Values for Regional Resource Record Sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     *        Values for alias resource record sets:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Values for Alias Resource Record Sets: <code>A</code> |
-     *        <code>AAAA</code>
+     *        <b>CloudFront distribution</b>: A
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Elastic Beanstalk environment that has a regionalized
+     *        subdomain</b>: A
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ELB load balancer</b>: A | AAAA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon S3 bucket</b>: A
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Constraint: Specifying <code>type</code> without specifying
      *        <code>name</code> returns an <code>InvalidInput</code> error.
@@ -370,50 +524,92 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The DNS type at which to begin the listing of resource record sets.
+     * The type of resource record set to begin the record listing from.
      * </p>
      * <p>
-     * Valid values: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     * <code>MX</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * Valid values for basic resource record sets: <code>A</code> |
+     * <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for Weighted Resource Record Sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     * Values for weighted, latency, geo, and failover resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CNAME</code> | <code>MX</code>
+     * | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
+     * <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for Regional Resource Record Sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     * Values for alias resource record sets:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Values for Alias Resource Record Sets: <code>A</code> | <code>AAAA</code>
+     * <b>CloudFront distribution</b>: A
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ELB load balancer</b>: A | AAAA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon S3 bucket</b>: A
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Constraint: Specifying <code>type</code> without specifying
      * <code>name</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @param startRecordType
-     *        The DNS type at which to begin the listing of resource record
-     *        sets. </p>
+     *        The type of resource record set to begin the record listing
+     *        from.</p>
      *        <p>
-     *        Valid values: <code>A</code> | <code>AAAA</code> |
-     *        <code>CNAME</code> | <code>MX</code> | <code>NS</code> |
-     *        <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
-     *        <code>SRV</code> | <code>TXT</code>
+     *        Valid values for basic resource record sets: <code>A</code> |
+     *        <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> |
+     *        <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
      *        </p>
      *        <p>
-     *        Values for Weighted Resource Record Sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     *        Values for weighted, latency, geo, and failover resource record
+     *        sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
-     *        Values for Regional Resource Record Sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     *        Values for alias resource record sets:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Values for Alias Resource Record Sets: <code>A</code> |
-     *        <code>AAAA</code>
+     *        <b>CloudFront distribution</b>: A
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Elastic Beanstalk environment that has a regionalized
+     *        subdomain</b>: A
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ELB load balancer</b>: A | AAAA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon S3 bucket</b>: A
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Constraint: Specifying <code>type</code> without specifying
      *        <code>name</code> returns an <code>InvalidInput</code> error.
@@ -426,50 +622,92 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The DNS type at which to begin the listing of resource record sets.
+     * The type of resource record set to begin the record listing from.
      * </p>
      * <p>
-     * Valid values: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     * <code>MX</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * Valid values for basic resource record sets: <code>A</code> |
+     * <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for Weighted Resource Record Sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     * Values for weighted, latency, geo, and failover resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CNAME</code> | <code>MX</code>
+     * | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
+     * <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for Regional Resource Record Sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     * Values for alias resource record sets:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Values for Alias Resource Record Sets: <code>A</code> | <code>AAAA</code>
+     * <b>CloudFront distribution</b>: A
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ELB load balancer</b>: A | AAAA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon S3 bucket</b>: A
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Constraint: Specifying <code>type</code> without specifying
      * <code>name</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @param startRecordType
-     *        The DNS type at which to begin the listing of resource record
-     *        sets. </p>
+     *        The type of resource record set to begin the record listing
+     *        from.</p>
      *        <p>
-     *        Valid values: <code>A</code> | <code>AAAA</code> |
-     *        <code>CNAME</code> | <code>MX</code> | <code>NS</code> |
-     *        <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
-     *        <code>SRV</code> | <code>TXT</code>
+     *        Valid values for basic resource record sets: <code>A</code> |
+     *        <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> |
+     *        <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
      *        </p>
      *        <p>
-     *        Values for Weighted Resource Record Sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     *        Values for weighted, latency, geo, and failover resource record
+     *        sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
-     *        Values for Regional Resource Record Sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CNAME</code> | <code>TXT</code>
+     *        Values for alias resource record sets:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Values for Alias Resource Record Sets: <code>A</code> |
-     *        <code>AAAA</code>
+     *        <b>CloudFront distribution</b>: A
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Elastic Beanstalk environment that has a regionalized
+     *        subdomain</b>: A
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ELB load balancer</b>: A | AAAA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon S3 bucket</b>: A
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Constraint: Specifying <code>type</code> without specifying
      *        <code>name</code> returns an <code>InvalidInput</code> error.
@@ -493,9 +731,11 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param startRecordIdentifier
-     *        Weighted resource record sets only:</i> If results were truncated
-     *        for a given DNS name and type, specify the value of
-     *        <code>NextRecordIdentifier
+     *        <i>Weighted resource record sets only:</i> If results were
+     *        truncated for a given DNS name and type, specify the value of
+     *        <code>NextRecordIdentifier</code> from the previous response to
+     *        get the next resource record set that has the current DNS name and
+     *        type.
      */
 
     public void setStartRecordIdentifier(String startRecordIdentifier) {
@@ -510,9 +750,11 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      * next resource record set that has the current DNS name and type.
      * </p>
      * 
-     * @return Weighted resource record sets only:</i> If results were truncated
-     *         for a given DNS name and type, specify the value of
-     *         <code>NextRecordIdentifier
+     * @return <i>Weighted resource record sets only:</i> If results were
+     *         truncated for a given DNS name and type, specify the value of
+     *         <code>NextRecordIdentifier</code> from the previous response to
+     *         get the next resource record set that has the current DNS name
+     *         and type.
      */
 
     public String getStartRecordIdentifier() {
@@ -528,9 +770,11 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param startRecordIdentifier
-     *        Weighted resource record sets only:</i> If results were truncated
-     *        for a given DNS name and type, specify the value of
-     *        <code>NextRecordIdentifier
+     *        <i>Weighted resource record sets only:</i> If results were
+     *        truncated for a given DNS name and type, specify the value of
+     *        <code>NextRecordIdentifier</code> from the previous response to
+     *        get the next resource record set that has the current DNS name and
+     *        type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -543,11 +787,25 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of records you want in the response body.
+     * (Optional) The maximum number of resource records sets to include in the
+     * response body for this request. If the response includes more than
+     * <code>maxitems</code> resource record sets, the value of the
+     * <code>IsTruncated</code> element in the response is <code>true</code>,
+     * and the values of the <code>NextRecordName</code> and
+     * <code>NextRecordType</code> elements in the response identify the first
+     * resource record set in the next group of <code>maxitems</code> resource
+     * record sets.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of records you want in the response body.
+     *        (Optional) The maximum number of resource records sets to include
+     *        in the response body for this request. If the response includes
+     *        more than <code>maxitems</code> resource record sets, the value of
+     *        the <code>IsTruncated</code> element in the response is
+     *        <code>true</code>, and the values of the
+     *        <code>NextRecordName</code> and <code>NextRecordType</code>
+     *        elements in the response identify the first resource record set in
+     *        the next group of <code>maxitems</code> resource record sets.
      */
 
     public void setMaxItems(String maxItems) {
@@ -556,10 +814,24 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of records you want in the response body.
+     * (Optional) The maximum number of resource records sets to include in the
+     * response body for this request. If the response includes more than
+     * <code>maxitems</code> resource record sets, the value of the
+     * <code>IsTruncated</code> element in the response is <code>true</code>,
+     * and the values of the <code>NextRecordName</code> and
+     * <code>NextRecordType</code> elements in the response identify the first
+     * resource record set in the next group of <code>maxitems</code> resource
+     * record sets.
      * </p>
      * 
-     * @return The maximum number of records you want in the response body.
+     * @return (Optional) The maximum number of resource records sets to include
+     *         in the response body for this request. If the response includes
+     *         more than <code>maxitems</code> resource record sets, the value
+     *         of the <code>IsTruncated</code> element in the response is
+     *         <code>true</code>, and the values of the
+     *         <code>NextRecordName</code> and <code>NextRecordType</code>
+     *         elements in the response identify the first resource record set
+     *         in the next group of <code>maxitems</code> resource record sets.
      */
 
     public String getMaxItems() {
@@ -568,11 +840,25 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of records you want in the response body.
+     * (Optional) The maximum number of resource records sets to include in the
+     * response body for this request. If the response includes more than
+     * <code>maxitems</code> resource record sets, the value of the
+     * <code>IsTruncated</code> element in the response is <code>true</code>,
+     * and the values of the <code>NextRecordName</code> and
+     * <code>NextRecordType</code> elements in the response identify the first
+     * resource record set in the next group of <code>maxitems</code> resource
+     * record sets.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of records you want in the response body.
+     *        (Optional) The maximum number of resource records sets to include
+     *        in the response body for this request. If the response includes
+     *        more than <code>maxitems</code> resource record sets, the value of
+     *        the <code>IsTruncated</code> element in the response is
+     *        <code>true</code>, and the values of the
+     *        <code>NextRecordName</code> and <code>NextRecordType</code>
+     *        elements in the response identify the first resource record set in
+     *        the next group of <code>maxitems</code> resource record sets.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

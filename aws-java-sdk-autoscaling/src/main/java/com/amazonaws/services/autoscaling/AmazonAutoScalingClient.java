@@ -2284,8 +2284,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Disables monitoring of the specified metrics for the specified Auto
-     * Scaling group.
+     * Disables group metrics for the specified Auto Scaling group.
      * </p>
      * 
      * @param disableMetricsCollectionRequest
@@ -2333,12 +2332,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Enables monitoring of the specified metrics for the specified Auto
-     * Scaling group.
-     * </p>
-     * <p>
-     * You can only enable metrics collection if <code>InstanceMonitoring</code>
-     * in the launch configuration for the group is set to <code>True</code>.
+     * Enables group metrics for the specified Auto Scaling group. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AutoScaling/latest/userguide/as-instance-monitoring.html"
+     * >Monitoring Your Auto Scaling Groups and Instances</a> in the <i>Auto
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @param enableMetricsCollectionRequest

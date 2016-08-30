@@ -18,28 +18,29 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type containing information about the specified health check.
+ * A complex type that contains the response to a <code>GetHealthCheck</code>
+ * request.
  * </p>
  */
 public class GetHealthCheckResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the information about the specified health
-     * check.
+     * A complex type that contains information about one health check that is
+     * associated with the current AWS account.
      * </p>
      */
     private HealthCheck healthCheck;
 
     /**
      * <p>
-     * A complex type that contains the information about the specified health
-     * check.
+     * A complex type that contains information about one health check that is
+     * associated with the current AWS account.
      * </p>
      * 
      * @param healthCheck
-     *        A complex type that contains the information about the specified
-     *        health check.
+     *        A complex type that contains information about one health check
+     *        that is associated with the current AWS account.
      */
 
     public void setHealthCheck(HealthCheck healthCheck) {
@@ -48,12 +49,12 @@ public class GetHealthCheckResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the information about the specified health
-     * check.
+     * A complex type that contains information about one health check that is
+     * associated with the current AWS account.
      * </p>
      * 
-     * @return A complex type that contains the information about the specified
-     *         health check.
+     * @return A complex type that contains information about one health check
+     *         that is associated with the current AWS account.
      */
 
     public HealthCheck getHealthCheck() {
@@ -62,13 +63,13 @@ public class GetHealthCheckResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the information about the specified health
-     * check.
+     * A complex type that contains information about one health check that is
+     * associated with the current AWS account.
      * </p>
      * 
      * @param healthCheck
-     *        A complex type that contains the information about the specified
-     *        health check.
+     *        A complex type that contains information about one health check
+     *        that is associated with the current AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

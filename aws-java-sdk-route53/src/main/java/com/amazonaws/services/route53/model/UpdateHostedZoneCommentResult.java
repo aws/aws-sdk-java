@@ -18,8 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type containing information about the specified hosted zone after
- * the update.
+ * A complex type that contains the response to the
+ * UpdateHostedZoneCommentRequest.
  * </p>
  */
 public class UpdateHostedZoneCommentResult implements Serializable, Cloneable {

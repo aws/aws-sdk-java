@@ -18,26 +18,30 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains identifying information about the health check.
+ * A complex type that contains information about one health check that is
+ * associated with the current AWS account.
  * </p>
  */
 public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the specified health check.
+     * The identifier that Amazon Route 53assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this
+     * value to specify which health check to use. The value can be up to 64
+     * characters long.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * A unique string that identifies the request to create the health check.
+     * A unique string that you specified when you created the health check.
      * </p>
      */
     private String callerReference;
     /**
      * <p>
-     * A complex type that contains the health check configuration.
+     * A complex type that contains detailed information about one health check.
      * </p>
      */
     private HealthCheckConfig healthCheckConfig;
@@ -51,20 +55,25 @@ public class HealthCheck implements Serializable, Cloneable {
     private Long healthCheckVersion;
     /**
      * <p>
-     * For CLOUDWATCH_METRIC health checks, a complex type that contains
-     * information about the CloudWatch alarm that you're associating with the
-     * health check.
+     * A complex type that contains information about the CloudWatch alarm that
+     * Amazon Route 53 is monitoring for this health check.
      * </p>
      */
     private CloudWatchAlarmConfiguration cloudWatchAlarmConfiguration;
 
     /**
      * <p>
-     * The ID of the specified health check.
+     * The identifier that Amazon Route 53assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this
+     * value to specify which health check to use. The value can be up to 64
+     * characters long.
      * </p>
      * 
      * @param id
-     *        The ID of the specified health check.
+     *        The identifier that Amazon Route 53assigned to the health check
+     *        when you created it. When you add or update a resource record set,
+     *        you use this value to specify which health check to use. The value
+     *        can be up to 64 characters long.
      */
 
     public void setId(String id) {
@@ -73,10 +82,16 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the specified health check.
+     * The identifier that Amazon Route 53assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this
+     * value to specify which health check to use. The value can be up to 64
+     * characters long.
      * </p>
      * 
-     * @return The ID of the specified health check.
+     * @return The identifier that Amazon Route 53assigned to the health check
+     *         when you created it. When you add or update a resource record
+     *         set, you use this value to specify which health check to use. The
+     *         value can be up to 64 characters long.
      */
 
     public String getId() {
@@ -85,11 +100,17 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the specified health check.
+     * The identifier that Amazon Route 53assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this
+     * value to specify which health check to use. The value can be up to 64
+     * characters long.
      * </p>
      * 
      * @param id
-     *        The ID of the specified health check.
+     *        The identifier that Amazon Route 53assigned to the health check
+     *        when you created it. When you add or update a resource record set,
+     *        you use this value to specify which health check to use. The value
+     *        can be up to 64 characters long.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -101,11 +122,11 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique string that identifies the request to create the health check.
+     * A unique string that you specified when you created the health check.
      * </p>
      * 
      * @param callerReference
-     *        A unique string that identifies the request to create the health
+     *        A unique string that you specified when you created the health
      *        check.
      */
 
@@ -115,10 +136,10 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique string that identifies the request to create the health check.
+     * A unique string that you specified when you created the health check.
      * </p>
      * 
-     * @return A unique string that identifies the request to create the health
+     * @return A unique string that you specified when you created the health
      *         check.
      */
 
@@ -128,11 +149,11 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique string that identifies the request to create the health check.
+     * A unique string that you specified when you created the health check.
      * </p>
      * 
      * @param callerReference
-     *        A unique string that identifies the request to create the health
+     *        A unique string that you specified when you created the health
      *        check.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -145,11 +166,12 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the health check configuration.
+     * A complex type that contains detailed information about one health check.
      * </p>
      * 
      * @param healthCheckConfig
-     *        A complex type that contains the health check configuration.
+     *        A complex type that contains detailed information about one health
+     *        check.
      */
 
     public void setHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
@@ -158,10 +180,11 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the health check configuration.
+     * A complex type that contains detailed information about one health check.
      * </p>
      * 
-     * @return A complex type that contains the health check configuration.
+     * @return A complex type that contains detailed information about one
+     *         health check.
      */
 
     public HealthCheckConfig getHealthCheckConfig() {
@@ -170,11 +193,12 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains the health check configuration.
+     * A complex type that contains detailed information about one health check.
      * </p>
      * 
      * @param healthCheckConfig
-     *        A complex type that contains the health check configuration.
+     *        A complex type that contains detailed information about one health
+     *        check.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -239,15 +263,13 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For CLOUDWATCH_METRIC health checks, a complex type that contains
-     * information about the CloudWatch alarm that you're associating with the
-     * health check.
+     * A complex type that contains information about the CloudWatch alarm that
+     * Amazon Route 53 is monitoring for this health check.
      * </p>
      * 
      * @param cloudWatchAlarmConfiguration
-     *        For CLOUDWATCH_METRIC health checks, a complex type that contains
-     *        information about the CloudWatch alarm that you're associating
-     *        with the health check.
+     *        A complex type that contains information about the CloudWatch
+     *        alarm that Amazon Route 53 is monitoring for this health check.
      */
 
     public void setCloudWatchAlarmConfiguration(
@@ -257,14 +279,12 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For CLOUDWATCH_METRIC health checks, a complex type that contains
-     * information about the CloudWatch alarm that you're associating with the
-     * health check.
+     * A complex type that contains information about the CloudWatch alarm that
+     * Amazon Route 53 is monitoring for this health check.
      * </p>
      * 
-     * @return For CLOUDWATCH_METRIC health checks, a complex type that contains
-     *         information about the CloudWatch alarm that you're associating
-     *         with the health check.
+     * @return A complex type that contains information about the CloudWatch
+     *         alarm that Amazon Route 53 is monitoring for this health check.
      */
 
     public CloudWatchAlarmConfiguration getCloudWatchAlarmConfiguration() {
@@ -273,15 +293,13 @@ public class HealthCheck implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For CLOUDWATCH_METRIC health checks, a complex type that contains
-     * information about the CloudWatch alarm that you're associating with the
-     * health check.
+     * A complex type that contains information about the CloudWatch alarm that
+     * Amazon Route 53 is monitoring for this health check.
      * </p>
      * 
      * @param cloudWatchAlarmConfiguration
-     *        For CLOUDWATCH_METRIC health checks, a complex type that contains
-     *        information about the CloudWatch alarm that you're associating
-     *        with the health check.
+     *        A complex type that contains information about the CloudWatch
+     *        alarm that Amazon Route 53 is monitoring for this health check.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

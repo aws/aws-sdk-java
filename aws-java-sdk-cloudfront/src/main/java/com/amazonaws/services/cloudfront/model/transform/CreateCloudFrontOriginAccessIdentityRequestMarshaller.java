@@ -56,14 +56,14 @@ public class CreateCloudFrontOriginAccessIdentityRequestMarshaller
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2016-08-01/origin-access-identity/cloudfront";
+        String uriResourcePath = "/2016-08-20/origin-access-identity/cloudfront";
 
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter,
-                    "http://cloudfront.amazonaws.com/doc/2016-08-01/");
+                    "http://cloudfront.amazonaws.com/doc/2016-08-20/");
 
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig = createCloudFrontOriginAccessIdentityRequest
                     .getCloudFrontOriginAccessIdentityConfig();

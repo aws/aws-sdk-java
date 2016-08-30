@@ -36,7 +36,7 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
      * <p>
      * The definition of this traffic policy in JSON format. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html"
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/api-policies-traffic-policy-document-format.html"
      * >Traffic Policy Document Format</a> in the <i>Amazon Route 53 API
      * Reference</i>.
      * </p>
@@ -44,7 +44,8 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
     private String document;
     /**
      * <p>
-     * Any comments that you want to include about the traffic policy.
+     * (Optional) Any comments that you want to include about the traffic
+     * policy.
      * </p>
      */
     private String comment;
@@ -94,7 +95,7 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
      * <p>
      * The definition of this traffic policy in JSON format. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html"
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/api-policies-traffic-policy-document-format.html"
      * >Traffic Policy Document Format</a> in the <i>Amazon Route 53 API
      * Reference</i>.
      * </p>
@@ -102,7 +103,7 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
      * @param document
      *        The definition of this traffic policy in JSON format. For more
      *        information, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html"
+     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/api-policies-traffic-policy-document-format.html"
      *        >Traffic Policy Document Format</a> in the <i>Amazon Route 53 API
      *        Reference</i>.
      */
@@ -115,14 +116,14 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
      * <p>
      * The definition of this traffic policy in JSON format. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html"
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/api-policies-traffic-policy-document-format.html"
      * >Traffic Policy Document Format</a> in the <i>Amazon Route 53 API
      * Reference</i>.
      * </p>
      * 
      * @return The definition of this traffic policy in JSON format. For more
      *         information, see <a href=
-     *         "http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html"
+     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/api-policies-traffic-policy-document-format.html"
      *         >Traffic Policy Document Format</a> in the <i>Amazon Route 53 API
      *         Reference</i>.
      */
@@ -135,7 +136,7 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
      * <p>
      * The definition of this traffic policy in JSON format. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html"
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/api-policies-traffic-policy-document-format.html"
      * >Traffic Policy Document Format</a> in the <i>Amazon Route 53 API
      * Reference</i>.
      * </p>
@@ -143,7 +144,7 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
      * @param document
      *        The definition of this traffic policy in JSON format. For more
      *        information, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html"
+     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/api-policies-traffic-policy-document-format.html"
      *        >Traffic Policy Document Format</a> in the <i>Amazon Route 53 API
      *        Reference</i>.
      * @return Returns a reference to this object so that method calls can be
@@ -157,11 +158,13 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Any comments that you want to include about the traffic policy.
+     * (Optional) Any comments that you want to include about the traffic
+     * policy.
      * </p>
      * 
      * @param comment
-     *        Any comments that you want to include about the traffic policy.
+     *        (Optional) Any comments that you want to include about the traffic
+     *        policy.
      */
 
     public void setComment(String comment) {
@@ -170,10 +173,12 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Any comments that you want to include about the traffic policy.
+     * (Optional) Any comments that you want to include about the traffic
+     * policy.
      * </p>
      * 
-     * @return Any comments that you want to include about the traffic policy.
+     * @return (Optional) Any comments that you want to include about the
+     *         traffic policy.
      */
 
     public String getComment() {
@@ -182,11 +187,13 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Any comments that you want to include about the traffic policy.
+     * (Optional) Any comments that you want to include about the traffic
+     * policy.
      * </p>
      * 
      * @param comment
-     *        Any comments that you want to include about the traffic policy.
+     *        (Optional) Any comments that you want to include about the traffic
+     *        policy.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -61,7 +61,7 @@ public class DeleteDistributionRequestMarshaller
                     .fromString(deleteDistributionRequest.getIfMatch()));
         }
 
-        String uriResourcePath = "/2016-08-01/distribution/{Id}";
+        String uriResourcePath = "/2016-08-20/distribution/{Id}";
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",

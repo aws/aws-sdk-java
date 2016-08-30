@@ -20,51 +20,55 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * To retrieve a list of your reusable delegation sets, send a <code>GET</code>
- * request to the <code>/<i>Route 53 API version</i>/delegationset</code>
- * resource. The response to this request includes a <code>DelegationSets</code>
- * element with zero or more <code>DelegationSet</code> child elements. By
- * default, the list of reusable delegation sets is displayed on a single page.
- * You can control the length of the page that is displayed by using the
- * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
- * parameter to control the delegation set that the list begins with.
+ * request to the <code>/2013-04-01/delegationset</code> resource. The response
+ * to this request includes a <code>DelegationSets</code> element with zero or
+ * more <code>DelegationSet</code> child elements. By default, the list of
+ * reusable delegation sets is displayed on a single page. You can control the
+ * length of the page that is displayed by using the <code>MaxItems</code>
+ * parameter. You can use the <code>Marker</code> parameter to control the
+ * delegation set that the list begins with.
  * </p>
- * <note> Amazon Route 53 returns a maximum of 100 items. If you set
+ * <note>
+ * <p>
+ * Amazon Route 53 returns a maximum of 100 items. If you set
  * <code>MaxItems</code> to a value greater than 100, Amazon Route 53 returns
- * only the first 100.</note>
+ * only the first 100.
+ * </p>
+ * </note>
  */
 public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If you're making the second or subsequent call to
+     * <code>ListReusableDelegationSets</code>, the <code>Marker</code> element
+     * matches the value that you specified in the <code>marker</code> parameter
+     * in the previous request.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Specify the maximum number of reusable delegation sets to return per page
-     * of results.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the request that produced the current response.
      * </p>
      */
     private String maxItems;
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If you're making the second or subsequent call to
+     * <code>ListReusableDelegationSets</code>, the <code>Marker</code> element
+     * matches the value that you specified in the <code>marker</code> parameter
+     * in the previous request.
      * </p>
      * 
      * @param marker
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextMarker</code>
-     *        from the last response in the <code>marker</code> parameter to get
-     *        the next page of results.
+     *        If you're making the second or subsequent call to
+     *        <code>ListReusableDelegationSets</code>, the <code>Marker</code>
+     *        element matches the value that you specified in the
+     *        <code>marker</code> parameter in the previous request.
      */
 
     public void setMarker(String marker) {
@@ -73,16 +77,16 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If you're making the second or subsequent call to
+     * <code>ListReusableDelegationSets</code>, the <code>Marker</code> element
+     * matches the value that you specified in the <code>marker</code> parameter
+     * in the previous request.
      * </p>
      * 
-     * @return If the request returned more than one page of results, submit
-     *         another request and specify the value of <code>NextMarker</code>
-     *         from the last response in the <code>marker</code> parameter to
-     *         get the next page of results.
+     * @return If you're making the second or subsequent call to
+     *         <code>ListReusableDelegationSets</code>, the <code>Marker</code>
+     *         element matches the value that you specified in the
+     *         <code>marker</code> parameter in the previous request.
      */
 
     public String getMarker() {
@@ -91,17 +95,17 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If the request returned more than one page of results, submit another
-     * request and specify the value of <code>NextMarker</code> from the last
-     * response in the <code>marker</code> parameter to get the next page of
-     * results.
+     * If you're making the second or subsequent call to
+     * <code>ListReusableDelegationSets</code>, the <code>Marker</code> element
+     * matches the value that you specified in the <code>marker</code> parameter
+     * in the previous request.
      * </p>
      * 
      * @param marker
-     *        If the request returned more than one page of results, submit
-     *        another request and specify the value of <code>NextMarker</code>
-     *        from the last response in the <code>marker</code> parameter to get
-     *        the next page of results.
+     *        If you're making the second or subsequent call to
+     *        <code>ListReusableDelegationSets</code>, the <code>Marker</code>
+     *        element matches the value that you specified in the
+     *        <code>marker</code> parameter in the previous request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -113,13 +117,13 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the maximum number of reusable delegation sets to return per page
-     * of results.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the request that produced the current response.
      * </p>
      * 
      * @param maxItems
-     *        Specify the maximum number of reusable delegation sets to return
-     *        per page of results.
+     *        The value that you specified for the <code>maxitems</code>
+     *        parameter in the request that produced the current response.
      */
 
     public void setMaxItems(String maxItems) {
@@ -128,12 +132,12 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the maximum number of reusable delegation sets to return per page
-     * of results.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the request that produced the current response.
      * </p>
      * 
-     * @return Specify the maximum number of reusable delegation sets to return
-     *         per page of results.
+     * @return The value that you specified for the <code>maxitems</code>
+     *         parameter in the request that produced the current response.
      */
 
     public String getMaxItems() {
@@ -142,13 +146,13 @@ public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the maximum number of reusable delegation sets to return per page
-     * of results.
+     * The value that you specified for the <code>maxitems</code> parameter in
+     * the request that produced the current response.
      * </p>
      * 
      * @param maxItems
-     *        Specify the maximum number of reusable delegation sets to return
-     *        per page of results.
+     *        The value that you specified for the <code>maxitems</code>
+     *        parameter in the request that produced the current response.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

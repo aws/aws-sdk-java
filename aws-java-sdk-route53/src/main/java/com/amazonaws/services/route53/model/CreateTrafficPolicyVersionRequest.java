@@ -34,20 +34,17 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
     private String id;
     /**
      * <p>
-     * The definition of a new traffic policy version, in JSON format. You must
-     * specify the full definition of the new traffic policy. You cannot specify
-     * just the differences between the new version and a previous version. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html"
-     * >Traffic Policy Document Format</a> in the <i>Amazon Route 53 API
-     * Reference</i>.
+     * The definition of this version of the traffic policy, in JSON format. You
+     * specified the JSON in the <code>CreateTrafficPolicyVersion</code>
+     * request. For more information about the JSON format, see
+     * <a>CreateTrafficPolicy</a>.
      * </p>
      */
     private String document;
     /**
      * <p>
-     * Any comments that you want to include about the new traffic policy
-     * version.
+     * The comment that you specified in the
+     * <code>CreateTrafficPolicyVersion</code> request, if any.
      * </p>
      */
     private String comment;
@@ -98,23 +95,17 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The definition of a new traffic policy version, in JSON format. You must
-     * specify the full definition of the new traffic policy. You cannot specify
-     * just the differences between the new version and a previous version. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html"
-     * >Traffic Policy Document Format</a> in the <i>Amazon Route 53 API
-     * Reference</i>.
+     * The definition of this version of the traffic policy, in JSON format. You
+     * specified the JSON in the <code>CreateTrafficPolicyVersion</code>
+     * request. For more information about the JSON format, see
+     * <a>CreateTrafficPolicy</a>.
      * </p>
      * 
      * @param document
-     *        The definition of a new traffic policy version, in JSON format.
-     *        You must specify the full definition of the new traffic policy.
-     *        You cannot specify just the differences between the new version
-     *        and a previous version. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html"
-     *        >Traffic Policy Document Format</a> in the <i>Amazon Route 53 API
-     *        Reference</i>.
+     *        The definition of this version of the traffic policy, in JSON
+     *        format. You specified the JSON in the
+     *        <code>CreateTrafficPolicyVersion</code> request. For more
+     *        information about the JSON format, see <a>CreateTrafficPolicy</a>.
      */
 
     public void setDocument(String document) {
@@ -123,22 +114,17 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The definition of a new traffic policy version, in JSON format. You must
-     * specify the full definition of the new traffic policy. You cannot specify
-     * just the differences between the new version and a previous version. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html"
-     * >Traffic Policy Document Format</a> in the <i>Amazon Route 53 API
-     * Reference</i>.
+     * The definition of this version of the traffic policy, in JSON format. You
+     * specified the JSON in the <code>CreateTrafficPolicyVersion</code>
+     * request. For more information about the JSON format, see
+     * <a>CreateTrafficPolicy</a>.
      * </p>
      * 
-     * @return The definition of a new traffic policy version, in JSON format.
-     *         You must specify the full definition of the new traffic policy.
-     *         You cannot specify just the differences between the new version
-     *         and a previous version. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html"
-     *         >Traffic Policy Document Format</a> in the <i>Amazon Route 53 API
-     *         Reference</i>.
+     * @return The definition of this version of the traffic policy, in JSON
+     *         format. You specified the JSON in the
+     *         <code>CreateTrafficPolicyVersion</code> request. For more
+     *         information about the JSON format, see
+     *         <a>CreateTrafficPolicy</a>.
      */
 
     public String getDocument() {
@@ -147,23 +133,17 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The definition of a new traffic policy version, in JSON format. You must
-     * specify the full definition of the new traffic policy. You cannot specify
-     * just the differences between the new version and a previous version. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html"
-     * >Traffic Policy Document Format</a> in the <i>Amazon Route 53 API
-     * Reference</i>.
+     * The definition of this version of the traffic policy, in JSON format. You
+     * specified the JSON in the <code>CreateTrafficPolicyVersion</code>
+     * request. For more information about the JSON format, see
+     * <a>CreateTrafficPolicy</a>.
      * </p>
      * 
      * @param document
-     *        The definition of a new traffic policy version, in JSON format.
-     *        You must specify the full definition of the new traffic policy.
-     *        You cannot specify just the differences between the new version
-     *        and a previous version. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html"
-     *        >Traffic Policy Document Format</a> in the <i>Amazon Route 53 API
-     *        Reference</i>.
+     *        The definition of this version of the traffic policy, in JSON
+     *        format. You specified the JSON in the
+     *        <code>CreateTrafficPolicyVersion</code> request. For more
+     *        information about the JSON format, see <a>CreateTrafficPolicy</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -175,13 +155,13 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Any comments that you want to include about the new traffic policy
-     * version.
+     * The comment that you specified in the
+     * <code>CreateTrafficPolicyVersion</code> request, if any.
      * </p>
      * 
      * @param comment
-     *        Any comments that you want to include about the new traffic policy
-     *        version.
+     *        The comment that you specified in the
+     *        <code>CreateTrafficPolicyVersion</code> request, if any.
      */
 
     public void setComment(String comment) {
@@ -190,12 +170,12 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Any comments that you want to include about the new traffic policy
-     * version.
+     * The comment that you specified in the
+     * <code>CreateTrafficPolicyVersion</code> request, if any.
      * </p>
      * 
-     * @return Any comments that you want to include about the new traffic
-     *         policy version.
+     * @return The comment that you specified in the
+     *         <code>CreateTrafficPolicyVersion</code> request, if any.
      */
 
     public String getComment() {
@@ -204,13 +184,13 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Any comments that you want to include about the new traffic policy
-     * version.
+     * The comment that you specified in the
+     * <code>CreateTrafficPolicyVersion</code> request, if any.
      * </p>
      * 
      * @param comment
-     *        Any comments that you want to include about the new traffic policy
-     *        version.
+     *        The comment that you specified in the
+     *        <code>CreateTrafficPolicyVersion</code> request, if any.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

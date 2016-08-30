@@ -25,8 +25,8 @@ public class PutActionRevisionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new revision number or ID for the revision after the action
-     * completes.
+     * Indicates whether the artifact revision was previously used in an
+     * execution of the specified pipeline.
      * </p>
      */
     private Boolean newRevision;
@@ -39,13 +39,13 @@ public class PutActionRevisionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new revision number or ID for the revision after the action
-     * completes.
+     * Indicates whether the artifact revision was previously used in an
+     * execution of the specified pipeline.
      * </p>
      * 
      * @param newRevision
-     *        The new revision number or ID for the revision after the action
-     *        completes.
+     *        Indicates whether the artifact revision was previously used in an
+     *        execution of the specified pipeline.
      */
 
     public void setNewRevision(Boolean newRevision) {
@@ -54,12 +54,12 @@ public class PutActionRevisionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new revision number or ID for the revision after the action
-     * completes.
+     * Indicates whether the artifact revision was previously used in an
+     * execution of the specified pipeline.
      * </p>
      * 
-     * @return The new revision number or ID for the revision after the action
-     *         completes.
+     * @return Indicates whether the artifact revision was previously used in an
+     *         execution of the specified pipeline.
      */
 
     public Boolean getNewRevision() {
@@ -68,13 +68,13 @@ public class PutActionRevisionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new revision number or ID for the revision after the action
-     * completes.
+     * Indicates whether the artifact revision was previously used in an
+     * execution of the specified pipeline.
      * </p>
      * 
      * @param newRevision
-     *        The new revision number or ID for the revision after the action
-     *        completes.
+     *        Indicates whether the artifact revision was previously used in an
+     *        execution of the specified pipeline.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -86,12 +86,12 @@ public class PutActionRevisionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new revision number or ID for the revision after the action
-     * completes.
+     * Indicates whether the artifact revision was previously used in an
+     * execution of the specified pipeline.
      * </p>
      * 
-     * @return The new revision number or ID for the revision after the action
-     *         completes.
+     * @return Indicates whether the artifact revision was previously used in an
+     *         execution of the specified pipeline.
      */
 
     public Boolean isNewRevision() {

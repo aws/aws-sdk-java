@@ -61,6 +61,16 @@ public class CurrentRevisionJsonUnmarshaller implements
                     currentRevision.setChangeIdentifier(context
                             .getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("created", targetDepth)) {
+                    context.nextToken();
+                    currentRevision.setCreated(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("revisionSummary", targetDepth)) {
+                    context.nextToken();
+                    currentRevision.setRevisionSummary(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

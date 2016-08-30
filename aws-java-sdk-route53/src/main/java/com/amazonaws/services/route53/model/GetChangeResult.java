@@ -26,8 +26,7 @@ public class GetChangeResult implements Serializable, Cloneable {
     /**
      * <p>
      * A complex type that contains information about the specified change
-     * batch, including the change batch ID, the status of the change, and the
-     * date and time of the request.
+     * batch.
      * </p>
      */
     private ChangeInfo changeInfo;
@@ -35,14 +34,12 @@ public class GetChangeResult implements Serializable, Cloneable {
     /**
      * <p>
      * A complex type that contains information about the specified change
-     * batch, including the change batch ID, the status of the change, and the
-     * date and time of the request.
+     * batch.
      * </p>
      * 
      * @param changeInfo
      *        A complex type that contains information about the specified
-     *        change batch, including the change batch ID, the status of the
-     *        change, and the date and time of the request.
+     *        change batch.
      */
 
     public void setChangeInfo(ChangeInfo changeInfo) {
@@ -52,13 +49,11 @@ public class GetChangeResult implements Serializable, Cloneable {
     /**
      * <p>
      * A complex type that contains information about the specified change
-     * batch, including the change batch ID, the status of the change, and the
-     * date and time of the request.
+     * batch.
      * </p>
      * 
      * @return A complex type that contains information about the specified
-     *         change batch, including the change batch ID, the status of the
-     *         change, and the date and time of the request.
+     *         change batch.
      */
 
     public ChangeInfo getChangeInfo() {
@@ -68,14 +63,12 @@ public class GetChangeResult implements Serializable, Cloneable {
     /**
      * <p>
      * A complex type that contains information about the specified change
-     * batch, including the change batch ID, the status of the change, and the
-     * date and time of the request.
+     * batch.
      * </p>
      * 
      * @param changeInfo
      *        A complex type that contains information about the specified
-     *        change batch, including the change batch ID, the status of the
-     *        change, and the date and time of the request.
+     *        change batch.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

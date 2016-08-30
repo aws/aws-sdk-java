@@ -16,9 +16,11 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * The health check you are trying to create already exists. Amazon Route 53
- * returns this error when a health check has already been created with the
- * specified <code>CallerReference</code>.
+ * The health check you're attempting to create already exists.
+ * </p>
+ * <p>
+ * Amazon Route 53 returns this error when a health check has already been
+ * created with the specified value for <code>CallerReference</code>.
  * </p>
  */
 public class HealthCheckAlreadyExistsException extends
