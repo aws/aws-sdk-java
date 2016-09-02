@@ -27,7 +27,7 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The identifier or ARN for the source option group. For information about
      * creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -103,7 +103,7 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The identifier or ARN for the source option group. For information about
      * creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -134,7 +134,7 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      * @param sourceOptionGroupIdentifier
      *        The identifier or ARN for the source option group. For information
      *        about creating an ARN, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
      *        <p>
      *        Constraints:
@@ -171,7 +171,7 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The identifier or ARN for the source option group. For information about
      * creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -201,7 +201,7 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier or ARN for the source option group. For
      *         information about creating an ARN, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *         > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
      *         <p>
      *         Constraints:
@@ -237,7 +237,7 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The identifier or ARN for the source option group. For information about
      * creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -268,7 +268,7 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      * @param sourceOptionGroupIdentifier
      *        The identifier or ARN for the source option group. For information
      *        about creating an ARN, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
      *        <p>
      *        Constraints:

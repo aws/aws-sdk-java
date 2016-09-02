@@ -92,7 +92,11 @@ public class EventSubscription implements Serializable, Cloneable {
      * </p>
      */
     private Boolean enabled;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the event subscription.
+     * </p>
+     */
     private String eventSubscriptionArn;
 
     /**
@@ -646,7 +650,12 @@ public class EventSubscription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the event subscription.
+     * </p>
+     * 
      * @param eventSubscriptionArn
+     *        The Amazon Resource Name (ARN) for the event subscription.
      */
 
     public void setEventSubscriptionArn(String eventSubscriptionArn) {
@@ -654,7 +663,11 @@ public class EventSubscription implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) for the event subscription.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the event subscription.
      */
 
     public String getEventSubscriptionArn() {
@@ -662,7 +675,12 @@ public class EventSubscription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the event subscription.
+     * </p>
+     * 
      * @param eventSubscriptionArn
+     *        The Amazon Resource Name (ARN) for the event subscription.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

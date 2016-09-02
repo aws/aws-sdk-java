@@ -1021,6 +1021,41 @@ public class AWSCognitoIdentityProviderAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUserImportJobResult> createUserImportJobAsync(
+            CreateUserImportJobRequest request) {
+
+        return createUserImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserImportJobResult> createUserImportJobAsync(
+            final CreateUserImportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateUserImportJobRequest, CreateUserImportJobResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateUserImportJobResult>() {
+                    @Override
+                    public CreateUserImportJobResult call() throws Exception {
+                        CreateUserImportJobResult result;
+
+                        try {
+                            result = createUserImportJob(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUserPoolResult> createUserPoolAsync(
             CreateUserPoolRequest request) {
 
@@ -1231,6 +1266,41 @@ public class AWSCognitoIdentityProviderAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeUserImportJobResult> describeUserImportJobAsync(
+            DescribeUserImportJobRequest request) {
+
+        return describeUserImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUserImportJobResult> describeUserImportJobAsync(
+            final DescribeUserImportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeUserImportJobRequest, DescribeUserImportJobResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeUserImportJobResult>() {
+                    @Override
+                    public DescribeUserImportJobResult call() throws Exception {
+                        DescribeUserImportJobResult result;
+
+                        try {
+                            result = describeUserImportJob(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeUserPoolResult> describeUserPoolAsync(
             DescribeUserPoolRequest request) {
 
@@ -1355,6 +1425,41 @@ public class AWSCognitoIdentityProviderAsyncClient extends
 
                         try {
                             result = forgotPassword(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCSVHeaderResult> getCSVHeaderAsync(
+            GetCSVHeaderRequest request) {
+
+        return getCSVHeaderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCSVHeaderResult> getCSVHeaderAsync(
+            final GetCSVHeaderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCSVHeaderRequest, GetCSVHeaderResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetCSVHeaderResult>() {
+                    @Override
+                    public GetCSVHeaderResult call() throws Exception {
+                        GetCSVHeaderResult result;
+
+                        try {
+                            result = getCSVHeader(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1566,6 +1671,41 @@ public class AWSCognitoIdentityProviderAsyncClient extends
 
                         try {
                             result = listDevices(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserImportJobsResult> listUserImportJobsAsync(
+            ListUserImportJobsRequest request) {
+
+        return listUserImportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserImportJobsResult> listUserImportJobsAsync(
+            final ListUserImportJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListUserImportJobsRequest, ListUserImportJobsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListUserImportJobsResult>() {
+                    @Override
+                    public ListUserImportJobsResult call() throws Exception {
+                        ListUserImportJobsResult result;
+
+                        try {
+                            result = listUserImportJobs(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1811,6 +1951,76 @@ public class AWSCognitoIdentityProviderAsyncClient extends
 
                         try {
                             result = signUp(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartUserImportJobResult> startUserImportJobAsync(
+            StartUserImportJobRequest request) {
+
+        return startUserImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartUserImportJobResult> startUserImportJobAsync(
+            final StartUserImportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartUserImportJobRequest, StartUserImportJobResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<StartUserImportJobResult>() {
+                    @Override
+                    public StartUserImportJobResult call() throws Exception {
+                        StartUserImportJobResult result;
+
+                        try {
+                            result = startUserImportJob(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopUserImportJobResult> stopUserImportJobAsync(
+            StopUserImportJobRequest request) {
+
+        return stopUserImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopUserImportJobResult> stopUserImportJobAsync(
+            final StopUserImportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopUserImportJobRequest, StopUserImportJobResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<StopUserImportJobResult>() {
+                    @Override
+                    public StopUserImportJobResult call() throws Exception {
+                        StopUserImportJobResult result;
+
+                        try {
+                            result = stopUserImportJob(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

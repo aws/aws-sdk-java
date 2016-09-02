@@ -428,6 +428,17 @@ public interface AWSCognitoIdentityProviderAsync extends
      * Resets the specified user's password in a user pool as an administrator.
      * Works on any user.
      * </p>
+     * <p>
+     * When a developer calls this API, the current password is invalidated, so
+     * it must be changed. If a user tries to sign in after the API is called,
+     * the app will get a PasswordResetRequiredException exception back and
+     * should direct the user down the flow to reset the password, which is the
+     * same as the forgot password flow. In addition, if the user pool has phone
+     * verification selected and a verified phone number exists for the user, or
+     * if email verification is selected and a verified email exists for the
+     * user, calling this API will also result in sending a message to the end
+     * user with the code to change their password.
+     * </p>
      * 
      * @param adminResetUserPasswordRequest
      *        Represents the request to reset a user's password as an
@@ -443,6 +454,17 @@ public interface AWSCognitoIdentityProviderAsync extends
      * <p>
      * Resets the specified user's password in a user pool as an administrator.
      * Works on any user.
+     * </p>
+     * <p>
+     * When a developer calls this API, the current password is invalidated, so
+     * it must be changed. If a user tries to sign in after the API is called,
+     * the app will get a PasswordResetRequiredException exception back and
+     * should direct the user down the flow to reset the password, which is the
+     * same as the forgot password flow. In addition, if the user pool has phone
+     * verification selected and a verified phone number exists for the user, or
+     * if email verification is selected and a verified email exists for the
+     * user, calling this API will also result in sending a message to the end
+     * user with the code to change their password.
      * </p>
      * 
      * @param adminResetUserPasswordRequest
@@ -782,6 +804,40 @@ public interface AWSCognitoIdentityProviderAsync extends
 
     /**
      * <p>
+     * Creates the user import job.
+     * </p>
+     * 
+     * @param createUserImportJobRequest
+     *        Represents the request to create the user import job.
+     * @return A Java Future containing the result of the CreateUserImportJob
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.CreateUserImportJob
+     */
+    java.util.concurrent.Future<CreateUserImportJobResult> createUserImportJobAsync(
+            CreateUserImportJobRequest createUserImportJobRequest);
+
+    /**
+     * <p>
+     * Creates the user import job.
+     * </p>
+     * 
+     * @param createUserImportJobRequest
+     *        Represents the request to create the user import job.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateUserImportJob
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.CreateUserImportJob
+     */
+    java.util.concurrent.Future<CreateUserImportJobResult> createUserImportJobAsync(
+            CreateUserImportJobRequest createUserImportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateUserImportJobRequest, CreateUserImportJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new Amazon Cognito user pool and sets the password policy for
      * the pool.
      * </p>
@@ -988,6 +1044,40 @@ public interface AWSCognitoIdentityProviderAsync extends
 
     /**
      * <p>
+     * Describes the user import job.
+     * </p>
+     * 
+     * @param describeUserImportJobRequest
+     *        Represents the request to describe the user import job.
+     * @return A Java Future containing the result of the DescribeUserImportJob
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.DescribeUserImportJob
+     */
+    java.util.concurrent.Future<DescribeUserImportJobResult> describeUserImportJobAsync(
+            DescribeUserImportJobRequest describeUserImportJobRequest);
+
+    /**
+     * <p>
+     * Describes the user import job.
+     * </p>
+     * 
+     * @param describeUserImportJobRequest
+     *        Represents the request to describe the user import job.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeUserImportJob
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.DescribeUserImportJob
+     */
+    java.util.concurrent.Future<DescribeUserImportJobResult> describeUserImportJobAsync(
+            DescribeUserImportJobRequest describeUserImportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeUserImportJobRequest, DescribeUserImportJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the configuration information and metadata of the specified user
      * pool.
      * </p>
@@ -1125,6 +1215,44 @@ public interface AWSCognitoIdentityProviderAsync extends
     java.util.concurrent.Future<ForgotPasswordResult> forgotPasswordAsync(
             ForgotPasswordRequest forgotPasswordRequest,
             com.amazonaws.handlers.AsyncHandler<ForgotPasswordRequest, ForgotPasswordResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the header information for the .csv file to be used as input for the
+     * user import job.
+     * </p>
+     * 
+     * @param getCSVHeaderRequest
+     *        Represents the request to get the header information for the .csv
+     *        file for the user import job.
+     * @return A Java Future containing the result of the GetCSVHeader operation
+     *         returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.GetCSVHeader
+     */
+    java.util.concurrent.Future<GetCSVHeaderResult> getCSVHeaderAsync(
+            GetCSVHeaderRequest getCSVHeaderRequest);
+
+    /**
+     * <p>
+     * Gets the header information for the .csv file to be used as input for the
+     * user import job.
+     * </p>
+     * 
+     * @param getCSVHeaderRequest
+     *        Represents the request to get the header information for the .csv
+     *        file for the user import job.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCSVHeader operation
+     *         returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.GetCSVHeader
+     */
+    java.util.concurrent.Future<GetCSVHeaderResult> getCSVHeaderAsync(
+            GetCSVHeaderRequest getCSVHeaderRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCSVHeaderRequest, GetCSVHeaderResult> asyncHandler);
 
     /**
      * <p>
@@ -1334,6 +1462,40 @@ public interface AWSCognitoIdentityProviderAsync extends
     java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(
             ListDevicesRequest listDevicesRequest,
             com.amazonaws.handlers.AsyncHandler<ListDevicesRequest, ListDevicesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the user import jobs.
+     * </p>
+     * 
+     * @param listUserImportJobsRequest
+     *        Represents the request to list the user import jobs.
+     * @return A Java Future containing the result of the ListUserImportJobs
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.ListUserImportJobs
+     */
+    java.util.concurrent.Future<ListUserImportJobsResult> listUserImportJobsAsync(
+            ListUserImportJobsRequest listUserImportJobsRequest);
+
+    /**
+     * <p>
+     * Lists the user import jobs.
+     * </p>
+     * 
+     * @param listUserImportJobsRequest
+     *        Represents the request to list the user import jobs.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListUserImportJobs
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.ListUserImportJobs
+     */
+    java.util.concurrent.Future<ListUserImportJobsResult> listUserImportJobsAsync(
+            ListUserImportJobsRequest listUserImportJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListUserImportJobsRequest, ListUserImportJobsResult> asyncHandler);
 
     /**
      * <p>
@@ -1580,6 +1742,74 @@ public interface AWSCognitoIdentityProviderAsync extends
     java.util.concurrent.Future<SignUpResult> signUpAsync(
             SignUpRequest signUpRequest,
             com.amazonaws.handlers.AsyncHandler<SignUpRequest, SignUpResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts the user import.
+     * </p>
+     * 
+     * @param startUserImportJobRequest
+     *        Represents the request to start the user import job.
+     * @return A Java Future containing the result of the StartUserImportJob
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.StartUserImportJob
+     */
+    java.util.concurrent.Future<StartUserImportJobResult> startUserImportJobAsync(
+            StartUserImportJobRequest startUserImportJobRequest);
+
+    /**
+     * <p>
+     * Starts the user import.
+     * </p>
+     * 
+     * @param startUserImportJobRequest
+     *        Represents the request to start the user import job.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartUserImportJob
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.StartUserImportJob
+     */
+    java.util.concurrent.Future<StartUserImportJobResult> startUserImportJobAsync(
+            StartUserImportJobRequest startUserImportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartUserImportJobRequest, StartUserImportJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops the user import job.
+     * </p>
+     * 
+     * @param stopUserImportJobRequest
+     *        Represents the request to stop the user import job.
+     * @return A Java Future containing the result of the StopUserImportJob
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.StopUserImportJob
+     */
+    java.util.concurrent.Future<StopUserImportJobResult> stopUserImportJobAsync(
+            StopUserImportJobRequest stopUserImportJobRequest);
+
+    /**
+     * <p>
+     * Stops the user import job.
+     * </p>
+     * 
+     * @param stopUserImportJobRequest
+     *        Represents the request to stop the user import job.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopUserImportJob
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.StopUserImportJob
+     */
+    java.util.concurrent.Future<StopUserImportJobResult> stopUserImportJobAsync(
+            StopUserImportJobRequest stopUserImportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StopUserImportJobRequest, StopUserImportJobResult> asyncHandler);
 
     /**
      * <p>

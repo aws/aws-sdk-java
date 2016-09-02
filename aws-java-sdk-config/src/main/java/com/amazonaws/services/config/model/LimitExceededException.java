@@ -16,8 +16,8 @@ package com.amazonaws.services.config.model;
 
 /**
  * <p>
- * This exception is thrown when the previous <a>StartConfigRulesEvaluation</a>
- * call is in progress or a previous evaluation is in progress.
+ * This exception is thrown if an evaluation is in progress or if you call the
+ * <a>StartConfigRulesEvaluation</a> API more than once per minute.
  * </p>
  */
 public class LimitExceededException extends

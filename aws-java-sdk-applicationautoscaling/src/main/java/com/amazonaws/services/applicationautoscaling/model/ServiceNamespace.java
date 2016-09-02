@@ -19,7 +19,8 @@ package com.amazonaws.services.applicationautoscaling.model;
  */
 public enum ServiceNamespace {
 
-    Ecs("ecs");
+    Ecs("ecs"),
+    Ec2("ec2");
 
     private String value;
 

@@ -100,6 +100,10 @@ public class FleetAttributesJsonMarshaller {
                                 fleetAttributes
                                         .getNewGameSessionProtectionPolicy());
             }
+            if (fleetAttributes.getOperatingSystem() != null) {
+                jsonGenerator.writeFieldName("OperatingSystem").writeValue(
+                        fleetAttributes.getOperatingSystem());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

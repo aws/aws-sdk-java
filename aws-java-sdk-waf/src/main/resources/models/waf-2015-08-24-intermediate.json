@@ -19,6 +19,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "waf",
     "signingName" : "waf",
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSWAFClientBuilder",
     "asyncClientBuilderClassName" : "AWSWAFAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AWSWAFModuleInjector",
@@ -28,7 +29,6 @@
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "jsonProtocol" : true,
     "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
@@ -3519,11 +3519,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "SizeConstraintSetUpdate",
           "templateType" : "java.util.List<SizeConstraintSetUpdate>",
           "templateImplType" : "java.util.ArrayList<SizeConstraintSetUpdate>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "SizeConstraintSetUpdate"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3665,11 +3665,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "SizeConstraintSetUpdate",
             "templateType" : "java.util.List<SizeConstraintSetUpdate>",
             "templateImplType" : "java.util.ArrayList<SizeConstraintSetUpdate>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "SizeConstraintSetUpdate"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4931,11 +4931,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "ByteMatchSetUpdate",
           "templateType" : "java.util.List<ByteMatchSetUpdate>",
           "templateImplType" : "java.util.ArrayList<ByteMatchSetUpdate>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "ByteMatchSetUpdate"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5130,11 +5130,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "ByteMatchSetUpdate",
             "templateType" : "java.util.List<ByteMatchSetUpdate>",
             "templateImplType" : "java.util.ArrayList<ByteMatchSetUpdate>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "ByteMatchSetUpdate"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5420,11 +5420,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "XssMatchSetUpdate",
           "templateType" : "java.util.List<XssMatchSetUpdate>",
           "templateImplType" : "java.util.ArrayList<XssMatchSetUpdate>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "XssMatchSetUpdate"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5619,11 +5619,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "XssMatchSetUpdate",
             "templateType" : "java.util.List<XssMatchSetUpdate>",
             "templateImplType" : "java.util.ArrayList<XssMatchSetUpdate>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "XssMatchSetUpdate"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6155,11 +6155,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "ByteMatchTuple",
           "templateType" : "java.util.List<ByteMatchTuple>",
           "templateImplType" : "java.util.ArrayList<ByteMatchTuple>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "ByteMatchTuple"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6350,11 +6350,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "ByteMatchTuple",
             "templateType" : "java.util.List<ByteMatchTuple>",
             "templateImplType" : "java.util.ArrayList<ByteMatchTuple>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "ByteMatchTuple"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7118,11 +7118,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "HTTPHeader",
           "templateType" : "java.util.List<HTTPHeader>",
           "templateImplType" : "java.util.ArrayList<HTTPHeader>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "HTTPHeader"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7260,11 +7260,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "HTTPHeader",
             "templateType" : "java.util.List<HTTPHeader>",
             "templateImplType" : "java.util.ArrayList<HTTPHeader>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "HTTPHeader"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8149,11 +8149,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "SizeConstraint",
           "templateType" : "java.util.List<SizeConstraint>",
           "templateImplType" : "java.util.ArrayList<SizeConstraint>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "SizeConstraint"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8291,11 +8291,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "SizeConstraint",
             "templateType" : "java.util.List<SizeConstraint>",
             "templateImplType" : "java.util.ArrayList<SizeConstraint>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "SizeConstraint"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9485,11 +9485,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "RuleUpdate",
           "templateType" : "java.util.List<RuleUpdate>",
           "templateImplType" : "java.util.ArrayList<RuleUpdate>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "RuleUpdate"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9631,11 +9631,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "RuleUpdate",
             "templateType" : "java.util.List<RuleUpdate>",
             "templateImplType" : "java.util.ArrayList<RuleUpdate>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "RuleUpdate"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9974,11 +9974,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "IPSetUpdate",
           "templateType" : "java.util.List<IPSetUpdate>",
           "templateImplType" : "java.util.ArrayList<IPSetUpdate>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "IPSetUpdate"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10120,11 +10120,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "IPSetUpdate",
             "templateType" : "java.util.List<IPSetUpdate>",
             "templateImplType" : "java.util.ArrayList<IPSetUpdate>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "IPSetUpdate"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10463,11 +10463,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "SqlInjectionMatchTuple",
           "templateType" : "java.util.List<SqlInjectionMatchTuple>",
           "templateImplType" : "java.util.ArrayList<SqlInjectionMatchTuple>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "SqlInjectionMatchTuple"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10658,11 +10658,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "SqlInjectionMatchTuple",
             "templateType" : "java.util.List<SqlInjectionMatchTuple>",
             "templateImplType" : "java.util.ArrayList<SqlInjectionMatchTuple>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "SqlInjectionMatchTuple"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11044,11 +11044,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "Predicate",
           "templateType" : "java.util.List<Predicate>",
           "templateImplType" : "java.util.ArrayList<Predicate>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "Predicate"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11292,11 +11292,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "Predicate",
             "templateType" : "java.util.List<Predicate>",
             "templateImplType" : "java.util.ArrayList<Predicate>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "Predicate"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12320,11 +12320,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "RuleSummary",
           "templateType" : "java.util.List<RuleSummary>",
           "templateImplType" : "java.util.ArrayList<RuleSummary>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "RuleSummary"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12515,11 +12515,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "RuleSummary",
             "templateType" : "java.util.List<RuleSummary>",
             "templateImplType" : "java.util.ArrayList<RuleSummary>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "RuleSummary"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13012,11 +13012,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "SampledHTTPRequest",
           "templateType" : "java.util.List<SampledHTTPRequest>",
           "templateImplType" : "java.util.ArrayList<SampledHTTPRequest>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "SampledHTTPRequest"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13311,11 +13311,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "SampledHTTPRequest",
             "templateType" : "java.util.List<SampledHTTPRequest>",
             "templateImplType" : "java.util.ArrayList<SampledHTTPRequest>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "SampledHTTPRequest"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13549,11 +13549,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "ByteMatchSetSummary",
           "templateType" : "java.util.List<ByteMatchSetSummary>",
           "templateImplType" : "java.util.ArrayList<ByteMatchSetSummary>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "ByteMatchSetSummary"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13691,11 +13691,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "ByteMatchSetSummary",
             "templateType" : "java.util.List<ByteMatchSetSummary>",
             "templateImplType" : "java.util.ArrayList<ByteMatchSetSummary>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "ByteMatchSetSummary"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16188,11 +16188,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "SqlInjectionMatchSetSummary",
           "templateType" : "java.util.List<SqlInjectionMatchSetSummary>",
           "templateImplType" : "java.util.ArrayList<SqlInjectionMatchSetSummary>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "SqlInjectionMatchSetSummary"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16330,11 +16330,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "SqlInjectionMatchSetSummary",
             "templateType" : "java.util.List<SqlInjectionMatchSetSummary>",
             "templateImplType" : "java.util.ArrayList<SqlInjectionMatchSetSummary>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "SqlInjectionMatchSetSummary"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17732,11 +17732,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "SizeConstraintSetSummary",
           "templateType" : "java.util.List<SizeConstraintSetSummary>",
           "templateImplType" : "java.util.ArrayList<SizeConstraintSetSummary>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "SizeConstraintSetSummary"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17874,11 +17874,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "SizeConstraintSetSummary",
             "templateType" : "java.util.List<SizeConstraintSetSummary>",
             "templateImplType" : "java.util.ArrayList<SizeConstraintSetSummary>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "SizeConstraintSetSummary"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18655,11 +18655,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "IPSetSummary",
           "templateType" : "java.util.List<IPSetSummary>",
           "templateImplType" : "java.util.ArrayList<IPSetSummary>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "IPSetSummary"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18797,11 +18797,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "IPSetSummary",
             "templateType" : "java.util.List<IPSetSummary>",
             "templateImplType" : "java.util.ArrayList<IPSetSummary>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "IPSetSummary"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20329,11 +20329,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "ActivatedRule",
           "templateType" : "java.util.List<ActivatedRule>",
           "templateImplType" : "java.util.ArrayList<ActivatedRule>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "ActivatedRule"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20630,11 +20630,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "ActivatedRule",
             "templateType" : "java.util.List<ActivatedRule>",
             "templateImplType" : "java.util.ArrayList<ActivatedRule>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "ActivatedRule"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22327,11 +22327,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "IPSetDescriptor",
           "templateType" : "java.util.List<IPSetDescriptor>",
           "templateImplType" : "java.util.ArrayList<IPSetDescriptor>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "IPSetDescriptor"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22469,11 +22469,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "IPSetDescriptor",
             "templateType" : "java.util.List<IPSetDescriptor>",
             "templateImplType" : "java.util.ArrayList<IPSetDescriptor>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "IPSetDescriptor"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22760,11 +22760,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "XssMatchSetSummary",
           "templateType" : "java.util.List<XssMatchSetSummary>",
           "templateImplType" : "java.util.ArrayList<XssMatchSetSummary>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "XssMatchSetSummary"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22902,11 +22902,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "XssMatchSetSummary",
             "templateType" : "java.util.List<XssMatchSetSummary>",
             "templateImplType" : "java.util.ArrayList<XssMatchSetSummary>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "XssMatchSetSummary"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25421,11 +25421,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "WebACLUpdate",
           "templateType" : "java.util.List<WebACLUpdate>",
           "templateImplType" : "java.util.ArrayList<WebACLUpdate>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "WebACLUpdate"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25672,11 +25672,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "WebACLUpdate",
             "templateType" : "java.util.List<WebACLUpdate>",
             "templateImplType" : "java.util.ArrayList<WebACLUpdate>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "WebACLUpdate"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27443,11 +27443,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "SqlInjectionMatchSetUpdate",
           "templateType" : "java.util.List<SqlInjectionMatchSetUpdate>",
           "templateImplType" : "java.util.ArrayList<SqlInjectionMatchSetUpdate>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "SqlInjectionMatchSetUpdate"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27642,11 +27642,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "SqlInjectionMatchSetUpdate",
             "templateType" : "java.util.List<SqlInjectionMatchSetUpdate>",
             "templateImplType" : "java.util.ArrayList<SqlInjectionMatchSetUpdate>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "SqlInjectionMatchSetUpdate"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27932,11 +27932,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "XssMatchTuple",
           "templateType" : "java.util.List<XssMatchTuple>",
           "templateImplType" : "java.util.ArrayList<XssMatchTuple>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "XssMatchTuple"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28127,11 +28127,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "XssMatchTuple",
             "templateType" : "java.util.List<XssMatchTuple>",
             "templateImplType" : "java.util.ArrayList<XssMatchTuple>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "XssMatchTuple"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -33091,11 +33091,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simpleType" : "WebACLSummary",
           "templateType" : "java.util.List<WebACLSummary>",
           "templateImplType" : "java.util.ArrayList<WebACLSummary>",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "WebACLSummary"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -33233,11 +33233,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simpleType" : "WebACLSummary",
             "templateType" : "java.util.List<WebACLSummary>",
             "templateImplType" : "java.util.ArrayList<WebACLSummary>",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "WebACLSummary"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -33347,10 +33347,10 @@
     "version" : "1.0"
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "sdkModeledExceptionBaseClassName" : "AWSWAFException",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.waf.model.AWSWAFException",
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
-  "hasWaiters" : false,
-  "sdkModeledExceptionBaseClassName" : "AWSWAFException"
+  "hasWaiters" : false
 }

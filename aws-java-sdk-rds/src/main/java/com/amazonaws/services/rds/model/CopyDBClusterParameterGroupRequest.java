@@ -27,7 +27,7 @@ public class CopyDBClusterParameterGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -104,7 +104,7 @@ public class CopyDBClusterParameterGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -137,7 +137,7 @@ public class CopyDBClusterParameterGroupRequest extends AmazonWebServiceRequest
      *        The identifier or Amazon Resource Name (ARN) for the source DB
      *        cluster parameter group. For information about creating an ARN,
      *        see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
      *        <p>
      *        Constraints:
@@ -174,7 +174,7 @@ public class CopyDBClusterParameterGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -206,7 +206,7 @@ public class CopyDBClusterParameterGroupRequest extends AmazonWebServiceRequest
      * @return The identifier or Amazon Resource Name (ARN) for the source DB
      *         cluster parameter group. For information about creating an ARN,
      *         see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *         > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
      *         <p>
      *         Constraints:
@@ -243,7 +243,7 @@ public class CopyDBClusterParameterGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -276,7 +276,7 @@ public class CopyDBClusterParameterGroupRequest extends AmazonWebServiceRequest
      *        The identifier or Amazon Resource Name (ARN) for the source DB
      *        cluster parameter group. For information about creating an ARN,
      *        see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
      *        <p>
      *        Constraints:

@@ -64,6 +64,10 @@ public class BuildJsonMarshaller {
                 jsonGenerator.writeFieldName("SizeOnDisk").writeValue(
                         build.getSizeOnDisk());
             }
+            if (build.getOperatingSystem() != null) {
+                jsonGenerator.writeFieldName("OperatingSystem").writeValue(
+                        build.getOperatingSystem());
+            }
             if (build.getCreationTime() != null) {
                 jsonGenerator.writeFieldName("CreationTime").writeValue(
                         build.getCreationTime());

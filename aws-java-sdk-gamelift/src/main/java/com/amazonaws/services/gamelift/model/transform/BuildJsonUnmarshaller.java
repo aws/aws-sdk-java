@@ -75,6 +75,11 @@ public class BuildJsonUnmarshaller implements
                     build.setSizeOnDisk(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
+                if (context.testExpression("OperatingSystem", targetDepth)) {
+                    context.nextToken();
+                    build.setOperatingSystem(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     build.setCreationTime(context.getUnmarshaller(

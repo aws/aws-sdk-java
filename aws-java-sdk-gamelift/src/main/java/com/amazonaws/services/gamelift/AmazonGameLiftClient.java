@@ -56,7 +56,7 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * </p>
  * <p>
  * This reference describes the low-level service API for GameLift. You can call
- * this API directly or use the <a href="https://aws.amazon.com/tools/">AWS
+ * this API directly or use the <a href="https://aws.amazon.com/tools/#sdk">AWS
  * SDK</a> for your preferred language. The AWS SDK includes a set of high-level
  * GameLift actions multiplayer game sessions. Alternatively, you can use the <a
  * href="https://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool,
@@ -538,19 +538,21 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * Storage Service (Amazon S3) client and need to manually upload your build
      * files. Instead, to create a build, use the CLI command
      * <code>upload-build</code>, which creates a new build record and uploads
-     * the build files in one step. (See the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
-     * GameLift Developer Guide</a> for more details on the CLI and the upload
-     * process.)
+     * the build files in one step. (See the <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html"
+     * >Amazon GameLift Developer Guide</a> help on packaging and uploading your
+     * build.)
      * </p>
      * </important>
      * <p>
-     * To create a new build, optionally specify a build name and version. This
-     * metadata is stored with other properties in the build record and is
-     * displayed in the GameLift console (it is not visible to players). If
-     * successful, this action returns the newly created build record along with
-     * the Amazon S3 storage location and AWS account credentials. Use the
-     * location and credentials to upload your game build.
+     * To create a new build, identify the operating system of the game server
+     * binaries. All game servers in a build must use the same operating system.
+     * Optionally, specify a build name and version; this metadata is stored
+     * with other properties in the build record and is displayed in the
+     * GameLift console (it is not visible to players). If successful, this
+     * action returns the newly created build record along with the Amazon S3
+     * storage location and AWS account credentials. Use the location and
+     * credentials to upload your game build.
      * </p>
      * 
      * @param createBuildRequest

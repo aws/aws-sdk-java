@@ -73,6 +73,12 @@ public class OptionGroupOption implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> optionsDependedOn;
     /**
      * <p>
+     * The options that conflict with this option.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> optionsConflictsWith;
+    /**
+     * <p>
      * Persistent options can't be removed from an option group while DB
      * instances are associated with the option group. If you disassociate all
      * DB instances from the option group, your can remove the persistent option
@@ -89,8 +95,8 @@ public class OptionGroupOption implements Serializable, Cloneable {
     private Boolean permanent;
     /**
      * <p>
-     * Specifies the option settings that are available (and the default value)
-     * for each option in an option group.
+     * The option settings that are available (and the default value) for each
+     * option in an option group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OptionGroupOptionSetting> optionGroupOptionSettings;
@@ -490,6 +496,87 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The options that conflict with this option.
+     * </p>
+     * 
+     * @return The options that conflict with this option.
+     */
+
+    public java.util.List<String> getOptionsConflictsWith() {
+        if (optionsConflictsWith == null) {
+            optionsConflictsWith = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return optionsConflictsWith;
+    }
+
+    /**
+     * <p>
+     * The options that conflict with this option.
+     * </p>
+     * 
+     * @param optionsConflictsWith
+     *        The options that conflict with this option.
+     */
+
+    public void setOptionsConflictsWith(
+            java.util.Collection<String> optionsConflictsWith) {
+        if (optionsConflictsWith == null) {
+            this.optionsConflictsWith = null;
+            return;
+        }
+
+        this.optionsConflictsWith = new com.amazonaws.internal.SdkInternalList<String>(
+                optionsConflictsWith);
+    }
+
+    /**
+     * <p>
+     * The options that conflict with this option.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOptionsConflictsWith(java.util.Collection)} or
+     * {@link #withOptionsConflictsWith(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param optionsConflictsWith
+     *        The options that conflict with this option.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public OptionGroupOption withOptionsConflictsWith(
+            String... optionsConflictsWith) {
+        if (this.optionsConflictsWith == null) {
+            setOptionsConflictsWith(new com.amazonaws.internal.SdkInternalList<String>(
+                    optionsConflictsWith.length));
+        }
+        for (String ele : optionsConflictsWith) {
+            this.optionsConflictsWith.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The options that conflict with this option.
+     * </p>
+     * 
+     * @param optionsConflictsWith
+     *        The options that conflict with this option.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public OptionGroupOption withOptionsConflictsWith(
+            java.util.Collection<String> optionsConflictsWith) {
+        setOptionsConflictsWith(optionsConflictsWith);
+        return this;
+    }
+
+    /**
+     * <p>
      * Persistent options can't be removed from an option group while DB
      * instances are associated with the option group. If you disassociate all
      * DB instances from the option group, your can remove the persistent option
@@ -632,12 +719,12 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the option settings that are available (and the default value)
-     * for each option in an option group.
+     * The option settings that are available (and the default value) for each
+     * option in an option group.
      * </p>
      * 
-     * @return Specifies the option settings that are available (and the default
-     *         value) for each option in an option group.
+     * @return The option settings that are available (and the default value)
+     *         for each option in an option group.
      */
 
     public java.util.List<OptionGroupOptionSetting> getOptionGroupOptionSettings() {
@@ -649,13 +736,13 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the option settings that are available (and the default value)
-     * for each option in an option group.
+     * The option settings that are available (and the default value) for each
+     * option in an option group.
      * </p>
      * 
      * @param optionGroupOptionSettings
-     *        Specifies the option settings that are available (and the default
-     *        value) for each option in an option group.
+     *        The option settings that are available (and the default value) for
+     *        each option in an option group.
      */
 
     public void setOptionGroupOptionSettings(
@@ -671,8 +758,8 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the option settings that are available (and the default value)
-     * for each option in an option group.
+     * The option settings that are available (and the default value) for each
+     * option in an option group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -682,8 +769,8 @@ public class OptionGroupOption implements Serializable, Cloneable {
      * </p>
      * 
      * @param optionGroupOptionSettings
-     *        Specifies the option settings that are available (and the default
-     *        value) for each option in an option group.
+     *        The option settings that are available (and the default value) for
+     *        each option in an option group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -702,13 +789,13 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the option settings that are available (and the default value)
-     * for each option in an option group.
+     * The option settings that are available (and the default value) for each
+     * option in an option group.
      * </p>
      * 
      * @param optionGroupOptionSettings
-     *        Specifies the option settings that are available (and the default
-     *        value) for each option in an option group.
+     *        The option settings that are available (and the default value) for
+     *        each option in an option group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -829,6 +916,9 @@ public class OptionGroupOption implements Serializable, Cloneable {
             sb.append("DefaultPort: " + getDefaultPort() + ",");
         if (getOptionsDependedOn() != null)
             sb.append("OptionsDependedOn: " + getOptionsDependedOn() + ",");
+        if (getOptionsConflictsWith() != null)
+            sb.append("OptionsConflictsWith: " + getOptionsConflictsWith()
+                    + ",");
         if (getPersistent() != null)
             sb.append("Persistent: " + getPersistent() + ",");
         if (getPermanent() != null)
@@ -899,6 +989,13 @@ public class OptionGroupOption implements Serializable, Cloneable {
                 && other.getOptionsDependedOn().equals(
                         this.getOptionsDependedOn()) == false)
             return false;
+        if (other.getOptionsConflictsWith() == null
+                ^ this.getOptionsConflictsWith() == null)
+            return false;
+        if (other.getOptionsConflictsWith() != null
+                && other.getOptionsConflictsWith().equals(
+                        this.getOptionsConflictsWith()) == false)
+            return false;
         if (other.getPersistent() == null ^ this.getPersistent() == null)
             return false;
         if (other.getPersistent() != null
@@ -957,6 +1054,10 @@ public class OptionGroupOption implements Serializable, Cloneable {
                 * hashCode
                 + ((getOptionsDependedOn() == null) ? 0
                         : getOptionsDependedOn().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getOptionsConflictsWith() == null) ? 0
+                        : getOptionsConflictsWith().hashCode());
         hashCode = prime * hashCode
                 + ((getPersistent() == null) ? 0 : getPersistent().hashCode());
         hashCode = prime * hashCode

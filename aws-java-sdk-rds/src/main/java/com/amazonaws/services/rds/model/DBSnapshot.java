@@ -186,7 +186,11 @@ public class DBSnapshot implements Serializable, Cloneable {
      * </p>
      */
     private String kmsKeyId;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB snapshot.
+     * </p>
+     */
     private String dBSnapshotArn;
 
     /**
@@ -1200,7 +1204,12 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB snapshot.
+     * </p>
+     * 
      * @param dBSnapshotArn
+     *        The Amazon Resource Name (ARN) for the DB snapshot.
      */
 
     public void setDBSnapshotArn(String dBSnapshotArn) {
@@ -1208,7 +1217,11 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB snapshot.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the DB snapshot.
      */
 
     public String getDBSnapshotArn() {
@@ -1216,7 +1229,12 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB snapshot.
+     * </p>
+     * 
      * @param dBSnapshotArn
+     *        The Amazon Resource Name (ARN) for the DB snapshot.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

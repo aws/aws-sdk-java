@@ -43,7 +43,9 @@ public enum ResourceType {
     AWSRDSDBSubnetGroup("AWS::RDS::DBSubnetGroup"),
     AWSRDSDBSecurityGroup("AWS::RDS::DBSecurityGroup"),
     AWSRDSDBSnapshot("AWS::RDS::DBSnapshot"),
-    AWSRDSEventSubscription("AWS::RDS::EventSubscription");
+    AWSRDSEventSubscription("AWS::RDS::EventSubscription"),
+    AWSElasticLoadBalancingV2LoadBalancer(
+            "AWS::ElasticLoadBalancingV2::LoadBalancer");
 
     private String value;
 

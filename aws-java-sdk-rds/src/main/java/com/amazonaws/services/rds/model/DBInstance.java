@@ -399,7 +399,11 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      */
     private Integer promotionTier;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB instance.
+     * </p>
+     */
     private String dBInstanceArn;
 
     /**
@@ -3196,7 +3200,12 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB instance.
+     * </p>
+     * 
      * @param dBInstanceArn
+     *        The Amazon Resource Name (ARN) for the DB instance.
      */
 
     public void setDBInstanceArn(String dBInstanceArn) {
@@ -3204,7 +3213,11 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB instance.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the DB instance.
      */
 
     public String getDBInstanceArn() {
@@ -3212,7 +3225,12 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB instance.
+     * </p>
+     * 
      * @param dBInstanceArn
+     *        The Amazon Resource Name (ARN) for the DB instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

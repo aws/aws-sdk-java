@@ -102,6 +102,14 @@ public class OptionGroupOptionStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression(
+                        "OptionsConflictsWith/OptionConflictName", targetDepth)) {
+                    optionGroupOption
+                            .withOptionsConflictsWith(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Persistent", targetDepth)) {
                     optionGroupOption.setPersistent(BooleanStaxUnmarshaller
                             .getInstance().unmarshall(context));

@@ -109,7 +109,11 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RecurringCharge> recurringCharges;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the reserved DB instance.
+     * </p>
+     */
     private String reservedDBInstanceArn;
 
     /**
@@ -742,7 +746,12 @@ public class ReservedDBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the reserved DB instance.
+     * </p>
+     * 
      * @param reservedDBInstanceArn
+     *        The Amazon Resource Name (ARN) for the reserved DB instance.
      */
 
     public void setReservedDBInstanceArn(String reservedDBInstanceArn) {
@@ -750,7 +759,11 @@ public class ReservedDBInstance implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) for the reserved DB instance.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the reserved DB instance.
      */
 
     public String getReservedDBInstanceArn() {
@@ -758,7 +771,12 @@ public class ReservedDBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the reserved DB instance.
+     * </p>
+     * 
      * @param reservedDBInstanceArn
+     *        The Amazon Resource Name (ARN) for the reserved DB instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

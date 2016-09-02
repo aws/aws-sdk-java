@@ -72,6 +72,14 @@ public class Build implements Serializable, Cloneable {
     private Long sizeOnDisk;
     /**
      * <p>
+     * Operating system that the game server binaries are built to run on. This
+     * value determines the type of fleet resources that you can use for this
+     * build.
+     * </p>
+     */
+    private String operatingSystem;
+    /**
+     * <p>
      * Time stamp indicating when this data object was created. Format is a
      * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
@@ -471,6 +479,101 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Operating system that the game server binaries are built to run on. This
+     * value determines the type of fleet resources that you can use for this
+     * build.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Operating system that the game server binaries are built to run
+     *        on. This value determines the type of fleet resources that you can
+     *        use for this build.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(String operatingSystem) {
+        this.operatingSystem = operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Operating system that the game server binaries are built to run on. This
+     * value determines the type of fleet resources that you can use for this
+     * build.
+     * </p>
+     * 
+     * @return Operating system that the game server binaries are built to run
+     *         on. This value determines the type of fleet resources that you
+     *         can use for this build.
+     * @see OperatingSystem
+     */
+
+    public String getOperatingSystem() {
+        return this.operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Operating system that the game server binaries are built to run on. This
+     * value determines the type of fleet resources that you can use for this
+     * build.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Operating system that the game server binaries are built to run
+     *        on. This value determines the type of fleet resources that you can
+     *        use for this build.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see OperatingSystem
+     */
+
+    public Build withOperatingSystem(String operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Operating system that the game server binaries are built to run on. This
+     * value determines the type of fleet resources that you can use for this
+     * build.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Operating system that the game server binaries are built to run
+     *        on. This value determines the type of fleet resources that you can
+     *        use for this build.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(OperatingSystem operatingSystem) {
+        this.operatingSystem = operatingSystem.toString();
+    }
+
+    /**
+     * <p>
+     * Operating system that the game server binaries are built to run on. This
+     * value determines the type of fleet resources that you can use for this
+     * build.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Operating system that the game server binaries are built to run
+     *        on. This value determines the type of fleet resources that you can
+     *        use for this build.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see OperatingSystem
+     */
+
+    public Build withOperatingSystem(OperatingSystem operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
+     * <p>
      * Time stamp indicating when this data object was created. Format is a
      * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
@@ -541,6 +644,8 @@ public class Build implements Serializable, Cloneable {
             sb.append("Status: " + getStatus() + ",");
         if (getSizeOnDisk() != null)
             sb.append("SizeOnDisk: " + getSizeOnDisk() + ",");
+        if (getOperatingSystem() != null)
+            sb.append("OperatingSystem: " + getOperatingSystem() + ",");
         if (getCreationTime() != null)
             sb.append("CreationTime: " + getCreationTime());
         sb.append("}");
@@ -582,6 +687,12 @@ public class Build implements Serializable, Cloneable {
         if (other.getSizeOnDisk() != null
                 && other.getSizeOnDisk().equals(this.getSizeOnDisk()) == false)
             return false;
+        if (other.getOperatingSystem() == null
+                ^ this.getOperatingSystem() == null)
+            return false;
+        if (other.getOperatingSystem() != null
+                && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
+            return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
         if (other.getCreationTime() != null
@@ -605,6 +716,10 @@ public class Build implements Serializable, Cloneable {
                 + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode
                 + ((getSizeOnDisk() == null) ? 0 : getSizeOnDisk().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getOperatingSystem() == null) ? 0 : getOperatingSystem()
+                        .hashCode());
         hashCode = prime
                 * hashCode
                 + ((getCreationTime() == null) ? 0 : getCreationTime()

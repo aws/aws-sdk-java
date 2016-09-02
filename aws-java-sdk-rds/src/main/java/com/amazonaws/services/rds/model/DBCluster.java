@@ -246,7 +246,11 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private String dbClusterResourceId;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB cluster.
+     * </p>
+     */
     private String dBClusterArn;
 
     /**
@@ -1749,7 +1753,12 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB cluster.
+     * </p>
+     * 
      * @param dBClusterArn
+     *        The Amazon Resource Name (ARN) for the DB cluster.
      */
 
     public void setDBClusterArn(String dBClusterArn) {
@@ -1757,7 +1766,11 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB cluster.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the DB cluster.
      */
 
     public String getDBClusterArn() {
@@ -1765,7 +1778,12 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB cluster.
+     * </p>
+     * 
      * @param dBClusterArn
+     *        The Amazon Resource Name (ARN) for the DB cluster.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

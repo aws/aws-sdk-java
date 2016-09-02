@@ -85,15 +85,19 @@ public class FleetAttributes implements Serializable, Cloneable {
     private String buildId;
     /**
      * <p>
-     * Deprecated. Server launch parameters are now set using a
-     * <code><a>RuntimeConfiguration</a></code> object.
+     * Path to a game server executable in the fleet's build, specified for
+     * fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch
+     * paths for fleets created after this date are specified in the fleet's
+     * <code><a>RuntimeConfiguration</a></code>.
      * </p>
      */
     private String serverLaunchPath;
     /**
      * <p>
-     * Deprecated. Server launch parameters are now specified using a
-     * <code><a>RuntimeConfiguration</a></code> object.
+     * Game server launch parameters specified for fleets created prior to
+     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets
+     * created after this date are specified in the fleet's
+     * <code><a>RuntimeConfiguration</a></code>.
      * </p>
      */
     private String serverLaunchParameters;
@@ -125,6 +129,14 @@ public class FleetAttributes implements Serializable, Cloneable {
      * </ul>
      */
     private String newGameSessionProtectionPolicy;
+    /**
+     * <p>
+     * Operating system of the fleet's computing resources. A fleet's operating
+     * system depends on the OS specified for the build that is deployed on this
+     * fleet.
+     * </p>
+     */
+    private String operatingSystem;
 
     /**
      * <p>
@@ -623,13 +635,17 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Deprecated. Server launch parameters are now set using a
-     * <code><a>RuntimeConfiguration</a></code> object.
+     * Path to a game server executable in the fleet's build, specified for
+     * fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch
+     * paths for fleets created after this date are specified in the fleet's
+     * <code><a>RuntimeConfiguration</a></code>.
      * </p>
      * 
      * @param serverLaunchPath
-     *        Deprecated. Server launch parameters are now set using a
-     *        <code><a>RuntimeConfiguration</a></code> object.
+     *        Path to a game server executable in the fleet's build, specified
+     *        for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16).
+     *        Server launch paths for fleets created after this date are
+     *        specified in the fleet's <code><a>RuntimeConfiguration</a></code>.
      */
 
     public void setServerLaunchPath(String serverLaunchPath) {
@@ -638,12 +654,17 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Deprecated. Server launch parameters are now set using a
-     * <code><a>RuntimeConfiguration</a></code> object.
+     * Path to a game server executable in the fleet's build, specified for
+     * fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch
+     * paths for fleets created after this date are specified in the fleet's
+     * <code><a>RuntimeConfiguration</a></code>.
      * </p>
      * 
-     * @return Deprecated. Server launch parameters are now set using a
-     *         <code><a>RuntimeConfiguration</a></code> object.
+     * @return Path to a game server executable in the fleet's build, specified
+     *         for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16).
+     *         Server launch paths for fleets created after this date are
+     *         specified in the fleet's <code><a>RuntimeConfiguration</a></code>
+     *         .
      */
 
     public String getServerLaunchPath() {
@@ -652,13 +673,17 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Deprecated. Server launch parameters are now set using a
-     * <code><a>RuntimeConfiguration</a></code> object.
+     * Path to a game server executable in the fleet's build, specified for
+     * fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch
+     * paths for fleets created after this date are specified in the fleet's
+     * <code><a>RuntimeConfiguration</a></code>.
      * </p>
      * 
      * @param serverLaunchPath
-     *        Deprecated. Server launch parameters are now set using a
-     *        <code><a>RuntimeConfiguration</a></code> object.
+     *        Path to a game server executable in the fleet's build, specified
+     *        for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16).
+     *        Server launch paths for fleets created after this date are
+     *        specified in the fleet's <code><a>RuntimeConfiguration</a></code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -670,13 +695,17 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Deprecated. Server launch parameters are now specified using a
-     * <code><a>RuntimeConfiguration</a></code> object.
+     * Game server launch parameters specified for fleets created prior to
+     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets
+     * created after this date are specified in the fleet's
+     * <code><a>RuntimeConfiguration</a></code>.
      * </p>
      * 
      * @param serverLaunchParameters
-     *        Deprecated. Server launch parameters are now specified using a
-     *        <code><a>RuntimeConfiguration</a></code> object.
+     *        Game server launch parameters specified for fleets created prior
+     *        to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters
+     *        for fleets created after this date are specified in the fleet's
+     *        <code><a>RuntimeConfiguration</a></code>.
      */
 
     public void setServerLaunchParameters(String serverLaunchParameters) {
@@ -685,12 +714,16 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Deprecated. Server launch parameters are now specified using a
-     * <code><a>RuntimeConfiguration</a></code> object.
+     * Game server launch parameters specified for fleets created prior to
+     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets
+     * created after this date are specified in the fleet's
+     * <code><a>RuntimeConfiguration</a></code>.
      * </p>
      * 
-     * @return Deprecated. Server launch parameters are now specified using a
-     *         <code><a>RuntimeConfiguration</a></code> object.
+     * @return Game server launch parameters specified for fleets created prior
+     *         to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters
+     *         for fleets created after this date are specified in the fleet's
+     *         <code><a>RuntimeConfiguration</a></code>.
      */
 
     public String getServerLaunchParameters() {
@@ -699,13 +732,17 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Deprecated. Server launch parameters are now specified using a
-     * <code><a>RuntimeConfiguration</a></code> object.
+     * Game server launch parameters specified for fleets created prior to
+     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets
+     * created after this date are specified in the fleet's
+     * <code><a>RuntimeConfiguration</a></code>.
      * </p>
      * 
      * @param serverLaunchParameters
-     *        Deprecated. Server launch parameters are now specified using a
-     *        <code><a>RuntimeConfiguration</a></code> object.
+     *        Game server launch parameters specified for fleets created prior
+     *        to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters
+     *        for fleets created after this date are specified in the fleet's
+     *        <code><a>RuntimeConfiguration</a></code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1009,6 +1046,101 @@ public class FleetAttributes implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Operating system of the fleet's computing resources. A fleet's operating
+     * system depends on the OS specified for the build that is deployed on this
+     * fleet.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Operating system of the fleet's computing resources. A fleet's
+     *        operating system depends on the OS specified for the build that is
+     *        deployed on this fleet.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(String operatingSystem) {
+        this.operatingSystem = operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Operating system of the fleet's computing resources. A fleet's operating
+     * system depends on the OS specified for the build that is deployed on this
+     * fleet.
+     * </p>
+     * 
+     * @return Operating system of the fleet's computing resources. A fleet's
+     *         operating system depends on the OS specified for the build that
+     *         is deployed on this fleet.
+     * @see OperatingSystem
+     */
+
+    public String getOperatingSystem() {
+        return this.operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Operating system of the fleet's computing resources. A fleet's operating
+     * system depends on the OS specified for the build that is deployed on this
+     * fleet.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Operating system of the fleet's computing resources. A fleet's
+     *        operating system depends on the OS specified for the build that is
+     *        deployed on this fleet.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see OperatingSystem
+     */
+
+    public FleetAttributes withOperatingSystem(String operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Operating system of the fleet's computing resources. A fleet's operating
+     * system depends on the OS specified for the build that is deployed on this
+     * fleet.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Operating system of the fleet's computing resources. A fleet's
+     *        operating system depends on the OS specified for the build that is
+     *        deployed on this fleet.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(OperatingSystem operatingSystem) {
+        this.operatingSystem = operatingSystem.toString();
+    }
+
+    /**
+     * <p>
+     * Operating system of the fleet's computing resources. A fleet's operating
+     * system depends on the OS specified for the build that is deployed on this
+     * fleet.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Operating system of the fleet's computing resources. A fleet's
+     *        operating system depends on the OS specified for the build that is
+     *        deployed on this fleet.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see OperatingSystem
+     */
+
+    public FleetAttributes withOperatingSystem(OperatingSystem operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1043,7 +1175,9 @@ public class FleetAttributes implements Serializable, Cloneable {
             sb.append("LogPaths: " + getLogPaths() + ",");
         if (getNewGameSessionProtectionPolicy() != null)
             sb.append("NewGameSessionProtectionPolicy: "
-                    + getNewGameSessionProtectionPolicy());
+                    + getNewGameSessionProtectionPolicy() + ",");
+        if (getOperatingSystem() != null)
+            sb.append("OperatingSystem: " + getOperatingSystem());
         sb.append("}");
         return sb.toString();
     }
@@ -1120,6 +1254,12 @@ public class FleetAttributes implements Serializable, Cloneable {
                 && other.getNewGameSessionProtectionPolicy().equals(
                         this.getNewGameSessionProtectionPolicy()) == false)
             return false;
+        if (other.getOperatingSystem() == null
+                ^ this.getOperatingSystem() == null)
+            return false;
+        if (other.getOperatingSystem() != null
+                && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
+            return false;
         return true;
     }
 
@@ -1161,6 +1301,10 @@ public class FleetAttributes implements Serializable, Cloneable {
                 * hashCode
                 + ((getNewGameSessionProtectionPolicy() == null) ? 0
                         : getNewGameSessionProtectionPolicy().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getOperatingSystem() == null) ? 0 : getOperatingSystem()
+                        .hashCode());
         return hashCode;
     }
 

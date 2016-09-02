@@ -85,7 +85,11 @@ public class DBSecurityGroup implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IPRange> iPRanges;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB security group.
+     * </p>
+     */
     private String dBSecurityGroupArn;
 
     /**
@@ -413,7 +417,12 @@ public class DBSecurityGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB security group.
+     * </p>
+     * 
      * @param dBSecurityGroupArn
+     *        The Amazon Resource Name (ARN) for the DB security group.
      */
 
     public void setDBSecurityGroupArn(String dBSecurityGroupArn) {
@@ -421,7 +430,11 @@ public class DBSecurityGroup implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB security group.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the DB security group.
      */
 
     public String getDBSecurityGroupArn() {
@@ -429,7 +442,12 @@ public class DBSecurityGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB security group.
+     * </p>
+     * 
      * @param dBSecurityGroupArn
+     *        The Amazon Resource Name (ARN) for the DB security group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

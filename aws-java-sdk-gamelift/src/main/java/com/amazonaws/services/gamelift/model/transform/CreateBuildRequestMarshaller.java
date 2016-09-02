@@ -79,6 +79,10 @@ public class CreateBuildRequestMarshaller implements
                 S3LocationJsonMarshaller.getInstance().marshall(
                         createBuildRequest.getStorageLocation(), jsonGenerator);
             }
+            if (createBuildRequest.getOperatingSystem() != null) {
+                jsonGenerator.writeFieldName("OperatingSystem").writeValue(
+                        createBuildRequest.getOperatingSystem());
+            }
 
             jsonGenerator.writeEndObject();
 

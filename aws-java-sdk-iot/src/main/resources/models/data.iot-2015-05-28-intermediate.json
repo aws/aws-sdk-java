@@ -24,12 +24,12 @@
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
     "syncClientBuilderClassName" : "AWSIotDataClientBuilder",
     "asyncClientBuilderClassName" : "AWSIotDataAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AWSIotDataModuleInjector",
     "smokeTestsPackageName" : "com.amazonaws.services.iotdata.smoketests",
-    "serviceName" : "AWS IoT Data Plane"
+    "serviceName" : "AWS IoT Data Plane",
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "DeleteThingShadow" : {

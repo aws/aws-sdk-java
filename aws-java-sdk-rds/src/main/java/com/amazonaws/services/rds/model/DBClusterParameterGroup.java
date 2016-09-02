@@ -50,7 +50,11 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
      * </p>
      */
     private String description;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB cluster parameter group.
+     * </p>
+     */
     private String dBClusterParameterGroupArn;
 
     /**
@@ -192,7 +196,12 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB cluster parameter group.
+     * </p>
+     * 
      * @param dBClusterParameterGroupArn
+     *        The Amazon Resource Name (ARN) for the DB cluster parameter group.
      */
 
     public void setDBClusterParameterGroupArn(String dBClusterParameterGroupArn) {
@@ -200,7 +209,12 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB cluster parameter group.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the DB cluster parameter
+     *         group.
      */
 
     public String getDBClusterParameterGroupArn() {
@@ -208,7 +222,12 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB cluster parameter group.
+     * </p>
+     * 
      * @param dBClusterParameterGroupArn
+     *        The Amazon Resource Name (ARN) for the DB cluster parameter group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

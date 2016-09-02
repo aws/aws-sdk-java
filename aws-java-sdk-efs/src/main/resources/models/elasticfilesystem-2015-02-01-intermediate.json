@@ -19,12 +19,12 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "elasticfilesystem",
     "signingName" : "elasticfilesystem",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "jsonProtocol" : true,
     "xmlProtocol" : false,
     "cborProtocol" : false,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
     "syncClientBuilderClassName" : "AmazonElasticFileSystemClientBuilder",
     "asyncClientBuilderClassName" : "AmazonElasticFileSystemAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AmazonElasticFileSystemModuleInjector",
@@ -63,12 +63,12 @@
         "documentation" : "<p>Returned if the AWS account has already created maximum number of file systems allowed per account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateFileSystemResult",
       "asyncReturnType" : "CreateFileSystemResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateFileSystemResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateFileSystemResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateFileSystemRequest, CreateFileSystemResult>",
-      "authenticated" : true,
       "methodName" : "createFileSystem"
     },
     "CreateMountTarget" : {
@@ -126,12 +126,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateMountTargetResult",
       "asyncReturnType" : "CreateMountTargetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateMountTargetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateMountTargetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateMountTargetRequest, CreateMountTargetResult>",
-      "authenticated" : true,
       "methodName" : "createMountTarget"
     },
     "CreateTags" : {
@@ -162,12 +162,12 @@
         "documentation" : "<p>Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateTagsResult",
       "asyncReturnType" : "CreateTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult>",
-      "authenticated" : true,
       "methodName" : "createTags"
     },
     "DeleteFileSystem" : {
@@ -201,12 +201,12 @@
         "documentation" : "<p>Returned if a file system has mount targets.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteFileSystemResult",
       "asyncReturnType" : "DeleteFileSystemResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteFileSystemResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteFileSystemResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteFileSystemRequest, DeleteFileSystemResult>",
-      "authenticated" : true,
       "methodName" : "deleteFileSystem"
     },
     "DeleteMountTarget" : {
@@ -240,12 +240,12 @@
         "documentation" : "<p>Returned if there is no mount target with the specified ID found in the caller's account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteMountTargetResult",
       "asyncReturnType" : "DeleteMountTargetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteMountTargetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteMountTargetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteMountTargetRequest, DeleteMountTargetResult>",
-      "authenticated" : true,
       "methodName" : "deleteMountTarget"
     },
     "DeleteTags" : {
@@ -276,12 +276,12 @@
         "documentation" : "<p>Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteTagsResult",
       "asyncReturnType" : "DeleteTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult>",
-      "authenticated" : true,
       "methodName" : "deleteTags"
     },
     "DescribeFileSystems" : {
@@ -312,12 +312,12 @@
         "documentation" : "<p>Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeFileSystemsResult",
       "asyncReturnType" : "DescribeFileSystemsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeFileSystemsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeFileSystemsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeFileSystemsRequest, DescribeFileSystemsResult>",
-      "authenticated" : true,
       "methodName" : "describeFileSystems"
     },
     "DescribeMountTargetSecurityGroups" : {
@@ -351,12 +351,12 @@
         "documentation" : "<p>Returned if the mount target is not in the correct state for the operation.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeMountTargetSecurityGroupsResult",
       "asyncReturnType" : "DescribeMountTargetSecurityGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeMountTargetSecurityGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeMountTargetSecurityGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeMountTargetSecurityGroupsRequest, DescribeMountTargetSecurityGroupsResult>",
-      "authenticated" : true,
       "methodName" : "describeMountTargetSecurityGroups"
     },
     "DescribeMountTargets" : {
@@ -390,12 +390,12 @@
         "documentation" : "<p>Returned if there is no mount target with the specified ID found in the caller's account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeMountTargetsResult",
       "asyncReturnType" : "DescribeMountTargetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeMountTargetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeMountTargetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeMountTargetsRequest, DescribeMountTargetsResult>",
-      "authenticated" : true,
       "methodName" : "describeMountTargets"
     },
     "DescribeTags" : {
@@ -426,12 +426,12 @@
         "documentation" : "<p>Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeTagsResult",
       "asyncReturnType" : "DescribeTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult>",
-      "authenticated" : true,
       "methodName" : "describeTags"
     },
     "ModifyMountTargetSecurityGroups" : {
@@ -471,12 +471,12 @@
         "documentation" : "<p>Returned if one of the specified security groups does not exist in the subnet's VPC.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ModifyMountTargetSecurityGroupsResult",
       "asyncReturnType" : "ModifyMountTargetSecurityGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyMountTargetSecurityGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyMountTargetSecurityGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyMountTargetSecurityGroupsRequest, ModifyMountTargetSecurityGroupsResult>",
-      "authenticated" : true,
       "methodName" : "modifyMountTargetSecurityGroups"
     }
   },
@@ -1555,11 +1555,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "MountTargetDescription",
           "templateType" : "java.util.List<MountTargetDescription>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MountTargetDescription>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MountTargetDescription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1749,11 +1749,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "MountTargetDescription",
             "templateType" : "java.util.List<MountTargetDescription>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MountTargetDescription>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MountTargetDescription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2395,11 +2395,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2695,11 +2695,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3342,11 +3342,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3488,11 +3488,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4966,11 +4966,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5108,11 +5108,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5681,11 +5681,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "FileSystemDescription",
           "templateType" : "java.util.List<FileSystemDescription>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FileSystemDescription>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FileSystemDescription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5875,11 +5875,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "FileSystemDescription",
             "templateType" : "java.util.List<FileSystemDescription>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FileSystemDescription>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FileSystemDescription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6927,11 +6927,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7073,11 +7073,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9772,11 +9772,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9971,11 +9971,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10715,11 +10715,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10914,11 +10914,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12809,11 +12809,11 @@
     "examples" : { },
     "version" : "1.0"
   },
-  "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
-  "clientConfigFactory" : "ClientConfigurationFactory",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException",
   "hasWaiters" : false,
-  "sdkModeledExceptionBaseClassName" : "AmazonElasticFileSystemException"
+  "sdkModeledExceptionBaseClassName" : "AmazonElasticFileSystemException",
+  "exceptionUnmarshallerImpl" : null,
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */"
 }

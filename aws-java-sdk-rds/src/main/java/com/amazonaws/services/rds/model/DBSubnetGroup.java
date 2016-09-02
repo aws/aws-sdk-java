@@ -79,7 +79,11 @@ public class DBSubnetGroup implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Subnet> subnets;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB subnet group.
+     * </p>
+     */
     private String dBSubnetGroupArn;
 
     /**
@@ -326,7 +330,12 @@ public class DBSubnetGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB subnet group.
+     * </p>
+     * 
      * @param dBSubnetGroupArn
+     *        The Amazon Resource Name (ARN) for the DB subnet group.
      */
 
     public void setDBSubnetGroupArn(String dBSubnetGroupArn) {
@@ -334,7 +343,11 @@ public class DBSubnetGroup implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB subnet group.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the DB subnet group.
      */
 
     public String getDBSubnetGroupArn() {
@@ -342,7 +355,12 @@ public class DBSubnetGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the DB subnet group.
+     * </p>
+     * 
      * @param dBSubnetGroupArn
+     *        The Amazon Resource Name (ARN) for the DB subnet group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

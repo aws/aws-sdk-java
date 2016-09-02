@@ -18,15 +18,18 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Provides the source and the message type that trigger AWS Config to evaluate
+ * Provides the source and the message types that trigger AWS Config to evaluate
  * your AWS resources against a rule. It also provides the frequency with which
  * you want AWS Config to run evaluations for the rule if the trigger type is
- * periodic.
+ * periodic. You can specify the parameter values for <code>SourceDetail</code>
+ * only for custom rules.
  * </p>
  */
 public class SourceDetail implements Serializable, Cloneable {
 
     /**
+     * <p>
+     * </p>
      * <p>
      * The source of the event, such as an AWS service, that triggers AWS Config
      * to evaluate your AWS resources.
@@ -35,43 +38,44 @@ public class SourceDetail implements Serializable, Cloneable {
     private String eventSource;
     /**
      * <p>
-     * The type of SNS message that triggers AWS Config to run an evaluation.
+     * The type of notification that triggers AWS Config to run an evaluation.
+     * You can specify the following notification types:
      * </p>
      * <p>
-     * For evaluations that are initiated when AWS Config delivers a
-     * configuration item change notification, you must use
-     * <code>ConfigurationItemChangeNotification</code>.
+     * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation
+     * when AWS Config delivers a configuration item change notification.
      * </p>
      * <p>
-     * For evaluations that are initiated at a frequency that you choose (for
-     * example, every 24 hours), you must use <code>ScheduledNotification</code>
-     * .
+     * <code>ScheduledNotification</code> - Triggers a periodic evaluation at
+     * the frequency specified for <code>MaximumExecutionFrequency</code>.
      * </p>
      * <p>
-     * For evaluations that are initiated when AWS Config delivers a
-     * configuration snapshot, you must use
-     * <code>ConfigurationSnapshotDeliveryCompleted</code>.
+     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * evaluation when AWS Config delivers a configuration snapshot.
      * </p>
      */
     private String messageType;
     /**
      * <p>
-     * If the trigger type for your rule includes periodic, AWS Config runs
-     * evaluations for the rule at a frequency that you choose. If you specify a
-     * value for <code>MaximumExecutionFrequency</code>, then
-     * <code>MessageType</code> must use the <code>ScheduledNotification</code>
-     * value.
+     * The frequency that you want AWS Config to run evaluations for a rule that
+     * is triggered periodically. If you specify a value for
+     * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code>
+     * must use the <code>ScheduledNotification</code> value.
      * </p>
      */
     private String maximumExecutionFrequency;
 
     /**
      * <p>
+     * </p>
+     * <p>
      * The source of the event, such as an AWS service, that triggers AWS Config
      * to evaluate your AWS resources.
      * </p>
      * 
      * @param eventSource
+     *        </p>
+     *        <p>
      *        The source of the event, such as an AWS service, that triggers AWS
      *        Config to evaluate your AWS resources.
      * @see EventSource
@@ -83,11 +87,15 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
+     * </p>
+     * <p>
      * The source of the event, such as an AWS service, that triggers AWS Config
      * to evaluate your AWS resources.
      * </p>
      * 
-     * @return The source of the event, such as an AWS service, that triggers
+     * @return </p>
+     *         <p>
+     *         The source of the event, such as an AWS service, that triggers
      *         AWS Config to evaluate your AWS resources.
      * @see EventSource
      */
@@ -98,11 +106,15 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
+     * </p>
+     * <p>
      * The source of the event, such as an AWS service, that triggers AWS Config
      * to evaluate your AWS resources.
      * </p>
      * 
      * @param eventSource
+     *        </p>
+     *        <p>
      *        The source of the event, such as an AWS service, that triggers AWS
      *        Config to evaluate your AWS resources.
      * @return Returns a reference to this object so that method calls can be
@@ -117,11 +129,15 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
+     * </p>
+     * <p>
      * The source of the event, such as an AWS service, that triggers AWS Config
      * to evaluate your AWS resources.
      * </p>
      * 
      * @param eventSource
+     *        </p>
+     *        <p>
      *        The source of the event, such as an AWS service, that triggers AWS
      *        Config to evaluate your AWS resources.
      * @see EventSource
@@ -133,11 +149,15 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
+     * </p>
+     * <p>
      * The source of the event, such as an AWS service, that triggers AWS Config
      * to evaluate your AWS resources.
      * </p>
      * 
      * @param eventSource
+     *        </p>
+     *        <p>
      *        The source of the event, such as an AWS service, that triggers AWS
      *        Config to evaluate your AWS resources.
      * @return Returns a reference to this object so that method calls can be
@@ -152,41 +172,39 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of SNS message that triggers AWS Config to run an evaluation.
+     * The type of notification that triggers AWS Config to run an evaluation.
+     * You can specify the following notification types:
      * </p>
      * <p>
-     * For evaluations that are initiated when AWS Config delivers a
-     * configuration item change notification, you must use
-     * <code>ConfigurationItemChangeNotification</code>.
+     * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation
+     * when AWS Config delivers a configuration item change notification.
      * </p>
      * <p>
-     * For evaluations that are initiated at a frequency that you choose (for
-     * example, every 24 hours), you must use <code>ScheduledNotification</code>
-     * .
+     * <code>ScheduledNotification</code> - Triggers a periodic evaluation at
+     * the frequency specified for <code>MaximumExecutionFrequency</code>.
      * </p>
      * <p>
-     * For evaluations that are initiated when AWS Config delivers a
-     * configuration snapshot, you must use
-     * <code>ConfigurationSnapshotDeliveryCompleted</code>.
+     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * evaluation when AWS Config delivers a configuration snapshot.
      * </p>
      * 
      * @param messageType
-     *        The type of SNS message that triggers AWS Config to run an
-     *        evaluation.</p>
+     *        The type of notification that triggers AWS Config to run an
+     *        evaluation. You can specify the following notification types:</p>
      *        <p>
-     *        For evaluations that are initiated when AWS Config delivers a
-     *        configuration item change notification, you must use
-     *        <code>ConfigurationItemChangeNotification</code>.
+     *        <code>ConfigurationItemChangeNotification</code> - Triggers an
+     *        evaluation when AWS Config delivers a configuration item change
+     *        notification.
      *        </p>
      *        <p>
-     *        For evaluations that are initiated at a frequency that you choose
-     *        (for example, every 24 hours), you must use
-     *        <code>ScheduledNotification</code>.
+     *        <code>ScheduledNotification</code> - Triggers a periodic
+     *        evaluation at the frequency specified for
+     *        <code>MaximumExecutionFrequency</code>.
      *        </p>
      *        <p>
-     *        For evaluations that are initiated when AWS Config delivers a
-     *        configuration snapshot, you must use
-     *        <code>ConfigurationSnapshotDeliveryCompleted</code>.
+     *        <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a
+     *        periodic evaluation when AWS Config delivers a configuration
+     *        snapshot.
      * @see MessageType
      */
 
@@ -196,40 +214,38 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of SNS message that triggers AWS Config to run an evaluation.
+     * The type of notification that triggers AWS Config to run an evaluation.
+     * You can specify the following notification types:
      * </p>
      * <p>
-     * For evaluations that are initiated when AWS Config delivers a
-     * configuration item change notification, you must use
-     * <code>ConfigurationItemChangeNotification</code>.
+     * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation
+     * when AWS Config delivers a configuration item change notification.
      * </p>
      * <p>
-     * For evaluations that are initiated at a frequency that you choose (for
-     * example, every 24 hours), you must use <code>ScheduledNotification</code>
-     * .
+     * <code>ScheduledNotification</code> - Triggers a periodic evaluation at
+     * the frequency specified for <code>MaximumExecutionFrequency</code>.
      * </p>
      * <p>
-     * For evaluations that are initiated when AWS Config delivers a
-     * configuration snapshot, you must use
-     * <code>ConfigurationSnapshotDeliveryCompleted</code>.
+     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * evaluation when AWS Config delivers a configuration snapshot.
      * </p>
      * 
-     * @return The type of SNS message that triggers AWS Config to run an
-     *         evaluation.</p>
+     * @return The type of notification that triggers AWS Config to run an
+     *         evaluation. You can specify the following notification types:</p>
      *         <p>
-     *         For evaluations that are initiated when AWS Config delivers a
-     *         configuration item change notification, you must use
-     *         <code>ConfigurationItemChangeNotification</code>.
+     *         <code>ConfigurationItemChangeNotification</code> - Triggers an
+     *         evaluation when AWS Config delivers a configuration item change
+     *         notification.
      *         </p>
      *         <p>
-     *         For evaluations that are initiated at a frequency that you choose
-     *         (for example, every 24 hours), you must use
-     *         <code>ScheduledNotification</code>.
+     *         <code>ScheduledNotification</code> - Triggers a periodic
+     *         evaluation at the frequency specified for
+     *         <code>MaximumExecutionFrequency</code>.
      *         </p>
      *         <p>
-     *         For evaluations that are initiated when AWS Config delivers a
-     *         configuration snapshot, you must use
-     *         <code>ConfigurationSnapshotDeliveryCompleted</code>.
+     *         <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a
+     *         periodic evaluation when AWS Config delivers a configuration
+     *         snapshot.
      * @see MessageType
      */
 
@@ -239,41 +255,39 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of SNS message that triggers AWS Config to run an evaluation.
+     * The type of notification that triggers AWS Config to run an evaluation.
+     * You can specify the following notification types:
      * </p>
      * <p>
-     * For evaluations that are initiated when AWS Config delivers a
-     * configuration item change notification, you must use
-     * <code>ConfigurationItemChangeNotification</code>.
+     * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation
+     * when AWS Config delivers a configuration item change notification.
      * </p>
      * <p>
-     * For evaluations that are initiated at a frequency that you choose (for
-     * example, every 24 hours), you must use <code>ScheduledNotification</code>
-     * .
+     * <code>ScheduledNotification</code> - Triggers a periodic evaluation at
+     * the frequency specified for <code>MaximumExecutionFrequency</code>.
      * </p>
      * <p>
-     * For evaluations that are initiated when AWS Config delivers a
-     * configuration snapshot, you must use
-     * <code>ConfigurationSnapshotDeliveryCompleted</code>.
+     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * evaluation when AWS Config delivers a configuration snapshot.
      * </p>
      * 
      * @param messageType
-     *        The type of SNS message that triggers AWS Config to run an
-     *        evaluation.</p>
+     *        The type of notification that triggers AWS Config to run an
+     *        evaluation. You can specify the following notification types:</p>
      *        <p>
-     *        For evaluations that are initiated when AWS Config delivers a
-     *        configuration item change notification, you must use
-     *        <code>ConfigurationItemChangeNotification</code>.
+     *        <code>ConfigurationItemChangeNotification</code> - Triggers an
+     *        evaluation when AWS Config delivers a configuration item change
+     *        notification.
      *        </p>
      *        <p>
-     *        For evaluations that are initiated at a frequency that you choose
-     *        (for example, every 24 hours), you must use
-     *        <code>ScheduledNotification</code>.
+     *        <code>ScheduledNotification</code> - Triggers a periodic
+     *        evaluation at the frequency specified for
+     *        <code>MaximumExecutionFrequency</code>.
      *        </p>
      *        <p>
-     *        For evaluations that are initiated when AWS Config delivers a
-     *        configuration snapshot, you must use
-     *        <code>ConfigurationSnapshotDeliveryCompleted</code>.
+     *        <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a
+     *        periodic evaluation when AWS Config delivers a configuration
+     *        snapshot.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MessageType
@@ -286,41 +300,39 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of SNS message that triggers AWS Config to run an evaluation.
+     * The type of notification that triggers AWS Config to run an evaluation.
+     * You can specify the following notification types:
      * </p>
      * <p>
-     * For evaluations that are initiated when AWS Config delivers a
-     * configuration item change notification, you must use
-     * <code>ConfigurationItemChangeNotification</code>.
+     * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation
+     * when AWS Config delivers a configuration item change notification.
      * </p>
      * <p>
-     * For evaluations that are initiated at a frequency that you choose (for
-     * example, every 24 hours), you must use <code>ScheduledNotification</code>
-     * .
+     * <code>ScheduledNotification</code> - Triggers a periodic evaluation at
+     * the frequency specified for <code>MaximumExecutionFrequency</code>.
      * </p>
      * <p>
-     * For evaluations that are initiated when AWS Config delivers a
-     * configuration snapshot, you must use
-     * <code>ConfigurationSnapshotDeliveryCompleted</code>.
+     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * evaluation when AWS Config delivers a configuration snapshot.
      * </p>
      * 
      * @param messageType
-     *        The type of SNS message that triggers AWS Config to run an
-     *        evaluation.</p>
+     *        The type of notification that triggers AWS Config to run an
+     *        evaluation. You can specify the following notification types:</p>
      *        <p>
-     *        For evaluations that are initiated when AWS Config delivers a
-     *        configuration item change notification, you must use
-     *        <code>ConfigurationItemChangeNotification</code>.
+     *        <code>ConfigurationItemChangeNotification</code> - Triggers an
+     *        evaluation when AWS Config delivers a configuration item change
+     *        notification.
      *        </p>
      *        <p>
-     *        For evaluations that are initiated at a frequency that you choose
-     *        (for example, every 24 hours), you must use
-     *        <code>ScheduledNotification</code>.
+     *        <code>ScheduledNotification</code> - Triggers a periodic
+     *        evaluation at the frequency specified for
+     *        <code>MaximumExecutionFrequency</code>.
      *        </p>
      *        <p>
-     *        For evaluations that are initiated when AWS Config delivers a
-     *        configuration snapshot, you must use
-     *        <code>ConfigurationSnapshotDeliveryCompleted</code>.
+     *        <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a
+     *        periodic evaluation when AWS Config delivers a configuration
+     *        snapshot.
      * @see MessageType
      */
 
@@ -330,41 +342,39 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of SNS message that triggers AWS Config to run an evaluation.
+     * The type of notification that triggers AWS Config to run an evaluation.
+     * You can specify the following notification types:
      * </p>
      * <p>
-     * For evaluations that are initiated when AWS Config delivers a
-     * configuration item change notification, you must use
-     * <code>ConfigurationItemChangeNotification</code>.
+     * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation
+     * when AWS Config delivers a configuration item change notification.
      * </p>
      * <p>
-     * For evaluations that are initiated at a frequency that you choose (for
-     * example, every 24 hours), you must use <code>ScheduledNotification</code>
-     * .
+     * <code>ScheduledNotification</code> - Triggers a periodic evaluation at
+     * the frequency specified for <code>MaximumExecutionFrequency</code>.
      * </p>
      * <p>
-     * For evaluations that are initiated when AWS Config delivers a
-     * configuration snapshot, you must use
-     * <code>ConfigurationSnapshotDeliveryCompleted</code>.
+     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * evaluation when AWS Config delivers a configuration snapshot.
      * </p>
      * 
      * @param messageType
-     *        The type of SNS message that triggers AWS Config to run an
-     *        evaluation.</p>
+     *        The type of notification that triggers AWS Config to run an
+     *        evaluation. You can specify the following notification types:</p>
      *        <p>
-     *        For evaluations that are initiated when AWS Config delivers a
-     *        configuration item change notification, you must use
-     *        <code>ConfigurationItemChangeNotification</code>.
+     *        <code>ConfigurationItemChangeNotification</code> - Triggers an
+     *        evaluation when AWS Config delivers a configuration item change
+     *        notification.
      *        </p>
      *        <p>
-     *        For evaluations that are initiated at a frequency that you choose
-     *        (for example, every 24 hours), you must use
-     *        <code>ScheduledNotification</code>.
+     *        <code>ScheduledNotification</code> - Triggers a periodic
+     *        evaluation at the frequency specified for
+     *        <code>MaximumExecutionFrequency</code>.
      *        </p>
      *        <p>
-     *        For evaluations that are initiated when AWS Config delivers a
-     *        configuration snapshot, you must use
-     *        <code>ConfigurationSnapshotDeliveryCompleted</code>.
+     *        <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a
+     *        periodic evaluation when AWS Config delivers a configuration
+     *        snapshot.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MessageType
@@ -377,18 +387,17 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the trigger type for your rule includes periodic, AWS Config runs
-     * evaluations for the rule at a frequency that you choose. If you specify a
-     * value for <code>MaximumExecutionFrequency</code>, then
-     * <code>MessageType</code> must use the <code>ScheduledNotification</code>
-     * value.
+     * The frequency that you want AWS Config to run evaluations for a rule that
+     * is triggered periodically. If you specify a value for
+     * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code>
+     * must use the <code>ScheduledNotification</code> value.
      * </p>
      * 
      * @param maximumExecutionFrequency
-     *        If the trigger type for your rule includes periodic, AWS Config
-     *        runs evaluations for the rule at a frequency that you choose. If
-     *        you specify a value for <code>MaximumExecutionFrequency</code>,
-     *        then <code>MessageType</code> must use the
+     *        The frequency that you want AWS Config to run evaluations for a
+     *        rule that is triggered periodically. If you specify a value for
+     *        <code>MaximumExecutionFrequency</code>, then
+     *        <code>MessageType</code> must use the
      *        <code>ScheduledNotification</code> value.
      * @see MaximumExecutionFrequency
      */
@@ -399,17 +408,16 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the trigger type for your rule includes periodic, AWS Config runs
-     * evaluations for the rule at a frequency that you choose. If you specify a
-     * value for <code>MaximumExecutionFrequency</code>, then
-     * <code>MessageType</code> must use the <code>ScheduledNotification</code>
-     * value.
+     * The frequency that you want AWS Config to run evaluations for a rule that
+     * is triggered periodically. If you specify a value for
+     * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code>
+     * must use the <code>ScheduledNotification</code> value.
      * </p>
      * 
-     * @return If the trigger type for your rule includes periodic, AWS Config
-     *         runs evaluations for the rule at a frequency that you choose. If
-     *         you specify a value for <code>MaximumExecutionFrequency</code>,
-     *         then <code>MessageType</code> must use the
+     * @return The frequency that you want AWS Config to run evaluations for a
+     *         rule that is triggered periodically. If you specify a value for
+     *         <code>MaximumExecutionFrequency</code>, then
+     *         <code>MessageType</code> must use the
      *         <code>ScheduledNotification</code> value.
      * @see MaximumExecutionFrequency
      */
@@ -420,18 +428,17 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the trigger type for your rule includes periodic, AWS Config runs
-     * evaluations for the rule at a frequency that you choose. If you specify a
-     * value for <code>MaximumExecutionFrequency</code>, then
-     * <code>MessageType</code> must use the <code>ScheduledNotification</code>
-     * value.
+     * The frequency that you want AWS Config to run evaluations for a rule that
+     * is triggered periodically. If you specify a value for
+     * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code>
+     * must use the <code>ScheduledNotification</code> value.
      * </p>
      * 
      * @param maximumExecutionFrequency
-     *        If the trigger type for your rule includes periodic, AWS Config
-     *        runs evaluations for the rule at a frequency that you choose. If
-     *        you specify a value for <code>MaximumExecutionFrequency</code>,
-     *        then <code>MessageType</code> must use the
+     *        The frequency that you want AWS Config to run evaluations for a
+     *        rule that is triggered periodically. If you specify a value for
+     *        <code>MaximumExecutionFrequency</code>, then
+     *        <code>MessageType</code> must use the
      *        <code>ScheduledNotification</code> value.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -446,18 +453,17 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the trigger type for your rule includes periodic, AWS Config runs
-     * evaluations for the rule at a frequency that you choose. If you specify a
-     * value for <code>MaximumExecutionFrequency</code>, then
-     * <code>MessageType</code> must use the <code>ScheduledNotification</code>
-     * value.
+     * The frequency that you want AWS Config to run evaluations for a rule that
+     * is triggered periodically. If you specify a value for
+     * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code>
+     * must use the <code>ScheduledNotification</code> value.
      * </p>
      * 
      * @param maximumExecutionFrequency
-     *        If the trigger type for your rule includes periodic, AWS Config
-     *        runs evaluations for the rule at a frequency that you choose. If
-     *        you specify a value for <code>MaximumExecutionFrequency</code>,
-     *        then <code>MessageType</code> must use the
+     *        The frequency that you want AWS Config to run evaluations for a
+     *        rule that is triggered periodically. If you specify a value for
+     *        <code>MaximumExecutionFrequency</code>, then
+     *        <code>MessageType</code> must use the
      *        <code>ScheduledNotification</code> value.
      * @see MaximumExecutionFrequency
      */
@@ -469,18 +475,17 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the trigger type for your rule includes periodic, AWS Config runs
-     * evaluations for the rule at a frequency that you choose. If you specify a
-     * value for <code>MaximumExecutionFrequency</code>, then
-     * <code>MessageType</code> must use the <code>ScheduledNotification</code>
-     * value.
+     * The frequency that you want AWS Config to run evaluations for a rule that
+     * is triggered periodically. If you specify a value for
+     * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code>
+     * must use the <code>ScheduledNotification</code> value.
      * </p>
      * 
      * @param maximumExecutionFrequency
-     *        If the trigger type for your rule includes periodic, AWS Config
-     *        runs evaluations for the rule at a frequency that you choose. If
-     *        you specify a value for <code>MaximumExecutionFrequency</code>,
-     *        then <code>MessageType</code> must use the
+     *        The frequency that you want AWS Config to run evaluations for a
+     *        rule that is triggered periodically. If you specify a value for
+     *        <code>MaximumExecutionFrequency</code>, then
+     *        <code>MessageType</code> must use the
      *        <code>ScheduledNotification</code> value.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

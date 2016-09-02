@@ -345,6 +345,21 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUserImportJobResult> createUserImportJobAsync(
+            CreateUserImportJobRequest request) {
+
+        return createUserImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserImportJobResult> createUserImportJobAsync(
+            CreateUserImportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateUserImportJobRequest, CreateUserImportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUserPoolResult> createUserPoolAsync(
             CreateUserPoolRequest request) {
 
@@ -435,6 +450,21 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeUserImportJobResult> describeUserImportJobAsync(
+            DescribeUserImportJobRequest request) {
+
+        return describeUserImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUserImportJobResult> describeUserImportJobAsync(
+            DescribeUserImportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeUserImportJobRequest, DescribeUserImportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeUserPoolResult> describeUserPoolAsync(
             DescribeUserPoolRequest request) {
 
@@ -490,6 +520,21 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     public java.util.concurrent.Future<ForgotPasswordResult> forgotPasswordAsync(
             ForgotPasswordRequest request,
             com.amazonaws.handlers.AsyncHandler<ForgotPasswordRequest, ForgotPasswordResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCSVHeaderResult> getCSVHeaderAsync(
+            GetCSVHeaderRequest request) {
+
+        return getCSVHeaderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCSVHeaderResult> getCSVHeaderAsync(
+            GetCSVHeaderRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCSVHeaderRequest, GetCSVHeaderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -580,6 +625,21 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     public java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(
             ListDevicesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDevicesRequest, ListDevicesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserImportJobsResult> listUserImportJobsAsync(
+            ListUserImportJobsRequest request) {
+
+        return listUserImportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserImportJobsResult> listUserImportJobsAsync(
+            ListUserImportJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListUserImportJobsRequest, ListUserImportJobsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -685,6 +745,36 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     public java.util.concurrent.Future<SignUpResult> signUpAsync(
             SignUpRequest request,
             com.amazonaws.handlers.AsyncHandler<SignUpRequest, SignUpResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartUserImportJobResult> startUserImportJobAsync(
+            StartUserImportJobRequest request) {
+
+        return startUserImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartUserImportJobResult> startUserImportJobAsync(
+            StartUserImportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartUserImportJobRequest, StartUserImportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopUserImportJobResult> stopUserImportJobAsync(
+            StopUserImportJobRequest request) {
+
+        return stopUserImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopUserImportJobResult> stopUserImportJobAsync(
+            StopUserImportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopUserImportJobRequest, StopUserImportJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

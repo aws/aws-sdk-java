@@ -30,21 +30,28 @@ import com.amazonaws.annotation.ThreadSafe;
  * automatically scale your AWS resources, with an experience similar to that of
  * Auto Scaling.
  * </p>
- * <note>
  * <p>
- * At this time, Application Auto Scaling only supports scaling Amazon ECS
- * services.
- * </p>
- * </note>
- * <p>
- * For example, you can use Application Auto Scaling to accomplish the following
- * tasks:
+ * Application Auto Scaling supports scaling the following AWS resources:
  * </p>
  * <ul>
  * <li>
  * <p>
- * Define scaling policies for automatically adjusting your application’s
- * resources
+ * Amazon ECS services
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon EC2 Spot fleet instances
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * You can use Application Auto Scaling to accomplish the following tasks:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Define scaling policies for automatically adjusting your AWS resources
  * </p>
  * </li>
  * <li>

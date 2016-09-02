@@ -24,7 +24,7 @@
  * </p>
  * <p>
  * This reference describes the low-level service API for GameLift. You can call
- * this API directly or use the <a href="https://aws.amazon.com/tools/">AWS
+ * this API directly or use the <a href="https://aws.amazon.com/tools/#sdk">AWS
  * SDK</a> for your preferred language. The AWS SDK includes a set of high-level
  * GameLift actions multiplayer game sessions. Alternatively, you can use the <a
  * href="https://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool,

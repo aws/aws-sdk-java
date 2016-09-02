@@ -20,16 +20,16 @@
     "endpointPrefix" : "snowball",
     "signingName" : "snowball",
     "jsonProtocol" : true,
+    "cborProtocol" : false,
+    "xmlProtocol" : false,
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "syncClientBuilderClassName" : "AmazonSnowballClientBuilder",
     "asyncClientBuilderClassName" : "AmazonSnowballAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AmazonSnowballModuleInjector",
     "smokeTestsPackageName" : "com.amazonaws.services.snowball.smoketests",
     "serviceName" : "Amazon Snowball",
-    "cborProtocol" : false,
-    "xmlProtocol" : false,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext"
   },
   "operations" : {
     "CancelJob" : {
@@ -5709,10 +5709,10 @@
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
+          "simpleType" : "JobListEntry",
           "map" : false,
           "templateType" : "java.util.List<JobListEntry>",
-          "templateImplType" : "java.util.ArrayList<JobListEntry>",
-          "simpleType" : "JobListEntry"
+          "templateImplType" : "java.util.ArrayList<JobListEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5956,10 +5956,10 @@
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
+            "simpleType" : "JobListEntry",
             "map" : false,
             "templateType" : "java.util.List<JobListEntry>",
-            "templateImplType" : "java.util.ArrayList<JobListEntry>",
-            "simpleType" : "JobListEntry"
+            "templateImplType" : "java.util.ArrayList<JobListEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6141,10 +6141,10 @@
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : "JobState",
@@ -6335,10 +6335,10 @@
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : "JobState",
@@ -7768,10 +7768,10 @@
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
+          "simpleType" : "S3Resource",
           "map" : false,
           "templateType" : "java.util.List<S3Resource>",
-          "templateImplType" : "java.util.ArrayList<S3Resource>",
-          "simpleType" : "S3Resource"
+          "templateImplType" : "java.util.ArrayList<S3Resource>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7910,10 +7910,10 @@
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
+            "simpleType" : "S3Resource",
             "map" : false,
             "templateType" : "java.util.List<S3Resource>",
-            "templateImplType" : "java.util.ArrayList<S3Resource>",
-            "simpleType" : "S3Resource"
+            "templateImplType" : "java.util.ArrayList<S3Resource>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8438,10 +8438,10 @@
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
+          "simpleType" : "Address",
           "map" : false,
           "templateType" : "java.util.List<Address>",
-          "templateImplType" : "java.util.ArrayList<Address>",
-          "simpleType" : "Address"
+          "templateImplType" : "java.util.ArrayList<Address>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8632,10 +8632,10 @@
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
+            "simpleType" : "Address",
             "map" : false,
             "templateType" : "java.util.List<Address>",
-            "templateImplType" : "java.util.ArrayList<Address>",
-            "simpleType" : "Address"
+            "templateImplType" : "java.util.ArrayList<Address>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11352,10 +11352,10 @@
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
+          "simpleType" : "JobMetadata",
           "map" : false,
           "templateType" : "java.util.List<JobMetadata>",
-          "templateImplType" : "java.util.ArrayList<JobMetadata>",
-          "simpleType" : "JobMetadata"
+          "templateImplType" : "java.util.ArrayList<JobMetadata>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11547,10 +11547,10 @@
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
+            "simpleType" : "JobMetadata",
             "map" : false,
             "templateType" : "java.util.List<JobMetadata>",
-            "templateImplType" : "java.util.ArrayList<JobMetadata>",
-            "simpleType" : "JobMetadata"
+            "templateImplType" : "java.util.ArrayList<JobMetadata>"
           },
           "mapModel" : null,
           "enumType" : null,

@@ -27,7 +27,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * <p>
      * The Amazon RDS resource with tags to be listed. This value is an Amazon
      * Resource Name (ARN). For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      */
@@ -43,7 +43,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * <p>
      * The Amazon RDS resource with tags to be listed. This value is an Amazon
      * Resource Name (ARN). For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * 
@@ -51,7 +51,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      *        The Amazon RDS resource with tags to be listed. This value is an
      *        Amazon Resource Name (ARN). For information about creating an ARN,
      *        see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an RDS Amazon Resource Name (ARN)</a>.
      */
 
@@ -63,14 +63,14 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * <p>
      * The Amazon RDS resource with tags to be listed. This value is an Amazon
      * Resource Name (ARN). For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * 
      * @return The Amazon RDS resource with tags to be listed. This value is an
      *         Amazon Resource Name (ARN). For information about creating an
      *         ARN, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *         > Constructing an RDS Amazon Resource Name (ARN)</a>.
      */
 
@@ -82,7 +82,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * <p>
      * The Amazon RDS resource with tags to be listed. This value is an Amazon
      * Resource Name (ARN). For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * 
@@ -90,7 +90,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      *        The Amazon RDS resource with tags to be listed. This value is an
      *        Amazon Resource Name (ARN). For information about creating an ARN,
      *        see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

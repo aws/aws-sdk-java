@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The global signot response, as an administrator.
+ * The global sign-out response, as an administrator.
  * </p>
  */
 public class AdminUserGlobalSignOutResult implements Serializable, Cloneable {

@@ -148,6 +148,12 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                                             com.amazonaws.services.cognitoidp.model.CodeDeliveryFailureException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UserImportInProgressException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.UserImportInProgressException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("ExpiredCodeException")
                                     .withModeledClass(
                                             com.amazonaws.services.cognitoidp.model.ExpiredCodeException.class))
@@ -167,6 +173,12 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                                     .withErrorCode("LimitExceededException")
                                     .withModeledClass(
                                             com.amazonaws.services.cognitoidp.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "PreconditionNotMetException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.PreconditionNotMetException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("UserNotFoundException")
@@ -430,6 +442,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         requests for a given operation.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws UserImportInProgressException
+     *         This exception is thrown when you are trying to modify a user
+     *         pool while a user import job is in progress for that pool.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -509,11 +524,11 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a
      *         requested AWS resource.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
-     * @throws PasswordResetRequiredException
-     *         This exception is thrown when a password reset is required.
      * @sample AWSCognitoIdentityProvider.AdminConfirmSignUp
      */
     @Override
@@ -572,6 +587,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         requests for a given operation.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -636,6 +653,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         requests for a given operation.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -697,6 +716,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         requests for a given operation.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -758,6 +779,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         requests for a given operation.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -821,11 +844,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
-     * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
      * @sample AWSCognitoIdentityProvider.AdminForgetDevice
      */
     @Override
@@ -950,6 +975,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         requests for a given operation.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -1040,6 +1067,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         you do not trust <b>cognito-idp.amazonaws.com</b> or the external
      *         ID provided in the role does not match what is provided in the
      *         SMS configuration for the user pool.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
      * @sample AWSCognitoIdentityProvider.AdminInitiateAuth
      */
     @Override
@@ -1148,6 +1182,17 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * Resets the specified user's password in a user pool as an administrator.
      * Works on any user.
      * </p>
+     * <p>
+     * When a developer calls this API, the current password is invalidated, so
+     * it must be changed. If a user tries to sign in after the API is called,
+     * the app will get a PasswordResetRequiredException exception back and
+     * should direct the user down the flow to reset the password, which is the
+     * same as the forgot password flow. In addition, if the user pool has phone
+     * verification selected and a verified phone number exists for the user, or
+     * if email verification is selected and a verified email exists for the
+     * user, calling this API will also result in sending a message to the end
+     * user with the code to change their password.
+     * </p>
      * 
      * @param adminResetUserPasswordRequest
      *        Represents the request to reset a user's password as an
@@ -1178,6 +1223,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a
      *         requested AWS resource.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -1280,6 +1327,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         with an email or phone number that has already been supplied as
      *         an alias from a different account. This exception tells user that
      *         an account with this email or phone already exists.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
      * @sample AWSCognitoIdentityProvider.AdminRespondToAuthChallenge
      */
     @Override
@@ -1336,6 +1390,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         encounters an invalid parameter.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -1399,11 +1455,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
-     * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
      * @sample AWSCognitoIdentityProvider.AdminUpdateDeviceStatus
      */
     @Override
@@ -1480,6 +1538,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         requests for a given operation.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -1542,6 +1602,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         requests for a given operation.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -1609,6 +1671,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a
      *         requested AWS resource.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -1684,6 +1753,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -1770,14 +1846,14 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a
      *         requested AWS resource.
-     * @throws InternalErrorException
-     *         This exception is thrown when Amazon Cognito encounters an
-     *         internal error.
      * @throws UserNotFoundException
      *         This exception is thrown when a user is not found.
      * @throws UserNotConfirmedException
      *         This exception is thrown when a user is not confirmed
      *         successfully.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
      * @sample AWSCognitoIdentityProvider.ConfirmForgotPassword
      */
     @Override
@@ -1864,11 +1940,11 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a
      *         requested AWS resource.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
-     * @throws UserNotFoundException
-     *         This exception is thrown when a user is not found.
      * @sample AWSCognitoIdentityProvider.ConfirmSignUp
      */
     @Override
@@ -1899,6 +1975,73 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                             new ConfirmSignUpResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates the user import job.
+     * </p>
+     * 
+     * @param createUserImportJobRequest
+     *        Represents the request to create the user import job.
+     * @return Result of the CreateUserImportJob operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws PreconditionNotMetException
+     *         This exception is thrown when a precondition is not met.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws LimitExceededException
+     *         This exception is thrown when a user exceeds the limit for a
+     *         requested AWS resource.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @sample AWSCognitoIdentityProvider.CreateUserImportJob
+     */
+    @Override
+    public CreateUserImportJobResult createUserImportJob(
+            CreateUserImportJobRequest createUserImportJobRequest) {
+        ExecutionContext executionContext = createExecutionContext(createUserImportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUserImportJobRequest> request = null;
+        Response<CreateUserImportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUserImportJobRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createUserImportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateUserImportJobResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateUserImportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -2067,6 +2210,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -2128,6 +2278,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -2190,6 +2347,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         requests for a given operation.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws UserImportInProgressException
+     *         This exception is thrown when you are trying to modify a user
+     *         pool while a user import job is in progress for that pool.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -2284,6 +2444,68 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new DeleteUserPoolClientResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the user import job.
+     * </p>
+     * 
+     * @param describeUserImportJobRequest
+     *        Represents the request to describe the user import job.
+     * @return Result of the DescribeUserImportJob operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @sample AWSCognitoIdentityProvider.DescribeUserImportJob
+     */
+    @Override
+    public DescribeUserImportJobResult describeUserImportJob(
+            DescribeUserImportJobRequest describeUserImportJobRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeUserImportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeUserImportJobRequest> request = null;
+        Response<DescribeUserImportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeUserImportJobRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeUserImportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeUserImportJobResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeUserImportJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2441,6 +2663,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws InvalidUserPoolConfigurationException
      *         This exception is thrown when the user pool configuration is
      *         invalid.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -2514,9 +2743,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a
      *         requested AWS resource.
-     * @throws InternalErrorException
-     *         This exception is thrown when Amazon Cognito encounters an
-     *         internal error.
      * @throws InvalidSmsRoleAccessPolicyException
      *         This exception is returned when the role provided for SMS
      *         configuration does not have permission to publish using Amazon
@@ -2538,6 +2764,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws UserNotConfirmedException
      *         This exception is thrown when a user is not confirmed
      *         successfully.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
      * @sample AWSCognitoIdentityProvider.ForgotPassword
      */
     @Override
@@ -2580,6 +2809,68 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
 
     /**
      * <p>
+     * Gets the header information for the .csv file to be used as input for the
+     * user import job.
+     * </p>
+     * 
+     * @param getCSVHeaderRequest
+     *        Represents the request to get the header information for the .csv
+     *        file for the user import job.
+     * @return Result of the GetCSVHeader operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @sample AWSCognitoIdentityProvider.GetCSVHeader
+     */
+    @Override
+    public GetCSVHeaderResult getCSVHeader(
+            GetCSVHeaderRequest getCSVHeaderRequest) {
+        ExecutionContext executionContext = createExecutionContext(getCSVHeaderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCSVHeaderRequest> request = null;
+        Response<GetCSVHeaderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCSVHeaderRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getCSVHeaderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCSVHeaderResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetCSVHeaderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets the device.
      * </p>
      * 
@@ -2600,6 +2891,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -2659,6 +2957,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -2731,9 +3036,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws InvalidLambdaResponseException
      *         This exception is thrown when the Amazon Cognito service
      *         encounters an invalid AWS Lambda response.
-     * @throws InternalErrorException
-     *         This exception is thrown when Amazon Cognito encounters an
-     *         internal error.
      * @throws InvalidSmsRoleAccessPolicyException
      *         This exception is returned when the role provided for SMS
      *         configuration does not have permission to publish using Amazon
@@ -2753,6 +3055,16 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a
      *         requested AWS resource.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
      * @sample AWSCognitoIdentityProvider.GetUserAttributeVerificationCode
      */
     @Override
@@ -2873,9 +3185,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
-     * @throws InternalErrorException
-     *         This exception is thrown when Amazon Cognito encounters an
-     *         internal error.
      * @throws UnexpectedLambdaException
      *         This exception gets thrown when the Amazon Cognito service
      *         encounters an unexpected exception with the AWS Lambda service.
@@ -2896,6 +3205,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws UserNotConfirmedException
      *         This exception is thrown when a user is not confirmed
      *         successfully.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
      * @sample AWSCognitoIdentityProvider.InitiateAuth
      */
     @Override
@@ -2956,6 +3268,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -2986,6 +3305,68 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new ListDevicesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the user import jobs.
+     * </p>
+     * 
+     * @param listUserImportJobsRequest
+     *        Represents the request to list the user import jobs.
+     * @return Result of the ListUserImportJobs operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @sample AWSCognitoIdentityProvider.ListUserImportJobs
+     */
+    @Override
+    public ListUserImportJobsResult listUserImportJobs(
+            ListUserImportJobsRequest listUserImportJobsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listUserImportJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListUserImportJobsRequest> request = null;
+        Response<ListUserImportJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListUserImportJobsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listUserImportJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListUserImportJobsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListUserImportJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3208,9 +3589,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a
      *         requested AWS resource.
-     * @throws InternalErrorException
-     *         This exception is thrown when Amazon Cognito encounters an
-     *         internal error.
      * @throws InvalidSmsRoleAccessPolicyException
      *         This exception is returned when the role provided for SMS
      *         configuration does not have permission to publish using Amazon
@@ -3229,6 +3607,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         deliver successfully.
      * @throws UserNotFoundException
      *         This exception is thrown when a user is not found.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
      * @sample AWSCognitoIdentityProvider.ResendConfirmationCode
      */
     @Override
@@ -3307,9 +3688,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws InvalidUserPoolConfigurationException
      *         This exception is thrown when the user pool configuration is
      *         invalid.
-     * @throws InternalErrorException
-     *         This exception is thrown when Amazon Cognito encounters an
-     *         internal error.
      * @throws MFAMethodNotFoundException
      *         This exception is thrown when Amazon Cognito cannot find a
      *         multi-factor authentication (MFA) method.
@@ -3335,6 +3713,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         with an email or phone number that has already been supplied as
      *         an alias from a different account. This exception tells user that
      *         an account with this email or phone already exists.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
      * @sample AWSCognitoIdentityProvider.RespondToAuthChallenge
      */
     @Override
@@ -3392,6 +3773,16 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         encounters an invalid parameter.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
      * @sample AWSCognitoIdentityProvider.SetUserSettings
      */
     @Override
@@ -3527,6 +3918,134 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
 
     /**
      * <p>
+     * Starts the user import.
+     * </p>
+     * 
+     * @param startUserImportJobRequest
+     *        Represents the request to start the user import job.
+     * @return Result of the StartUserImportJob operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @throws PreconditionNotMetException
+     *         This exception is thrown when a precondition is not met.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @sample AWSCognitoIdentityProvider.StartUserImportJob
+     */
+    @Override
+    public StartUserImportJobResult startUserImportJob(
+            StartUserImportJobRequest startUserImportJobRequest) {
+        ExecutionContext executionContext = createExecutionContext(startUserImportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartUserImportJobRequest> request = null;
+        Response<StartUserImportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartUserImportJobRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(startUserImportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartUserImportJobResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StartUserImportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops the user import job.
+     * </p>
+     * 
+     * @param stopUserImportJobRequest
+     *        Represents the request to stop the user import job.
+     * @return Result of the StopUserImportJob operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @throws PreconditionNotMetException
+     *         This exception is thrown when a precondition is not met.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @sample AWSCognitoIdentityProvider.StopUserImportJob
+     */
+    @Override
+    public StopUserImportJobResult stopUserImportJob(
+            StopUserImportJobRequest stopUserImportJobRequest) {
+        ExecutionContext executionContext = createExecutionContext(stopUserImportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopUserImportJobRequest> request = null;
+        Response<StopUserImportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopUserImportJobRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(stopUserImportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopUserImportJobResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StopUserImportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the device status.
      * </p>
      * 
@@ -3548,6 +4067,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -3630,9 +4156,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         with an email or phone number that has already been supplied as
      *         an alias from a different account. This exception tells user that
      *         an account with this email or phone already exists.
-     * @throws InternalErrorException
-     *         This exception is thrown when Amazon Cognito encounters an
-     *         internal error.
      * @throws InvalidSmsRoleAccessPolicyException
      *         This exception is returned when the role provided for SMS
      *         configuration does not have permission to publish using Amazon
@@ -3649,6 +4172,16 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws CodeDeliveryFailureException
      *         This exception is thrown when a verification code fails to
      *         deliver successfully.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
      * @sample AWSCognitoIdentityProvider.UpdateUserAttributes
      */
     @Override
@@ -3711,6 +4244,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         requests for a given operation.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws UserImportInProgressException
+     *         This exception is thrown when you are trying to modify a user
+     *         pool while a user import job is in progress for that pool.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -3857,6 +4393,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a
      *         requested AWS resource.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.

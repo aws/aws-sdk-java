@@ -1530,10 +1530,51 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <p>
      * An existing <a>StartConfigRulesEvaluation</a> call must complete for the
-     * rules that you specified before you can call the API again. If you chose
-     * to have AWS Config stream to an Amazon SNS topic, you will receive a
-     * notification when the evaluation starts.
+     * specified rules before you can call the API again. If you chose to have
+     * AWS Config stream to an Amazon SNS topic, you will receive a
+     * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation
+     * starts.
      * </p>
+     * <note>
+     * <p>
+     * You don't need to call the <code>StartConfigRulesEvaluation</code> API to
+     * run an evaluation for a new rule. When you create a new rule, AWS Config
+     * automatically evaluates your resources against the rule.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>StartConfigRulesEvaluation</code> API is useful if you want to
+     * run on-demand evaluations, such as the following example:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * You have a custom rule that evaluates your IAM resources every 24 hours.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You update your Lambda function to add additional conditions to your
+     * rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Instead of waiting for the next periodic evaluation, you call the
+     * <code>StartConfigRulesEvaluation</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Config invokes your Lambda function and evaluates your IAM resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Your custom rule will still run periodic evaluations every 24 hours.
+     * </p>
+     * </li>
+     * </ol>
      * 
      * @param startConfigRulesEvaluationRequest
      * @return A Java Future containing the result of the
@@ -1550,10 +1591,51 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <p>
      * An existing <a>StartConfigRulesEvaluation</a> call must complete for the
-     * rules that you specified before you can call the API again. If you chose
-     * to have AWS Config stream to an Amazon SNS topic, you will receive a
-     * notification when the evaluation starts.
+     * specified rules before you can call the API again. If you chose to have
+     * AWS Config stream to an Amazon SNS topic, you will receive a
+     * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation
+     * starts.
      * </p>
+     * <note>
+     * <p>
+     * You don't need to call the <code>StartConfigRulesEvaluation</code> API to
+     * run an evaluation for a new rule. When you create a new rule, AWS Config
+     * automatically evaluates your resources against the rule.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>StartConfigRulesEvaluation</code> API is useful if you want to
+     * run on-demand evaluations, such as the following example:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * You have a custom rule that evaluates your IAM resources every 24 hours.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You update your Lambda function to add additional conditions to your
+     * rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Instead of waiting for the next periodic evaluation, you call the
+     * <code>StartConfigRulesEvaluation</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Config invokes your Lambda function and evaluates your IAM resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Your custom rule will still run periodic evaluations every 24 hours.
+     * </p>
+     * </li>
+     * </ol>
      * 
      * @param startConfigRulesEvaluationRequest
      * @param asyncHandler

@@ -27,7 +27,7 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -41,16 +41,8 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * If the source DB parameter group is in the same region as the copy,
-     * specify a valid DB parameter group identifier, for example
+     * Must specify a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the source DB parameter group is in a different region than the copy,
-     * specify a valid DB parameter group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.
      * </p>
      * </li>
      * </ul>
@@ -103,7 +95,7 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -117,16 +109,8 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * If the source DB parameter group is in the same region as the copy,
-     * specify a valid DB parameter group identifier, for example
+     * Must specify a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the source DB parameter group is in a different region than the copy,
-     * specify a valid DB parameter group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.
      * </p>
      * </li>
      * </ul>
@@ -134,7 +118,7 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest
      * @param sourceDBParameterGroupIdentifier
      *        The identifier or ARN for the source DB parameter group. For
      *        information about creating an ARN, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
      *        <p>
      *        Constraints:
@@ -147,17 +131,8 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        If the source DB parameter group is in the same region as the
-     *        copy, specify a valid DB parameter group identifier, for example
+     *        Must specify a valid DB parameter group identifier, for example
      *        <code>my-db-param-group</code>, or a valid ARN.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If the source DB parameter group is in a different region than the
-     *        copy, specify a valid DB parameter group ARN, for example
-     *        <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>
-     *        .
      *        </p>
      *        </li>
      */
@@ -171,7 +146,7 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -185,23 +160,15 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * If the source DB parameter group is in the same region as the copy,
-     * specify a valid DB parameter group identifier, for example
+     * Must specify a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the source DB parameter group is in a different region than the copy,
-     * specify a valid DB parameter group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @return The identifier or ARN for the source DB parameter group. For
      *         information about creating an ARN, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *         > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
      *         <p>
      *         Constraints:
@@ -214,17 +181,8 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         If the source DB parameter group is in the same region as the
-     *         copy, specify a valid DB parameter group identifier, for example
+     *         Must specify a valid DB parameter group identifier, for example
      *         <code>my-db-param-group</code>, or a valid ARN.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If the source DB parameter group is in a different region than
-     *         the copy, specify a valid DB parameter group ARN, for example
-     *         <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>
-     *         .
      *         </p>
      *         </li>
      */
@@ -237,7 +195,7 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing an RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -251,16 +209,8 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * If the source DB parameter group is in the same region as the copy,
-     * specify a valid DB parameter group identifier, for example
+     * Must specify a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the source DB parameter group is in a different region than the copy,
-     * specify a valid DB parameter group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.
      * </p>
      * </li>
      * </ul>
@@ -268,7 +218,7 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest
      * @param sourceDBParameterGroupIdentifier
      *        The identifier or ARN for the source DB parameter group. For
      *        information about creating an ARN, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
      *        <p>
      *        Constraints:
@@ -281,17 +231,8 @@ public class CopyDBParameterGroupRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        If the source DB parameter group is in the same region as the
-     *        copy, specify a valid DB parameter group identifier, for example
+     *        Must specify a valid DB parameter group identifier, for example
      *        <code>my-db-param-group</code>, or a valid ARN.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If the source DB parameter group is in a different region than the
-     *        copy, specify a valid DB parameter group ARN, for example
-     *        <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>
-     *        .
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be

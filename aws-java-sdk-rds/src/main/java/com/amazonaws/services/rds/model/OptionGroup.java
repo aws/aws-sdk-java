@@ -71,7 +71,11 @@ public class OptionGroup implements Serializable, Cloneable {
      * </p>
      */
     private String vpcId;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the option group.
+     * </p>
+     */
     private String optionGroupArn;
 
     /**
@@ -471,7 +475,12 @@ public class OptionGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the option group.
+     * </p>
+     * 
      * @param optionGroupArn
+     *        The Amazon Resource Name (ARN) for the option group.
      */
 
     public void setOptionGroupArn(String optionGroupArn) {
@@ -479,7 +488,11 @@ public class OptionGroup implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) for the option group.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the option group.
      */
 
     public String getOptionGroupArn() {
@@ -487,7 +500,12 @@ public class OptionGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the option group.
+     * </p>
+     * 
      * @param optionGroupArn
+     *        The Amazon Resource Name (ARN) for the option group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

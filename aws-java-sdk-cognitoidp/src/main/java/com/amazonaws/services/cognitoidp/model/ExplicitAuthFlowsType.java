@@ -19,7 +19,8 @@ package com.amazonaws.services.cognitoidp.model;
  */
 public enum ExplicitAuthFlowsType {
 
-    ADMIN_NO_SRP_AUTH("ADMIN_NO_SRP_AUTH");
+    ADMIN_NO_SRP_AUTH("ADMIN_NO_SRP_AUTH"),
+    CUSTOM_AUTH_FLOW_ONLY("CUSTOM_AUTH_FLOW_ONLY");
 
     private String value;
 

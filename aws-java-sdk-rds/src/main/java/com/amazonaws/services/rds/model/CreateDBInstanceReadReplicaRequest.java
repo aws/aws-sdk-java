@@ -74,7 +74,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * <p>
      * If the source DB instance is in a different region than the Read Replica,
      * specify a valid DB instance ARN. For more information, go to <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * </li>
@@ -348,7 +348,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      *        If the source DB instance is in a different region than the Read
      *        Replica, specify a valid DB instance ARN. For more information, go
      *        to <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
      *        </p>
      *        </li>
@@ -456,7 +456,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * <p>
      * If the source DB instance is in a different region than the Read Replica,
      * specify a valid DB instance ARN. For more information, go to <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * </li>
@@ -505,7 +505,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      *        If the source DB instance is in a different region than the Read
      *        Replica, specify a valid DB instance ARN. For more information, go
      *        to <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
      *        </p>
      *        </li>
@@ -558,7 +558,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * <p>
      * If the source DB instance is in a different region than the Read Replica,
      * specify a valid DB instance ARN. For more information, go to <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * </li>
@@ -606,7 +606,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      *         If the source DB instance is in a different region than the Read
      *         Replica, specify a valid DB instance ARN. For more information,
      *         go to <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *         > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
      *         </p>
      *         </li>
@@ -659,7 +659,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * <p>
      * If the source DB instance is in a different region than the Read Replica,
      * specify a valid DB instance ARN. For more information, go to <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
      * </p>
      * </li>
@@ -708,7 +708,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      *        If the source DB instance is in a different region than the Read
      *        Replica, specify a valid DB instance ARN. For more information, go
      *        to <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
      *        </p>
      *        </li>

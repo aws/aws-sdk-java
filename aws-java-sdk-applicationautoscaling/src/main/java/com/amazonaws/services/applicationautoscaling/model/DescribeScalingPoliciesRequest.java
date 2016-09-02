@@ -41,10 +41,14 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The unique resource identifier string of the scalable target that the
-     * scaling policy is associated with. For Amazon ECS services, this value is
-     * the resource type, followed by the cluster name and service name, such as
-     * <code>service/default/sample-webapp</code>. If you specify a scalable
-     * dimension, you must also specify a resource ID.
+     * scaling policy is associated with. For Amazon ECS services, the resource
+     * type is <code>services</code>, and the identifier is the cluster name and
+     * service name; for example, <code>service/default/sample-webapp</code>.
+     * For Amazon EC2 Spot fleet requests, the resource type is
+     * <code>spot-fleet-request</code>, and the identifier is the Spot fleet
+     * request ID; for example,
+     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * If you specify a scalable dimension, you must also specify a resource ID.
      * </p>
      */
     private String resourceId;
@@ -54,8 +58,9 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * associated with. The scalable dimension contains the service namespace,
      * resource type, and scaling property, such as
      * <code>ecs:service:DesiredCount</code> for the desired task count of an
-     * Amazon ECS service. If you specify a scalable dimension, you must also
-     * specify a resource ID.
+     * Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code>
+     * for the target capacity of an Amazon EC2 Spot fleet request. If you
+     * specify a scalable dimension, you must also specify a resource ID.
      * </p>
      */
     private String scalableDimension;
@@ -274,18 +279,27 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The unique resource identifier string of the scalable target that the
-     * scaling policy is associated with. For Amazon ECS services, this value is
-     * the resource type, followed by the cluster name and service name, such as
-     * <code>service/default/sample-webapp</code>. If you specify a scalable
-     * dimension, you must also specify a resource ID.
+     * scaling policy is associated with. For Amazon ECS services, the resource
+     * type is <code>services</code>, and the identifier is the cluster name and
+     * service name; for example, <code>service/default/sample-webapp</code>.
+     * For Amazon EC2 Spot fleet requests, the resource type is
+     * <code>spot-fleet-request</code>, and the identifier is the Spot fleet
+     * request ID; for example,
+     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * If you specify a scalable dimension, you must also specify a resource ID.
      * </p>
      * 
      * @param resourceId
      *        The unique resource identifier string of the scalable target that
      *        the scaling policy is associated with. For Amazon ECS services,
-     *        this value is the resource type, followed by the cluster name and
-     *        service name, such as <code>service/default/sample-webapp</code>.
-     *        If you specify a scalable dimension, you must also specify a
+     *        the resource type is <code>services</code>, and the identifier is
+     *        the cluster name and service name; for example,
+     *        <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
+     *        fleet requests, the resource type is
+     *        <code>spot-fleet-request</code>, and the identifier is the Spot
+     *        fleet request ID; for example,
+     *        <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>
+     *        . If you specify a scalable dimension, you must also specify a
      *        resource ID.
      */
 
@@ -296,17 +310,26 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The unique resource identifier string of the scalable target that the
-     * scaling policy is associated with. For Amazon ECS services, this value is
-     * the resource type, followed by the cluster name and service name, such as
-     * <code>service/default/sample-webapp</code>. If you specify a scalable
-     * dimension, you must also specify a resource ID.
+     * scaling policy is associated with. For Amazon ECS services, the resource
+     * type is <code>services</code>, and the identifier is the cluster name and
+     * service name; for example, <code>service/default/sample-webapp</code>.
+     * For Amazon EC2 Spot fleet requests, the resource type is
+     * <code>spot-fleet-request</code>, and the identifier is the Spot fleet
+     * request ID; for example,
+     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * If you specify a scalable dimension, you must also specify a resource ID.
      * </p>
      * 
      * @return The unique resource identifier string of the scalable target that
      *         the scaling policy is associated with. For Amazon ECS services,
-     *         this value is the resource type, followed by the cluster name and
-     *         service name, such as <code>service/default/sample-webapp</code>.
-     *         If you specify a scalable dimension, you must also specify a
+     *         the resource type is <code>services</code>, and the identifier is
+     *         the cluster name and service name; for example,
+     *         <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
+     *         fleet requests, the resource type is
+     *         <code>spot-fleet-request</code>, and the identifier is the Spot
+     *         fleet request ID; for example,
+     *         <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>
+     *         . If you specify a scalable dimension, you must also specify a
      *         resource ID.
      */
 
@@ -317,18 +340,27 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The unique resource identifier string of the scalable target that the
-     * scaling policy is associated with. For Amazon ECS services, this value is
-     * the resource type, followed by the cluster name and service name, such as
-     * <code>service/default/sample-webapp</code>. If you specify a scalable
-     * dimension, you must also specify a resource ID.
+     * scaling policy is associated with. For Amazon ECS services, the resource
+     * type is <code>services</code>, and the identifier is the cluster name and
+     * service name; for example, <code>service/default/sample-webapp</code>.
+     * For Amazon EC2 Spot fleet requests, the resource type is
+     * <code>spot-fleet-request</code>, and the identifier is the Spot fleet
+     * request ID; for example,
+     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * If you specify a scalable dimension, you must also specify a resource ID.
      * </p>
      * 
      * @param resourceId
      *        The unique resource identifier string of the scalable target that
      *        the scaling policy is associated with. For Amazon ECS services,
-     *        this value is the resource type, followed by the cluster name and
-     *        service name, such as <code>service/default/sample-webapp</code>.
-     *        If you specify a scalable dimension, you must also specify a
+     *        the resource type is <code>services</code>, and the identifier is
+     *        the cluster name and service name; for example,
+     *        <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
+     *        fleet requests, the resource type is
+     *        <code>spot-fleet-request</code>, and the identifier is the Spot
+     *        fleet request ID; for example,
+     *        <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>
+     *        . If you specify a scalable dimension, you must also specify a
      *        resource ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -345,8 +377,9 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * associated with. The scalable dimension contains the service namespace,
      * resource type, and scaling property, such as
      * <code>ecs:service:DesiredCount</code> for the desired task count of an
-     * Amazon ECS service. If you specify a scalable dimension, you must also
-     * specify a resource ID.
+     * Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code>
+     * for the target capacity of an Amazon EC2 Spot fleet request. If you
+     * specify a scalable dimension, you must also specify a resource ID.
      * </p>
      * 
      * @param scalableDimension
@@ -354,8 +387,10 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      *        policy is associated with. The scalable dimension contains the
      *        service namespace, resource type, and scaling property, such as
      *        <code>ecs:service:DesiredCount</code> for the desired task count
-     *        of an Amazon ECS service. If you specify a scalable dimension, you
-     *        must also specify a resource ID.
+     *        of an Amazon ECS service, or
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
+     *        capacity of an Amazon EC2 Spot fleet request. If you specify a
+     *        scalable dimension, you must also specify a resource ID.
      * @see ScalableDimension
      */
 
@@ -369,16 +404,19 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * associated with. The scalable dimension contains the service namespace,
      * resource type, and scaling property, such as
      * <code>ecs:service:DesiredCount</code> for the desired task count of an
-     * Amazon ECS service. If you specify a scalable dimension, you must also
-     * specify a resource ID.
+     * Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code>
+     * for the target capacity of an Amazon EC2 Spot fleet request. If you
+     * specify a scalable dimension, you must also specify a resource ID.
      * </p>
      * 
      * @return The scalable dimension of the scalable target that the scaling
      *         policy is associated with. The scalable dimension contains the
      *         service namespace, resource type, and scaling property, such as
      *         <code>ecs:service:DesiredCount</code> for the desired task count
-     *         of an Amazon ECS service. If you specify a scalable dimension,
-     *         you must also specify a resource ID.
+     *         of an Amazon ECS service, or
+     *         <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
+     *         capacity of an Amazon EC2 Spot fleet request. If you specify a
+     *         scalable dimension, you must also specify a resource ID.
      * @see ScalableDimension
      */
 
@@ -392,8 +430,9 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * associated with. The scalable dimension contains the service namespace,
      * resource type, and scaling property, such as
      * <code>ecs:service:DesiredCount</code> for the desired task count of an
-     * Amazon ECS service. If you specify a scalable dimension, you must also
-     * specify a resource ID.
+     * Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code>
+     * for the target capacity of an Amazon EC2 Spot fleet request. If you
+     * specify a scalable dimension, you must also specify a resource ID.
      * </p>
      * 
      * @param scalableDimension
@@ -401,8 +440,10 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      *        policy is associated with. The scalable dimension contains the
      *        service namespace, resource type, and scaling property, such as
      *        <code>ecs:service:DesiredCount</code> for the desired task count
-     *        of an Amazon ECS service. If you specify a scalable dimension, you
-     *        must also specify a resource ID.
+     *        of an Amazon ECS service, or
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
+     *        capacity of an Amazon EC2 Spot fleet request. If you specify a
+     *        scalable dimension, you must also specify a resource ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ScalableDimension
@@ -420,8 +461,9 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * associated with. The scalable dimension contains the service namespace,
      * resource type, and scaling property, such as
      * <code>ecs:service:DesiredCount</code> for the desired task count of an
-     * Amazon ECS service. If you specify a scalable dimension, you must also
-     * specify a resource ID.
+     * Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code>
+     * for the target capacity of an Amazon EC2 Spot fleet request. If you
+     * specify a scalable dimension, you must also specify a resource ID.
      * </p>
      * 
      * @param scalableDimension
@@ -429,8 +471,10 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      *        policy is associated with. The scalable dimension contains the
      *        service namespace, resource type, and scaling property, such as
      *        <code>ecs:service:DesiredCount</code> for the desired task count
-     *        of an Amazon ECS service. If you specify a scalable dimension, you
-     *        must also specify a resource ID.
+     *        of an Amazon ECS service, or
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
+     *        capacity of an Amazon EC2 Spot fleet request. If you specify a
+     *        scalable dimension, you must also specify a resource ID.
      * @see ScalableDimension
      */
 
@@ -444,8 +488,9 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * associated with. The scalable dimension contains the service namespace,
      * resource type, and scaling property, such as
      * <code>ecs:service:DesiredCount</code> for the desired task count of an
-     * Amazon ECS service. If you specify a scalable dimension, you must also
-     * specify a resource ID.
+     * Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code>
+     * for the target capacity of an Amazon EC2 Spot fleet request. If you
+     * specify a scalable dimension, you must also specify a resource ID.
      * </p>
      * 
      * @param scalableDimension
@@ -453,8 +498,10 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      *        policy is associated with. The scalable dimension contains the
      *        service namespace, resource type, and scaling property, such as
      *        <code>ecs:service:DesiredCount</code> for the desired task count
-     *        of an Amazon ECS service. If you specify a scalable dimension, you
-     *        must also specify a resource ID.
+     *        of an Amazon ECS service, or
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> for the target
+     *        capacity of an Amazon EC2 Spot fleet request. If you specify a
+     *        scalable dimension, you must also specify a resource ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ScalableDimension

@@ -44,10 +44,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
-     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * <li><b>UPDATE_REQUESTED</b> – A request to update the scaling policy has
      * been received.</li>
      * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
-     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * <li><b>DELETE_REQUESTED</b> – A request to delete the scaling policy has
      * been received.</li>
      * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
      * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
@@ -223,10 +223,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
-     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * <li><b>UPDATE_REQUESTED</b> – A request to update the scaling policy has
      * been received.</li>
      * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
-     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * <li><b>DELETE_REQUESTED</b> – A request to delete the scaling policy has
      * been received.</li>
      * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
      * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
@@ -239,11 +239,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        in force when in an <code>ACTIVE</code> status.</p>
      *        <ul>
      *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
-     *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
+     *        <li><b>UPDATE_REQUESTED</b> – A request to update the scaling
      *        policy has been received.</li>
      *        <li><b>UPDATING</b> – A change is being made to the scaling
      *        policy.</li>
-     *        <li><b>DELETEREQUESTED</b> – A request to delete the scaling
+     *        <li><b>DELETE_REQUESTED</b> – A request to delete the scaling
      *        policy has been received.</li>
      *        <li><b>DELETING</b> – The scaling policy is being deleted.</li>
      *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
@@ -263,10 +263,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
-     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * <li><b>UPDATE_REQUESTED</b> – A request to update the scaling policy has
      * been received.</li>
      * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
-     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * <li><b>DELETE_REQUESTED</b> – A request to delete the scaling policy has
      * been received.</li>
      * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
      * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
@@ -278,11 +278,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *         in force when in an <code>ACTIVE</code> status.</p>
      *         <ul>
      *         <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
-     *         <li><b>UPDATEREQUESTED</b> – A request to update the scaling
+     *         <li><b>UPDATE_REQUESTED</b> – A request to update the scaling
      *         policy has been received.</li>
      *         <li><b>UPDATING</b> – A change is being made to the scaling
      *         policy.</li>
-     *         <li><b>DELETEREQUESTED</b> – A request to delete the scaling
+     *         <li><b>DELETE_REQUESTED</b> – A request to delete the scaling
      *         policy has been received.</li>
      *         <li><b>DELETING</b> – The scaling policy is being deleted.</li>
      *         <li><b>DELETED</b> – The scaling policy has been deleted.</li>
@@ -302,10 +302,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
-     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * <li><b>UPDATE_REQUESTED</b> – A request to update the scaling policy has
      * been received.</li>
      * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
-     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * <li><b>DELETE_REQUESTED</b> – A request to delete the scaling policy has
      * been received.</li>
      * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
      * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
@@ -318,11 +318,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        in force when in an <code>ACTIVE</code> status.</p>
      *        <ul>
      *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
-     *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
+     *        <li><b>UPDATE_REQUESTED</b> – A request to update the scaling
      *        policy has been received.</li>
      *        <li><b>UPDATING</b> – A change is being made to the scaling
      *        policy.</li>
-     *        <li><b>DELETEREQUESTED</b> – A request to delete the scaling
+     *        <li><b>DELETE_REQUESTED</b> – A request to delete the scaling
      *        policy has been received.</li>
      *        <li><b>DELETING</b> – The scaling policy is being deleted.</li>
      *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
@@ -345,10 +345,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
-     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * <li><b>UPDATE_REQUESTED</b> – A request to update the scaling policy has
      * been received.</li>
      * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
-     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * <li><b>DELETE_REQUESTED</b> – A request to delete the scaling policy has
      * been received.</li>
      * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
      * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
@@ -361,11 +361,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        in force when in an <code>ACTIVE</code> status.</p>
      *        <ul>
      *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
-     *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
+     *        <li><b>UPDATE_REQUESTED</b> – A request to update the scaling
      *        policy has been received.</li>
      *        <li><b>UPDATING</b> – A change is being made to the scaling
      *        policy.</li>
-     *        <li><b>DELETEREQUESTED</b> – A request to delete the scaling
+     *        <li><b>DELETE_REQUESTED</b> – A request to delete the scaling
      *        policy has been received.</li>
      *        <li><b>DELETING</b> – The scaling policy is being deleted.</li>
      *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
@@ -385,10 +385,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
-     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * <li><b>UPDATE_REQUESTED</b> – A request to update the scaling policy has
      * been received.</li>
      * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
-     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * <li><b>DELETE_REQUESTED</b> – A request to delete the scaling policy has
      * been received.</li>
      * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
      * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
@@ -401,11 +401,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        in force when in an <code>ACTIVE</code> status.</p>
      *        <ul>
      *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
-     *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
+     *        <li><b>UPDATE_REQUESTED</b> – A request to update the scaling
      *        policy has been received.</li>
      *        <li><b>UPDATING</b> – A change is being made to the scaling
      *        policy.</li>
-     *        <li><b>DELETEREQUESTED</b> – A request to delete the scaling
+     *        <li><b>DELETE_REQUESTED</b> – A request to delete the scaling
      *        policy has been received.</li>
      *        <li><b>DELETING</b> – The scaling policy is being deleted.</li>
      *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>

@@ -19,6 +19,8 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "datapipeline",
     "signingName" : "datapipeline",
+    "syncClientBuilderClassName" : "DataPipelineClientBuilder",
+    "asyncClientBuilderClassName" : "DataPipelineAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "DataPipelineModuleInjector",
     "smokeTestsPackageName" : "com.amazonaws.services.datapipeline.smoketests",
     "serviceName" : "AWS Data Pipeline",
@@ -26,10 +28,8 @@
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "jsonProtocol" : true,
-    "syncClientBuilderClassName" : "DataPipelineClientBuilder",
-    "asyncClientBuilderClassName" : "DataPipelineAsyncClientBuilder",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true
   },
   "operations" : {
     "ActivatePipeline" : {
@@ -2213,12 +2213,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,PipelineObject>",
-          "templateImplType" : "java.util.HashMap<String,PipelineObject>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, PipelineObject>"
+          "entryType" : "Map.Entry<String, PipelineObject>",
+          "templateType" : "java.util.Map<String,PipelineObject>",
+          "templateImplType" : "java.util.HashMap<String,PipelineObject>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -2461,12 +2461,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,PipelineObject>",
-            "templateImplType" : "java.util.HashMap<String,PipelineObject>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, PipelineObject>"
+            "entryType" : "Map.Entry<String, PipelineObject>",
+            "templateType" : "java.util.Map<String,PipelineObject>",
+            "templateImplType" : "java.util.HashMap<String,PipelineObject>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,

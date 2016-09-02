@@ -54,7 +54,11 @@ public class Event implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date dateValue;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the event.
+     * </p>
+     */
     private String sourceArn;
 
     /**
@@ -335,7 +339,12 @@ public class Event implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the event.
+     * </p>
+     * 
      * @param sourceArn
+     *        The Amazon Resource Name (ARN) for the event.
      */
 
     public void setSourceArn(String sourceArn) {
@@ -343,7 +352,11 @@ public class Event implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) for the event.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the event.
      */
 
     public String getSourceArn() {
@@ -351,7 +364,12 @@ public class Event implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the event.
+     * </p>
+     * 
      * @param sourceArn
+     *        The Amazon Resource Name (ARN) for the event.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

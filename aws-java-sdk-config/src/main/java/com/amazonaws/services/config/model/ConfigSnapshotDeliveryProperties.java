@@ -18,8 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Shows the options for how often AWS Config delivers configuration snapshots
- * to the Amazon S3 bucket in your delivery channel.
+ * Provides options for how often AWS Config delivers configuration snapshots to
+ * the Amazon S3 bucket in your delivery channel.
  * </p>
  * <note>
  * <p>
@@ -57,14 +57,20 @@ import java.io.Serializable;
  * <ol>
  * <li>
  * <p>
- * For example, you have a rule and you specify the
- * <code>MaximumExecutionFrequency</code> value to be <code>Six_Hours</code>.
+ * For example, you want your rule to run evaluations when AWS Config delivers
+ * the configuration snapshot.
  * </p>
  * </li>
  * <li>
  * <p>
- * You then specify the delivery channel <code>deliveryFrequency</code> value to
- * <code>TwentyFour_Hours</code>.
+ * You specify the <code>MaximumExecutionFrequency</code> value for
+ * <code>Six_Hours</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You then specify the delivery channel <code>deliveryFrequency</code> value
+ * for <code>TwentyFour_Hours</code>.
  * </p>
  * </li>
  * <li>
@@ -82,8 +88,8 @@ import java.io.Serializable;
  * <code>DescribeDeliveryChannnels</code> action.
  * </p>
  * <p>
- * To update the frequency with which AWS Config delivers your configuration
- * snapshots, use the <code>PutDeliveryChannel</code> action.
+ * To update the <code>deliveryFrequency</code> with which AWS Config delivers
+ * your configuration snapshots, use the <code>PutDeliveryChannel</code> action.
  * </p>
  */
 public class ConfigSnapshotDeliveryProperties implements Serializable,

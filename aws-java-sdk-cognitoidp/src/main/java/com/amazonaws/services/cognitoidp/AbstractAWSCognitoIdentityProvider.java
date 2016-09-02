@@ -158,6 +158,12 @@ public class AbstractAWSCognitoIdentityProvider implements
     }
 
     @Override
+    public CreateUserImportJobResult createUserImportJob(
+            CreateUserImportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateUserPoolResult createUserPool(CreateUserPoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -191,6 +197,12 @@ public class AbstractAWSCognitoIdentityProvider implements
     }
 
     @Override
+    public DescribeUserImportJobResult describeUserImportJob(
+            DescribeUserImportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeUserPoolResult describeUserPool(
             DescribeUserPoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -209,6 +221,11 @@ public class AbstractAWSCognitoIdentityProvider implements
 
     @Override
     public ForgotPasswordResult forgotPassword(ForgotPasswordRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCSVHeaderResult getCSVHeader(GetCSVHeaderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -240,6 +257,12 @@ public class AbstractAWSCognitoIdentityProvider implements
 
     @Override
     public ListDevicesResult listDevices(ListDevicesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListUserImportJobsResult listUserImportJobs(
+            ListUserImportJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -278,6 +301,18 @@ public class AbstractAWSCognitoIdentityProvider implements
 
     @Override
     public SignUpResult signUp(SignUpRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartUserImportJobResult startUserImportJob(
+            StartUserImportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopUserImportJobResult stopUserImportJob(
+            StopUserImportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
