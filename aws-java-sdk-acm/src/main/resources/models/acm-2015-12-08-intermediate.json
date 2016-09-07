@@ -8684,7 +8684,7 @@
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseClassName" : "AWSCertificateManagerException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException",
-  "hasWaiters" : false,
-  "sdkModeledExceptionBaseClassName" : "AWSCertificateManagerException"
+  "hasWaiters" : false
 }

@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.32-SNAPSHOT</version>
+    <version>1.11.32</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-code-generator</artifactId>
@@ -22,7 +22,7 @@
         <artifactId>aws-java-sdk-core</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
-        <version>1.11.32-SNAPSHOT</version>
+        <version>1.11.32</version>
     </dependency>
     <dependency>
         <artifactId>org.eclipse.jdt.core</artifactId>

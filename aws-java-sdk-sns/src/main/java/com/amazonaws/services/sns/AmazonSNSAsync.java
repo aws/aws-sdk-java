@@ -1328,8 +1328,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * endpoint, such as an app on a Kindle device or mobile phone, you must
      * specify the EndpointArn for the TargetArn parameter. The EndpointArn is
      * returned when making a call with the <code>CreatePlatformEndpoint</code>
-     * action. The second example below shows a request and response for
-     * publishing to a mobile endpoint.
+     * action.
      * </p>
      * <p>
      * For more information about formatting messages, see <a href=
@@ -1360,8 +1359,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * endpoint, such as an app on a Kindle device or mobile phone, you must
      * specify the EndpointArn for the TargetArn parameter. The EndpointArn is
      * returned when making a call with the <code>CreatePlatformEndpoint</code>
-     * action. The second example below shows a request and response for
-     * publishing to a mobile endpoint.
+     * action.
      * </p>
      * <p>
      * For more information about formatting messages, see <a href=

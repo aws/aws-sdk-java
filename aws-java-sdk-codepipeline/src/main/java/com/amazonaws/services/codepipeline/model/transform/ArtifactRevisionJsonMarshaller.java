@@ -45,6 +45,10 @@ public class ArtifactRevisionJsonMarshaller {
         try {
             jsonGenerator.writeStartObject();
 
+            if (artifactRevision.getName() != null) {
+                jsonGenerator.writeFieldName("name").writeValue(
+                        artifactRevision.getName());
+            }
             if (artifactRevision.getRevisionId() != null) {
                 jsonGenerator.writeFieldName("revisionId").writeValue(
                         artifactRevision.getRevisionId());

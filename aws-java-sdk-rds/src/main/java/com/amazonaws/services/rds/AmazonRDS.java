@@ -1777,6 +1777,21 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Returns a list that includes the status of each source AWS Region that
+     * the current region can get a Read Replica or a DB snapshot from. This API
+     * action supports pagination.
+     * </p>
+     * 
+     * @param describeSourceRegionsRequest
+     * @return Result of the DescribeSourceRegions operation returned by the
+     *         service.
+     * @sample AmazonRDS.DescribeSourceRegions
+     */
+    DescribeSourceRegionsResult describeSourceRegions(
+            DescribeSourceRegionsRequest describeSourceRegionsRequest);
+
+    /**
+     * <p>
      * Downloads all or a portion of the specified log file, up to 1 MB in size.
      * </p>
      * 

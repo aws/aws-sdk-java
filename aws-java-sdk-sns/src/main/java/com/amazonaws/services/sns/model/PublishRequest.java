@@ -71,7 +71,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * If you want to send different messages for each transport protocol, set
      * the value of the <code>MessageStructure</code> parameter to
      * <code>json</code> and use a JSON object for the <code>Message</code>
-     * parameter. See the Examples section for the format of the JSON object.
+     * parameter.
      * </p>
      * <p>
      * Constraints: Messages must be UTF-8 encoded strings at most 256 KB in
@@ -222,8 +222,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *        If you want to send different messages for each transport
      *        protocol, set the value of the <code>MessageStructure</code>
      *        parameter to <code>json</code> and use a JSON object for the
-     *        <code>Message</code> parameter. See the Examples section for the
-     *        format of the JSON object.
+     *        <code>Message</code> parameter.
      *        </p>
      *        <p>
      *        Constraints: Messages must be UTF-8 encoded strings at most 256 KB
@@ -314,8 +313,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *        If you want to send different messages for each transport
      *        protocol, set the value of the <code>MessageStructure</code>
      *        parameter to <code>json</code> and use a JSON object for the
-     *        <code>Message</code> parameter. See the Examples section for the
-     *        format of the JSON object.
+     *        <code>Message</code> parameter.
      *        </p>
      *        <p>
      *        Constraints: Messages must be UTF-8 encoded strings at most 256 KB
@@ -616,7 +614,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * If you want to send different messages for each transport protocol, set
      * the value of the <code>MessageStructure</code> parameter to
      * <code>json</code> and use a JSON object for the <code>Message</code>
-     * parameter. See the Examples section for the format of the JSON object.
+     * parameter.
      * </p>
      * <p>
      * Constraints: Messages must be UTF-8 encoded strings at most 256 KB in
@@ -688,8 +686,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *        If you want to send different messages for each transport
      *        protocol, set the value of the <code>MessageStructure</code>
      *        parameter to <code>json</code> and use a JSON object for the
-     *        <code>Message</code> parameter. See the Examples section for the
-     *        format of the JSON object.
+     *        <code>Message</code> parameter.
      *        </p>
      *        <p>
      *        Constraints: Messages must be UTF-8 encoded strings at most 256 KB
@@ -770,7 +767,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * If you want to send different messages for each transport protocol, set
      * the value of the <code>MessageStructure</code> parameter to
      * <code>json</code> and use a JSON object for the <code>Message</code>
-     * parameter. See the Examples section for the format of the JSON object.
+     * parameter.
      * </p>
      * <p>
      * Constraints: Messages must be UTF-8 encoded strings at most 256 KB in
@@ -841,8 +838,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *         If you want to send different messages for each transport
      *         protocol, set the value of the <code>MessageStructure</code>
      *         parameter to <code>json</code> and use a JSON object for the
-     *         <code>Message</code> parameter. See the Examples section for the
-     *         format of the JSON object.
+     *         <code>Message</code> parameter.
      *         </p>
      *         <p>
      *         Constraints: Messages must be UTF-8 encoded strings at most 256
@@ -923,7 +919,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * If you want to send different messages for each transport protocol, set
      * the value of the <code>MessageStructure</code> parameter to
      * <code>json</code> and use a JSON object for the <code>Message</code>
-     * parameter. See the Examples section for the format of the JSON object.
+     * parameter.
      * </p>
      * <p>
      * Constraints: Messages must be UTF-8 encoded strings at most 256 KB in
@@ -995,8 +991,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *        If you want to send different messages for each transport
      *        protocol, set the value of the <code>MessageStructure</code>
      *        parameter to <code>json</code> and use a JSON object for the
-     *        <code>Message</code> parameter. See the Examples section for the
-     *        format of the JSON object.
+     *        <code>Message</code> parameter.
      *        </p>
      *        <p>
      *        Constraints: Messages must be UTF-8 encoded strings at most 256 KB

@@ -62,18 +62,16 @@ public class PipelineExecutionJsonMarshaller {
                         pipelineExecution.getStatus());
             }
 
-            java.util.List<ArtifactRevisionInformation> artifactRevisionInformationsList = pipelineExecution
-                    .getArtifactRevisionInformations();
-            if (artifactRevisionInformationsList != null) {
-                jsonGenerator.writeFieldName("artifactRevisionInformations");
+            java.util.List<ArtifactRevision> artifactRevisionsList = pipelineExecution
+                    .getArtifactRevisions();
+            if (artifactRevisionsList != null) {
+                jsonGenerator.writeFieldName("artifactRevisions");
                 jsonGenerator.writeStartArray();
-                for (ArtifactRevisionInformation artifactRevisionInformationsListValue : artifactRevisionInformationsList) {
-                    if (artifactRevisionInformationsListValue != null) {
+                for (ArtifactRevision artifactRevisionsListValue : artifactRevisionsList) {
+                    if (artifactRevisionsListValue != null) {
 
-                        ArtifactRevisionInformationJsonMarshaller.getInstance()
-                                .marshall(
-                                        artifactRevisionInformationsListValue,
-                                        jsonGenerator);
+                        ArtifactRevisionJsonMarshaller.getInstance().marshall(
+                                artifactRevisionsListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();

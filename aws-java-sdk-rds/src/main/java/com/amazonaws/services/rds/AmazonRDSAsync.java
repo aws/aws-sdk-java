@@ -2954,6 +2954,42 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Returns a list that includes the status of each source AWS Region that
+     * the current region can get a Read Replica or a DB snapshot from. This API
+     * action supports pagination.
+     * </p>
+     * 
+     * @param describeSourceRegionsRequest
+     * @return A Java Future containing the result of the DescribeSourceRegions
+     *         operation returned by the service.
+     * @sample AmazonRDSAsync.DescribeSourceRegions
+     */
+    java.util.concurrent.Future<DescribeSourceRegionsResult> describeSourceRegionsAsync(
+            DescribeSourceRegionsRequest describeSourceRegionsRequest);
+
+    /**
+     * <p>
+     * Returns a list that includes the status of each source AWS Region that
+     * the current region can get a Read Replica or a DB snapshot from. This API
+     * action supports pagination.
+     * </p>
+     * 
+     * @param describeSourceRegionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSourceRegions
+     *         operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DescribeSourceRegions
+     */
+    java.util.concurrent.Future<DescribeSourceRegionsResult> describeSourceRegionsAsync(
+            DescribeSourceRegionsRequest describeSourceRegionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSourceRegionsRequest, DescribeSourceRegionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Downloads all or a portion of the specified log file, up to 1 MB in size.
      * </p>
      * 

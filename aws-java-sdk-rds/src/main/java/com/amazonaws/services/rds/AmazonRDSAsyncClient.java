@@ -2848,6 +2848,41 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSourceRegionsResult> describeSourceRegionsAsync(
+            DescribeSourceRegionsRequest request) {
+
+        return describeSourceRegionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSourceRegionsResult> describeSourceRegionsAsync(
+            final DescribeSourceRegionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSourceRegionsRequest, DescribeSourceRegionsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeSourceRegionsResult>() {
+                    @Override
+                    public DescribeSourceRegionsResult call() throws Exception {
+                        DescribeSourceRegionsResult result;
+
+                        try {
+                            result = describeSourceRegions(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DownloadDBLogFilePortionResult> downloadDBLogFilePortionAsync(
             DownloadDBLogFilePortionRequest request) {
 

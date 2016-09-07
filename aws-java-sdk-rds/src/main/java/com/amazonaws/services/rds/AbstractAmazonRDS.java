@@ -465,6 +465,12 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DescribeSourceRegionsResult describeSourceRegions(
+            DescribeSourceRegionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DownloadDBLogFilePortionResult downloadDBLogFilePortion(
             DownloadDBLogFilePortionRequest request) {
         throw new java.lang.UnsupportedOperationException();

@@ -19,17 +19,17 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "snowball",
     "signingName" : "snowball",
-    "jsonProtocol" : true,
-    "cborProtocol" : false,
-    "xmlProtocol" : false,
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonSnowballClientBuilder",
     "asyncClientBuilderClassName" : "AmazonSnowballAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AmazonSnowballModuleInjector",
-    "smokeTestsPackageName" : "com.amazonaws.services.snowball.smoketests",
     "serviceName" : "Amazon Snowball",
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext"
+    "smokeTestsPackageName" : "com.amazonaws.services.snowball.smoketests",
+    "cborProtocol" : false,
+    "xmlProtocol" : false,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "CancelJob" : {
@@ -5709,8 +5709,8 @@
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
-          "simpleType" : "JobListEntry",
           "map" : false,
+          "simpleType" : "JobListEntry",
           "templateType" : "java.util.List<JobListEntry>",
           "templateImplType" : "java.util.ArrayList<JobListEntry>"
         },
@@ -5956,8 +5956,8 @@
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
-            "simpleType" : "JobListEntry",
             "map" : false,
+            "simpleType" : "JobListEntry",
             "templateType" : "java.util.List<JobListEntry>",
             "templateImplType" : "java.util.ArrayList<JobListEntry>"
           },
@@ -6141,8 +6141,8 @@
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
-          "simpleType" : "String",
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -6335,8 +6335,8 @@
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
-            "simpleType" : "String",
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -7768,8 +7768,8 @@
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
-          "simpleType" : "S3Resource",
           "map" : false,
+          "simpleType" : "S3Resource",
           "templateType" : "java.util.List<S3Resource>",
           "templateImplType" : "java.util.ArrayList<S3Resource>"
         },
@@ -7910,8 +7910,8 @@
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
-            "simpleType" : "S3Resource",
             "map" : false,
+            "simpleType" : "S3Resource",
             "templateType" : "java.util.List<S3Resource>",
             "templateImplType" : "java.util.ArrayList<S3Resource>"
           },
@@ -8438,8 +8438,8 @@
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
-          "simpleType" : "Address",
           "map" : false,
+          "simpleType" : "Address",
           "templateType" : "java.util.List<Address>",
           "templateImplType" : "java.util.ArrayList<Address>"
         },
@@ -8632,8 +8632,8 @@
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
-            "simpleType" : "Address",
             "map" : false,
+            "simpleType" : "Address",
             "templateType" : "java.util.List<Address>",
             "templateImplType" : "java.util.ArrayList<Address>"
           },
@@ -11352,8 +11352,8 @@
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
-          "simpleType" : "JobMetadata",
           "map" : false,
+          "simpleType" : "JobMetadata",
           "templateType" : "java.util.List<JobMetadata>",
           "templateImplType" : "java.util.ArrayList<JobMetadata>"
         },
@@ -11547,8 +11547,8 @@
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
-            "simpleType" : "JobMetadata",
             "map" : false,
+            "simpleType" : "JobMetadata",
             "templateType" : "java.util.List<JobMetadata>",
             "templateImplType" : "java.util.ArrayList<JobMetadata>"
           },
@@ -12134,11 +12134,11 @@
     "examples" : { },
     "version" : "1.0"
   },
-  "sdkModeledExceptionBaseClassName" : "AmazonSnowballException",
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.snowball.model.AmazonSnowballException",
-  "hasWaiters" : false
+  "hasWaiters" : false,
+  "sdkModeledExceptionBaseClassName" : "AmazonSnowballException",
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */"
 }

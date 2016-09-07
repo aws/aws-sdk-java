@@ -35,20 +35,20 @@ public class DescribeHostReservationOfferingsRequest extends
     /**
      * <p>
      * This is the minimum duration of the reservation you'd like to purchase,
-     * specified in seconds. Reservations are available in 1, 3, and 5 year
-     * terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1, 3, or 5).
-     * For example, specify 94608000 for 3 years.
+     * specified in seconds. Reservations are available in one-year and
+     * three-year terms. The number of seconds specified must be the number of
+     * seconds in a year (365x24x60x60) times one of the supported durations (1
+     * or 3). For example, specify 31536000 for one year.
      * </p>
      */
     private Integer minDuration;
     /**
      * <p>
      * This is the maximum duration of the reservation you'd like to purchase,
-     * specified in seconds.Reservations are available in 1, 3, and 5 year
-     * terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1, 3, or 5).
-     * For example, specify 157680000 for 5 years.
+     * specified in seconds. Reservations are available in one-year and
+     * three-year terms. The number of seconds specified must be the number of
+     * seconds in a year (365x24x60x60) times one of the supported durations (1
+     * or 3). For example, specify 94608000 for three years.
      * </p>
      */
     private Integer maxDuration;
@@ -134,19 +134,19 @@ public class DescribeHostReservationOfferingsRequest extends
     /**
      * <p>
      * This is the minimum duration of the reservation you'd like to purchase,
-     * specified in seconds. Reservations are available in 1, 3, and 5 year
-     * terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1, 3, or 5).
-     * For example, specify 94608000 for 3 years.
+     * specified in seconds. Reservations are available in one-year and
+     * three-year terms. The number of seconds specified must be the number of
+     * seconds in a year (365x24x60x60) times one of the supported durations (1
+     * or 3). For example, specify 31536000 for one year.
      * </p>
      * 
      * @param minDuration
      *        This is the minimum duration of the reservation you'd like to
-     *        purchase, specified in seconds. Reservations are available in 1,
-     *        3, and 5 year terms. The number of seconds specified must be the
-     *        number of seconds in a year (365x24x60x60) times one of the
-     *        supported durations (1, 3, or 5). For example, specify 94608000
-     *        for 3 years.
+     *        purchase, specified in seconds. Reservations are available in
+     *        one-year and three-year terms. The number of seconds specified
+     *        must be the number of seconds in a year (365x24x60x60) times one
+     *        of the supported durations (1 or 3). For example, specify 31536000
+     *        for one year.
      */
 
     public void setMinDuration(Integer minDuration) {
@@ -156,18 +156,18 @@ public class DescribeHostReservationOfferingsRequest extends
     /**
      * <p>
      * This is the minimum duration of the reservation you'd like to purchase,
-     * specified in seconds. Reservations are available in 1, 3, and 5 year
-     * terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1, 3, or 5).
-     * For example, specify 94608000 for 3 years.
+     * specified in seconds. Reservations are available in one-year and
+     * three-year terms. The number of seconds specified must be the number of
+     * seconds in a year (365x24x60x60) times one of the supported durations (1
+     * or 3). For example, specify 31536000 for one year.
      * </p>
      * 
      * @return This is the minimum duration of the reservation you'd like to
-     *         purchase, specified in seconds. Reservations are available in 1,
-     *         3, and 5 year terms. The number of seconds specified must be the
-     *         number of seconds in a year (365x24x60x60) times one of the
-     *         supported durations (1, 3, or 5). For example, specify 94608000
-     *         for 3 years.
+     *         purchase, specified in seconds. Reservations are available in
+     *         one-year and three-year terms. The number of seconds specified
+     *         must be the number of seconds in a year (365x24x60x60) times one
+     *         of the supported durations (1 or 3). For example, specify
+     *         31536000 for one year.
      */
 
     public Integer getMinDuration() {
@@ -177,19 +177,19 @@ public class DescribeHostReservationOfferingsRequest extends
     /**
      * <p>
      * This is the minimum duration of the reservation you'd like to purchase,
-     * specified in seconds. Reservations are available in 1, 3, and 5 year
-     * terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1, 3, or 5).
-     * For example, specify 94608000 for 3 years.
+     * specified in seconds. Reservations are available in one-year and
+     * three-year terms. The number of seconds specified must be the number of
+     * seconds in a year (365x24x60x60) times one of the supported durations (1
+     * or 3). For example, specify 31536000 for one year.
      * </p>
      * 
      * @param minDuration
      *        This is the minimum duration of the reservation you'd like to
-     *        purchase, specified in seconds. Reservations are available in 1,
-     *        3, and 5 year terms. The number of seconds specified must be the
-     *        number of seconds in a year (365x24x60x60) times one of the
-     *        supported durations (1, 3, or 5). For example, specify 94608000
-     *        for 3 years.
+     *        purchase, specified in seconds. Reservations are available in
+     *        one-year and three-year terms. The number of seconds specified
+     *        must be the number of seconds in a year (365x24x60x60) times one
+     *        of the supported durations (1 or 3). For example, specify 31536000
+     *        for one year.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -203,19 +203,19 @@ public class DescribeHostReservationOfferingsRequest extends
     /**
      * <p>
      * This is the maximum duration of the reservation you'd like to purchase,
-     * specified in seconds.Reservations are available in 1, 3, and 5 year
-     * terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1, 3, or 5).
-     * For example, specify 157680000 for 5 years.
+     * specified in seconds. Reservations are available in one-year and
+     * three-year terms. The number of seconds specified must be the number of
+     * seconds in a year (365x24x60x60) times one of the supported durations (1
+     * or 3). For example, specify 94608000 for three years.
      * </p>
      * 
      * @param maxDuration
      *        This is the maximum duration of the reservation you'd like to
-     *        purchase, specified in seconds.Reservations are available in 1, 3,
-     *        and 5 year terms. The number of seconds specified must be the
-     *        number of seconds in a year (365x24x60x60) times one of the
-     *        supported durations (1, 3, or 5). For example, specify 157680000
-     *        for 5 years.
+     *        purchase, specified in seconds. Reservations are available in
+     *        one-year and three-year terms. The number of seconds specified
+     *        must be the number of seconds in a year (365x24x60x60) times one
+     *        of the supported durations (1 or 3). For example, specify 94608000
+     *        for three years.
      */
 
     public void setMaxDuration(Integer maxDuration) {
@@ -225,18 +225,18 @@ public class DescribeHostReservationOfferingsRequest extends
     /**
      * <p>
      * This is the maximum duration of the reservation you'd like to purchase,
-     * specified in seconds.Reservations are available in 1, 3, and 5 year
-     * terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1, 3, or 5).
-     * For example, specify 157680000 for 5 years.
+     * specified in seconds. Reservations are available in one-year and
+     * three-year terms. The number of seconds specified must be the number of
+     * seconds in a year (365x24x60x60) times one of the supported durations (1
+     * or 3). For example, specify 94608000 for three years.
      * </p>
      * 
      * @return This is the maximum duration of the reservation you'd like to
-     *         purchase, specified in seconds.Reservations are available in 1,
-     *         3, and 5 year terms. The number of seconds specified must be the
-     *         number of seconds in a year (365x24x60x60) times one of the
-     *         supported durations (1, 3, or 5). For example, specify 157680000
-     *         for 5 years.
+     *         purchase, specified in seconds. Reservations are available in
+     *         one-year and three-year terms. The number of seconds specified
+     *         must be the number of seconds in a year (365x24x60x60) times one
+     *         of the supported durations (1 or 3). For example, specify
+     *         94608000 for three years.
      */
 
     public Integer getMaxDuration() {
@@ -246,19 +246,19 @@ public class DescribeHostReservationOfferingsRequest extends
     /**
      * <p>
      * This is the maximum duration of the reservation you'd like to purchase,
-     * specified in seconds.Reservations are available in 1, 3, and 5 year
-     * terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1, 3, or 5).
-     * For example, specify 157680000 for 5 years.
+     * specified in seconds. Reservations are available in one-year and
+     * three-year terms. The number of seconds specified must be the number of
+     * seconds in a year (365x24x60x60) times one of the supported durations (1
+     * or 3). For example, specify 94608000 for three years.
      * </p>
      * 
      * @param maxDuration
      *        This is the maximum duration of the reservation you'd like to
-     *        purchase, specified in seconds.Reservations are available in 1, 3,
-     *        and 5 year terms. The number of seconds specified must be the
-     *        number of seconds in a year (365x24x60x60) times one of the
-     *        supported durations (1, 3, or 5). For example, specify 157680000
-     *        for 5 years.
+     *        purchase, specified in seconds. Reservations are available in
+     *        one-year and three-year terms. The number of seconds specified
+     *        must be the number of seconds in a year (365x24x60x60) times one
+     *        of the supported durations (1 or 3). For example, specify 94608000
+     *        for three years.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

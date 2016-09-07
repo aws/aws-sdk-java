@@ -69,7 +69,12 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private Integer maxResults;
-
+    /**
+     * <p>
+     * The filter key and value with which to filter your
+     * <code>ListImages</code> results.
+     * </p>
+     */
     private ListImagesFilter filter;
 
     /**
@@ -372,7 +377,14 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The filter key and value with which to filter your
+     * <code>ListImages</code> results.
+     * </p>
+     * 
      * @param filter
+     *        The filter key and value with which to filter your
+     *        <code>ListImages</code> results.
      */
 
     public void setFilter(ListImagesFilter filter) {
@@ -380,7 +392,13 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * The filter key and value with which to filter your
+     * <code>ListImages</code> results.
+     * </p>
+     * 
+     * @return The filter key and value with which to filter your
+     *         <code>ListImages</code> results.
      */
 
     public ListImagesFilter getFilter() {
@@ -388,7 +406,14 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The filter key and value with which to filter your
+     * <code>ListImages</code> results.
+     * </p>
+     * 
      * @param filter
+     *        The filter key and value with which to filter your
+     *        <code>ListImages</code> results.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -58,12 +58,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "allocateConnectionOnInterconnect",
-      "authenticated" : true,
       "syncReturnType" : "AllocateConnectionOnInterconnectResult",
       "asyncReturnType" : "AllocateConnectionOnInterconnectResult",
       "asyncFutureType" : "java.util.concurrent.Future<AllocateConnectionOnInterconnectResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AllocateConnectionOnInterconnectResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AllocateConnectionOnInterconnectRequest, AllocateConnectionOnInterconnectResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AllocateConnectionOnInterconnectRequest, AllocateConnectionOnInterconnectResult>",
+      "authenticated" : true
     },
     "AllocatePrivateVirtualInterface" : {
       "documentation" : "<p>Provisions a private virtual interface to be owned by a different customer.</p> <p>The owner of a connection calls this function to provision a private virtual interface which will be owned by another AWS customer.</p> <p>Virtual interfaces created using this function must be confirmed by the virtual interface owner by calling ConfirmPrivateVirtualInterface. Until this step has been completed, the virtual interface will be in 'Confirming' state, and will not be available for handling traffic.</p>",
@@ -91,12 +91,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "allocatePrivateVirtualInterface",
-      "authenticated" : true,
       "syncReturnType" : "AllocatePrivateVirtualInterfaceResult",
       "asyncReturnType" : "AllocatePrivateVirtualInterfaceResult",
       "asyncFutureType" : "java.util.concurrent.Future<AllocatePrivateVirtualInterfaceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AllocatePrivateVirtualInterfaceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AllocatePrivateVirtualInterfaceRequest, AllocatePrivateVirtualInterfaceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AllocatePrivateVirtualInterfaceRequest, AllocatePrivateVirtualInterfaceResult>",
+      "authenticated" : true
     },
     "AllocatePublicVirtualInterface" : {
       "documentation" : "<p>Provisions a public virtual interface to be owned by a different customer.</p> <p>The owner of a connection calls this function to provision a public virtual interface which will be owned by another AWS customer.</p> <p>Virtual interfaces created using this function must be confirmed by the virtual interface owner by calling ConfirmPublicVirtualInterface. Until this step has been completed, the virtual interface will be in 'Confirming' state, and will not be available for handling traffic.</p>",
@@ -124,12 +124,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "allocatePublicVirtualInterface",
-      "authenticated" : true,
       "syncReturnType" : "AllocatePublicVirtualInterfaceResult",
       "asyncReturnType" : "AllocatePublicVirtualInterfaceResult",
       "asyncFutureType" : "java.util.concurrent.Future<AllocatePublicVirtualInterfaceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AllocatePublicVirtualInterfaceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AllocatePublicVirtualInterfaceRequest, AllocatePublicVirtualInterfaceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AllocatePublicVirtualInterfaceRequest, AllocatePublicVirtualInterfaceResult>",
+      "authenticated" : true
     },
     "ConfirmConnection" : {
       "documentation" : "<p>Confirm the creation of a hosted connection on an interconnect.</p> <p>Upon creation, the hosted connection is initially in the 'Ordering' state, and will remain in this state until the owner calls ConfirmConnection to confirm creation of the hosted connection.</p>",
@@ -157,12 +157,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "confirmConnection",
-      "authenticated" : true,
       "syncReturnType" : "ConfirmConnectionResult",
       "asyncReturnType" : "ConfirmConnectionResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConfirmConnectionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConfirmConnectionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmConnectionRequest, ConfirmConnectionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmConnectionRequest, ConfirmConnectionResult>",
+      "authenticated" : true
     },
     "ConfirmPrivateVirtualInterface" : {
       "documentation" : "<p>Accept ownership of a private virtual interface created by another customer.</p> <p>After the virtual interface owner calls this function, the virtual interface will be created and attached to the given virtual private gateway, and will be available for handling traffic.</p>",
@@ -190,12 +190,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "confirmPrivateVirtualInterface",
-      "authenticated" : true,
       "syncReturnType" : "ConfirmPrivateVirtualInterfaceResult",
       "asyncReturnType" : "ConfirmPrivateVirtualInterfaceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConfirmPrivateVirtualInterfaceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConfirmPrivateVirtualInterfaceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmPrivateVirtualInterfaceRequest, ConfirmPrivateVirtualInterfaceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmPrivateVirtualInterfaceRequest, ConfirmPrivateVirtualInterfaceResult>",
+      "authenticated" : true
     },
     "ConfirmPublicVirtualInterface" : {
       "documentation" : "<p>Accept ownership of a public virtual interface created by another customer.</p> <p>After the virtual interface owner calls this function, the specified virtual interface will be created and made available for handling traffic.</p>",
@@ -223,12 +223,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "confirmPublicVirtualInterface",
-      "authenticated" : true,
       "syncReturnType" : "ConfirmPublicVirtualInterfaceResult",
       "asyncReturnType" : "ConfirmPublicVirtualInterfaceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConfirmPublicVirtualInterfaceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConfirmPublicVirtualInterfaceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmPublicVirtualInterfaceRequest, ConfirmPublicVirtualInterfaceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmPublicVirtualInterfaceRequest, ConfirmPublicVirtualInterfaceResult>",
+      "authenticated" : true
     },
     "CreateConnection" : {
       "documentation" : "<p>Creates a new connection between the customer network and a specific AWS Direct Connect location.</p> <p>A connection links your internal network to an AWS Direct Connect location over a standard 1 gigabit or 10 gigabit Ethernet fiber-optic cable. One end of the cable is connected to your router, the other to an AWS Direct Connect router. An AWS Direct Connect location provides access to Amazon Web Services in the region it is associated with. You can establish connections with AWS Direct Connect locations in multiple regions, but a connection in one region does not provide connectivity to other regions.</p>",
@@ -256,12 +256,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createConnection",
-      "authenticated" : true,
       "syncReturnType" : "CreateConnectionResult",
       "asyncReturnType" : "CreateConnectionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateConnectionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateConnectionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateConnectionRequest, CreateConnectionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateConnectionRequest, CreateConnectionResult>",
+      "authenticated" : true
     },
     "CreateInterconnect" : {
       "documentation" : "<p>Creates a new interconnect between a AWS Direct Connect partner's network and a specific AWS Direct Connect location.</p> <p>An interconnect is a connection which is capable of hosting other connections. The AWS Direct Connect partner can use an interconnect to provide sub-1Gbps AWS Direct Connect service to tier 2 customers who do not have their own connections. Like a standard connection, an interconnect links the AWS Direct Connect partner's network to an AWS Direct Connect location over a standard 1 Gbps or 10 Gbps Ethernet fiber-optic cable. One end is connected to the partner's router, the other to an AWS Direct Connect router.</p> <p>For each end customer, the AWS Direct Connect partner provisions a connection on their interconnect by calling AllocateConnectionOnInterconnect. The end customer can then connect to AWS resources by creating a virtual interface on their connection, using the VLAN assigned to them by the AWS Direct Connect partner.</p> <note> <p>This is intended for use by AWS Direct Connect partners only.</p> </note>",
@@ -289,12 +289,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createInterconnect",
-      "authenticated" : true,
       "syncReturnType" : "CreateInterconnectResult",
       "asyncReturnType" : "CreateInterconnectResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateInterconnectResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateInterconnectResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateInterconnectRequest, CreateInterconnectResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateInterconnectRequest, CreateInterconnectResult>",
+      "authenticated" : true
     },
     "CreatePrivateVirtualInterface" : {
       "documentation" : "<p>Creates a new private virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A private virtual interface supports sending traffic to a single virtual private cloud (VPC).</p>",
@@ -322,12 +322,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createPrivateVirtualInterface",
-      "authenticated" : true,
       "syncReturnType" : "CreatePrivateVirtualInterfaceResult",
       "asyncReturnType" : "CreatePrivateVirtualInterfaceResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePrivateVirtualInterfaceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePrivateVirtualInterfaceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePrivateVirtualInterfaceRequest, CreatePrivateVirtualInterfaceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePrivateVirtualInterfaceRequest, CreatePrivateVirtualInterfaceResult>",
+      "authenticated" : true
     },
     "CreatePublicVirtualInterface" : {
       "documentation" : "<p>Creates a new public virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A public virtual interface supports sending traffic to public services of AWS such as Amazon Simple Storage Service (Amazon S3).</p>",
@@ -355,12 +355,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createPublicVirtualInterface",
-      "authenticated" : true,
       "syncReturnType" : "CreatePublicVirtualInterfaceResult",
       "asyncReturnType" : "CreatePublicVirtualInterfaceResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePublicVirtualInterfaceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePublicVirtualInterfaceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePublicVirtualInterfaceRequest, CreatePublicVirtualInterfaceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePublicVirtualInterfaceRequest, CreatePublicVirtualInterfaceResult>",
+      "authenticated" : true
     },
     "DeleteConnection" : {
       "documentation" : "<p>Deletes the connection.</p> <p>Deleting a connection only stops the AWS Direct Connect port hour and data transfer charges. You need to cancel separately with the providers any services or charges for cross-connects or network circuits that connect you to the AWS Direct Connect location.</p>",
@@ -388,12 +388,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteConnection",
-      "authenticated" : true,
       "syncReturnType" : "DeleteConnectionResult",
       "asyncReturnType" : "DeleteConnectionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteConnectionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteConnectionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult>",
+      "authenticated" : true
     },
     "DeleteInterconnect" : {
       "documentation" : "<p>Deletes the specified interconnect.</p> <note> <p>This is intended for use by AWS Direct Connect partners only.</p> </note>",
@@ -421,12 +421,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteInterconnect",
-      "authenticated" : true,
       "syncReturnType" : "DeleteInterconnectResult",
       "asyncReturnType" : "DeleteInterconnectResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteInterconnectResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteInterconnectResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteInterconnectRequest, DeleteInterconnectResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteInterconnectRequest, DeleteInterconnectResult>",
+      "authenticated" : true
     },
     "DeleteVirtualInterface" : {
       "documentation" : "<p>Deletes a virtual interface.</p>",
@@ -454,12 +454,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteVirtualInterface",
-      "authenticated" : true,
       "syncReturnType" : "DeleteVirtualInterfaceResult",
       "asyncReturnType" : "DeleteVirtualInterfaceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteVirtualInterfaceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteVirtualInterfaceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResult>",
+      "authenticated" : true
     },
     "DescribeConnectionLoa" : {
       "documentation" : "<p>Returns the LOA-CFA for a Connection.</p> <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that your APN partner or service provider uses when establishing your cross connect to AWS at the colocation facility. For more information, see <a href=\"http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html\">Requesting Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect user guide.</p>",
@@ -487,12 +487,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeConnectionLoa",
-      "authenticated" : true,
       "syncReturnType" : "DescribeConnectionLoaResult",
       "asyncReturnType" : "DescribeConnectionLoaResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConnectionLoaResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConnectionLoaResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConnectionLoaRequest, DescribeConnectionLoaResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConnectionLoaRequest, DescribeConnectionLoaResult>",
+      "authenticated" : true
     },
     "DescribeConnections" : {
       "documentation" : "<p>Displays all connections in this region.</p> <p>If a connection ID is provided, the call returns only that particular connection.</p>",
@@ -520,12 +520,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeConnections",
-      "authenticated" : true,
       "syncReturnType" : "DescribeConnectionsResult",
       "asyncReturnType" : "DescribeConnectionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConnectionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConnectionsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConnectionsRequest, DescribeConnectionsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConnectionsRequest, DescribeConnectionsResult>",
+      "authenticated" : true
     },
     "DescribeConnectionsOnInterconnect" : {
       "documentation" : "<p>Return a list of connections that have been provisioned on the given interconnect.</p> <note> <p>This is intended for use by AWS Direct Connect partners only.</p> </note>",
@@ -553,12 +553,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeConnectionsOnInterconnect",
-      "authenticated" : true,
       "syncReturnType" : "DescribeConnectionsOnInterconnectResult",
       "asyncReturnType" : "DescribeConnectionsOnInterconnectResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConnectionsOnInterconnectResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConnectionsOnInterconnectResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConnectionsOnInterconnectRequest, DescribeConnectionsOnInterconnectResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConnectionsOnInterconnectRequest, DescribeConnectionsOnInterconnectResult>",
+      "authenticated" : true
     },
     "DescribeInterconnectLoa" : {
       "documentation" : "<p>Returns the LOA-CFA for an Interconnect.</p> <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when establishing your cross connect to AWS at the colocation facility. For more information, see <a href=\"http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html\">Requesting Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect user guide.</p>",
@@ -586,12 +586,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeInterconnectLoa",
-      "authenticated" : true,
       "syncReturnType" : "DescribeInterconnectLoaResult",
       "asyncReturnType" : "DescribeInterconnectLoaResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeInterconnectLoaResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeInterconnectLoaResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeInterconnectLoaRequest, DescribeInterconnectLoaResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeInterconnectLoaRequest, DescribeInterconnectLoaResult>",
+      "authenticated" : true
     },
     "DescribeInterconnects" : {
       "documentation" : "<p>Returns a list of interconnects owned by the AWS account.</p> <p>If an interconnect ID is provided, it will only return this particular interconnect.</p>",
@@ -619,12 +619,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeInterconnects",
-      "authenticated" : true,
       "syncReturnType" : "DescribeInterconnectsResult",
       "asyncReturnType" : "DescribeInterconnectsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeInterconnectsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeInterconnectsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeInterconnectsRequest, DescribeInterconnectsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeInterconnectsRequest, DescribeInterconnectsResult>",
+      "authenticated" : true
     },
     "DescribeLocations" : {
       "documentation" : "<p>Returns the list of AWS Direct Connect locations in the current AWS region. These are the locations that may be selected when calling CreateConnection or CreateInterconnect.</p>",
@@ -652,12 +652,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeLocations",
-      "authenticated" : true,
       "syncReturnType" : "DescribeLocationsResult",
       "asyncReturnType" : "DescribeLocationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLocationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLocationsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLocationsRequest, DescribeLocationsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLocationsRequest, DescribeLocationsResult>",
+      "authenticated" : true
     },
     "DescribeVirtualGateways" : {
       "documentation" : "<p>Returns a list of virtual private gateways owned by the AWS account.</p> <p>You can create one or more AWS Direct Connect private virtual interfaces linking to a virtual private gateway. A virtual private gateway can be managed via Amazon Virtual Private Cloud (VPC) console or the <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html\">EC2 CreateVpnGateway</a> action.</p>",
@@ -685,12 +685,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeVirtualGateways",
-      "authenticated" : true,
       "syncReturnType" : "DescribeVirtualGatewaysResult",
       "asyncReturnType" : "DescribeVirtualGatewaysResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeVirtualGatewaysResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeVirtualGatewaysResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeVirtualGatewaysRequest, DescribeVirtualGatewaysResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeVirtualGatewaysRequest, DescribeVirtualGatewaysResult>",
+      "authenticated" : true
     },
     "DescribeVirtualInterfaces" : {
       "documentation" : "<p>Displays all virtual interfaces for an AWS account. Virtual interfaces deleted fewer than 15 minutes before DescribeVirtualInterfaces is called are also returned. If a connection ID is included then only virtual interfaces associated with this connection will be returned. If a virtual interface ID is included then only a single virtual interface will be returned.</p> <p>A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location and the customer.</p> <p>If a connection ID is provided, only virtual interfaces provisioned on the specified connection will be returned. If a virtual interface ID is provided, only this particular virtual interface will be returned.</p>",
@@ -718,12 +718,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeVirtualInterfaces",
-      "authenticated" : true,
       "syncReturnType" : "DescribeVirtualInterfacesResult",
       "asyncReturnType" : "DescribeVirtualInterfacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeVirtualInterfacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeVirtualInterfacesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeVirtualInterfacesRequest, DescribeVirtualInterfacesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeVirtualInterfacesRequest, DescribeVirtualInterfacesResult>",
+      "authenticated" : true
     }
   },
   "shapes" : {
@@ -27363,11 +27363,11 @@
     "examples" : { },
     "version" : "1.0"
   },
-  "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.directconnect.model.AmazonDirectConnectException",
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkModeledExceptionBaseClassName" : "AmazonDirectConnectException",
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */"
+  "clientConfigFactory" : "ClientConfigurationFactory"
 }

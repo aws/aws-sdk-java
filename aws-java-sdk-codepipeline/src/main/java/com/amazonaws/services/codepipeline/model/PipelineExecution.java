@@ -73,11 +73,10 @@ public class PipelineExecution implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * A list of ArtifactRevisionInformation objects included in a pipeline
-     * execution.
+     * A list of ArtifactRevision objects included in a pipeline execution.
      * </p>
      */
-    private java.util.List<ArtifactRevisionInformation> artifactRevisionInformations;
+    private java.util.List<ArtifactRevision> artifactRevisions;
 
     /**
      * <p>
@@ -514,87 +513,83 @@ public class PipelineExecution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ArtifactRevisionInformation objects included in a pipeline
-     * execution.
+     * A list of ArtifactRevision objects included in a pipeline execution.
      * </p>
      * 
-     * @return A list of ArtifactRevisionInformation objects included in a
-     *         pipeline execution.
+     * @return A list of ArtifactRevision objects included in a pipeline
+     *         execution.
      */
 
-    public java.util.List<ArtifactRevisionInformation> getArtifactRevisionInformations() {
-        return artifactRevisionInformations;
+    public java.util.List<ArtifactRevision> getArtifactRevisions() {
+        return artifactRevisions;
     }
 
     /**
      * <p>
-     * A list of ArtifactRevisionInformation objects included in a pipeline
-     * execution.
+     * A list of ArtifactRevision objects included in a pipeline execution.
      * </p>
      * 
-     * @param artifactRevisionInformations
-     *        A list of ArtifactRevisionInformation objects included in a
-     *        pipeline execution.
+     * @param artifactRevisions
+     *        A list of ArtifactRevision objects included in a pipeline
+     *        execution.
      */
 
-    public void setArtifactRevisionInformations(
-            java.util.Collection<ArtifactRevisionInformation> artifactRevisionInformations) {
-        if (artifactRevisionInformations == null) {
-            this.artifactRevisionInformations = null;
+    public void setArtifactRevisions(
+            java.util.Collection<ArtifactRevision> artifactRevisions) {
+        if (artifactRevisions == null) {
+            this.artifactRevisions = null;
             return;
         }
 
-        this.artifactRevisionInformations = new java.util.ArrayList<ArtifactRevisionInformation>(
-                artifactRevisionInformations);
+        this.artifactRevisions = new java.util.ArrayList<ArtifactRevision>(
+                artifactRevisions);
     }
 
     /**
      * <p>
-     * A list of ArtifactRevisionInformation objects included in a pipeline
-     * execution.
+     * A list of ArtifactRevision objects included in a pipeline execution.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setArtifactRevisionInformations(java.util.Collection)}
-     * or {@link #withArtifactRevisionInformations(java.util.Collection)} if you
-     * want to override the existing values.
+     * any). Use {@link #setArtifactRevisions(java.util.Collection)} or
+     * {@link #withArtifactRevisions(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
-     * @param artifactRevisionInformations
-     *        A list of ArtifactRevisionInformation objects included in a
-     *        pipeline execution.
+     * @param artifactRevisions
+     *        A list of ArtifactRevision objects included in a pipeline
+     *        execution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public PipelineExecution withArtifactRevisionInformations(
-            ArtifactRevisionInformation... artifactRevisionInformations) {
-        if (this.artifactRevisionInformations == null) {
-            setArtifactRevisionInformations(new java.util.ArrayList<ArtifactRevisionInformation>(
-                    artifactRevisionInformations.length));
+    public PipelineExecution withArtifactRevisions(
+            ArtifactRevision... artifactRevisions) {
+        if (this.artifactRevisions == null) {
+            setArtifactRevisions(new java.util.ArrayList<ArtifactRevision>(
+                    artifactRevisions.length));
         }
-        for (ArtifactRevisionInformation ele : artifactRevisionInformations) {
-            this.artifactRevisionInformations.add(ele);
+        for (ArtifactRevision ele : artifactRevisions) {
+            this.artifactRevisions.add(ele);
         }
         return this;
     }
 
     /**
      * <p>
-     * A list of ArtifactRevisionInformation objects included in a pipeline
-     * execution.
+     * A list of ArtifactRevision objects included in a pipeline execution.
      * </p>
      * 
-     * @param artifactRevisionInformations
-     *        A list of ArtifactRevisionInformation objects included in a
-     *        pipeline execution.
+     * @param artifactRevisions
+     *        A list of ArtifactRevision objects included in a pipeline
+     *        execution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public PipelineExecution withArtifactRevisionInformations(
-            java.util.Collection<ArtifactRevisionInformation> artifactRevisionInformations) {
-        setArtifactRevisionInformations(artifactRevisionInformations);
+    public PipelineExecution withArtifactRevisions(
+            java.util.Collection<ArtifactRevision> artifactRevisions) {
+        setArtifactRevisions(artifactRevisions);
         return this;
     }
 
@@ -618,9 +613,8 @@ public class PipelineExecution implements Serializable, Cloneable {
             sb.append("PipelineExecutionId: " + getPipelineExecutionId() + ",");
         if (getStatus() != null)
             sb.append("Status: " + getStatus() + ",");
-        if (getArtifactRevisionInformations() != null)
-            sb.append("ArtifactRevisionInformations: "
-                    + getArtifactRevisionInformations());
+        if (getArtifactRevisions() != null)
+            sb.append("ArtifactRevisions: " + getArtifactRevisions());
         sb.append("}");
         return sb.toString();
     }
@@ -658,12 +652,12 @@ public class PipelineExecution implements Serializable, Cloneable {
         if (other.getStatus() != null
                 && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getArtifactRevisionInformations() == null
-                ^ this.getArtifactRevisionInformations() == null)
+        if (other.getArtifactRevisions() == null
+                ^ this.getArtifactRevisions() == null)
             return false;
-        if (other.getArtifactRevisionInformations() != null
-                && other.getArtifactRevisionInformations().equals(
-                        this.getArtifactRevisionInformations()) == false)
+        if (other.getArtifactRevisions() != null
+                && other.getArtifactRevisions().equals(
+                        this.getArtifactRevisions()) == false)
             return false;
         return true;
     }
@@ -689,8 +683,8 @@ public class PipelineExecution implements Serializable, Cloneable {
                 + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime
                 * hashCode
-                + ((getArtifactRevisionInformations() == null) ? 0
-                        : getArtifactRevisionInformations().hashCode());
+                + ((getArtifactRevisions() == null) ? 0
+                        : getArtifactRevisions().hashCode());
         return hashCode;
     }
 

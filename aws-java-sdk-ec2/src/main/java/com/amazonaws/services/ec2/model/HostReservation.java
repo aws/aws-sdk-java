@@ -85,8 +85,7 @@ public class HostReservation implements Serializable, Cloneable {
     /**
      * <p>
      * The length of the reservation's term, specified in seconds. Can be
-     * <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code> |
-     * <code>157680000 (5 years)</code>.
+     * <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code>.
      * </p>
      */
     private Integer duration;
@@ -627,14 +626,12 @@ public class HostReservation implements Serializable, Cloneable {
     /**
      * <p>
      * The length of the reservation's term, specified in seconds. Can be
-     * <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code> |
-     * <code>157680000 (5 years)</code>.
+     * <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code>.
      * </p>
      * 
      * @param duration
      *        The length of the reservation's term, specified in seconds. Can be
-     *        <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code> |
-     *        <code>157680000 (5 years)</code>.
+     *        <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code>.
      */
 
     public void setDuration(Integer duration) {
@@ -644,14 +641,12 @@ public class HostReservation implements Serializable, Cloneable {
     /**
      * <p>
      * The length of the reservation's term, specified in seconds. Can be
-     * <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code> |
-     * <code>157680000 (5 years)</code>.
+     * <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code>.
      * </p>
      * 
      * @return The length of the reservation's term, specified in seconds. Can
      *         be <code>31536000 (1 year)</code> |
-     *         <code>94608000 (3 years)</code> |
-     *         <code>157680000 (5 years)</code>.
+     *         <code>94608000 (3 years)</code>.
      */
 
     public Integer getDuration() {
@@ -661,14 +656,12 @@ public class HostReservation implements Serializable, Cloneable {
     /**
      * <p>
      * The length of the reservation's term, specified in seconds. Can be
-     * <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code> |
-     * <code>157680000 (5 years)</code>.
+     * <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code>.
      * </p>
      * 
      * @param duration
      *        The length of the reservation's term, specified in seconds. Can be
-     *        <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code> |
-     *        <code>157680000 (5 years)</code>.
+     *        <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

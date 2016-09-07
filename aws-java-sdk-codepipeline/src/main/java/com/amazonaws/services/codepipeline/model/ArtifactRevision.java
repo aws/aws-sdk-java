@@ -25,6 +25,13 @@ public class ArtifactRevision implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The name of an artifact. This name might be system-generated, such as
+     * "MyApp", or might be defined by the user when an action is created.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
      * The revision ID of the artifact.
      * </p>
      */
@@ -40,9 +47,9 @@ public class ArtifactRevision implements Serializable, Cloneable {
      * <p>
      * Summary information about the most recent revision of the artifact. For
      * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided value of an
-     * <code>x-amz-meta-codepipeline-artifact-revision-summary</code> key
-     * specified in the object metadata.
+     * buckets or actions, the user-provided content of a
+     * <code>codepipeline-artifact-revision-summary</code> key specified in the
+     * object metadata.
      * </p>
      */
     private String revisionSummary;
@@ -61,6 +68,56 @@ public class ArtifactRevision implements Serializable, Cloneable {
      * </p>
      */
     private String revisionUrl;
+
+    /**
+     * <p>
+     * The name of an artifact. This name might be system-generated, such as
+     * "MyApp", or might be defined by the user when an action is created.
+     * </p>
+     * 
+     * @param name
+     *        The name of an artifact. This name might be system-generated, such
+     *        as "MyApp", or might be defined by the user when an action is
+     *        created.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of an artifact. This name might be system-generated, such as
+     * "MyApp", or might be defined by the user when an action is created.
+     * </p>
+     * 
+     * @return The name of an artifact. This name might be system-generated,
+     *         such as "MyApp", or might be defined by the user when an action
+     *         is created.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of an artifact. This name might be system-generated, such as
+     * "MyApp", or might be defined by the user when an action is created.
+     * </p>
+     * 
+     * @param name
+     *        The name of an artifact. This name might be system-generated, such
+     *        as "MyApp", or might be defined by the user when an action is
+     *        created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ArtifactRevision withName(String name) {
+        setName(name);
+        return this;
+    }
 
     /**
      * <p>
@@ -155,18 +212,17 @@ public class ArtifactRevision implements Serializable, Cloneable {
      * <p>
      * Summary information about the most recent revision of the artifact. For
      * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided value of an
-     * <code>x-amz-meta-codepipeline-artifact-revision-summary</code> key
-     * specified in the object metadata.
+     * buckets or actions, the user-provided content of a
+     * <code>codepipeline-artifact-revision-summary</code> key specified in the
+     * object metadata.
      * </p>
      * 
      * @param revisionSummary
      *        Summary information about the most recent revision of the
      *        artifact. For GitHub and AWS CodeCommit repositories, the commit
-     *        message. For Amazon S3 buckets or actions, the user-provided value
-     *        of an
-     *        <code>x-amz-meta-codepipeline-artifact-revision-summary</code> key
-     *        specified in the object metadata.
+     *        message. For Amazon S3 buckets or actions, the user-provided
+     *        content of a <code>codepipeline-artifact-revision-summary</code>
+     *        key specified in the object metadata.
      */
 
     public void setRevisionSummary(String revisionSummary) {
@@ -177,16 +233,15 @@ public class ArtifactRevision implements Serializable, Cloneable {
      * <p>
      * Summary information about the most recent revision of the artifact. For
      * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided value of an
-     * <code>x-amz-meta-codepipeline-artifact-revision-summary</code> key
-     * specified in the object metadata.
+     * buckets or actions, the user-provided content of a
+     * <code>codepipeline-artifact-revision-summary</code> key specified in the
+     * object metadata.
      * </p>
      * 
      * @return Summary information about the most recent revision of the
      *         artifact. For GitHub and AWS CodeCommit repositories, the commit
      *         message. For Amazon S3 buckets or actions, the user-provided
-     *         value of an
-     *         <code>x-amz-meta-codepipeline-artifact-revision-summary</code>
+     *         content of a <code>codepipeline-artifact-revision-summary</code>
      *         key specified in the object metadata.
      */
 
@@ -198,18 +253,17 @@ public class ArtifactRevision implements Serializable, Cloneable {
      * <p>
      * Summary information about the most recent revision of the artifact. For
      * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided value of an
-     * <code>x-amz-meta-codepipeline-artifact-revision-summary</code> key
-     * specified in the object metadata.
+     * buckets or actions, the user-provided content of a
+     * <code>codepipeline-artifact-revision-summary</code> key specified in the
+     * object metadata.
      * </p>
      * 
      * @param revisionSummary
      *        Summary information about the most recent revision of the
      *        artifact. For GitHub and AWS CodeCommit repositories, the commit
-     *        message. For Amazon S3 buckets or actions, the user-provided value
-     *        of an
-     *        <code>x-amz-meta-codepipeline-artifact-revision-summary</code> key
-     *        specified in the object metadata.
+     *        message. For Amazon S3 buckets or actions, the user-provided
+     *        content of a <code>codepipeline-artifact-revision-summary</code>
+     *        key specified in the object metadata.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -331,6 +385,8 @@ public class ArtifactRevision implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getName() != null)
+            sb.append("Name: " + getName() + ",");
         if (getRevisionId() != null)
             sb.append("RevisionId: " + getRevisionId() + ",");
         if (getRevisionChangeIdentifier() != null)
@@ -356,6 +412,11 @@ public class ArtifactRevision implements Serializable, Cloneable {
         if (obj instanceof ArtifactRevision == false)
             return false;
         ArtifactRevision other = (ArtifactRevision) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
         if (other.getRevisionId() == null ^ this.getRevisionId() == null)
             return false;
         if (other.getRevisionId() != null
@@ -392,6 +453,8 @@ public class ArtifactRevision implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode
                 + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         hashCode = prime

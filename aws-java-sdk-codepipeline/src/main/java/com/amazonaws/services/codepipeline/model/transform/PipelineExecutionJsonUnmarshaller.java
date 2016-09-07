@@ -72,12 +72,11 @@ public class PipelineExecutionJsonUnmarshaller implements
                     pipelineExecution.setStatus(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
-                if (context.testExpression("artifactRevisionInformations",
-                        targetDepth)) {
+                if (context.testExpression("artifactRevisions", targetDepth)) {
                     context.nextToken();
                     pipelineExecution
-                            .setArtifactRevisionInformations(new ListUnmarshaller<ArtifactRevisionInformation>(
-                                    ArtifactRevisionInformationJsonUnmarshaller
+                            .setArtifactRevisions(new ListUnmarshaller<ArtifactRevision>(
+                                    ArtifactRevisionJsonUnmarshaller
                                             .getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

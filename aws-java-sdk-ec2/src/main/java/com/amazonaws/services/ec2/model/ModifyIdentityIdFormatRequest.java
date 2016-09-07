@@ -44,7 +44,8 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user.
+     * user. Specify <code>all</code> to modify the ID format for all IAM users,
+     * IAM roles, and the root user of the account.
      * </p>
      */
     private String principalArn;
@@ -159,12 +160,14 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user.
+     * user. Specify <code>all</code> to modify the ID format for all IAM users,
+     * IAM roles, and the root user of the account.
      * </p>
      * 
      * @param principalArn
      *        The ARN of the principal, which can be an IAM user, IAM role, or
-     *        the root user.
+     *        the root user. Specify <code>all</code> to modify the ID format
+     *        for all IAM users, IAM roles, and the root user of the account.
      */
 
     public void setPrincipalArn(String principalArn) {
@@ -174,11 +177,13 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user.
+     * user. Specify <code>all</code> to modify the ID format for all IAM users,
+     * IAM roles, and the root user of the account.
      * </p>
      * 
      * @return The ARN of the principal, which can be an IAM user, IAM role, or
-     *         the root user.
+     *         the root user. Specify <code>all</code> to modify the ID format
+     *         for all IAM users, IAM roles, and the root user of the account.
      */
 
     public String getPrincipalArn() {
@@ -188,12 +193,14 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user.
+     * user. Specify <code>all</code> to modify the ID format for all IAM users,
+     * IAM roles, and the root user of the account.
      * </p>
      * 
      * @param principalArn
      *        The ARN of the principal, which can be an IAM user, IAM role, or
-     *        the root user.
+     *        the root user. Specify <code>all</code> to modify the ID format
+     *        for all IAM users, IAM roles, and the root user of the account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

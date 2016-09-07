@@ -54,7 +54,8 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
     private String scheduledInstanceId;
     /**
      * <p>
-     * The launch specification.
+     * The launch specification. You must match the instance type, Availability
+     * Zone, network, and platform of the schedule that you purchased.
      * </p>
      */
     private ScheduledInstancesLaunchSpecification launchSpecification;
@@ -218,11 +219,14 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The launch specification.
+     * The launch specification. You must match the instance type, Availability
+     * Zone, network, and platform of the schedule that you purchased.
      * </p>
      * 
      * @param launchSpecification
-     *        The launch specification.
+     *        The launch specification. You must match the instance type,
+     *        Availability Zone, network, and platform of the schedule that you
+     *        purchased.
      */
 
     public void setLaunchSpecification(
@@ -232,10 +236,13 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The launch specification.
+     * The launch specification. You must match the instance type, Availability
+     * Zone, network, and platform of the schedule that you purchased.
      * </p>
      * 
-     * @return The launch specification.
+     * @return The launch specification. You must match the instance type,
+     *         Availability Zone, network, and platform of the schedule that you
+     *         purchased.
      */
 
     public ScheduledInstancesLaunchSpecification getLaunchSpecification() {
@@ -244,11 +251,14 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The launch specification.
+     * The launch specification. You must match the instance type, Availability
+     * Zone, network, and platform of the schedule that you purchased.
      * </p>
      * 
      * @param launchSpecification
-     *        The launch specification.
+     *        The launch specification. You must match the instance type,
+     *        Availability Zone, network, and platform of the schedule that you
+     *        purchased.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -3799,6 +3799,52 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Returns a list that includes the status of each source AWS Region that
+     * the current region can get a Read Replica or a DB snapshot from. This API
+     * action supports pagination.
+     * </p>
+     * 
+     * @param describeSourceRegionsRequest
+     * @return Result of the DescribeSourceRegions operation returned by the
+     *         service.
+     * @sample AmazonRDS.DescribeSourceRegions
+     */
+    @Override
+    public DescribeSourceRegionsResult describeSourceRegions(
+            DescribeSourceRegionsRequest describeSourceRegionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeSourceRegionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSourceRegionsRequest> request = null;
+        Response<DescribeSourceRegionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSourceRegionsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(describeSourceRegionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeSourceRegionsResult> responseHandler = new StaxResponseHandler<DescribeSourceRegionsResult>(
+                    new DescribeSourceRegionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Downloads all or a portion of the specified log file, up to 1 MB in size.
      * </p>
      * 

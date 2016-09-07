@@ -164,6 +164,9 @@ public interface AmazonSNS {
      *         this action exceeds the limit for your account.
      * @throws InternalErrorException
      *         Indicates an internal service error.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested
+     *         resource.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -511,6 +514,9 @@ public interface AmazonSNS {
      *         this action exceeds the limit for your account.
      * @throws InternalErrorException
      *         Indicates an internal service error.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested
+     *         resource.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -642,6 +648,9 @@ public interface AmazonSNS {
      *         this action exceeds the limit for your account.
      * @throws InternalErrorException
      *         Indicates an internal service error.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested
+     *         resource.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -828,6 +837,9 @@ public interface AmazonSNS {
      *         this action exceeds the limit for your account.
      * @throws InternalErrorException
      *         Indicates an internal service error.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested
+     *         resource.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -849,8 +861,7 @@ public interface AmazonSNS {
      * endpoint, such as an app on a Kindle device or mobile phone, you must
      * specify the EndpointArn for the TargetArn parameter. The EndpointArn is
      * returned when making a call with the <code>CreatePlatformEndpoint</code>
-     * action. The second example below shows a request and response for
-     * publishing to a mobile endpoint.
+     * action.
      * </p>
      * <p>
      * For more information about formatting messages, see <a href=
@@ -1011,6 +1022,9 @@ public interface AmazonSNS {
      *         this action exceeds the limit for your account.
      * @throws InternalErrorException
      *         Indicates an internal service error.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested
+     *         resource.
      * @sample AmazonSNS.SetSMSAttributes
      */
     SetSMSAttributesResult setSMSAttributes(

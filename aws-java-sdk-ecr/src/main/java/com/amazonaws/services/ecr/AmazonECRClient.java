@@ -1100,6 +1100,15 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      * <p>
      * Lists all the image IDs for a given repository.
      * </p>
+     * <p>
+     * You can filter images based on whether or not they are tagged by setting
+     * the <code>tagStatus</code> parameter to <code>TAGGED</code> or
+     * <code>UNTAGGED</code>. For example, you can filter your results to return
+     * only <code>UNTAGGED</code> images and then pipe that result to a
+     * <a>BatchDeleteImage</a> operation to delete them. Or, you can filter your
+     * results to return only <code>TAGGED</code> images to list all of the tags
+     * in your repository.
+     * </p>
      * 
      * @param listImagesRequest
      * @return Result of the ListImages operation returned by the service.

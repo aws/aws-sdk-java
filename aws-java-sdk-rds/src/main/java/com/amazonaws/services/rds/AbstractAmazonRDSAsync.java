@@ -1369,6 +1369,21 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSourceRegionsResult> describeSourceRegionsAsync(
+            DescribeSourceRegionsRequest request) {
+
+        return describeSourceRegionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSourceRegionsResult> describeSourceRegionsAsync(
+            DescribeSourceRegionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeSourceRegionsRequest, DescribeSourceRegionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DownloadDBLogFilePortionResult> downloadDBLogFilePortionAsync(
             DownloadDBLogFilePortionRequest request) {
 

@@ -31,7 +31,7 @@ public class HostOffering implements Serializable, Cloneable {
     private String offeringId;
     /**
      * <p>
-     * The instance family that the offering covers.
+     * The instance family of the offering.
      * </p>
      */
     private String instanceFamily;
@@ -110,11 +110,11 @@ public class HostOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance family that the offering covers.
+     * The instance family of the offering.
      * </p>
      * 
      * @param instanceFamily
-     *        The instance family that the offering covers.
+     *        The instance family of the offering.
      */
 
     public void setInstanceFamily(String instanceFamily) {
@@ -123,10 +123,10 @@ public class HostOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance family that the offering covers.
+     * The instance family of the offering.
      * </p>
      * 
-     * @return The instance family that the offering covers.
+     * @return The instance family of the offering.
      */
 
     public String getInstanceFamily() {
@@ -135,11 +135,11 @@ public class HostOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance family that the offering covers.
+     * The instance family of the offering.
      * </p>
      * 
      * @param instanceFamily
-     *        The instance family that the offering covers.
+     *        The instance family of the offering.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

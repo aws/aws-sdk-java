@@ -1401,7 +1401,7 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Adds or overwrites one or more tags for the specified Amazon EC2 resource
-     * or resources. Each resource can have a maximum of 10 tags. Each tag
+     * or resources. Each resource can have a maximum of 50 tags. Each tag
      * consists of a key and optional value. Tag keys must be unique per
      * resource.
      * </p>
@@ -4396,10 +4396,13 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the ID format of a resource for the specified IAM user, IAM
-     * role, or root user. You can specify that resources should receive longer
-     * IDs (17-character IDs) when they are created. The following resource
-     * types support longer IDs: <code>instance</code> |
+     * Modifies the ID format of a resource for a specified IAM user, IAM role,
+     * or the root user for an account; or all IAM users, IAM roles, and the
+     * root user for an account. You can specify that resources should receive
+     * longer IDs (17-character IDs) when they are created.
+     * </p>
+     * <p>
+     * The following resource types support longer IDs: <code>instance</code> |
      * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>.
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html"

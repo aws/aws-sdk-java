@@ -51,6 +51,11 @@ public class ArtifactRevisionJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    artifactRevision.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("revisionId", targetDepth)) {
                     context.nextToken();
                     artifactRevision.setRevisionId(context.getUnmarshaller(

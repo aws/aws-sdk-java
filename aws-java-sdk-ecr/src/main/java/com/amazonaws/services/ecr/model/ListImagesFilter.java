@@ -17,14 +17,32 @@ package com.amazonaws.services.ecr.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * An object representing a filter on a <a>ListImages</a> operation.
+ * </p>
  */
 public class ListImagesFilter implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The tag status with which to filter your <a>ListImages</a> results. You
+     * can filter results based on whether they are <code>TAGGED</code> or
+     * <code>UNTAGGED</code>.
+     * </p>
+     */
     private String tagStatus;
 
     /**
+     * <p>
+     * The tag status with which to filter your <a>ListImages</a> results. You
+     * can filter results based on whether they are <code>TAGGED</code> or
+     * <code>UNTAGGED</code>.
+     * </p>
+     * 
      * @param tagStatus
+     *        The tag status with which to filter your <a>ListImages</a>
+     *        results. You can filter results based on whether they are
+     *        <code>TAGGED</code> or <code>UNTAGGED</code>.
      * @see TagStatus
      */
 
@@ -33,7 +51,15 @@ public class ListImagesFilter implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The tag status with which to filter your <a>ListImages</a> results. You
+     * can filter results based on whether they are <code>TAGGED</code> or
+     * <code>UNTAGGED</code>.
+     * </p>
+     * 
+     * @return The tag status with which to filter your <a>ListImages</a>
+     *         results. You can filter results based on whether they are
+     *         <code>TAGGED</code> or <code>UNTAGGED</code>.
      * @see TagStatus
      */
 
@@ -42,7 +68,16 @@ public class ListImagesFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The tag status with which to filter your <a>ListImages</a> results. You
+     * can filter results based on whether they are <code>TAGGED</code> or
+     * <code>UNTAGGED</code>.
+     * </p>
+     * 
      * @param tagStatus
+     *        The tag status with which to filter your <a>ListImages</a>
+     *        results. You can filter results based on whether they are
+     *        <code>TAGGED</code> or <code>UNTAGGED</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TagStatus
@@ -54,7 +89,16 @@ public class ListImagesFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The tag status with which to filter your <a>ListImages</a> results. You
+     * can filter results based on whether they are <code>TAGGED</code> or
+     * <code>UNTAGGED</code>.
+     * </p>
+     * 
      * @param tagStatus
+     *        The tag status with which to filter your <a>ListImages</a>
+     *        results. You can filter results based on whether they are
+     *        <code>TAGGED</code> or <code>UNTAGGED</code>.
      * @see TagStatus
      */
 
@@ -63,7 +107,16 @@ public class ListImagesFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The tag status with which to filter your <a>ListImages</a> results. You
+     * can filter results based on whether they are <code>TAGGED</code> or
+     * <code>UNTAGGED</code>.
+     * </p>
+     * 
      * @param tagStatus
+     *        The tag status with which to filter your <a>ListImages</a>
+     *        results. You can filter results based on whether they are
+     *        <code>TAGGED</code> or <code>UNTAGGED</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TagStatus

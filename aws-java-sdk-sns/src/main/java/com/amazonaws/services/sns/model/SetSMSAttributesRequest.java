@@ -142,9 +142,8 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Viewing
-     * Statistics About SMS Message Delivery</a> in the <i>Amazon SNS Developer
-     * Guide</i>.
+     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring
+     * SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
@@ -266,9 +265,8 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Viewing
-     * Statistics About SMS Message Delivery</a> in the <i>Amazon SNS Developer
-     * Guide</i>.
+     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring
+     * SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.
      * </p>
      * 
      * @return The default settings for sending SMS messages from your account.
@@ -390,8 +388,8 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         For an example bucket policy and usage report, see <a
      *         href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html"
-     *         >Viewing Statistics About SMS Message Delivery</a> in the
-     *         <i>Amazon SNS Developer Guide</i>.
+     *         >Monitoring SMS Activity</a> in the <i>Amazon SNS Developer
+     *         Guide</i>.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -518,9 +516,8 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Viewing
-     * Statistics About SMS Message Delivery</a> in the <i>Amazon SNS Developer
-     * Guide</i>.
+     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring
+     * SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.
      * </p>
      * 
      * @param attributes
@@ -643,8 +640,8 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        For an example bucket policy and usage report, see <a
      *        href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html"
-     *        >Viewing Statistics About SMS Message Delivery</a> in the
-     *        <i>Amazon SNS Developer Guide</i>.
+     *        >Monitoring SMS Activity</a> in the <i>Amazon SNS Developer
+     *        Guide</i>.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -770,9 +767,8 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Viewing
-     * Statistics About SMS Message Delivery</a> in the <i>Amazon SNS Developer
-     * Guide</i>.
+     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring
+     * SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.
      * </p>
      * 
      * @param attributes
@@ -895,8 +891,8 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        For an example bucket policy and usage report, see <a
      *        href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html"
-     *        >Viewing Statistics About SMS Message Delivery</a> in the
-     *        <i>Amazon SNS Developer Guide</i>.
+     *        >Monitoring SMS Activity</a> in the <i>Amazon SNS Developer
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
