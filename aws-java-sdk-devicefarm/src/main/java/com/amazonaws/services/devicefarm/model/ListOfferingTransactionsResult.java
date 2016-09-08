@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Returns the transaction log of the specified offerings.
  * </p>
  */
-public class ListOfferingTransactionsResult implements Serializable, Cloneable {
+public class ListOfferingTransactionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

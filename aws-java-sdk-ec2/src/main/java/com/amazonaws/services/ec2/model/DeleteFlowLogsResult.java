@@ -15,13 +15,16 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <p>
  * Contains the output of DeleteFlowLogs.
  * </p>
  */
-public class DeleteFlowLogsResult implements Serializable, Cloneable {
+public class DeleteFlowLogsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

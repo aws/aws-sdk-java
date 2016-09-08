@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteAccountPasswordPolicyRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteAccountPasswordPolicyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

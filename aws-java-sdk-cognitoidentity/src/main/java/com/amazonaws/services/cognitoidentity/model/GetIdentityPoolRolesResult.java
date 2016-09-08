@@ -22,7 +22,9 @@ import java.io.Serializable;
  * operation.
  * </p>
  */
-public class GetIdentityPoolRolesResult implements Serializable, Cloneable {
+public class GetIdentityPoolRolesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

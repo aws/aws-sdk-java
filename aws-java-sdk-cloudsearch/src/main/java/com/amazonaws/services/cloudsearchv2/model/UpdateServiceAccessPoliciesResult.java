@@ -22,8 +22,9 @@ import java.io.Serializable;
  * the new access policies.
  * </p>
  */
-public class UpdateServiceAccessPoliciesResult implements Serializable,
-        Cloneable {
+public class UpdateServiceAccessPoliciesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

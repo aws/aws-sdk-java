@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Requests Amazon API Gateway to delete a <a>Stage</a> resource.
  * </p>
  */
-public class DeleteStageRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteStageRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

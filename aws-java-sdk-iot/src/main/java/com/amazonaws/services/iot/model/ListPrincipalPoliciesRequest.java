@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the ListPrincipalPolicies operation.
  * </p>
  */
-public class ListPrincipalPoliciesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListPrincipalPoliciesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

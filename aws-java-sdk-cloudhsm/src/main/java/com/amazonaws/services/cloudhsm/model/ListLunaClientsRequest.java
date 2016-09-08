@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListLunaClientsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListLunaClientsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

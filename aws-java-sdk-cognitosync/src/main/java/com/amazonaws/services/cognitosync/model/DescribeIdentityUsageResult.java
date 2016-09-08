@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * The response to a successful DescribeIdentityUsage request.
  */
-public class DescribeIdentityUsageResult implements Serializable, Cloneable {
+public class DescribeIdentityUsageResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** Usage information for the identity. */
     private IdentityUsage identityUsage;

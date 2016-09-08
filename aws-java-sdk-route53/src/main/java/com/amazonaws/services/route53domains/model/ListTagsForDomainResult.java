@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The ListTagsForDomain response includes the following elements.
  * </p>
  */
-public class ListTagsForDomainResult implements Serializable, Cloneable {
+public class ListTagsForDomainResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

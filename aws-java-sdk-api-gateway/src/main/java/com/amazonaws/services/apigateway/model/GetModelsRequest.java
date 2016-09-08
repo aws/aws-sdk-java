@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to list existing <a>Models</a> defined for a <a>RestApi</a> resource.
  * </p>
  */
-public class GetModelsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetModelsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

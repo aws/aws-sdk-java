@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * account. The list provides metadata information for each vault.
  * </p>
  */
-public class ListVaultsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

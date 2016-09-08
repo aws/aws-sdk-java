@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Data returned by the <b>DescribeEventSubscriptions</b> action.
  * </p>
  */
-public class DescribeEventSubscriptionsResult implements Serializable,
-        Cloneable {
+public class DescribeEventSubscriptionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

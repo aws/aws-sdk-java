@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DeleteClusterSubnetGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteClusterSubnetGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

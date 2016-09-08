@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes the inputs for DescribeAlarms.
  * </p>
  */
-public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeAlarmsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

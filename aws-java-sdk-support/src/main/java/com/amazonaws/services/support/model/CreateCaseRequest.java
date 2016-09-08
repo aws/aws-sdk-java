@@ -18,10 +18,10 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
-public class CreateCaseRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

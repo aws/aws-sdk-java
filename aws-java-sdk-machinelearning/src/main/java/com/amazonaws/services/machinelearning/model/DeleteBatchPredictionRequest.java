@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteBatchPredictionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteBatchPredictionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Initiates the authentication response.
  * </p>
  */
-public class InitiateAuthResult implements Serializable, Cloneable {
+public class InitiateAuthResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

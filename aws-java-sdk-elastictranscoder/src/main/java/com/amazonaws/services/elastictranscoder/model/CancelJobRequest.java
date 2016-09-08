@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The <code>CancelJobRequest</code> structure.
  * </p>
  */
-public class CancelJobRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

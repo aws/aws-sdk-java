@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of an update deployment group operation.
  * </p>
  */
-public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateDeploymentGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

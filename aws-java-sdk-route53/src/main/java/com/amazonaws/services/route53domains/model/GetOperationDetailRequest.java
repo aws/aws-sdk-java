@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The GetOperationDetail request includes the following element.
  * </p>
  */
-public class GetOperationDetailRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetOperationDetailRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

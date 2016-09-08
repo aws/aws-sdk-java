@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateReusableDelegationSetResult implements Serializable,
-        Cloneable {
+public class CreateReusableDelegationSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

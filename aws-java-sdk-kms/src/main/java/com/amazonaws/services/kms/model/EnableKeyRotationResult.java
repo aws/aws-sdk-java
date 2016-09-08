@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class EnableKeyRotationResult implements Serializable, Cloneable {
+public class EnableKeyRotationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

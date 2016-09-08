@@ -15,13 +15,16 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <p>
  * Contains the output of DescribeHosts.
  * </p>
  */
-public class DescribeHostsResult implements Serializable, Cloneable {
+public class DescribeHostsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

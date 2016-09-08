@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * of the expression you want to delete.
  * </p>
  */
-public class DeleteExpressionRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteExpressionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
     /**

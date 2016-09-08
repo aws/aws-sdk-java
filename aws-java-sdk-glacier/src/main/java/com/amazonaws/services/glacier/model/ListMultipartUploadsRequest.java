@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Amazon Glacier vault.
  * </p>
  */
-public class ListMultipartUploadsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListMultipartUploadsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

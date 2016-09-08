@@ -23,7 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class ConfirmPublicVirtualInterfaceRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String virtualInterfaceId;
 

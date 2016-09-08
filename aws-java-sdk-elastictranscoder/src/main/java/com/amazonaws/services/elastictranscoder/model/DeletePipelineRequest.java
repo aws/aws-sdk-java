@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The <code>DeletePipelineRequest</code> structure.
  * </p>
  */
-public class DeletePipelineRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeletePipelineRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

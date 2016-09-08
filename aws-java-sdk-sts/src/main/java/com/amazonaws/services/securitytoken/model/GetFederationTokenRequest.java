@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetFederationTokenRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetFederationTokenRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

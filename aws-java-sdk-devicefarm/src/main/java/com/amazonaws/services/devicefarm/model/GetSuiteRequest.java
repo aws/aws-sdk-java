@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the get suite operation.
  * </p>
  */
-public class GetSuiteRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetSuiteRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

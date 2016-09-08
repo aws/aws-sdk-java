@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class RemoveAttributesFromFindingsResult implements Serializable,
-        Cloneable {
+public class RemoveAttributesFromFindingsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

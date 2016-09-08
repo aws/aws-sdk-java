@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * DescribeVTLDevicesInput
  * </p>
  */
-public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeVTLDevicesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
     /**

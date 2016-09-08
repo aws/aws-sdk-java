@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes a conditional forwarder.
  * </p>
  */
-public class DeleteConditionalForwarderRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteConditionalForwarderRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

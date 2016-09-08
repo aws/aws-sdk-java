@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of ApplySecurityGroupsToLoadBalancer.
  * </p>
  */
-public class ApplySecurityGroupsToLoadBalancerResult implements Serializable,
-        Cloneable {
+public class ApplySecurityGroupsToLoadBalancerResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

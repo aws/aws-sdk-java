@@ -9,7 +9,8 @@ import java.io.Serializable;
 <#if shape.deprecated>
 @Deprecated
 </#if>
-public class ${shape.shapeName} implements Serializable, Cloneable {
+public class ${shape.shapeName} <#if baseClassFqcn??>extends ${baseClassFqcn}</#if>
+    implements Serializable, Cloneable {
 
     <@VariableDeclarationMacro.content shape/>
 

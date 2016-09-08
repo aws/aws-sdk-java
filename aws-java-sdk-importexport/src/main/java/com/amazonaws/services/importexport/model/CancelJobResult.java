@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Output structure for the CancelJob operation.
  */
-public class CancelJobResult implements Serializable, Cloneable {
+public class CancelJobResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private Boolean success;
 

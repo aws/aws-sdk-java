@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a put approval result action.
  * </p>
  */
-public class PutApprovalResultRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PutApprovalResultRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

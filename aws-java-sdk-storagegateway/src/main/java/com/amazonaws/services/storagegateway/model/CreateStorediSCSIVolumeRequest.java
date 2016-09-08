@@ -49,8 +49,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateStorediSCSIVolumeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
     /**

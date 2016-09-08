@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeConfigRulesResult implements Serializable, Cloneable {
+public class DescribeConfigRulesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class UpdateHealthCheckResult implements Serializable, Cloneable {
+public class UpdateHealthCheckResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private HealthCheck healthCheck;
 

@@ -15,13 +15,16 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <p>
  * Contains the output of BundleInstance.
  * </p>
  */
-public class BundleInstanceResult implements Serializable, Cloneable {
+public class BundleInstanceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

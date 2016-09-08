@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The <code>ListJobsByStatusRequest</code> structure.
  * </p>
  */
-public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListJobsByStatusRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

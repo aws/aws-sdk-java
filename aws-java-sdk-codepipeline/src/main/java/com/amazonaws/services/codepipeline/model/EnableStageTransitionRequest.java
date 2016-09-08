@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of an enable stage transition action.
  * </p>
  */
-public class EnableStageTransitionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class EnableStageTransitionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

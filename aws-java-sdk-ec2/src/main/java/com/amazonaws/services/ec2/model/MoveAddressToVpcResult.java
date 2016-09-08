@@ -15,13 +15,16 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <p>
  * Contains the output of MoveAddressToVpc.
  * </p>
  */
-public class MoveAddressToVpcResult implements Serializable, Cloneable {
+public class MoveAddressToVpcResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

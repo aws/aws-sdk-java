@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The result of a DeleteTrust request.
  * </p>
  */
-public class DeleteTrustResult implements Serializable, Cloneable {
+public class DeleteTrustResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The RetrieveDomainAuthCode request includes the following element.
  * </p>
  */
-public class RetrieveDomainAuthCodeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RetrieveDomainAuthCodeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

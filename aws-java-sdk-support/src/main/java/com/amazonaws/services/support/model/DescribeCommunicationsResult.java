@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The communications returned by the <a>DescribeCommunications</a> operation.
  * </p>
  */
-public class DescribeCommunicationsResult implements Serializable, Cloneable {
+public class DescribeCommunicationsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

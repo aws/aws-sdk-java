@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for a <a>DescribeStackEvents</a> action.
  * </p>
  */
-public class DescribeStackEventsResult implements Serializable, Cloneable {
+public class DescribeStackEventsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

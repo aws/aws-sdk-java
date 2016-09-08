@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a retry stage execution action.
  * </p>
  */
-public class RetryStageExecutionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RetryStageExecutionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>CancelUpdateStack</a> action.
  * </p>
  */
-public class CancelUpdateStackRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CancelUpdateStackRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

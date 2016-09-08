@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Specifies the tags to add to a trail.
  * </p>
  */
-public class AddTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

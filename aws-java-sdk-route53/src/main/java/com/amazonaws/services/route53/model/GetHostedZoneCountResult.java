@@ -22,7 +22,9 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class GetHostedZoneCountResult implements Serializable, Cloneable {
+public class GetHostedZoneCountResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

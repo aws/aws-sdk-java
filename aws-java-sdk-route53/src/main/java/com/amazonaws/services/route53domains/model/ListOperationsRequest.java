@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The ListOperations request includes the following elements.
  * </p>
  */
-public class ListOperationsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListOperationsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for a request action.
  * </p>
  */
-public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateFleetCapacityRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

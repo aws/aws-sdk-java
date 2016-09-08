@@ -17,11 +17,8 @@ package com.amazonaws.codegen.model.intermediate;
 
 import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
-
 import com.amazonaws.util.IOUtils;
-
 import com.amazonaws.util.ValidationUtils;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -174,5 +171,16 @@ public class IntermediateModel {
 
     public boolean getHasWaiters(){
         return waiters.size() > 0;
+    }
+
+    public String getSdkBaseResponseFqcn() {
+        return String.format("com.amazonaws.AmazonWebServiceResult<%s>",
+                getResponseMetadataClassName());
+    }
+
+    private String getResponseMetadataClassName() {
+        return customizationConfig.getCustomResponseMetadataClassName() == null ?
+                "com.amazonaws.ResponseMetadata" :
+                customizationConfig.getCustomResponseMetadataClassName();
     }
 }

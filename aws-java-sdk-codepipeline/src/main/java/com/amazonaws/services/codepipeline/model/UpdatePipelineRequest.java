@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of an update pipeline action.
  * </p>
  */
-public class UpdatePipelineRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdatePipelineRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * API definition file.
  * </p>
  */
-public class ImportRestApiRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

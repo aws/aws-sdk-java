@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListAssessmentRunAgentsResult implements Serializable, Cloneable {
+public class ListAssessmentRunAgentsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * .
  */
-public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListOnPremisesInstancesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

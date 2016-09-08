@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * The returned result of the corresponding request.
  */
-public class GetDistributionResult implements Serializable, Cloneable {
+public class GetDistributionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** The distribution's information. */
     private Distribution distribution;

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the results of the <a>DescribeWorkspaceBundles</a> operation.
  * </p>
  */
-public class DescribeWorkspaceBundlesResult implements Serializable, Cloneable {
+public class DescribeWorkspaceBundlesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

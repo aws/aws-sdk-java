@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the list suites operation.
  * </p>
  */
-public class ListSuitesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListSuitesRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

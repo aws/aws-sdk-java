@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request to respond to an authentication challenge.
  * </p>
  */
-public class RespondToAuthChallengeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RespondToAuthChallengeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

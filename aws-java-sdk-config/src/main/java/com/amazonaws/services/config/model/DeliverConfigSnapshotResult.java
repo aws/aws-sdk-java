@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for the <a>DeliverConfigSnapshot</a> action in JSON format.
  * </p>
  */
-public class DeliverConfigSnapshotResult implements Serializable, Cloneable {
+public class DeliverConfigSnapshotResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

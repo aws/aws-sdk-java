@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for ActivatePipeline.
  * </p>
  */
-public class ActivatePipelineRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ActivatePipelineRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

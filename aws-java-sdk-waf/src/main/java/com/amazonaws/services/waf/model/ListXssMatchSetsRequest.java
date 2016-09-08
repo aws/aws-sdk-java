@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * account.
  * </p>
  */
-public class ListXssMatchSetsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListXssMatchSetsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

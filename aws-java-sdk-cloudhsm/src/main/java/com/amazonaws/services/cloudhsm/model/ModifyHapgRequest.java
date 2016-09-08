@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ModifyHapgRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ModifyHapgRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

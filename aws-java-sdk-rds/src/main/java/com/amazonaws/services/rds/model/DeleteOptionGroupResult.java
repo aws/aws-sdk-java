@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DeleteOptionGroupResult implements Serializable, Cloneable {
+public class DeleteOptionGroupResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

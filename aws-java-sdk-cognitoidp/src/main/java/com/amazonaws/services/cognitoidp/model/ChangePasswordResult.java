@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response from the server to the change password request.
  * </p>
  */
-public class ChangePasswordResult implements Serializable, Cloneable {
+public class ChangePasswordResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

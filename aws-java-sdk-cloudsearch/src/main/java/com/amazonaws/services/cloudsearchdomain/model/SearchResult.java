@@ -23,7 +23,9 @@ import java.io.Serializable;
  * facet information.
  * </p>
  */
-public class SearchResult implements Serializable, Cloneable {
+public class SearchResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

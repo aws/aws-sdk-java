@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to change information about the <a>DomainName</a> resource.
  * </p>
  */
-public class UpdateDomainNameRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateDomainNameRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

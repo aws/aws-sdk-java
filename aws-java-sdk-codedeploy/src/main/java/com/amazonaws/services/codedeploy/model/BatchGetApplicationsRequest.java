@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a batch get applications operation.
  * </p>
  */
-public class BatchGetApplicationsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class BatchGetApplicationsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

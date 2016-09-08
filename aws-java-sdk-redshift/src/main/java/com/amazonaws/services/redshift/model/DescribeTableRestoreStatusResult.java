@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeTableRestoreStatusResult implements Serializable,
-        Cloneable {
+public class DescribeTableRestoreStatusResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

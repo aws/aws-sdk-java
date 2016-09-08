@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class CancelCommandRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CancelCommandRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

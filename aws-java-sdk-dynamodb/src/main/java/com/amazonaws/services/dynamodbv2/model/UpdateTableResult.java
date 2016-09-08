@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of an <i>UpdateTable</i> operation.
  * </p>
  */
-public class UpdateTableResult implements Serializable, Cloneable {
+public class UpdateTableResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private TableDescription tableDescription;
 

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribeTargetGroups.
  * </p>
  */
-public class DescribeTargetGroupsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeTargetGroupsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -15,13 +15,16 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <p>
  * Contains the output of DeleteVpcEndpoints.
  * </p>
  */
-public class DeleteVpcEndpointsResult implements Serializable, Cloneable {
+public class DeleteVpcEndpointsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

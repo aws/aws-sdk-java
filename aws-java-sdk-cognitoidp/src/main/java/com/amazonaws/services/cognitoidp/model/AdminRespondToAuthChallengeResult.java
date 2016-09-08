@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Responds to the authentication challenge, as an administrator.
  * </p>
  */
-public class AdminRespondToAuthChallengeResult implements Serializable,
-        Cloneable {
+public class AdminRespondToAuthChallengeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

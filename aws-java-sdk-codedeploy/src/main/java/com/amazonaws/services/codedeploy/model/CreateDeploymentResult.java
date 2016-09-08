@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a create deployment operation.
  * </p>
  */
-public class CreateDeploymentResult implements Serializable, Cloneable {
+public class CreateDeploymentResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

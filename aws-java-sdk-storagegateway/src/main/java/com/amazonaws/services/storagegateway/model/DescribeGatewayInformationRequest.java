@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing the id of the gateway.
  * </p>
  */
-public class DescribeGatewayInformationRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeGatewayInformationRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
 

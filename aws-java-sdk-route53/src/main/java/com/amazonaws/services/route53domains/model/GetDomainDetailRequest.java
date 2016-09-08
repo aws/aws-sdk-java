@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The GetDomainDetail request includes the following element.
  * </p>
  */
-public class GetDomainDetailRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetDomainDetailRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

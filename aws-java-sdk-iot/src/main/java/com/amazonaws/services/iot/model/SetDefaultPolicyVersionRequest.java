@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the SetDefaultPolicyVersion operation.
  * </p>
  */
-public class SetDefaultPolicyVersionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetDefaultPolicyVersionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

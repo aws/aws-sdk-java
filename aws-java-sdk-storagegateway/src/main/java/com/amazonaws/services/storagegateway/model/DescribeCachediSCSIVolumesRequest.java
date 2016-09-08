@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DescribeCachediSCSIVolumesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeCachediSCSIVolumesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<String> volumeARNs;
 

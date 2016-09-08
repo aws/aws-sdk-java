@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The RegisterDomain request includes the following elements.
  * </p>
  */
-public class RegisterDomainRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class RegisterDomainRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

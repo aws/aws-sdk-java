@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the results of the <a>CreateDirectory</a> operation.
  * </p>
  */
-public class CreateDirectoryResult implements Serializable, Cloneable {
+public class CreateDirectoryResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

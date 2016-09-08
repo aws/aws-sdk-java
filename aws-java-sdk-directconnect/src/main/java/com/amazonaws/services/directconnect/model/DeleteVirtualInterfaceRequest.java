@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the DeleteVirtualInterface operation.
  * </p>
  */
-public class DeleteVirtualInterfaceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteVirtualInterfaceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String virtualInterfaceId;
 

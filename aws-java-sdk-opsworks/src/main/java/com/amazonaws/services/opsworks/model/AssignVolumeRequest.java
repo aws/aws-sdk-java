@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class AssignVolumeRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AssignVolumeRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This input determines which instances to list.
  * </p>
  */
-public class ListInstancesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -44,8 +44,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateChapCredentialsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

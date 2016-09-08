@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input to the <code>GetCredentialsForIdentity</code> action.
  * </p>
  */
-public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetCredentialsForIdentityRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

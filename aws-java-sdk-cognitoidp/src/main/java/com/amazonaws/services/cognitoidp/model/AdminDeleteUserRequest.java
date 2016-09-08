@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to delete a user as an administrator.
  * </p>
  */
-public class AdminDeleteUserRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AdminDeleteUserRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

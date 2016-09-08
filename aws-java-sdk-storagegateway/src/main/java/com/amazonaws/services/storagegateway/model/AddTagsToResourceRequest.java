@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * AddTagsToResourceInput
  * </p>
  */
-public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AddTagsToResourceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

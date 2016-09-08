@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The <code>ReadJobResponse</code> structure.
  * </p>
  */
-public class ReadJobResult implements Serializable, Cloneable {
+public class ReadJobResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

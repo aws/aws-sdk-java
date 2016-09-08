@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The GET request to get a usage plan key of a given key identifier.
  * </p>
  */
-public class GetUsagePlanKeyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetUsagePlanKeyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

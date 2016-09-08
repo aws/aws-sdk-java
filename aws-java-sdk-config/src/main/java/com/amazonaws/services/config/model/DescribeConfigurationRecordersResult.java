@@ -21,8 +21,9 @@ import java.io.Serializable;
  * The output for the <a>DescribeConfigurationRecorders</a> action.
  * </p>
  */
-public class DescribeConfigurationRecordersResult implements Serializable,
-        Cloneable {
+public class DescribeConfigurationRecordersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

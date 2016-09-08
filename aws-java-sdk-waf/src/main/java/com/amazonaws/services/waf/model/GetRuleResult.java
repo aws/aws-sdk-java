@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetRuleResult implements Serializable, Cloneable {
+public class GetRuleResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

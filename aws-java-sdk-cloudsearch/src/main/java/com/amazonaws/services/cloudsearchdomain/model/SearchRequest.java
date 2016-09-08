@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <code>Search</code> request.
  * </p>
  */
-public class SearchRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

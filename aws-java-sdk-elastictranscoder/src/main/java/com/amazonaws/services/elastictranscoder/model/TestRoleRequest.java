@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The <code>TestRoleRequest</code> structure.
  * </p>
  */
-public class TestRoleRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class TestRoleRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

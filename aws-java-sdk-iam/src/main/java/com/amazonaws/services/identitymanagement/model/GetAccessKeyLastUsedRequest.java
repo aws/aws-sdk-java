@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetAccessKeyLastUsedRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetAccessKeyLastUsedRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

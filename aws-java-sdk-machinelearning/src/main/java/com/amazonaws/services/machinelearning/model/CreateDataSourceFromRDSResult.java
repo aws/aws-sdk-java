@@ -31,7 +31,9 @@ import java.io.Serializable;
  * <code>pipelineId </code> from the describe call.
  * </p>
  */
-public class CreateDataSourceFromRDSResult implements Serializable, Cloneable {
+public class CreateDataSourceFromRDSResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

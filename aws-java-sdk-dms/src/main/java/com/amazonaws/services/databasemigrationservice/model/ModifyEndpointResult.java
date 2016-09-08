@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * <p/>
  */
-public class ModifyEndpointResult implements Serializable, Cloneable {
+public class ModifyEndpointResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

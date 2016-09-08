@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the ReplaceTopicRule operation.
  * </p>
  */
-public class ReplaceTopicRuleRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ReplaceTopicRuleRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

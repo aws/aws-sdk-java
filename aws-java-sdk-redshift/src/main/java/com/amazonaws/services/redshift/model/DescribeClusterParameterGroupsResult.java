@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output from the <a>DescribeClusterParameterGroups</a> action.
  * </p>
  */
-public class DescribeClusterParameterGroupsResult implements Serializable,
-        Cloneable {
+public class DescribeClusterParameterGroupsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

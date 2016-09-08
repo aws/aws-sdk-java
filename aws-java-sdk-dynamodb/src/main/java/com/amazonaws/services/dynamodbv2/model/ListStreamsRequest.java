@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>ListStreams</i> operation.
  * </p>
  */
-public class ListStreamsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListStreamsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

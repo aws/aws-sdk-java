@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The result of a <code><a>DeleteIndexField</a></code> request.
  * </p>
  */
-public class DeleteIndexFieldResult implements Serializable, Cloneable {
+public class DeleteIndexFieldResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class AttachRolePolicyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AttachRolePolicyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

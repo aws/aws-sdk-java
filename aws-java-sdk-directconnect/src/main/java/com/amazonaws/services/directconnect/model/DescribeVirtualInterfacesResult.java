@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A structure containing a list of virtual interfaces.
  * </p>
  */
-public class DescribeVirtualInterfacesResult implements Serializable, Cloneable {
+public class DescribeVirtualInterfacesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

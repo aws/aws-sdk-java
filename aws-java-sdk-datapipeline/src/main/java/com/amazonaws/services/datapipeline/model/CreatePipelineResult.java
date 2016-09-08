@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of CreatePipeline.
  * </p>
  */
-public class CreatePipelineResult implements Serializable, Cloneable {
+public class CreatePipelineResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

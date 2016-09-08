@@ -22,7 +22,9 @@ import java.io.Serializable;
  * registration.
  * </p>
  */
-public class AdminConfirmSignUpResult implements Serializable, Cloneable {
+public class AdminConfirmSignUpResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

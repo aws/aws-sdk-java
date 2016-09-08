@@ -16,7 +16,7 @@ package com.amazonaws.services.support.model;
 
 /**
  * <p>
- * The requested <code>CaseId</code> could not be located.
+ * The requested <code>caseId</code> could not be located.
  * </p>
  */
 public class CaseIdNotFoundException extends

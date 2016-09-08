@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class TestMetricFilterResult implements Serializable, Cloneable {
+public class TestMetricFilterResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord> matches;
 

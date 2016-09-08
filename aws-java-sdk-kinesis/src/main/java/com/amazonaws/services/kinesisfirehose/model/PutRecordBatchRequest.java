@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for <a>PutRecordBatch</a>.
  * </p>
  */
-public class PutRecordBatchRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PutRecordBatchRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

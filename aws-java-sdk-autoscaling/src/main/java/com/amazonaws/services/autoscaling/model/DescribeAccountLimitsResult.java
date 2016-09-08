@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the parameters for DescribeAccountLimits.
  * </p>
  */
-public class DescribeAccountLimitsResult implements Serializable, Cloneable {
+public class DescribeAccountLimitsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

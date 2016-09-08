@@ -27,7 +27,9 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html"
  * >Use Client-Side Certificate</a> </div>
  */
-public class GenerateClientCertificateResult implements Serializable, Cloneable {
+public class GenerateClientCertificateResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

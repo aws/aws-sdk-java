@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a put approval result action.
  * </p>
  */
-public class PutApprovalResultResult implements Serializable, Cloneable {
+public class PutApprovalResultResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

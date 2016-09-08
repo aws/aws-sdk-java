@@ -15,12 +15,15 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * A simple result wrapper around the KeyPair object that was sent over the
  * wire.
  */
-public class CreateKeyPairResult implements Serializable, Cloneable {
+public class CreateKeyPairResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

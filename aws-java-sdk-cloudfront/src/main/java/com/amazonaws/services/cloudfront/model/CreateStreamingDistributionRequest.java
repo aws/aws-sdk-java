@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to create a new streaming distribution.
  */
-public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateStreamingDistributionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The streaming distribution's configuration information. */
     private StreamingDistributionConfig streamingDistributionConfig;

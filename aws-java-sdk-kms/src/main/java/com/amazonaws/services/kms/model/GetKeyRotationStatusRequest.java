@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetKeyRotationStatusRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetKeyRotationStatusRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetTelemetryMetadataResult implements Serializable, Cloneable {
+public class GetTelemetryMetadataResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListClustersRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

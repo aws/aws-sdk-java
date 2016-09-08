@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * To be written.
  * </p>
  */
-public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AddCommunicationToCaseRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

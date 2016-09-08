@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Data returned from the <b>DescribePendingMaintenanceActions</b> action.
  * </p>
  */
-public class DescribePendingMaintenanceActionsResult implements Serializable,
-        Cloneable {
+public class DescribePendingMaintenanceActionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

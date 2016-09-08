@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * edit, or delete.
  * </p>
  */
-public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ChangeTagsForResourceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

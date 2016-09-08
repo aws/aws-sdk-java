@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a <i>BatchWriteItem</i> operation.
  * </p>
  */
-public class BatchWriteItemResult implements Serializable, Cloneable {
+public class BatchWriteItemResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

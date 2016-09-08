@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Represents the output of a <a>DescribeCacheEngineVersions</a> action.
  * </p>
  */
-public class DescribeCacheEngineVersionsResult implements Serializable,
-        Cloneable {
+public class DescribeCacheEngineVersionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

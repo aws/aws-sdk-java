@@ -22,7 +22,9 @@ import java.io.Serializable;
  * to set up Easy DKIM with Amazon SES.
  * </p>
  */
-public class VerifyDomainDkimResult implements Serializable, Cloneable {
+public class VerifyDomainDkimResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

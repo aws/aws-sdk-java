@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * and specify the ID and the version of the traffic policy.
  * </p>
  */
-public class GetTrafficPolicyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetTrafficPolicyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The input for the BulkPublish operation.
  */
-public class BulkPublishRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class BulkPublishRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,

@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * The returned result of the corresponding request.
  */
-public class ListTagsForResourceResult implements Serializable, Cloneable {
+public class ListTagsForResourceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** A complex type that contains zero or more Tag elements. */
     private Tags tags;

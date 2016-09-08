@@ -21,7 +21,9 @@ import java.io.Serializable;
  * See the example below for a sample response.
  * </p>
  */
-public class DescribeEnvironmentHealthResult implements Serializable, Cloneable {
+public class DescribeEnvironmentHealthResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

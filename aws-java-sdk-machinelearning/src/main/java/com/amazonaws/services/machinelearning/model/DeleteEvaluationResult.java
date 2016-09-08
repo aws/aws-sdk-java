@@ -28,7 +28,9 @@ import java.io.Serializable;
  * is marked as <code>DELETED</code>.
  * </p>
  */
-public class DeleteEvaluationResult implements Serializable, Cloneable {
+public class DeleteEvaluationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

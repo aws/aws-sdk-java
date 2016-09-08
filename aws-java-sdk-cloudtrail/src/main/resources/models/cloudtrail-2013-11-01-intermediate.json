@@ -19,7 +19,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "cloudtrail",
     "signingName" : "cloudtrail",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSCloudTrailClientBuilder",
     "asyncClientBuilderClassName" : "AWSCloudTrailAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AWSCloudTrailModuleInjector",
@@ -29,7 +29,7 @@
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "jsonProtocol" : true
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "AddTags" : {
@@ -726,11 +726,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<PublicKey>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>",
-          "simpleType" : "PublicKey",
-          "simple" : false,
-          "map" : false
+          "simpleType" : "PublicKey"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -973,11 +973,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<PublicKey>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>",
-            "simpleType" : "PublicKey",
-            "simple" : false,
-            "map" : false
+            "simpleType" : "PublicKey"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1399,11 +1399,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simpleType" : "Tag",
-          "simple" : false,
-          "map" : false
+          "simpleType" : "Tag"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1598,11 +1598,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simpleType" : "Tag",
-            "simple" : false,
-            "map" : false
+            "simpleType" : "Tag"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1731,11 +1731,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : true,
+          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simpleType" : "String",
-          "simple" : true,
-          "map" : false
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1982,11 +1982,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : true,
+            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simpleType" : "String",
-            "simple" : true,
-            "map" : false
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2197,11 +2197,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<Trail>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>",
-          "simpleType" : "Trail",
-          "simple" : false,
-          "map" : false
+          "simpleType" : "Trail"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2339,11 +2339,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<Trail>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>",
-            "simpleType" : "Trail",
-            "simple" : false,
-            "map" : false
+            "simpleType" : "Trail"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3349,11 +3349,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : true,
+          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simpleType" : "String",
-          "simple" : true,
-          "map" : false
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3547,11 +3547,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : true,
+            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simpleType" : "String",
-            "simple" : true,
-            "map" : false
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8112,11 +8112,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<ResourceTag>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
-          "simpleType" : "ResourceTag",
-          "simple" : false,
-          "map" : false
+          "simpleType" : "ResourceTag"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8359,11 +8359,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<ResourceTag>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
-            "simpleType" : "ResourceTag",
-            "simple" : false,
-            "map" : false
+            "simpleType" : "ResourceTag"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8704,11 +8704,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<Event>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>",
-          "simpleType" : "Event",
-          "simple" : false,
-          "map" : false
+          "simpleType" : "Event"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8951,11 +8951,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<Event>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>",
-            "simpleType" : "Event",
-            "simple" : false,
-            "map" : false
+            "simpleType" : "Event"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9311,11 +9311,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<LookupAttribute>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>",
-          "simpleType" : "LookupAttribute",
-          "simple" : false,
-          "map" : false
+          "simpleType" : "LookupAttribute"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9877,11 +9877,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<LookupAttribute>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>",
-            "simpleType" : "LookupAttribute",
-            "simple" : false,
-            "map" : false
+            "simpleType" : "LookupAttribute"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14798,11 +14798,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simpleType" : "Tag",
-          "simple" : false,
-          "map" : false
+          "simpleType" : "Tag"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14997,11 +14997,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simpleType" : "Tag",
-            "simple" : false,
-            "map" : false
+            "simpleType" : "Tag"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15359,11 +15359,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simpleType" : "Tag",
-          "simple" : false,
-          "map" : false
+          "simpleType" : "Tag"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15554,11 +15554,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simpleType" : "Tag",
-            "simple" : false,
-            "map" : false
+            "simpleType" : "Tag"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15994,11 +15994,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "templateType" : "java.util.List<Resource>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
-          "simpleType" : "Resource",
-          "simple" : false,
-          "map" : false
+          "simpleType" : "Resource"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16400,11 +16400,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "templateType" : "java.util.List<Resource>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
-            "simpleType" : "Resource",
-            "simple" : false,
-            "map" : false
+            "simpleType" : "Resource"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16903,5 +16903,6 @@
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cloudtrail.model.AWSCloudTrailException",
   "hasWaiters" : false,
+  "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSCloudTrailException"
 }

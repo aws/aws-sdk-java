@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * resource.
  * </p>
  */
-public class GetClientCertificateRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetClientCertificateRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

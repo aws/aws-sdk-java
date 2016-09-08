@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * analysis scheme you want to delete.
  * </p>
  */
-public class DeleteAnalysisSchemeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteAnalysisSchemeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
     /**

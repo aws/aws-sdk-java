@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Request for a list of datasets for an identity.
  */
-public class ListDatasetsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListDatasetsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The <code>ListPresetsResponse</code> structure.
  * </p>
  */
-public class ListPresetsResult implements Serializable, Cloneable {
+public class ListPresetsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

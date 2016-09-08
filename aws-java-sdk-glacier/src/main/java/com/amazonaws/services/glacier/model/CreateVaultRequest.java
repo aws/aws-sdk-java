@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Provides options to create a vault.
  * </p>
  */
-public class CreateVaultRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateVaultRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

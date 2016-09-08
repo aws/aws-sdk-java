@@ -22,7 +22,9 @@ import java.io.Serializable;
  * Direct Connect location and the customer.
  * </p>
  */
-public class DeleteConnectionResult implements Serializable, Cloneable {
+public class DeleteConnectionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

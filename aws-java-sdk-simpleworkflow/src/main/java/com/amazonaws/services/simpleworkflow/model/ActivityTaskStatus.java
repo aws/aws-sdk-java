@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Status information about an activity task.
  * </p>
  */
-public class ActivityTaskStatus implements Serializable, Cloneable {
+public class ActivityTaskStatus extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

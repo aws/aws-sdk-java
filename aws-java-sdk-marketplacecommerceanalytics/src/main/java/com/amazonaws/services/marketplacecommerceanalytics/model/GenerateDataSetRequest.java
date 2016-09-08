@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the GenerateDataSet operation.
  */
-public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GenerateDataSetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

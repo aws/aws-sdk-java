@@ -21,8 +21,9 @@ import java.io.Serializable;
  * A complex type that contains the response information for the request.
  * </p>
  */
-public class ListTrafficPolicyInstancesResult implements Serializable,
-        Cloneable {
+public class ListTrafficPolicyInstancesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

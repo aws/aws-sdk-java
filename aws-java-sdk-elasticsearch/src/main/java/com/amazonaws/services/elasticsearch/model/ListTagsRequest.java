@@ -24,8 +24,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * are attached that you want to view are attached.
  * </p>
  */
-public class ListTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

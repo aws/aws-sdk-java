@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request to create a new streaming distribution with tags.
  */
 public class CreateStreamingDistributionWithTagsRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The streaming distribution's configuration information. */
     private StreamingDistributionConfigWithTags streamingDistributionConfigWithTags;

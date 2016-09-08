@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of SetRulePriorities.
  * </p>
  */
-public class SetRulePrioritiesResult implements Serializable, Cloneable {
+public class SetRulePrioritiesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

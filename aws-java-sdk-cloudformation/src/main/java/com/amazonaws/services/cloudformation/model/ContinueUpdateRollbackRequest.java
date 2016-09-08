@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>ContinueUpdateRollback</a> action.
  * </p>
  */
-public class ContinueUpdateRollbackRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ContinueUpdateRollbackRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * This output contains the description of the cluster step.
  * </p>
  */
-public class DescribeStepResult implements Serializable, Cloneable {
+public class DescribeStepResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

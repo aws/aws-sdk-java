@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateKeyResult implements Serializable, Cloneable {
+public class CreateKeyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,7 +22,9 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class TestDNSAnswerResult implements Serializable, Cloneable {
+public class TestDNSAnswerResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

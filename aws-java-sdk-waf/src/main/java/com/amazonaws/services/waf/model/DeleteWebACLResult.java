@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DeleteWebACLResult implements Serializable, Cloneable {
+public class DeleteWebACLResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

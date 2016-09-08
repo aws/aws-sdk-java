@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to RegisterDevice.
  * </p>
  */
-public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class RegisterDeviceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

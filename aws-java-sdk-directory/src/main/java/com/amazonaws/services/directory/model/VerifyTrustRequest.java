@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Microsoft AD in the AWS cloud and an external domain.
  * </p>
  */
-public class VerifyTrustRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class VerifyTrustRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

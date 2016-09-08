@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to get the name of a <a>DomainName</a> resource.
  * </p>
  */
-public class GetDomainNameRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetDomainNameRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

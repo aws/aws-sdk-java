@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing the of the gateway to start.
  * </p>
  */
-public class StartGatewayRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class StartGatewayRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

@@ -22,7 +22,9 @@ import java.io.Serializable;
  * the newly-configured expression.
  * </p>
  */
-public class DefineExpressionResult implements Serializable, Cloneable {
+public class DefineExpressionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private ExpressionStatus expression;
 

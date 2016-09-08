@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of EnterStandby.
  * </p>
  */
-public class EnterStandbyResult implements Serializable, Cloneable {
+public class EnterStandbyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

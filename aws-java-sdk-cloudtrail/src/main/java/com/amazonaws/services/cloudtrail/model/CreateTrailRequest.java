@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Specifies the settings for each trail.
  * </p>
  */
-public class CreateTrailRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

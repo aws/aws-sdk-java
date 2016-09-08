@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * CSV-formatted file.
  * </p>
  */
-public class ImportApiKeysRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

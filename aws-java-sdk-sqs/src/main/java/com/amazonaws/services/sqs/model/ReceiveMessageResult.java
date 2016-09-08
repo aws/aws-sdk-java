@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A list of received messages.
  * </p>
  */
-public class ReceiveMessageResult implements Serializable, Cloneable {
+public class ReceiveMessageResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

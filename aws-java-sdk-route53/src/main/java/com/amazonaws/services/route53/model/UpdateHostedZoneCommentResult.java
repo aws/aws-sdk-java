@@ -22,7 +22,9 @@ import java.io.Serializable;
  * UpdateHostedZoneCommentRequest.
  * </p>
  */
-public class UpdateHostedZoneCommentResult implements Serializable, Cloneable {
+public class UpdateHostedZoneCommentResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private HostedZone hostedZone;
 

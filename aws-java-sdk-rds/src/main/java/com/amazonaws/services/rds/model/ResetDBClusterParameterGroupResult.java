@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * <p/>
  */
-public class ResetDBClusterParameterGroupResult implements Serializable,
-        Cloneable {
+public class ResetDBClusterParameterGroupResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

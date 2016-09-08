@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input to the UpdateCACertificate operation.
  * </p>
  */
-public class UpdateCACertificateRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateCACertificateRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

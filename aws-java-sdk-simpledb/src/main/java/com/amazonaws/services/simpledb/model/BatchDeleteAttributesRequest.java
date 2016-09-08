@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class BatchDeleteAttributesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The name of the domain in which the attributes are being deleted. */
     private String domainName;

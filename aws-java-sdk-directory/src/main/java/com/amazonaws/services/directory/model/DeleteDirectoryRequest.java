@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>DeleteDirectory</a> operation.
  * </p>
  */
-public class DeleteDirectoryRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteDirectoryRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

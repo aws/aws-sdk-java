@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>DescribeCacheParameters</i> action.
  * </p>
  */
-public class DescribeCacheParametersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeCacheParametersRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

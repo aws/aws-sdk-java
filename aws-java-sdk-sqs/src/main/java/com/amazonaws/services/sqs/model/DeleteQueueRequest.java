@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DeleteQueueRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteQueueRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

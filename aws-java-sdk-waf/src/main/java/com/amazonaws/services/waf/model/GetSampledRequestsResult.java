@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetSampledRequestsResult implements Serializable, Cloneable {
+public class GetSampledRequestsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

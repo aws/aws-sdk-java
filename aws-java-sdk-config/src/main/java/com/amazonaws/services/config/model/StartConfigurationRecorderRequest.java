@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>StartConfigurationRecorder</a> action.
  * </p>
  */
-public class StartConfigurationRecorderRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class StartConfigurationRecorderRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

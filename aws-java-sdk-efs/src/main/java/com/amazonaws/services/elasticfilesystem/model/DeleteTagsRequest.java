@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DeleteTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

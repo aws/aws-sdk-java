@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to change information about an <a>ClientCertificate</a> resource.
  * </p>
  */
-public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateClientCertificateRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

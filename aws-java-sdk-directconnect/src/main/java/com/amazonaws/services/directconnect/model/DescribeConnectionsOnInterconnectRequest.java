@@ -24,7 +24,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeConnectionsOnInterconnectRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

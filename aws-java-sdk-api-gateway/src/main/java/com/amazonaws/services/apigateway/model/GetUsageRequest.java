@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * interval.
  * </p>
  */
-public class GetUsageRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

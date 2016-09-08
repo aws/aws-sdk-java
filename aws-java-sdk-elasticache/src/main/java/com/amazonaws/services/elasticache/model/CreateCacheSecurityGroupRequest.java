@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>CreateCacheSecurityGroup</i> action.
  * </p>
  */
-public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateCacheSecurityGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

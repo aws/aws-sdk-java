@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * <p/>
  */
-public class RefreshSchemasResult implements Serializable, Cloneable {
+public class RefreshSchemasResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

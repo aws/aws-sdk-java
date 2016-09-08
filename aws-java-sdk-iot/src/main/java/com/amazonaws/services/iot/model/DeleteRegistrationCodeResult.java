@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for the DeleteRegistrationCode operation.
  * </p>
  */
-public class DeleteRegistrationCodeResult implements Serializable, Cloneable {
+public class DeleteRegistrationCodeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

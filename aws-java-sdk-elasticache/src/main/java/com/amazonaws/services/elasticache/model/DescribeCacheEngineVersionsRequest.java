@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>DescribeCacheEngineVersions</i> action.
  * </p>
  */
-public class DescribeCacheEngineVersionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeCacheEngineVersionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

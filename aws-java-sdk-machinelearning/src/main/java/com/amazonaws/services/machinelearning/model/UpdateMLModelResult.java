@@ -25,7 +25,9 @@ import java.io.Serializable;
  * operation.
  * </p>
  */
-public class UpdateMLModelResult implements Serializable, Cloneable {
+public class UpdateMLModelResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

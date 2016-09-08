@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to describe an existing <a>Method</a> resource.
  * </p>
  */
-public class GetMethodRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetMethodRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

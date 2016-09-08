@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * The returned result of the corresponding request.
  */
-public class CreateInvalidationResult implements Serializable, Cloneable {
+public class CreateInvalidationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * The fully qualified URI of the distribution and invalidation batch

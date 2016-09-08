@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Provides options to add an archive to a vault.
  * </p>
  */
-public class UploadArchiveRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UploadArchiveRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

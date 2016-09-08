@@ -22,7 +22,9 @@ import java.io.Serializable;
  * requested Elasticsearch domains.
  * </p>
  */
-public class ListTagsResult implements Serializable, Cloneable {
+public class ListTagsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

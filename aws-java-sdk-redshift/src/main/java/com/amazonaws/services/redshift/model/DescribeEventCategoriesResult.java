@@ -20,7 +20,9 @@ import java.io.Serializable;
  * <p>
  * </p>
  */
-public class DescribeEventCategoriesResult implements Serializable, Cloneable {
+public class DescribeEventCategoriesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

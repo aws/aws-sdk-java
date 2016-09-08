@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request for a list of the configured Cognito Events
  * </p>
  */
-public class GetCognitoEventsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetCognitoEventsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

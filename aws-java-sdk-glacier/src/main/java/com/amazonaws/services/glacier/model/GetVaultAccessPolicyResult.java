@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Output for GetVaultAccessPolicy.
  * </p>
  */
-public class GetVaultAccessPolicyResult implements Serializable, Cloneable {
+public class GetVaultAccessPolicyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

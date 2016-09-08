@@ -15,12 +15,14 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * 
  */
-public class DescribeSecurityGroupReferencesResult implements Serializable,
-        Cloneable {
+public class DescribeSecurityGroupReferencesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

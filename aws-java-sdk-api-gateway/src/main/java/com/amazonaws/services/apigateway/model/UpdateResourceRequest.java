@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to change information about a <a>Resource</a> resource.
  * </p>
  */
-public class UpdateResourceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateResourceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

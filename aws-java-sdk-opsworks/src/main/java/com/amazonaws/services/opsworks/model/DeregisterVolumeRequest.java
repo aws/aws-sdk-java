@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeregisterVolumeRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeregisterVolumeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

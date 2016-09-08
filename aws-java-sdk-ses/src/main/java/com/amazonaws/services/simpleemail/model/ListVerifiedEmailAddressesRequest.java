@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListVerifiedEmailAddressesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListVerifiedEmailAddressesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

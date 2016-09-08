@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents a unique message ID.
  * </p>
  */
-public class SendBounceResult implements Serializable, Cloneable {
+public class SendBounceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

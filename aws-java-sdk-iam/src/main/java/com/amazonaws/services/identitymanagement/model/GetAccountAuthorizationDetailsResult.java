@@ -22,8 +22,9 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class GetAccountAuthorizationDetailsResult implements Serializable,
-        Cloneable {
+public class GetAccountAuthorizationDetailsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

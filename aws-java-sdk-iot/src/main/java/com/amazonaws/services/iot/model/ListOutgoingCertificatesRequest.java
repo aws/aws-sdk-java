@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input to the ListOutgoingCertificates operation.
  * </p>
  */
-public class ListOutgoingCertificatesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListOutgoingCertificatesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>SignalResource</a> action.
  * </p>
  */
-public class SignalResourceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SignalResourceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * An empty element returned on a successful request.
  * </p>
  */
-public class SetActiveReceiptRuleSetResult implements Serializable, Cloneable {
+public class SetActiveReceiptRuleSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

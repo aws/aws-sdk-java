@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The TranserDomain response includes the following element.
  * </p>
  */
-public class TransferDomainResult implements Serializable, Cloneable {
+public class TransferDomainResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the DeleteInterconnect operation.
  * </p>
  */
-public class DeleteInterconnectRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteInterconnectRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String interconnectId;
 

@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class SetPermissionRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for <code>AddTagsToStream</code>.
  * </p>
  */
-public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AddTagsToStreamRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

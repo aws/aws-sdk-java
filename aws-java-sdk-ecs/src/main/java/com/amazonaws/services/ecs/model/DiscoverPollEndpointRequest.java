@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DiscoverPollEndpointRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

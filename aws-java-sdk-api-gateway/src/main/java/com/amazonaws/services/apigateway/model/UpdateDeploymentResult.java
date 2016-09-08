@@ -31,7 +31,9 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html"
  * >AWS CLI</a>, <a href="https://aws.amazon.com/tools/">AWS SDKs</a> </div>
  */
-public class UpdateDeploymentResult implements Serializable, Cloneable {
+public class UpdateDeploymentResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

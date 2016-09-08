@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for SetSubscriptionAttributes action.
  * </p>
  */
-public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetSubscriptionAttributesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

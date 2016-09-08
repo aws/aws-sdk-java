@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DeleteMessageRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteMessageRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

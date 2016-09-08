@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class AddUploadBufferResult implements Serializable, Cloneable {
+public class AddUploadBufferResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

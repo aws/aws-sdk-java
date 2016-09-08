@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DiscoverInputSchemaRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DiscoverInputSchemaRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

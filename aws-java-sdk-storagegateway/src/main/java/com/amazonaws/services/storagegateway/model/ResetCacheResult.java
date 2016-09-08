@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ResetCacheResult implements Serializable, Cloneable {
+public class ResetCacheResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

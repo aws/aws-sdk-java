@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Output structure for the UpateJob operation.
  */
-public class UpdateJobResult implements Serializable, Cloneable {
+public class UpdateJobResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private Boolean success;
 

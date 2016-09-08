@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * operation. Specifies the name of the domain you want to delete.
  * </p>
  */
-public class DeleteDomainRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteDomainRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

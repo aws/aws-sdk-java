@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Data returned by the <b>DescribeCertificates</b> action.
  * </p>
  */
-public class DescribeCertificatesResult implements Serializable, Cloneable {
+public class DescribeCertificatesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

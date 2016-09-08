@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The UpdateDomainContact response includes the following element.
  * </p>
  */
-public class UpdateDomainContactResult implements Serializable, Cloneable {
+public class UpdateDomainContactResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

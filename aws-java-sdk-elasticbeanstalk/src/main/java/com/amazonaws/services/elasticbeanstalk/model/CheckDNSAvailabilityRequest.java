@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Results message indicating whether a CNAME is available.
  * </p>
  */
-public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CheckDNSAvailabilityRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

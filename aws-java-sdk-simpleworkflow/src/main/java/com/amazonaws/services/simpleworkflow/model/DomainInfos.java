@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains a paginated collection of DomainInfo structures.
  * </p>
  */
-public class DomainInfos implements Serializable, Cloneable {
+public class DomainInfos extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

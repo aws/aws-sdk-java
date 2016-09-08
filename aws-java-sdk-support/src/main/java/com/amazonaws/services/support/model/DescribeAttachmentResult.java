@@ -22,7 +22,9 @@ import java.io.Serializable;
  * <a>DescribeAttachment</a> operation.
  * </p>
  */
-public class DescribeAttachmentResult implements Serializable, Cloneable {
+public class DescribeAttachmentResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

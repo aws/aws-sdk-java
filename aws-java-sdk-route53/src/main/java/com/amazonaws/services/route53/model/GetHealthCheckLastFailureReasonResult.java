@@ -22,8 +22,9 @@ import java.io.Serializable;
  * <code>GetHealthCheckLastFailureReason</code> request.
  * </p>
  */
-public class GetHealthCheckLastFailureReasonResult implements Serializable,
-        Cloneable {
+public class GetHealthCheckLastFailureReasonResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

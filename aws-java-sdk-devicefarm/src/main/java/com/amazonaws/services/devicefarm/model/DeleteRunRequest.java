@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the delete run operation.
  * </p>
  */
-public class DeleteRunRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteRunRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

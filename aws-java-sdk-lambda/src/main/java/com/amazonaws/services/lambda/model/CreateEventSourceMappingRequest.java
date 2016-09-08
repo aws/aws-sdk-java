@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class CreateEventSourceMappingRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateEventSourceMappingRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,7 +22,9 @@ import java.io.Serializable;
  * <code>GetReusableDelegationSet</code> request.
  * </p>
  */
-public class GetReusableDelegationSetResult implements Serializable, Cloneable {
+public class GetReusableDelegationSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeScalableTargetsResult implements Serializable, Cloneable {
+public class DescribeScalableTargetsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

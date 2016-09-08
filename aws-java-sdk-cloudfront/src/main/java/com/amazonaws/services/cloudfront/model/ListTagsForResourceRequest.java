@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to list tags for a CloudFront resource.
  */
-public class ListTagsForResourceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListTagsForResourceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** An ARN of a CloudFront resource. */
     private String resource;

@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetRepositoryPolicyResult implements Serializable, Cloneable {
+public class GetRepositoryPolicyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

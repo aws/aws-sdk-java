@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeAgentVersions</code> request.
  * </p>
  */
-public class DescribeAgentVersionsResult implements Serializable, Cloneable {
+public class DescribeAgentVersionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

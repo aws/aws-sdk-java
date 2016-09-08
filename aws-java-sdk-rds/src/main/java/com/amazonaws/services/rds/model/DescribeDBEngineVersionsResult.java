@@ -22,7 +22,9 @@ import java.io.Serializable;
  * <a>DescribeDBEngineVersions</a> action.
  * </p>
  */
-public class DescribeDBEngineVersionsResult implements Serializable, Cloneable {
+public class DescribeDBEngineVersionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

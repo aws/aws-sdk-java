@@ -29,8 +29,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AddWorkingStorageRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
     /**

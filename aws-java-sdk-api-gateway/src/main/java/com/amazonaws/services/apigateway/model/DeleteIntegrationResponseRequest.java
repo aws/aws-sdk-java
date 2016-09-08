@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a delete integration response request.
  * </p>
  */
-public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteIntegrationResponseRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

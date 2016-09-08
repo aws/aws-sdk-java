@@ -22,7 +22,9 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class GetHealthCheckCountResult implements Serializable, Cloneable {
+public class GetHealthCheckCountResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

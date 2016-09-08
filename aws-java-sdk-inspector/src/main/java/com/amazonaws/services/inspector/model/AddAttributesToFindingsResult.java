@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class AddAttributesToFindingsResult implements Serializable, Cloneable {
+public class AddAttributesToFindingsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

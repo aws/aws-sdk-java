@@ -62,7 +62,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller
                             .getIfMatch()));
         }
 
-        String uriResourcePath = "/2016-08-20/origin-access-identity/cloudfront/{Id}/config";
+        String uriResourcePath = "/2016-09-07/origin-access-identity/cloudfront/{Id}/config";
 
         uriResourcePath = uriResourcePath
                 .replace(
@@ -77,7 +77,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller
         try {
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter,
-                    "http://cloudfront.amazonaws.com/doc/2016-08-20/");
+                    "http://cloudfront.amazonaws.com/doc/2016-09-07/");
 
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig = updateCloudFrontOriginAccessIdentityRequest
                     .getCloudFrontOriginAccessIdentityConfig();

@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class MeterUsageResult implements Serializable, Cloneable {
+public class MeterUsageResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String meteringRecordId;
 

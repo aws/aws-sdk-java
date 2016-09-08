@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to retrieve a list of events for an environment.
  * </p>
  */
-public class DescribeEventsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeEventsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A list of IP address filters that exist under your AWS account.
  * </p>
  */
-public class ListReceiptFiltersResult implements Serializable, Cloneable {
+public class ListReceiptFiltersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

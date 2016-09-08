@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output for <code>DescribeStream</code>.
  * </p>
  */
-public class DescribeStreamResult implements Serializable, Cloneable {
+public class DescribeStreamResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

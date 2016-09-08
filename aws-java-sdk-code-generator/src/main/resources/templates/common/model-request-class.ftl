@@ -7,7 +7,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <#if shape.documentation?has_content>${shape.documentation}</#if>
  */
-public class ${shape.shapeName} extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class ${shape.shapeName} extends ${baseClassFqcn} implements Serializable, Cloneable {
 
     <@VariableDeclarationMacro.content shape/>
 

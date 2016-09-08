@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>GetHostnameSuggestion</code> request.
  * </p>
  */
-public class GetHostnameSuggestionResult implements Serializable, Cloneable {
+public class GetHostnameSuggestionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

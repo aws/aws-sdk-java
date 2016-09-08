@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a <code>DeleteDataSource</code> operation.
  * </p>
  */
-public class DeleteDataSourceResult implements Serializable, Cloneable {
+public class DeleteDataSourceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

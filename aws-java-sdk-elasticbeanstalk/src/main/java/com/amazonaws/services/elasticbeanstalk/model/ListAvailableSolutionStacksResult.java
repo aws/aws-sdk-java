@@ -21,8 +21,9 @@ import java.io.Serializable;
  * A list of available AWS Elastic Beanstalk solution stacks.
  * </p>
  */
-public class ListAvailableSolutionStacksResult implements Serializable,
-        Cloneable {
+public class ListAvailableSolutionStacksResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

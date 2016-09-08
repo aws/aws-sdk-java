@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing the of the gateway.
  * </p>
  */
-public class ListLocalDisksRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListLocalDisksRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
 

@@ -22,8 +22,9 @@ import java.io.Serializable;
  * the status of the domain specified in the request.
  * </p>
  */
-public class DescribeElasticsearchDomainResult implements Serializable,
-        Cloneable {
+public class DescribeElasticsearchDomainResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

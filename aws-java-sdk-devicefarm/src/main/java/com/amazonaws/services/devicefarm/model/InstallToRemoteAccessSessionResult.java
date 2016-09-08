@@ -22,8 +22,9 @@ import java.io.Serializable;
  * to install to a remote access session.
  * </p>
  */
-public class InstallToRemoteAccessSessionResult implements Serializable,
-        Cloneable {
+public class InstallToRemoteAccessSessionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private Upload appUpload;
 

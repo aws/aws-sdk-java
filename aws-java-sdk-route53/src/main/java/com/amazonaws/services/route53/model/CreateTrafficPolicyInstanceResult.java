@@ -22,8 +22,9 @@ import java.io.Serializable;
  * <code>CreateTrafficPolicyInstance</code> request.
  * </p>
  */
-public class CreateTrafficPolicyInstanceResult implements Serializable,
-        Cloneable {
+public class CreateTrafficPolicyInstanceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

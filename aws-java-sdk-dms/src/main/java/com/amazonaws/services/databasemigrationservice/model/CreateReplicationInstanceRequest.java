@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateReplicationInstanceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the CreateInterconnect operation.
  * </p>
  */
-public class CreateInterconnectRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateInterconnectRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

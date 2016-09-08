@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeProvisioningParametersResult implements Serializable,
-        Cloneable {
+public class DescribeProvisioningParametersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

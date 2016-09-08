@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class GetVaultNotificationsResult implements Serializable, Cloneable {
+public class GetVaultNotificationsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A JSON object containing the following fields:
  * </p>
  */
-public class UpdateChapCredentialsResult implements Serializable, Cloneable {
+public class UpdateChapCredentialsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

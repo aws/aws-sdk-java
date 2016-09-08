@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response received when DeleteInterconnect is called.
  * </p>
  */
-public class DeleteInterconnectResult implements Serializable, Cloneable {
+public class DeleteInterconnectResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String interconnectState;
 

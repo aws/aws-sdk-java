@@ -22,13 +22,15 @@ import java.io.Serializable;
  * <a>AddAttachmentsToSet</a> operation.
  * </p>
  */
-public class AddAttachmentsToSetResult implements Serializable, Cloneable {
+public class AddAttachmentsToSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the attachment set. If an <code>AttachmentSetId</code> was not
+     * The ID of the attachment set. If an <code>attachmentSetId</code> was not
      * specified, a new attachment set is created, and the ID of the set is
-     * returned in the response. If an <code>AttachmentSetId</code> was
+     * returned in the response. If an <code>attachmentSetId</code> was
      * specified, the attachments are added to the specified set, if it exists.
      * </p>
      */
@@ -42,17 +44,17 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the attachment set. If an <code>AttachmentSetId</code> was not
+     * The ID of the attachment set. If an <code>attachmentSetId</code> was not
      * specified, a new attachment set is created, and the ID of the set is
-     * returned in the response. If an <code>AttachmentSetId</code> was
+     * returned in the response. If an <code>attachmentSetId</code> was
      * specified, the attachments are added to the specified set, if it exists.
      * </p>
      * 
      * @param attachmentSetId
-     *        The ID of the attachment set. If an <code>AttachmentSetId</code>
+     *        The ID of the attachment set. If an <code>attachmentSetId</code>
      *        was not specified, a new attachment set is created, and the ID of
      *        the set is returned in the response. If an
-     *        <code>AttachmentSetId</code> was specified, the attachments are
+     *        <code>attachmentSetId</code> was specified, the attachments are
      *        added to the specified set, if it exists.
      */
 
@@ -62,16 +64,16 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the attachment set. If an <code>AttachmentSetId</code> was not
+     * The ID of the attachment set. If an <code>attachmentSetId</code> was not
      * specified, a new attachment set is created, and the ID of the set is
-     * returned in the response. If an <code>AttachmentSetId</code> was
+     * returned in the response. If an <code>attachmentSetId</code> was
      * specified, the attachments are added to the specified set, if it exists.
      * </p>
      * 
-     * @return The ID of the attachment set. If an <code>AttachmentSetId</code>
+     * @return The ID of the attachment set. If an <code>attachmentSetId</code>
      *         was not specified, a new attachment set is created, and the ID of
      *         the set is returned in the response. If an
-     *         <code>AttachmentSetId</code> was specified, the attachments are
+     *         <code>attachmentSetId</code> was specified, the attachments are
      *         added to the specified set, if it exists.
      */
 
@@ -81,17 +83,17 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the attachment set. If an <code>AttachmentSetId</code> was not
+     * The ID of the attachment set. If an <code>attachmentSetId</code> was not
      * specified, a new attachment set is created, and the ID of the set is
-     * returned in the response. If an <code>AttachmentSetId</code> was
+     * returned in the response. If an <code>attachmentSetId</code> was
      * specified, the attachments are added to the specified set, if it exists.
      * </p>
      * 
      * @param attachmentSetId
-     *        The ID of the attachment set. If an <code>AttachmentSetId</code>
+     *        The ID of the attachment set. If an <code>attachmentSetId</code>
      *        was not specified, a new attachment set is created, and the ID of
      *        the set is returned in the response. If an
-     *        <code>AttachmentSetId</code> was specified, the attachments are
+     *        <code>attachmentSetId</code> was specified, the attachments are
      *        added to the specified set, if it exists.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

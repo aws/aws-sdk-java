@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * <p/>
  */
-public class DescribeOrderableReplicationInstancesResult implements
-        Serializable, Cloneable {
+public class DescribeOrderableReplicationInstancesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

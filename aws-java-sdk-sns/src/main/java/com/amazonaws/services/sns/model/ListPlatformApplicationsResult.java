@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Response for ListPlatformApplications action.
  * </p>
  */
-public class ListPlatformApplicationsResult implements Serializable, Cloneable {
+public class ListPlatformApplicationsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

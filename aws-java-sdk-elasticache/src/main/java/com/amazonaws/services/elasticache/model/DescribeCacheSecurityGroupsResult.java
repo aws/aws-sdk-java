@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Represents the output of a <i>DescribeCacheSecurityGroups</i> action.
  * </p>
  */
-public class DescribeCacheSecurityGroupsResult implements Serializable,
-        Cloneable {
+public class DescribeCacheSecurityGroupsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

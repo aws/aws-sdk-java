@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response to the request to update the device status.
  * </p>
  */
-public class UpdateDeviceStatusResult implements Serializable, Cloneable {
+public class UpdateDeviceStatusResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

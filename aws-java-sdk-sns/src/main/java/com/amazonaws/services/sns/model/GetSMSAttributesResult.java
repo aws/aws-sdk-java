@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response from the <code>GetSMSAttributes</code> request.
  * </p>
  */
-public class GetSMSAttributesResult implements Serializable, Cloneable {
+public class GetSMSAttributesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes event topics.
  * </p>
  */
-public class DescribeEventTopicsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeEventTopicsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * See the example below to learn how to create a request body.
  * </p>
  */
-public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeInstancesHealthRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

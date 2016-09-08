@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetSendStatisticsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetSendStatisticsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

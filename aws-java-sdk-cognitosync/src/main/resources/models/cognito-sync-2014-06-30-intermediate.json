@@ -19,12 +19,12 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "cognito-sync",
     "signingName" : "cognito-sync",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "xmlProtocol" : false,
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "syncClientBuilderClassName" : "AmazonCognitoSyncClientBuilder",
     "asyncClientBuilderClassName" : "AmazonCognitoSyncAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AmazonCognitoSyncModuleInjector",
@@ -3039,11 +3039,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Dataset",
           "templateType" : "java.util.List<Dataset>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dataset>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dataset>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3285,11 +3285,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Dataset",
             "templateType" : "java.util.List<Dataset>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dataset>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Dataset>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5317,11 +5317,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "RecordPatch",
           "templateType" : "java.util.List<RecordPatch>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RecordPatch>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RecordPatch>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5620,11 +5620,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "RecordPatch",
             "templateType" : "java.util.List<RecordPatch>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RecordPatch>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RecordPatch>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6614,11 +6614,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6808,11 +6808,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6994,11 +6994,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Record",
           "templateType" : "java.util.List<Record>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7136,11 +7136,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Record",
             "templateType" : "java.util.List<Record>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9622,11 +9622,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Record",
           "templateType" : "java.util.List<Record>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9949,11 +9949,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10512,11 +10512,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10685,11 +10685,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Record",
             "templateType" : "java.util.List<Record>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13380,11 +13380,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "IdentityPoolUsage",
           "templateType" : "java.util.List<IdentityPoolUsage>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<IdentityPoolUsage>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<IdentityPoolUsage>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13678,11 +13678,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "IdentityPoolUsage",
             "templateType" : "java.util.List<IdentityPoolUsage>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<IdentityPoolUsage>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<IdentityPoolUsage>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16430,11 +16430,12 @@
     "examples" : { },
     "version" : "1.0"
   },
-  "sdkModeledExceptionBaseClassName" : "AmazonCognitoSyncException",
+  "exceptionUnmarshallerImpl" : null,
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "hasWaiters" : false,
+  "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException",
-  "hasWaiters" : false,
-  "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */"
+  "sdkModeledExceptionBaseClassName" : "AmazonCognitoSyncException"
 }

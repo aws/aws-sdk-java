@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for SetEndpointAttributes action.
  * </p>
  */
-public class SetEndpointAttributesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetEndpointAttributesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

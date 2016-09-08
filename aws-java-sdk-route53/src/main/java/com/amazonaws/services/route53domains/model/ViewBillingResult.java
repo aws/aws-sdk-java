@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The ViewBilling response includes the following elements.
  * </p>
  */
-public class ViewBillingResult implements Serializable, Cloneable {
+public class ViewBillingResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

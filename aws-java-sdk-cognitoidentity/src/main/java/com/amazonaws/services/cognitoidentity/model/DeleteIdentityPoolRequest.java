@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input to the DeleteIdentityPool action.
  * </p>
  */
-public class DeleteIdentityPoolRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteIdentityPoolRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** An identity pool ID in the format REGION:GUID. */
     private String identityPoolId;

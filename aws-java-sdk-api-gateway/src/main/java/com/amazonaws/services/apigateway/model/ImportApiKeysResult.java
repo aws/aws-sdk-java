@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The identifier of an API key used to reference an API key in a usage plan.
  * </p>
  */
-public class ImportApiKeysResult implements Serializable, Cloneable {
+public class ImportApiKeysResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

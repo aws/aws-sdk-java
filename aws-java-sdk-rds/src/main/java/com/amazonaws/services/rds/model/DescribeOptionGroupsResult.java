@@ -21,7 +21,9 @@ import java.io.Serializable;
  * List of option groups.
  * </p>
  */
-public class DescribeOptionGroupsResult implements Serializable, Cloneable {
+public class DescribeOptionGroupsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

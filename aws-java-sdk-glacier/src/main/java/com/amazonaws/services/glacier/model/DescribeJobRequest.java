@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Provides options for retrieving a job description.
  * </p>
  */
-public class DescribeJobRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeJobRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

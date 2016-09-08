@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the response from the server to create a user pool client.
  * </p>
  */
-public class CreateUserPoolClientResult implements Serializable, Cloneable {
+public class CreateUserPoolClientResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

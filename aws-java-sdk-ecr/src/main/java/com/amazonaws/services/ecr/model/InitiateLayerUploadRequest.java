@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class InitiateLayerUploadRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class InitiateLayerUploadRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

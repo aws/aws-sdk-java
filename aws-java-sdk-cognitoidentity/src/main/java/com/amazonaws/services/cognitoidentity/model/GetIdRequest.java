@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Input to the GetId action.
  */
-public class GetIdRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetIdRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /** A standard AWS account ID (9+ digits). */
     private String accountId;

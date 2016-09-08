@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of an update deployment group operation.
  * </p>
  */
-public class UpdateDeploymentGroupResult implements Serializable, Cloneable {
+public class UpdateDeploymentGroupResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

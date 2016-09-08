@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListTaskDefinitionFamiliesResult implements Serializable,
-        Cloneable {
+public class ListTaskDefinitionFamiliesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

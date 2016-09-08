@@ -22,7 +22,9 @@ import java.io.Serializable;
  * that a request can be canceled.
  * </p>
  */
-public class CancelCommandResult implements Serializable, Cloneable {
+public class CancelCommandResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

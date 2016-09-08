@@ -28,7 +28,9 @@ import java.io.Serializable;
  * >Working with Archives in Amazon Glacier</a>.
  * </p>
  */
-public class UploadArchiveResult implements Serializable, Cloneable {
+public class UploadArchiveResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

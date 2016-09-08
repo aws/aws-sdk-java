@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request a new export of a <a>RestApi</a> for a particular <a>Stage</a>.
  * </p>
  */
-public class GetExportRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

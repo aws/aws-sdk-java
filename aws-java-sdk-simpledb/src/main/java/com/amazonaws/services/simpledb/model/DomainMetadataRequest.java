@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DomainMetadataRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DomainMetadataRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The name of the domain for which to display the metadata of. */
     private String domainName;

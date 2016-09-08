@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * that you want to associate.
  * </p>
  */
-public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AssociateVPCWithHostedZoneRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

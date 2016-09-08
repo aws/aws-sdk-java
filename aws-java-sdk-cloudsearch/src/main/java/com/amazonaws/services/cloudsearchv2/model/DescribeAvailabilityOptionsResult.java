@@ -23,8 +23,9 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class DescribeAvailabilityOptionsResult implements Serializable,
-        Cloneable {
+public class DescribeAvailabilityOptionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UploadLayerPartRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

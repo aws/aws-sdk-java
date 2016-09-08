@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class SendCommandRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

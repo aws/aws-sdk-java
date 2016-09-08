@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * "
  */
-public class SetCognitoEventsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SetCognitoEventsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

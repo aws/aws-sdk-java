@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Provides a list of validation messages.
  * </p>
  */
-public class ValidateConfigurationSettingsResult implements Serializable,
-        Cloneable {
+public class ValidateConfigurationSettingsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

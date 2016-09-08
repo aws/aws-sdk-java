@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * resource.
  * </p>
  */
-public class GetDeploymentRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

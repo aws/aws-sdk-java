@@ -28,7 +28,7 @@ public class SeverityLevel implements Serializable, Cloneable {
      * <p>
      * One of four values: "low," "medium," "high," and "urgent". These values
      * correspond to response times returned to the caller in
-     * <code>SeverityLevel.name</code>.
+     * <code>severityLevel.name</code>.
      * </p>
      */
     private String code;
@@ -44,13 +44,13 @@ public class SeverityLevel implements Serializable, Cloneable {
      * <p>
      * One of four values: "low," "medium," "high," and "urgent". These values
      * correspond to response times returned to the caller in
-     * <code>SeverityLevel.name</code>.
+     * <code>severityLevel.name</code>.
      * </p>
      * 
      * @param code
      *        One of four values: "low," "medium," "high," and "urgent". These
      *        values correspond to response times returned to the caller in
-     *        <code>SeverityLevel.name</code>.
+     *        <code>severityLevel.name</code>.
      */
 
     public void setCode(String code) {
@@ -61,12 +61,12 @@ public class SeverityLevel implements Serializable, Cloneable {
      * <p>
      * One of four values: "low," "medium," "high," and "urgent". These values
      * correspond to response times returned to the caller in
-     * <code>SeverityLevel.name</code>.
+     * <code>severityLevel.name</code>.
      * </p>
      * 
      * @return One of four values: "low," "medium," "high," and "urgent". These
      *         values correspond to response times returned to the caller in
-     *         <code>SeverityLevel.name</code>.
+     *         <code>severityLevel.name</code>.
      */
 
     public String getCode() {
@@ -77,13 +77,13 @@ public class SeverityLevel implements Serializable, Cloneable {
      * <p>
      * One of four values: "low," "medium," "high," and "urgent". These values
      * correspond to response times returned to the caller in
-     * <code>SeverityLevel.name</code>.
+     * <code>severityLevel.name</code>.
      * </p>
      * 
      * @param code
      *        One of four values: "low," "medium," "high," and "urgent". These
      *        values correspond to response times returned to the caller in
-     *        <code>SeverityLevel.name</code>.
+     *        <code>severityLevel.name</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

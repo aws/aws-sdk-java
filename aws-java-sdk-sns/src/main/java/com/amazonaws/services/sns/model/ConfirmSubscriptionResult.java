@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Response for ConfirmSubscriptions action.
  * </p>
  */
-public class ConfirmSubscriptionResult implements Serializable, Cloneable {
+public class ConfirmSubscriptionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

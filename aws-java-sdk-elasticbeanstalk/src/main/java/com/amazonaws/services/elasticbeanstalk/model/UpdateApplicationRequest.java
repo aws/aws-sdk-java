@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to update an application.
  * </p>
  */
-public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateApplicationRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

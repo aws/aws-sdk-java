@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains a paginated list of information about workflow executions.
  * </p>
  */
-public class WorkflowExecutionInfos implements Serializable, Cloneable {
+public class WorkflowExecutionInfos extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

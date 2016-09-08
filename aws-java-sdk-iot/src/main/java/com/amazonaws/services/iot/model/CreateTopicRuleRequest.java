@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the CreateTopicRule operation.
  * </p>
  */
-public class CreateTopicRuleRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateTopicRuleRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

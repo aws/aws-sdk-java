@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of <a>PutRecordBatch</a>.
  * </p>
  */
-public class PutRecordBatchResult implements Serializable, Cloneable {
+public class PutRecordBatchResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

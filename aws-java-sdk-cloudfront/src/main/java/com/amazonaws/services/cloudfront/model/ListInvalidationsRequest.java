@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to list invalidations.
  */
-public class ListInvalidationsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListInvalidationsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The distribution's id. */
     private String distributionId;

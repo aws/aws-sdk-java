@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * you want to update the comment.
  * </p>
  */
-public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateTrafficPolicyCommentRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

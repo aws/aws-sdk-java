@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribePermissions</code> request.
  * </p>
  */
-public class DescribePermissionsResult implements Serializable, Cloneable {
+public class DescribePermissionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListSizeConstraintSetsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListSizeConstraintSetsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

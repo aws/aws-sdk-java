@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetLoginProfileRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetLoginProfileRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

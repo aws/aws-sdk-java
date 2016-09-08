@@ -22,7 +22,9 @@ import java.io.Serializable;
  * domains owned by an account.
  * </p>
  */
-public class ListDomainNamesResult implements Serializable, Cloneable {
+public class ListDomainNamesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

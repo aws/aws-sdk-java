@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>CreateLunaClient</a> action.
  * </p>
  */
-public class CreateLunaClientRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateLunaClientRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

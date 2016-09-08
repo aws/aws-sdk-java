@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateSnapshotFromVolumeRecoveryPointResult implements
-        Serializable, Cloneable {
+public class CreateSnapshotFromVolumeRecoveryPointResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String snapshotId;
 

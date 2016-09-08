@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class UpdateIPSetResult implements Serializable, Cloneable {
+public class UpdateIPSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

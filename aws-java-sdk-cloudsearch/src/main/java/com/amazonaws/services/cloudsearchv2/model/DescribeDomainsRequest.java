@@ -25,8 +25,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * describe.
  * </p>
  */
-public class DescribeDomainsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeDomainsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

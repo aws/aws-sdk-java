@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing the of the gateway to update.
  * </p>
  */
-public class UpdateGatewaySoftwareNowRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateGatewaySoftwareNowRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
 

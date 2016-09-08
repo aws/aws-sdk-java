@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>RegisterEcsCluster</code> request.
  * </p>
  */
-public class RegisterEcsClusterResult implements Serializable, Cloneable {
+public class RegisterEcsClusterResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

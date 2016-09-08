@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to add custom attributes.
  * </p>
  */
-public class AddCustomAttributesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AddCustomAttributesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

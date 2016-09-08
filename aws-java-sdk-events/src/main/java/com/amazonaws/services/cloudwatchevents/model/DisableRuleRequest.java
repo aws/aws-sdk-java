@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <a>DisableRule</a> operation.
  * </p>
  */
-public class DisableRuleRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DisableRuleRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

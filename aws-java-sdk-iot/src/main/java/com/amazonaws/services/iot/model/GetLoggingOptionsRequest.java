@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the GetLoggingOptions operation.
  * </p>
  */
-public class GetLoggingOptionsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetLoggingOptionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

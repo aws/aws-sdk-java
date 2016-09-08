@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for ReportTaskRunnerHeartbeat.
  * </p>
  */
-public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ReportTaskRunnerHeartbeatRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Registers a new event topic.
  * </p>
  */
-public class RegisterEventTopicRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RegisterEventTopicRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

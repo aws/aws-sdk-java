@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>CopySnapshotMessage</i> action.
  * </p>
  */
-public class CopySnapshotRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

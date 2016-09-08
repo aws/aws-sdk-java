@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for CreateLoadBalancerListeners.
  * </p>
  */
-public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateLoadBalancerListenersRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

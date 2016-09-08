@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Response from CreateTopic action.
  * </p>
  */
-public class CreateTopicResult implements Serializable, Cloneable {
+public class CreateTopicResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateGatewayInformationRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
 

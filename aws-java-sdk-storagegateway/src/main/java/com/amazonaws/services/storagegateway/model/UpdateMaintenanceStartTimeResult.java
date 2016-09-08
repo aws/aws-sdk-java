@@ -22,8 +22,9 @@ import java.io.Serializable;
  * updated.
  * </p>
  */
-public class UpdateMaintenanceStartTimeResult implements Serializable,
-        Cloneable {
+public class UpdateMaintenanceStartTimeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input to the ListCertificatesByCA operation.
  * </p>
  */
-public class ListCertificatesByCARequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListCertificatesByCARequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

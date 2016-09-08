@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * key from the associated usage plan.
  * </p>
  */
-public class DeleteUsagePlanKeyRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteUsagePlanKeyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

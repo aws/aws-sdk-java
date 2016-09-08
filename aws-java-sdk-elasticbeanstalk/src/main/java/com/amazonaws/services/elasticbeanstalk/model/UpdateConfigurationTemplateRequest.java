@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The result message containing the options for the specified solution stack.
  * </p>
  */
-public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateConfigurationTemplateRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

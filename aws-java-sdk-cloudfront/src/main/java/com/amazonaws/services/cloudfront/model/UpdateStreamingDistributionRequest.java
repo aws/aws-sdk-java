@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to update a streaming distribution.
  */
-public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateStreamingDistributionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The streaming distribution's configuration information. */
     private StreamingDistributionConfig streamingDistributionConfig;

@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <code>/2013-04-01/DeleteHealthCheckRequest</code> resource.
  * </p>
  */
-public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteHealthCheckRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String healthCheckId;
 

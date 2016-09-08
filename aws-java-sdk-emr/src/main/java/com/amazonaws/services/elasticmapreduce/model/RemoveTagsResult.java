@@ -21,7 +21,9 @@ import java.io.Serializable;
  * This output indicates the result of removing tags from a resource.
  * </p>
  */
-public class RemoveTagsResult implements Serializable, Cloneable {
+public class RemoveTagsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

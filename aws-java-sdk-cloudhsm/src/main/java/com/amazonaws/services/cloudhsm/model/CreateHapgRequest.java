@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>CreateHapgRequest</a> action.
  * </p>
  */
-public class CreateHapgRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateHapgRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

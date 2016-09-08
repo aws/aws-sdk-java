@@ -15,14 +15,16 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <p>
  * Contains the output of DescribeSpotFleetRequestHistory.
  * </p>
  */
-public class DescribeSpotFleetRequestHistoryResult implements Serializable,
-        Cloneable {
+public class DescribeSpotFleetRequestHistoryResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

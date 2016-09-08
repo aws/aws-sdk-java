@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a get job details action.
  * </p>
  */
-public class GetJobDetailsResult implements Serializable, Cloneable {
+public class GetJobDetailsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

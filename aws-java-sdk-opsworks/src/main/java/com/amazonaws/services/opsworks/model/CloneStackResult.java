@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>CloneStack</code> request.
  * </p>
  */
-public class CloneStackResult implements Serializable, Cloneable {
+public class CloneStackResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

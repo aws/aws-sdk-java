@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The result of the <a>ListTargetsByRule</a> operation.
  * </p>
  */
-public class ListTargetsByRuleResult implements Serializable, Cloneable {
+public class ListTargetsByRuleResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

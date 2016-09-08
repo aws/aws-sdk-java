@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateUserRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

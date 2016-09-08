@@ -22,8 +22,9 @@ import java.io.Serializable;
  * user attribute verification code.
  * </p>
  */
-public class GetUserAttributeVerificationCodeResult implements Serializable,
-        Cloneable {
+public class GetUserAttributeVerificationCodeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

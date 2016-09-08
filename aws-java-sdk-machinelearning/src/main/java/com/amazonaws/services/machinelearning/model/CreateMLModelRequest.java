@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreateMLModelRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

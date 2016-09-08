@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the TransferCertificate operation.
  * </p>
  */
-public class TransferCertificateRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class TransferCertificateRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

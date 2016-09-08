@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the delete upload operation.
  * </p>
  */
-public class DeleteUploadRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteUploadRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

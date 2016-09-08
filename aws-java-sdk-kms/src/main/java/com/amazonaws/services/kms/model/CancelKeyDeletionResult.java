@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CancelKeyDeletionResult implements Serializable, Cloneable {
+public class CancelKeyDeletionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

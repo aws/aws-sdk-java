@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response to a request to delete an <a>XssMatchSet</a> from AWS WAF.
  * </p>
  */
-public class DeleteXssMatchSetResult implements Serializable, Cloneable {
+public class DeleteXssMatchSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

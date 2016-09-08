@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>ModifyHsm</a> operation.
  * </p>
  */
-public class ModifyHsmRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ModifyHsmRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

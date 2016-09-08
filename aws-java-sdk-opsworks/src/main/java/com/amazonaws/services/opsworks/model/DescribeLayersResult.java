@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeLayers</code> request.
  * </p>
  */
-public class DescribeLayersResult implements Serializable, Cloneable {
+public class DescribeLayersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

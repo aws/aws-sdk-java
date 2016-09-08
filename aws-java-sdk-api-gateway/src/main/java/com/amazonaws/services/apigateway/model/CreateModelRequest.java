@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to add a new <a>Model</a> to an existing <a>RestApi</a> resource.
  * </p>
  */
-public class CreateModelRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

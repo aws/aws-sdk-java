@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the delete project operation.
  * </p>
  */
-public class DeleteProjectRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteProjectRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

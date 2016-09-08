@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for PollForTask.
  * </p>
  */
-public class PollForTaskRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PollForTaskRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

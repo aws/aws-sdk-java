@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of DescribeScalingProcessTypes.
  * </p>
  */
-public class DescribeScalingProcessTypesResult implements Serializable,
-        Cloneable {
+public class DescribeScalingProcessTypesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

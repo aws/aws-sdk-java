@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DisableAlarmActionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DisableAlarmActionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

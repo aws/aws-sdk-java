@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for SetSecurityGroups.
  * </p>
  */
-public class SetSecurityGroupsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SetSecurityGroupsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

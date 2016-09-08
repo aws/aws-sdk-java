@@ -23,7 +23,9 @@ import java.io.Serializable;
  * returned by the <a>ListAccessKeys</a> action.
  * </p>
  */
-public class GetAccessKeyLastUsedResult implements Serializable, Cloneable {
+public class GetAccessKeyLastUsedResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

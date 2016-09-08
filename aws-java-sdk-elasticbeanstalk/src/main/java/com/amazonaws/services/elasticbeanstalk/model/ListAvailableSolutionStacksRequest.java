@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListAvailableSolutionStacksRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListAvailableSolutionStacksRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

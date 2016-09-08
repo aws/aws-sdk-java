@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class UpdateAssociationStatusResult implements Serializable, Cloneable {
+public class UpdateAssociationStatusResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

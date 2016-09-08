@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a put action revision action.
  * </p>
  */
-public class PutActionRevisionRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PutActionRevisionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

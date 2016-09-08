@@ -22,7 +22,9 @@ import java.io.Serializable;
  * temporary AWS credentials that can be used to make AWS requests.
  * </p>
  */
-public class AssumeRoleResult implements Serializable, Cloneable {
+public class AssumeRoleResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

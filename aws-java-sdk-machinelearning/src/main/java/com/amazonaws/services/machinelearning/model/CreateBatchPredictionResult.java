@@ -27,7 +27,9 @@ import java.io.Serializable;
  * operation and checking the <code>Status</code> parameter of the result.
  * </p>
  */
-public class CreateBatchPredictionResult implements Serializable, Cloneable {
+public class CreateBatchPredictionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

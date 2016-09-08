@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A complex type containing the response information for the new health check.
  * </p>
  */
-public class CreateHealthCheckResult implements Serializable, Cloneable {
+public class CreateHealthCheckResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

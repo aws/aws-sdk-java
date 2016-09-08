@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeregisterTaskDefinitionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeregisterTaskDefinitionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -32,8 +32,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * immediately after the corresponding country.
  * </p>
  */
-public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListGeoLocationsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

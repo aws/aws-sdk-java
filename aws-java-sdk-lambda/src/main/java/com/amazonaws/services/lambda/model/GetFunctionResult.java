@@ -21,7 +21,9 @@ import java.io.Serializable;
  * This response contains the object for the Lambda function location (see .
  * </p>
  */
-public class GetFunctionResult implements Serializable, Cloneable {
+public class GetFunctionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private FunctionConfiguration configuration;
 

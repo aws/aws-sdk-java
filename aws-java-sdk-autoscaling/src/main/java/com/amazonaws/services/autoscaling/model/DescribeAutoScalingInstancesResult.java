@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of DescribeAutoScalingInstances.
  * </p>
  */
-public class DescribeAutoScalingInstancesResult implements Serializable,
-        Cloneable {
+public class DescribeAutoScalingInstancesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

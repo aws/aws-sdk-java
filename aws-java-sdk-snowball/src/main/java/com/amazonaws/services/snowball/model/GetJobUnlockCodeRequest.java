@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetJobUnlockCodeRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetJobUnlockCodeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

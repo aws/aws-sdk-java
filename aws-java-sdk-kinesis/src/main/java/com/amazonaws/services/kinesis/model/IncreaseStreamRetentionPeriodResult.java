@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class IncreaseStreamRetentionPeriodResult implements Serializable,
-        Cloneable {
+public class IncreaseStreamRetentionPeriodResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

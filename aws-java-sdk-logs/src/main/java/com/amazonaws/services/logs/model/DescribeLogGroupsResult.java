@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeLogGroupsResult implements Serializable, Cloneable {
+public class DescribeLogGroupsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<LogGroup> logGroups;
 

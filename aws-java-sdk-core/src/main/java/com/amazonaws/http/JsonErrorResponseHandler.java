@@ -19,13 +19,9 @@ import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.internal.http.JsonErrorCodeParser;
 import com.amazonaws.internal.http.JsonErrorMessageParser;
+import com.amazonaws.protocol.json.JsonContent;
 import com.amazonaws.transform.JsonErrorUnmarshaller;
-import com.amazonaws.util.IOUtils;
 import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.MapperFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -63,7 +59,7 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
     @Override
     public AmazonServiceException handle(HttpResponse response) throws Exception {
         JsonContent jsonContent = JsonContent.createJsonContent(response, jsonFactory);
-        String errorCode = errorCodeParser.parseErrorCode(response.getHeaders(), jsonContent.jsonNode);
+        String errorCode = errorCodeParser.parseErrorCode(response.getHeaders(), jsonContent.getJsonNode());
         AmazonServiceException ase = createException(errorCode, jsonContent);
 
         // Jackson has special-casing for 'message' values when deserializing
@@ -71,14 +67,14 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
         // other JSON fields - handle it here.
         if (ase.getErrorMessage() == null) {
             ase.setErrorMessage(errorMessageParser
-                    .parseErrorMessage(jsonContent.jsonNode));
+                    .parseErrorMessage(jsonContent.getJsonNode()));
         }
 
         ase.setErrorCode(errorCode);
         ase.setServiceName(response.getRequest().getServiceName());
         ase.setStatusCode(response.getStatusCode());
         ase.setErrorType(getErrorTypeFromStatusCode(response.getStatusCode()));
-        ase.setRawResponse(jsonContent.rawContent);
+        ase.setRawResponse(jsonContent.getRawContent());
         String requestId = getRequestIdFromHeaders(response.getHeaders());
         if (requestId != null) {
             ase.setRequestId(requestId);
@@ -110,7 +106,7 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
         for (JsonErrorUnmarshaller unmarshaller : unmarshallers) {
             if (unmarshaller.matchErrorCode(errorCode)) {
                 try {
-                    return unmarshaller.unmarshall(jsonContent.jsonNode);
+                    return unmarshaller.unmarshall(jsonContent.getJsonNode());
                 } catch (Exception e) {
                     LOG.info("Unable to unmarshall exception content", e);
                     return null;
@@ -133,53 +129,4 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
         return null;
     }
 
-    /**
-     * Simple struct like class to hold both the raw json string content and it's parsed JsonNode
-     */
-    private static class JsonContent {
-
-        public final byte[] rawContent;
-        public final JsonNode jsonNode;
-
-        /**
-         * Static factory method to create a JsonContent object from the contents of the
-         * HttpResponse provided
-         */
-        public static JsonContent createJsonContent(HttpResponse httpResponse,
-                                                    JsonFactory jsonFactory) {
-            byte[] rawJsonContent = null;
-            try {
-                if (httpResponse.getContent() != null) {
-                    rawJsonContent = IOUtils.toByteArray(httpResponse.getContent());
-                }
-            } catch (Exception e) {
-                LOG.info("Unable to read HTTP response content", e);
-            }
-            return new JsonContent(rawJsonContent, createMapper(jsonFactory));
-        }
-
-        private static ObjectMapper createMapper(JsonFactory jsonFactory) {
-            return new ObjectMapper(jsonFactory)
-                    .enable(JsonParser.Feature.ALLOW_COMMENTS)
-                    .disable(MapperFeature.CAN_OVERRIDE_ACCESS_MODIFIERS);
-        }
-
-        private JsonContent(byte[] rawJsonContent, ObjectMapper mapper) {
-            this.rawContent = rawJsonContent;
-            this.jsonNode = parseJsonContent(rawJsonContent, mapper);
-        }
-
-        private static JsonNode parseJsonContent(byte[] rawJsonContent,
-                                                 ObjectMapper mapper) {
-            if (rawJsonContent == null) {
-                return null;
-            }
-            try {
-                return mapper.readTree(rawJsonContent);
-            } catch (Exception e) {
-                LOG.info("Unable to parse HTTP response content", e);
-                return mapper.createObjectNode();
-            }
-        }
-    }
 }

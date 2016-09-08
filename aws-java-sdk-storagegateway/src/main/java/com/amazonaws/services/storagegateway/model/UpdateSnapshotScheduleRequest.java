@@ -44,8 +44,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateSnapshotScheduleRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListIpRoutesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListIpRoutesRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

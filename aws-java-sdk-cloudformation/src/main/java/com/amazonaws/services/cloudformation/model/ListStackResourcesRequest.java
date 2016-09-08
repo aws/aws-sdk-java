@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>ListStackResource</a> action.
  * </p>
  */
-public class ListStackResourcesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListStackResourcesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

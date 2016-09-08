@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <a>PutTargets</a> operation.
  * </p>
  */
-public class PutTargetsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

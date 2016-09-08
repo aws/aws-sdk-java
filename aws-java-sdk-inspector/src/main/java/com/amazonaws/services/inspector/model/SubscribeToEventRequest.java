@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class SubscribeToEventRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SubscribeToEventRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

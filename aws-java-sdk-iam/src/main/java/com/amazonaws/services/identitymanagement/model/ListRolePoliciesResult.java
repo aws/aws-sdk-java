@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a successful <a>ListRolePolicies</a> request.
  * </p>
  */
-public class ListRolePoliciesResult implements Serializable, Cloneable {
+public class ListRolePoliciesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

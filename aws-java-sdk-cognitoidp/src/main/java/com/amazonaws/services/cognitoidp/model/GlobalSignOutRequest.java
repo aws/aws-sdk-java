@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to sign out all devices.
  * </p>
  */
-public class GlobalSignOutRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GlobalSignOutRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

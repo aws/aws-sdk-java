@@ -22,7 +22,9 @@ import java.io.Serializable;
  * a <code>DataSource</code>.
  * </p>
  */
-public class GetDataSourceResult implements Serializable, Cloneable {
+public class GetDataSourceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

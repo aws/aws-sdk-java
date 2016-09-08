@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A list of your queues.
  * </p>
  */
-public class ListQueuesResult implements Serializable, Cloneable {
+public class ListQueuesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

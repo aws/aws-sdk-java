@@ -15,14 +15,16 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <p>
  * Contains the output of RejectVpcPeeringConnection.
  * </p>
  */
-public class RejectVpcPeeringConnectionResult implements Serializable,
-        Cloneable {
+public class RejectVpcPeeringConnectionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

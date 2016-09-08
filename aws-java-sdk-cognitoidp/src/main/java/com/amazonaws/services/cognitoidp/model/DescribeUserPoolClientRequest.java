@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to describe a user pool client.
  * </p>
  */
-public class DescribeUserPoolClientRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeUserPoolClientRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

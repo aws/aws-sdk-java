@@ -22,7 +22,9 @@ import java.io.Serializable;
  * session when AWS Device Farm stops the session.
  * </p>
  */
-public class StopRemoteAccessSessionResult implements Serializable, Cloneable {
+public class StopRemoteAccessSessionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

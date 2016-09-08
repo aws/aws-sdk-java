@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for <a>ListStacks</a> action.
  * </p>
  */
-public class ListStacksRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListStacksRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

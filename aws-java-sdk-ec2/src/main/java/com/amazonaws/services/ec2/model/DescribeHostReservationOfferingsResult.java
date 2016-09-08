@@ -15,12 +15,14 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * 
  */
-public class DescribeHostReservationOfferingsResult implements Serializable,
-        Cloneable {
+public class DescribeHostReservationOfferingsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

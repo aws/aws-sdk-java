@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for a request action.
  * </p>
  */
-public class SearchGameSessionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SearchGameSessionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

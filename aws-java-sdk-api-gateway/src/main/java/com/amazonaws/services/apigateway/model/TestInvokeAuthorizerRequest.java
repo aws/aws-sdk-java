@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Make a request to simulate the execution of an <a>Authorizer</a>.
  * </p>
  */
-public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class TestInvokeAuthorizerRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

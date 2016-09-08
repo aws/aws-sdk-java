@@ -26,8 +26,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * >Amazon SES Developer Guide</a>.
  * </p>
  */
-public class ListReceiptFiltersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListReceiptFiltersRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

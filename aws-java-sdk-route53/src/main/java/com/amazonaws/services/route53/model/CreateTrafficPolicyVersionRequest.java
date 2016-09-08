@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * you want to create a new version.
  * </p>
  */
-public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateTrafficPolicyVersionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

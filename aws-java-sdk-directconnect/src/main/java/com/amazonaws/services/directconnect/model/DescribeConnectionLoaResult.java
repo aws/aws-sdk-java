@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response received when DescribeConnectionLoa is called.
  * </p>
  */
-public class DescribeConnectionLoaResult implements Serializable, Cloneable {
+public class DescribeConnectionLoaResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private Loa loa;
 

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for ExecutePolicy.
  * </p>
  */
-public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

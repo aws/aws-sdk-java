@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Returned in response to a successful GetOpenIdToken request.
  */
-public class GetOpenIdTokenResult implements Serializable, Cloneable {
+public class GetOpenIdTokenResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * A unique identifier in the format REGION:GUID. Note that the IdentityId

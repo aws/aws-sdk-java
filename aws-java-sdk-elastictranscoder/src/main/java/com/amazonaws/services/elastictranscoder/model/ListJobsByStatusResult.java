@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The <code>ListJobsByStatusResponse</code> structure.
  * </p>
  */
-public class ListJobsByStatusResult implements Serializable, Cloneable {
+public class ListJobsByStatusResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

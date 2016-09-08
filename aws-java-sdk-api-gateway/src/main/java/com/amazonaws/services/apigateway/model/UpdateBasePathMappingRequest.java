@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to change information about the <a>BasePathMapping</a> resource.
  * </p>
  */
-public class UpdateBasePathMappingRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateBasePathMappingRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

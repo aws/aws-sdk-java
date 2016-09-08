@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ReEncryptRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

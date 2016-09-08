@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The DELETE request to delete a uasge plan of a given plan Id.
  * </p>
  */
-public class DeleteUsagePlanRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteUsagePlanRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

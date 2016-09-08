@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>DescribeStream</i> operation.
  * </p>
  */
-public class DescribeStreamRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeStreamRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

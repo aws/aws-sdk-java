@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a get commit operation.
  * </p>
  */
-public class GetCommitResult implements Serializable, Cloneable {
+public class GetCommitResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

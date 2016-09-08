@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Confirms the device response.
  * </p>
  */
-public class ConfirmDeviceResult implements Serializable, Cloneable {
+public class ConfirmDeviceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

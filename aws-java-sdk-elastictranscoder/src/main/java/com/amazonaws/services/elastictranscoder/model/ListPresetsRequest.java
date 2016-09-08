@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The <code>ListPresetsRequest</code> structure.
  * </p>
  */
-public class ListPresetsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListPresetsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request a new generated client SDK for a <a>RestApi</a> and <a>Stage</a>.
  * </p>
  */
-public class GetSdkRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

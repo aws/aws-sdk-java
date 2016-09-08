@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to update an existing model in an existing <a>RestApi</a> resource.
  * </p>
  */
-public class UpdateModelRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateModelRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

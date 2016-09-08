@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a test repository triggers operation.
  * </p>
  */
-public class TestRepositoryTriggersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class TestRepositoryTriggersRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of the <a>DeleteHsm</a> operation.
  * </p>
  */
-public class DeleteHsmResult implements Serializable, Cloneable {
+public class DeleteHsmResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

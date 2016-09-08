@@ -15,12 +15,15 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * A simple result wrapper around the Reservation object that was sent over the
  * wire.
  */
-public class RunInstancesResult implements Serializable, Cloneable {
+public class RunInstancesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

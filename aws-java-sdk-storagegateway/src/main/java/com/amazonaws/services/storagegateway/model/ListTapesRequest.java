@@ -39,8 +39,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class ListTapesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<String> tapeARNs;
     /**

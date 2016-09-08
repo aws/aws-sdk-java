@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to stop a specific run.
  * </p>
  */
-public class StopRunRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class StopRunRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

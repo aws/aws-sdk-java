@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a put integration response request.
  * </p>
  */
-public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class PutIntegrationResponseRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

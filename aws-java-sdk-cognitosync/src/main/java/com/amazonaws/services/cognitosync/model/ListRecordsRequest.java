@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * A request for a list of records.
  */
-public class ListRecordsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * ListVolumeInitiatorsInput
  * </p>
  */
-public class ListVolumeInitiatorsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListVolumeInitiatorsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

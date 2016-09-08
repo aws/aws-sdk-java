@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The <code>ListJobsByPipelineResponse</code> structure.
  * </p>
  */
-public class ListJobsByPipelineResult implements Serializable, Cloneable {
+public class ListJobsByPipelineResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

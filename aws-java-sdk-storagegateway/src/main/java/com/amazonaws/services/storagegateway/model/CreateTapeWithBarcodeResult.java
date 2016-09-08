@@ -21,7 +21,9 @@ import java.io.Serializable;
  * CreateTapeOutput
  * </p>
  */
-public class CreateTapeWithBarcodeResult implements Serializable, Cloneable {
+public class CreateTapeWithBarcodeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

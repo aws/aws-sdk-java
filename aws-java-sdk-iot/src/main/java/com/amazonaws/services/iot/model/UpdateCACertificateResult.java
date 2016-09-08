@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class UpdateCACertificateResult implements Serializable, Cloneable {
+public class UpdateCACertificateResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

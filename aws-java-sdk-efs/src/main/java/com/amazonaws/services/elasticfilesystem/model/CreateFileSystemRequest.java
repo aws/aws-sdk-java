@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreateFileSystemRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateFileSystemRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

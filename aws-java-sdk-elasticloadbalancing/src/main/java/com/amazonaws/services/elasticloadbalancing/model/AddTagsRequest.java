@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for AddTags.
  * </p>
  */
-public class AddTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

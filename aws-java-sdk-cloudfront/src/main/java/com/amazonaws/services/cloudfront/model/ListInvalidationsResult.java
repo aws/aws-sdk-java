@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * The returned result of the corresponding request.
  */
-public class ListInvalidationsResult implements Serializable, Cloneable {
+public class ListInvalidationsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** Information about invalidation batches. */
     private InvalidationList invalidationList;

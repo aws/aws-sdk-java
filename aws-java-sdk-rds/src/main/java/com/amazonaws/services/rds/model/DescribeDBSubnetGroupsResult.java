@@ -22,7 +22,9 @@ import java.io.Serializable;
  * <a>DescribeDBSubnetGroups</a> action.
  * </p>
  */
-public class DescribeDBSubnetGroupsResult implements Serializable, Cloneable {
+public class DescribeDBSubnetGroupsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

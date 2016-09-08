@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a successful <a>GetCredentialReport</a> request.
  * </p>
  */
-public class GetCredentialReportResult implements Serializable, Cloneable {
+public class GetCredentialReportResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

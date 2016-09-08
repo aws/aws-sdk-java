@@ -56,7 +56,7 @@ public class ListDistributionsByWebACLIdRequestMarshaller
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2016-08-20/distributionsByWebACLId/{WebACLId}";
+        String uriResourcePath = "/2016-09-07/distributionsByWebACLId/{WebACLId}";
 
         uriResourcePath = uriResourcePath
                 .replace(

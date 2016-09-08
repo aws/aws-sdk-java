@@ -15,14 +15,16 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <p>
  * Contains the output of DescribeClassicLinkInstances.
  * </p>
  */
-public class DescribeClassicLinkInstancesResult implements Serializable,
-        Cloneable {
+public class DescribeClassicLinkInstancesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

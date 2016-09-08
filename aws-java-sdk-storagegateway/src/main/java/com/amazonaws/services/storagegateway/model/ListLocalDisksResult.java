@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListLocalDisksResult implements Serializable, Cloneable {
+public class ListLocalDisksResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

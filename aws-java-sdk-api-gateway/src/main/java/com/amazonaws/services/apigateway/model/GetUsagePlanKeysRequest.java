@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * added to a specified usage plan.
  * </p>
  */
-public class GetUsagePlanKeysRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetUsagePlanKeysRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

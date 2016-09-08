@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The <code>DeletePresetResponse</code> structure.
  * </p>
  */
-public class DeletePresetResult implements Serializable, Cloneable {
+public class DeletePresetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

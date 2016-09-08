@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DescribeWorkspacesConnectionStatusResult implements Serializable,
-        Cloneable {
+public class DescribeWorkspacesConnectionStatusResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

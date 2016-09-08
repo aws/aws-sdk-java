@@ -22,7 +22,9 @@ import java.io.Serializable;
  * user as an administrator.
  * </p>
  */
-public class AdminGetUserResult implements Serializable, Cloneable {
+public class AdminGetUserResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

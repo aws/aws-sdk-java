@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <a>DescribeStorediSCSIVolumesInput$VolumeARNs</a>.
  * </p>
  */
-public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeStorediSCSIVolumesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

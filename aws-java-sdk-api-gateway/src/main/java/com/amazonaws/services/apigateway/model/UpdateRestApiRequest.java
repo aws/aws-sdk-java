@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to update an existing <a>RestApi</a> resource in your collection.
  * </p>
  */
-public class UpdateRestApiRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains details of a domain.
  * </p>
  */
-public class DomainDetail implements Serializable, Cloneable {
+public class DomainDetail extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private DomainInfo domainInfo;
 

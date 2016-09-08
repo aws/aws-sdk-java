@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for the DeprecateThingType operation.
  * </p>
  */
-public class DeprecateThingTypeResult implements Serializable, Cloneable {
+public class DeprecateThingTypeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

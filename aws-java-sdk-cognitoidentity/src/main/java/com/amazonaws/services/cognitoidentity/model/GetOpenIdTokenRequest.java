@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Input to the GetOpenIdToken action.
  */
-public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetOpenIdTokenRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** A unique identifier in the format REGION:GUID. */
     private String identityId;

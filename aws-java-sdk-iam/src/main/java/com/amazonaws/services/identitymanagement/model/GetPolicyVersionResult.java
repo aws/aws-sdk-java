@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a successful <a>GetPolicyVersion</a> request.
  * </p>
  */
-public class GetPolicyVersionResult implements Serializable, Cloneable {
+public class GetPolicyVersionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

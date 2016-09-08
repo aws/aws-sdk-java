@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class SetTagsForResourceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetTagsForResourceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

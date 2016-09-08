@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ProvisionProductRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ProvisionProductRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

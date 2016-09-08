@@ -22,7 +22,9 @@ import java.io.Serializable;
  * operation. The content is essentially a list of <code>Evaluation</code>.
  * </p>
  */
-public class DescribeEvaluationsResult implements Serializable, Cloneable {
+public class DescribeEvaluationsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

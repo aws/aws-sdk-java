@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetLogEventsResult implements Serializable, Cloneable {
+public class GetLogEventsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<OutputLogEvent> events;
 

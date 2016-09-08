@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the result of a create upload request.
  * </p>
  */
-public class CreateUploadResult implements Serializable, Cloneable {
+public class CreateUploadResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

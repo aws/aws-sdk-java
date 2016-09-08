@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateDBSnapshotRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

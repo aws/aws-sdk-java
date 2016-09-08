@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to remove tags from a CloudFront resource.
  */
-public class UntagResourceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /** An ARN of a CloudFront resource. */
     private String resource;

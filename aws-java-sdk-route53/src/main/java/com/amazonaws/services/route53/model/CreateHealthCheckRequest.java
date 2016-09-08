@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A complex type that contains the health check request information.
  * </p>
  */
-public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateHealthCheckRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * <p/>
  */
-public class DescribeReplicationSubnetGroupsResult implements Serializable,
-        Cloneable {
+public class DescribeReplicationSubnetGroupsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

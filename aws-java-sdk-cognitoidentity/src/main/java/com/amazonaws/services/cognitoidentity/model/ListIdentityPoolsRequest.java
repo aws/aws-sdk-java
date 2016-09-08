@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Input to the ListIdentityPools action.
  */
-public class ListIdentityPoolsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListIdentityPoolsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The maximum number of identities to return. */
     private Integer maxResults;

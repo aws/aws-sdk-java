@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteLogGroupRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteLogGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

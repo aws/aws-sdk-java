@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>ListTables</i> operation.
  * </p>
  */
-public class ListTablesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListTablesRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

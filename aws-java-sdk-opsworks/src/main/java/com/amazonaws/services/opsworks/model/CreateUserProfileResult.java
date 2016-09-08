@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>CreateUserProfile</code> request.
  * </p>
  */
-public class CreateUserProfileResult implements Serializable, Cloneable {
+public class CreateUserProfileResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

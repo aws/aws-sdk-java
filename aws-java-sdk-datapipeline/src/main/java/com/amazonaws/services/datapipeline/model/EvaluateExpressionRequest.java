@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for EvaluateExpression.
  * </p>
  */
-public class EvaluateExpressionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class EvaluateExpressionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

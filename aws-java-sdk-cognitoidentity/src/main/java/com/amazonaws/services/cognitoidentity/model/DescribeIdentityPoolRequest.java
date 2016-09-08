@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Input to the DescribeIdentityPool action.
  */
-public class DescribeIdentityPoolRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeIdentityPoolRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** An identity pool ID in the format REGION:GUID. */
     private String identityPoolId;

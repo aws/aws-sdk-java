@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request to list distributions that are associated with a specified AWS
  * WAF web ACL.
  */
-public class ListDistributionsByWebACLIdRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListDistributionsByWebACLIdRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Use Marker and MaxItems to control pagination of results. If you have

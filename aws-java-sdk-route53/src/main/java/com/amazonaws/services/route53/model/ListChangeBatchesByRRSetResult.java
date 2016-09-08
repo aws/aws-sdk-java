@@ -22,7 +22,9 @@ import java.io.Serializable;
  * </p>
  */
 @Deprecated
-public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
+public class ListChangeBatchesByRRSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

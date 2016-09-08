@@ -77,8 +77,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </dd>
  * </dl>
  */
-public class TestDNSAnswerRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     private String hostedZoneId;
 

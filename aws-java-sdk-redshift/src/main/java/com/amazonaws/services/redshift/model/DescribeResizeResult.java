@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Describes the result of a cluster resize operation.
  * </p>
  */
-public class DescribeResizeResult implements Serializable, Cloneable {
+public class DescribeResizeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

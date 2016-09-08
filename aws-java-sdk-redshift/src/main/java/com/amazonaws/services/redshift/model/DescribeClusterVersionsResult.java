@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output from the <a>DescribeClusterVersions</a> action.
  * </p>
  */
-public class DescribeClusterVersionsResult implements Serializable, Cloneable {
+public class DescribeClusterVersionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

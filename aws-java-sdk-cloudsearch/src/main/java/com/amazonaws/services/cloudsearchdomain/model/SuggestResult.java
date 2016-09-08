@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>Suggest</code> request.
  * </p>
  */
-public class SuggestResult implements Serializable, Cloneable {
+public class SuggestResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

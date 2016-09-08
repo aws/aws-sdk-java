@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a start pipeline execution action.
  * </p>
  */
-public class StartPipelineExecutionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class StartPipelineExecutionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

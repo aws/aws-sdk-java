@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to update an environment.
  * </p>
  */
-public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateEnvironmentRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

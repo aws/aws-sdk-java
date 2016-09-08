@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input to the <code>UnlinkDeveloperIdentity</code> action.
  * </p>
  */
-public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UnlinkDeveloperIdentityRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

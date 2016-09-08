@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the DeletePolicy operation.
  * </p>
  */
-public class DeletePolicyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

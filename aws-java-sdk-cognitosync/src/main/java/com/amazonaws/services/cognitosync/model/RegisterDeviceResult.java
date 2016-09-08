@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Response to a RegisterDevice request.
  * </p>
  */
-public class RegisterDeviceResult implements Serializable, Cloneable {
+public class RegisterDeviceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

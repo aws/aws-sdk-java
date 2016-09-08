@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * operation.
  * </p>
  */
-public class RestoreFromSnapshotRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RestoreFromSnapshotRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

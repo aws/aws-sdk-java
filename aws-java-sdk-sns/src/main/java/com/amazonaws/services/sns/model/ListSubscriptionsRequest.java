@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for ListSubscriptions action.
  * </p>
  */
-public class ListSubscriptionsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListSubscriptionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

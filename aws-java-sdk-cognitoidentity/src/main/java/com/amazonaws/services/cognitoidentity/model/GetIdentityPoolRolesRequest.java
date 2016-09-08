@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input to the <code>GetIdentityPoolRoles</code> action.
  * </p>
  */
-public class GetIdentityPoolRolesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetIdentityPoolRolesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

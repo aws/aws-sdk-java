@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response from the <code>ListPhoneNumbersOptedOut</code> action.
  * </p>
  */
-public class ListPhoneNumbersOptedOutResult implements Serializable, Cloneable {
+public class ListPhoneNumbersOptedOutResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

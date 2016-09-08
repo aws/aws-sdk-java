@@ -22,7 +22,9 @@ import java.io.Serializable;
  * <a>ModifyDBParameterGroup</a> or <a>ResetDBParameterGroup</a> action.
  * </p>
  */
-public class ModifyDBParameterGroupResult implements Serializable, Cloneable {
+public class ModifyDBParameterGroupResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

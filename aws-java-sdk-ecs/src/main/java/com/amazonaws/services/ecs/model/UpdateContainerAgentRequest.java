@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateContainerAgentRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateContainerAgentRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

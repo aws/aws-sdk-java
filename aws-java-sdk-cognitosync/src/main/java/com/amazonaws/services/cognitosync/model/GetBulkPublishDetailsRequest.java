@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The input for the GetBulkPublishDetails operation.
  */
-public class GetBulkPublishDetailsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetBulkPublishDetailsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * A name-spaced GUID (for example,

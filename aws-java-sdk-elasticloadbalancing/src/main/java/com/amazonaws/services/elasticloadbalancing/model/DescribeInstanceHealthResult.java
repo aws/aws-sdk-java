@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output for DescribeInstanceHealth.
  * </p>
  */
-public class DescribeInstanceHealthResult implements Serializable, Cloneable {
+public class DescribeInstanceHealthResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

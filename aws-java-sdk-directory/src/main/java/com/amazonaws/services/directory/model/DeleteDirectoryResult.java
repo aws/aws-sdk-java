@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the results of the <a>DeleteDirectory</a> operation.
  * </p>
  */
-public class DeleteDirectoryResult implements Serializable, Cloneable {
+public class DeleteDirectoryResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

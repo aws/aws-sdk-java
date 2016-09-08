@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * field configuration.
  * </p>
  */
-public class DefineIndexFieldRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DefineIndexFieldRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
     /**

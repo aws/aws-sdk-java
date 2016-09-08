@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateDBParameterGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

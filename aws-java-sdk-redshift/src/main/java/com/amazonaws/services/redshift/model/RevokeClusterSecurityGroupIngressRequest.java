@@ -22,7 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class RevokeClusterSecurityGroupIngressRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a successful <a>ListSSHPublicKeys</a> request.
  * </p>
  */
-public class ListSSHPublicKeysResult implements Serializable, Cloneable {
+public class ListSSHPublicKeysResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

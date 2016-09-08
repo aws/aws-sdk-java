@@ -24,8 +24,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * to remove the specified <code>TagKey</code>.
  * </p>
  */
-public class RemoveTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

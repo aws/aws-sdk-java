@@ -25,7 +25,9 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html"
  * >Create an API</a> </div>
  */
-public class GetRestApisResult implements Serializable, Cloneable {
+public class GetRestApisResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String position;
     /**

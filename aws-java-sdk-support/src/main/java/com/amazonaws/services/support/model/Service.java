@@ -27,14 +27,14 @@ public class Service implements Serializable, Cloneable {
     /**
      * <p>
      * The code for an AWS service returned by the <a>DescribeServices</a>
-     * response. The <code>Name</code> element contains the corresponding
+     * response. The <code>name</code> element contains the corresponding
      * friendly name.
      * </p>
      */
     private String code;
     /**
      * <p>
-     * The friendly name for an AWS service. The <code>Code</code> element
+     * The friendly name for an AWS service. The <code>code</code> element
      * contains the corresponding code.
      * </p>
      */
@@ -52,13 +52,13 @@ public class Service implements Serializable, Cloneable {
     /**
      * <p>
      * The code for an AWS service returned by the <a>DescribeServices</a>
-     * response. The <code>Name</code> element contains the corresponding
+     * response. The <code>name</code> element contains the corresponding
      * friendly name.
      * </p>
      * 
      * @param code
      *        The code for an AWS service returned by the
-     *        <a>DescribeServices</a> response. The <code>Name</code> element
+     *        <a>DescribeServices</a> response. The <code>name</code> element
      *        contains the corresponding friendly name.
      */
 
@@ -69,12 +69,12 @@ public class Service implements Serializable, Cloneable {
     /**
      * <p>
      * The code for an AWS service returned by the <a>DescribeServices</a>
-     * response. The <code>Name</code> element contains the corresponding
+     * response. The <code>name</code> element contains the corresponding
      * friendly name.
      * </p>
      * 
      * @return The code for an AWS service returned by the
-     *         <a>DescribeServices</a> response. The <code>Name</code> element
+     *         <a>DescribeServices</a> response. The <code>name</code> element
      *         contains the corresponding friendly name.
      */
 
@@ -85,13 +85,13 @@ public class Service implements Serializable, Cloneable {
     /**
      * <p>
      * The code for an AWS service returned by the <a>DescribeServices</a>
-     * response. The <code>Name</code> element contains the corresponding
+     * response. The <code>name</code> element contains the corresponding
      * friendly name.
      * </p>
      * 
      * @param code
      *        The code for an AWS service returned by the
-     *        <a>DescribeServices</a> response. The <code>Name</code> element
+     *        <a>DescribeServices</a> response. The <code>name</code> element
      *        contains the corresponding friendly name.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -104,12 +104,12 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The friendly name for an AWS service. The <code>Code</code> element
+     * The friendly name for an AWS service. The <code>code</code> element
      * contains the corresponding code.
      * </p>
      * 
      * @param name
-     *        The friendly name for an AWS service. The <code>Code</code>
+     *        The friendly name for an AWS service. The <code>code</code>
      *        element contains the corresponding code.
      */
 
@@ -119,11 +119,11 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The friendly name for an AWS service. The <code>Code</code> element
+     * The friendly name for an AWS service. The <code>code</code> element
      * contains the corresponding code.
      * </p>
      * 
-     * @return The friendly name for an AWS service. The <code>Code</code>
+     * @return The friendly name for an AWS service. The <code>code</code>
      *         element contains the corresponding code.
      */
 
@@ -133,12 +133,12 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The friendly name for an AWS service. The <code>Code</code> element
+     * The friendly name for an AWS service. The <code>code</code> element
      * contains the corresponding code.
      * </p>
      * 
      * @param name
-     *        The friendly name for an AWS service. The <code>Code</code>
+     *        The friendly name for an AWS service. The <code>code</code>
      *        element contains the corresponding code.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

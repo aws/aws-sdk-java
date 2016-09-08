@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribeScheduledActions.
  * </p>
  */
-public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeScheduledActionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

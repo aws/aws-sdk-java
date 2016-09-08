@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>RemoveTagsFromResource</i> action.
  * </p>
  */
-public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RemoveTagsFromResourceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

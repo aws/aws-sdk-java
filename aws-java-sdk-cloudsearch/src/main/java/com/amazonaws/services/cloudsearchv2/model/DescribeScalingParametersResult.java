@@ -22,7 +22,9 @@ import java.io.Serializable;
  * scaling parameters configured for the domain specified in the request.
  * </p>
  */
-public class DescribeScalingParametersResult implements Serializable, Cloneable {
+public class DescribeScalingParametersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private ScalingParametersStatus scalingParameters;
 

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for <a>DeleteStream</a>.
  * </p>
  */
-public class DeleteStreamRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteStreamRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

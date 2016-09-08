@@ -22,7 +22,9 @@ import java.io.Serializable;
  * <a>DescribeDBClusters</a> action.
  * </p>
  */
-public class DescribeDBClustersResult implements Serializable, Cloneable {
+public class DescribeDBClustersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -24,7 +24,9 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html"
  * >Create and Use Usage Plans</a> </div>
  */
-public class GetUsagePlansResult implements Serializable, Cloneable {
+public class GetUsagePlansResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String position;
     /**

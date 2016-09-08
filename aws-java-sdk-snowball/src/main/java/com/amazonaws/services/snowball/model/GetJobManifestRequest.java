@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetJobManifestRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetJobManifestRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

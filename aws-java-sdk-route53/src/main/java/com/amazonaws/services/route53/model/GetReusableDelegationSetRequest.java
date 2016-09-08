@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for a <code>GetReusableDelegationSet</code> request.
  * </p>
  */
-public class GetReusableDelegationSetRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetReusableDelegationSetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

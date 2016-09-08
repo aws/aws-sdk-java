@@ -22,7 +22,9 @@ import java.io.Serializable;
  * <a>Authorizer</a>
  * </p>
  */
-public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
+public class TestInvokeAuthorizerResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -23,7 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class AttachLoadBalancerTargetGroupsRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

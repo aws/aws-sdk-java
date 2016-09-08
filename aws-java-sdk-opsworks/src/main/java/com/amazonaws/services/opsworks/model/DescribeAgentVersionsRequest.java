@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DescribeAgentVersionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeAgentVersionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

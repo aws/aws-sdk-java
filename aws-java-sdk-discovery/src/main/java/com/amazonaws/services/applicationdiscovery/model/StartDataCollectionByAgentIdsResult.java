@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class StartDataCollectionByAgentIdsResult implements Serializable,
-        Cloneable {
+public class StartDataCollectionByAgentIdsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

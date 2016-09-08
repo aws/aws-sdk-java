@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class SendMessageBatchRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SendMessageBatchRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for the DeleteCACertificate operation.
  * </p>
  */
-public class DeleteCACertificateResult implements Serializable, Cloneable {
+public class DeleteCACertificateResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

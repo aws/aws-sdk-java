@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Input structure for the UpateJob operation.
  */
-public class UpdateJobRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     private String jobId;
 

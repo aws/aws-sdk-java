@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Container for the result of the GenerateDataSet operation.
  */
-public class GenerateDataSetResult implements Serializable, Cloneable {
+public class GenerateDataSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * A unique identifier representing a specific request to the

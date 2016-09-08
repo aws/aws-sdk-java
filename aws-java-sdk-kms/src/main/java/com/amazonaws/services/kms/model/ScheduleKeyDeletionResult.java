@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ScheduleKeyDeletionResult implements Serializable, Cloneable {
+public class ScheduleKeyDeletionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

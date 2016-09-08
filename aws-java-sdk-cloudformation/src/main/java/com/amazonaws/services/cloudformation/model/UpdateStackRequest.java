@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for an <a>UpdateStack</a> action.
  * </p>
  */
-public class UpdateStackRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

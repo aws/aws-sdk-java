@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DeleteIPSetResult implements Serializable, Cloneable {
+public class DeleteIPSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

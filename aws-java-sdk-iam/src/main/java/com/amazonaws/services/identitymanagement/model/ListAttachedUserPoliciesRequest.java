@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListAttachedUserPoliciesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

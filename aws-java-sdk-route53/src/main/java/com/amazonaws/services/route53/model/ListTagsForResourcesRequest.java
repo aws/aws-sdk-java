@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * zones for which you want to list tags.
  * </p>
  */
-public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListTagsForResourcesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

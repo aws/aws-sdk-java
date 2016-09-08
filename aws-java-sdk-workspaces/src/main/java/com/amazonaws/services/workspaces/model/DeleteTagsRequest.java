@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request of the <a>DeleteTags</a> operation.
  * </p>
  */
-public class DeleteTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

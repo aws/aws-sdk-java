@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for the <a>ListChangeSets</a> action.
  * </p>
  */
-public class ListChangeSetsResult implements Serializable, Cloneable {
+public class ListChangeSetsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

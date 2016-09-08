@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * </p>
  */
-public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ModifyClusterParameterGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

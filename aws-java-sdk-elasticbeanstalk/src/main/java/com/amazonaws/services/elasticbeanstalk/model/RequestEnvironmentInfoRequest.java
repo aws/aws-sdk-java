@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Beanstalk storage bucket.
  * </p>
  */
-public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RequestEnvironmentInfoRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

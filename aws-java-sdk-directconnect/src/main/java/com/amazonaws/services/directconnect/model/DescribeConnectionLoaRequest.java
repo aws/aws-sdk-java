@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the DescribeConnectionLoa operation.
  * </p>
  */
-public class DescribeConnectionLoaRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeConnectionLoaRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String connectionId;
     /**

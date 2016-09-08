@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of DescribeTargetGroupAttributes.
  * </p>
  */
-public class DescribeTargetGroupAttributesResult implements Serializable,
-        Cloneable {
+public class DescribeTargetGroupAttributesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

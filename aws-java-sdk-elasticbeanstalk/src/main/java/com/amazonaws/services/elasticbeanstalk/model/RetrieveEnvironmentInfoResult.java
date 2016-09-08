@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Result message containing a description of the requested environment info.
  * </p>
  */
-public class RetrieveEnvironmentInfoResult implements Serializable, Cloneable {
+public class RetrieveEnvironmentInfoResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

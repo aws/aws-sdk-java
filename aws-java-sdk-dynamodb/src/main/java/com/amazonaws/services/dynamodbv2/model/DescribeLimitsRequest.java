@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>DescribeLimits</i> operation. Has no content.
  * </p>
  */
-public class DescribeLimitsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeLimitsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

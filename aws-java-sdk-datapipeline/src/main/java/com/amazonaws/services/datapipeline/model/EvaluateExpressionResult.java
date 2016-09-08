@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of EvaluateExpression.
  * </p>
  */
-public class EvaluateExpressionResult implements Serializable, Cloneable {
+public class EvaluateExpressionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

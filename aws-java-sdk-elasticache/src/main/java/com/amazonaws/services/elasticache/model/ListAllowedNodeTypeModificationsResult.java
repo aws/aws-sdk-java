@@ -22,8 +22,9 @@ import java.io.Serializable;
  * replication group.
  * </p>
  */
-public class ListAllowedNodeTypeModificationsResult implements Serializable,
-        Cloneable {
+public class ListAllowedNodeTypeModificationsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

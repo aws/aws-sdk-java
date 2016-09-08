@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Describes the settings for a specified configuration set.
  * </p>
  */
-public class DescribeConfigurationOptionsResult implements Serializable,
-        Cloneable {
+public class DescribeConfigurationOptionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

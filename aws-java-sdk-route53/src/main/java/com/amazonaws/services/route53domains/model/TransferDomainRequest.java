@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The TransferDomain request includes the following elements.
  * </p>
  */
-public class TransferDomainRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class TransferDomainRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * CreateTapeWithBarcodeInput
  * </p>
  */
-public class CreateTapeWithBarcodeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateTapeWithBarcodeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

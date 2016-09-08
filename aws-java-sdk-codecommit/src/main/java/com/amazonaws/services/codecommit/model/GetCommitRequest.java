@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a get commit operation.
  * </p>
  */
-public class GetCommitRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetCommitRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input to the GetRegistrationCode operation.
  * </p>
  */
-public class GetRegistrationCodeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetRegistrationCodeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

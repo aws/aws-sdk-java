@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of ModifyTargetGroup.
  * </p>
  */
-public class ModifyTargetGroupResult implements Serializable, Cloneable {
+public class ModifyTargetGroupResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

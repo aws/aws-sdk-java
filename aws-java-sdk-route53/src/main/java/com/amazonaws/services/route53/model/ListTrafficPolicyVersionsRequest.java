@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * traffic policies.
  * </p>
  */
-public class ListTrafficPolicyVersionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListTrafficPolicyVersionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

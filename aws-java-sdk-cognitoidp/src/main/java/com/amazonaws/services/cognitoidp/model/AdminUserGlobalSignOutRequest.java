@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request to sign out of all devices, as an administrator.
  * </p>
  */
-public class AdminUserGlobalSignOutRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AdminUserGlobalSignOutRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class ListDeadLetterSourceQueuesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListDeadLetterSourceQueuesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

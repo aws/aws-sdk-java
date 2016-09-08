@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the result of a list device pools request.
  * </p>
  */
-public class ListDevicePoolsResult implements Serializable, Cloneable {
+public class ListDevicePoolsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

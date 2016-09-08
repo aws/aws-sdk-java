@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for ConfirmSubscription action.
  * </p>
  */
-public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ConfirmSubscriptionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

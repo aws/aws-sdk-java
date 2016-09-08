@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of ReportTaskProgress.
  * </p>
  */
-public class ReportTaskProgressResult implements Serializable, Cloneable {
+public class ReportTaskProgressResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

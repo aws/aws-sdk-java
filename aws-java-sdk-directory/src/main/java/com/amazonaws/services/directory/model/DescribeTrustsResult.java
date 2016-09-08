@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The result of a DescribeTrust request.
  * </p>
  */
-public class DescribeTrustsResult implements Serializable, Cloneable {
+public class DescribeTrustsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

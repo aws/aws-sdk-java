@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for a ListChangeBatchesByRRSet request.
  * </p>
  */
-public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListChangeBatchesByRRSetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

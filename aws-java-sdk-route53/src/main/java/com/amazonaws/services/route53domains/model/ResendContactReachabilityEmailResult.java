@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ResendContactReachabilityEmailResult implements Serializable,
-        Cloneable {
+public class ResendContactReachabilityEmailResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

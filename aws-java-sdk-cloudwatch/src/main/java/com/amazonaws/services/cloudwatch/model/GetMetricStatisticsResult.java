@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for <a>GetMetricStatistics</a>.
  * </p>
  */
-public class GetMetricStatisticsResult implements Serializable, Cloneable {
+public class GetMetricStatisticsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

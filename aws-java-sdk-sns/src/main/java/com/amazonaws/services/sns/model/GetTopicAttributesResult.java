@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Response for GetTopicAttributes action.
  * </p>
  */
-public class GetTopicAttributesResult implements Serializable, Cloneable {
+public class GetTopicAttributesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

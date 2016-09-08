@@ -39,8 +39,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateMaintenanceStartTimeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
     /**

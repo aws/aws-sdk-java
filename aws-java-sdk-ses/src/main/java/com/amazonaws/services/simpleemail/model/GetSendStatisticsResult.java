@@ -22,7 +22,9 @@ import java.io.Serializable;
  * previous two weeks of your sending activity with Amazon SES.
  * </p>
  */
-public class GetSendStatisticsResult implements Serializable, Cloneable {
+public class GetSendStatisticsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

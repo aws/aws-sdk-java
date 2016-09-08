@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a list action types action.
  * </p>
  */
-public class ListActionTypesResult implements Serializable, Cloneable {
+public class ListActionTypesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

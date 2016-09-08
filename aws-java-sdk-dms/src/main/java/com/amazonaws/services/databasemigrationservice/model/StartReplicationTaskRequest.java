@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class StartReplicationTaskRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class StartReplicationTaskRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

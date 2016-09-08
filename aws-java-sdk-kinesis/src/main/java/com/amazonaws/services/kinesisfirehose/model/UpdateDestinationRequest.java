@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for <a>UpdateDestination</a>.
  * </p>
  */
-public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateDestinationRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

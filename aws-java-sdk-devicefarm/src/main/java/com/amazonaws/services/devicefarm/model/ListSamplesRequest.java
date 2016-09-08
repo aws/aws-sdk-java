@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the list samples operation.
  * </p>
  */
-public class ListSamplesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListSamplesRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a successful <a>UploadServerCertificate</a> request.
  * </p>
  */
-public class UploadServerCertificateResult implements Serializable, Cloneable {
+public class UploadServerCertificateResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

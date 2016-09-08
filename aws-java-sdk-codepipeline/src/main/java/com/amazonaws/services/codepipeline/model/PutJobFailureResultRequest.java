@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a put job failure result action.
  * </p>
  */
-public class PutJobFailureResultRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class PutJobFailureResultRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

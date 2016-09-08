@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Returns information about the trail.
  * </p>
  */
-public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeTrailsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>DeleteSnapshot</a> operation.
  * </p>
  */
-public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteSnapshotRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

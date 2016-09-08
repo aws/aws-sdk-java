@@ -21,8 +21,9 @@ import java.io.Serializable;
  * A list of your dead letter source queues.
  * </p>
  */
-public class ListDeadLetterSourceQueuesResult implements Serializable,
-        Cloneable {
+public class ListDeadLetterSourceQueuesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

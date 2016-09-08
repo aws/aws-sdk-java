@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetJobManifestResult implements Serializable, Cloneable {
+public class GetJobManifestResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

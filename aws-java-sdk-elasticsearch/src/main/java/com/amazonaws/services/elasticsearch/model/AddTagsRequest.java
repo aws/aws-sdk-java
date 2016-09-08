@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Specify the tags that you want to attach to the Elasticsearch domain.
  * </p>
  */
-public class AddTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

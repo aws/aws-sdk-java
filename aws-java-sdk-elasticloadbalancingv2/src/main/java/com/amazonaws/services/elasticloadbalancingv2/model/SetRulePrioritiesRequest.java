@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for SetRulePriorities.
  * </p>
  */
-public class SetRulePrioritiesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SetRulePrioritiesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

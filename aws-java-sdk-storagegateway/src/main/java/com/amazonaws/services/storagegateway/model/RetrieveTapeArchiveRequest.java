@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * RetrieveTapeArchiveInput
  * </p>
  */
-public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RetrieveTapeArchiveRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

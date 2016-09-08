@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DetachGroupPolicyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DetachGroupPolicyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

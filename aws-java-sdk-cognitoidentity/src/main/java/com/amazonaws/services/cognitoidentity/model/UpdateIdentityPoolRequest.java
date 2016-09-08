@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * An object representing a Cognito identity pool.
  */
-public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateIdentityPoolRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** An identity pool ID in the format REGION:GUID. */
     private String identityPoolId;

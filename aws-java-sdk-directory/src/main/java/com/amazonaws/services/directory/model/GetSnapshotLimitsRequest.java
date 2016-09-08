@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>GetSnapshotLimits</a> operation.
  * </p>
  */
-public class GetSnapshotLimitsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetSnapshotLimitsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

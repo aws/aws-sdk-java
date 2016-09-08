@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteMLModelRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteMLModelRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

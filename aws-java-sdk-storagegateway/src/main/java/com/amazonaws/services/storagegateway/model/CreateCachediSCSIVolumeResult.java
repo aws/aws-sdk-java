@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class CreateCachediSCSIVolumeResult implements Serializable, Cloneable {
+public class CreateCachediSCSIVolumeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String volumeARN;
 

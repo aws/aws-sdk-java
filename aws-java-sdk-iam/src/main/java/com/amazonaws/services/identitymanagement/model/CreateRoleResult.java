@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a successful <a>CreateRole</a> request.
  * </p>
  */
-public class CreateRoleResult implements Serializable, Cloneable {
+public class CreateRoleResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

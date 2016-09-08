@@ -20,7 +20,6 @@
     "endpointPrefix" : "acm",
     "signingName" : "acm",
     "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSCertificateManagerClientBuilder",
     "asyncClientBuilderClassName" : "AWSCertificateManagerAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AWSCertificateManagerModuleInjector",
@@ -29,7 +28,8 @@
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "jsonProtocol" : true
   },
   "operations" : {
     "AddTagsToCertificate" : {
@@ -8684,7 +8684,8 @@
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
-  "sdkModeledExceptionBaseClassName" : "AWSCertificateManagerException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException",
-  "hasWaiters" : false
+  "hasWaiters" : false,
+  "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
+  "sdkModeledExceptionBaseClassName" : "AWSCertificateManagerException"
 }

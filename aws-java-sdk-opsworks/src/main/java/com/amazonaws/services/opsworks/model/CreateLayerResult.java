@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>CreateLayer</code> request.
  * </p>
  */
-public class CreateLayerResult implements Serializable, Cloneable {
+public class CreateLayerResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

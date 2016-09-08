@@ -22,7 +22,9 @@ import java.io.Serializable;
  * canceled, the value of <code>Success</code> is <code>true</code>.
  * </p>
  */
-public class CancelJobResult implements Serializable, Cloneable {
+public class CancelJobResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

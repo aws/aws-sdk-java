@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>ResetCacheParameterGroup</i> action.
  * </p>
  */
-public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ResetCacheParameterGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

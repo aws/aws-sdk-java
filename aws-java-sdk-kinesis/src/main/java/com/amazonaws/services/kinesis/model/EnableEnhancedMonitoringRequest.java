@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for <a>EnableEnhancedMonitoring</a>.
  * </p>
  */
-public class EnableEnhancedMonitoringRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class EnableEnhancedMonitoringRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

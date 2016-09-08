@@ -33,7 +33,9 @@ import java.io.Serializable;
  * </li>
  * </ul>
  */
-public class ListTapesResult implements Serializable, Cloneable {
+public class ListTapesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<TapeInfo> tapeInfos;
     /**

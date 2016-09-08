@@ -22,7 +22,9 @@ import java.io.Serializable;
  * <a>CreateCase</a> operation.
  * </p>
  */
-public class CreateCaseResult implements Serializable, Cloneable {
+public class CreateCaseResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

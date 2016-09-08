@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the results of the <a>RebuildWorkspaces</a> operation.
  * </p>
  */
-public class RebuildWorkspacesResult implements Serializable, Cloneable {
+public class RebuildWorkspacesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

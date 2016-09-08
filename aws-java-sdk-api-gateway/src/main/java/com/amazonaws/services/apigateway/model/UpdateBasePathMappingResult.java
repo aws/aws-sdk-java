@@ -27,7 +27,9 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html"
  * >Use Custom Domain Names</a> </div>
  */
-public class UpdateBasePathMappingResult implements Serializable, Cloneable {
+public class UpdateBasePathMappingResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

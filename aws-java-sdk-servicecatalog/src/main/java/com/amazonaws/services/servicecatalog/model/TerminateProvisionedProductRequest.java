@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class TerminateProvisionedProductRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class TerminateProvisionedProductRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

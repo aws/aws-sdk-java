@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response received when ConfirmConnection is called.
  * </p>
  */
-public class ConfirmConnectionResult implements Serializable, Cloneable {
+public class ConfirmConnectionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String connectionState;
 

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>ExecuteChangeSet</a> action.
  * </p>
  */
-public class ExecuteChangeSetRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ExecuteChangeSetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

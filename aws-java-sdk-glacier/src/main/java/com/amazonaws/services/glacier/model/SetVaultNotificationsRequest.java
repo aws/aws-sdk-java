@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * events happen to a vault.
  * </p>
  */
-public class SetVaultNotificationsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetVaultNotificationsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

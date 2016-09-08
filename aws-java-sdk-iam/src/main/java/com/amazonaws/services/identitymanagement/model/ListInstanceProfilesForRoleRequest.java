@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListInstanceProfilesForRoleRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

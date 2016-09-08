@@ -61,7 +61,7 @@ public class UpdateDistributionRequestMarshaller
                     .fromString(updateDistributionRequest.getIfMatch()));
         }
 
-        String uriResourcePath = "/2016-08-20/distribution/{Id}/config";
+        String uriResourcePath = "/2016-09-07/distribution/{Id}/config";
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
@@ -74,7 +74,7 @@ public class UpdateDistributionRequestMarshaller
         try {
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter,
-                    "http://cloudfront.amazonaws.com/doc/2016-08-20/");
+                    "http://cloudfront.amazonaws.com/doc/2016-09-07/");
 
             DistributionConfig distributionConfig = updateDistributionRequest
                     .getDistributionConfig();
@@ -1055,6 +1055,12 @@ public class UpdateDistributionRequestMarshaller
                 if (distributionConfig.getWebACLId() != null) {
                     xmlWriter.startElement("WebACLId")
                             .value(distributionConfig.getWebACLId())
+                            .endElement();
+                }
+
+                if (distributionConfig.getHttpVersion() != null) {
+                    xmlWriter.startElement("HttpVersion")
+                            .value(distributionConfig.getHttpVersion())
                             .endElement();
                 }
                 xmlWriter.endElement();

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to get a distribution's information.
  */
-public class GetDistributionRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetDistributionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The distribution's id. */
     private String id;

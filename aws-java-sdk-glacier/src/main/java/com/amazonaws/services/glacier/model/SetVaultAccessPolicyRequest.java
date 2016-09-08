@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * SetVaultAccessPolicy input.
  * </p>
  */
-public class SetVaultAccessPolicyRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetVaultAccessPolicyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

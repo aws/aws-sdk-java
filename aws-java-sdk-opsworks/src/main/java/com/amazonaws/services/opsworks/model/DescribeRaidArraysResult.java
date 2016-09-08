@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeRaidArrays</code> request.
  * </p>
  */
-public class DescribeRaidArraysResult implements Serializable, Cloneable {
+public class DescribeRaidArraysResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

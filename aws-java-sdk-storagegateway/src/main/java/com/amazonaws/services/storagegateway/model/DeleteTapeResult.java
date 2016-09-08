@@ -21,7 +21,9 @@ import java.io.Serializable;
  * DeleteTapeOutput
  * </p>
  */
-public class DeleteTapeResult implements Serializable, Cloneable {
+public class DeleteTapeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

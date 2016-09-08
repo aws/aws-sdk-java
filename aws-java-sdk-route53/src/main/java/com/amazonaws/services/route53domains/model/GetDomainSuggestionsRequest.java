@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetDomainSuggestionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetDomainSuggestionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
 

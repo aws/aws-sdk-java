@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the results of the <a>DeleteSnapshot</a> operation.
  * </p>
  */
-public class DeleteSnapshotResult implements Serializable, Cloneable {
+public class DeleteSnapshotResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

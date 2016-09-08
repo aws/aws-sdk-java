@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to create a new domain name.
  * </p>
  */
-public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateDomainNameRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

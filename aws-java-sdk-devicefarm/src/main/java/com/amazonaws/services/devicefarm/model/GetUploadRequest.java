@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the get upload operation.
  * </p>
  */
-public class GetUploadRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetUploadRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

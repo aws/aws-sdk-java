@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request to delete a origin access identity.
  */
 public class DeleteCloudFrontOriginAccessIdentityRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The origin access identity's id. */
     private String id;

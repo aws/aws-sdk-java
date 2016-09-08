@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to get information about the user.
  * </p>
  */
-public class GetUserRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetUserRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

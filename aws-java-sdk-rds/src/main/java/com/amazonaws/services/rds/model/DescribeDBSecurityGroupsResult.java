@@ -22,7 +22,9 @@ import java.io.Serializable;
  * <a>DescribeDBSecurityGroups</a> action.
  * </p>
  */
-public class DescribeDBSecurityGroupsResult implements Serializable, Cloneable {
+public class DescribeDBSecurityGroupsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

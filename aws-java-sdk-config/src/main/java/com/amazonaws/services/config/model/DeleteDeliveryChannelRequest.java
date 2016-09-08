@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * following data in JSON format.
  * </p>
  */
-public class DeleteDeliveryChannelRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteDeliveryChannelRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

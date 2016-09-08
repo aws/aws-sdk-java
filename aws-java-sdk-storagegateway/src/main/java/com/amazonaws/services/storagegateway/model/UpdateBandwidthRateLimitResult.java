@@ -22,7 +22,9 @@ import java.io.Serializable;
  * updated.
  * </p>
  */
-public class UpdateBandwidthRateLimitResult implements Serializable, Cloneable {
+public class UpdateBandwidthRateLimitResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

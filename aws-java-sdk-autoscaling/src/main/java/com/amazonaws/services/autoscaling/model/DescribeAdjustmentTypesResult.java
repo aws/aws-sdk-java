@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the parameters for DescribeAdjustmentTypes.
  * </p>
  */
-public class DescribeAdjustmentTypesResult implements Serializable, Cloneable {
+public class DescribeAdjustmentTypesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

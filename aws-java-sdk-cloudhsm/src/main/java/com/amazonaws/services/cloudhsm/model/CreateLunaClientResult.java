@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of the <a>CreateLunaClient</a> action.
  * </p>
  */
-public class CreateLunaClientResult implements Serializable, Cloneable {
+public class CreateLunaClientResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

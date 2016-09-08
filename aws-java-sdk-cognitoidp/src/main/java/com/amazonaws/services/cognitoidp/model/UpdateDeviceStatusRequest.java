@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to update the device status.
  * </p>
  */
-public class UpdateDeviceStatusRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateDeviceStatusRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

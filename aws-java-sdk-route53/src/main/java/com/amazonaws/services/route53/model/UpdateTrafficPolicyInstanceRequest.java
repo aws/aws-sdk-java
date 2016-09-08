@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * you want to update based on a specified traffic policy instance.
  * </p>
  */
-public class UpdateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateTrafficPolicyInstanceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

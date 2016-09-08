@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeOptionGroupOptionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,7 +22,9 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class GenerateCredentialReportResult implements Serializable, Cloneable {
+public class GenerateCredentialReportResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

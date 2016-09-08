@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Unit of work sent to an activity worker.
  * </p>
  */
-public class ActivityTask implements Serializable, Cloneable {
+public class ActivityTask extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

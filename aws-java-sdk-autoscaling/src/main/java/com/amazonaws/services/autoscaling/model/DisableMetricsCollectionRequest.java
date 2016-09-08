@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DisableMetricsCollection.
  * </p>
  */
-public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DisableMetricsCollectionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

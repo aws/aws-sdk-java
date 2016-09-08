@@ -26,7 +26,9 @@ import java.io.Serializable;
  * marked as <code>DELETED</code>.
  * </p>
  */
-public class DeleteMLModelResult implements Serializable, Cloneable {
+public class DeleteMLModelResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

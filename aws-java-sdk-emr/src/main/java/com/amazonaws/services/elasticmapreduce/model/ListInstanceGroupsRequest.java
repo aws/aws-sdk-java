@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This input determines which instance groups to retrieve.
  * </p>
  */
-public class ListInstanceGroupsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListInstanceGroupsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for SetDesiredCapacity.
  * </p>
  */
-public class SetDesiredCapacityRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetDesiredCapacityRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

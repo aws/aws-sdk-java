@@ -25,8 +25,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * exclude any pending changes, set the Deployed option to <code>true</code>.
  * </p>
  */
-public class DescribeAvailabilityOptionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeAvailabilityOptionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

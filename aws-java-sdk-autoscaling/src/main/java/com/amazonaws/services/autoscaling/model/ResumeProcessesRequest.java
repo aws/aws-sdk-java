@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for SuspendProcesses and ResumeProcesses.
  * </p>
  */
-public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ResumeProcessesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

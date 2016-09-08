@@ -21,7 +21,9 @@ import java.io.Serializable;
  * DisableGatewayOutput
  * </p>
  */
-public class DisableGatewayResult implements Serializable, Cloneable {
+public class DisableGatewayResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DescribeSourceRegionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeSourceRegionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

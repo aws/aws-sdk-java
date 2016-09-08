@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>DisableRadius</a> operation.
  * </p>
  */
-public class DisableRadiusRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DisableRadiusRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

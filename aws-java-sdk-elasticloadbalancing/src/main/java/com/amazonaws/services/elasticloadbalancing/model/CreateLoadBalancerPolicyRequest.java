@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for CreateLoadBalancerPolicy.
  * </p>
  */
-public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateLoadBalancerPolicyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

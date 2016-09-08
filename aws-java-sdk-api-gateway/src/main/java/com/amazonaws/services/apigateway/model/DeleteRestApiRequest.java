@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to delete the specified API from your collection.
  * </p>
  */
-public class DeleteRestApiRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteRestApiRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

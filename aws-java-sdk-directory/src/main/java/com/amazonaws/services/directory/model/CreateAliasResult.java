@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the results of the <a>CreateAlias</a> operation.
  * </p>
  */
-public class CreateAliasResult implements Serializable, Cloneable {
+public class CreateAliasResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

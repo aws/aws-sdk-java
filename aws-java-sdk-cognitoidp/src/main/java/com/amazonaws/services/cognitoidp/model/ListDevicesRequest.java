@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to list the devices.
  * </p>
  */
-public class ListDevicesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

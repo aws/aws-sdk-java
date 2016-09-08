@@ -25,8 +25,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * configure.
  * </p>
  */
-public class UpdateScalingParametersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateScalingParametersRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
 

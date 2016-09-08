@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The UpdateDomainNameserver request includes the following elements.
  * </p>
  */
-public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateDomainNameserversRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class SelectRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SelectRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /** The expression used to query the domain. */
     private String selectExpression;

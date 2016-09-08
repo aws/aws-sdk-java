@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a create deployment operation.
  * </p>
  */
-public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateDeploymentRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

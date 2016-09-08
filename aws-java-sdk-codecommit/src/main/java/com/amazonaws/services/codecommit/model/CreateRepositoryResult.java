@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a create repository operation.
  * </p>
  */
-public class CreateRepositoryResult implements Serializable, Cloneable {
+public class CreateRepositoryResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

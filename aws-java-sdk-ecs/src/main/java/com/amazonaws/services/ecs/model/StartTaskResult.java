@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class StartTaskResult implements Serializable, Cloneable {
+public class StartTaskResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

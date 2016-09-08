@@ -34,8 +34,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateSnapshotRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteBandwidthRateLimitRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
 

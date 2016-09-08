@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for <a>DeleteStack</a> action.
  * </p>
  */
-public class DeleteStackRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

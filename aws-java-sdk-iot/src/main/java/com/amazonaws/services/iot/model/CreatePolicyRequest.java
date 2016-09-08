@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the CreatePolicy operation.
  * </p>
  */
-public class CreatePolicyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

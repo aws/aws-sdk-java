@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response to a <a>GetSqlInjectionMatchSet</a> request.
  * </p>
  */
-public class GetSqlInjectionMatchSetResult implements Serializable, Cloneable {
+public class GetSqlInjectionMatchSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

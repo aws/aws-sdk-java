@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of SetSubnets.
  * </p>
  */
-public class SetSubnetsResult implements Serializable, Cloneable {
+public class SetSubnetsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

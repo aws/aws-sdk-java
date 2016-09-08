@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to post updates to records or add and delete records for a dataset
  * and user.
  */
-public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,

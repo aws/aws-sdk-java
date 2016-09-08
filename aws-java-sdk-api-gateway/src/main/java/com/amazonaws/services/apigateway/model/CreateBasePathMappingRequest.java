@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Requests Amazon API Gateway to create a new <a>BasePathMapping</a> resource.
  * </p>
  */
-public class CreateBasePathMappingRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateBasePathMappingRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

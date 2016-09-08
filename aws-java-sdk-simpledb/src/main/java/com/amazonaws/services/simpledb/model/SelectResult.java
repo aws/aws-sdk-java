@@ -19,7 +19,10 @@ import java.io.Serializable;
 /**
  * 
  */
-public class SelectResult implements Serializable, Cloneable {
+public class SelectResult
+        extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.services.simpledb.SimpleDBResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** A list of items that match the select expression. */
     private com.amazonaws.internal.SdkInternalList<Item> items;

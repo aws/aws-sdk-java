@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class PurgeQueueRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PurgeQueueRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

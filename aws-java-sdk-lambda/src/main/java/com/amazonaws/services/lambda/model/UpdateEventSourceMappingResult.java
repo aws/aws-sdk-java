@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Describes mapping between an Amazon Kinesis stream and a Lambda function.
  * </p>
  */
-public class UpdateEventSourceMappingResult implements Serializable, Cloneable {
+public class UpdateEventSourceMappingResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

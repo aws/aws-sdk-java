@@ -22,7 +22,9 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class GetAccountPasswordPolicyResult implements Serializable, Cloneable {
+public class GetAccountPasswordPolicyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private PasswordPolicy passwordPolicy;
 

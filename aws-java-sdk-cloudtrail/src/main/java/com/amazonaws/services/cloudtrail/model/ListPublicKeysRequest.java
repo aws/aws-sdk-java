@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Requests the public keys for a specified time range.
  * </p>
  */
-public class ListPublicKeysRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListPublicKeysRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

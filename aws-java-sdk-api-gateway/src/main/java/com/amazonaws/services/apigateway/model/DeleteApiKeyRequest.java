@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to delete the <a>ApiKey</a> resource.
  * </p>
  */
-public class DeleteApiKeyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

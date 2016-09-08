@@ -21,8 +21,9 @@ import java.io.Serializable;
  * The output when you start the evaluation for the specified Config rule.
  * </p>
  */
-public class StartConfigRulesEvaluationResult implements Serializable,
-        Cloneable {
+public class StartConfigRulesEvaluationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>DescribeAccountLimits</a> action.
  * </p>
  */
-public class DescribeAccountLimitsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeAccountLimitsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

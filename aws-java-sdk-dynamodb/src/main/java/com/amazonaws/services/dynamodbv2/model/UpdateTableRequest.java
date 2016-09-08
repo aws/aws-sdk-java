@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of an <i>UpdateTable</i> operation.
  * </p>
  */
-public class UpdateTableRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

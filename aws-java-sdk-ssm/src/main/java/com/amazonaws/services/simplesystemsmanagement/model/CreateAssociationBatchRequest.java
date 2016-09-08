@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreateAssociationBatchRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateAssociationBatchRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

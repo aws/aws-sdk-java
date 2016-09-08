@@ -22,7 +22,9 @@ import java.io.Serializable;
  * <a>DescribeSourceRegions</a> action.
  * </p>
  */
-public class DescribeSourceRegionsResult implements Serializable, Cloneable {
+public class DescribeSourceRegionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

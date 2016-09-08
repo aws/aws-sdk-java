@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a <i>DescribeCacheSubnetGroups</i> action.
  * </p>
  */
-public class DescribeCacheSubnetGroupsResult implements Serializable, Cloneable {
+public class DescribeCacheSubnetGroupsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of ActivatePipeline.
  * </p>
  */
-public class ActivatePipelineResult implements Serializable, Cloneable {
+public class ActivatePipelineResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

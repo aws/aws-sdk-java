@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>DeleteHsm</a> operation.
  * </p>
  */
-public class DeleteHsmRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteHsmRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

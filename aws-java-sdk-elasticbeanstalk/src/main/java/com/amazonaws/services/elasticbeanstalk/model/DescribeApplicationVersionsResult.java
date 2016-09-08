@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Result message wrapping a list of application version descriptions.
  * </p>
  */
-public class DescribeApplicationVersionsResult implements Serializable,
-        Cloneable {
+public class DescribeApplicationVersionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

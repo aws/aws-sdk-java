@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to generate a sample mapping template used to transform the payload.
  * </p>
  */
-public class GetModelTemplateRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetModelTemplateRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

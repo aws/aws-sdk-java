@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class PollForActivityTaskRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class PollForActivityTaskRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

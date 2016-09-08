@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the get project operation.
  * </p>
  */
-public class GetProjectRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetProjectRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

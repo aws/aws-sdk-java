@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A JSON object containing the of the gateway that was restarted.
  * </p>
  */
-public class StartGatewayResult implements Serializable, Cloneable {
+public class StartGatewayResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

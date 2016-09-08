@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the DescribeThingType operation.
  * </p>
  */
-public class DescribeThingTypeRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeThingTypeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

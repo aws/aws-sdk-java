@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output for DetachLoadBalancers.
  * </p>
  */
-public class DetachLoadBalancersResult implements Serializable, Cloneable {
+public class DetachLoadBalancersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

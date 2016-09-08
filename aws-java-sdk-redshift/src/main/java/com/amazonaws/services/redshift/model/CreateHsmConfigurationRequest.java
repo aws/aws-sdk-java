@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateHsmConfigurationRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

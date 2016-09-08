@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The CheckDomainAvailability request contains the following elements.
  * </p>
  */
-public class CheckDomainAvailabilityRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CheckDomainAvailabilityRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of CreateListener.
  * </p>
  */
-public class CreateListenerResult implements Serializable, Cloneable {
+public class CreateListenerResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

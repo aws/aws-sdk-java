@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * traffic policies that are associated with the current AWS account.
  * </p>
  */
-public class ListTrafficPoliciesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListTrafficPoliciesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

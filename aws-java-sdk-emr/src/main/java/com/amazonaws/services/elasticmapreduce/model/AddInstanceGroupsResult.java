@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Output from an AddInstanceGroups call.
  * </p>
  */
-public class AddInstanceGroupsResult implements Serializable, Cloneable {
+public class AddInstanceGroupsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

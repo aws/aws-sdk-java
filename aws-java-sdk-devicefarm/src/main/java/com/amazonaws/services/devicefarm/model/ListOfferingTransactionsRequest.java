@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to list the offering transaction history.
  * </p>
  */
-public class ListOfferingTransactionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListOfferingTransactionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

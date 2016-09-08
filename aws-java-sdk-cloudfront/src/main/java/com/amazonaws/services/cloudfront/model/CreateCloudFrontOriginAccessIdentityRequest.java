@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request to create a new origin access identity.
  */
 public class CreateCloudFrontOriginAccessIdentityRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The origin access identity's configuration information. */
     private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;

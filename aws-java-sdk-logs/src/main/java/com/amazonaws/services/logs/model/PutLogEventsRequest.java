@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class PutLogEventsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PutLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

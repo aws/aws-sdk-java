@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * the payload.
  * </p>
  */
-public class CreateUsagePlanRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateUsagePlanRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

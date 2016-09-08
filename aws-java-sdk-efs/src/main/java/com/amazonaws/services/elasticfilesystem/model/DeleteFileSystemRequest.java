@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DeleteFileSystemRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteFileSystemRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

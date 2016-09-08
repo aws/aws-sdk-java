@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for <a>CreateStack</a> action.
  * </p>
  */
-public class CreateStackRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

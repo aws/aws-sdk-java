@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output from the ListTopicRules operation.
  * </p>
  */
-public class ListTopicRulesResult implements Serializable, Cloneable {
+public class ListTopicRulesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output from the GetThingShadow operation.
  * </p>
  */
-public class GetThingShadowResult implements Serializable, Cloneable {
+public class GetThingShadowResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

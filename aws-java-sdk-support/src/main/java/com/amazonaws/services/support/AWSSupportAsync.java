@@ -31,7 +31,7 @@ import com.amazonaws.services.support.model.*;
  * </p>
  * <p>
  * The AWS Support service also exposes a set of <a
- * href="https://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted
+ * href="http://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted
  * Advisor</a> features. You can retrieve a list of checks and their
  * descriptions, get check results, specify checks to refresh, and get the
  * refresh status of checks.
@@ -40,36 +40,67 @@ import com.amazonaws.services.support.model.*;
  * The following list describes the AWS Support case management operations:
  * </p>
  * <ul>
- * <li><b>Service names, issue categories, and available severity levels.
- * </b>The <a>DescribeServices</a> and <a>DescribeSeverityLevels</a> operations
- * return AWS service names, service codes, service categories, and problem
- * severity levels. You use these values when you call the <a>CreateCase</a>
- * operation.</li>
- * <li><b>Case creation, case details, and case resolution.</b> The
+ * <li>
+ * <p>
+ * <b>Service names, issue categories, and available severity levels. </b>The
+ * <a>DescribeServices</a> and <a>DescribeSeverityLevels</a> operations return
+ * AWS service names, service codes, service categories, and problem severity
+ * levels. You use these values when you call the <a>CreateCase</a> operation.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Case creation, case details, and case resolution.</b> The
  * <a>CreateCase</a>, <a>DescribeCases</a>, <a>DescribeAttachment</a>, and
  * <a>ResolveCase</a> operations create AWS Support cases, retrieve information
- * about cases, and resolve cases.</li>
- * <li><b>Case communication.</b> The <a>DescribeCommunications</a>,
+ * about cases, and resolve cases.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Case communication.</b> The <a>DescribeCommunications</a>,
  * <a>AddCommunicationToCase</a>, and <a>AddAttachmentsToSet</a> operations
- * retrieve and add communications and attachments to AWS Support cases.</li>
+ * retrieve and add communications and attachments to AWS Support cases.
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * The following list describes the operations available from the AWS Support
  * service for Trusted Advisor:
  * </p>
  * <ul>
- * <li><a>DescribeTrustedAdvisorChecks</a> returns the list of checks that run
- * against your AWS resources.</li>
- * <li>Using the <code>CheckId</code> for a specific check returned by
+ * <li>
+ * <p>
+ * <a>DescribeTrustedAdvisorChecks</a> returns the list of checks that run
+ * against your AWS resources.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Using the <code>checkId</code> for a specific check returned by
  * <a>DescribeTrustedAdvisorChecks</a>, you can call
  * <a>DescribeTrustedAdvisorCheckResult</a> to obtain the results for the check
- * you specified.</li>
- * <li><a>DescribeTrustedAdvisorCheckSummaries</a> returns summarized results
- * for one or more Trusted Advisor checks.</li>
- * <li><a>RefreshTrustedAdvisorCheck</a> requests that Trusted Advisor rerun a
- * specified check.</li>
- * <li><a>DescribeTrustedAdvisorCheckRefreshStatuses</a> reports the refresh
- * status of one or more checks.</li>
+ * you specified.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeTrustedAdvisorCheckSummaries</a> returns summarized results for
+ * one or more Trusted Advisor checks.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>RefreshTrustedAdvisorCheck</a> requests that Trusted Advisor rerun a
+ * specified check.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeTrustedAdvisorCheckRefreshStatuses</a> reports the refresh status
+ * of one or more checks.
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * For authentication of requests, AWS Support uses <a href=
@@ -89,15 +120,15 @@ public interface AWSSupportAsync extends AWSSupport {
     /**
      * <p>
      * Adds one or more attachments to an attachment set. If an
-     * <code>AttachmentSetId</code> is not specified, a new attachment set is
+     * <code>attachmentSetId</code> is not specified, a new attachment set is
      * created, and the ID of the set is returned in the response. If an
-     * <code>AttachmentSetId</code> is specified, the attachments are added to
+     * <code>attachmentSetId</code> is specified, the attachments are added to
      * the specified set, if it exists.
      * </p>
      * <p>
      * An attachment set is a temporary container for attachments that are to be
      * added to a case or case communication. The set is available for one hour
-     * after it is created; the <code>ExpiryTime</code> returned in the response
+     * after it is created; the <code>expiryTime</code> returned in the response
      * indicates when the set expires. The maximum number of attachments in a
      * set is 3, and the maximum size of any attachment in the set is 5 MB.
      * </p>
@@ -113,15 +144,15 @@ public interface AWSSupportAsync extends AWSSupport {
     /**
      * <p>
      * Adds one or more attachments to an attachment set. If an
-     * <code>AttachmentSetId</code> is not specified, a new attachment set is
+     * <code>attachmentSetId</code> is not specified, a new attachment set is
      * created, and the ID of the set is returned in the response. If an
-     * <code>AttachmentSetId</code> is specified, the attachments are added to
+     * <code>attachmentSetId</code> is specified, the attachments are added to
      * the specified set, if it exists.
      * </p>
      * <p>
      * An attachment set is a temporary container for attachments that are to be
      * added to a case or case communication. The set is available for one hour
-     * after it is created; the <code>ExpiryTime</code> returned in the response
+     * after it is created; the <code>expiryTime</code> returned in the response
      * indicates when the set expires. The maximum number of attachments in a
      * set is 3, and the maximum size of any attachment in the set is 5 MB.
      * </p>
@@ -143,10 +174,10 @@ public interface AWSSupportAsync extends AWSSupport {
     /**
      * <p>
      * Adds additional customer communication to an AWS Support case. You use
-     * the <code>CaseId</code> value to identify the case to add communication
+     * the <code>caseId</code> value to identify the case to add communication
      * to. You can list a set of email addresses to copy on the communication
-     * using the <code>CcEmailAddresses</code> value. The
-     * <code>CommunicationBody</code> value contains the text of the
+     * using the <code>ccEmailAddresses</code> value. The
+     * <code>communicationBody</code> value contains the text of the
      * communication.
      * </p>
      * <p>
@@ -169,10 +200,10 @@ public interface AWSSupportAsync extends AWSSupport {
     /**
      * <p>
      * Adds additional customer communication to an AWS Support case. You use
-     * the <code>CaseId</code> value to identify the case to add communication
+     * the <code>caseId</code> value to identify the case to add communication
      * to. You can list a set of email addresses to copy on the communication
-     * using the <code>CcEmailAddresses</code> value. The
-     * <code>CommunicationBody</code> value contains the text of the
+     * using the <code>ccEmailAddresses</code> value. The
+     * <code>communicationBody</code> value contains the text of the
      * communication.
      * </p>
      * <p>
@@ -206,40 +237,75 @@ public interface AWSSupportAsync extends AWSSupport {
      * Case</a> page. Its parameters require you to specify the following
      * information:
      * </p>
-     * <ol>
-     * <li><b>IssueType.</b> The type of issue for the case. You can specify
-     * either "customer-service" or "technical." If you do not indicate a value,
-     * the default is "technical."</li>
-     * <li><b>ServiceCode.</b> The code for an AWS service. You obtain the
-     * <code>ServiceCode</code> by calling <a>DescribeServices</a>.</li>
-     * <li><b>CategoryCode.</b> The category for the service defined for the
-     * <code>ServiceCode</code> value. You also obtain the category code for a
+     * <ul>
+     * <li>
+     * <p>
+     * <b>issueType.</b> The type of issue for the case. You can specify either
+     * "customer-service" or "technical." If you do not indicate a value, the
+     * default is "technical."
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>serviceCode.</b> The code for an AWS service. You obtain the
+     * <code>serviceCode</code> by calling <a>DescribeServices</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>categoryCode.</b> The category for the service defined for the
+     * <code>serviceCode</code> value. You also obtain the category code for a
      * service by calling <a>DescribeServices</a>. Each AWS service defines its
-     * own set of category codes.</li>
-     * <li><b>SeverityCode.</b> A value that indicates the urgency of the case,
+     * own set of category codes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>severityCode.</b> A value that indicates the urgency of the case,
      * which in turn determines the response time according to your service
      * level agreement with AWS Support. You obtain the SeverityCode by calling
-     * <a>DescribeSeverityLevels</a>.</li>
-     * <li><b>Subject.</b> The <b>Subject</b> field on the AWS Support Center <a
+     * <a>DescribeSeverityLevels</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>subject.</b> The <b>Subject</b> field on the AWS Support Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create
-     * Case</a> page.</li>
-     * <li><b>CommunicationBody.</b> The <b>Description</b> field on the AWS
-     * Support Center <a
+     * Case</a> page.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>communicationBody.</b> The <b>Description</b> field on the AWS Support
+     * Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create
-     * Case</a> page.</li>
-     * <li><b>AttachmentSetId.</b> The ID of a set of attachments that has been
-     * created by using <a>AddAttachmentsToSet</a>.</li>
-     * <li><b>Language.</b> The human language in which AWS Support handles the
-     * case. English and Japanese are currently supported.</li>
-     * <li><b>CcEmailAddresses.</b> The AWS Support Center <b>CC</b> field on
-     * the <a
+     * Case</a> page.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>attachmentSetId.</b> The ID of a set of attachments that has been
+     * created by using <a>AddAttachmentsToSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>language.</b> The human language in which AWS Support handles the
+     * case. English and Japanese are currently supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ccEmailAddresses.</b> The AWS Support Center <b>CC</b> field on the <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create
      * Case</a> page. You can list email addresses to be copied on any
      * correspondence about the case. The account that opens the case is already
      * identified by passing the AWS Credentials in the HTTP POST method or in a
      * method or function call from one of the programming languages supported
-     * by an <a href="http://aws.amazon.com/tools/">AWS SDK</a>.</li>
-     * </ol>
+     * by an <a href="http://aws.amazon.com/tools/">AWS SDK</a>.
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * To add additional communication or attachments to an existing case, use
@@ -268,40 +334,75 @@ public interface AWSSupportAsync extends AWSSupport {
      * Case</a> page. Its parameters require you to specify the following
      * information:
      * </p>
-     * <ol>
-     * <li><b>IssueType.</b> The type of issue for the case. You can specify
-     * either "customer-service" or "technical." If you do not indicate a value,
-     * the default is "technical."</li>
-     * <li><b>ServiceCode.</b> The code for an AWS service. You obtain the
-     * <code>ServiceCode</code> by calling <a>DescribeServices</a>.</li>
-     * <li><b>CategoryCode.</b> The category for the service defined for the
-     * <code>ServiceCode</code> value. You also obtain the category code for a
+     * <ul>
+     * <li>
+     * <p>
+     * <b>issueType.</b> The type of issue for the case. You can specify either
+     * "customer-service" or "technical." If you do not indicate a value, the
+     * default is "technical."
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>serviceCode.</b> The code for an AWS service. You obtain the
+     * <code>serviceCode</code> by calling <a>DescribeServices</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>categoryCode.</b> The category for the service defined for the
+     * <code>serviceCode</code> value. You also obtain the category code for a
      * service by calling <a>DescribeServices</a>. Each AWS service defines its
-     * own set of category codes.</li>
-     * <li><b>SeverityCode.</b> A value that indicates the urgency of the case,
+     * own set of category codes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>severityCode.</b> A value that indicates the urgency of the case,
      * which in turn determines the response time according to your service
      * level agreement with AWS Support. You obtain the SeverityCode by calling
-     * <a>DescribeSeverityLevels</a>.</li>
-     * <li><b>Subject.</b> The <b>Subject</b> field on the AWS Support Center <a
+     * <a>DescribeSeverityLevels</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>subject.</b> The <b>Subject</b> field on the AWS Support Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create
-     * Case</a> page.</li>
-     * <li><b>CommunicationBody.</b> The <b>Description</b> field on the AWS
-     * Support Center <a
+     * Case</a> page.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>communicationBody.</b> The <b>Description</b> field on the AWS Support
+     * Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create
-     * Case</a> page.</li>
-     * <li><b>AttachmentSetId.</b> The ID of a set of attachments that has been
-     * created by using <a>AddAttachmentsToSet</a>.</li>
-     * <li><b>Language.</b> The human language in which AWS Support handles the
-     * case. English and Japanese are currently supported.</li>
-     * <li><b>CcEmailAddresses.</b> The AWS Support Center <b>CC</b> field on
-     * the <a
+     * Case</a> page.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>attachmentSetId.</b> The ID of a set of attachments that has been
+     * created by using <a>AddAttachmentsToSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>language.</b> The human language in which AWS Support handles the
+     * case. English and Japanese are currently supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ccEmailAddresses.</b> The AWS Support Center <b>CC</b> field on the <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create
      * Case</a> page. You can list email addresses to be copied on any
      * correspondence about the case. The account that opens the case is already
      * identified by passing the AWS Credentials in the HTTP POST method or in a
      * method or function call from one of the programming languages supported
-     * by an <a href="http://aws.amazon.com/tools/">AWS SDK</a>.</li>
-     * </ol>
+     * by an <a href="http://aws.amazon.com/tools/">AWS SDK</a>.
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * To add additional communication or attachments to an existing case, use
@@ -372,9 +473,9 @@ public interface AWSSupportAsync extends AWSSupport {
      * <p>
      * Returns a list of cases that you specify by passing one or more case IDs.
      * In addition, you can filter the cases by date by setting values for the
-     * <code>AfterTime</code> and <code>BeforeTime</code> request parameters.
-     * You can set values for the <code>IncludeResolvedCases</code> and
-     * <code>IncludeCommunications</code> request parameters to control how much
+     * <code>afterTime</code> and <code>beforeTime</code> request parameters.
+     * You can set values for the <code>includeResolvedCases</code> and
+     * <code>includeCommunications</code> request parameters to control how much
      * information is returned.
      * </p>
      * <p>
@@ -384,12 +485,20 @@ public interface AWSSupportAsync extends AWSSupport {
      * <p>
      * The response returns the following in JSON format:
      * </p>
-     * <ol>
-     * <li>One or more <a>CaseDetails</a> data types.</li>
-     * <li>One or more <code>NextToken</code> values, which specify where to
+     * <ul>
+     * <li>
+     * <p>
+     * One or more <a>CaseDetails</a> data types.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * One or more <code>nextToken</code> values, which specify where to
      * paginate the returned records represented by the <code>CaseDetails</code>
-     * objects.</li>
-     * </ol>
+     * objects.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param describeCasesRequest
      * @return A Java Future containing the result of the DescribeCases
@@ -403,9 +512,9 @@ public interface AWSSupportAsync extends AWSSupport {
      * <p>
      * Returns a list of cases that you specify by passing one or more case IDs.
      * In addition, you can filter the cases by date by setting values for the
-     * <code>AfterTime</code> and <code>BeforeTime</code> request parameters.
-     * You can set values for the <code>IncludeResolvedCases</code> and
-     * <code>IncludeCommunications</code> request parameters to control how much
+     * <code>afterTime</code> and <code>beforeTime</code> request parameters.
+     * You can set values for the <code>includeResolvedCases</code> and
+     * <code>includeCommunications</code> request parameters to control how much
      * information is returned.
      * </p>
      * <p>
@@ -415,12 +524,20 @@ public interface AWSSupportAsync extends AWSSupport {
      * <p>
      * The response returns the following in JSON format:
      * </p>
-     * <ol>
-     * <li>One or more <a>CaseDetails</a> data types.</li>
-     * <li>One or more <code>NextToken</code> values, which specify where to
+     * <ul>
+     * <li>
+     * <p>
+     * One or more <a>CaseDetails</a> data types.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * One or more <code>nextToken</code> values, which specify where to
      * paginate the returned records represented by the <code>CaseDetails</code>
-     * objects.</li>
-     * </ol>
+     * objects.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param describeCasesRequest
      * @param asyncHandler
@@ -456,8 +573,8 @@ public interface AWSSupportAsync extends AWSSupport {
     /**
      * <p>
      * Returns communications (and attachments) for one or more support cases.
-     * You can use the <code>AfterTime</code> and <code>BeforeTime</code>
-     * parameters to filter by date. You can use the <code>CaseId</code>
+     * You can use the <code>afterTime</code> and <code>beforeTime</code>
+     * parameters to filter by date. You can use the <code>caseId</code>
      * parameter to restrict the results to a particular case.
      * </p>
      * <p>
@@ -465,10 +582,10 @@ public interface AWSSupportAsync extends AWSSupport {
      * created more than 12 months ago, a request for data might cause an error.
      * </p>
      * <p>
-     * You can use the <code>MaxResults</code> and <code>NextToken</code>
+     * You can use the <code>maxResults</code> and <code>nextToken</code>
      * parameters to control the pagination of the result set. Set
-     * <code>MaxResults</code> to the number of cases you want displayed on each
-     * page, and use <code>NextToken</code> to specify the resumption of
+     * <code>maxResults</code> to the number of cases you want displayed on each
+     * page, and use <code>nextToken</code> to specify the resumption of
      * pagination.
      * </p>
      * 
@@ -483,8 +600,8 @@ public interface AWSSupportAsync extends AWSSupport {
     /**
      * <p>
      * Returns communications (and attachments) for one or more support cases.
-     * You can use the <code>AfterTime</code> and <code>BeforeTime</code>
-     * parameters to filter by date. You can use the <code>CaseId</code>
+     * You can use the <code>afterTime</code> and <code>beforeTime</code>
+     * parameters to filter by date. You can use the <code>caseId</code>
      * parameter to restrict the results to a particular case.
      * </p>
      * <p>
@@ -492,10 +609,10 @@ public interface AWSSupportAsync extends AWSSupport {
      * created more than 12 months ago, a request for data might cause an error.
      * </p>
      * <p>
-     * You can use the <code>MaxResults</code> and <code>NextToken</code>
+     * You can use the <code>maxResults</code> and <code>nextToken</code>
      * parameters to control the pagination of the result set. Set
-     * <code>MaxResults</code> to the number of cases you want displayed on each
-     * page, and use <code>NextToken</code> to specify the resumption of
+     * <code>maxResults</code> to the number of cases you want displayed on each
+     * page, and use <code>nextToken</code> to specify the resumption of
      * pagination.
      * </p>
      * 
@@ -649,6 +766,14 @@ public interface AWSSupportAsync extends AWSSupport {
      * specified check IDs. Check IDs can be obtained by calling
      * <a>DescribeTrustedAdvisorChecks</a>.
      * </p>
+     * <note>
+     * <p>
+     * Some checks are refreshed automatically, and their refresh statuses
+     * cannot be retrieved by using this operation. Use of the
+     * <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation for
+     * these checks causes an <code>InvalidParameterValue</code> error.
+     * </p>
+     * </note>
      * 
      * @param describeTrustedAdvisorCheckRefreshStatusesRequest
      * @return A Java Future containing the result of the
@@ -665,6 +790,14 @@ public interface AWSSupportAsync extends AWSSupport {
      * specified check IDs. Check IDs can be obtained by calling
      * <a>DescribeTrustedAdvisorChecks</a>.
      * </p>
+     * <note>
+     * <p>
+     * Some checks are refreshed automatically, and their refresh statuses
+     * cannot be retrieved by using this operation. Use of the
+     * <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation for
+     * these checks causes an <code>InvalidParameterValue</code> error.
+     * </p>
+     * </note>
      * 
      * @param describeTrustedAdvisorCheckRefreshStatusesRequest
      * @param asyncHandler
@@ -692,18 +825,42 @@ public interface AWSSupportAsync extends AWSSupport {
      * contains these three objects:
      * </p>
      * <ul>
-     * <li><a>TrustedAdvisorCategorySpecificSummary</a></li>
-     * <li><a>TrustedAdvisorResourceDetail</a></li>
-     * <li><a>TrustedAdvisorResourcesSummary</a></li>
+     * <li>
+     * <p>
+     * <a>TrustedAdvisorCategorySpecificSummary</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>TrustedAdvisorResourceDetail</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>TrustedAdvisorResourcesSummary</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * In addition, the response contains these fields:
      * </p>
      * <ul>
-     * <li><b>Status.</b> The alert status of the check: "ok" (green), "warning"
-     * (yellow), "error" (red), or "not_available".</li>
-     * <li><b>Timestamp.</b> The time of the last refresh of the check.</li>
-     * <li><b>CheckId.</b> The unique identifier for the check.</li>
+     * <li>
+     * <p>
+     * <b>status.</b> The alert status of the check: "ok" (green), "warning"
+     * (yellow), "error" (red), or "not_available".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>timestamp.</b> The time of the last refresh of the check.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>checkId.</b> The unique identifier for the check.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param describeTrustedAdvisorCheckResultRequest
@@ -726,18 +883,42 @@ public interface AWSSupportAsync extends AWSSupport {
      * contains these three objects:
      * </p>
      * <ul>
-     * <li><a>TrustedAdvisorCategorySpecificSummary</a></li>
-     * <li><a>TrustedAdvisorResourceDetail</a></li>
-     * <li><a>TrustedAdvisorResourcesSummary</a></li>
+     * <li>
+     * <p>
+     * <a>TrustedAdvisorCategorySpecificSummary</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>TrustedAdvisorResourceDetail</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>TrustedAdvisorResourcesSummary</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * In addition, the response contains these fields:
      * </p>
      * <ul>
-     * <li><b>Status.</b> The alert status of the check: "ok" (green), "warning"
-     * (yellow), "error" (red), or "not_available".</li>
-     * <li><b>Timestamp.</b> The time of the last refresh of the check.</li>
-     * <li><b>CheckId.</b> The unique identifier for the check.</li>
+     * <li>
+     * <p>
+     * <b>status.</b> The alert status of the check: "ok" (green), "warning"
+     * (yellow), "error" (red), or "not_available".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>timestamp.</b> The time of the last refresh of the check.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>checkId.</b> The unique identifier for the check.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param describeTrustedAdvisorCheckResultRequest
@@ -847,16 +1028,36 @@ public interface AWSSupportAsync extends AWSSupport {
      * check ID. Check IDs can be obtained by calling
      * <a>DescribeTrustedAdvisorChecks</a>.
      * </p>
+     * <note>
+     * <p>
+     * Some checks are refreshed automatically, and they cannot be refreshed by
+     * using this operation. Use of the <code>RefreshTrustedAdvisorCheck</code>
+     * operation for these checks causes an <code>InvalidParameterValue</code>
+     * error.
+     * </p>
+     * </note>
      * <p>
      * The response contains a <a>TrustedAdvisorCheckRefreshStatus</a> object,
      * which contains these fields:
      * </p>
      * <ul>
-     * <li><b>Status.</b> The refresh status of the check: "none", "enqueued",
-     * "processing", "success", or "abandoned".</li>
-     * <li><b>MillisUntilNextRefreshable.</b> The amount of time, in
-     * milliseconds, until the check is eligible for refresh.</li>
-     * <li><b>CheckId.</b> The unique identifier for the check.</li>
+     * <li>
+     * <p>
+     * <b>status.</b> The refresh status of the check: "none", "enqueued",
+     * "processing", "success", or "abandoned".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>millisUntilNextRefreshable.</b> The amount of time, in milliseconds,
+     * until the check is eligible for refresh.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>checkId.</b> The unique identifier for the check.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param refreshTrustedAdvisorCheckRequest
@@ -873,16 +1074,36 @@ public interface AWSSupportAsync extends AWSSupport {
      * check ID. Check IDs can be obtained by calling
      * <a>DescribeTrustedAdvisorChecks</a>.
      * </p>
+     * <note>
+     * <p>
+     * Some checks are refreshed automatically, and they cannot be refreshed by
+     * using this operation. Use of the <code>RefreshTrustedAdvisorCheck</code>
+     * operation for these checks causes an <code>InvalidParameterValue</code>
+     * error.
+     * </p>
+     * </note>
      * <p>
      * The response contains a <a>TrustedAdvisorCheckRefreshStatus</a> object,
      * which contains these fields:
      * </p>
      * <ul>
-     * <li><b>Status.</b> The refresh status of the check: "none", "enqueued",
-     * "processing", "success", or "abandoned".</li>
-     * <li><b>MillisUntilNextRefreshable.</b> The amount of time, in
-     * milliseconds, until the check is eligible for refresh.</li>
-     * <li><b>CheckId.</b> The unique identifier for the check.</li>
+     * <li>
+     * <p>
+     * <b>status.</b> The refresh status of the check: "none", "enqueued",
+     * "processing", "success", or "abandoned".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>millisUntilNextRefreshable.</b> The amount of time, in milliseconds,
+     * until the check is eligible for refresh.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>checkId.</b> The unique identifier for the check.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param refreshTrustedAdvisorCheckRequest
@@ -901,7 +1122,7 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Takes a <code>CaseId</code> and returns the initial state of the case
+     * Takes a <code>caseId</code> and returns the initial state of the case
      * along with the state of the case after the call to <a>ResolveCase</a>
      * completed.
      * </p>
@@ -916,7 +1137,7 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Takes a <code>CaseId</code> and returns the initial state of the case
+     * Takes a <code>caseId</code> and returns the initial state of the case
      * along with the state of the case after the call to <a>ResolveCase</a>
      * completed.
      * </p>

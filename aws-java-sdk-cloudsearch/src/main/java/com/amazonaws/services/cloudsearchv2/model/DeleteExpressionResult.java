@@ -22,7 +22,9 @@ import java.io.Serializable;
  * expression being deleted.
  * </p>
  */
-public class DeleteExpressionResult implements Serializable, Cloneable {
+public class DeleteExpressionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

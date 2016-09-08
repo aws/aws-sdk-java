@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Input structure for the CreateJob operation.
  */
-public class CreateJobRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     private String jobType;
 

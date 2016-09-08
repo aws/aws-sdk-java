@@ -21,8 +21,9 @@ import java.io.Serializable;
  * An empty element.
  * </p>
  */
-public class DeleteReusableDelegationSetResult implements Serializable,
-        Cloneable {
+public class DeleteReusableDelegationSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

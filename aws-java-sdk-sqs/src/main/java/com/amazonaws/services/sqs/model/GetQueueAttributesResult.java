@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A list of returned queue attributes.
  * </p>
  */
-public class GetQueueAttributesResult implements Serializable, Cloneable {
+public class GetQueueAttributesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

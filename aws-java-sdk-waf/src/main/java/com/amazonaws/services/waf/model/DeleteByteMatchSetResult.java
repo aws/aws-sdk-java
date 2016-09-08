@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DeleteByteMatchSetResult implements Serializable, Cloneable {
+public class DeleteByteMatchSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

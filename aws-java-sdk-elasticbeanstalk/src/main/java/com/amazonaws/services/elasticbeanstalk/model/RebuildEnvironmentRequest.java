@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class RebuildEnvironmentRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RebuildEnvironmentRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

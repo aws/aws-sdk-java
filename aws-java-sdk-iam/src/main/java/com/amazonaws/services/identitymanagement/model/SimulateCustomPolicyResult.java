@@ -22,7 +22,9 @@ import java.io.Serializable;
  * <a>SimulateCustomPolicy</a> request.
  * </p>
  */
-public class SimulateCustomPolicyResult implements Serializable, Cloneable {
+public class SimulateCustomPolicyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

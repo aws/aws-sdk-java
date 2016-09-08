@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The <code>ReadPipelineRequest</code> structure.
  * </p>
  */
-public class ReadPipelineRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ReadPipelineRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

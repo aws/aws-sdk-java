@@ -27,7 +27,9 @@ import java.io.Serializable;
  * checking the <code>Status</code> parameter.
  * </p>
  */
-public class CreateEvaluationResult implements Serializable, Cloneable {
+public class CreateEvaluationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

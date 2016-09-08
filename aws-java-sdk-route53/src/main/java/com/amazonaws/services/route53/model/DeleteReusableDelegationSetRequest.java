@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A complex type containing the information for the delete request.
  * </p>
  */
-public class DeleteReusableDelegationSetRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteReusableDelegationSetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

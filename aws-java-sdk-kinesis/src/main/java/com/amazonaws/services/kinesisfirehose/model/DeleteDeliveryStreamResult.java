@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of <a>DeleteDeliveryStream</a>.
  * </p>
  */
-public class DeleteDeliveryStreamResult implements Serializable, Cloneable {
+public class DeleteDeliveryStreamResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

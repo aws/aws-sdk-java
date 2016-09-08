@@ -22,8 +22,9 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class CreateOpenIDConnectProviderResult implements Serializable,
-        Cloneable {
+public class CreateOpenIDConnectProviderResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

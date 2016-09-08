@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The GET request to list existing <a>RestApis</a> defined for your collection.
  * </p>
  */
-public class GetRestApisRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetRestApisRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

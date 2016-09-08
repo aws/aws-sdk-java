@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the StartSupportDataExport operation.
  */
-public class StartSupportDataExportRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class StartSupportDataExportRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

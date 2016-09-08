@@ -22,7 +22,9 @@ import java.io.Serializable;
  * fields configured for the domain specified in the request.
  * </p>
  */
-public class DescribeIndexFieldsResult implements Serializable, Cloneable {
+public class DescribeIndexFieldsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

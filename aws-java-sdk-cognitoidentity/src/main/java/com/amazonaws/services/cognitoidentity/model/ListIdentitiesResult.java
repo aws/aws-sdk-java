@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * The response to a ListIdentities request.
  */
-public class ListIdentitiesResult implements Serializable, Cloneable {
+public class ListIdentitiesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** An identity pool ID in the format REGION:GUID. */
     private String identityPoolId;

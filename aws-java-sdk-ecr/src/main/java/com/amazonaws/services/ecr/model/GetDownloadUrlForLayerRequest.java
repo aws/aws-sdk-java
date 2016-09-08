@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetDownloadUrlForLayerRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetDownloadUrlForLayerRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

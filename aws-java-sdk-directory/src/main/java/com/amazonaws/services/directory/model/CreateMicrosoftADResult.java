@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Result of a CreateMicrosoftAD request.
  * </p>
  */
-public class CreateMicrosoftADResult implements Serializable, Cloneable {
+public class CreateMicrosoftADResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

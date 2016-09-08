@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>DescribeDirectories</a> operation.
  * </p>
  */
-public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeDirectoriesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

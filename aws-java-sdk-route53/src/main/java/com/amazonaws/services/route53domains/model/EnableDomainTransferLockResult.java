@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The EnableDomainTransferLock response includes the following elements.
  * </p>
  */
-public class EnableDomainTransferLockResult implements Serializable, Cloneable {
+public class EnableDomainTransferLockResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

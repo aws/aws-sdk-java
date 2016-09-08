@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Lists the device's response, as an administrator.
  * </p>
  */
-public class AdminListDevicesResult implements Serializable, Cloneable {
+public class AdminListDevicesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

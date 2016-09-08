@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Output structure for the ListJobs operation.
  */
-public class ListJobsResult implements Serializable, Cloneable {
+public class ListJobsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<Job> jobs;
 

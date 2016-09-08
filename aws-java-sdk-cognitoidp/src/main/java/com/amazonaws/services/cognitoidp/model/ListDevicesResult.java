@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the response to list devices.
  * </p>
  */
-public class ListDevicesResult implements Serializable, Cloneable {
+public class ListDevicesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

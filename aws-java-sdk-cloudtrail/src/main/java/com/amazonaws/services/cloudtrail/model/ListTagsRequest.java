@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Specifies a list of trail tags to return.
  * </p>
  */
-public class ListTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

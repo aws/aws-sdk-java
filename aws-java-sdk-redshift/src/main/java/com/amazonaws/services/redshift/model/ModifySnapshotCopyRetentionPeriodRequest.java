@@ -22,7 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class ModifySnapshotCopyRetentionPeriodRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

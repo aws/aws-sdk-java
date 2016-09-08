@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListGatewaysResult implements Serializable, Cloneable {
+public class ListGatewaysResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<GatewayInfo> gateways;
 

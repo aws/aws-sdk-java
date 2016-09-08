@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the create device pool operation.
  * </p>
  */
-public class CreateDevicePoolRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateDevicePoolRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

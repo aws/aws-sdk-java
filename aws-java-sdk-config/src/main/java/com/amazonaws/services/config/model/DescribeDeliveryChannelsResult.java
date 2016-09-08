@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for the <a>DescribeDeliveryChannels</a> action.
  * </p>
  */
-public class DescribeDeliveryChannelsResult implements Serializable, Cloneable {
+public class DescribeDeliveryChannelsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

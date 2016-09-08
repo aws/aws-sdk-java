@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a <i>DescribeCacheParameters</i> action.
  * </p>
  */
-public class DescribeCacheParametersResult implements Serializable, Cloneable {
+public class DescribeCacheParametersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

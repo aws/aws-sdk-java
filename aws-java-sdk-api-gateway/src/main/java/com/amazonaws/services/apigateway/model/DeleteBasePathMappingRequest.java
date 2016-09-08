@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to delete the <a>BasePathMapping</a> resource.
  * </p>
  */
-public class DeleteBasePathMappingRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteBasePathMappingRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request that specifies the name of a trail to delete.
  * </p>
  */
-public class DeleteTrailRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteTrailRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

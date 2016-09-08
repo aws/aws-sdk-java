@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output for <a>GetRecords</a>.
  * </p>
  */
-public class GetRecordsResult implements Serializable, Cloneable {
+public class GetRecordsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

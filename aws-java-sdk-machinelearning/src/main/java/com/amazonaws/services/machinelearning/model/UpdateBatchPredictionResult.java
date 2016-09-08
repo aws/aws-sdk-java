@@ -25,7 +25,9 @@ import java.io.Serializable;
  * operation.
  * </p>
  */
-public class UpdateBatchPredictionResult implements Serializable, Cloneable {
+public class UpdateBatchPredictionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

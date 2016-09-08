@@ -22,7 +22,9 @@ import java.io.Serializable;
  * the domains specified in the request or all domains owned by the account.
  * </p>
  */
-public class DescribeDomainsResult implements Serializable, Cloneable {
+public class DescribeDomainsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<DomainStatus> domainStatusList;
 

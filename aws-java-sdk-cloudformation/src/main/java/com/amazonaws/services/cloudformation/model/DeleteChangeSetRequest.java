@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>DeleteChangeSet</a> action.
  * </p>
  */
-public class DeleteChangeSetRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteChangeSetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

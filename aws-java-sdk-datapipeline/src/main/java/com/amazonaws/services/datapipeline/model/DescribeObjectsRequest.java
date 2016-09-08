@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribeObjects.
  * </p>
  */
-public class DescribeObjectsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeObjectsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response from the server for a registration request.
  * </p>
  */
-public class SignUpResult implements Serializable, Cloneable {
+public class SignUpResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

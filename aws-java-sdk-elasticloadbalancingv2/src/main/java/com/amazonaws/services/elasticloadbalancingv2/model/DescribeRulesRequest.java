@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribeRules.
  * </p>
  */
-public class DescribeRulesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeRulesRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

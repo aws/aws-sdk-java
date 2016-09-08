@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetComplianceSummaryByResourceTypeResult implements Serializable,
-        Cloneable {
+public class GetComplianceSummaryByResourceTypeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

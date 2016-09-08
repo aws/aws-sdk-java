@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * received through Amazon SES.
  * </p>
  */
-public class SendBounceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

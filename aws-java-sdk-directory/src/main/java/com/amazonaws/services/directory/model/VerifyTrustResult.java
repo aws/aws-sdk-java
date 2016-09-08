@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Result of a VerifyTrust request.
  * </p>
  */
-public class VerifyTrustResult implements Serializable, Cloneable {
+public class VerifyTrustResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

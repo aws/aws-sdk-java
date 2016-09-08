@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class ListQueuesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A structure containing a list of virtual private gateways.
  * </p>
  */
-public class DescribeVirtualGatewaysResult implements Serializable, Cloneable {
+public class DescribeVirtualGatewaysResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request sent to retrieve the account settings.
  * </p>
  */
-public class GetAccountSettingsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetAccountSettingsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

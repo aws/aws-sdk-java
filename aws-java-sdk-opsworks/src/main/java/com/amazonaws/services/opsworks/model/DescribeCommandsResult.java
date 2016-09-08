@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeCommands</code> request.
  * </p>
  */
-public class DescribeCommandsResult implements Serializable, Cloneable {
+public class DescribeCommandsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,8 +21,9 @@ import java.io.Serializable;
  * The <code>UpdatePipelineNotificationsResponse</code> structure.
  * </p>
  */
-public class UpdatePipelineNotificationsResult implements Serializable,
-        Cloneable {
+public class UpdatePipelineNotificationsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

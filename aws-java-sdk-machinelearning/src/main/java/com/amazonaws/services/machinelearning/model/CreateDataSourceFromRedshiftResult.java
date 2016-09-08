@@ -27,8 +27,9 @@ import java.io.Serializable;
  * and checking the <code>Status</code> parameter.
  * </p>
  */
-public class CreateDataSourceFromRedshiftResult implements Serializable,
-        Cloneable {
+public class CreateDataSourceFromRedshiftResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class TestMetricFilterRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class TestMetricFilterRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String filterPattern;
     /**

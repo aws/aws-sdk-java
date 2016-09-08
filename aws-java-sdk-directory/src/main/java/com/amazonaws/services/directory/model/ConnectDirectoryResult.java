@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the results of the <a>ConnectDirectory</a> operation.
  * </p>
  */
-public class ConnectDirectoryResult implements Serializable, Cloneable {
+public class ConnectDirectoryResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

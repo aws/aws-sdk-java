@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>ListAvailableZones</a> action.
  * </p>
  */
-public class ListAvailableZonesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListAvailableZonesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

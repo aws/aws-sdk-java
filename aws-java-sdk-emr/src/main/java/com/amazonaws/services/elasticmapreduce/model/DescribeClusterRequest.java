@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This input determines which cluster to describe.
  * </p>
  */
-public class DescribeClusterRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeClusterRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

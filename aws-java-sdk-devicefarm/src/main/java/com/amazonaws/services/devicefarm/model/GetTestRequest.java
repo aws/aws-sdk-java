@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the get test operation.
  * </p>
  */
-public class GetTestRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetTestRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

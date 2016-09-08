@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input argument to the <a>AddJobFlowSteps</a> operation.
  * </p>
  */
-public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AddJobFlowStepsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

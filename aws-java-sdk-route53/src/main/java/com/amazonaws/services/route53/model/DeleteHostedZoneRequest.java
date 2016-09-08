@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * to delete.
  * </p>
  */
-public class DeleteHostedZoneRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteHostedZoneRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

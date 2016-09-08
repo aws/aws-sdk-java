@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input to the SetVisibleToAllUsers action.
  * </p>
  */
-public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetVisibleToAllUsersRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

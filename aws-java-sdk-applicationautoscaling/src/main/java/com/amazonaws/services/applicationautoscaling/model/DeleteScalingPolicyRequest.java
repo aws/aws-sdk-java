@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteScalingPolicyRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteScalingPolicyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

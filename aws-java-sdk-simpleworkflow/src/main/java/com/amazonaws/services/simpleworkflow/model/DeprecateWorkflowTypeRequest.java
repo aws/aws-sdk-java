@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeprecateWorkflowTypeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeprecateWorkflowTypeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

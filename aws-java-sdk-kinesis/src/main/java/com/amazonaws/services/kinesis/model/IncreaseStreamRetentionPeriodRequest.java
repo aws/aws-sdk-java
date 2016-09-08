@@ -23,7 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class IncreaseStreamRetentionPeriodRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -34,8 +34,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateBandwidthRateLimitRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
     /**

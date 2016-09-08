@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>SetStackPolicy</a> action.
  * </p>
  */
-public class SetStackPolicyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SetStackPolicyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

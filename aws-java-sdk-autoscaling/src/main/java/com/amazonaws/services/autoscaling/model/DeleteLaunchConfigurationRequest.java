@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DeleteLaunchConfiguration.
  * </p>
  */
-public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteLaunchConfigurationRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

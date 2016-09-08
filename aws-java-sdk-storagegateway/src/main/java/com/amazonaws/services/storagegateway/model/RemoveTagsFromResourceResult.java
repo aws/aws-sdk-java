@@ -21,7 +21,9 @@ import java.io.Serializable;
  * RemoveTagsFromResourceOutput
  * </p>
  */
-public class RemoveTagsFromResourceResult implements Serializable, Cloneable {
+public class RemoveTagsFromResourceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

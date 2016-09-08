@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The <code>ReadJobRequest</code> structure.
  * </p>
  */
-public class ReadJobRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ReadJobRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

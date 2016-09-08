@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input parameters for the <i>ListTagsForResource</i> action.
  * </p>
  */
-public class ListTagsForResourceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListTagsForResourceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

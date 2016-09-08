@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribePolicies.
  * </p>
  */
-public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribePoliciesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import java.io.Serializable;
  * identities, this response also contains the verification token.
  * </p>
  */
-public class GetIdentityVerificationAttributesResult implements Serializable,
-        Cloneable {
+public class GetIdentityVerificationAttributesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

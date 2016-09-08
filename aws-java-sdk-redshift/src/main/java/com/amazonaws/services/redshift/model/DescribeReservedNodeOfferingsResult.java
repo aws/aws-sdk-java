@@ -20,8 +20,9 @@ import java.io.Serializable;
  * <p>
  * </p>
  */
-public class DescribeReservedNodeOfferingsResult implements Serializable,
-        Cloneable {
+public class DescribeReservedNodeOfferingsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

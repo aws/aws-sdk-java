@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class InitiateLayerUploadResult implements Serializable, Cloneable {
+public class InitiateLayerUploadResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

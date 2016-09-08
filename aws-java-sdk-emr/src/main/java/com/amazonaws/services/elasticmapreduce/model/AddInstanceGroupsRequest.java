@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input to an AddInstanceGroups call.
  * </p>
  */
-public class AddInstanceGroupsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AddInstanceGroupsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribeSSLPolicies.
  * </p>
  */
-public class DescribeSSLPoliciesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeSSLPoliciesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

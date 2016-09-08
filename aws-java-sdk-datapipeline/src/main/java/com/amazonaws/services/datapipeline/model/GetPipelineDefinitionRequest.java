@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for GetPipelineDefinition.
  * </p>
  */
-public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetPipelineDefinitionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

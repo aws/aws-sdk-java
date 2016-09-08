@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of DescribeLifecycleHookTypes.
  * </p>
  */
-public class DescribeLifecycleHookTypesResult implements Serializable,
-        Cloneable {
+public class DescribeLifecycleHookTypesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

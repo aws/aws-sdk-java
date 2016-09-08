@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  */
 public class DescribeConfigRuleEvaluationStatusRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

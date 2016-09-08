@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListSigningCertificatesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListSigningCertificatesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

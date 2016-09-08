@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * The result of a successful ListIdentityPools action.
  */
-public class ListIdentityPoolsResult implements Serializable, Cloneable {
+public class ListIdentityPoolsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** The identity pools returned by the ListIdentityPools action. */
     private java.util.List<IdentityPoolShortDescription> identityPools;

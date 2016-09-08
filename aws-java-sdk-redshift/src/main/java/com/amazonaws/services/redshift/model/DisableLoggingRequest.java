@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * </p>
  */
-public class DisableLoggingRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DisableLoggingRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

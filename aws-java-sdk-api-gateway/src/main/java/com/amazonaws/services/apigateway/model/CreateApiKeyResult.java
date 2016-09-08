@@ -27,7 +27,9 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html"
  * >Use API Keys</a> </div>
  */
-public class CreateApiKeyResult implements Serializable, Cloneable {
+public class CreateApiKeyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

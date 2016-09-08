@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetAttributesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /** The name of the domain in which to perform the operation. */
     private String domainName;

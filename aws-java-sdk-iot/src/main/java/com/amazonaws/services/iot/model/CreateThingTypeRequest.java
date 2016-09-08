@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the CreateThingType operation.
  * </p>
  */
-public class CreateThingTypeRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateThingTypeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to add a method to an existing <a>Resource</a> resource.
  * </p>
  */
-public class PutMethodRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

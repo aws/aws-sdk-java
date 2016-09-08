@@ -25,7 +25,9 @@ import java.io.Serializable;
  * creating a connection.
  * </p>
  */
-public class DescribeLocationsResult implements Serializable, Cloneable {
+public class DescribeLocationsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

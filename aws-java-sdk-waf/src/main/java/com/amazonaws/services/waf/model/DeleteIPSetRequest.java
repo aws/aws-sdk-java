@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteIPSetRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

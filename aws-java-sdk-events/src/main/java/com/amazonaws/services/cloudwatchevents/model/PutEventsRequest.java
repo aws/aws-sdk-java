@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <a>PutEvents</a> operation.
  * </p>
  */
-public class PutEventsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PutEventsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

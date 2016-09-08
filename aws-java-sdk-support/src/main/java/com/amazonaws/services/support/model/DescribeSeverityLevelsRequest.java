@@ -18,10 +18,11 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
-public class DescribeSeverityLevelsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeSeverityLevelsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

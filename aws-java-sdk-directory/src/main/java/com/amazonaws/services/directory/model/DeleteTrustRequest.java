@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Microsoft AD in the AWS cloud and the external domain.
  * </p>
  */
-public class DeleteTrustRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteTrustRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

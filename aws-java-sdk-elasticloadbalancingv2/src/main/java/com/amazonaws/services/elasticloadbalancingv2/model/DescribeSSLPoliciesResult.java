@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of DescribeSSLPolicies.
  * </p>
  */
-public class DescribeSSLPoliciesResult implements Serializable, Cloneable {
+public class DescribeSSLPoliciesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

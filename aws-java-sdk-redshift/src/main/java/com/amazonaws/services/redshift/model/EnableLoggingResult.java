@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Describes the status of logging for a cluster.
  * </p>
  */
-public class EnableLoggingResult implements Serializable, Cloneable {
+public class EnableLoggingResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

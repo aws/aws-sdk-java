@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Updates a conditional forwarder.
  * </p>
  */
-public class UpdateConditionalForwarderRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateConditionalForwarderRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

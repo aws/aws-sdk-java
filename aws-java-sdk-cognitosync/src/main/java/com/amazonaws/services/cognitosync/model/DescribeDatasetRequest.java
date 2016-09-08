@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request for meta data about a dataset (creation date, number of records,
  * size) by owner and dataset name.
  */
-public class DescribeDatasetRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeDatasetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * A name-spaced GUID (for example,

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * SetDataRetrievalPolicy input.
  * </p>
  */
-public class SetDataRetrievalPolicyRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetDataRetrievalPolicyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

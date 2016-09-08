@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribeScalingActivities.
  * </p>
  */
-public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeScalingActivitiesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A JSON object containing the of the gateway that was shut down.
  * </p>
  */
-public class ShutdownGatewayResult implements Serializable, Cloneable {
+public class ShutdownGatewayResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

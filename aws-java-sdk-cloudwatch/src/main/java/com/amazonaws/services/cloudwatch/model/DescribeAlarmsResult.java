@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for <a>DescribeAlarms</a>.
  * </p>
  */
-public class DescribeAlarmsResult implements Serializable, Cloneable {
+public class DescribeAlarmsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

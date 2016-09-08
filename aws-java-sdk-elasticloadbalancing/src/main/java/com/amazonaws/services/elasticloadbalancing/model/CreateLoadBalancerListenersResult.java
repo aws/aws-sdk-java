@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the parameters for CreateLoadBalancerListener.
  * </p>
  */
-public class CreateLoadBalancerListenersResult implements Serializable,
-        Cloneable {
+public class CreateLoadBalancerListenersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

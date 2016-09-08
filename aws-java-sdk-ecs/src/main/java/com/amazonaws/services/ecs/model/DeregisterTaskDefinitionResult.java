@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DeregisterTaskDefinitionResult implements Serializable, Cloneable {
+public class DeregisterTaskDefinitionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

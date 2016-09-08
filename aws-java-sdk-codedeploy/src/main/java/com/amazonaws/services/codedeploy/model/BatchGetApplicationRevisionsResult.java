@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Represents the output of a batch get application revisions operation.
  * </p>
  */
-public class BatchGetApplicationRevisionsResult implements Serializable,
-        Cloneable {
+public class BatchGetApplicationRevisionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

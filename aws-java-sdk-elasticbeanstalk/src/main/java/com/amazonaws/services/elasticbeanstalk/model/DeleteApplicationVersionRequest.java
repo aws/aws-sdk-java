@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to delete an application version.
  * </p>
  */
-public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteApplicationVersionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the ListPrincipalThings operation.
  * </p>
  */
-public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListPrincipalThingsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

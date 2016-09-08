@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for <code>RemoveTagsFromStream</code>.
  * </p>
  */
-public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RemoveTagsFromStreamRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

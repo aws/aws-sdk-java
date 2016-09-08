@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * with either the <code>imageTag</code> or <code>imageDigest</code>.
  * </p>
  */
-public class BatchDeleteImageRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class BatchDeleteImageRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

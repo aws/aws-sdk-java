@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input to the CreateIdentityPool action.
  * </p>
  */
-public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateIdentityPoolRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

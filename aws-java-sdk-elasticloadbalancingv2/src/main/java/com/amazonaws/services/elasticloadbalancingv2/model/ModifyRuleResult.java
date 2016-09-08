@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of ModifyRules.
  * </p>
  */
-public class ModifyRuleResult implements Serializable, Cloneable {
+public class ModifyRuleResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

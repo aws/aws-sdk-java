@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>CreateSnapshot</a> operation.
  * </p>
  */
-public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateSnapshotRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

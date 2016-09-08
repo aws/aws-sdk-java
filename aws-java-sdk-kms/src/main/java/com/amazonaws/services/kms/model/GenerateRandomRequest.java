@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GenerateRandomRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GenerateRandomRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of an acknowledge job action.
  * </p>
  */
-public class AcknowledgeJobRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AcknowledgeJobRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

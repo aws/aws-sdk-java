@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for <a>DescribeStackEvents</a> action.
  * </p>
  */
-public class DescribeStackEventsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeStackEventsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

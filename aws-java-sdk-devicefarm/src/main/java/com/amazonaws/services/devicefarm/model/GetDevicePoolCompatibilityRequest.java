@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the get device pool compatibility operation.
  * </p>
  */
-public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetDevicePoolCompatibilityRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,7 +22,9 @@ import java.io.Serializable;
  * account, regardless of verification status.
  * </p>
  */
-public class ListIdentitiesResult implements Serializable, Cloneable {
+public class ListIdentitiesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

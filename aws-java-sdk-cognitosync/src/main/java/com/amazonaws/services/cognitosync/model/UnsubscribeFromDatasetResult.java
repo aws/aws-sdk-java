@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Response to an UnsubscribeFromDataset request.
  * </p>
  */
-public class UnsubscribeFromDatasetResult implements Serializable, Cloneable {
+public class UnsubscribeFromDatasetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

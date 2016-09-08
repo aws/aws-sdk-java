@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for Unsubscribe action.
  * </p>
  */
-public class UnsubscribeRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UnsubscribeRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a list branches operation.
  * </p>
  */
-public class ListBranchesResult implements Serializable, Cloneable {
+public class ListBranchesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

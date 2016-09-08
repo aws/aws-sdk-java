@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The GET request to get all the usage plans of the caller's account.
  * </p>
  */
-public class GetUsagePlansRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class PromoteReadReplicaRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class PromoteReadReplicaRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

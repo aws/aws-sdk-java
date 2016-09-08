@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the DeleteConnection operation.
  * </p>
  */
-public class DeleteConnectionRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteConnectionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String connectionId;
 

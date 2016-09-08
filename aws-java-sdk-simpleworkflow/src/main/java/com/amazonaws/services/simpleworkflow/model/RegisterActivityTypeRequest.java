@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class RegisterActivityTypeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RegisterActivityTypeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

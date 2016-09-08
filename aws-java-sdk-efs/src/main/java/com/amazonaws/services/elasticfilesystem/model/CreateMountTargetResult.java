@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Provides a description of a mount target.
  * </p>
  */
-public class CreateMountTargetResult implements Serializable, Cloneable {
+public class CreateMountTargetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

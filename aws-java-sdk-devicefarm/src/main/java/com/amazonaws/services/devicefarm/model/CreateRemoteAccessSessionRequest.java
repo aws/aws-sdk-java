@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Creates and submits a request to start a remote access session.
  * </p>
  */
-public class CreateRemoteAccessSessionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateRemoteAccessSessionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

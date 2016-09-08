@@ -22,7 +22,9 @@ import java.io.Serializable;
  * attributes.
  * </p>
  */
-public class UpdateUserAttributesResult implements Serializable, Cloneable {
+public class UpdateUserAttributesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

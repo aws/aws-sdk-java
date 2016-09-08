@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of PutLifecycleHook.
  * </p>
  */
-public class PutLifecycleHookResult implements Serializable, Cloneable {
+public class PutLifecycleHookResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

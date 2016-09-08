@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>DescribeEvents</i> action.
  * </p>
  */
-public class DescribeEventsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeEventsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the CreateConnection operation.
  * </p>
  */
-public class CreateConnectionRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateConnectionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String location;
 

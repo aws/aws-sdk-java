@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetTelemetryMetadataRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetTelemetryMetadataRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

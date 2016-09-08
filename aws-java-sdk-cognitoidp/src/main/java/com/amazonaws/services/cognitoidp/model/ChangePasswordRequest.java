@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to change a user password.
  * </p>
  */
-public class ChangePasswordRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ChangePasswordRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

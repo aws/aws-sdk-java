@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateAccountPasswordPolicyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

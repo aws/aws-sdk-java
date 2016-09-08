@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DescribeUploadBufferRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeUploadBufferRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
 

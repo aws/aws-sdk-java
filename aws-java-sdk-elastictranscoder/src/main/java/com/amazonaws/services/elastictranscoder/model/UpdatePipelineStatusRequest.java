@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The <code>UpdatePipelineStatusRequest</code> structure.
  * </p>
  */
-public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdatePipelineStatusRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

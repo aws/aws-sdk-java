@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class RegisterScalableTargetRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RegisterScalableTargetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

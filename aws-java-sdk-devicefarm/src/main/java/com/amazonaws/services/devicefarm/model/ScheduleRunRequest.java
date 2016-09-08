@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the schedule run operation.
  * </p>
  */
-public class ScheduleRunRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

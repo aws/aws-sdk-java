@@ -22,7 +22,9 @@ import java.io.Serializable;
  * including information about the entity making the request.
  * </p>
  */
-public class GetCallerIdentityResult implements Serializable, Cloneable {
+public class GetCallerIdentityResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

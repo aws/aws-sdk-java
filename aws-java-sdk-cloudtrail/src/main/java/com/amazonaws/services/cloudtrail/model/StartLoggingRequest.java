@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request to CloudTrail to start logging AWS API calls for an account.
  * </p>
  */
-public class StartLoggingRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class StartLoggingRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

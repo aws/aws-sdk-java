@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for ListPlatformApplications action.
  * </p>
  */
-public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListPlatformApplicationsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

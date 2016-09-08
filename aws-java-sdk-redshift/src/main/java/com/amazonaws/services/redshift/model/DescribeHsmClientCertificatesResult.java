@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * <p/>
  */
-public class DescribeHsmClientCertificatesResult implements Serializable,
-        Cloneable {
+public class DescribeHsmClientCertificatesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

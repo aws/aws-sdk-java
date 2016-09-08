@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for a <a>EstimateTemplateCost</a> action.
  * </p>
  */
-public class EstimateTemplateCostResult implements Serializable, Cloneable {
+public class EstimateTemplateCostResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

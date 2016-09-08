@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * collection.
  * </p>
  */
-public class GetRestApiRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetRestApiRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

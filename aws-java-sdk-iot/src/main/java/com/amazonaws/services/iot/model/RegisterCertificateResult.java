@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output from the RegisterCertificate operation.
  * </p>
  */
-public class RegisterCertificateResult implements Serializable, Cloneable {
+public class RegisterCertificateResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

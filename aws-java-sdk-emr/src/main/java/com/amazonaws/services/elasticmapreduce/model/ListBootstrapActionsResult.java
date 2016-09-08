@@ -21,7 +21,9 @@ import java.io.Serializable;
  * This output contains the boostrap actions detail .
  * </p>
  */
-public class ListBootstrapActionsResult implements Serializable, Cloneable {
+public class ListBootstrapActionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output of the ListCertificates operation.
  * </p>
  */
-public class ListCertificatesResult implements Serializable, Cloneable {
+public class ListCertificatesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

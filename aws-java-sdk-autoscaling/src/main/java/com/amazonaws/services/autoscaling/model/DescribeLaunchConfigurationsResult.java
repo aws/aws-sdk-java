@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of DescribeLaunchConfigurations.
  * </p>
  */
-public class DescribeLaunchConfigurationsResult implements Serializable,
-        Cloneable {
+public class DescribeLaunchConfigurationsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

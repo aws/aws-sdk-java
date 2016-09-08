@@ -20,8 +20,9 @@ import java.io.Serializable;
  * <p>
  * </p>
  */
-public class ModifyClusterParameterGroupResult implements Serializable,
-        Cloneable {
+public class ModifyClusterParameterGroupResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

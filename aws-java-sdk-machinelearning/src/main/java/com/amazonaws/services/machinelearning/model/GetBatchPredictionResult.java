@@ -22,7 +22,9 @@ import java.io.Serializable;
  * describes a <code>BatchPrediction</code>.
  * </p>
  */
-public class GetBatchPredictionResult implements Serializable, Cloneable {
+public class GetBatchPredictionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the DescribeVirtualInterfaces operation.
  * </p>
  */
-public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeVirtualInterfacesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String connectionId;
 

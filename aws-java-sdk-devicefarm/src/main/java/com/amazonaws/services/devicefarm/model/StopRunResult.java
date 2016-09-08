@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the results of your stop run attempt.
  * </p>
  */
-public class StopRunResult implements Serializable, Cloneable {
+public class StopRunResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private Run run;
 

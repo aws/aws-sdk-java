@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DiscoverPollEndpointResult implements Serializable, Cloneable {
+public class DiscoverPollEndpointResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

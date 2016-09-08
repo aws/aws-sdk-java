@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the count of tasks in a task list.
  * </p>
  */
-public class PendingTaskCount implements Serializable, Cloneable {
+public class PendingTaskCount extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

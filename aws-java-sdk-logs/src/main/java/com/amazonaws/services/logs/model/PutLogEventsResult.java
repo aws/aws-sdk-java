@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class PutLogEventsResult implements Serializable, Cloneable {
+public class PutLogEventsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String nextSequenceToken;
 

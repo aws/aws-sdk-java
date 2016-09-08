@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a <i>DescribeTable</i> operation.
  * </p>
  */
-public class DescribeTableResult implements Serializable, Cloneable {
+public class DescribeTableResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private TableDescription table;
 

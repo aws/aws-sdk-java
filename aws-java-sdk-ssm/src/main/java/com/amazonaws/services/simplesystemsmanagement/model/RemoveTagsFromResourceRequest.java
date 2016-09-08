@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RemoveTagsFromResourceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

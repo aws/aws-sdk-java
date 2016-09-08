@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to create an <a>ApiKey</a> resource.
  * </p>
  */
-public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

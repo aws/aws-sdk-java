@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The result of the <a>CreateTags</a> operation.
  * </p>
  */
-public class CreateTagsResult implements Serializable, Cloneable {
+public class CreateTagsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

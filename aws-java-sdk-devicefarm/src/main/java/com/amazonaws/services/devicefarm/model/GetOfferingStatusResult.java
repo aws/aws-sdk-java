@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Returns the status result for a device offering.
  * </p>
  */
-public class GetOfferingStatusResult implements Serializable, Cloneable {
+public class GetOfferingStatusResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

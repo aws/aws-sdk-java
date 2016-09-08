@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the GetTopicRule operation.
  * </p>
  */
-public class GetTopicRuleRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetTopicRuleRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

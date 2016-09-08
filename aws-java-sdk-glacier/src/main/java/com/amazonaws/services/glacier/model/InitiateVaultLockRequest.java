@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input values for <code>InitiateVaultLock</code>.
  * </p>
  */
-public class InitiateVaultLockRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class InitiateVaultLockRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

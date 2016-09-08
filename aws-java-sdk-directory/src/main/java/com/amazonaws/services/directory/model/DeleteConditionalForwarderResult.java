@@ -21,8 +21,9 @@ import java.io.Serializable;
  * The result of a DeleteConditionalForwarder request.
  * </p>
  */
-public class DeleteConditionalForwarderResult implements Serializable,
-        Cloneable {
+public class DeleteConditionalForwarderResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

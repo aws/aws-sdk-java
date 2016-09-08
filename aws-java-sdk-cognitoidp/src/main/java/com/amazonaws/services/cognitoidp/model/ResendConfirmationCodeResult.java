@@ -22,7 +22,9 @@ import java.io.Serializable;
  * request to resend a confirmation code.
  * </p>
  */
-public class ResendConfirmationCodeResult implements Serializable, Cloneable {
+public class ResendConfirmationCodeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private CodeDeliveryDetailsType codeDeliveryDetails;
 

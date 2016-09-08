@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a <i>DescribeLimits</i> operation.
  * </p>
  */
-public class DescribeLimitsResult implements Serializable, Cloneable {
+public class DescribeLimitsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

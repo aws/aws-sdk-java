@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Data returned by the <b>DescribeAccountAttributes</b> action.
  * </p>
  */
-public class DescribeAccountAttributesResult implements Serializable, Cloneable {
+public class DescribeAccountAttributesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,7 +22,9 @@ import java.io.Serializable;
  * error.
  * </p>
  */
-public class StartLoggingResult implements Serializable, Cloneable {
+public class StartLoggingResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

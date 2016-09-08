@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Returned for a successful ListRecordsRequest.
  */
-public class ListRecordsResult implements Serializable, Cloneable {
+public class ListRecordsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** A list of all records. */
     private com.amazonaws.internal.SdkInternalList<Record> records;

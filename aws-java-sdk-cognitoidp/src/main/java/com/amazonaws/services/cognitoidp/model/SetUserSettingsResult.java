@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response from the server for a set user settings request.
  * </p>
  */
-public class SetUserSettingsResult implements Serializable, Cloneable {
+public class SetUserSettingsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

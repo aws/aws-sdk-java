@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateDataSourceFromRDSRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

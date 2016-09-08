@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the result of a get device request.
  * </p>
  */
-public class GetDeviceResult implements Serializable, Cloneable {
+public class GetDeviceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private Device device;
 

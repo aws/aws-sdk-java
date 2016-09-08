@@ -56,14 +56,14 @@ public class CreateDistributionRequestMarshaller
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2016-08-20/distribution";
+        String uriResourcePath = "/2016-09-07/distribution";
 
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter,
-                    "http://cloudfront.amazonaws.com/doc/2016-08-20/");
+                    "http://cloudfront.amazonaws.com/doc/2016-09-07/");
 
             DistributionConfig distributionConfig = createDistributionRequest
                     .getDistributionConfig();
@@ -1044,6 +1044,12 @@ public class CreateDistributionRequestMarshaller
                 if (distributionConfig.getWebACLId() != null) {
                     xmlWriter.startElement("WebACLId")
                             .value(distributionConfig.getWebACLId())
+                            .endElement();
+                }
+
+                if (distributionConfig.getHttpVersion() != null) {
+                    xmlWriter.startElement("HttpVersion")
+                            .value(distributionConfig.getHttpVersion())
                             .endElement();
                 }
                 xmlWriter.endElement();

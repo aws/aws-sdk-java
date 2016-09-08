@@ -22,7 +22,9 @@ import java.io.Serializable;
  * to return information about the remote access session.
  * </p>
  */
-public class ListRemoteAccessSessionsResult implements Serializable, Cloneable {
+public class ListRemoteAccessSessionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

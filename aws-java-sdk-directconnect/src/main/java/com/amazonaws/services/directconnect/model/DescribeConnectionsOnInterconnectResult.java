@@ -21,8 +21,9 @@ import java.io.Serializable;
  * A structure containing a list of connections.
  * </p>
  */
-public class DescribeConnectionsOnInterconnectResult implements Serializable,
-        Cloneable {
+public class DescribeConnectionsOnInterconnectResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

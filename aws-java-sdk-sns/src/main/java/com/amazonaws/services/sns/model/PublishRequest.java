@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for Publish action.
  * </p>
  */
-public class PublishRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

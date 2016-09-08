@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response to a <a>ListXssMatchSets</a> request.
  * </p>
  */
-public class ListXssMatchSetsResult implements Serializable, Cloneable {
+public class ListXssMatchSetsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

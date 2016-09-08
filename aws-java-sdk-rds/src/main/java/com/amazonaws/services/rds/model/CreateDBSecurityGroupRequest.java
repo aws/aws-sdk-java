@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateDBSecurityGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

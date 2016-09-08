@@ -31,7 +31,9 @@ import java.io.Serializable;
  * </p>
  * </note>
  */
-public class ActivateGatewayResult implements Serializable, Cloneable {
+public class ActivateGatewayResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

@@ -22,7 +22,9 @@ import java.io.Serializable;
  * geolocation code.
  * </p>
  */
-public class GetGeoLocationResult implements Serializable, Cloneable {
+public class GetGeoLocationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

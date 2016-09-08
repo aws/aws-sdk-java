@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListLaunchPathsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListLaunchPathsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

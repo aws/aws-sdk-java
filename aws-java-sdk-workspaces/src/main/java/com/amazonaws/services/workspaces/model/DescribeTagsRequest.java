@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request of the <a>DescribeTags</a> operation.
  * </p>
  */
-public class DescribeTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

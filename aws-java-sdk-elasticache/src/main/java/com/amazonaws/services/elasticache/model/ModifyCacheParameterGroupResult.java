@@ -33,7 +33,9 @@ import java.io.Serializable;
  * </li>
  * </ul>
  */
-public class ModifyCacheParameterGroupResult implements Serializable, Cloneable {
+public class ModifyCacheParameterGroupResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

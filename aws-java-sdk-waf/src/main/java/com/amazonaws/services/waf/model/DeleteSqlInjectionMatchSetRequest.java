@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to delete a <a>SqlInjectionMatchSet</a> from AWS WAF.
  * </p>
  */
-public class DeleteSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteSqlInjectionMatchSetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

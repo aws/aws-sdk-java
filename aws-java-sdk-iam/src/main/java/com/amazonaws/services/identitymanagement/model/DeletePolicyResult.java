@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DeletePolicyResult implements Serializable, Cloneable {
+public class DeletePolicyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

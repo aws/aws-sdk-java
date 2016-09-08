@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * </p>
  */
-public class DeleteClusterParameterGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteClusterParameterGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

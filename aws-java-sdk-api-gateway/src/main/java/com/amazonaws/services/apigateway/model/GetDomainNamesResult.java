@@ -24,7 +24,9 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html"
  * >Use Client-Side Certificate</a> </div>
  */
-public class GetDomainNamesResult implements Serializable, Cloneable {
+public class GetDomainNamesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String position;
     /**

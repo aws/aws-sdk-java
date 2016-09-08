@@ -15,14 +15,16 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <p>
  * Contains the output of DescribeVpcClassicLinkDnsSupport.
  * </p>
  */
-public class DescribeVpcClassicLinkDnsSupportResult implements Serializable,
-        Cloneable {
+public class DescribeVpcClassicLinkDnsSupportResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

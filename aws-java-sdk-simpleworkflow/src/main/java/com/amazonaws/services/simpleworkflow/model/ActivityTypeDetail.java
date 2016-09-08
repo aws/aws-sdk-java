@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Detailed information about an activity type.
  * </p>
  */
-public class ActivityTypeDetail implements Serializable, Cloneable {
+public class ActivityTypeDetail extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

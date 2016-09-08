@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for ConfigureHealthCheck.
  * </p>
  */
-public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ConfigureHealthCheckRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

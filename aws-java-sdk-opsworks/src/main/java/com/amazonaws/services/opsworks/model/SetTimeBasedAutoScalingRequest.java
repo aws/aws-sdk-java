@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class SetTimeBasedAutoScalingRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetTimeBasedAutoScalingRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

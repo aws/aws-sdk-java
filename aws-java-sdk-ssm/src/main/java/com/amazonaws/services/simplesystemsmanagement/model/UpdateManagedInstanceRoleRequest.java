@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateManagedInstanceRoleRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateManagedInstanceRoleRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

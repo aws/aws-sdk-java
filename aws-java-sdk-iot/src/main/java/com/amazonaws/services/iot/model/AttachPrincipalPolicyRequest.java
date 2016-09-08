@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the AttachPrincipalPolicy operation.
  * </p>
  */
-public class AttachPrincipalPolicyRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AttachPrincipalPolicyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The result of the <a>RunJobFlow</a> operation.
  * </p>
  */
-public class RunJobFlowResult implements Serializable, Cloneable {
+public class RunJobFlowResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

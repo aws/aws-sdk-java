@@ -22,7 +22,9 @@ import java.io.Serializable;
  * expressions configured for the domain specified in the request.
  * </p>
  */
-public class DescribeExpressionsResult implements Serializable, Cloneable {
+public class DescribeExpressionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

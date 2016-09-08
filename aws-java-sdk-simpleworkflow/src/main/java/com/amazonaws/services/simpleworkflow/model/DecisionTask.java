@@ -22,7 +22,9 @@ import java.io.Serializable;
  * deciders in order for them to make decisions.
  * </p>
  */
-public class DecisionTask implements Serializable, Cloneable {
+public class DecisionTask extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

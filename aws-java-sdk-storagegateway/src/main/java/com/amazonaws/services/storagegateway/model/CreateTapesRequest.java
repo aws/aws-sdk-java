@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * CreateTapesInput
  * </p>
  */
-public class CreateTapesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output of the CreateThing operation.
  * </p>
  */
-public class CreateThingResult implements Serializable, Cloneable {
+public class CreateThingResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

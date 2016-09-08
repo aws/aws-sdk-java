@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request representing an offering renewal.
  * </p>
  */
-public class RenewOfferingRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class RenewOfferingRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

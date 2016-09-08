@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for <a>ValidateTemplate</a> action.
  * </p>
  */
-public class ValidateTemplateRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ValidateTemplateRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

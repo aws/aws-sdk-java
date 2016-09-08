@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for ModifyTargetGroup.
  * </p>
  */
-public class ModifyTargetGroupRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ModifyTargetGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

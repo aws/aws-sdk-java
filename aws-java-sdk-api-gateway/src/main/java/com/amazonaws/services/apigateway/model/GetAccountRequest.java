@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <a>Account</a> resource.
  * </p>
  */
-public class GetAccountRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetAccountRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

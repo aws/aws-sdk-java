@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Response for GetPlatformApplicationAttributes action.
  * </p>
  */
-public class GetPlatformApplicationAttributesResult implements Serializable,
-        Cloneable {
+public class GetPlatformApplicationAttributesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

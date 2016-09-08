@@ -22,7 +22,9 @@ import java.io.Serializable;
  * configured.
  * </p>
  */
-public class AddWorkingStorageResult implements Serializable, Cloneable {
+public class AddWorkingStorageResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

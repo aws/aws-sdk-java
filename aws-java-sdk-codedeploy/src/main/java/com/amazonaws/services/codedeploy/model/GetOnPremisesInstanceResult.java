@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a get on-premises instance operation.
  * </p>
  */
-public class GetOnPremisesInstanceResult implements Serializable, Cloneable {
+public class GetOnPremisesInstanceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

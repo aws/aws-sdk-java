@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The DeleteTagsForDomainRequest includes the following elements.
  * </p>
  */
-public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteTagsForDomainRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

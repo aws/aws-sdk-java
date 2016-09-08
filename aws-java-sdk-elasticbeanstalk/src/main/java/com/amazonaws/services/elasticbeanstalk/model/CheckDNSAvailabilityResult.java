@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Indicates if the specified CNAME is available.
  * </p>
  */
-public class CheckDNSAvailabilityResult implements Serializable, Cloneable {
+public class CheckDNSAvailabilityResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

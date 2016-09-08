@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Describes the properties of an environment.
  * </p>
  */
-public class TerminateEnvironmentResult implements Serializable, Cloneable {
+public class TerminateEnvironmentResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

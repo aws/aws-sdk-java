@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * addresses you have attempted to verify under your AWS account.
  * </p>
  */
-public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteVerifiedEmailAddressRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

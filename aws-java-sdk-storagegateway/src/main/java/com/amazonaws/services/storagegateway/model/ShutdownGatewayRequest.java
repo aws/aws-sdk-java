@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing the of the gateway to shut down.
  * </p>
  */
-public class ShutdownGatewayRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ShutdownGatewayRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
 

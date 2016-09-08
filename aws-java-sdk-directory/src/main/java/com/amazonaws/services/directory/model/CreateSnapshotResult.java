@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the results of the <a>CreateSnapshot</a> operation.
  * </p>
  */
-public class CreateSnapshotResult implements Serializable, Cloneable {
+public class CreateSnapshotResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

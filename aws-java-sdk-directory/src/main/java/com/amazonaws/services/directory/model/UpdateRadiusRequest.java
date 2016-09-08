@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>UpdateRadius</a> operation.
  * </p>
  */
-public class UpdateRadiusRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateRadiusRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

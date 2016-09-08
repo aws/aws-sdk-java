@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The ListOperations response includes the following elements.
  * </p>
  */
-public class ListOperationsResult implements Serializable, Cloneable {
+public class ListOperationsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

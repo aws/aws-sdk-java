@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The UpdateTagsForDomainRequest includes the following elements.
  * </p>
  */
-public class UpdateTagsForDomainRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateTagsForDomainRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

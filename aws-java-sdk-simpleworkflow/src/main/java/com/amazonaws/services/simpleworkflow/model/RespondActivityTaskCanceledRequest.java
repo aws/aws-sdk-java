@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class RespondActivityTaskCanceledRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RespondActivityTaskCanceledRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

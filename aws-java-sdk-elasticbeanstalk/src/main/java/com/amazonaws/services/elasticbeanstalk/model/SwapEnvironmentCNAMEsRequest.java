@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Swaps the CNAMEs of two environments.
  * </p>
  */
-public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SwapEnvironmentCNAMEsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class UpdateContainerAgentResult implements Serializable, Cloneable {
+public class UpdateContainerAgentResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private ContainerInstance containerInstance;
 

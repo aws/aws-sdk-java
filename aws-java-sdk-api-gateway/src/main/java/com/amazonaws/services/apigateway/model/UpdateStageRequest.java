@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * resource.
  * </p>
  */
-public class UpdateStageRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateStageRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

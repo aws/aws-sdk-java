@@ -26,8 +26,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * pending changes, set the <code>Deployed</code> option to <code>true</code>.
  * </p>
  */
-public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeIndexFieldsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

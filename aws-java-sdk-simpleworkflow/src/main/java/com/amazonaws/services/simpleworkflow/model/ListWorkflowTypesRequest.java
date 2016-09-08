@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListWorkflowTypesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input value for <code>RemoveTagsFromVaultInput</code>.
  * </p>
  */
-public class RemoveTagsFromVaultRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RemoveTagsFromVaultRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

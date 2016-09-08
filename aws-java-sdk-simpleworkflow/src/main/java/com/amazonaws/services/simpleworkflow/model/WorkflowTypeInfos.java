@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains a paginated list of information structures about workflow types.
  * </p>
  */
-public class WorkflowTypeInfos implements Serializable, Cloneable {
+public class WorkflowTypeInfos extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

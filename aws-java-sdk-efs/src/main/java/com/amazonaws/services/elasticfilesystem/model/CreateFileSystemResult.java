@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Description of the file system.
  * </p>
  */
-public class CreateFileSystemResult implements Serializable, Cloneable {
+public class CreateFileSystemResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

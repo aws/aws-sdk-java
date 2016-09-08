@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a successful <a>ListAccessKeys</a> request.
  * </p>
  */
-public class ListAccessKeysResult implements Serializable, Cloneable {
+public class ListAccessKeysResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

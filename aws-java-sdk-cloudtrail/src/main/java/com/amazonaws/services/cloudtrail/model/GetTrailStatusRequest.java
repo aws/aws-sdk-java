@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The name of a trail about which you want the current status.
  * </p>
  */
-public class GetTrailStatusRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetTrailStatusRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

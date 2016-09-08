@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetShippingLabelRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<String> jobIds;
 

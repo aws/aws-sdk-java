@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The result of a RegisterEventTopic request.
  * </p>
  */
-public class RegisterEventTopicResult implements Serializable, Cloneable {
+public class RegisterEventTopicResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

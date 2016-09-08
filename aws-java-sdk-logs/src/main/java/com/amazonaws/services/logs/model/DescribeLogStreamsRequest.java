@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeLogStreamsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

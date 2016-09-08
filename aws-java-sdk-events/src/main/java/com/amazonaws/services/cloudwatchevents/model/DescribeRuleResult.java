@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The result of the <a>DescribeRule</a> operation.
  * </p>
  */
-public class DescribeRuleResult implements Serializable, Cloneable {
+public class DescribeRuleResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

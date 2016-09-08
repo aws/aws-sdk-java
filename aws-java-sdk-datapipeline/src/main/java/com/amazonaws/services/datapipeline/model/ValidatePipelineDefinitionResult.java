@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of ValidatePipelineDefinition.
  * </p>
  */
-public class ValidatePipelineDefinitionResult implements Serializable,
-        Cloneable {
+public class ValidatePipelineDefinitionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

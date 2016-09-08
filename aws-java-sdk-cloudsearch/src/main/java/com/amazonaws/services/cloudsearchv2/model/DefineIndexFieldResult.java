@@ -22,7 +22,9 @@ import java.io.Serializable;
  * status of the newly-configured index field.
  * </p>
  */
-public class DefineIndexFieldResult implements Serializable, Cloneable {
+public class DefineIndexFieldResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private IndexFieldStatus indexField;
 

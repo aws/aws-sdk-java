@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class StartInstanceResult implements Serializable, Cloneable {
+public class StartInstanceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

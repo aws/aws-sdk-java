@@ -20,7 +20,9 @@ import java.io.Serializable;
  * When you update status for a pipeline, Elastic Transcoder returns the values
  * that you specified in the request.
  */
-public class UpdatePipelineStatusResult implements Serializable, Cloneable {
+public class UpdatePipelineStatusResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

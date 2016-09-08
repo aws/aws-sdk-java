@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * </p>
  */
-public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeLoggingStatusRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

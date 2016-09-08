@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <a>RemoveTargets</a> operation.
  * </p>
  */
-public class RemoveTargetsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

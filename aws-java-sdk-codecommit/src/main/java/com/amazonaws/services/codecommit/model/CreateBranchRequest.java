@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a create branch operation.
  * </p>
  */
-public class CreateBranchRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

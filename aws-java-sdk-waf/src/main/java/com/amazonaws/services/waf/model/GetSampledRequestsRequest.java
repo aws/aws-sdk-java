@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetSampledRequestsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetSampledRequestsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The <code>TestRoleResponse</code> structure.
  * </p>
  */
-public class TestRoleResult implements Serializable, Cloneable {
+public class TestRoleResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

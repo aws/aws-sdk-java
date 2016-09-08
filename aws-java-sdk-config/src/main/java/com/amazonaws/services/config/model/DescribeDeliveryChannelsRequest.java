@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>DescribeDeliveryChannels</a> action.
  * </p>
  */
-public class DescribeDeliveryChannelsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeDeliveryChannelsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

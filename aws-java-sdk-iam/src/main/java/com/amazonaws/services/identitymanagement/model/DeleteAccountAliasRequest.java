@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteAccountAliasRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteAccountAliasRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

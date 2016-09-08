@@ -23,7 +23,9 @@ import java.io.Serializable;
  * <a>BatchResultErrorEntry</a> tag if the message cannot be deleted.
  * </p>
  */
-public class DeleteMessageBatchResult implements Serializable, Cloneable {
+public class DeleteMessageBatchResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

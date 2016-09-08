@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Initiates the authentication request.
  * </p>
  */
-public class InitiateAuthRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

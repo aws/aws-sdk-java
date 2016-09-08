@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Result message wrapping a list of event descriptions.
  * </p>
  */
-public class DescribeEventsResult implements Serializable, Cloneable {
+public class DescribeEventsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

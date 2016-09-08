@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetByteMatchSetResult implements Serializable, Cloneable {
+public class GetByteMatchSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

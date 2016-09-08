@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A complex type that contains the <code>CheckerIpRanges</code> element.
  * </p>
  */
-public class GetCheckerIpRangesResult implements Serializable, Cloneable {
+public class GetCheckerIpRangesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

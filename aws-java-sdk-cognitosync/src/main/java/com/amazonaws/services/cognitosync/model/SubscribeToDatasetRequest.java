@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to SubscribeToDatasetRequest.
  * </p>
  */
-public class SubscribeToDatasetRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SubscribeToDatasetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

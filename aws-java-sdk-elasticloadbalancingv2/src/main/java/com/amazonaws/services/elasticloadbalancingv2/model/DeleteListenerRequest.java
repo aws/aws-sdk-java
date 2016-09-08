@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DeleteListener.
  * </p>
  */
-public class DeleteListenerRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteListenerRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

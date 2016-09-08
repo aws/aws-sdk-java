@@ -21,8 +21,9 @@ import java.io.Serializable;
  * The result of an UpdateConditionalForwarder request.
  * </p>
  */
-public class UpdateConditionalForwarderResult implements Serializable,
-        Cloneable {
+public class UpdateConditionalForwarderResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

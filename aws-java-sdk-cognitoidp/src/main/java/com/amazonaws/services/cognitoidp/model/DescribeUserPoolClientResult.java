@@ -22,7 +22,9 @@ import java.io.Serializable;
  * pool client.
  * </p>
  */
-public class DescribeUserPoolClientResult implements Serializable, Cloneable {
+public class DescribeUserPoolClientResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output from the DeleteThingShadow operation.
  * </p>
  */
-public class DeleteThingShadowResult implements Serializable, Cloneable {
+public class DeleteThingShadowResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

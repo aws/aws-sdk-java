@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteDomainRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteDomainRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /** The name of the domain to delete. */
     private String domainName;

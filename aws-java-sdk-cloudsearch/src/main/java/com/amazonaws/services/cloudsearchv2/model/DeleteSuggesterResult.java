@@ -22,7 +22,9 @@ import java.io.Serializable;
  * the deleted suggester.
  * </p>
  */
-public class DeleteSuggesterResult implements Serializable, Cloneable {
+public class DeleteSuggesterResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

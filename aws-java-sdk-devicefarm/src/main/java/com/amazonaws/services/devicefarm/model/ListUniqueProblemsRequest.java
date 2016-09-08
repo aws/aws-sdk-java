@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the list unique problems operation.
  * </p>
  */
-public class ListUniqueProblemsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListUniqueProblemsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

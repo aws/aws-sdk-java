@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Output structure for the CreateJob operation.
  */
-public class CreateJobResult implements Serializable, Cloneable {
+public class CreateJobResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String jobId;
 

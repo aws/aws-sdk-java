@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of the <a>DescribeHapg</a> action.
  * </p>
  */
-public class DescribeHapgResult implements Serializable, Cloneable {
+public class DescribeHapgResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Input structure for the CancelJob operation.
  */
-public class CancelJobRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     private String jobId;
 

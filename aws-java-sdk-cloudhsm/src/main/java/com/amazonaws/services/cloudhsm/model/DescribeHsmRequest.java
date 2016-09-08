@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>DescribeHsm</a> operation.
  * </p>
  */
-public class DescribeHsmRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeHsmRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

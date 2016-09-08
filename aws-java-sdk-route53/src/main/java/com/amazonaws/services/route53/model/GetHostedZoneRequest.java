@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for a GetHostedZone request.
  * </p>
  */
-public class GetHostedZoneRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetHostedZoneRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

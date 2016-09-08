@@ -22,8 +22,9 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class DisassociateVPCFromHostedZoneResult implements Serializable,
-        Cloneable {
+public class DisassociateVPCFromHostedZoneResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListMFADevicesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListMFADevicesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

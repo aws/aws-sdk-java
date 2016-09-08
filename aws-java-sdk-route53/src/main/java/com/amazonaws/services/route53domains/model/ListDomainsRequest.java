@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The ListDomains request includes the following elements.
  * </p>
  */
-public class ListDomainsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

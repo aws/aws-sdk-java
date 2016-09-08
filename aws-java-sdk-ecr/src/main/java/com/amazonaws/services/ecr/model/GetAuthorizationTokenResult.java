@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetAuthorizationTokenResult implements Serializable, Cloneable {
+public class GetAuthorizationTokenResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

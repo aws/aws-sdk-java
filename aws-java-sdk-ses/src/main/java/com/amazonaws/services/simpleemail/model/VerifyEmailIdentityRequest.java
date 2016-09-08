@@ -25,8 +25,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * >Amazon SES Developer Guide</a>.
  * </p>
  */
-public class VerifyEmailIdentityRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class VerifyEmailIdentityRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import java.io.Serializable;
  * <code>GetOpenIdTokenForDeveloperIdentity</code> request.
  * </p>
  */
-public class GetOpenIdTokenForDeveloperIdentityResult implements Serializable,
-        Cloneable {
+public class GetOpenIdTokenForDeveloperIdentityResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to delete a specified traffic policy version.
  * </p>
  */
-public class DeleteTrafficPolicyRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteTrafficPolicyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

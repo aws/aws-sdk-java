@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of CreateLoadBalancer.
  * </p>
  */
-public class CreateLoadBalancerResult implements Serializable, Cloneable {
+public class CreateLoadBalancerResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

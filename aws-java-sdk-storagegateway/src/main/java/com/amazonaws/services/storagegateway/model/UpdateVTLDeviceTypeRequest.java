@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateVTLDeviceTypeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

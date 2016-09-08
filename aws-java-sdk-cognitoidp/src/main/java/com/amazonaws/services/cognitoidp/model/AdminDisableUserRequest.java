@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to disable any user as an administrator.
  * </p>
  */
-public class AdminDisableUserRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AdminDisableUserRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class BatchPutAttributesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class BatchPutAttributesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The name of the domain in which the attributes are being stored. */
     private String domainName;

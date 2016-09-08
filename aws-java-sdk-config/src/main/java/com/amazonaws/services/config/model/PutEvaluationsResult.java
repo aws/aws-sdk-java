@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class PutEvaluationsResult implements Serializable, Cloneable {
+public class PutEvaluationsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a <i>DeleteTable</i> operation.
  * </p>
  */
-public class DeleteTableResult implements Serializable, Cloneable {
+public class DeleteTableResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private TableDescription tableDescription;
 

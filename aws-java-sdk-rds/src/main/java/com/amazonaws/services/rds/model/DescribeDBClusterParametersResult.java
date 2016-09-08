@@ -22,8 +22,9 @@ import java.io.Serializable;
  * in the DB cluster parameter group.
  * </p>
  */
-public class DescribeDBClusterParametersResult implements Serializable,
-        Cloneable {
+public class DescribeDBClusterParametersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

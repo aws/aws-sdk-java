@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input value for <code>ListTagsForVaultInput</code>.
  * </p>
  */
-public class ListTagsForVaultRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListTagsForVaultRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

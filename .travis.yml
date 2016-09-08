@@ -18,6 +18,9 @@ matrix:
     - jdk: oraclejdk8
       env: MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator,\!aws-java-sdk-codegen-maven-plugin
 
+notifications:
+  email:
+    - github-awsforjava@amazon.com
 install: /bin/true
 sudo: required
 dist: precise

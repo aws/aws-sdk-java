@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The status of the case returned by the <a>ResolveCase</a> operation.
  * </p>
  */
-public class ResolveCaseResult implements Serializable, Cloneable {
+public class ResolveCaseResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

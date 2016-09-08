@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeStacks</code> request.
  * </p>
  */
-public class DescribeStacksResult implements Serializable, Cloneable {
+public class DescribeStacksResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

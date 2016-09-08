@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to delete the <a>ClientCertificate</a> resource.
  * </p>
  */
-public class DeleteClientCertificateRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteClientCertificateRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

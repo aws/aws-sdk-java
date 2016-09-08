@@ -22,7 +22,9 @@ import java.io.Serializable;
  * an <code>Evaluation</code>.
  * </p>
  */
-public class GetEvaluationResult implements Serializable, Cloneable {
+public class GetEvaluationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

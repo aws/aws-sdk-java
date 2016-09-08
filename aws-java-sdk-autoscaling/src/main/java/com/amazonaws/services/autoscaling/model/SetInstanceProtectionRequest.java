@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for SetInstanceProtection.
  * </p>
  */
-public class SetInstanceProtectionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetInstanceProtectionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

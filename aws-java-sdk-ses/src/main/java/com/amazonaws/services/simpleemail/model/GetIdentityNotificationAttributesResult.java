@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Represents the notification attributes for a list of identities.
  * </p>
  */
-public class GetIdentityNotificationAttributesResult implements Serializable,
-        Cloneable {
+public class GetIdentityNotificationAttributesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

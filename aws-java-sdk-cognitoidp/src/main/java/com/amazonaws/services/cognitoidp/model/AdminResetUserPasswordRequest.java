@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to reset a user's password as an administrator.
  * </p>
  */
-public class AdminResetUserPasswordRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AdminResetUserPasswordRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

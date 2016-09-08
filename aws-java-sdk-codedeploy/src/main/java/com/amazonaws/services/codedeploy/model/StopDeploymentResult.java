@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a stop deployment operation.
  * </p>
  */
-public class StopDeploymentResult implements Serializable, Cloneable {
+public class StopDeploymentResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

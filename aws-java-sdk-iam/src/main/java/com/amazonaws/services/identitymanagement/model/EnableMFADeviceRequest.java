@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class EnableMFADeviceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

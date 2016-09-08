@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of DeregisterInstancesFromLoadBalancer.
  * </p>
  */
-public class DeregisterInstancesFromLoadBalancerResult implements Serializable,
-        Cloneable {
+public class DeregisterInstancesFromLoadBalancerResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

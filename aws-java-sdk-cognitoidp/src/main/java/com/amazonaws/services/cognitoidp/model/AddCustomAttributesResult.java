@@ -22,7 +22,9 @@ import java.io.Serializable;
  * attributes.
  * </p>
  */
-public class AddCustomAttributesResult implements Serializable, Cloneable {
+public class AddCustomAttributesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

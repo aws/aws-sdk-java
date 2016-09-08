@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to update a distribution.
  */
-public class UpdateDistributionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateDistributionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The distribution's configuration information. */
     private DistributionConfig distributionConfig;

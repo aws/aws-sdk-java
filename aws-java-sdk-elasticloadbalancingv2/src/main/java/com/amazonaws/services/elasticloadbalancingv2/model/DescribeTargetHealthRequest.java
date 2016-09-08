@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribeTargetHealth.
  * </p>
  */
-public class DescribeTargetHealthRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeTargetHealthRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CancelKeyDeletionRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CancelKeyDeletionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

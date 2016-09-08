@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the DescribeCertificate operation.
  * </p>
  */
-public class DescribeCertificateRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeCertificateRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

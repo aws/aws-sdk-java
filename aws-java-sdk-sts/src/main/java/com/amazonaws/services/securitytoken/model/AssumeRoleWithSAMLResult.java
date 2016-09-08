@@ -22,7 +22,9 @@ import java.io.Serializable;
  * including temporary AWS credentials that can be used to make AWS requests.
  * </p>
  */
-public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
+public class AssumeRoleWithSAMLResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

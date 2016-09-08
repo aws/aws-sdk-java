@@ -25,7 +25,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeElasticsearchDomainsRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

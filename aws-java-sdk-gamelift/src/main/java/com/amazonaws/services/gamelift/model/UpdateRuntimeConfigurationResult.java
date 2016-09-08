@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Represents the returned data in response to a request action.
  * </p>
  */
-public class UpdateRuntimeConfigurationResult implements Serializable,
-        Cloneable {
+public class UpdateRuntimeConfigurationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

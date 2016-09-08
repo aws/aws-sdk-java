@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a successful <a>UpdateSAMLProvider</a> request.
  * </p>
  */
-public class UpdateSAMLProviderResult implements Serializable, Cloneable {
+public class UpdateSAMLProviderResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

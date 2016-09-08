@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A complex type containing tags for the specified resources.
  * </p>
  */
-public class ListTagsForResourcesResult implements Serializable, Cloneable {
+public class ListTagsForResourcesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

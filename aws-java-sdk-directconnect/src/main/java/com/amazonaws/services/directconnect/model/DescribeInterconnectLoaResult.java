@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response received when DescribeInterconnectLoa is called.
  * </p>
  */
-public class DescribeInterconnectLoaResult implements Serializable, Cloneable {
+public class DescribeInterconnectLoaResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private Loa loa;
 

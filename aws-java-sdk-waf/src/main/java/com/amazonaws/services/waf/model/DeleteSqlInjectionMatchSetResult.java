@@ -22,8 +22,9 @@ import java.io.Serializable;
  * WAF.
  * </p>
  */
-public class DeleteSqlInjectionMatchSetResult implements Serializable,
-        Cloneable {
+public class DeleteSqlInjectionMatchSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

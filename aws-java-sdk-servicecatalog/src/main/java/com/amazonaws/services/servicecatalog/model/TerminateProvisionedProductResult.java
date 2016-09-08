@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class TerminateProvisionedProductResult implements Serializable,
-        Cloneable {
+public class TerminateProvisionedProductResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

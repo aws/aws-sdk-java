@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * you want to create based on a specified traffic policy.
  * </p>
  */
-public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateTrafficPolicyInstanceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

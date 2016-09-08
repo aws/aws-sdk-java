@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to get a <a>SqlInjectionMatchSet</a>.
  * </p>
  */
-public class GetSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetSqlInjectionMatchSetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

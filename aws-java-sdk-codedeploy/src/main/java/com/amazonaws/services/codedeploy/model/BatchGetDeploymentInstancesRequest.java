@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a batch get deployment instances operation.
  * </p>
  */
-public class BatchGetDeploymentInstancesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class BatchGetDeploymentInstancesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

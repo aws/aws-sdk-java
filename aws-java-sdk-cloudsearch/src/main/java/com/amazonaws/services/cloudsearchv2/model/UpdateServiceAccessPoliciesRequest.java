@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * of the domain you want to update and the access rules you want to configure.
  * </p>
  */
-public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateServiceAccessPoliciesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
     /**

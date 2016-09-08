@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the result of a delete device pool request.
  * </p>
  */
-public class DeleteDevicePoolResult implements Serializable, Cloneable {
+public class DeleteDevicePoolResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

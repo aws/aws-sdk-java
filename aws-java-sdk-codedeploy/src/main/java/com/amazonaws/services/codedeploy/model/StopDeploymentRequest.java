@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a stop deployment operation.
  * </p>
  */
-public class StopDeploymentRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class StopDeploymentRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

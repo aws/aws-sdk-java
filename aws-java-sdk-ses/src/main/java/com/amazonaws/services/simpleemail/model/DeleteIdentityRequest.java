@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * address or domain).
  * </p>
  */
-public class DeleteIdentityRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteIdentityRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

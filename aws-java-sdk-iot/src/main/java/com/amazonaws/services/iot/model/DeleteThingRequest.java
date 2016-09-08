@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the DeleteThing operation.
  * </p>
  */
-public class DeleteThingRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteThingRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

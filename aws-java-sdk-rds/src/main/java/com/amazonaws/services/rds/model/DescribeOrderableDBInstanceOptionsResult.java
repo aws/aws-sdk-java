@@ -22,8 +22,9 @@ import java.io.Serializable;
  * <a>DescribeOrderableDBInstanceOptions</a> action.
  * </p>
  */
-public class DescribeOrderableDBInstanceOptionsResult implements Serializable,
-        Cloneable {
+public class DescribeOrderableDBInstanceOptionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

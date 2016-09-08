@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes the inputs for SetAlarmState.
  * </p>
  */
-public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

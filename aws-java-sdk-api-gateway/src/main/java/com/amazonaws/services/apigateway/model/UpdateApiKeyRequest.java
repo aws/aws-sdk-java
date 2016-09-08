@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to change information about an <a>ApiKey</a> resource.
  * </p>
  */
-public class UpdateApiKeyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

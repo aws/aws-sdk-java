@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a retry stage execution action.
  * </p>
  */
-public class RetryStageExecutionResult implements Serializable, Cloneable {
+public class RetryStageExecutionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

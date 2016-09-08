@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * will be marked as deleted.
  * </p>
  */
-public class DeleteCustomActionTypeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteCustomActionTypeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

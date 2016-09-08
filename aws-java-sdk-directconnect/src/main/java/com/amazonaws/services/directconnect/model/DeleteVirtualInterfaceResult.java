@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response received when DeleteVirtualInterface is called.
  * </p>
  */
-public class DeleteVirtualInterfaceResult implements Serializable, Cloneable {
+public class DeleteVirtualInterfaceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String virtualInterfaceState;
 

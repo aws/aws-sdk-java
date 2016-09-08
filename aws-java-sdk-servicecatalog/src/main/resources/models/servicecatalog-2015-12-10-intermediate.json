@@ -19,7 +19,6 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "servicecatalog",
     "signingName" : "servicecatalog",
-    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSServiceCatalogClientBuilder",
     "asyncClientBuilderClassName" : "AWSServiceCatalogAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AWSServiceCatalogModuleInjector",
@@ -29,6 +28,7 @@
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "jsonProtocol" : true,
     "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
@@ -1004,11 +1004,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "ProvisioningParameter",
           "simple" : false,
           "map" : false,
-          "simpleType" : "ProvisioningParameter",
-          "templateImplType" : "java.util.ArrayList<ProvisioningParameter>",
-          "templateType" : "java.util.List<ProvisioningParameter>"
+          "templateType" : "java.util.List<ProvisioningParameter>",
+          "templateImplType" : "java.util.ArrayList<ProvisioningParameter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1123,11 +1123,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Tag",
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1242,11 +1242,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1493,11 +1493,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "ProvisioningParameter",
             "simple" : false,
             "map" : false,
-            "simpleType" : "ProvisioningParameter",
-            "templateImplType" : "java.util.ArrayList<ProvisioningParameter>",
-            "templateType" : "java.util.List<ProvisioningParameter>"
+            "templateType" : "java.util.List<ProvisioningParameter>",
+            "templateImplType" : "java.util.ArrayList<ProvisioningParameter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1613,11 +1613,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1892,11 +1892,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Tag",
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2131,11 +2131,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "ProvisioningArtifactParameter",
           "simple" : false,
           "map" : false,
-          "simpleType" : "ProvisioningArtifactParameter",
-          "templateImplType" : "java.util.ArrayList<ProvisioningArtifactParameter>",
-          "templateType" : "java.util.List<ProvisioningArtifactParameter>"
+          "templateType" : "java.util.List<ProvisioningArtifactParameter>",
+          "templateImplType" : "java.util.ArrayList<ProvisioningArtifactParameter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2250,11 +2250,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "ConstraintSummary",
           "simple" : false,
           "map" : false,
-          "simpleType" : "ConstraintSummary",
-          "templateImplType" : "java.util.ArrayList<ConstraintSummary>",
-          "templateType" : "java.util.List<ConstraintSummary>"
+          "templateType" : "java.util.List<ConstraintSummary>",
+          "templateImplType" : "java.util.ArrayList<ConstraintSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2369,11 +2369,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "UsageInstruction",
           "simple" : false,
           "map" : false,
-          "simpleType" : "UsageInstruction",
-          "templateImplType" : "java.util.ArrayList<UsageInstruction>",
-          "templateType" : "java.util.List<UsageInstruction>"
+          "templateType" : "java.util.List<UsageInstruction>",
+          "templateImplType" : "java.util.ArrayList<UsageInstruction>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2511,11 +2511,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "UsageInstruction",
             "simple" : false,
             "map" : false,
-            "simpleType" : "UsageInstruction",
-            "templateImplType" : "java.util.ArrayList<UsageInstruction>",
-            "templateType" : "java.util.List<UsageInstruction>"
+            "templateType" : "java.util.List<UsageInstruction>",
+            "templateImplType" : "java.util.ArrayList<UsageInstruction>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2631,11 +2631,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "ProvisioningArtifactParameter",
             "simple" : false,
             "map" : false,
-            "simpleType" : "ProvisioningArtifactParameter",
-            "templateImplType" : "java.util.ArrayList<ProvisioningArtifactParameter>",
-            "templateType" : "java.util.List<ProvisioningArtifactParameter>"
+            "templateType" : "java.util.List<ProvisioningArtifactParameter>",
+            "templateImplType" : "java.util.ArrayList<ProvisioningArtifactParameter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2751,11 +2751,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "ConstraintSummary",
             "simple" : false,
             "map" : false,
-            "simpleType" : "ConstraintSummary",
-            "templateImplType" : "java.util.ArrayList<ConstraintSummary>",
-            "templateType" : "java.util.List<ConstraintSummary>"
+            "templateType" : "java.util.List<ConstraintSummary>",
+            "templateImplType" : "java.util.ArrayList<ConstraintSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2980,11 +2980,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "ConstraintSummary",
           "simple" : false,
           "map" : false,
-          "simpleType" : "ConstraintSummary",
-          "templateImplType" : "java.util.ArrayList<ConstraintSummary>",
-          "templateType" : "java.util.List<ConstraintSummary>"
+          "templateType" : "java.util.List<ConstraintSummary>",
+          "templateImplType" : "java.util.ArrayList<ConstraintSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3099,11 +3099,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Tag",
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3346,11 +3346,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Tag",
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3466,11 +3466,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "ConstraintSummary",
             "simple" : false,
             "map" : false,
-            "simpleType" : "ConstraintSummary",
-            "templateImplType" : "java.util.ArrayList<ConstraintSummary>",
-            "templateType" : "java.util.List<ConstraintSummary>"
+            "templateType" : "java.util.List<ConstraintSummary>",
+            "templateImplType" : "java.util.ArrayList<ConstraintSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4055,11 +4055,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "RecordOutput",
           "simple" : false,
           "map" : false,
-          "simpleType" : "RecordOutput",
-          "templateImplType" : "java.util.ArrayList<RecordOutput>",
-          "templateType" : "java.util.List<RecordOutput>"
+          "templateType" : "java.util.List<RecordOutput>",
+          "templateImplType" : "java.util.ArrayList<RecordOutput>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4249,11 +4249,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "RecordOutput",
             "simple" : false,
             "map" : false,
-            "simpleType" : "RecordOutput",
-            "templateImplType" : "java.util.ArrayList<RecordOutput>",
-            "templateType" : "java.util.List<RecordOutput>"
+            "templateType" : "java.util.List<RecordOutput>",
+            "templateImplType" : "java.util.ArrayList<RecordOutput>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4681,11 +4681,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "ProvisioningArtifact",
           "simple" : false,
           "map" : false,
-          "simpleType" : "ProvisioningArtifact",
-          "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>",
-          "templateType" : "java.util.List<ProvisioningArtifact>"
+          "templateType" : "java.util.List<ProvisioningArtifact>",
+          "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4823,11 +4823,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "ProvisioningArtifact",
             "simple" : false,
             "map" : false,
-            "simpleType" : "ProvisioningArtifact",
-            "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>",
-            "templateType" : "java.util.List<ProvisioningArtifact>"
+            "templateType" : "java.util.List<ProvisioningArtifact>",
+            "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6236,11 +6236,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "ProvisionedProductDetail",
           "simple" : false,
           "map" : false,
-          "simpleType" : "ProvisionedProductDetail",
-          "templateImplType" : "java.util.ArrayList<ProvisionedProductDetail>",
-          "templateType" : "java.util.List<ProvisionedProductDetail>"
+          "templateType" : "java.util.List<ProvisionedProductDetail>",
+          "templateImplType" : "java.util.ArrayList<ProvisionedProductDetail>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6430,11 +6430,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "ProvisionedProductDetail",
             "simple" : false,
             "map" : false,
-            "simpleType" : "ProvisionedProductDetail",
-            "templateImplType" : "java.util.ArrayList<ProvisionedProductDetail>",
-            "templateType" : "java.util.List<ProvisionedProductDetail>"
+            "templateType" : "java.util.List<ProvisionedProductDetail>",
+            "templateImplType" : "java.util.ArrayList<ProvisionedProductDetail>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7076,11 +7076,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "ProductViewSummary",
           "simple" : false,
           "map" : false,
-          "simpleType" : "ProductViewSummary",
-          "templateImplType" : "java.util.ArrayList<ProductViewSummary>",
-          "templateType" : "java.util.List<ProductViewSummary>"
+          "templateType" : "java.util.List<ProductViewSummary>",
+          "templateImplType" : "java.util.ArrayList<ProductViewSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7244,11 +7244,11 @@
               "memberAdditionalUnmarshallingPath" : null,
               "sendEmptyQueryString" : false,
               "marshallNonAutoConstructedEmptyLists" : false,
+              "simpleType" : "ProductViewAggregationValue",
               "simple" : false,
               "map" : false,
-              "simpleType" : "ProductViewAggregationValue",
-              "templateImplType" : "java.util.ArrayList<ProductViewAggregationValue>",
-              "templateType" : "java.util.List<ProductViewAggregationValue>"
+              "templateType" : "java.util.List<ProductViewAggregationValue>",
+              "templateImplType" : "java.util.ArrayList<ProductViewAggregationValue>"
             },
             "mapModel" : null,
             "enumType" : null,
@@ -7262,12 +7262,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,java.util.List<ProductViewAggregationValue>>",
           "templateImplType" : "java.util.HashMap<String,java.util.List<ProductViewAggregationValue>>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : true,
-          "entryType" : "Map.Entry<String, java.util.List<ProductViewAggregationValue>>",
-          "templateType" : "java.util.Map<String,java.util.List<ProductViewAggregationValue>>"
+          "entryType" : "Map.Entry<String, java.util.List<ProductViewAggregationValue>>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7558,11 +7558,11 @@
                 "memberAdditionalUnmarshallingPath" : null,
                 "sendEmptyQueryString" : false,
                 "marshallNonAutoConstructedEmptyLists" : false,
+                "simpleType" : "ProductViewAggregationValue",
                 "simple" : false,
                 "map" : false,
-                "simpleType" : "ProductViewAggregationValue",
-                "templateImplType" : "java.util.ArrayList<ProductViewAggregationValue>",
-                "templateType" : "java.util.List<ProductViewAggregationValue>"
+                "templateType" : "java.util.List<ProductViewAggregationValue>",
+                "templateImplType" : "java.util.ArrayList<ProductViewAggregationValue>"
               },
               "mapModel" : null,
               "enumType" : null,
@@ -7576,12 +7576,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,java.util.List<ProductViewAggregationValue>>",
             "templateImplType" : "java.util.HashMap<String,java.util.List<ProductViewAggregationValue>>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : true,
-            "entryType" : "Map.Entry<String, java.util.List<ProductViewAggregationValue>>",
-            "templateType" : "java.util.Map<String,java.util.List<ProductViewAggregationValue>>"
+            "entryType" : "Map.Entry<String, java.util.List<ProductViewAggregationValue>>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -7696,11 +7696,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "ProductViewSummary",
             "simple" : false,
             "map" : false,
-            "simpleType" : "ProductViewSummary",
-            "templateImplType" : "java.util.ArrayList<ProductViewSummary>",
-            "templateType" : "java.util.List<ProductViewSummary>"
+            "templateType" : "java.util.List<ProductViewSummary>",
+            "templateImplType" : "java.util.ArrayList<ProductViewSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9353,11 +9353,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "RecordError",
           "simple" : false,
           "map" : false,
-          "simpleType" : "RecordError",
-          "templateImplType" : "java.util.ArrayList<RecordError>",
-          "templateType" : "java.util.List<RecordError>"
+          "templateType" : "java.util.List<RecordError>",
+          "templateImplType" : "java.util.ArrayList<RecordError>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9472,11 +9472,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "RecordTag",
           "simple" : false,
           "map" : false,
-          "simpleType" : "RecordTag",
-          "templateImplType" : "java.util.ArrayList<RecordTag>",
-          "templateType" : "java.util.List<RecordTag>"
+          "templateType" : "java.util.List<RecordTag>",
+          "templateImplType" : "java.util.ArrayList<RecordTag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9932,11 +9932,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "RecordTag",
             "simple" : false,
             "map" : false,
-            "simpleType" : "RecordTag",
-            "templateImplType" : "java.util.ArrayList<RecordTag>",
-            "templateType" : "java.util.List<RecordTag>"
+            "templateType" : "java.util.List<RecordTag>",
+            "templateImplType" : "java.util.ArrayList<RecordTag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10317,11 +10317,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "RecordError",
             "simple" : false,
             "map" : false,
-            "simpleType" : "RecordError",
-            "templateImplType" : "java.util.ArrayList<RecordError>",
-            "templateType" : "java.util.List<RecordError>"
+            "templateType" : "java.util.List<RecordError>",
+            "templateImplType" : "java.util.ArrayList<RecordError>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10494,11 +10494,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "RecordDetail",
           "simple" : false,
           "map" : false,
-          "simpleType" : "RecordDetail",
-          "templateImplType" : "java.util.ArrayList<RecordDetail>",
-          "templateType" : "java.util.List<RecordDetail>"
+          "templateType" : "java.util.List<RecordDetail>",
+          "templateImplType" : "java.util.ArrayList<RecordDetail>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10741,11 +10741,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "RecordDetail",
             "simple" : false,
             "map" : false,
-            "simpleType" : "RecordDetail",
-            "templateImplType" : "java.util.ArrayList<RecordDetail>",
-            "templateType" : "java.util.List<RecordDetail>"
+            "templateType" : "java.util.List<RecordDetail>",
+            "templateImplType" : "java.util.ArrayList<RecordDetail>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11218,11 +11218,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "UpdateProvisioningParameter",
           "simple" : false,
           "map" : false,
-          "simpleType" : "UpdateProvisioningParameter",
-          "templateImplType" : "java.util.ArrayList<UpdateProvisioningParameter>",
-          "templateType" : "java.util.List<UpdateProvisioningParameter>"
+          "templateType" : "java.util.List<UpdateProvisioningParameter>",
+          "templateImplType" : "java.util.ArrayList<UpdateProvisioningParameter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11469,11 +11469,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "UpdateProvisioningParameter",
             "simple" : false,
             "map" : false,
-            "simpleType" : "UpdateProvisioningParameter",
-            "templateImplType" : "java.util.ArrayList<UpdateProvisioningParameter>",
-            "templateType" : "java.util.List<UpdateProvisioningParameter>"
+            "templateType" : "java.util.List<UpdateProvisioningParameter>",
+            "templateImplType" : "java.util.ArrayList<UpdateProvisioningParameter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15483,11 +15483,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "LaunchPathSummary",
           "simple" : false,
           "map" : false,
-          "simpleType" : "LaunchPathSummary",
-          "templateImplType" : "java.util.ArrayList<LaunchPathSummary>",
-          "templateType" : "java.util.List<LaunchPathSummary>"
+          "templateType" : "java.util.List<LaunchPathSummary>",
+          "templateImplType" : "java.util.ArrayList<LaunchPathSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15730,11 +15730,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "LaunchPathSummary",
             "simple" : false,
             "map" : false,
-            "simpleType" : "LaunchPathSummary",
-            "templateImplType" : "java.util.ArrayList<LaunchPathSummary>",
-            "templateType" : "java.util.List<LaunchPathSummary>"
+            "templateType" : "java.util.List<LaunchPathSummary>",
+            "templateImplType" : "java.util.ArrayList<LaunchPathSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15988,11 +15988,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "ProvisioningArtifact",
           "simple" : false,
           "map" : false,
-          "simpleType" : "ProvisioningArtifact",
-          "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>",
-          "templateType" : "java.util.List<ProvisioningArtifact>"
+          "templateType" : "java.util.List<ProvisioningArtifact>",
+          "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16130,11 +16130,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "ProvisioningArtifact",
             "simple" : false,
             "map" : false,
-            "simpleType" : "ProvisioningArtifact",
-            "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>",
-            "templateType" : "java.util.List<ProvisioningArtifact>"
+            "templateType" : "java.util.List<ProvisioningArtifact>",
+            "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16997,11 +16997,11 @@
               "memberAdditionalUnmarshallingPath" : null,
               "sendEmptyQueryString" : false,
               "marshallNonAutoConstructedEmptyLists" : false,
+              "simpleType" : "String",
               "simple" : true,
               "map" : false,
-              "simpleType" : "String",
-              "templateImplType" : "java.util.ArrayList<String>",
-              "templateType" : "java.util.List<String>"
+              "templateType" : "java.util.List<String>",
+              "templateImplType" : "java.util.ArrayList<String>"
             },
             "mapModel" : null,
             "enumType" : null,
@@ -17015,12 +17015,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,java.util.List<String>>",
           "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : true,
-          "entryType" : "Map.Entry<String, java.util.List<String>>",
-          "templateType" : "java.util.Map<String,java.util.List<String>>"
+          "entryType" : "Map.Entry<String, java.util.List<String>>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -17470,11 +17470,11 @@
                 "memberAdditionalUnmarshallingPath" : null,
                 "sendEmptyQueryString" : false,
                 "marshallNonAutoConstructedEmptyLists" : false,
+                "simpleType" : "String",
                 "simple" : true,
                 "map" : false,
-                "simpleType" : "String",
-                "templateImplType" : "java.util.ArrayList<String>",
-                "templateType" : "java.util.List<String>"
+                "templateType" : "java.util.List<String>",
+                "templateImplType" : "java.util.ArrayList<String>"
               },
               "mapModel" : null,
               "enumType" : null,
@@ -17488,12 +17488,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,java.util.List<String>>",
             "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : true,
-            "entryType" : "Map.Entry<String, java.util.List<String>>",
-            "templateType" : "java.util.Map<String,java.util.List<String>>"
+            "entryType" : "Map.Entry<String, java.util.List<String>>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -19298,11 +19298,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19440,11 +19440,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20349,5 +20349,6 @@
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException",
-  "hasWaiters" : false
+  "hasWaiters" : false,
+  "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>"
 }

@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ModifyLunaClientResult implements Serializable, Cloneable {
+public class ModifyLunaClientResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

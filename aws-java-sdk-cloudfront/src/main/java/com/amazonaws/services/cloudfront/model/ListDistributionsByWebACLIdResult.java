@@ -20,8 +20,9 @@ import java.io.Serializable;
  * The response to a request to list the distributions that are associated with
  * a specified AWS WAF web ACL.
  */
-public class ListDistributionsByWebACLIdResult implements Serializable,
-        Cloneable {
+public class ListDistributionsByWebACLIdResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** The DistributionList type. */
     private DistributionList distributionList;

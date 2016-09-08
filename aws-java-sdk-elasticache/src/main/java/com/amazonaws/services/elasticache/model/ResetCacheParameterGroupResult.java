@@ -33,7 +33,9 @@ import java.io.Serializable;
  * </li>
  * </ul>
  */
-public class ResetCacheParameterGroupResult implements Serializable, Cloneable {
+public class ResetCacheParameterGroupResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

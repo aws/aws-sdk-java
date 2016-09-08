@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Specifies settings to update for the trail.
  * </p>
  */
-public class UpdateTrailRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

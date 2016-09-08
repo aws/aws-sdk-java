@@ -26,8 +26,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * >Amazon SES Developer Guide</a>.
  * </p>
  */
-public class SetIdentityMailFromDomainRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetIdentityMailFromDomainRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <code>GetSMSAttributes</code> request.
  * </p>
  */
-public class GetSMSAttributesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetSMSAttributesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

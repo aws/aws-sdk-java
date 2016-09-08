@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Requests Amazon API Gateway to create a <a>Deployment</a> resource.
  * </p>
  */
-public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateDeploymentRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

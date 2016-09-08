@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of DescribeLoadBalancerTargetGroups.
  * </p>
  */
-public class DescribeLoadBalancerTargetGroupsResult implements Serializable,
-        Cloneable {
+public class DescribeLoadBalancerTargetGroupsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

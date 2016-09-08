@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to list all offerings.
  * </p>
  */
-public class ListOfferingsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

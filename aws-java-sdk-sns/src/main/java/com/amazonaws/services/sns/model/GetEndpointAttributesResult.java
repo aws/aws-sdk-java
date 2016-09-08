@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Response from GetEndpointAttributes of the EndpointArn.
  * </p>
  */
-public class GetEndpointAttributesResult implements Serializable, Cloneable {
+public class GetEndpointAttributesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

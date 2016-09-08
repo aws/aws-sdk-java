@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input argument to the <a>TerminationProtection</a> operation.
  * </p>
  */
-public class SetTerminationProtectionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetTerminationProtectionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

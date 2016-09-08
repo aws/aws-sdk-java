@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request to list origin access identities.
  */
 public class ListCloudFrontOriginAccessIdentitiesRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Use this when paginating results to indicate where to begin in your list

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribePipelines.
  * </p>
  */
-public class DescribePipelinesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribePipelinesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for a GetChange request.
  * </p>
  */
-public class GetChangeRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetChangeRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * SetLocalConsolePasswordInput
  * </p>
  */
-public class SetLocalConsolePasswordRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetLocalConsolePasswordRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
     /**

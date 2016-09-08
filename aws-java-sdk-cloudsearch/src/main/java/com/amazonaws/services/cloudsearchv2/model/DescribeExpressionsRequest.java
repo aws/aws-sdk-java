@@ -26,8 +26,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * pending changes, set the <code>Deployed</code> option to <code>true</code>.
  * </p>
  */
-public class DescribeExpressionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeExpressionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

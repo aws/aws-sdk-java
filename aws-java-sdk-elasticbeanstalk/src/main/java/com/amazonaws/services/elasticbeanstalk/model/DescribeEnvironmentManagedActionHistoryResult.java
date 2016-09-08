@@ -21,8 +21,9 @@ import java.io.Serializable;
  * A result message containing a list of completed and failed managed actions.
  * </p>
  */
-public class DescribeEnvironmentManagedActionHistoryResult implements
-        Serializable, Cloneable {
+public class DescribeEnvironmentManagedActionHistoryResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

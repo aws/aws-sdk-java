@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of DeleteLoadBalancerPolicy.
  * </p>
  */
-public class DeleteLoadBalancerPolicyResult implements Serializable, Cloneable {
+public class DeleteLoadBalancerPolicyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

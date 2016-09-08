@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The global sign-out response, as an administrator.
  * </p>
  */
-public class AdminUserGlobalSignOutResult implements Serializable, Cloneable {
+public class AdminUserGlobalSignOutResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

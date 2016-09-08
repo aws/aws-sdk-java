@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The result of the <code>CreateSnapshotCopyGrant</code> action.
  * </p>
  */
-public class CreateSnapshotCopyGrantRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateSnapshotCopyGrantRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

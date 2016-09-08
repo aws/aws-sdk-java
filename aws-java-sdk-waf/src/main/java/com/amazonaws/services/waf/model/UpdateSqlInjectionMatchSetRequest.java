@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to update a <a>SqlInjectionMatchSet</a>.
  * </p>
  */
-public class UpdateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateSqlInjectionMatchSetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

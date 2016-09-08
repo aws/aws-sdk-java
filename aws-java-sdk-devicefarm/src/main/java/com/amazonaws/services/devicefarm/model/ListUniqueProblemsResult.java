@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the result of a list unique problems request.
  * </p>
  */
-public class ListUniqueProblemsResult implements Serializable, Cloneable {
+public class ListUniqueProblemsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -14,6 +14,16 @@
  */
 package com.amazonaws.http;
 
+import com.amazonaws.AmazonWebServiceResponse;
+import com.amazonaws.ResponseMetadata;
+import com.amazonaws.transform.StaxUnmarshallerContext;
+import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.transform.VoidStaxUnmarshaller;
+import com.amazonaws.util.StringUtils;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Map;
@@ -21,16 +31,6 @@ import java.util.Map;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.amazonaws.AmazonWebServiceResponse;
-import com.amazonaws.ResponseMetadata;
-import com.amazonaws.transform.StaxUnmarshallerContext;
-import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.VoidStaxUnmarshaller;
-import com.amazonaws.util.StringUtils;
 
 /**
  * Default implementation of HttpResponseHandler that handles a successful
@@ -109,7 +109,7 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
                             responseHeaders.get(X_AMZN_REQUEST_ID_HEADER));
                 }
             }
-            awsResponse.setResponseMetadata(new ResponseMetadata(metadata));
+            awsResponse.setResponseMetadata(getResponseMetadata(metadata));
 
             log.trace("Done parsing service response");
             return awsResponse;
@@ -120,6 +120,14 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
                 log.warn("Error closing xml parser", e);
             }
         }
+    }
+
+    /**
+     * Create the default {@link ResponseMetadata}. Subclasses may override this to create a
+     * subclass of {@link ResponseMetadata}. Currently only SimpleDB does this.
+     */
+    protected ResponseMetadata getResponseMetadata(Map<String, String> metadata) {
+        return new ResponseMetadata(metadata);
     }
 
     /**

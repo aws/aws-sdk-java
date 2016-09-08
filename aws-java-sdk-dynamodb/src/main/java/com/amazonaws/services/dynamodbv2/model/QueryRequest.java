@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>Query</i> operation.
  * </p>
  */
-public class QueryRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

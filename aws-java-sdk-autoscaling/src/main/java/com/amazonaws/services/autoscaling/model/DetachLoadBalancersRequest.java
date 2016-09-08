@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DetachLoadBalancers.
  * </p>
  */
-public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DetachLoadBalancersRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DescribeAdjustmentTypesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeAdjustmentTypesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

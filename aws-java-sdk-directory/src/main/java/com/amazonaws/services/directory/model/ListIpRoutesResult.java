@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListIpRoutesResult implements Serializable, Cloneable {
+public class ListIpRoutesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

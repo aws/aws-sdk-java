@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output from the CreatePolicy operation.
  * </p>
  */
-public class CreatePolicyResult implements Serializable, Cloneable {
+public class CreatePolicyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

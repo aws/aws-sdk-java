@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains a list of event sources (see )
  * </p>
  */
-public class ListEventSourceMappingsResult implements Serializable, Cloneable {
+public class ListEventSourceMappingsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

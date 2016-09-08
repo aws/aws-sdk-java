@@ -34,8 +34,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteChapCredentialsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

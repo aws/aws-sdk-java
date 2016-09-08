@@ -2,11 +2,13 @@ ${fileHeader}
 package ${metadata.packageName}.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <#if shape.documentation?has_content>${shape.documentation}</#if>
  */
-public class ${shape.shapeName} implements Serializable, Cloneable {
+public class ${shape.shapeName} extends ${baseClassFqcn}
+    implements Serializable, Cloneable {
 
     <@VariableDeclarationMacro.content shape/>
 

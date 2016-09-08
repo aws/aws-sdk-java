@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * DescribeTapeRecoveryPointsInput
  * </p>
  */
-public class DescribeTapeRecoveryPointsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeTapeRecoveryPointsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
     /**

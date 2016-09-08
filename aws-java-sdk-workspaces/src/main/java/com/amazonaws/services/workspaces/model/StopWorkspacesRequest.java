@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class StopWorkspacesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class StopWorkspacesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

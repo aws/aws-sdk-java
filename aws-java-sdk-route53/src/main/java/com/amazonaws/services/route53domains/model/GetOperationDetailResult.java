@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The GetOperationDetail response includes the following elements.
  * </p>
  */
-public class GetOperationDetailResult implements Serializable, Cloneable {
+public class GetOperationDetailResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

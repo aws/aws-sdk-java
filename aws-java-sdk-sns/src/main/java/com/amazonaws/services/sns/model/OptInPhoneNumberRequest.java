@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for the OptInPhoneNumber action.
  * </p>
  */
-public class OptInPhoneNumberRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class OptInPhoneNumberRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

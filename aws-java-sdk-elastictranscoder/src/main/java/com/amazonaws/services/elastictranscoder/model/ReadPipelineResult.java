@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The <code>ReadPipelineResponse</code> structure.
  * </p>
  */
-public class ReadPipelineResult implements Serializable, Cloneable {
+public class ReadPipelineResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

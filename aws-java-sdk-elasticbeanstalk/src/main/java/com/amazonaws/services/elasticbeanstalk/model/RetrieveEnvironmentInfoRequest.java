@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to download logs retrieved with <a>RequestEnvironmentInfo</a>.
  * </p>
  */
-public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RetrieveEnvironmentInfoRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

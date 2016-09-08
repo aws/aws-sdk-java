@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the DescribeInterconnectLoa operation.
  * </p>
  */
-public class DescribeInterconnectLoaRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeInterconnectLoaRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String interconnectId;
     /**

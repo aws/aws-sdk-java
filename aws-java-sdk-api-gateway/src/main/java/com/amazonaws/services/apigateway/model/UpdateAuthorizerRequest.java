@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to update an existing <a>Authorizer</a> resource.
  * </p>
  */
-public class UpdateAuthorizerRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateAuthorizerRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

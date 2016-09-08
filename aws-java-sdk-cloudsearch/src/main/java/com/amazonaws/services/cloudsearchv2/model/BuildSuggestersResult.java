@@ -22,7 +22,9 @@ import java.io.Serializable;
  * fields used for suggestions.
  * </p>
  */
-public class BuildSuggestersResult implements Serializable, Cloneable {
+public class BuildSuggestersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<String> fieldNames;
 

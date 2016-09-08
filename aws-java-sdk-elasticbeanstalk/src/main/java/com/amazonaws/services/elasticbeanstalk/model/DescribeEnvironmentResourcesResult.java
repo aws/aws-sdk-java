@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Result message containing a list of environment resource descriptions.
  * </p>
  */
-public class DescribeEnvironmentResourcesResult implements Serializable,
-        Cloneable {
+public class DescribeEnvironmentResourcesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

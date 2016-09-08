@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to describe an existing <a>Authorizers</a> resource.
  * </p>
  */
-public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetAuthorizersRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

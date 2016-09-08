@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the result of a get suite request.
  * </p>
  */
-public class GetSuiteResult implements Serializable, Cloneable {
+public class GetSuiteResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private Suite suite;
 

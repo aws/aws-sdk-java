@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * DescribeTapesInput
  * </p>
  */
-public class DescribeTapesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeTapesRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
     /**

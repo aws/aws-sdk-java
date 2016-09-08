@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of DeleteLoadBalancerListeners.
  * </p>
  */
-public class DeleteLoadBalancerListenersResult implements Serializable,
-        Cloneable {
+public class DeleteLoadBalancerListenersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

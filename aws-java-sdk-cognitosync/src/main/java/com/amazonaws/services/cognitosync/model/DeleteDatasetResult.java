@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Response to a successful DeleteDataset request.
  */
-public class DeleteDatasetResult implements Serializable, Cloneable {
+public class DeleteDatasetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * A collection of data for an identity pool. An identity pool can have

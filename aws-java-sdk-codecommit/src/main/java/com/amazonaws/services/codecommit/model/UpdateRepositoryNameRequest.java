@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of an update repository description operation.
  * </p>
  */
-public class UpdateRepositoryNameRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateRepositoryNameRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

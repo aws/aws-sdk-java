@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AssumeRoleWithSAMLRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

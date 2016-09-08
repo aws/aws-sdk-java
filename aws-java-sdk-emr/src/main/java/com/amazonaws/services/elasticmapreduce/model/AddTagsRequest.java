@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This input identifies a cluster and a list of tags to attach.
  * </p>
  */
-public class AddTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for EnteStandby.
  * </p>
  */
-public class EnterStandbyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class EnterStandbyRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

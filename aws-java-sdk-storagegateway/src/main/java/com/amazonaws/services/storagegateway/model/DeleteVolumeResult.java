@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A JSON object containing the of the storage volume that was deleted
  * </p>
  */
-public class DeleteVolumeResult implements Serializable, Cloneable {
+public class DeleteVolumeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateSSHPublicKeyRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateSSHPublicKeyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

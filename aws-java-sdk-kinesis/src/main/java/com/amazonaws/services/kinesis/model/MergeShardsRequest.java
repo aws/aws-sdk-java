@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for <code>MergeShards</code>.
  * </p>
  */
-public class MergeShardsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class MergeShardsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

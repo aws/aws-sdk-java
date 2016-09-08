@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains a response to a LookupEvents action.
  * </p>
  */
-public class LookupEventsResult implements Serializable, Cloneable {
+public class LookupEventsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

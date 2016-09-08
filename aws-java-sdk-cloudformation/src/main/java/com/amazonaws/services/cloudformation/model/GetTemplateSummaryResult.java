@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for the <a>GetTemplateSummary</a> action.
  * </p>
  */
-public class GetTemplateSummaryResult implements Serializable, Cloneable {
+public class GetTemplateSummaryResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

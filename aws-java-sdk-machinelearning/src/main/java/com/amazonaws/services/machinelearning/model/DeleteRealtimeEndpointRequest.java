@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteRealtimeEndpointRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteRealtimeEndpointRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

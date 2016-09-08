@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class SetRepositoryPolicyRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetRepositoryPolicyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

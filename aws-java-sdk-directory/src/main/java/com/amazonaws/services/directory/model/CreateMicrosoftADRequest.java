@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Creates a Microsoft AD in the AWS cloud.
  * </p>
  */
-public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateMicrosoftADRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

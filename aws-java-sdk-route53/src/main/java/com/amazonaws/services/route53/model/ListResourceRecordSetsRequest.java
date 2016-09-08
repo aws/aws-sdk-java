@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for a ListResourceRecordSets request.
  * </p>
  */
-public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListResourceRecordSetsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

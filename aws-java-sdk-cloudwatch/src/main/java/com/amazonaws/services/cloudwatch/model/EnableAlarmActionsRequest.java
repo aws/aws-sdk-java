@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes the inputs for EnableAlarmActions.
  * </p>
  */
-public class EnableAlarmActionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class EnableAlarmActionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

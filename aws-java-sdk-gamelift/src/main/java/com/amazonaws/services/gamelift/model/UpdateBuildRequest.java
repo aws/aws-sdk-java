@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for a request action.
  * </p>
  */
-public class UpdateBuildRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

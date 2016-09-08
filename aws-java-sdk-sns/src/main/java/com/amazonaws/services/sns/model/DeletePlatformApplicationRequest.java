@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for DeletePlatformApplication action.
  * </p>
  */
-public class DeletePlatformApplicationRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeletePlatformApplicationRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

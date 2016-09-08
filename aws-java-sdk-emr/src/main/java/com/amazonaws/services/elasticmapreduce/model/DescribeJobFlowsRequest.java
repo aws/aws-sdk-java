@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>DescribeJobFlows</a> operation.
  * </p>
  */
-public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeJobFlowsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for the ListThingTypes operation.
  * </p>
  */
-public class ListThingTypesResult implements Serializable, Cloneable {
+public class ListThingTypesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to describe one or more applications.
  * </p>
  */
-public class DescribeApplicationsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeApplicationsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

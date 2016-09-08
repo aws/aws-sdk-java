@@ -22,8 +22,9 @@ import java.io.Serializable;
  * that are associated with the current AWS account.
  * </p>
  */
-public class ListReusableDelegationSetsResult implements Serializable,
-        Cloneable {
+public class ListReusableDelegationSetsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

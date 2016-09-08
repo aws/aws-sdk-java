@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * session.
  * </p>
  */
-public class GetRemoteAccessSessionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetRemoteAccessSessionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

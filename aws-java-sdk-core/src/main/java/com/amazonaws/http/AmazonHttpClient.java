@@ -14,46 +14,6 @@
  */
 package com.amazonaws.http;
 
-import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
-import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
-import static com.amazonaws.event.SDKProgressPublisher.publishRequestContentLength;
-import static com.amazonaws.event.SDKProgressPublisher.publishResponseContentLength;
-import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolAvailableCount;
-import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolLeasedCount;
-import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolPendingCount;
-import static com.amazonaws.util.AWSRequestMetrics.Field.ThrottledRetryCount;
-import static com.amazonaws.util.IOUtils.closeQuietly;
-
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URI;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Random;
-import java.util.UUID;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.Header;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpEntityEnclosingRequest;
-import org.apache.http.HttpStatus;
-import org.apache.http.StatusLine;
-import org.apache.http.annotation.ThreadSafe;
-import org.apache.http.client.methods.HttpRequestBase;
-import org.apache.http.client.protocol.HttpClientContext;
-import org.apache.http.entity.BufferedHttpEntity;
-import org.apache.http.pool.ConnPoolControl;
-import org.apache.http.protocol.HttpContext;
-
 import com.amazonaws.AbortedException;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -68,9 +28,11 @@ import com.amazonaws.ResetException;
 import com.amazonaws.Response;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.SDKGlobalTime;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.CanHandleNullCredentials;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressInputStream;
@@ -84,6 +46,7 @@ import com.amazonaws.http.apache.utils.ApacheUtils;
 import com.amazonaws.http.client.HttpClientFactory;
 import com.amazonaws.http.exception.HttpRequestTimeoutException;
 import com.amazonaws.http.request.HttpRequestFactory;
+import com.amazonaws.http.response.AwsResponseHandlerAdapter;
 import com.amazonaws.http.settings.HttpClientSettings;
 import com.amazonaws.http.timers.client.ClientExecutionTimeoutException;
 import com.amazonaws.http.timers.client.ClientExecutionTimer;
@@ -117,6 +80,46 @@ import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.TimingInfo;
 import com.amazonaws.util.UnreliableFilterInputStream;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpEntityEnclosingRequest;
+import org.apache.http.HttpStatus;
+import org.apache.http.StatusLine;
+import org.apache.http.annotation.ThreadSafe;
+import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.entity.BufferedHttpEntity;
+import org.apache.http.pool.ConnPoolControl;
+import org.apache.http.protocol.HttpContext;
+
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Random;
+import java.util.UUID;
+
+import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
+import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
+import static com.amazonaws.event.SDKProgressPublisher.publishRequestContentLength;
+import static com.amazonaws.event.SDKProgressPublisher.publishResponseContentLength;
+import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolAvailableCount;
+import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolLeasedCount;
+import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolPendingCount;
+import static com.amazonaws.util.AWSRequestMetrics.Field.ThrottledRetryCount;
+import static com.amazonaws.util.IOUtils.closeQuietly;
+
 @ThreadSafe
 public class AmazonHttpClient {
     public static final String HEADER_USER_AGENT = "User-Agent";
@@ -127,17 +130,15 @@ public class AmazonHttpClient {
      * configuration, etc).
      */
     static final Log log = LogFactory.getLog(AmazonHttpClient.class);
-    /**
-     * Logger used for the purpose of logging the AWS request id extracted either from the httpClientSettings header response or from
-     * the response body.
-     */
-    private static final Log requestIdLog = LogFactory.getLog("com.amazonaws.requestId");
+
     /**
      * Logger providing detailed information on requests/responses. Users can
      * enable this logger to get access to AWS request IDs for responses,
      * individual requests and parameters sent to AWS, etc.
      */
-    private static final Log requestLog = LogFactory.getLog("com.amazonaws.request");
+    @SdkInternalApi
+    public static final Log requestLog = LogFactory.getLog("com.amazonaws.request");
+
     private static final HttpClientFactory<ConnectionManagerAwareHttpClient> httpClientFactory = new
             ApacheHttpClientFactory();
     /**
@@ -369,12 +370,32 @@ public class AmazonHttpClient {
                                    HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
                                    HttpResponseHandler<AmazonServiceException> errorResponseHandler,
                                    ExecutionContext executionContext) {
+        final HttpResponseHandler<T> awsResponseHandler = new AwsResponseHandlerAdapter<T>(
+                getNonNullResponseHandler(responseHandler),
+                request,
+                executionContext.getAwsRequestMetrics(),
+                responseMetadataCache);
+        return execute(request, executionContext, awsResponseHandler, errorResponseHandler);
+    }
+
+    /**
+     * Executes the request and returns the result.
+     *
+     * @param request              The AmazonWebServices request to send to the remote server
+     * @param responseHandler      A response handler to accept a successful response from the remote server
+     * @param errorResponseHandler A response handler to accept an unsuccessful response from the remote server
+     * @param executionContext     Additional information about the context of this web service call
+     */
+    public <T> Response<T> execute(Request<?> request,
+                                   ExecutionContext executionContext,
+                                   HttpResponseHandler<T> responseHandler,
+                                   HttpResponseHandler<AmazonServiceException> errorResponseHandler) {
         if (executionContext == null) {
             throw new AmazonClientException("Internal SDK Error: No execution context parameter specified.");
         }
         try {
             return executeWithTimer(request, getNonNullResponseHandler(responseHandler),
-                    getNonNullResponseHandler(errorResponseHandler), executionContext);
+                                    getNonNullResponseHandler(errorResponseHandler), executionContext);
         } catch (InterruptedException ie) {
             throw handleInterruptedException(executionContext, ie);
         } catch (AbortedException ae) {
@@ -418,7 +439,7 @@ public class AmazonHttpClient {
      * @throws InterruptedException
      */
     public <T> Response<T> executeWithTimer(Request<?> request,
-                                            HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
+                                            HttpResponseHandler<T> responseHandler,
                                             HttpResponseHandler<AmazonServiceException> errorResponseHandler,
                                             ExecutionContext executionContext) throws InterruptedException {
         try {
@@ -431,7 +452,7 @@ public class AmazonHttpClient {
     }
 
     private <T> Response<T> doExecute(Request<?> request,
-                                      HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
+                                      HttpResponseHandler<T> responseHandler,
                                       HttpResponseHandler<AmazonServiceException> errorResponseHandler,
                                       ExecutionContext executionContext) throws InterruptedException {
         final List<RequestHandler2> requestHandler2s = requestHandler2s(request, executionContext);
@@ -654,7 +675,7 @@ public class AmazonHttpClient {
      * Internal method to execute the HTTP method given.
      */
     private <T> Response<T> executeHelper(final Request<?> request,
-                                          HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
+                                          HttpResponseHandler<T> responseHandler,
                                           HttpResponseHandler<AmazonServiceException> errorResponseHandler,
                                           final ExecutionContext executionContext,
                                           List<RequestHandler2> requestHandlers) throws InterruptedException {
@@ -806,7 +827,7 @@ public class AmazonHttpClient {
      * Returns the response from executing one httpClientSettings request; or null for retry.
      */
     private <T> Response<T> executeOneRequest(final Request<?> request,
-                                              final HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
+                                              final HttpResponseHandler<T> responseHandler,
                                               final HttpResponseHandler<AmazonServiceException> errorResponseHandler,
                                               final ExecutionContext execContext,
                                               final AWSRequestMetrics awsRequestMetrics,
@@ -831,7 +852,7 @@ public class AmazonHttpClient {
 
         // Sign the request if a signer was provided
         execOneParams.newSigner(request, execContext);
-        if (execOneParams.signer != null && credentials != null) {
+        if (execOneParams.signer != null && (credentials != null || execOneParams.signer instanceof CanHandleNullCredentials)) {
             awsRequestMetrics.startEvent(Field.RequestSigningTime);
             try {
                 if (timeOffset != 0) {
@@ -867,7 +888,6 @@ public class AmazonHttpClient {
 
         /////////// Send HTTP request ////////////
         execContext.getClientExecutionTrackerTask().setCurrentHttpRequest(execOneParams.apacheRequest);
-        final boolean isHeaderReqIdAvail;
         final HttpRequestAbortTaskTracker requestAbortTaskTracker = httpRequestTimer
                 .startTimer(execOneParams.apacheRequest, getRequestTimeout(awsreq));
 
@@ -878,7 +898,6 @@ public class AmazonHttpClient {
                 execOneParams.apacheResponse
                         .setEntity(new BufferedHttpEntity(execOneParams.apacheResponse.getEntity()));
             }
-            isHeaderReqIdAvail = logHeaderRequestId(execOneParams.apacheResponse);
         } catch (IOException ioe) {
             // Client execution timeouts take precedence as it's not retryable
             if (execContext.getClientExecutionTrackerTask().hasTimeoutExpired()) {
@@ -906,7 +925,7 @@ public class AmazonHttpClient {
             HttpResponse httpResponse = createResponse(execOneParams.apacheRequest, request,
                     execOneParams.apacheResponse, localRequestContext);
             T response = handleResponse(request, responseHandler, execOneParams.apacheRequest, httpResponse,
-                    execOneParams.apacheResponse, execContext, isHeaderReqIdAvail, requestHandlers);
+                    execOneParams.apacheResponse, execContext, requestHandlers);
 
             /*
              * If this was a successful retry attempt we'll release the full retry capacity that
@@ -1005,44 +1024,6 @@ public class AmazonHttpClient {
                 && !needsConnectionLeftOpen && execParams.apacheResponse.getEntity() != null;
     }
 
-    /**
-     * Used to log the "x-amzn-RequestId" header at DEBUG level, if any, from the response. This method assumes the
-     * apache httpClientSettings request/response has just been successfully executed. The request id is logged using the
-     * "com.amazonaws.requestId" logger if it was enabled at DEBUG level; otherwise, it is logged at DEBUG level using
-     * the "com.amazonaws.request" logger.
-     *
-     * @return true if the AWS request id is available from the httpClientSettings header; false otherwise.
-     */
-    private boolean logHeaderRequestId(final org.apache.http.HttpResponse res) {
-        final Header reqIdHeader = res.getFirstHeader(HttpResponseHandler.X_AMZN_REQUEST_ID_HEADER);
-        final boolean isHeaderReqIdAvail = reqIdHeader != null;
-
-        if (requestIdLog.isDebugEnabled() || requestLog.isDebugEnabled()) {
-            final String msg = HttpResponseHandler.X_AMZN_REQUEST_ID_HEADER + ": "
-                    + (isHeaderReqIdAvail ? reqIdHeader.getValue() : "not available");
-            if (requestIdLog.isDebugEnabled())
-                requestIdLog.debug(msg);
-            else
-                requestLog.debug(msg);
-        }
-        return isHeaderReqIdAvail;
-    }
-
-    /**
-     * Used to log the request id (extracted from the response) at DEBUG level. This method is called only if there is
-     * no request id present in the httpClientSettings response header. The request id is logged using the "com.amazonaws.requestId"
-     * logger if it was enabled at DEBUG level; otherwise, it is logged using at DEBUG level using the
-     * "com.amazonaws.request" logger.
-     */
-    private void logResponseRequestId(final String awsRequestId) {
-        if (requestIdLog.isDebugEnabled() || requestLog.isDebugEnabled()) {
-            final String msg = "AWS Request ID: " + (awsRequestId == null ? "not available" : awsRequestId);
-            if (requestIdLog.isDebugEnabled())
-                requestIdLog.debug(msg);
-            else
-                requestLog.debug(msg);
-        }
-    }
 
     /**
      * Captures the connection pool metrics.
@@ -1212,19 +1193,16 @@ public class AmazonHttpClient {
      * @param responseHandler    The response unmarshaller used to interpret the contents of the response.
      * @param method             The HTTP method that was invoked, and contains the contents of the response.
      * @param executionContext   Extra state information about the request currently being executed.
-     * @param isHeaderReqIdAvail true if the AWS request id is available from the httpClientSettings response header; false
-     *                           otherwise.
      * @return The contents of the response, unmarshalled using the specified response handler.
      * @throws IOException If any problems were encountered reading the response contents from the HTTP method object.
      */
     @SuppressWarnings("deprecation")
     private <T> T handleResponse(Request<?> request,
-                                 HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
+                                 HttpResponseHandler<T> responseHandler,
                                  HttpRequestBase method,
                                  HttpResponse httpResponse,
                                  org.apache.http.HttpResponse apacheHttpResponse,
                                  ExecutionContext executionContext,
-                                 final boolean isHeaderReqIdAvail,
                                  List<RequestHandler2> requestHandlers) throws IOException, InterruptedException {
         AmazonWebServiceRequest awsreq = request.getOriginalRequest();
         ProgressListener listener = awsreq.getGeneralProgressListener();
@@ -1253,7 +1231,7 @@ public class AmazonHttpClient {
             }
 
             AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-            AmazonWebServiceResponse<? extends T> awsResponse;
+            T awsResponse;
             awsRequestMetrics.startEvent(Field.ResponseProcessingTime);
             publishProgress(listener, ProgressEventType.HTTP_RESPONSE_STARTED_EVENT);
             try {
@@ -1266,31 +1244,7 @@ public class AmazonHttpClient {
             if (countingInputStream != null) {
                 awsRequestMetrics.setCounter(Field.BytesProcessed, countingInputStream.getByteCount());
             }
-
-            if (awsResponse == null)
-                throw new RuntimeException("Unable to unmarshall response metadata. Response Code: "
-                        + httpResponse.getStatusCode() + ", Response Text: " + httpResponse.getStatusText());
-
-            AmazonWebServiceRequest userRequest = request.getOriginalRequest();
-            if (userRequest.getCloneRoot() != null)
-                userRequest = userRequest.getCloneRoot();
-            responseMetadataCache.add(userRequest, awsResponse.getResponseMetadata());
-            final String awsRequestId = awsResponse.getRequestId();
-
-            if (requestLog.isDebugEnabled()) {
-                final StatusLine statusLine = apacheHttpResponse.getStatusLine();
-                requestLog.debug(
-                        "Received successful response: " + (statusLine == null ? null : statusLine.getStatusCode())
-                                + ", AWS Request ID: " + awsRequestId);
-            }
-
-            if (!isHeaderReqIdAvail) {
-                // Logs the AWS request ID extracted from the payload if
-                // it is not available from the response header.
-                logResponseRequestId(awsRequestId);
-            }
-            awsRequestMetrics.addProperty(Field.AWSRequestID, awsRequestId);
-            return awsResponse.getResult();
+            return awsResponse;
         } catch (CRC32MismatchException e) {
             throw e;
         } catch (IOException e) {

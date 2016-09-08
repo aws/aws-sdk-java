@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A complex type that describes function metadata.
  * </p>
  */
-public class PublishVersionResult implements Serializable, Cloneable {
+public class PublishVersionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

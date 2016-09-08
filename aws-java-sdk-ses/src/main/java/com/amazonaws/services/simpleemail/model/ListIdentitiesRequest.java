@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * of verification status.
  * </p>
  */
-public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListIdentitiesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

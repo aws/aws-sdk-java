@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to set user settings as an administrator.
  * </p>
  */
-public class AdminSetUserSettingsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AdminSetUserSettingsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

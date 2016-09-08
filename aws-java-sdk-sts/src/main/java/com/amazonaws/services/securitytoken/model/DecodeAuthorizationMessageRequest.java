@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DecodeAuthorizationMessageRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

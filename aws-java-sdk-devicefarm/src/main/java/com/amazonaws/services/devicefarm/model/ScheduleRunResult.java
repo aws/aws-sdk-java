@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the result of a schedule run request.
  * </p>
  */
-public class ScheduleRunResult implements Serializable, Cloneable {
+public class ScheduleRunResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

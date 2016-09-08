@@ -22,7 +22,9 @@ import java.io.Serializable;
  * import job.
  * </p>
  */
-public class StopUserImportJobResult implements Serializable, Cloneable {
+public class StopUserImportJobResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

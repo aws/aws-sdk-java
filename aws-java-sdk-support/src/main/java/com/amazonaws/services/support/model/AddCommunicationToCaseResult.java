@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The result of the <a>AddCommunicationToCase</a> operation.
  * </p>
  */
-public class AddCommunicationToCaseResult implements Serializable, Cloneable {
+public class AddCommunicationToCaseResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

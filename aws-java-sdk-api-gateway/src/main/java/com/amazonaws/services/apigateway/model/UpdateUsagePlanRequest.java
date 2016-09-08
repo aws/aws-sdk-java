@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The PATCH request to update a usage plan of a given plan Id.
  * </p>
  */
-public class UpdateUsagePlanRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateUsagePlanRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

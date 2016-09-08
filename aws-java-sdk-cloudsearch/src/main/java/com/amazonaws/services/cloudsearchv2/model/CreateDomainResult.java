@@ -22,7 +22,9 @@ import java.io.Serializable;
  * newly created domain.
  * </p>
  */
-public class CreateDomainResult implements Serializable, Cloneable {
+public class CreateDomainResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private DomainStatus domainStatus;
 

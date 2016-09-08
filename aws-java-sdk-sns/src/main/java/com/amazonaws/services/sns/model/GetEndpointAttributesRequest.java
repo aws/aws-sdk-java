@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for GetEndpointAttributes action.
  * </p>
  */
-public class GetEndpointAttributesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetEndpointAttributesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

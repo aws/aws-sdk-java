@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * TBD
  * </p>
  */
-public class CreateApplicationRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateApplicationRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

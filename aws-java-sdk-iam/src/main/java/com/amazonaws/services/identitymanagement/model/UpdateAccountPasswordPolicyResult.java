@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class UpdateAccountPasswordPolicyResult implements Serializable,
-        Cloneable {
+public class UpdateAccountPasswordPolicyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

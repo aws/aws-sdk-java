@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the results of the <a>GetDirectoryLimits</a> operation.
  * </p>
  */
-public class GetDirectoryLimitsResult implements Serializable, Cloneable {
+public class GetDirectoryLimitsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

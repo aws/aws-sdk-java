@@ -1002,12 +1002,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements
      * @return The response metadata for the specified request, or null if none
      *         is available.
      */
-    public SimpleDBResponseMetadata getCachedResponseMetadata(
+    public com.amazonaws.services.simpledb.SimpleDBResponseMetadata getCachedResponseMetadata(
             AmazonWebServiceRequest request) {
         ResponseMetadata metadata = client
                 .getResponseMetadataForRequest(request);
         if (metadata != null)
-            return new SimpleDBResponseMetadata(metadata);
+            return new com.amazonaws.services.simpledb.SimpleDBResponseMetadata(
+                    metadata);
         else
             return null;
     }

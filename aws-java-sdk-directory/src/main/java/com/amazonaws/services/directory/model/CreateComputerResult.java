@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the results for the <a>CreateComputer</a> operation.
  * </p>
  */
-public class CreateComputerResult implements Serializable, Cloneable {
+public class CreateComputerResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

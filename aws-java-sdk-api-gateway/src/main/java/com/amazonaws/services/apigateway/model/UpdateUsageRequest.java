@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * usage plan associated with a specified API key.
  * </p>
  */
-public class UpdateUsageRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

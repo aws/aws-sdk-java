@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for RegisterTargets.
  * </p>
  */
-public class RegisterTargetsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class RegisterTargetsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

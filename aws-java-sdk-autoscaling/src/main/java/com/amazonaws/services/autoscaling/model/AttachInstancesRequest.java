@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for AttachInstances.
  * </p>
  */
-public class AttachInstancesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AttachInstancesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

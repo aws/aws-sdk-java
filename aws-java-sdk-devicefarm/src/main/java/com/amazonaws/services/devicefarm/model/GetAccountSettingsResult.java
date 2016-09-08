@@ -22,7 +22,9 @@ import java.io.Serializable;
  * <code>GetAccountSettings</code> request.
  * </p>
  */
-public class GetAccountSettingsResult implements Serializable, Cloneable {
+public class GetAccountSettingsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private AccountSettings accountSettings;
 

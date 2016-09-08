@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for CreateListener.
  * </p>
  */
-public class CreateListenerRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateListenerRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

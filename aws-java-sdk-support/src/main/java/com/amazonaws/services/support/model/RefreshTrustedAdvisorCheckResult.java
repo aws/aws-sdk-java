@@ -21,8 +21,9 @@ import java.io.Serializable;
  * The current refresh status of a Trusted Advisor check.
  * </p>
  */
-public class RefreshTrustedAdvisorCheckResult implements Serializable,
-        Cloneable {
+public class RefreshTrustedAdvisorCheckResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

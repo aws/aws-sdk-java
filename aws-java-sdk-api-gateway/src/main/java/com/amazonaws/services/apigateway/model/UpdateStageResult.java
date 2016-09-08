@@ -25,7 +25,9 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html"
  * >Deploy an API</a> </div>
  */
-public class UpdateStageResult implements Serializable, Cloneable {
+public class UpdateStageResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

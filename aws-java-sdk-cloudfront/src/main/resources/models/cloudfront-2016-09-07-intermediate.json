@@ -1,6 +1,6 @@
 {
   "metadata" : {
-    "apiVersion" : "2016-08-20",
+    "apiVersion" : "2016-09-07",
     "protocol" : "rest-xml",
     "checksumFormat" : null,
     "documentation" : "<fullname>Amazon CloudFront</fullname> <p>Amazon CloudFront is a global content delivery network (CDN) service that accelerates delivery of your websites, APIs, video content or other web assets. It integrates with other Amazon Web Services products to give developers and businesses an easy way to accelerate content to end users with no minimum usage commitments.</p>",
@@ -6779,10 +6779,10 @@
         "variableSetterType" : "GetCloudFrontOriginAccessIdentityConfigRequest"
       },
       "marshaller" : {
-        "action" : "GetCloudFrontOriginAccessIdentityConfig2016_08_20",
+        "action" : "GetCloudFrontOriginAccessIdentityConfig2016_09_07",
         "verb" : "GET",
         "target" : null,
-        "requestUri" : "/2016-08-20/origin-access-identity/cloudfront/{Id}/config",
+        "requestUri" : "/2016-09-07/origin-access-identity/cloudfront/{Id}/config",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -10471,10 +10471,10 @@
         "variableSetterType" : "DeleteDistributionRequest"
       },
       "marshaller" : {
-        "action" : "DeleteDistribution2016_08_20",
+        "action" : "DeleteDistribution2016_09_07",
         "verb" : "DELETE",
         "target" : null,
-        "requestUri" : "/2016-08-20/distribution/{Id}",
+        "requestUri" : "/2016-09-07/distribution/{Id}",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -10915,10 +10915,10 @@
         "variableSetterType" : "GetStreamingDistributionRequest"
       },
       "marshaller" : {
-        "action" : "GetStreamingDistribution2016_08_20",
+        "action" : "GetStreamingDistribution2016_09_07",
         "verb" : "GET",
         "target" : null,
-        "requestUri" : "/2016-08-20/streaming-distribution/{Id}",
+        "requestUri" : "/2016-09-07/streaming-distribution/{Id}",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -14713,7 +14713,7 @@
         "listModel" : null,
         "mapModel" : null,
         "enumType" : null,
-        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
         "idempotencyToken" : false,
         "simple" : false,
         "list" : false,
@@ -14733,10 +14733,10 @@
         "variableSetterType" : "CreateDistributionWithTagsRequest"
       },
       "marshaller" : {
-        "action" : "CreateDistributionWithTags2016_08_20",
+        "action" : "CreateDistributionWithTags2016_09_07",
         "verb" : "POST",
         "target" : null,
-        "requestUri" : "/2016-08-20/distribution?WithTags",
+        "requestUri" : "/2016-09-07/distribution?WithTags",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -14792,7 +14792,7 @@
           "listModel" : null,
           "mapModel" : null,
           "enumType" : null,
-          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
           "idempotencyToken" : false,
           "simple" : false,
           "list" : false,
@@ -14878,10 +14878,10 @@
         "variableSetterType" : "GetDistributionConfigRequest"
       },
       "marshaller" : {
-        "action" : "GetDistributionConfig2016_08_20",
+        "action" : "GetDistributionConfig2016_09_07",
         "verb" : "GET",
         "target" : null,
-        "requestUri" : "/2016-08-20/distribution/{Id}/config",
+        "requestUri" : "/2016-09-07/distribution/{Id}/config",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -15639,10 +15639,10 @@
         "variableSetterType" : "DeleteCloudFrontOriginAccessIdentityRequest"
       },
       "marshaller" : {
-        "action" : "DeleteCloudFrontOriginAccessIdentity2016_08_20",
+        "action" : "DeleteCloudFrontOriginAccessIdentity2016_09_07",
         "verb" : "DELETE",
         "target" : null,
-        "requestUri" : "/2016-08-20/origin-access-identity/cloudfront/{Id}",
+        "requestUri" : "/2016-09-07/origin-access-identity/cloudfront/{Id}",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -15921,10 +15921,10 @@
         "variableSetterType" : "ListStreamingDistributionsRequest"
       },
       "marshaller" : {
-        "action" : "ListStreamingDistributions2016_08_20",
+        "action" : "ListStreamingDistributions2016_09_07",
         "verb" : "GET",
         "target" : null,
-        "requestUri" : "/2016-08-20/streaming-distribution",
+        "requestUri" : "/2016-09-07/streaming-distribution",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -16851,7 +16851,7 @@
       "documentation" : "A summary of the information for an Amazon CloudFront distribution.",
       "shapeName" : "DistributionSummary",
       "deprecated" : false,
-      "required" : [ "Id", "ARN", "Status", "LastModifiedTime", "DomainName", "Aliases", "Origins", "DefaultCacheBehavior", "CacheBehaviors", "CustomErrorResponses", "Comment", "PriceClass", "Enabled", "ViewerCertificate", "Restrictions", "WebACLId" ],
+      "required" : [ "Id", "ARN", "Status", "LastModifiedTime", "DomainName", "Aliases", "Origins", "DefaultCacheBehavior", "CacheBehaviors", "CustomErrorResponses", "Comment", "PriceClass", "Enabled", "ViewerCertificate", "Restrictions", "WebACLId", "HttpVersion" ],
       "hasPayloadMember" : false,
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
@@ -17689,6 +17689,58 @@
         "getterDocumentation" : "/**The Web ACL Id (if any) associated with the distribution.\n@return The Web ACL Id (if any) associated with the distribution.*/",
         "fluentSetterDocumentation" : "/**The Web ACL Id (if any) associated with the distribution.\n@param webACLId The Web ACL Id (if any) associated with the distribution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**The Web ACL Id (if any) associated with the distribution.\n@param webACLId The Web ACL Id (if any) associated with the distribution.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.",
+        "name" : "HttpVersion",
+        "c2jName" : "HttpVersion",
+        "c2jShape" : "HttpVersion",
+        "variable" : {
+          "variableName" : "httpVersion",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "httpVersion",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "HttpVersion",
+          "marshallLocationName" : "HttpVersion",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : "HttpVersion",
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@param httpVersion Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@see HttpVersion*/",
+        "getterDocumentation" : "/**Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@return Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@see HttpVersion*/",
+        "fluentSetterDocumentation" : "/**Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@param httpVersion Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpVersion*/",
+        "varargSetterDocumentation" : "/**Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@param httpVersion Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpVersion*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -18453,6 +18505,59 @@
           "getterDocumentation" : "/**The ARN (Amazon Resource Name) for the distribution. For example: arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.\n@return The ARN (Amazon Resource Name) for the distribution. For example: arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.*/",
           "fluentSetterDocumentation" : "/**The ARN (Amazon Resource Name) for the distribution. For example: arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.\n@param aRN The ARN (Amazon Resource Name) for the distribution. For example: arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**The ARN (Amazon Resource Name) for the distribution. For example: arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.\n@param aRN The ARN (Amazon Resource Name) for the distribution. For example: arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "HttpVersion" : {
+          "documentation" : "Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.",
+          "name" : "HttpVersion",
+          "c2jName" : "HttpVersion",
+          "c2jShape" : "HttpVersion",
+          "variable" : {
+            "variableName" : "httpVersion",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "httpVersion",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "HttpVersion",
+            "marshallLocationName" : "HttpVersion",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : "HttpVersion",
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@param httpVersion Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@see HttpVersion*/",
+          "getterDocumentation" : "/**Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@return Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@see HttpVersion*/",
+          "fluentSetterDocumentation" : "/**Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@param httpVersion Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpVersion*/",
+          "varargSetterDocumentation" : "/**Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@param httpVersion Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpVersion*/"
         },
         "Restrictions" : {
           "documentation" : "",
@@ -19616,7 +19721,7 @@
         "listModel" : null,
         "mapModel" : null,
         "enumType" : null,
-        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
         "idempotencyToken" : false,
         "simple" : false,
         "list" : false,
@@ -19636,10 +19741,10 @@
         "variableSetterType" : "CreateDistributionRequest"
       },
       "marshaller" : {
-        "action" : "CreateDistribution2016_08_20",
+        "action" : "CreateDistribution2016_09_07",
         "verb" : "POST",
         "target" : null,
-        "requestUri" : "/2016-08-20/distribution",
+        "requestUri" : "/2016-09-07/distribution",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -19695,7 +19800,7 @@
           "listModel" : null,
           "mapModel" : null,
           "enumType" : null,
-          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
           "idempotencyToken" : false,
           "simple" : false,
           "list" : false,
@@ -20365,6 +20470,47 @@
         }
       }
     },
+    "HttpVersion" : {
+      "c2jName" : "HttpVersion",
+      "documentation" : "",
+      "shapeName" : "HttpVersion",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : [ {
+        "name" : "Http11",
+        "value" : "http1.1"
+      }, {
+        "name" : "Http2",
+        "value" : "http2"
+      } ],
+      "variable" : {
+        "variableName" : "httpVersion",
+        "variableType" : "HttpVersion",
+        "variableDeclarationType" : "HttpVersion",
+        "documentation" : null,
+        "simpleType" : "HttpVersion",
+        "variableSetterType" : "HttpVersion"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "DeleteCloudFrontOriginAccessIdentityResult" : {
       "c2jName" : "DeleteCloudFrontOriginAccessIdentityResult",
       "documentation" : null,
@@ -20886,7 +21032,7 @@
         "listModel" : null,
         "mapModel" : null,
         "enumType" : null,
-        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
         "idempotencyToken" : false,
         "simple" : false,
         "list" : false,
@@ -20906,10 +21052,10 @@
         "variableSetterType" : "TagResourceRequest"
       },
       "marshaller" : {
-        "action" : "TagResource2016_08_20",
+        "action" : "TagResource2016_09_07",
         "verb" : "POST",
         "target" : null,
-        "requestUri" : "/2016-08-20/tagging?Operation=Tag",
+        "requestUri" : "/2016-09-07/tagging?Operation=Tag",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -21018,7 +21164,7 @@
           "listModel" : null,
           "mapModel" : null,
           "enumType" : null,
-          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
           "idempotencyToken" : false,
           "simple" : false,
           "list" : false,
@@ -22900,10 +23046,10 @@
         "variableSetterType" : "DeleteStreamingDistributionRequest"
       },
       "marshaller" : {
-        "action" : "DeleteStreamingDistribution2016_08_20",
+        "action" : "DeleteStreamingDistribution2016_09_07",
         "verb" : "DELETE",
         "target" : null,
-        "requestUri" : "/2016-08-20/streaming-distribution/{Id}",
+        "requestUri" : "/2016-09-07/streaming-distribution/{Id}",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -23150,10 +23296,10 @@
         "variableSetterType" : "GetInvalidationRequest"
       },
       "marshaller" : {
-        "action" : "GetInvalidation2016_08_20",
+        "action" : "GetInvalidation2016_09_07",
         "verb" : "GET",
         "target" : null,
-        "requestUri" : "/2016-08-20/distribution/{DistributionId}/invalidation/{Id}",
+        "requestUri" : "/2016-09-07/distribution/{DistributionId}/invalidation/{Id}",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -24655,10 +24801,10 @@
         "variableSetterType" : "ListDistributionsRequest"
       },
       "marshaller" : {
-        "action" : "ListDistributions2016_08_20",
+        "action" : "ListDistributions2016_09_07",
         "verb" : "GET",
         "target" : null,
-        "requestUri" : "/2016-08-20/distribution",
+        "requestUri" : "/2016-09-07/distribution",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -25376,10 +25522,10 @@
         "variableSetterType" : "ListDistributionsByWebACLIdRequest"
       },
       "marshaller" : {
-        "action" : "ListDistributionsByWebACLId2016_08_20",
+        "action" : "ListDistributionsByWebACLId2016_09_07",
         "verb" : "GET",
         "target" : null,
-        "requestUri" : "/2016-08-20/distributionsByWebACLId/{WebACLId}",
+        "requestUri" : "/2016-09-07/distributionsByWebACLId/{WebACLId}",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -26612,7 +26758,7 @@
         "listModel" : null,
         "mapModel" : null,
         "enumType" : null,
-        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
         "idempotencyToken" : false,
         "simple" : false,
         "list" : false,
@@ -26632,10 +26778,10 @@
         "variableSetterType" : "CreateCloudFrontOriginAccessIdentityRequest"
       },
       "marshaller" : {
-        "action" : "CreateCloudFrontOriginAccessIdentity2016_08_20",
+        "action" : "CreateCloudFrontOriginAccessIdentity2016_09_07",
         "verb" : "POST",
         "target" : null,
-        "requestUri" : "/2016-08-20/origin-access-identity/cloudfront",
+        "requestUri" : "/2016-09-07/origin-access-identity/cloudfront",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -26691,7 +26837,7 @@
           "listModel" : null,
           "mapModel" : null,
           "enumType" : null,
-          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
           "idempotencyToken" : false,
           "simple" : false,
           "list" : false,
@@ -27213,7 +27359,7 @@
         "listModel" : null,
         "mapModel" : null,
         "enumType" : null,
-        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
         "idempotencyToken" : false,
         "simple" : false,
         "list" : false,
@@ -27337,10 +27483,10 @@
         "variableSetterType" : "UpdateStreamingDistributionRequest"
       },
       "marshaller" : {
-        "action" : "UpdateStreamingDistribution2016_08_20",
+        "action" : "UpdateStreamingDistribution2016_09_07",
         "verb" : "PUT",
         "target" : null,
-        "requestUri" : "/2016-08-20/streaming-distribution/{Id}/config",
+        "requestUri" : "/2016-09-07/streaming-distribution/{Id}/config",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -27502,7 +27648,7 @@
           "listModel" : null,
           "mapModel" : null,
           "enumType" : null,
-          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
           "idempotencyToken" : false,
           "simple" : false,
           "list" : false,
@@ -31064,7 +31210,7 @@
         "listModel" : null,
         "mapModel" : null,
         "enumType" : null,
-        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
         "idempotencyToken" : false,
         "simple" : false,
         "list" : false,
@@ -31188,10 +31334,10 @@
         "variableSetterType" : "UpdateCloudFrontOriginAccessIdentityRequest"
       },
       "marshaller" : {
-        "action" : "UpdateCloudFrontOriginAccessIdentity2016_08_20",
+        "action" : "UpdateCloudFrontOriginAccessIdentity2016_09_07",
         "verb" : "PUT",
         "target" : null,
-        "requestUri" : "/2016-08-20/origin-access-identity/cloudfront/{Id}/config",
+        "requestUri" : "/2016-09-07/origin-access-identity/cloudfront/{Id}/config",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -31353,7 +31499,7 @@
           "listModel" : null,
           "mapModel" : null,
           "enumType" : null,
-          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
           "idempotencyToken" : false,
           "simple" : false,
           "list" : false,
@@ -31439,10 +31585,10 @@
         "variableSetterType" : "GetDistributionRequest"
       },
       "marshaller" : {
-        "action" : "GetDistribution2016_08_20",
+        "action" : "GetDistribution2016_09_07",
         "verb" : "GET",
         "target" : null,
-        "requestUri" : "/2016-08-20/distribution/{Id}",
+        "requestUri" : "/2016-09-07/distribution/{Id}",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -32568,7 +32714,7 @@
         "listModel" : null,
         "mapModel" : null,
         "enumType" : null,
-        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
         "idempotencyToken" : false,
         "simple" : false,
         "list" : false,
@@ -32588,10 +32734,10 @@
         "variableSetterType" : "CreateStreamingDistributionWithTagsRequest"
       },
       "marshaller" : {
-        "action" : "CreateStreamingDistributionWithTags2016_08_20",
+        "action" : "CreateStreamingDistributionWithTags2016_09_07",
         "verb" : "POST",
         "target" : null,
-        "requestUri" : "/2016-08-20/streaming-distribution?WithTags",
+        "requestUri" : "/2016-09-07/streaming-distribution?WithTags",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -32647,7 +32793,7 @@
           "listModel" : null,
           "mapModel" : null,
           "enumType" : null,
-          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
           "idempotencyToken" : false,
           "simple" : false,
           "list" : false,
@@ -32713,7 +32859,7 @@
         "listModel" : null,
         "mapModel" : null,
         "enumType" : null,
-        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
         "idempotencyToken" : false,
         "simple" : false,
         "list" : false,
@@ -32733,10 +32879,10 @@
         "variableSetterType" : "CreateStreamingDistributionRequest"
       },
       "marshaller" : {
-        "action" : "CreateStreamingDistribution2016_08_20",
+        "action" : "CreateStreamingDistribution2016_09_07",
         "verb" : "POST",
         "target" : null,
-        "requestUri" : "/2016-08-20/streaming-distribution",
+        "requestUri" : "/2016-09-07/streaming-distribution",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -32792,7 +32938,7 @@
           "listModel" : null,
           "mapModel" : null,
           "enumType" : null,
-          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
           "idempotencyToken" : false,
           "simple" : false,
           "list" : false,
@@ -34968,10 +35114,10 @@
         "variableSetterType" : "ListCloudFrontOriginAccessIdentitiesRequest"
       },
       "marshaller" : {
-        "action" : "ListCloudFrontOriginAccessIdentities2016_08_20",
+        "action" : "ListCloudFrontOriginAccessIdentities2016_09_07",
         "verb" : "GET",
         "target" : null,
-        "requestUri" : "/2016-08-20/origin-access-identity/cloudfront",
+        "requestUri" : "/2016-09-07/origin-access-identity/cloudfront",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -35262,10 +35408,10 @@
         "variableSetterType" : "GetCloudFrontOriginAccessIdentityRequest"
       },
       "marshaller" : {
-        "action" : "GetCloudFrontOriginAccessIdentity2016_08_20",
+        "action" : "GetCloudFrontOriginAccessIdentity2016_09_07",
         "verb" : "GET",
         "target" : null,
-        "requestUri" : "/2016-08-20/origin-access-identity/cloudfront/{Id}",
+        "requestUri" : "/2016-09-07/origin-access-identity/cloudfront/{Id}",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -36594,10 +36740,10 @@
         "variableSetterType" : "GetStreamingDistributionConfigRequest"
       },
       "marshaller" : {
-        "action" : "GetStreamingDistributionConfig2016_08_20",
+        "action" : "GetStreamingDistributionConfig2016_09_07",
         "verb" : "GET",
         "target" : null,
-        "requestUri" : "/2016-08-20/streaming-distribution/{Id}/config",
+        "requestUri" : "/2016-09-07/streaming-distribution/{Id}/config",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -36783,10 +36929,10 @@
         "variableSetterType" : "ListTagsForResourceRequest"
       },
       "marshaller" : {
-        "action" : "ListTagsForResource2016_08_20",
+        "action" : "ListTagsForResource2016_09_07",
         "verb" : "GET",
         "target" : null,
-        "requestUri" : "/2016-08-20/tagging",
+        "requestUri" : "/2016-09-07/tagging",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -36992,7 +37138,7 @@
         "listModel" : null,
         "mapModel" : null,
         "enumType" : null,
-        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
         "idempotencyToken" : false,
         "simple" : false,
         "list" : false,
@@ -37012,10 +37158,10 @@
         "variableSetterType" : "CreateInvalidationRequest"
       },
       "marshaller" : {
-        "action" : "CreateInvalidation2016_08_20",
+        "action" : "CreateInvalidation2016_09_07",
         "verb" : "POST",
         "target" : null,
-        "requestUri" : "/2016-08-20/distribution/{DistributionId}/invalidation",
+        "requestUri" : "/2016-09-07/distribution/{DistributionId}/invalidation",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -37071,7 +37217,7 @@
           "listModel" : null,
           "mapModel" : null,
           "enumType" : null,
-          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
           "idempotencyToken" : false,
           "simple" : false,
           "list" : false,
@@ -37222,7 +37368,7 @@
         "listModel" : null,
         "mapModel" : null,
         "enumType" : null,
-        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
         "idempotencyToken" : false,
         "simple" : false,
         "list" : false,
@@ -37346,10 +37492,10 @@
         "variableSetterType" : "UpdateDistributionRequest"
       },
       "marshaller" : {
-        "action" : "UpdateDistribution2016_08_20",
+        "action" : "UpdateDistribution2016_09_07",
         "verb" : "PUT",
         "target" : null,
-        "requestUri" : "/2016-08-20/distribution/{Id}/config",
+        "requestUri" : "/2016-09-07/distribution/{Id}/config",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -37405,7 +37551,7 @@
           "listModel" : null,
           "mapModel" : null,
           "enumType" : null,
-          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
           "idempotencyToken" : false,
           "simple" : false,
           "list" : false,
@@ -38298,10 +38444,10 @@
         "variableSetterType" : "ListInvalidationsRequest"
       },
       "marshaller" : {
-        "action" : "ListInvalidations2016_08_20",
+        "action" : "ListInvalidations2016_09_07",
         "verb" : "GET",
         "target" : null,
-        "requestUri" : "/2016-08-20/distribution/{DistributionId}/invalidation",
+        "requestUri" : "/2016-09-07/distribution/{DistributionId}/invalidation",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -39968,6 +40114,58 @@
         "getterDocumentation" : "/**(Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is associated with the distribution.\n@return (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is associated with the distribution.*/",
         "fluentSetterDocumentation" : "/**(Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is associated with the distribution.\n@param webACLId (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is associated with the distribution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**(Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is associated with the distribution.\n@param webACLId (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is associated with the distribution.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.",
+        "name" : "HttpVersion",
+        "c2jName" : "HttpVersion",
+        "c2jShape" : "HttpVersion",
+        "variable" : {
+          "variableName" : "httpVersion",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "httpVersion",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "HttpVersion",
+          "marshallLocationName" : "HttpVersion",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : "HttpVersion",
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@param httpVersion (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@see HttpVersion*/",
+        "getterDocumentation" : "/**(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@return (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@see HttpVersion*/",
+        "fluentSetterDocumentation" : "/**(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@param httpVersion (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpVersion*/",
+        "varargSetterDocumentation" : "/**(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@param httpVersion (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpVersion*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -40626,6 +40824,59 @@
           "getterDocumentation" : "/**(Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is associated with the distribution.\n@return (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is associated with the distribution.*/",
           "fluentSetterDocumentation" : "/**(Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is associated with the distribution.\n@param webACLId (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is associated with the distribution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**(Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is associated with the distribution.\n@param webACLId (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the AWS WAF web ACL that is associated with the distribution.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "HttpVersion" : {
+          "documentation" : "(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.",
+          "name" : "HttpVersion",
+          "c2jName" : "HttpVersion",
+          "c2jShape" : "HttpVersion",
+          "variable" : {
+            "variableName" : "httpVersion",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "httpVersion",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "HttpVersion",
+            "marshallLocationName" : "HttpVersion",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : "HttpVersion",
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@param httpVersion (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@see HttpVersion*/",
+          "getterDocumentation" : "/**(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@return (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@see HttpVersion*/",
+          "fluentSetterDocumentation" : "/**(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@param httpVersion (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpVersion*/",
+          "varargSetterDocumentation" : "/**(Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@param httpVersion (Optional) Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpVersion*/"
         },
         "Restrictions" : {
           "documentation" : "",
@@ -41358,7 +41609,7 @@
         "listModel" : null,
         "mapModel" : null,
         "enumType" : null,
-        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+        "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
         "idempotencyToken" : false,
         "simple" : false,
         "list" : false,
@@ -41378,10 +41629,10 @@
         "variableSetterType" : "UntagResourceRequest"
       },
       "marshaller" : {
-        "action" : "UntagResource2016_08_20",
+        "action" : "UntagResource2016_09_07",
         "verb" : "POST",
         "target" : null,
-        "requestUri" : "/2016-08-20/tagging?Operation=Untag",
+        "requestUri" : "/2016-09-07/tagging?Operation=Untag",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -41490,7 +41741,7 @@
           "listModel" : null,
           "mapModel" : null,
           "enumType" : null,
-          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-08-20/",
+          "xmlNameSpaceUri" : "http://cloudfront.amazonaws.com/doc/2016-09-07/",
           "idempotencyToken" : false,
           "simple" : false,
           "list" : false,
@@ -42190,6 +42441,7 @@
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cloudfront.model.AmazonCloudFrontException",
   "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : true,
+  "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonCloudFrontException",
   "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller"
 }

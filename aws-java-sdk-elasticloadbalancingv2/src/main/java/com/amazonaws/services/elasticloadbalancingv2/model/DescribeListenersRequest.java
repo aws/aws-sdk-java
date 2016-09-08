@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribeListeners.
  * </p>
  */
-public class DescribeListenersRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeListenersRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for CompleteLifecycleAction.
  * </p>
  */
-public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CompleteLifecycleActionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

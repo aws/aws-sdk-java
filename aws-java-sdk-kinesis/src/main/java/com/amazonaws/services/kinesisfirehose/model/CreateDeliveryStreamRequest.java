@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for <a>CreateDeliveryStream</a>.
  * </p>
  */
-public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateDeliveryStreamRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

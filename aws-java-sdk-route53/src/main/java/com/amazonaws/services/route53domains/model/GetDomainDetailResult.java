@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The GetDomainDetail response includes the following elements.
  * </p>
  */
-public class GetDomainDetailResult implements Serializable, Cloneable {
+public class GetDomainDetailResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

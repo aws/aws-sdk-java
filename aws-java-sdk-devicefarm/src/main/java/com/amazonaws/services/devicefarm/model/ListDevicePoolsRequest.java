@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the result of a list device pools request.
  * </p>
  */
-public class ListDevicePoolsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListDevicePoolsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

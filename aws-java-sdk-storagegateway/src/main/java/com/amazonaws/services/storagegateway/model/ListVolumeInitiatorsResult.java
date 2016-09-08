@@ -21,7 +21,9 @@ import java.io.Serializable;
  * ListVolumeInitiatorsOutput
  * </p>
  */
-public class ListVolumeInitiatorsResult implements Serializable, Cloneable {
+public class ListVolumeInitiatorsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

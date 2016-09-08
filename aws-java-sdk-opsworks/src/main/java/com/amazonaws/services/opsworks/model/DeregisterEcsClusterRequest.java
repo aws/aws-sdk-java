@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeregisterEcsClusterRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeregisterEcsClusterRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for ModifyRules.
  * </p>
  */
-public class ModifyRuleRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

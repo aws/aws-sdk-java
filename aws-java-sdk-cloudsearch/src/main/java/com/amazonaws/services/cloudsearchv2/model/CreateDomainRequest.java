@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * operation. Specifies a name for the new search domain.
  * </p>
  */
-public class CreateDomainRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

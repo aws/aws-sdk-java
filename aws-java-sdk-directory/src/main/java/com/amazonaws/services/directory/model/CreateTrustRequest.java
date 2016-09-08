@@ -30,8 +30,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * between a Microsoft AD in the AWS cloud and an external domain.
  * </p>
  */
-public class CreateTrustRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

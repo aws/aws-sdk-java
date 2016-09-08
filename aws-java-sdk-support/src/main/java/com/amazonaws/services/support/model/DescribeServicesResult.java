@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The list of AWS services returned by the <a>DescribeServices</a> operation.
  * </p>
  */
-public class DescribeServicesResult implements Serializable, Cloneable {
+public class DescribeServicesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

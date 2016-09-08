@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <a>ListRuleNamesByTarget</a> operation.
  * </p>
  */
-public class ListRuleNamesByTargetRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListRuleNamesByTargetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

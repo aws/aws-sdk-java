@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetConfigResult implements Serializable, Cloneable {
+public class GetConfigResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

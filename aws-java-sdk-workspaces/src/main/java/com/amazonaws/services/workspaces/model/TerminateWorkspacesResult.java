@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the results of the <a>TerminateWorkspaces</a> operation.
  * </p>
  */
-public class TerminateWorkspacesResult implements Serializable, Cloneable {
+public class TerminateWorkspacesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

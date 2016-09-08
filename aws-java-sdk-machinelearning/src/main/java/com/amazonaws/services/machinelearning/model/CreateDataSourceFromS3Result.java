@@ -27,7 +27,9 @@ import java.io.Serializable;
  * checking the <code>Status</code> parameter.
  * </p>
  */
-public class CreateDataSourceFromS3Result implements Serializable, Cloneable {
+public class CreateDataSourceFromS3Result extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

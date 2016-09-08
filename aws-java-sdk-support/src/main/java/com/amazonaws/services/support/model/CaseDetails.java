@@ -22,33 +22,79 @@ import java.io.Serializable;
  * contained the response from a <a>DescribeCases</a> request.
  * <b>CaseDetails</b> contains the following fields:
  * </p>
- * <ol>
- * <li><b>CaseID.</b> The AWS Support case ID requested or returned in the call.
- * The case ID is an alphanumeric string formatted as shown in this example:
- * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.</li>
- * <li><b>CategoryCode.</b> The category of problem for the AWS Support case.
+ * <ul>
+ * <li>
+ * <p>
+ * <b>caseId.</b> The AWS Support case ID requested or returned in the call. The
+ * case ID is an alphanumeric string formatted as shown in this example:
+ * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>categoryCode.</b> The category of problem for the AWS Support case.
  * Corresponds to the CategoryCode values returned by a call to
- * <a>DescribeServices</a>.</li>
- * <li><b>DisplayId.</b> The identifier for the case on pages in the AWS Support
- * Center.</li>
- * <li><b>Language.</b> The ISO 639-1 code for the language in which AWS
- * provides support. AWS Support currently supports English ("en") and Japanese
- * ("ja"). Language parameters must be passed explicitly for operations that
- * take them.</li>
- * <li><b>RecentCommunications.</b> One or more <a>Communication</a> objects.
- * Fields of these objects are <code>Attachments</code>, <code>Body</code>,
- * <code>CaseId</code>, <code>SubmittedBy</code>, and <code>TimeCreated</code>.</li>
- * <li><b>NextToken.</b> A resumption point for pagination.</li>
- * <li><b>ServiceCode.</b> The identifier for the AWS service that corresponds
- * to the service code defined in the call to <a>DescribeServices</a>.</li>
- * <li><b>SeverityCode. </b>The severity code assigned to the case. Contains one
- * of the values returned by the call to <a>DescribeSeverityLevels</a>.</li>
- * <li><b>Status.</b> The status of the case in the AWS Support Center.</li>
- * <li><b>Subject.</b> The subject line of the case.</li>
- * <li><b>SubmittedBy.</b> The email address of the account that submitted the
- * case.</li>
- * <li><b>TimeCreated.</b> The time the case was created, in ISO-8601 format.</li>
- * </ol>
+ * <a>DescribeServices</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>displayId.</b> The identifier for the case on pages in the AWS Support
+ * Center.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>language.</b> The ISO 639-1 code for the language in which AWS provides
+ * support. AWS Support currently supports English ("en") and Japanese ("ja").
+ * Language parameters must be passed explicitly for operations that take them.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>recentCommunications.</b> One or more <a>Communication</a> objects. Fields
+ * of these objects are <code>attachments</code>, <code>body</code>,
+ * <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>nextToken.</b> A resumption point for pagination.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>serviceCode.</b> The identifier for the AWS service that corresponds to
+ * the service code defined in the call to <a>DescribeServices</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>severityCode. </b>The severity code assigned to the case. Contains one of
+ * the values returned by the call to <a>DescribeSeverityLevels</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>status.</b> The status of the case in the AWS Support Center.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>subject.</b> The subject line of the case.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>submittedBy.</b> The email address of the account that submitted the case.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>timeCreated.</b> The time the case was created, in ISO-8601 format.
+ * </p>
+ * </li>
+ * </ul>
  */
 public class CaseDetails implements Serializable, Cloneable {
 

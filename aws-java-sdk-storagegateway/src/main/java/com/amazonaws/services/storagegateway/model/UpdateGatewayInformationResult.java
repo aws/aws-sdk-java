@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A JSON object containing the ARN of the gateway that was updated.
  * </p>
  */
-public class UpdateGatewayInformationResult implements Serializable, Cloneable {
+public class UpdateGatewayInformationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

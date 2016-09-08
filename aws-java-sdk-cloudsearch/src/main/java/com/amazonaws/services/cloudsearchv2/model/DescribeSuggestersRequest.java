@@ -26,8 +26,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * pending changes, set the <code>Deployed</code> option to <code>true</code>.
  * </p>
  */
-public class DescribeSuggestersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeSuggestersRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

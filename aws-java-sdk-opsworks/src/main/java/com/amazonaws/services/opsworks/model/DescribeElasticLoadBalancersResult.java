@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeElasticLoadBalancers</code> request.
  * </p>
  */
-public class DescribeElasticLoadBalancersResult implements Serializable,
-        Cloneable {
+public class DescribeElasticLoadBalancersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

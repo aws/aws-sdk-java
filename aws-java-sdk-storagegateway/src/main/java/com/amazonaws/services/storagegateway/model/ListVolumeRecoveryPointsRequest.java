@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListVolumeRecoveryPointsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListVolumeRecoveryPointsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
 

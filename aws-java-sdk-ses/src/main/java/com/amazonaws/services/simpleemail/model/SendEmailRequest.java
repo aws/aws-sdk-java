@@ -25,8 +25,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * >Amazon SES Developer Guide</a>.
  * </p>
  */
-public class SendEmailRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

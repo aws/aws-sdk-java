@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * A description of the identity.
  */
-public class DescribeIdentityResult implements Serializable, Cloneable {
+public class DescribeIdentityResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** A unique identifier in the format REGION:GUID. */
     private String identityId;

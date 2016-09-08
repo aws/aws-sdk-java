@@ -18,11 +18,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns an array of <a>CaseDetails</a> objects and a <code>NextToken</code>
+ * Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code>
  * that defines a point for pagination in the result set.
  * </p>
  */
-public class DescribeCasesResult implements Serializable, Cloneable {
+public class DescribeCasesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -23,7 +23,9 @@ import java.io.Serializable;
  * deleted.
  * </p>
  */
-public class DeleteDomainResult implements Serializable, Cloneable {
+public class DeleteDomainResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private DomainStatus domainStatus;
 

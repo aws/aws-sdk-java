@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This input determines which steps to list.
  * </p>
  */
-public class ListStepsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListStepsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

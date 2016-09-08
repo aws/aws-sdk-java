@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to delete an existing <a>MethodResponse</a> resource.
  * </p>
  */
-public class DeleteMethodResponseRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteMethodResponseRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

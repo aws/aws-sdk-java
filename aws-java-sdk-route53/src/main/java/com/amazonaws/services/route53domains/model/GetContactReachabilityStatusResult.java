@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetContactReachabilityStatusResult implements Serializable,
-        Cloneable {
+public class GetContactReachabilityStatusResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

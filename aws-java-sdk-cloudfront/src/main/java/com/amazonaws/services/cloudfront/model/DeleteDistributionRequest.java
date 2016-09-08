@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to delete a distribution.
  */
-public class DeleteDistributionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteDistributionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The distribution id. */
     private String id;

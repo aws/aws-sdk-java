@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains a request for LookupEvents.
  * </p>
  */
-public class LookupEventsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a successful <a>ListAccountAliases</a> request.
  * </p>
  */
-public class ListAccountAliasesResult implements Serializable, Cloneable {
+public class ListAccountAliasesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

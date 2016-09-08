@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Returned in response to a GetId request.
  */
-public class GetIdResult implements Serializable, Cloneable {
+public class GetIdResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** A unique identifier in the format REGION:GUID. */
     private String identityId;

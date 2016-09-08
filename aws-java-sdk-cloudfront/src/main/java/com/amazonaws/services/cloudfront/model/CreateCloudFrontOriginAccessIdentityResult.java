@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * The returned result of the corresponding request.
  */
-public class CreateCloudFrontOriginAccessIdentityResult implements
-        Serializable, Cloneable {
+public class CreateCloudFrontOriginAccessIdentityResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** The origin access identity's information. */
     private CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity;

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <code>Suggest</code> request.
  * </p>
  */
-public class SuggestRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SuggestRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

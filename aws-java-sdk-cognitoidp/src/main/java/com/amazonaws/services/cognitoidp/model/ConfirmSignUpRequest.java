@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to confirm registration of a user.
  * </p>
  */
-public class ConfirmSignUpRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

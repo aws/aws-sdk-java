@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the results of the <a>GetSnapshotLimits</a> operation.
  * </p>
  */
-public class GetSnapshotLimitsResult implements Serializable, Cloneable {
+public class GetSnapshotLimitsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

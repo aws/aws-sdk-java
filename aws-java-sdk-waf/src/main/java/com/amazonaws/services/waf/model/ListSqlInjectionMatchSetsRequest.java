@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * current AWS account.
  * </p>
  */
-public class ListSqlInjectionMatchSetsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListSqlInjectionMatchSetsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

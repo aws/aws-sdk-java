@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class AddTagsToCertificateRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AddTagsToCertificateRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

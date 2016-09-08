@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The MD5OfMessageBody and MessageId elements.
  * </p>
  */
-public class SendMessageResult implements Serializable, Cloneable {
+public class SendMessageResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

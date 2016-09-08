@@ -36,8 +36,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * </note>
  */
-public class ListReusableDelegationSetsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListReusableDelegationSetsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

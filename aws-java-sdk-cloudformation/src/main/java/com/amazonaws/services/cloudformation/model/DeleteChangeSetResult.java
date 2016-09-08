@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for the <a>DeleteChangeSet</a> action.
  * </p>
  */
-public class DeleteChangeSetResult implements Serializable, Cloneable {
+public class DeleteChangeSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

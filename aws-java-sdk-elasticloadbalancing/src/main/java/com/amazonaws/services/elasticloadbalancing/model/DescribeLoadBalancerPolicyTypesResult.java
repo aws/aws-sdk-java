@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of DescribeLoadBalancerPolicyTypes.
  * </p>
  */
-public class DescribeLoadBalancerPolicyTypesResult implements Serializable,
-        Cloneable {
+public class DescribeLoadBalancerPolicyTypesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

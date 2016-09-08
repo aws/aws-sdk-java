@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to update an existing <a>MethodResponse</a> resource.
  * </p>
  */
-public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateMethodResponseRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

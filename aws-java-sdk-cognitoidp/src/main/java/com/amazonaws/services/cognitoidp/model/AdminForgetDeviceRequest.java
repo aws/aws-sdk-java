@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Sends the forgot device request, as an administrator.
  * </p>
  */
-public class AdminForgetDeviceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AdminForgetDeviceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

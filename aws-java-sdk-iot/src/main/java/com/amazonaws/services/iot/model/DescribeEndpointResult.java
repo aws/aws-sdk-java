@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output from the DescribeEndpoint operation.
  * </p>
  */
-public class DescribeEndpointResult implements Serializable, Cloneable {
+public class DescribeEndpointResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

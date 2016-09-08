@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Describes the settings for a configuration set.
  * </p>
  */
-public class CreateConfigurationTemplateResult implements Serializable,
-        Cloneable {
+public class CreateConfigurationTemplateResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

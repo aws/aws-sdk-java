@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of the <a>DeleteHapg</a> action.
  * </p>
  */
-public class DeleteHapgResult implements Serializable, Cloneable {
+public class DeleteHapgResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Change the size of some instance groups.
  * </p>
  */
-public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ModifyInstanceGroupsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

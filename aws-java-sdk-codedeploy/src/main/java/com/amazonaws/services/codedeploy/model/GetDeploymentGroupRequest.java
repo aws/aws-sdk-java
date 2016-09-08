@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a get deployment group operation.
  * </p>
  */
-public class GetDeploymentGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetDeploymentGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

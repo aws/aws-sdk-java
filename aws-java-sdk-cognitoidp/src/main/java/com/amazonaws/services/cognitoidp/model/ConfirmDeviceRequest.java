@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Confirms the device request.
  * </p>
  */
-public class ConfirmDeviceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to get the specified user as an administrator.
  * </p>
  */
-public class AdminGetUserRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AdminGetUserRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

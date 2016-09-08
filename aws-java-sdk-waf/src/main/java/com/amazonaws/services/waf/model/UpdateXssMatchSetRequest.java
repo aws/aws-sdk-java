@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to update an <a>XssMatchSet</a>.
  * </p>
  */
-public class UpdateXssMatchSetRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateXssMatchSetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

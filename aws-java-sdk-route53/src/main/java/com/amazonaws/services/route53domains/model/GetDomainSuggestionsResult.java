@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetDomainSuggestionsResult implements Serializable, Cloneable {
+public class GetDomainSuggestionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<DomainSuggestion> suggestionsList;
 

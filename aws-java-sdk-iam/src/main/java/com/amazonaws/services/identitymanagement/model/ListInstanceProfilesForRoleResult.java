@@ -22,8 +22,9 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class ListInstanceProfilesForRoleResult implements Serializable,
-        Cloneable {
+public class ListInstanceProfilesForRoleResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

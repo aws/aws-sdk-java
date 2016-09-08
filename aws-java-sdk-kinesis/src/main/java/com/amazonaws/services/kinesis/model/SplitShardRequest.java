@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for <code>SplitShard</code>.
  * </p>
  */
-public class SplitShardRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SplitShardRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

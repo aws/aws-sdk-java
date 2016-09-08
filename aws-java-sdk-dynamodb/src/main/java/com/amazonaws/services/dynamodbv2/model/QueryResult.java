@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a <i>Query</i> operation.
  * </p>
  */
-public class QueryResult implements Serializable, Cloneable {
+public class QueryResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

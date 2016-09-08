@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to reset a user's password.
  * </p>
  */
-public class ForgotPasswordRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ForgotPasswordRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the response from the server to delete user attributes.
  * </p>
  */
-public class DeleteUserAttributesResult implements Serializable, Cloneable {
+public class DeleteUserAttributesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

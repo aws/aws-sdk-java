@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for AttachLoadBalancers.
  * </p>
  */
-public class AttachLoadBalancersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AttachLoadBalancersRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

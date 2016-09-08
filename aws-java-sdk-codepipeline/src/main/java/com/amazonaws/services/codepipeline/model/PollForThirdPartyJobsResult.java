@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a poll for third party jobs action.
  * </p>
  */
-public class PollForThirdPartyJobsResult implements Serializable, Cloneable {
+public class PollForThirdPartyJobsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

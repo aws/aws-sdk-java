@@ -21,7 +21,9 @@ import java.io.Serializable;
  * This input determines which instance groups to retrieve.
  * </p>
  */
-public class ListInstanceGroupsResult implements Serializable, Cloneable {
+public class ListInstanceGroupsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

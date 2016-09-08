@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * the user import job.
  * </p>
  */
-public class GetCSVHeaderRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetCSVHeaderRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

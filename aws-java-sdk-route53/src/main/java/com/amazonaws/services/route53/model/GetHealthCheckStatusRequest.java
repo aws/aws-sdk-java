@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * check status for a health check.
  * </p>
  */
-public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetHealthCheckStatusRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

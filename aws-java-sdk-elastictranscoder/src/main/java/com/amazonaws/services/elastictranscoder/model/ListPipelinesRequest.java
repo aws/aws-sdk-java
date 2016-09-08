@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The <code>ListPipelineRequest</code> structure.
  * </p>
  */
-public class ListPipelinesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListPipelinesRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * DeleteTapeInput
  * </p>
  */
-public class DeleteTapeRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteTapeRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

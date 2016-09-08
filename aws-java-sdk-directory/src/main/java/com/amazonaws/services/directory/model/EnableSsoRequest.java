@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>EnableSso</a> operation.
  * </p>
  */
-public class EnableSsoRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class EnableSsoRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

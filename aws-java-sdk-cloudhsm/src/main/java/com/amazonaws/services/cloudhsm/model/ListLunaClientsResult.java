@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListLunaClientsResult implements Serializable, Cloneable {
+public class ListLunaClientsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

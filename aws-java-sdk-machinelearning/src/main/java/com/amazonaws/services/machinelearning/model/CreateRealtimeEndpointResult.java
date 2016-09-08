@@ -32,7 +32,9 @@ import java.io.Serializable;
  * </p>
  * </note>
  */
-public class CreateRealtimeEndpointResult implements Serializable, Cloneable {
+public class CreateRealtimeEndpointResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

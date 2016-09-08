@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * To request to get a streaming distribution configuration.
  */
 public class GetStreamingDistributionConfigRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The streaming distribution's id. */
     private String id;

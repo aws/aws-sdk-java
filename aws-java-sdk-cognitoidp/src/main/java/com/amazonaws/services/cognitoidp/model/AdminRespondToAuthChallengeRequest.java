@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request to respond to the authentication challenge, as an administrator.
  * </p>
  */
-public class AdminRespondToAuthChallengeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AdminRespondToAuthChallengeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

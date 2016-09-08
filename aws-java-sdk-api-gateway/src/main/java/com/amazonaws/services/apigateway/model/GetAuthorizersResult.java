@@ -24,7 +24,9 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html"
  * >Enable custom authorization</a> </div>
  */
-public class GetAuthorizersResult implements Serializable, Cloneable {
+public class GetAuthorizersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String position;
     /**

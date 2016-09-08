@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DeactivatePipeline.
  * </p>
  */
-public class DeactivatePipelineRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeactivatePipelineRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for the <a>GetResourceConfigHistory</a> action.
  * </p>
  */
-public class GetResourceConfigHistoryResult implements Serializable, Cloneable {
+public class GetResourceConfigHistoryResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

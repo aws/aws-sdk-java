@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of SetSecurityGroups.
  * </p>
  */
-public class SetSecurityGroupsResult implements Serializable, Cloneable {
+public class SetSecurityGroupsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

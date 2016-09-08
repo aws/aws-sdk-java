@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Provides options for initiating an Amazon Glacier job.
  * </p>
  */
-public class InitiateJobRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class InitiateJobRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

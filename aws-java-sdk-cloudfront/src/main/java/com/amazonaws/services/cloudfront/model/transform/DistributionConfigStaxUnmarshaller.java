@@ -139,6 +139,12 @@ public class DistributionConfigStaxUnmarshaller implements
                             .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("HttpVersion", targetDepth)) {
+                    distributionConfig.setHttpVersion(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return distributionConfig;

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Result message containing a list of configuration descriptions.
  * </p>
  */
-public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeApplicationVersionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

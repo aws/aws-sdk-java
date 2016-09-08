@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateDataSourceFromS3Request extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

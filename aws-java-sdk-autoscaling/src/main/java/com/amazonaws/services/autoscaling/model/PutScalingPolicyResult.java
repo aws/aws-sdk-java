@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of PutScalingPolicy.
  * </p>
  */
-public class PutScalingPolicyResult implements Serializable, Cloneable {
+public class PutScalingPolicyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

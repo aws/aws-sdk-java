@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of TerminateInstancesInAutoScalingGroup.
  * </p>
  */
-public class TerminateInstanceInAutoScalingGroupResult implements Serializable,
-        Cloneable {
+public class TerminateInstanceInAutoScalingGroupResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

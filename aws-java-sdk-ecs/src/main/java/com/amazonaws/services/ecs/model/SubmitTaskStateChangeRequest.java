@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SubmitTaskStateChangeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

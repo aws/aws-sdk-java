@@ -21,8 +21,9 @@ import java.io.Serializable;
  * A JSON object containing the following fields:
  * </p>
  */
-public class DescribeCachediSCSIVolumesResult implements Serializable,
-        Cloneable {
+public class DescribeCachediSCSIVolumesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

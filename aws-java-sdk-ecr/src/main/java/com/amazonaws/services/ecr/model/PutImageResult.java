@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class PutImageResult implements Serializable, Cloneable {
+public class PutImageResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

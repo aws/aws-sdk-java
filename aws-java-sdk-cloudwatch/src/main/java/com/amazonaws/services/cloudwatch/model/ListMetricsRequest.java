@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes the inputs for ListMetrics.
  * </p>
  */
-public class ListMetricsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

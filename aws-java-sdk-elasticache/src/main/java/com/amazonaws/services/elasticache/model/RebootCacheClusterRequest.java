@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>RebootCacheCluster</i> action.
  * </p>
  */
-public class RebootCacheClusterRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RebootCacheClusterRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

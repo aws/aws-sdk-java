@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class StartWorkflowExecutionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a batch get repositories operation.
  * </p>
  */
-public class BatchGetRepositoriesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class BatchGetRepositoriesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

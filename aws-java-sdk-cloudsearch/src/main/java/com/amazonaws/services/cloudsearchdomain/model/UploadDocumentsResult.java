@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to an <code>UploadDocuments</code> request.
  * </p>
  */
-public class UploadDocumentsResult implements Serializable, Cloneable {
+public class UploadDocumentsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

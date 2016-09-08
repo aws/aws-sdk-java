@@ -22,7 +22,9 @@ import java.io.Serializable;
  * error.
  * </p>
  */
-public class GetTrailStatusResult implements Serializable, Cloneable {
+public class GetTrailStatusResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

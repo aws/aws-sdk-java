@@ -22,8 +22,9 @@ import java.io.Serializable;
  * currently active.
  * </p>
  */
-public class DescribeActiveReceiptRuleSetResult implements Serializable,
-        Cloneable {
+public class DescribeActiveReceiptRuleSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

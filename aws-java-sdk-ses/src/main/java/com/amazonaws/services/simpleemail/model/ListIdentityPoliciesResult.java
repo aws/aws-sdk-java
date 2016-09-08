@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A list of names of sending authorization policies that apply to an identity.
  * </p>
  */
-public class ListIdentityPoliciesResult implements Serializable, Cloneable {
+public class ListIdentityPoliciesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

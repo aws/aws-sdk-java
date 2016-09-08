@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribeLifecycleHooks.
  * </p>
  */
-public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeLifecycleHooksRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

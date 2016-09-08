@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Response to a successful DescribeDataset request.
  */
-public class DescribeDatasetResult implements Serializable, Cloneable {
+public class DescribeDatasetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Meta data for a collection of data for an identity. An identity can have

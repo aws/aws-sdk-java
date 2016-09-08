@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the returned data in response to a request action.
  * </p>
  */
-public class DescribeScalingPoliciesResult implements Serializable, Cloneable {
+public class DescribeScalingPoliciesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,7 +22,9 @@ import java.io.Serializable;
  * password.
  * </p>
  */
-public class ForgotPasswordResult implements Serializable, Cloneable {
+public class ForgotPasswordResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private CodeDeliveryDetailsType codeDeliveryDetails;
 

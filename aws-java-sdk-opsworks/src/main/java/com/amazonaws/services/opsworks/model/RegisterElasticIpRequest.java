@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class RegisterElasticIpRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class RegisterElasticIpRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

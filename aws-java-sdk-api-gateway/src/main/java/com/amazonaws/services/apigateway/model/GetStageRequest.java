@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Requests Amazon API Gateway to get information about a <a>Stage</a> resource.
  * </p>
  */
-public class GetStageRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetStageRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

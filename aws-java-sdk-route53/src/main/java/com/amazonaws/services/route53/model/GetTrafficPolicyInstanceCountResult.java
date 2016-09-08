@@ -22,8 +22,9 @@ import java.io.Serializable;
  * Amazon Route 53 created based on a specified traffic policy.
  * </p>
  */
-public class GetTrafficPolicyInstanceCountResult implements Serializable,
-        Cloneable {
+public class GetTrafficPolicyInstanceCountResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

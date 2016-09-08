@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a get job details action.
  * </p>
  */
-public class GetJobDetailsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetJobDetailsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

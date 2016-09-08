@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the ConfirmConnection operation.
  * </p>
  */
-public class ConfirmConnectionRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ConfirmConnectionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String connectionId;
 

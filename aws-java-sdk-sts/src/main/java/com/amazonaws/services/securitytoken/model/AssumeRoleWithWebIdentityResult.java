@@ -23,7 +23,9 @@ import java.io.Serializable;
  * requests.
  * </p>
  */
-public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable {
+public class AssumeRoleWithWebIdentityResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

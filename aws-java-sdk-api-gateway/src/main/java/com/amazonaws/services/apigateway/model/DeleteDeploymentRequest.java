@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Requests Amazon API Gateway to delete a <a>Deployment</a> resource.
  * </p>
  */
-public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteDeploymentRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

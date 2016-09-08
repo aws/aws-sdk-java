@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DescribeTableRestoreStatusRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeTableRestoreStatusRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

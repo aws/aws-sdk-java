@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response from a call to <a>DescribeDBLogFiles</a>.
  * </p>
  */
-public class DescribeDBLogFilesResult implements Serializable, Cloneable {
+public class DescribeDBLogFilesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

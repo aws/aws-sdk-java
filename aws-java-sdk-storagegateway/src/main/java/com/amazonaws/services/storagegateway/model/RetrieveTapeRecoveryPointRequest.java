@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * RetrieveTapeRecoveryPointInput
  * </p>
  */
-public class RetrieveTapeRecoveryPointRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RetrieveTapeRecoveryPointRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a delete repository operation.
  * </p>
  */
-public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteRepositoryRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

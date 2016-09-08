@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>GetDirectoryLimits</a> operation.
  * </p>
  */
-public class GetDirectoryLimitsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetDirectoryLimitsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

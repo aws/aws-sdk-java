@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class SubmitTaskStateChangeResult implements Serializable, Cloneable {
+public class SubmitTaskStateChangeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,8 +21,9 @@ import java.io.Serializable;
  * The output for the GetIdentityPoolConfiguration operation.
  * </p>
  */
-public class GetIdentityPoolConfigurationResult implements Serializable,
-        Cloneable {
+public class GetIdentityPoolConfigurationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

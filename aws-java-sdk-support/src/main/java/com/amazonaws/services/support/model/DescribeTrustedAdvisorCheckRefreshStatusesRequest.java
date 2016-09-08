@@ -18,24 +18,32 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks.
+     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b>
+     * Specifying the check ID of a check that is automatically refreshed causes
+     * an <code>InvalidParameterValue</code> error.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> checkIds;
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks.
+     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b>
+     * Specifying the check ID of a check that is automatically refreshed causes
+     * an <code>InvalidParameterValue</code> error.
      * </p>
      * 
-     * @return The IDs of the Trusted Advisor checks.
+     * @return The IDs of the Trusted Advisor checks to get the status of.
+     *         <b>Note:</b> Specifying the check ID of a check that is
+     *         automatically refreshed causes an
+     *         <code>InvalidParameterValue</code> error.
      */
 
     public java.util.List<String> getCheckIds() {
@@ -47,11 +55,16 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks.
+     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b>
+     * Specifying the check ID of a check that is automatically refreshed causes
+     * an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @param checkIds
-     *        The IDs of the Trusted Advisor checks.
+     *        The IDs of the Trusted Advisor checks to get the status of.
+     *        <b>Note:</b> Specifying the check ID of a check that is
+     *        automatically refreshed causes an
+     *        <code>InvalidParameterValue</code> error.
      */
 
     public void setCheckIds(java.util.Collection<String> checkIds) {
@@ -66,7 +79,9 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks.
+     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b>
+     * Specifying the check ID of a check that is automatically refreshed causes
+     * an <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -76,7 +91,10 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends
      * </p>
      * 
      * @param checkIds
-     *        The IDs of the Trusted Advisor checks.
+     *        The IDs of the Trusted Advisor checks to get the status of.
+     *        <b>Note:</b> Specifying the check ID of a check that is
+     *        automatically refreshed causes an
+     *        <code>InvalidParameterValue</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -95,11 +113,16 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks.
+     * The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b>
+     * Specifying the check ID of a check that is automatically refreshed causes
+     * an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @param checkIds
-     *        The IDs of the Trusted Advisor checks.
+     *        The IDs of the Trusted Advisor checks to get the status of.
+     *        <b>Note:</b> Specifying the check ID of a check that is
+     *        automatically refreshed causes an
+     *        <code>InvalidParameterValue</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateIPSetRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

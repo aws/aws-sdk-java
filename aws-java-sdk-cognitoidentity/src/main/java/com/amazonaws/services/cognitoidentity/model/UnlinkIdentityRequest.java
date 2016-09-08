@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Input to the UnlinkIdentity action.
  */
-public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UnlinkIdentityRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** A unique identifier in the format REGION:GUID. */
     private String identityId;

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to list devices, as an administrator.
  * </p>
  */
-public class AdminListDevicesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AdminListDevicesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

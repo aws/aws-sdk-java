@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Response for Publish action.
  * </p>
  */
-public class PublishResult implements Serializable, Cloneable {
+public class PublishResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

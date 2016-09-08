@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the DescribeEndpoint operation.
  * </p>
  */
-public class DescribeEndpointRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeEndpointRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

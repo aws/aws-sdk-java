@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response to respond to the authentication challenge.
  * </p>
  */
-public class RespondToAuthChallengeResult implements Serializable, Cloneable {
+public class RespondToAuthChallengeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

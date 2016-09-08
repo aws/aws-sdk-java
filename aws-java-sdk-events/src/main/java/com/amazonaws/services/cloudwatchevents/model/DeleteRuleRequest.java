@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <a>DeleteRule</a> operation.
  * </p>
  */
-public class DeleteRuleRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteRuleRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

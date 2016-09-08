@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * </p>
  */
-public class EnableSnapshotCopyRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class EnableSnapshotCopyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

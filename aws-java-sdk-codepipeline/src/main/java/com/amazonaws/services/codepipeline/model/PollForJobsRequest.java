@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a poll for jobs action.
  * </p>
  */
-public class PollForJobsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PollForJobsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     private ActionTypeId actionTypeId;
     /**

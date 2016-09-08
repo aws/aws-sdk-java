@@ -23,7 +23,9 @@ import java.io.Serializable;
  * <a>BatchResultErrorEntry</a> tag if the message fails.
  * </p>
  */
-public class SendMessageBatchResult implements Serializable, Cloneable {
+public class SendMessageBatchResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

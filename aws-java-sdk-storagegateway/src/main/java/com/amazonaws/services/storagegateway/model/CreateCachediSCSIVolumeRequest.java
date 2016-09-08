@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateCachediSCSIVolumeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
 

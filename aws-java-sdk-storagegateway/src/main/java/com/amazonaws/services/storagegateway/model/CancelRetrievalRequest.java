@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * CancelRetrievalInput
  * </p>
  */
-public class CancelRetrievalRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CancelRetrievalRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
     /**

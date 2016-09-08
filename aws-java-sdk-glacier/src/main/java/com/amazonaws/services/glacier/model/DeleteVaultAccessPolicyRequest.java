@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * DeleteVaultAccessPolicy input.
  * </p>
  */
-public class DeleteVaultAccessPolicyRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteVaultAccessPolicyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

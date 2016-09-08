@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the list runs operation.
  * </p>
  */
-public class ListRunsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListRunsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

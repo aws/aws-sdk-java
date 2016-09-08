@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input to the RegisterCertificate operation.
  * </p>
  */
-public class RegisterCertificateRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RegisterCertificateRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

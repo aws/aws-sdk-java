@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CountPendingDecisionTasksRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CountPendingDecisionTasksRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

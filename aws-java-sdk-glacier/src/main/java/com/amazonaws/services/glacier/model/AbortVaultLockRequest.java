@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input values for <code>AbortVaultLock</code>.
  * </p>
  */
-public class AbortVaultLockRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AbortVaultLockRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

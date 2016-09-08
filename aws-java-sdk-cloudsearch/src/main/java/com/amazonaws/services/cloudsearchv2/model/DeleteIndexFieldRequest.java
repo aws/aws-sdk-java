@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * of the index field you want to delete.
  * </p>
  */
-public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteIndexFieldRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
     /**

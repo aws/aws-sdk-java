@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DeleteHsmClientCertificateRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteHsmClientCertificateRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

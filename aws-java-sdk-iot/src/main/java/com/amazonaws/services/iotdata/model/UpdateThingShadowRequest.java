@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the UpdateThingShadow operation.
  * </p>
  */
-public class UpdateThingShadowRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UpdateThingShadowRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The binary blob response to <a>GetSdk</a>, which contains the generated SDK.
  * </p>
  */
-public class GetSdkResult implements Serializable, Cloneable {
+public class GetSdkResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

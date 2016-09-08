@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of the <a>CreateHsm</a> operation.
  * </p>
  */
-public class CreateHsmResult implements Serializable, Cloneable {
+public class CreateHsmResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for <code>CreateStream</code>.
  * </p>
  */
-public class CreateStreamRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

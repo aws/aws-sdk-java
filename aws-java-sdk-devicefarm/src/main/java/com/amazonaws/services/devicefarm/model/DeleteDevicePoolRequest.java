@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the delete device pool operation.
  * </p>
  */
-public class DeleteDevicePoolRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteDevicePoolRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

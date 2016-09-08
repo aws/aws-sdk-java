@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Make a request to simulate the execution of a <a>Method</a>.
  * </p>
  */
-public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class TestInvokeMethodRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

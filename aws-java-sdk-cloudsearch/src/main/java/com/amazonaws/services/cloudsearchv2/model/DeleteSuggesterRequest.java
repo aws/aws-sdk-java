@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * the suggester you want to delete.
  * </p>
  */
-public class DeleteSuggesterRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteSuggesterRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
     /**

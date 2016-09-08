@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class RequestCertificateResult implements Serializable, Cloneable {
+public class RequestCertificateResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * </p>
  */
-public class CreateClusterSnapshotRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateClusterSnapshotRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

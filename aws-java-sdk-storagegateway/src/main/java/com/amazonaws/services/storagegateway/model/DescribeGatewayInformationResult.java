@@ -21,8 +21,9 @@ import java.io.Serializable;
  * A JSON object containing the following fields:
  * </p>
  */
-public class DescribeGatewayInformationResult implements Serializable,
-        Cloneable {
+public class DescribeGatewayInformationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
     /**

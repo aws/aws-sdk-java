@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The result of a renewal offering.
  * </p>
  */
-public class RenewOfferingResult implements Serializable, Cloneable {
+public class RenewOfferingResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

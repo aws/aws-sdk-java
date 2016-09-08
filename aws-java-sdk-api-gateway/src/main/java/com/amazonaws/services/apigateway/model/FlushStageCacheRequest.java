@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Requests Amazon API Gateway to flush a stage's cache.
  * </p>
  */
-public class FlushStageCacheRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class FlushStageCacheRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -18,7 +18,7 @@ import com.amazonaws.auth.AWSCredentials;
 
 /**
  * A special type of
- * <code>RequestHandler2<code> that takes in <code>AWSCredentials<code>.
+ * <code>RequestHandler2</code> that takes in <code>AWSCredentials</code>.
  */
 public abstract class CredentialsRequestHandler extends RequestHandler2 {
 

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DisableDomainAutoRenewRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DisableDomainAutoRenewRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
 

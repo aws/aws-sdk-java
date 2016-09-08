@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the DeleteThingShadow operation.
  * </p>
  */
-public class DeleteThingShadowRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteThingShadowRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

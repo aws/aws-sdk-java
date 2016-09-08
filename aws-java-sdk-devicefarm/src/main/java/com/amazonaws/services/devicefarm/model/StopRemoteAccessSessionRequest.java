@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to stop the remote access session.
  * </p>
  */
-public class StopRemoteAccessSessionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class StopRemoteAccessSessionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

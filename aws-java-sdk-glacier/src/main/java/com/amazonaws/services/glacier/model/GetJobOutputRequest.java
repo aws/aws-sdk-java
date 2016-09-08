@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Provides options for downloading output of an Amazon Glacier job.
  * </p>
  */
-public class GetJobOutputRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

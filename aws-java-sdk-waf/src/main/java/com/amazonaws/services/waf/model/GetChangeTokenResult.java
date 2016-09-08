@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetChangeTokenResult implements Serializable, Cloneable {
+public class GetChangeTokenResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

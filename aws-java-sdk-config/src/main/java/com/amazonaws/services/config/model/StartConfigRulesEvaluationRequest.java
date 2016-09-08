@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class StartConfigRulesEvaluationRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class StartConfigRulesEvaluationRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

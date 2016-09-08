@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for a <a>ContinueUpdateRollback</a> action.
  * </p>
  */
-public class ContinueUpdateRollbackResult implements Serializable, Cloneable {
+public class ContinueUpdateRollbackResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

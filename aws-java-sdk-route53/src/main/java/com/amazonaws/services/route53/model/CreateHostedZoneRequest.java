@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A complex type containing the hosted zone request information.
  * </p>
  */
-public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateHostedZoneRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

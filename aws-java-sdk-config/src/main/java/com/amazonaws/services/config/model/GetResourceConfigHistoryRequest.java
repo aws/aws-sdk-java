@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>GetResourceConfigHistory</a> action.
  * </p>
  */
-public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetResourceConfigHistoryRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

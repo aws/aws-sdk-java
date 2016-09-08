@@ -22,8 +22,9 @@ import java.io.Serializable;
  * <a>DescribeTrustedAdvisorCheckResult</a> operation.
  * </p>
  */
-public class DescribeTrustedAdvisorCheckResultResult implements Serializable,
-        Cloneable {
+public class DescribeTrustedAdvisorCheckResultResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

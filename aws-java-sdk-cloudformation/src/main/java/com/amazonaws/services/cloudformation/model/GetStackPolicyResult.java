@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for the <a>GetStackPolicy</a> action.
  * </p>
  */
-public class GetStackPolicyResult implements Serializable, Cloneable {
+public class GetStackPolicyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetHostnameSuggestionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetHostnameSuggestionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

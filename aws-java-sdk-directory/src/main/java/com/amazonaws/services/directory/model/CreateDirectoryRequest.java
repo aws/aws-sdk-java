@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>CreateDirectory</a> operation.
  * </p>
  */
-public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateDirectoryRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

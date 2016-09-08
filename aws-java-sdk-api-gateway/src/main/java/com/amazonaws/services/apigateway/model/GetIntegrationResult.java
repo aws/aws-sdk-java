@@ -25,7 +25,9 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html"
  * >Creating an API</a> </div>
  */
-public class GetIntegrationResult implements Serializable, Cloneable {
+public class GetIntegrationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Upon success, returns an empty response. Otherwise, throws an exception.
  * </p>
  */
-public class InvokeResult implements Serializable, Cloneable {
+public class InvokeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * A request for usage information about the identity pool.
  */
-public class DescribeIdentityPoolUsageRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeIdentityPoolUsageRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * A name-spaced GUID (for example,

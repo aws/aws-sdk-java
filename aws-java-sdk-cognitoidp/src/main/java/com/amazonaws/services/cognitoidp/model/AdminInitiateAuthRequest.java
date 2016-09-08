@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Initiates the authorization request, as an administrator.
  * </p>
  */
-public class AdminInitiateAuthRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AdminInitiateAuthRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

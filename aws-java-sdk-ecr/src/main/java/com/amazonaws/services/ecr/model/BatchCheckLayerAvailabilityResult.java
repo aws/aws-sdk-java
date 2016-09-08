@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class BatchCheckLayerAvailabilityResult implements Serializable,
-        Cloneable {
+public class BatchCheckLayerAvailabilityResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

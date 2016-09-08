@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the get job operation.
  * </p>
  */
-public class GetJobRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetJobRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

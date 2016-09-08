@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreateAccountAliasRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateAccountAliasRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

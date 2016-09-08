@@ -22,8 +22,9 @@ import java.io.Serializable;
  * Direct Connect location and the customer.
  * </p>
  */
-public class AllocateConnectionOnInterconnectResult implements Serializable,
-        Cloneable {
+public class AllocateConnectionOnInterconnectResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

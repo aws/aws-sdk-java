@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to flush authorizer cache entries on a specified stage.
  * </p>
  */
-public class FlushStageAuthorizersCacheRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class FlushStageAuthorizersCacheRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

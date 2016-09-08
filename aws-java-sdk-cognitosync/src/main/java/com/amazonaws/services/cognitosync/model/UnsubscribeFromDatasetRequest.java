@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to UnsubscribeFromDataset.
  * </p>
  */
-public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UnsubscribeFromDatasetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class PutMetricFilterRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PutMetricFilterRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

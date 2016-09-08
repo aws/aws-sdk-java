@@ -22,8 +22,9 @@ import java.io.Serializable;
  * <a>DescribeReservedDBInstancesOfferings</a> action.
  * </p>
  */
-public class DescribeReservedDBInstancesOfferingsResult implements
-        Serializable, Cloneable {
+public class DescribeReservedDBInstancesOfferingsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

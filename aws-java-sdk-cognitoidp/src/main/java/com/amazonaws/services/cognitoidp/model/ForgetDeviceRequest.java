@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to forget the device.
  * </p>
  */
-public class ForgetDeviceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ForgetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

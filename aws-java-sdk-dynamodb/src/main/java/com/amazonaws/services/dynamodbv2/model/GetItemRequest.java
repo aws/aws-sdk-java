@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>GetItem</i> operation.
  * </p>
  */
-public class GetItemRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

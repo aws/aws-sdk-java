@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * of the volume.
  * </p>
  */
-public class DescribeSnapshotScheduleRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeSnapshotScheduleRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

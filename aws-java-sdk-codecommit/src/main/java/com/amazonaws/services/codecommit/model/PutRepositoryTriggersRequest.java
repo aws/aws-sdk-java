@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input ofa put repository triggers operation.
  * </p>
  */
-public class PutRepositoryTriggersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class PutRepositoryTriggersRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

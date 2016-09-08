@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The result of the <a>RemoveTargets</a> operation.
  * </p>
  */
-public class RemoveTargetsResult implements Serializable, Cloneable {
+public class RemoveTargetsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

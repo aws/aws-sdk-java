@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A JSON object containing the id of the deleted gateway.
  * </p>
  */
-public class DeleteGatewayResult implements Serializable, Cloneable {
+public class DeleteGatewayResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

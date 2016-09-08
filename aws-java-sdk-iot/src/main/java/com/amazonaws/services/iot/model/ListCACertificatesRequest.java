@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for the ListCACertificates operation.
  * </p>
  */
-public class ListCACertificatesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListCACertificatesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

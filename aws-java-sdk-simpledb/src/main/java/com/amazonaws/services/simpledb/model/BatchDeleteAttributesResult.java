@@ -19,7 +19,10 @@ import java.io.Serializable;
 /**
  * 
  */
-public class BatchDeleteAttributesResult implements Serializable, Cloneable {
+public class BatchDeleteAttributesResult
+        extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.services.simpledb.SimpleDBResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

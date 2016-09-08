@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The <code>DeletePresetRequest</code> structure.
  * </p>
  */
-public class DeletePresetRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeletePresetRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

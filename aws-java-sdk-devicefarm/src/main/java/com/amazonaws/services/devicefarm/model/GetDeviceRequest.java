@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the get device request.
  * </p>
  */
-public class GetDeviceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

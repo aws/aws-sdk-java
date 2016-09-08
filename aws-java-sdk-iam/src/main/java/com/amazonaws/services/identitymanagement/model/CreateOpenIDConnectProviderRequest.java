@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateOpenIDConnectProviderRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

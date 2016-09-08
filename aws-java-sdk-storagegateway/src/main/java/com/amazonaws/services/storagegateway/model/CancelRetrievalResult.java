@@ -21,7 +21,9 @@ import java.io.Serializable;
  * CancelRetrievalOutput
  * </p>
  */
-public class CancelRetrievalResult implements Serializable, Cloneable {
+public class CancelRetrievalResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * ID, this request describes all the trust relationships.
  * </p>
  */
-public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeTrustsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DescribeTableStatisticsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeTableStatisticsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

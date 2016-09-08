@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request for a purchase offering.
  * </p>
  */
-public class PurchaseOfferingRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PurchaseOfferingRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

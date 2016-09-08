@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the list uploads operation.
  * </p>
  */
-public class ListUploadsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListUploadsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

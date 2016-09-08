@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class DescribeEndpointTypesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeEndpointTypesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

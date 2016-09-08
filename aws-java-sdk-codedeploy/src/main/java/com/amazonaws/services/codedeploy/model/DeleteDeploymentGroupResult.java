@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a delete deployment group operation.
  * </p>
  */
-public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
+public class DeleteDeploymentGroupResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

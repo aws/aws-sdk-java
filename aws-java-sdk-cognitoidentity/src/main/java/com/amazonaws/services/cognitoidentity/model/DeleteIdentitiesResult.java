@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Returned in response to a successful <code>DeleteIdentities</code> operation.
  * </p>
  */
-public class DeleteIdentitiesResult implements Serializable, Cloneable {
+public class DeleteIdentitiesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

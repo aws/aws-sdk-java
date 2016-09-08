@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the DescribeConnections operation.
  * </p>
  */
-public class DescribeConnectionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeConnectionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String connectionId;
 

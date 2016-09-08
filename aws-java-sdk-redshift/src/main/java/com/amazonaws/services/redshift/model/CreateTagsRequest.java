@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the output from the <code>CreateTags</code> action.
  * </p>
  */
-public class CreateTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

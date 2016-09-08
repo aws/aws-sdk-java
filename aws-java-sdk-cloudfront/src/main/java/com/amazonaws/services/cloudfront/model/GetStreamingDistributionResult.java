@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * The returned result of the corresponding request.
  */
-public class GetStreamingDistributionResult implements Serializable, Cloneable {
+public class GetStreamingDistributionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** The streaming distribution's information. */
     private StreamingDistribution streamingDistribution;

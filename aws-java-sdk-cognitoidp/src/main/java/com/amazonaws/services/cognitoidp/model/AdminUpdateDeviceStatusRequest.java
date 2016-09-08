@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request to update the device status, as an administrator.
  * </p>
  */
-public class AdminUpdateDeviceStatusRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AdminUpdateDeviceStatusRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

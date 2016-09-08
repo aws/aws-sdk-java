@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to describe a collection of <a>DomainName</a> resources.
  * </p>
  */
-public class GetDomainNamesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetDomainNamesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

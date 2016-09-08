@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a get repository operation.
  * </p>
  */
-public class GetRepositoryRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetRepositoryRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the DetachThingPrincipal operation.
  * </p>
  */
-public class DetachThingPrincipalRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DetachThingPrincipalRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

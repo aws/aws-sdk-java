@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p/>
  */
 public class ChangeMessageVisibilityBatchRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request representing the confirmation for a password reset.
  * </p>
  */
-public class ConfirmForgotPasswordRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ConfirmForgotPasswordRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

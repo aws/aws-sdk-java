@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output from DescribeNotificationConfigurations.
  * </p>
  */
-public class DescribeNotificationConfigurationsResult implements Serializable,
-        Cloneable {
+public class DescribeNotificationConfigurationsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

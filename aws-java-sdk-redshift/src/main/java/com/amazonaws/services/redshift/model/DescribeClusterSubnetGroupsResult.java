@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output from the <a>DescribeClusterSubnetGroups</a> action.
  * </p>
  */
-public class DescribeClusterSubnetGroupsResult implements Serializable,
-        Cloneable {
+public class DescribeClusterSubnetGroupsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

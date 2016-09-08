@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the ListThingTypes operation.
  * </p>
  */
-public class ListThingTypesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListThingTypesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

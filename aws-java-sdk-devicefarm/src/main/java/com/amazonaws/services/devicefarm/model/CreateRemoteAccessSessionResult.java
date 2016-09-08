@@ -22,7 +22,9 @@ import java.io.Serializable;
  * session.
  * </p>
  */
-public class CreateRemoteAccessSessionResult implements Serializable, Cloneable {
+public class CreateRemoteAccessSessionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

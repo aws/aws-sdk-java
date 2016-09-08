@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of EnableAvailabilityZonesForLoadBalancer.
  * </p>
  */
-public class EnableAvailabilityZonesForLoadBalancerResult implements
-        Serializable, Cloneable {
+public class EnableAvailabilityZonesForLoadBalancerResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

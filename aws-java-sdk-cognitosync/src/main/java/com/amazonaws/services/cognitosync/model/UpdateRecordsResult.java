@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Returned for a successful UpdateRecordsRequest.
  */
-public class UpdateRecordsResult implements Serializable, Cloneable {
+public class UpdateRecordsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** A list of records that have been updated. */
     private com.amazonaws.internal.SdkInternalList<Record> records;

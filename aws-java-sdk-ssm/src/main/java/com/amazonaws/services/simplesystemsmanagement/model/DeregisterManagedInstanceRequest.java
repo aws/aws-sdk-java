@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeregisterManagedInstanceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeregisterManagedInstanceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

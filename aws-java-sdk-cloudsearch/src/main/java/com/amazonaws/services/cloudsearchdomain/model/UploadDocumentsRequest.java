@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <code>UploadDocuments</code> request.
  * </p>
  */
-public class UploadDocumentsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class UploadDocumentsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

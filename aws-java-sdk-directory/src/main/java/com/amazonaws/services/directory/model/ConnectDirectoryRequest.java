@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>ConnectDirectory</a> operation.
  * </p>
  */
-public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ConnectDirectoryRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

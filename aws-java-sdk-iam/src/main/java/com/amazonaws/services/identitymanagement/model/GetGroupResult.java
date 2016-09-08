@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a successful <a>GetGroup</a> request.
  * </p>
  */
-public class GetGroupResult implements Serializable, Cloneable {
+public class GetGroupResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

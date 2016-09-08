@@ -22,8 +22,9 @@ import java.io.Serializable;
  * or <a>GetContextKeysForCustomPolicy</a> request.
  * </p>
  */
-public class GetContextKeysForPrincipalPolicyResult implements Serializable,
-        Cloneable {
+public class GetContextKeysForPrincipalPolicyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

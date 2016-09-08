@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DeleteLifecycleHook.
  * </p>
  */
-public class DeleteLifecycleHookRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteLifecycleHookRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

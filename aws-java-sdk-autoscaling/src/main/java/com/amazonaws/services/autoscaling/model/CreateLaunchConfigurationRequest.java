@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for CreateLaunchConfiguration.
  * </p>
  */
-public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateLaunchConfigurationRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

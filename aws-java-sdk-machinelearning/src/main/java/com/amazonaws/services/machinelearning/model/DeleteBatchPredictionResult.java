@@ -26,7 +26,9 @@ import java.io.Serializable;
  * <code>BatchPrediction</code> is marked as <code>DELETED</code>.
  * </p>
  */
-public class DeleteBatchPredictionResult implements Serializable, Cloneable {
+public class DeleteBatchPredictionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

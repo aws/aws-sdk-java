@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * location.
  * </p>
  */
-public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetGeoLocationRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

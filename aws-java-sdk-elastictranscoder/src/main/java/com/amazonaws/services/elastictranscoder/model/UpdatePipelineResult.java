@@ -22,7 +22,9 @@ import java.io.Serializable;
  * specified in the request.
  * </p>
  */
-public class UpdatePipelineResult implements Serializable, Cloneable {
+public class UpdatePipelineResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private Pipeline pipeline;
     /**

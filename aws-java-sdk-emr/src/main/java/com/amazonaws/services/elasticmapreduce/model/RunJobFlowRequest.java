@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input to the <a>RunJobFlow</a> operation.
  * </p>
  */
-public class RunJobFlowRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

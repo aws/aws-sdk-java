@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A complex type that contains the <code>ChangeInfo</code> element.
  * </p>
  */
-public class GetChangeResult implements Serializable, Cloneable {
+public class GetChangeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

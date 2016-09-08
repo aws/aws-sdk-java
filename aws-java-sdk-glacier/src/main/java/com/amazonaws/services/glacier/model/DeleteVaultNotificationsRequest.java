@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Amazon Glacier vault.
  * </p>
  */
-public class DeleteVaultNotificationsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteVaultNotificationsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

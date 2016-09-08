@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to list user pools.
  * </p>
  */
-public class ListUserPoolsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListUserPoolsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

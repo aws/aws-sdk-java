@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for <code>PutRecord</code>.
  * </p>
  */
-public class PutRecordRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

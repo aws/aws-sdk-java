@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output for <code>GetShardIterator</code>.
  * </p>
  */
-public class GetShardIteratorResult implements Serializable, Cloneable {
+public class GetShardIteratorResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

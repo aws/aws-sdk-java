@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * An object representing a Cognito identity pool.
  */
-public class UpdateIdentityPoolResult implements Serializable, Cloneable {
+public class UpdateIdentityPoolResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** An identity pool ID in the format REGION:GUID. */
     private String identityPoolId;

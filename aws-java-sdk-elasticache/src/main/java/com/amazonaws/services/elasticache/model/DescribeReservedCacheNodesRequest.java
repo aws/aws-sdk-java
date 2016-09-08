@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>DescribeReservedCacheNodes</i> action.
  * </p>
  */
-public class DescribeReservedCacheNodesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeReservedCacheNodesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

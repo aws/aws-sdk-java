@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for SetSubnets.
  * </p>
  */
-public class SetSubnetsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

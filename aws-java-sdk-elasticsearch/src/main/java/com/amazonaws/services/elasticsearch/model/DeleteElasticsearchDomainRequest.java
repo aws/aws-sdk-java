@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * of the Elasticsearch domain that you want to delete.
  * </p>
  */
-public class DeleteElasticsearchDomainRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteElasticsearchDomainRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,7 +22,9 @@ import java.io.Serializable;
  * to complete domain verification with Amazon SES.
  * </p>
  */
-public class VerifyDomainIdentityResult implements Serializable, Cloneable {
+public class VerifyDomainIdentityResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

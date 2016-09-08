@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input to the <code>DeleteIdentities</code> action.
  * </p>
  */
-public class DeleteIdentitiesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteIdentitiesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

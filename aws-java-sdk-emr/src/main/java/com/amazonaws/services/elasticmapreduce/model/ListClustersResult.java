@@ -22,7 +22,9 @@ import java.io.Serializable;
  * cluster IDs, names, and status.
  * </p>
  */
-public class ListClustersResult implements Serializable, Cloneable {
+public class ListClustersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

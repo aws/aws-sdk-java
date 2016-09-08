@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>DeliverConfigSnapshot</a> action.
  * </p>
  */
-public class DeliverConfigSnapshotRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeliverConfigSnapshotRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

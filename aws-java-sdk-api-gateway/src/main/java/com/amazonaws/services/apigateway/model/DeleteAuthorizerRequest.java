@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to delete an existing <a>Authorizer</a> resource.
  * </p>
  */
-public class DeleteAuthorizerRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteAuthorizerRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

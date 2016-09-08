@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a successful <a>ListGroups</a> request.
  * </p>
  */
-public class ListGroupsResult implements Serializable, Cloneable {
+public class ListGroupsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

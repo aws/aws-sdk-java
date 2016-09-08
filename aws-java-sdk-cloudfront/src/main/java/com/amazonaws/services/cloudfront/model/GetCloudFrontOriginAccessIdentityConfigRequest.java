@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request to get an origin access identity's configuration.
  */
 public class GetCloudFrontOriginAccessIdentityConfigRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The identity's id. */
     private String id;

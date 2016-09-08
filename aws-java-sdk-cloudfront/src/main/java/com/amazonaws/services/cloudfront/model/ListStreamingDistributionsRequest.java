@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to list your streaming distributions.
  */
-public class ListStreamingDistributionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListStreamingDistributionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Use this when paginating results to indicate where to begin in your list

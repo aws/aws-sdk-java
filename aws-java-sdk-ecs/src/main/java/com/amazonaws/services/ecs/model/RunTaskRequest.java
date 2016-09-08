@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class RunTaskRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

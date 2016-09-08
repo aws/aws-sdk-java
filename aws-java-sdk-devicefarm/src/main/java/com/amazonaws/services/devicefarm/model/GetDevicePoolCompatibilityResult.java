@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Represents the result of describe device pool compatibility request.
  * </p>
  */
-public class GetDevicePoolCompatibilityResult implements Serializable,
-        Cloneable {
+public class GetDevicePoolCompatibilityResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

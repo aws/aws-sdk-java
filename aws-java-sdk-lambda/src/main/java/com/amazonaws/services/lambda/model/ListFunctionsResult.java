@@ -22,7 +22,9 @@ import java.io.Serializable;
  * <a>FunctionConfiguration</a>.
  * </p>
  */
-public class ListFunctionsResult implements Serializable, Cloneable {
+public class ListFunctionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

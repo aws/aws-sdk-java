@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * resources.
  * </p>
  */
-public class GetBasePathMappingsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetBasePathMappingsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

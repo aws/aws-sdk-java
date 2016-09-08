@@ -56,7 +56,7 @@ public class ListStreamingDistributionsRequestMarshaller
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2016-08-20/streaming-distribution";
+        String uriResourcePath = "/2016-09-07/streaming-distribution";
 
         request.setResourcePath(uriResourcePath);
 

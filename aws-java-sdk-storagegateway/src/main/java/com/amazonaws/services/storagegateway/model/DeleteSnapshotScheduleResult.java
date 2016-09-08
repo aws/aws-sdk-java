@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DeleteSnapshotScheduleResult implements Serializable, Cloneable {
+public class DeleteSnapshotScheduleResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String volumeARN;
 

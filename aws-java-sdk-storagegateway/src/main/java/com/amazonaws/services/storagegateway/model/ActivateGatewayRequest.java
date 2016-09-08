@@ -59,8 +59,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ActivateGatewayRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the parameters for ExitStandby.
  * </p>
  */
-public class ExitStandbyResult implements Serializable, Cloneable {
+public class ExitStandbyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

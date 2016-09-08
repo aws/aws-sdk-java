@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to create a new distribution.
  */
-public class CreateDistributionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateDistributionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The distribution's configuration information. */
     private DistributionConfig distributionConfig;

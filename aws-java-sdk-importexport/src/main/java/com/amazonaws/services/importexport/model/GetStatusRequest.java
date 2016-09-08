@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Input structure for the GetStatus operation.
  */
-public class GetStatusRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetStatusRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     private String jobId;
 

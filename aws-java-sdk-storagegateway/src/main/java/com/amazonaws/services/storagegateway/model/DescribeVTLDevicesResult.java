@@ -21,7 +21,9 @@ import java.io.Serializable;
  * DescribeVTLDevicesOutput
  * </p>
  */
-public class DescribeVTLDevicesResult implements Serializable, Cloneable {
+public class DescribeVTLDevicesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
     /**

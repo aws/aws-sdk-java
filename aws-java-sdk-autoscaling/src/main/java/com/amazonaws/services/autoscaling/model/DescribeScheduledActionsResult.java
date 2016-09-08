@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of DescribeScheduledActions.
  * </p>
  */
-public class DescribeScheduledActionsResult implements Serializable, Cloneable {
+public class DescribeScheduledActionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

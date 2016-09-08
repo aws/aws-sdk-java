@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output from the CreateCertificateFromCsr operation.
  * </p>
  */
-public class CreateCertificateFromCsrResult implements Serializable, Cloneable {
+public class CreateCertificateFromCsrResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

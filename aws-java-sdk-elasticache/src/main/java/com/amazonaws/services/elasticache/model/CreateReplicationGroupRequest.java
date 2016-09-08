@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>CreateReplicationGroup</i> action.
  * </p>
  */
-public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateReplicationGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

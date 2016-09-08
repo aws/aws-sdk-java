@@ -22,7 +22,9 @@ import java.io.Serializable;
  * rule.
  * </p>
  */
-public class DeleteEvaluationResultsResult implements Serializable, Cloneable {
+public class DeleteEvaluationResultsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

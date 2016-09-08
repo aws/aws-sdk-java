@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The POST Request to add a new <a>RestApi</a> resource to your collection.
  * </p>
  */
-public class CreateRestApiRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

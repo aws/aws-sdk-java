@@ -26,8 +26,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * >Amazon SES Developer Guide</a>.
  * </p>
  */
-public class SetActiveReceiptRuleSetRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class SetActiveReceiptRuleSetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

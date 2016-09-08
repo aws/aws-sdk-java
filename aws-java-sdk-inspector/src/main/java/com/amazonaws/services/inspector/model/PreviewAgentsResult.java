@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class PreviewAgentsResult implements Serializable, Cloneable {
+public class PreviewAgentsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

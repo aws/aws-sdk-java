@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteVirtualMFADeviceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteVirtualMFADeviceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

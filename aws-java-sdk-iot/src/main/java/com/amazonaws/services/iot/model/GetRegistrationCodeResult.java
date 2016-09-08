@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output from the GetRegistrationCode operation.
  * </p>
  */
-public class GetRegistrationCodeResult implements Serializable, Cloneable {
+public class GetRegistrationCodeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -15,12 +15,15 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * A simple result wrapper around the Snapshot object that was sent over the
  * wire.
  */
-public class CreateSnapshotResult implements Serializable, Cloneable {
+public class CreateSnapshotResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

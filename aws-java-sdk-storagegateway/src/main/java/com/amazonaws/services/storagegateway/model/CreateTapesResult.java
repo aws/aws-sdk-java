@@ -21,7 +21,9 @@ import java.io.Serializable;
  * CreateTapeOutput
  * </p>
  */
-public class CreateTapesResult implements Serializable, Cloneable {
+public class CreateTapesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

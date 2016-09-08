@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of SetTaskStatus.
  * </p>
  */
-public class SetTaskStatusResult implements Serializable, Cloneable {
+public class SetTaskStatusResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the CreatePolicyVersion operation.
  * </p>
  */
-public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreatePolicyVersionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

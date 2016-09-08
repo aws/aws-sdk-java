@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Returned for a successful ListDatasets request.
  */
-public class ListDatasetsResult implements Serializable, Cloneable {
+public class ListDatasetsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** A set of datasets. */
     private com.amazonaws.internal.SdkInternalList<Dataset> datasets;

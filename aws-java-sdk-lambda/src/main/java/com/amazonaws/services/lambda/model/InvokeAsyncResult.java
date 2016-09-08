@@ -22,7 +22,9 @@ import java.io.Serializable;
  * </p>
  */
 @Deprecated
-public class InvokeAsyncResult implements Serializable, Cloneable {
+public class InvokeAsyncResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

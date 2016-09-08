@@ -70,8 +70,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListHostedZonesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

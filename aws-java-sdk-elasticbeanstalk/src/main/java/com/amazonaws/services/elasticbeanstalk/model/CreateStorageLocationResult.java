@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Results of a <a>CreateStorageLocationResult</a> call.
  * </p>
  */
-public class CreateStorageLocationResult implements Serializable, Cloneable {
+public class CreateStorageLocationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the parameters for DescribeLoadBalancers.
  * </p>
  */
-public class DescribeLoadBalancersResult implements Serializable, Cloneable {
+public class DescribeLoadBalancersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

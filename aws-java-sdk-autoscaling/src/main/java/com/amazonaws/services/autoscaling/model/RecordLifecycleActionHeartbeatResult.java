@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of RecordLifecycleActionHeartBeat.
  * </p>
  */
-public class RecordLifecycleActionHeartbeatResult implements Serializable,
-        Cloneable {
+public class RecordLifecycleActionHeartbeatResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

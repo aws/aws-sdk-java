@@ -22,7 +22,9 @@ import java.io.Serializable;
  * about the user.
  * </p>
  */
-public class GetUserResult implements Serializable, Cloneable {
+public class GetUserResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

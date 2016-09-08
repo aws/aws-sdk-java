@@ -16,6 +16,23 @@
 package com.amazonaws.codegen.emitters;
 
 
+import com.amazonaws.codegen.internal.Freemarker;
+import com.amazonaws.codegen.internal.ImmutableMapParameter;
+import com.amazonaws.codegen.internal.Utils;
+import com.amazonaws.codegen.model.config.customization.AuthPolicyActions;
+import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
+import com.amazonaws.codegen.model.config.templates.CodeGenTemplatesConfig;
+import com.amazonaws.codegen.model.intermediate.IntermediateModel;
+import com.amazonaws.codegen.model.intermediate.Metadata;
+import com.amazonaws.codegen.model.intermediate.Protocol;
+import com.amazonaws.codegen.model.intermediate.ShapeModel;
+import com.amazonaws.codegen.model.intermediate.ShapeType;
+import com.amazonaws.codegen.model.intermediate.WaiterDefinitionModel;
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+
+import freemarker.template.Template;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,25 +42,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import com.amazonaws.codegen.internal.Freemarker;
-import com.amazonaws.codegen.internal.ImmutableMapParameter;
-import com.amazonaws.codegen.internal.Utils;
-import com.amazonaws.codegen.model.config.customization.AuthPolicyActions;
-import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
-import com.amazonaws.codegen.model.config.templates.CodeGenTemplatesConfig;
-import com.amazonaws.codegen.model.intermediate.*;
-import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-
-import freemarker.template.Template;
-
 import static com.amazonaws.codegen.internal.Constants.AUTH_POLICY_ENUM_CLASS_DIR;
-import static com.amazonaws.codegen.internal.Constants.SMOKE_TESTS_DIR_NAME;
 import static com.amazonaws.codegen.internal.Constants.PACKAGE_NAME_MODEL_SUFFIX;
 import static com.amazonaws.codegen.internal.Constants.PACKAGE_NAME_TRANSFORM_SUFFIX;
+import static com.amazonaws.codegen.internal.Constants.PACKAGE_NAME_WAITERS_SUFFIX;
 import static com.amazonaws.codegen.internal.Constants.PROPERTIES_FILE_NAME_SUFFIX;
-
-import static com.amazonaws.codegen.internal.Constants.*;
+import static com.amazonaws.codegen.internal.Constants.SMOKE_TESTS_DIR_NAME;
 
 
 /**
@@ -260,12 +264,13 @@ public class CodeEmitter implements AutoCloseable {
                 continue;
             }
 
-            Map<String, Object> dataModel = ImmutableMapParameter.of(
-                    "fileHeader", model.getFileHeader(),
-                    "shape", shapeModel,
-                    "metadata", metadata,
-                    "baseExceptionFqcn", model.getSdkModeledExceptionBaseFqcn(),
-                    "customConfig", model.getCustomizationConfig());
+            Map<String, Object> dataModel = ImmutableMapParameter.<String, Object>builder()
+                    .put("fileHeader", model.getFileHeader())
+                    .put("shape", shapeModel)
+                    .put("metadata", metadata)
+                    .put("baseClassFqcn", getModelBaseClassFqcn(shapeModel.getType()))
+                    .put("customConfig", model.getCustomizationConfig())
+                    .build();
 
             // Submit task for generating the
             // model/request/response/enum/exception class.
@@ -273,6 +278,24 @@ public class CodeEmitter implements AutoCloseable {
                     freemarker.getShapeTemplate(shapeModel),
                     dataModel));
 
+        }
+    }
+
+    /**
+     * @param shapeType Shape type to get base class for.
+     * @return Correct base type for the type of model. May depend on protocol and customizations.
+     * Null if model has no base type.
+     */
+    private String getModelBaseClassFqcn(String shapeType) {
+        switch (ShapeType.fromValue(shapeType)) {
+            case Exception:
+                return model.getSdkModeledExceptionBaseFqcn();
+            case Response:
+                return model.getSdkBaseResponseFqcn();
+            case Request:
+                return "com.amazonaws.AmazonWebServiceRequest";
+            default:
+                return null;
         }
     }
 

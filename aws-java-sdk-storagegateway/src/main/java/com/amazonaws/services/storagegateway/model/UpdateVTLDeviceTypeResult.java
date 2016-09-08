@@ -21,7 +21,9 @@ import java.io.Serializable;
  * UpdateVTLDeviceTypeOutput
  * </p>
  */
-public class UpdateVTLDeviceTypeResult implements Serializable, Cloneable {
+public class UpdateVTLDeviceTypeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

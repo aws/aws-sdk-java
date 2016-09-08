@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to delete a streaming distribution.
  */
-public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteStreamingDistributionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The distribution id. */
     private String id;

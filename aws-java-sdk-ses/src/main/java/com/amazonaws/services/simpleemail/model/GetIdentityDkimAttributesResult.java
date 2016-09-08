@@ -24,7 +24,9 @@ import java.io.Serializable;
  * that these tokens were published.
  * </p>
  */
-public class GetIdentityDkimAttributesResult implements Serializable, Cloneable {
+public class GetIdentityDkimAttributesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

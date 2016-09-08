@@ -22,8 +22,9 @@ import java.io.Serializable;
  * the status of the specified domains or all domains owned by the account.
  * </p>
  */
-public class DescribeElasticsearchDomainsResult implements Serializable,
-        Cloneable {
+public class DescribeElasticsearchDomainsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

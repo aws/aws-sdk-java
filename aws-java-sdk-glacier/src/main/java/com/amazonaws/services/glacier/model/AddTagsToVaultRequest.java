@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input values for <code>AddTagsToVault</code>.
  * </p>
  */
-public class AddTagsToVaultRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AddTagsToVaultRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

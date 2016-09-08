@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The result of a DeregisterEventTopic request.
  * </p>
  */
-public class DeregisterEventTopicResult implements Serializable, Cloneable {
+public class DeregisterEventTopicResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

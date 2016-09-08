@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListLaunchPathsResult implements Serializable, Cloneable {
+public class ListLaunchPathsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

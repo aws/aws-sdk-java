@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * expression you want to configure.
  * </p>
  */
-public class DefineExpressionRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DefineExpressionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
 

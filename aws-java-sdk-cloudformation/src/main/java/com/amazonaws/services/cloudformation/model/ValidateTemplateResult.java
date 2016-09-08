@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for <a>ValidateTemplate</a> action.
  * </p>
  */
-public class ValidateTemplateResult implements Serializable, Cloneable {
+public class ValidateTemplateResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

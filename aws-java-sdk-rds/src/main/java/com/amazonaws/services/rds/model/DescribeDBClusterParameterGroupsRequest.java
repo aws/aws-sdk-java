@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p/>
  */
 public class DescribeDBClusterParameterGroupsRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

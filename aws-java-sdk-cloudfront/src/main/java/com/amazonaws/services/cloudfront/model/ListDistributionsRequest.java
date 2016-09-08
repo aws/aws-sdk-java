@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to list your distributions.
  */
-public class ListDistributionsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListDistributionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Use Marker and MaxItems to control pagination of results. If you have

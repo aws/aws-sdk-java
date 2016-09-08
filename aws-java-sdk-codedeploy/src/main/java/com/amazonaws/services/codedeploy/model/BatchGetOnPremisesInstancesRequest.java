@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a batch get on-premises instances operation.
  * </p>
  */
-public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class BatchGetOnPremisesInstancesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Response to a SubscribeToDataset request.
  * </p>
  */
-public class SubscribeToDatasetResult implements Serializable, Cloneable {
+public class SubscribeToDatasetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

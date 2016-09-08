@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetSnowballUsageResult implements Serializable, Cloneable {
+public class GetSnowballUsageResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeregisterScalableTargetRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeregisterScalableTargetRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

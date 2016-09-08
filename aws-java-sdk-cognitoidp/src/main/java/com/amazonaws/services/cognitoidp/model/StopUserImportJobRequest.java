@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to stop the user import job.
  * </p>
  */
-public class StopUserImportJobRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class StopUserImportJobRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

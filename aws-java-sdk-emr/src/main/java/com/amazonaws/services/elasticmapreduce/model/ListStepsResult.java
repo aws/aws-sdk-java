@@ -22,7 +22,9 @@ import java.io.Serializable;
  * that the last step is the first element in the list.
  * </p>
  */
-public class ListStepsResult implements Serializable, Cloneable {
+public class ListStepsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

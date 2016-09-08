@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to get information about the current <a>ApiKey</a> resource.
  * </p>
  */
-public class GetApiKeyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

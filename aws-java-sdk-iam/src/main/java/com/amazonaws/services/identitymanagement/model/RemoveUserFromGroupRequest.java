@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RemoveUserFromGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

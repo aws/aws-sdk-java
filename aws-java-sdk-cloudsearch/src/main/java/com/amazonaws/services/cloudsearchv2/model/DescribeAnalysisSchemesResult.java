@@ -22,7 +22,9 @@ import java.io.Serializable;
  * analysis schemes configured for the domain specified in the request.
  * </p>
  */
-public class DescribeAnalysisSchemesResult implements Serializable, Cloneable {
+public class DescribeAnalysisSchemesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

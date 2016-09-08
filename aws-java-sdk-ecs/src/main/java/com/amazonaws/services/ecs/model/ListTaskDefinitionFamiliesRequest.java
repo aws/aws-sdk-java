@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListTaskDefinitionFamiliesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input to the <a>TerminateJobFlows</a> operation.
  * </p>
  */
-public class TerminateJobFlowsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class TerminateJobFlowsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

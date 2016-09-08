@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the CreateKeysAndCertificate operation.
  * </p>
  */
-public class CreateKeysAndCertificateRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateKeysAndCertificateRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

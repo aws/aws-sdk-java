@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the results of the <a>EnableRadius</a> operation.
  * </p>
  */
-public class EnableRadiusResult implements Serializable, Cloneable {
+public class EnableRadiusResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

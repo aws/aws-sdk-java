@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class PredictResult implements Serializable, Cloneable {
+public class PredictResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private Prediction prediction;
 

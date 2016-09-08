@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetSAMLProviderRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetSAMLProviderRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

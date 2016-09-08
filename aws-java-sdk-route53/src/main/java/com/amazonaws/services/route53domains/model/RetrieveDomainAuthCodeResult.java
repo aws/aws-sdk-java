@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The RetrieveDomainAuthCode response includes the following element.
  * </p>
  */
-public class RetrieveDomainAuthCodeResult implements Serializable, Cloneable {
+public class RetrieveDomainAuthCodeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

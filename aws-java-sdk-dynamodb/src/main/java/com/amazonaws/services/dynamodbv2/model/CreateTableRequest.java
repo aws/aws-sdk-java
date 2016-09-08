@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>CreateTable</i> operation.
  * </p>
  */
-public class CreateTableRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

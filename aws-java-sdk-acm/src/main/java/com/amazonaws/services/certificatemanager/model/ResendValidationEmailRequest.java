@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ResendValidationEmailRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ResendValidationEmailRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

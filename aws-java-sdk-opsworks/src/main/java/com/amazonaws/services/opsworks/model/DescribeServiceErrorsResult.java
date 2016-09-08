@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeServiceErrors</code> request.
  * </p>
  */
-public class DescribeServiceErrorsResult implements Serializable, Cloneable {
+public class DescribeServiceErrorsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

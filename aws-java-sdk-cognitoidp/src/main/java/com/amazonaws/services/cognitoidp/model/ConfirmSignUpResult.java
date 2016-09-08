@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the response from the server for the registration confirmation.
  * </p>
  */
-public class ConfirmSignUpResult implements Serializable, Cloneable {
+public class ConfirmSignUpResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

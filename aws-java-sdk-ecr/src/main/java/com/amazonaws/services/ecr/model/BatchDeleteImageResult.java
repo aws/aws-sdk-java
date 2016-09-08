@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class BatchDeleteImageResult implements Serializable, Cloneable {
+public class BatchDeleteImageResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

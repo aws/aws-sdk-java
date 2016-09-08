@@ -21,7 +21,9 @@ import java.io.Serializable;
  * RetrieveTapeRecoveryPointOutput
  * </p>
  */
-public class RetrieveTapeRecoveryPointResult implements Serializable, Cloneable {
+public class RetrieveTapeRecoveryPointResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

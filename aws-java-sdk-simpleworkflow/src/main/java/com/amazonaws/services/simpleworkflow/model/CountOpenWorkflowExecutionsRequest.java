@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CountOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CountOpenWorkflowExecutionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

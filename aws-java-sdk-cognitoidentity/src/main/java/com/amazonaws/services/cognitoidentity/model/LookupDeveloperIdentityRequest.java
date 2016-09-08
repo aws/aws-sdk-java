@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input to the <code>LookupDeveloperIdentityInput</code> action.
  * </p>
  */
-public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class LookupDeveloperIdentityRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

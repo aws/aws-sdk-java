@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for a <code>GetChangeDetails</code> request.
  * </p>
  */
-public class GetChangeDetailsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetChangeDetailsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

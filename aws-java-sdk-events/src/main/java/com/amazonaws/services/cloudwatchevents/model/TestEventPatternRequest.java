@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <a>TestEventPattern</a> operation.
  * </p>
  */
-public class TestEventPatternRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class TestEventPatternRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

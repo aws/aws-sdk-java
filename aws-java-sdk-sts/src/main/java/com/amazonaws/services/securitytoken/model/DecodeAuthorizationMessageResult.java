@@ -23,8 +23,9 @@ import java.io.Serializable;
  * an AWS request.
  * </p>
  */
-public class DecodeAuthorizationMessageResult implements Serializable,
-        Cloneable {
+public class DecodeAuthorizationMessageResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

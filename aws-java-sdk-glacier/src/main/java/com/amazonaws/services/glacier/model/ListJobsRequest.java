@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Provides options for retrieving a job list for an Amazon Glacier vault.
  * </p>
  */
-public class ListJobsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

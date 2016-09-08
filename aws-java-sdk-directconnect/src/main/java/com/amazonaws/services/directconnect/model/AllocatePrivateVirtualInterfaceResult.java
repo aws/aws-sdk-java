@@ -22,8 +22,9 @@ import java.io.Serializable;
  * Connect location and the customer.
  * </p>
  */
-public class AllocatePrivateVirtualInterfaceResult implements Serializable,
-        Cloneable {
+public class AllocatePrivateVirtualInterfaceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

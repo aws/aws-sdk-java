@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to delete a user.
  * </p>
  */
-public class DeleteUserRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

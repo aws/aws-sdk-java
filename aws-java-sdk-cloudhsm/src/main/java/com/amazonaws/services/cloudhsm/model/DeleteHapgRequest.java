@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>DeleteHapg</a> action.
  * </p>
  */
-public class DeleteHapgRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteHapgRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

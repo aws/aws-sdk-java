@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for <a>ListStacks</a> action.
  * </p>
  */
-public class ListStacksResult implements Serializable, Cloneable {
+public class ListStacksResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

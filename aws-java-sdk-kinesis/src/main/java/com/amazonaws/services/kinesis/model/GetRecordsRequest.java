@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input for <a>GetRecords</a>.
  * </p>
  */
-public class GetRecordsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetRecordsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

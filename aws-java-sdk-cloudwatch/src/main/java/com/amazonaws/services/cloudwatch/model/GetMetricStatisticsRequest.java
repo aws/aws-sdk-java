@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes the inputs for GetMetricStatistics.
  * </p>
  */
-public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetMetricStatisticsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

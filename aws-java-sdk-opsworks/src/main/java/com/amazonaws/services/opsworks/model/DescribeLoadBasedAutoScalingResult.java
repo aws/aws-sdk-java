@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeLoadBasedAutoScaling</code> request.
  * </p>
  */
-public class DescribeLoadBasedAutoScalingResult implements Serializable,
-        Cloneable {
+public class DescribeLoadBasedAutoScalingResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

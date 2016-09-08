@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * that you want to delete.
  * </p>
  */
-public class DeleteTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteTrafficPolicyInstanceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

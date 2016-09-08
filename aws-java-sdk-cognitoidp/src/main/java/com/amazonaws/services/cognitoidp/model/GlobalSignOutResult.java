@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response to the request to sign out all devices.
  * </p>
  */
-public class GlobalSignOutResult implements Serializable, Cloneable {
+public class GlobalSignOutResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

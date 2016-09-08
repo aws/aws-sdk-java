@@ -23,7 +23,9 @@ import java.io.Serializable;
  * resources have been deleted.
  * </p>
  */
-public class DeleteElasticsearchDomainResult implements Serializable, Cloneable {
+public class DeleteElasticsearchDomainResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

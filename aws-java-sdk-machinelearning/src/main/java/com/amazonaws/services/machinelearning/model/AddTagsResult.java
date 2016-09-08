@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Amazon ML returns the following elements.
  * </p>
  */
-public class AddTagsResult implements Serializable, Cloneable {
+public class AddTagsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

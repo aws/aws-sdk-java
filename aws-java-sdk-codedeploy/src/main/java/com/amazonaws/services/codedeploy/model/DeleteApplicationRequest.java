@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a delete application operation.
  * </p>
  */
-public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteApplicationRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

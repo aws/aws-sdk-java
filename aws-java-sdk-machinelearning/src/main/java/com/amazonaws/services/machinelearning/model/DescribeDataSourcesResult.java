@@ -22,7 +22,9 @@ import java.io.Serializable;
  * content is essentially a list of <code>DataSource</code>.
  * </p>
  */
-public class DescribeDataSourcesResult implements Serializable, Cloneable {
+public class DescribeDataSourcesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

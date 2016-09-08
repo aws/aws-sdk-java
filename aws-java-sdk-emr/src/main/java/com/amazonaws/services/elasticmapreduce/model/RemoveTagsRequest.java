@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This input identifies a cluster and a list of tags to remove.
  * </p>
  */
-public class RemoveTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

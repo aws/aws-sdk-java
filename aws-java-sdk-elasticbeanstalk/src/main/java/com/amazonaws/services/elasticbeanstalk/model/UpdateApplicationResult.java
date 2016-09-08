@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Result message containing a single description of an application.
  * </p>
  */
-public class UpdateApplicationResult implements Serializable, Cloneable {
+public class UpdateApplicationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

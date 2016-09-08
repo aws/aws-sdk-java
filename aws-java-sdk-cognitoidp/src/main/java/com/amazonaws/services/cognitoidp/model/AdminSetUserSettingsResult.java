@@ -22,7 +22,9 @@ import java.io.Serializable;
  * administrator.
  * </p>
  */
-public class AdminSetUserSettingsResult implements Serializable, Cloneable {
+public class AdminSetUserSettingsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

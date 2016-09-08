@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request to update an origin access identity.
  */
 public class UpdateCloudFrontOriginAccessIdentityRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The identity's configuration information. */
     private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;

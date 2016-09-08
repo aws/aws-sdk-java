@@ -27,7 +27,9 @@ import java.io.Serializable;
  * the <code>Status</code> parameter.
  * </p>
  */
-public class CreateMLModelResult implements Serializable, Cloneable {
+public class CreateMLModelResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

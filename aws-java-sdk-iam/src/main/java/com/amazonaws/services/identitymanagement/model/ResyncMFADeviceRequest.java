@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ResyncMFADeviceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

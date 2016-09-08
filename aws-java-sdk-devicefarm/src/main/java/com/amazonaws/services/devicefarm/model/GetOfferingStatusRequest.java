@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * customer or account.
  * </p>
  */
-public class GetOfferingStatusRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetOfferingStatusRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a successful <a>GetUser</a> request.
  * </p>
  */
-public class GetUserResult implements Serializable, Cloneable {
+public class GetUserResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

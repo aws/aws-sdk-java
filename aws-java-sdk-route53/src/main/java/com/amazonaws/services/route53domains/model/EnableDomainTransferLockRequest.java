@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The EnableDomainTransferLock request includes the following element.
  * </p>
  */
-public class EnableDomainTransferLockRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class EnableDomainTransferLockRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

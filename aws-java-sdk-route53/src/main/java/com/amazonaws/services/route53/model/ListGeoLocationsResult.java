@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A complex type containing the response information for the request.
  * </p>
  */
-public class ListGeoLocationsResult implements Serializable, Cloneable {
+public class ListGeoLocationsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

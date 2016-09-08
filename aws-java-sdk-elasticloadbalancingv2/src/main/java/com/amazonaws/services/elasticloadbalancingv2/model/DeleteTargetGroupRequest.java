@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DeleteTargetGroup.
  * </p>
  */
-public class DeleteTargetGroupRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteTargetGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

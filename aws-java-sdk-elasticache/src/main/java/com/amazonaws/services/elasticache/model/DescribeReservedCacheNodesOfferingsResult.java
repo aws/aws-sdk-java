@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Represents the output of a <i>DescribeReservedCacheNodesOfferings</i> action.
  * </p>
  */
-public class DescribeReservedCacheNodesOfferingsResult implements Serializable,
-        Cloneable {
+public class DescribeReservedCacheNodesOfferingsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

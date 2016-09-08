@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class EnableKeyRotationRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class EnableKeyRotationRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

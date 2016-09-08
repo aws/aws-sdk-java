@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the SetSMSAttributes action.
  * </p>
  */
-public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SetSMSAttributesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>
@@ -43,6 +44,12 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      * will incur costs that exceed your limit.
      * </p>
      * </important>
+     * <p>
+     * By default, the spend limit is set to the maximum allowed by Amazon SNS.
+     * If you want to exceed the maximum, contact <a
+     * href="https://aws.amazon.com/premiumsupport/">AWS Support</a> or your AWS
+     * sales representative for a service limit increase.
+     * </p>
      * <p>
      * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
      * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For
@@ -71,17 +78,17 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * <code>Promotional</code> – Noncritical messages, such as marketing
-     * messages. Amazon SNS optimizes the message delivery to incur the lowest
-     * cost.
+     * <code>Promotional</code> – (Default) Noncritical messages, such as
+     * marketing messages. Amazon SNS optimizes the message delivery to incur
+     * the lowest cost.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Transactional</code> – (Default) Critical messages that support
-     * customer transactions, such as one-time passcodes for multi-factor
-     * authentication. Amazon SNS optimizes the message delivery to achieve the
-     * highest reliability.
+     * <code>Transactional</code> – Critical messages that support customer
+     * transactions, such as one-time passcodes for multi-factor authentication.
+     * Amazon SNS optimizes the message delivery to achieve the highest
+     * reliability.
      * </p>
      * </li>
      * </ul>
@@ -167,6 +174,12 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      * </p>
      * </important>
      * <p>
+     * By default, the spend limit is set to the maximum allowed by Amazon SNS.
+     * If you want to exceed the maximum, contact <a
+     * href="https://aws.amazon.com/premiumsupport/">AWS Support</a> or your AWS
+     * sales representative for a service limit increase.
+     * </p>
+     * <p>
      * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
      * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For
      * each SMS message that you send, Amazon SNS writes a log that includes the
@@ -194,17 +207,17 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * <code>Promotional</code> – Noncritical messages, such as marketing
-     * messages. Amazon SNS optimizes the message delivery to incur the lowest
-     * cost.
+     * <code>Promotional</code> – (Default) Noncritical messages, such as
+     * marketing messages. Amazon SNS optimizes the message delivery to incur
+     * the lowest cost.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Transactional</code> – (Default) Critical messages that support
-     * customer transactions, such as one-time passcodes for multi-factor
-     * authentication. Amazon SNS optimizes the message delivery to achieve the
-     * highest reliability.
+     * <code>Transactional</code> – Critical messages that support customer
+     * transactions, such as one-time passcodes for multi-factor authentication.
+     * Amazon SNS optimizes the message delivery to achieve the highest
+     * reliability.
      * </p>
      * </li>
      * </ul>
@@ -286,6 +299,12 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </important>
      *         <p>
+     *         By default, the spend limit is set to the maximum allowed by
+     *         Amazon SNS. If you want to exceed the maximum, contact <a
+     *         href="https://aws.amazon.com/premiumsupport/">AWS Support</a> or
+     *         your AWS sales representative for a service limit increase.
+     *         </p>
+     *         <p>
      *         <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that
      *         allows Amazon SNS to write logs about SMS deliveries in
      *         CloudWatch Logs. For each SMS message that you send, Amazon SNS
@@ -315,15 +334,15 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Promotional</code> – Noncritical messages, such as
-     *         marketing messages. Amazon SNS optimizes the message delivery to
-     *         incur the lowest cost.
+     *         <code>Promotional</code> – (Default) Noncritical messages, such
+     *         as marketing messages. Amazon SNS optimizes the message delivery
+     *         to incur the lowest cost.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Transactional</code> – (Default) Critical messages that
-     *         support customer transactions, such as one-time passcodes for
+     *         <code>Transactional</code> – Critical messages that support
+     *         customer transactions, such as one-time passcodes for
      *         multi-factor authentication. Amazon SNS optimizes the message
      *         delivery to achieve the highest reliability.
      *         </p>
@@ -418,6 +437,12 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      * </p>
      * </important>
      * <p>
+     * By default, the spend limit is set to the maximum allowed by Amazon SNS.
+     * If you want to exceed the maximum, contact <a
+     * href="https://aws.amazon.com/premiumsupport/">AWS Support</a> or your AWS
+     * sales representative for a service limit increase.
+     * </p>
+     * <p>
      * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
      * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For
      * each SMS message that you send, Amazon SNS writes a log that includes the
@@ -445,17 +470,17 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * <code>Promotional</code> – Noncritical messages, such as marketing
-     * messages. Amazon SNS optimizes the message delivery to incur the lowest
-     * cost.
+     * <code>Promotional</code> – (Default) Noncritical messages, such as
+     * marketing messages. Amazon SNS optimizes the message delivery to incur
+     * the lowest cost.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Transactional</code> – (Default) Critical messages that support
-     * customer transactions, such as one-time passcodes for multi-factor
-     * authentication. Amazon SNS optimizes the message delivery to achieve the
-     * highest reliability.
+     * <code>Transactional</code> – Critical messages that support customer
+     * transactions, such as one-time passcodes for multi-factor authentication.
+     * Amazon SNS optimizes the message delivery to achieve the highest
+     * reliability.
      * </p>
      * </li>
      * </ul>
@@ -538,6 +563,12 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </important>
      *        <p>
+     *        By default, the spend limit is set to the maximum allowed by
+     *        Amazon SNS. If you want to exceed the maximum, contact <a
+     *        href="https://aws.amazon.com/premiumsupport/">AWS Support</a> or
+     *        your AWS sales representative for a service limit increase.
+     *        </p>
+     *        <p>
      *        <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that
      *        allows Amazon SNS to write logs about SMS deliveries in CloudWatch
      *        Logs. For each SMS message that you send, Amazon SNS writes a log
@@ -567,17 +598,17 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Promotional</code> – Noncritical messages, such as marketing
-     *        messages. Amazon SNS optimizes the message delivery to incur the
-     *        lowest cost.
+     *        <code>Promotional</code> – (Default) Noncritical messages, such as
+     *        marketing messages. Amazon SNS optimizes the message delivery to
+     *        incur the lowest cost.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Transactional</code> – (Default) Critical messages that
-     *        support customer transactions, such as one-time passcodes for
-     *        multi-factor authentication. Amazon SNS optimizes the message
-     *        delivery to achieve the highest reliability.
+     *        <code>Transactional</code> – Critical messages that support
+     *        customer transactions, such as one-time passcodes for multi-factor
+     *        authentication. Amazon SNS optimizes the message delivery to
+     *        achieve the highest reliability.
      *        </p>
      *        </li>
      *        </ul>
@@ -669,6 +700,12 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      * </p>
      * </important>
      * <p>
+     * By default, the spend limit is set to the maximum allowed by Amazon SNS.
+     * If you want to exceed the maximum, contact <a
+     * href="https://aws.amazon.com/premiumsupport/">AWS Support</a> or your AWS
+     * sales representative for a service limit increase.
+     * </p>
+     * <p>
      * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
      * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For
      * each SMS message that you send, Amazon SNS writes a log that includes the
@@ -696,17 +733,17 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * <code>Promotional</code> – Noncritical messages, such as marketing
-     * messages. Amazon SNS optimizes the message delivery to incur the lowest
-     * cost.
+     * <code>Promotional</code> – (Default) Noncritical messages, such as
+     * marketing messages. Amazon SNS optimizes the message delivery to incur
+     * the lowest cost.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Transactional</code> – (Default) Critical messages that support
-     * customer transactions, such as one-time passcodes for multi-factor
-     * authentication. Amazon SNS optimizes the message delivery to achieve the
-     * highest reliability.
+     * <code>Transactional</code> – Critical messages that support customer
+     * transactions, such as one-time passcodes for multi-factor authentication.
+     * Amazon SNS optimizes the message delivery to achieve the highest
+     * reliability.
      * </p>
      * </li>
      * </ul>
@@ -789,6 +826,12 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </important>
      *        <p>
+     *        By default, the spend limit is set to the maximum allowed by
+     *        Amazon SNS. If you want to exceed the maximum, contact <a
+     *        href="https://aws.amazon.com/premiumsupport/">AWS Support</a> or
+     *        your AWS sales representative for a service limit increase.
+     *        </p>
+     *        <p>
      *        <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that
      *        allows Amazon SNS to write logs about SMS deliveries in CloudWatch
      *        Logs. For each SMS message that you send, Amazon SNS writes a log
@@ -818,17 +861,17 @@ public class SetSMSAttributesRequest extends AmazonWebServiceRequest implements
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Promotional</code> – Noncritical messages, such as marketing
-     *        messages. Amazon SNS optimizes the message delivery to incur the
-     *        lowest cost.
+     *        <code>Promotional</code> – (Default) Noncritical messages, such as
+     *        marketing messages. Amazon SNS optimizes the message delivery to
+     *        incur the lowest cost.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Transactional</code> – (Default) Critical messages that
-     *        support customer transactions, such as one-time passcodes for
-     *        multi-factor authentication. Amazon SNS optimizes the message
-     *        delivery to achieve the highest reliability.
+     *        <code>Transactional</code> – Critical messages that support
+     *        customer transactions, such as one-time passcodes for multi-factor
+     *        authentication. Amazon SNS optimizes the message delivery to
+     *        achieve the highest reliability.
      *        </p>
      *        </li>
      *        </ul>

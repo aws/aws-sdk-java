@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to describe one or more environments.
  * </p>
  */
-public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeEnvironmentsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

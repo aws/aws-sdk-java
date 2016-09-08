@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a delete deployment group operation.
  * </p>
  */
-public class DeleteDeploymentGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteDeploymentGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

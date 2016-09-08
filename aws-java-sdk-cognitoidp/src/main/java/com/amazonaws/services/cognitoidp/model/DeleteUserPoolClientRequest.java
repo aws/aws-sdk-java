@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to delete a user pool client.
  * </p>
  */
-public class DeleteUserPoolClientRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteUserPoolClientRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

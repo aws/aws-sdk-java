@@ -22,7 +22,9 @@ import java.io.Serializable;
  * <a>CountOpenWorkflowExecutions</a> or <a>CountClosedWorkflowExecutions</a>
  * </p>
  */
-public class WorkflowExecutionCount implements Serializable, Cloneable {
+public class WorkflowExecutionCount extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

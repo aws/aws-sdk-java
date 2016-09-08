@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The result of the <code>DeleteSnapshotCopyGrant</code> action.
  * </p>
  */
-public class DeleteSnapshotCopyGrantRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteSnapshotCopyGrantRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

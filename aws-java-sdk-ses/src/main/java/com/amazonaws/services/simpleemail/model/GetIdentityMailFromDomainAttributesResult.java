@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Represents the custom MAIL FROM attributes for a list of identities.
  * </p>
  */
-public class GetIdentityMailFromDomainAttributesResult implements Serializable,
-        Cloneable {
+public class GetIdentityMailFromDomainAttributesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

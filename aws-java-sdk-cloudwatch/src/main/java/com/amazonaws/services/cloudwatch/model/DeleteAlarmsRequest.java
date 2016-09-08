@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes the inputs for DeleteAlarms.
  * </p>
  */
-public class DeleteAlarmsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

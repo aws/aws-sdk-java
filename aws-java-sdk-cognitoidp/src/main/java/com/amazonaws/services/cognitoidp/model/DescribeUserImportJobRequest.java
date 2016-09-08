@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to describe the user import job.
  * </p>
  */
-public class DescribeUserImportJobRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeUserImportJobRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

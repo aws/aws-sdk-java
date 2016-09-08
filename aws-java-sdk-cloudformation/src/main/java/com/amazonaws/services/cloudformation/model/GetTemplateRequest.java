@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for a <a>GetTemplate</a> action.
  * </p>
  */
-public class GetTemplateRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

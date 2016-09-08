@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of an update default branch operation.
  * </p>
  */
-public class UpdateDefaultBranchRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateDefaultBranchRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of an acknowledge job action.
  * </p>
  */
-public class AcknowledgeJobResult implements Serializable, Cloneable {
+public class AcknowledgeJobResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

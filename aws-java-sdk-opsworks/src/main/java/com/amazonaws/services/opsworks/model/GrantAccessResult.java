@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>GrantAccess</code> request.
  * </p>
  */
-public class GrantAccessResult implements Serializable, Cloneable {
+public class GrantAccessResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

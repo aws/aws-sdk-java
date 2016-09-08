@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to create a configuration template.
  * </p>
  */
-public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateConfigurationTemplateRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

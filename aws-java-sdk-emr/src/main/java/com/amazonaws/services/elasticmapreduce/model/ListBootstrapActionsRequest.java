@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This input determines which bootstrap actions to retrieve.
  * </p>
  */
-public class ListBootstrapActionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListBootstrapActionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

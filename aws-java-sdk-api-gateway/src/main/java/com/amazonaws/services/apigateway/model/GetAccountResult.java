@@ -66,7 +66,9 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-account.html"
  * >AWS CLI</a> </div>
  */
-public class GetAccountResult implements Serializable, Cloneable {
+public class GetAccountResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

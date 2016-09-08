@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GetAuthorizationTokenRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetAuthorizationTokenRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

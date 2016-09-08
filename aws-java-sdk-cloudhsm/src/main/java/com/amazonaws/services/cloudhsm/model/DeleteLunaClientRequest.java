@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteLunaClientRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteLunaClientRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Output structure for the GetStatus operation.
  */
-public class GetStatusResult implements Serializable, Cloneable {
+public class GetStatusResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String jobId;
 

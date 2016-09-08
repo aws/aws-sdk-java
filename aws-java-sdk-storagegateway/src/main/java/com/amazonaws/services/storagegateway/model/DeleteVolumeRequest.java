@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing the <a>DeleteVolumeInput$VolumeARN</a> to delete.
  * </p>
  */
-public class DeleteVolumeRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteVolumeRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Response for ListEndpointsByPlatformApplication action.
  * </p>
  */
-public class ListEndpointsByPlatformApplicationResult implements Serializable,
-        Cloneable {
+public class ListEndpointsByPlatformApplicationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,7 +22,9 @@ import java.io.Serializable;
  * <a>DisableEnhancedMonitoring</a>.
  * </p>
  */
-public class DisableEnhancedMonitoringResult implements Serializable, Cloneable {
+public class DisableEnhancedMonitoringResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the results of the <a>RestoreFromSnapshot</a> operation.
  * </p>
  */
-public class RestoreFromSnapshotResult implements Serializable, Cloneable {
+public class RestoreFromSnapshotResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

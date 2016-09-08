@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a put action revision action.
  * </p>
  */
-public class PutActionRevisionResult implements Serializable, Cloneable {
+public class PutActionRevisionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

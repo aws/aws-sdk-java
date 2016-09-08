@@ -27,8 +27,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * >Amazon SES Developer Guide</a>.
  * </p>
  */
-public class ListIdentityPoliciesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListIdentityPoliciesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

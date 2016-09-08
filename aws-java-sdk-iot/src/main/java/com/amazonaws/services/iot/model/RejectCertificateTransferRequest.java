@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the RejectCertificateTransfer operation.
  * </p>
  */
-public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RejectCertificateTransferRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

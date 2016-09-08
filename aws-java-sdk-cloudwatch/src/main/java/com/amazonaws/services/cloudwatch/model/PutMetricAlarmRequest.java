@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes the inputs for PutMetricAlarm.
  * </p>
  */
-public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PutMetricAlarmRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

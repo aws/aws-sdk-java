@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the result of a get test request.
  * </p>
  */
-public class GetTestResult implements Serializable, Cloneable {
+public class GetTestResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private Test test;
 

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for Subscribe action.
  * </p>
  */
-public class SubscribeRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

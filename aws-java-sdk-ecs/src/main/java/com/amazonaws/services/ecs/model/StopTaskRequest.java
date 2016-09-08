@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class StopTaskRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class StopTaskRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

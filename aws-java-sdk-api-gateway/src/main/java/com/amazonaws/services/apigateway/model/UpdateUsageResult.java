@@ -26,7 +26,9 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-usage-plans-with-console.html#api-gateway-usage-plan-manage-usage"
  * >Manage Usage in a Usage Plan</a> </div>
  */
-public class UpdateUsageResult implements Serializable, Cloneable {
+public class UpdateUsageResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteInstanceProfileRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to register a user.
  * </p>
  */
-public class SignUpRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

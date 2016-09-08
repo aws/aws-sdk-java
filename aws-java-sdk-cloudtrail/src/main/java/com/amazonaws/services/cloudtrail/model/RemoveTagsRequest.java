@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Specifies the tags to remove from a trail.
  * </p>
  */
-public class RemoveTagsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

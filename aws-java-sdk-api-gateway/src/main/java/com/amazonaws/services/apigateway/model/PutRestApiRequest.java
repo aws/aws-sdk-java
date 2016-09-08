@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * specified as the request body.
  * </p>
  */
-public class PutRestApiRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

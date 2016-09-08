@@ -22,7 +22,9 @@ import java.io.Serializable;
  * information for the .csv file for the user import job.
  * </p>
  */
-public class GetCSVHeaderResult implements Serializable, Cloneable {
+public class GetCSVHeaderResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

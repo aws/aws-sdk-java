@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The UpdateDomainNameservers response includes the following element.
  * </p>
  */
-public class UpdateDomainNameserversResult implements Serializable, Cloneable {
+public class UpdateDomainNameserversResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

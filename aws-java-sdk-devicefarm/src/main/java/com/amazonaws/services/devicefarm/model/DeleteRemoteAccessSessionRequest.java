@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to delete the specified remote access session.
  * </p>
  */
-public class DeleteRemoteAccessSessionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteRemoteAccessSessionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

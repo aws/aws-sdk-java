@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Glacier.
  * </p>
  */
-public class DescribeVaultRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeVaultRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

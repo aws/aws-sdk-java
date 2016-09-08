@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * to renew for and the current expiration year.
  * </p>
  */
-public class RenewDomainRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class RenewDomainRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     private String domainName;
     /**

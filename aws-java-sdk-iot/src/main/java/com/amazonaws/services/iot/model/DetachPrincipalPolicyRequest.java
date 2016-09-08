@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the DetachPrincipalPolicy operation.
  * </p>
  */
-public class DetachPrincipalPolicyRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DetachPrincipalPolicyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

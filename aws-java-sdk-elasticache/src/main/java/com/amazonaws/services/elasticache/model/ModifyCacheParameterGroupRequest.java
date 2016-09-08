@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>ModifyCacheParameterGroup</i> action.
  * </p>
  */
-public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ModifyCacheParameterGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

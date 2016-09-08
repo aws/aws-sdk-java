@@ -29,8 +29,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * >Working with Archives in Amazon Glacier</a>.
  * </p>
  */
-public class AbortMultipartUploadRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AbortMultipartUploadRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

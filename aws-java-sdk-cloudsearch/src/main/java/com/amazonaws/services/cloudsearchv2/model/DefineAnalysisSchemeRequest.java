@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * analysis scheme configuration.
  * </p>
  */
-public class DefineAnalysisSchemeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DefineAnalysisSchemeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
 

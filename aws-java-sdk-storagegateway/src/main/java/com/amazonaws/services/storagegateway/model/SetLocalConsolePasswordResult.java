@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class SetLocalConsolePasswordResult implements Serializable, Cloneable {
+public class SetLocalConsolePasswordResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

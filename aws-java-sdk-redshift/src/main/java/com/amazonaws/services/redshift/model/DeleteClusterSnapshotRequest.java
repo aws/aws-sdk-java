@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * </p>
  */
-public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteClusterSnapshotRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Describes an Amazon Glacier job.
  * </p>
  */
-public class DescribeJobResult implements Serializable, Cloneable {
+public class DescribeJobResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

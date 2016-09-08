@@ -28,8 +28,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * >Amazon SES Developer Guide</a>.
  * </p>
  */
-public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetIdentityDkimAttributesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the return values of the list of offerings.
  * </p>
  */
-public class ListOfferingsResult implements Serializable, Cloneable {
+public class ListOfferingsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

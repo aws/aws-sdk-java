@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for CreateAutoScalingGroup.
  * </p>
  */
-public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateAutoScalingGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

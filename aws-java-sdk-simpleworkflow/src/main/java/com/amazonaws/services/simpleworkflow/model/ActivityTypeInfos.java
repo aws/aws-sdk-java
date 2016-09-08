@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains a paginated list of activity type information structures.
  * </p>
  */
-public class ActivityTypeInfos implements Serializable, Cloneable {
+public class ActivityTypeInfos extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

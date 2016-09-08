@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * </p>
  */
-public class RebootClusterRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class RebootClusterRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

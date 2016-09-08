@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the <a>PutRule</a> operation.
  * </p>
  */
-public class PutRuleRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

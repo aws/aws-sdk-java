@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Container for the result of the StartSupportDataExport operation.
  */
-public class StartSupportDataExportResult implements Serializable, Cloneable {
+public class StartSupportDataExportResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * A unique identifier representing a specific request to the

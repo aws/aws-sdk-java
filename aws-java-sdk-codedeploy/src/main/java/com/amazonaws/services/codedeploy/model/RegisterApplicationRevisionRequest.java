@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a register application revision operation.
  * </p>
  */
-public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RegisterApplicationRevisionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

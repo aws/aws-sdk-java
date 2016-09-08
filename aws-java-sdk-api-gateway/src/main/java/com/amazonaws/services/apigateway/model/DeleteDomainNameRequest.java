@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A request to delete the <a>DomainName</a> resource.
  * </p>
  */
-public class DeleteDomainNameRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteDomainNameRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

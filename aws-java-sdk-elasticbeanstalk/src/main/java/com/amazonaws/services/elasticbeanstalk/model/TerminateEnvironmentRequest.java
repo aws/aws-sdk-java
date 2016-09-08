@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to terminate an environment.
  * </p>
  */
-public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class TerminateEnvironmentRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

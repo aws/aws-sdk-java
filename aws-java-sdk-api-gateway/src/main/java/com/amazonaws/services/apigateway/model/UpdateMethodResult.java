@@ -67,7 +67,9 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings.html"
  * >Set up an API's method</a> </div>
  */
-public class UpdateMethodResult implements Serializable, Cloneable {
+public class UpdateMethodResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of the <a>CreateHAPartitionGroup</a> action.
  * </p>
  */
-public class CreateHapgResult implements Serializable, Cloneable {
+public class CreateHapgResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

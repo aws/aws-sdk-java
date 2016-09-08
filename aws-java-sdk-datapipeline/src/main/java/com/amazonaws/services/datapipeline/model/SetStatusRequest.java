@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for SetStatus.
  * </p>
  */
-public class SetStatusRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SetStatusRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,7 +22,9 @@ import java.io.Serializable;
  * was deleted.
  * </p>
  */
-public class DeleteBandwidthRateLimitResult implements Serializable, Cloneable {
+public class DeleteBandwidthRateLimitResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

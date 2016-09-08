@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to return information about the remote access session.
  * </p>
  */
-public class ListRemoteAccessSessionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListRemoteAccessSessionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * in order to set up a trust relationship with another domain.
  * </p>
  */
-public class CreateConditionalForwarderRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateConditionalForwarderRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

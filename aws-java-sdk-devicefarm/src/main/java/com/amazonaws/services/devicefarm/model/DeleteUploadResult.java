@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the result of a delete upload request.
  * </p>
  */
-public class DeleteUploadResult implements Serializable, Cloneable {
+public class DeleteUploadResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

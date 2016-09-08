@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output from the DescribeCACertificate operation.
  * </p>
  */
-public class DescribeCACertificateResult implements Serializable, Cloneable {
+public class DescribeCACertificateResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

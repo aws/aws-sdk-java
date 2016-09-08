@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of DescribeAutoScalingNotificationTypes.
  * </p>
  */
-public class DescribeAutoScalingNotificationTypesResult implements
-        Serializable, Cloneable {
+public class DescribeAutoScalingNotificationTypesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

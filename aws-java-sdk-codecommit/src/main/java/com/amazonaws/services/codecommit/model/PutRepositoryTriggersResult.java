@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a put repository triggers operation.
  * </p>
  */
-public class PutRepositoryTriggersResult implements Serializable, Cloneable {
+public class PutRepositoryTriggersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

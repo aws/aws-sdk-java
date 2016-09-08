@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DisassociateElasticIpResult implements Serializable, Cloneable {
+public class DisassociateElasticIpResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

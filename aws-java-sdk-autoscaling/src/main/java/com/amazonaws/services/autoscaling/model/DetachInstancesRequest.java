@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DetachInstances.
  * </p>
  */
-public class DetachInstancesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DetachInstancesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

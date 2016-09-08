@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RegisterRdsDbInstanceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

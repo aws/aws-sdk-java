@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Empty request.
  * </p>
  */
-public class GetCheckerIpRangesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetCheckerIpRangesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request that enables the user as an administrator.
  * </p>
  */
-public class AdminEnableUserRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AdminEnableUserRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeConfigRulesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

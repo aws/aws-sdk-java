@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to verify user attributes.
  * </p>
  */
-public class VerifyUserAttributeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class VerifyUserAttributeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * of the domain you want to describe.
  * </p>
  */
-public class DescribeScalingParametersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeScalingParametersRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
 

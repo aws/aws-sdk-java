@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The result of the <a>TestEventPattern</a> operation.
  * </p>
  */
-public class TestEventPatternResult implements Serializable, Cloneable {
+public class TestEventPatternResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

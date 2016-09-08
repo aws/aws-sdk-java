@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output of DescribeTerminationPolicyTypes.
  * </p>
  */
-public class DescribeTerminationPolicyTypesResult implements Serializable,
-        Cloneable {
+public class DescribeTerminationPolicyTypesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

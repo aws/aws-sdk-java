@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class StopWorkspacesResult implements Serializable, Cloneable {
+public class StopWorkspacesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

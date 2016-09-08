@@ -34,8 +34,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * </ul>
  */
-public class ListGatewaysRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

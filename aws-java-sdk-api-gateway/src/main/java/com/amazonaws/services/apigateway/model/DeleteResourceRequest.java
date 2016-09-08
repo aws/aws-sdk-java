@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to delete a <a>Resource</a>.
  * </p>
  */
-public class DeleteResourceRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteResourceRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

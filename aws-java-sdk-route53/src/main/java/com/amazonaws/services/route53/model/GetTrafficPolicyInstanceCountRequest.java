@@ -25,7 +25,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class GetTrafficPolicyInstanceCountRequest extends
-        AmazonWebServiceRequest implements Serializable, Cloneable {
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

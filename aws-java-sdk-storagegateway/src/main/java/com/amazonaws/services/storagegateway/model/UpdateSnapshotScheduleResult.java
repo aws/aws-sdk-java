@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A JSON object containing the of the updated storage volume.
  * </p>
  */
-public class UpdateSnapshotScheduleResult implements Serializable, Cloneable {
+public class UpdateSnapshotScheduleResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** <p/> */
     private String volumeARN;

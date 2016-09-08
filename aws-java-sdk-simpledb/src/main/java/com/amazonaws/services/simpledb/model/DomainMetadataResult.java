@@ -19,7 +19,10 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DomainMetadataResult implements Serializable, Cloneable {
+public class DomainMetadataResult
+        extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.services.simpledb.SimpleDBResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** The number of all items in the domain. */
     private Integer itemCount;

@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * specified account.
  * </p>
  */
-public class StopLoggingRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class StopLoggingRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

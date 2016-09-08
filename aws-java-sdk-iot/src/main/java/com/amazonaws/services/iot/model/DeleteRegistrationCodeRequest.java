@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the DeleteRegistrationCode operation.
  * </p>
  */
-public class DeleteRegistrationCodeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteRegistrationCodeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

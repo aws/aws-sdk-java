@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a successful <a>GetInstanceProfile</a> request.
  * </p>
  */
-public class GetInstanceProfileResult implements Serializable, Cloneable {
+public class GetInstanceProfileResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

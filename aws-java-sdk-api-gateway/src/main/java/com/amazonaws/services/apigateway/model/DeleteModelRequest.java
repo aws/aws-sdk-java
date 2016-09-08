@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to delete an existing model in an existing <a>RestApi</a> resource.
  * </p>
  */
-public class DeleteModelRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteModelRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

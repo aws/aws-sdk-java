@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GenerateRandomResult implements Serializable, Cloneable {
+public class GenerateRandomResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

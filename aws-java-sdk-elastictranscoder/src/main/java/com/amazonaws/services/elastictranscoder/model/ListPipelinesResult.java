@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A list of the pipelines associated with the current AWS account.
  * </p>
  */
-public class ListPipelinesResult implements Serializable, Cloneable {
+public class ListPipelinesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

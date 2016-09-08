@@ -21,7 +21,9 @@ import java.io.Serializable;
  * A complex type containing the response for the request.
  * </p>
  */
-public class ChangeResourceRecordSetsResult implements Serializable, Cloneable {
+public class ChangeResourceRecordSetsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

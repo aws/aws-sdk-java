@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>CreateAlias</a> operation.
  * </p>
  */
-public class CreateAliasRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

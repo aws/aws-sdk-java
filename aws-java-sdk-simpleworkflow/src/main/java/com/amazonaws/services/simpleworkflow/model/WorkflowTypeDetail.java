@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains details about a workflow type.
  * </p>
  */
-public class WorkflowTypeDetail implements Serializable, Cloneable {
+public class WorkflowTypeDetail extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

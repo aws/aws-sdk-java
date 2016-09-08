@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the output of PollForTask.
  * </p>
  */
-public class PollForTaskResult implements Serializable, Cloneable {
+public class PollForTaskResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -21,8 +21,9 @@ import java.io.Serializable;
  * The response received when ConfirmPublicVirtualInterface is called.
  * </p>
  */
-public class ConfirmPublicVirtualInterfaceResult implements Serializable,
-        Cloneable {
+public class ConfirmPublicVirtualInterfaceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String virtualInterfaceState;
 

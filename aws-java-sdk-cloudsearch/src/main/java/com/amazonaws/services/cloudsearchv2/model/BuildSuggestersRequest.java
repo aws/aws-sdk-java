@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * operation. Specifies the name of the domain you want to update.
  * </p>
  */
-public class BuildSuggestersRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class BuildSuggestersRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
 

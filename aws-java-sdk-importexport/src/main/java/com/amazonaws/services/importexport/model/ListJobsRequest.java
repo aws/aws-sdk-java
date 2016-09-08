@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Input structure for the ListJobs operation.
  */
-public class ListJobsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     private Integer maxJobs;
 

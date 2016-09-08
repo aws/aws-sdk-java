@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GenerateDataKeyRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

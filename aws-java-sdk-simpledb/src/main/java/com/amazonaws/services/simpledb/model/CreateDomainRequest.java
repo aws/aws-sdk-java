@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class CreateDomainRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * The name of the domain to create. The name can range between 3 and 255

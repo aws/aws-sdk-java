@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * operation.
  * </p>
  */
-public class UploadMultipartPartRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UploadMultipartPartRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

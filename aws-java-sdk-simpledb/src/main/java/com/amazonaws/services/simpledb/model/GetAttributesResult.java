@@ -19,7 +19,10 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetAttributesResult implements Serializable, Cloneable {
+public class GetAttributesResult
+        extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.services.simpledb.SimpleDBResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** The list of attributes returned by the operation. */
     private com.amazonaws.internal.SdkInternalList<Attribute> attributes;

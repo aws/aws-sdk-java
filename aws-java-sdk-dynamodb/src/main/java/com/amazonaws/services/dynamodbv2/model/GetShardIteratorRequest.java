@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>GetShardIterator</i> operation.
  * </p>
  */
-public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetShardIteratorRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

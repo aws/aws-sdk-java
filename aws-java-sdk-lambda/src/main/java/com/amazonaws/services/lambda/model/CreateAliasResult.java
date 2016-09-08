@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Provides configuration information about a Lambda function version alias.
  * </p>
  */
-public class CreateAliasResult implements Serializable, Cloneable {
+public class CreateAliasResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>PutItem</i> operation.
  * </p>
  */
-public class PutItemRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

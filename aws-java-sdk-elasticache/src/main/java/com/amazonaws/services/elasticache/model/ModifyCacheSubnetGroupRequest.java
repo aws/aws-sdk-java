@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>ModifyCacheSubnetGroup</i> action.
  * </p>
  */
-public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ModifyCacheSubnetGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

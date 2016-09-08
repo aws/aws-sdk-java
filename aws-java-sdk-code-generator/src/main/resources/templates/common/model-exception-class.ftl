@@ -4,7 +4,7 @@ package ${metadata.packageName}.model;
 /**
  * <#if shape.documentation?has_content>${shape.documentation}</#if>
  */
-public class ${shape.shapeName} extends ${baseExceptionFqcn} {
+public class ${shape.shapeName} extends ${baseClassFqcn} {
     private static final long serialVersionUID = 1L;
 
     <@VariableDeclarationMacro.content shape/>

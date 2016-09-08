@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a get third party job details action.
  * </p>
  */
-public class GetThirdPartyJobDetailsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetThirdPartyJobDetailsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

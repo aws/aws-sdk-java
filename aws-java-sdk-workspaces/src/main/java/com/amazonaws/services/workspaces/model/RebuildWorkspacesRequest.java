@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>RebuildWorkspaces</a> operation.
  * </p>
  */
-public class RebuildWorkspacesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class RebuildWorkspacesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

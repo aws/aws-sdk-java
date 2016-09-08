@@ -22,7 +22,9 @@ import java.io.Serializable;
  * status of the deleted analysis scheme.
  * </p>
  */
-public class DeleteAnalysisSchemeResult implements Serializable, Cloneable {
+public class DeleteAnalysisSchemeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

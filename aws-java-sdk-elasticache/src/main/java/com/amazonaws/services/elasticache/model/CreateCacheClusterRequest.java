@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>CreateCacheCluster</i> action.
  * </p>
  */
-public class CreateCacheClusterRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateCacheClusterRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for an <a>EstimateTemplateCost</a> action.
  * </p>
  */
-public class EstimateTemplateCostRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class EstimateTemplateCostRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

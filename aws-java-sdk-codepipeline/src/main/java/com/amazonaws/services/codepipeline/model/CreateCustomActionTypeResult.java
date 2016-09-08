@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a create custom action operation.
  * </p>
  */
-public class CreateCustomActionTypeResult implements Serializable, Cloneable {
+public class CreateCustomActionTypeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private ActionType actionType;
 

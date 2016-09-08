@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>CreateComputer</a> operation.
  * </p>
  */
-public class CreateComputerRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateComputerRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

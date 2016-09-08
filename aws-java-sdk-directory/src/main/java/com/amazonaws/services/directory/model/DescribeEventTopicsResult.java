@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The result of a DescribeEventTopic request.
  * </p>
  */
-public class DescribeEventTopicsResult implements Serializable, Cloneable {
+public class DescribeEventTopicsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

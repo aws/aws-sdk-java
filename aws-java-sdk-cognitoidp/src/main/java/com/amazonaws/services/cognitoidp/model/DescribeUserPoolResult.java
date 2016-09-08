@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the response to describe the user pool.
  * </p>
  */
-public class DescribeUserPoolResult implements Serializable, Cloneable {
+public class DescribeUserPoolResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

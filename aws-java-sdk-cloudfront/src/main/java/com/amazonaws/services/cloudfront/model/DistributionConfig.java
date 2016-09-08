@@ -94,6 +94,13 @@ public class DistributionConfig implements Serializable, Cloneable {
      * of the AWS WAF web ACL that is associated with the distribution.
      */
     private String webACLId;
+    /**
+     * (Optional) Specify the maximum HTTP version that you want viewers to use
+     * to communicate with CloudFront. The default value for new web
+     * distributions is http2. Viewers that don't support HTTP/2 will
+     * automatically use an earlier version.
+     */
+    private String httpVersion;
 
     /**
      * Default constructor for DistributionConfig object. Callers should use the
@@ -836,6 +843,101 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * (Optional) Specify the maximum HTTP version that you want viewers to use
+     * to communicate with CloudFront. The default value for new web
+     * distributions is http2. Viewers that don't support HTTP/2 will
+     * automatically use an earlier version.
+     * 
+     * @param httpVersion
+     *        (Optional) Specify the maximum HTTP version that you want viewers
+     *        to use to communicate with CloudFront. The default value for new
+     *        web distributions is http2. Viewers that don't support HTTP/2 will
+     *        automatically use an earlier version.
+     * @see HttpVersion
+     */
+
+    public void setHttpVersion(String httpVersion) {
+        this.httpVersion = httpVersion;
+    }
+
+    /**
+     * (Optional) Specify the maximum HTTP version that you want viewers to use
+     * to communicate with CloudFront. The default value for new web
+     * distributions is http2. Viewers that don't support HTTP/2 will
+     * automatically use an earlier version.
+     * 
+     * @return (Optional) Specify the maximum HTTP version that you want viewers
+     *         to use to communicate with CloudFront. The default value for new
+     *         web distributions is http2. Viewers that don't support HTTP/2
+     *         will automatically use an earlier version.
+     * @see HttpVersion
+     */
+
+    public String getHttpVersion() {
+        return this.httpVersion;
+    }
+
+    /**
+     * (Optional) Specify the maximum HTTP version that you want viewers to use
+     * to communicate with CloudFront. The default value for new web
+     * distributions is http2. Viewers that don't support HTTP/2 will
+     * automatically use an earlier version.
+     * 
+     * @param httpVersion
+     *        (Optional) Specify the maximum HTTP version that you want viewers
+     *        to use to communicate with CloudFront. The default value for new
+     *        web distributions is http2. Viewers that don't support HTTP/2 will
+     *        automatically use an earlier version.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see HttpVersion
+     */
+
+    public DistributionConfig withHttpVersion(String httpVersion) {
+        setHttpVersion(httpVersion);
+        return this;
+    }
+
+    /**
+     * (Optional) Specify the maximum HTTP version that you want viewers to use
+     * to communicate with CloudFront. The default value for new web
+     * distributions is http2. Viewers that don't support HTTP/2 will
+     * automatically use an earlier version.
+     * 
+     * @param httpVersion
+     *        (Optional) Specify the maximum HTTP version that you want viewers
+     *        to use to communicate with CloudFront. The default value for new
+     *        web distributions is http2. Viewers that don't support HTTP/2 will
+     *        automatically use an earlier version.
+     * @see HttpVersion
+     */
+
+    public void setHttpVersion(HttpVersion httpVersion) {
+        this.httpVersion = httpVersion.toString();
+    }
+
+    /**
+     * (Optional) Specify the maximum HTTP version that you want viewers to use
+     * to communicate with CloudFront. The default value for new web
+     * distributions is http2. Viewers that don't support HTTP/2 will
+     * automatically use an earlier version.
+     * 
+     * @param httpVersion
+     *        (Optional) Specify the maximum HTTP version that you want viewers
+     *        to use to communicate with CloudFront. The default value for new
+     *        web distributions is http2. Viewers that don't support HTTP/2 will
+     *        automatically use an earlier version.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see HttpVersion
+     */
+
+    public DistributionConfig withHttpVersion(HttpVersion httpVersion) {
+        setHttpVersion(httpVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -876,7 +978,9 @@ public class DistributionConfig implements Serializable, Cloneable {
         if (getRestrictions() != null)
             sb.append("Restrictions: " + getRestrictions() + ",");
         if (getWebACLId() != null)
-            sb.append("WebACLId: " + getWebACLId());
+            sb.append("WebACLId: " + getWebACLId() + ",");
+        if (getHttpVersion() != null)
+            sb.append("HttpVersion: " + getHttpVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -971,6 +1075,11 @@ public class DistributionConfig implements Serializable, Cloneable {
         if (other.getWebACLId() != null
                 && other.getWebACLId().equals(this.getWebACLId()) == false)
             return false;
+        if (other.getHttpVersion() == null ^ this.getHttpVersion() == null)
+            return false;
+        if (other.getHttpVersion() != null
+                && other.getHttpVersion().equals(this.getHttpVersion()) == false)
+            return false;
         return true;
     }
 
@@ -1021,6 +1130,9 @@ public class DistributionConfig implements Serializable, Cloneable {
                         .hashCode());
         hashCode = prime * hashCode
                 + ((getWebACLId() == null) ? 0 : getWebACLId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getHttpVersion() == null) ? 0 : getHttpVersion().hashCode());
         return hashCode;
     }
 

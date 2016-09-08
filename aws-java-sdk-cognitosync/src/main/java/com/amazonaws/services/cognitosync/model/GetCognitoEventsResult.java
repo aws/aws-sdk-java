@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The response from the GetCognitoEvents request
  * </p>
  */
-public class GetCognitoEventsResult implements Serializable, Cloneable {
+public class GetCognitoEventsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

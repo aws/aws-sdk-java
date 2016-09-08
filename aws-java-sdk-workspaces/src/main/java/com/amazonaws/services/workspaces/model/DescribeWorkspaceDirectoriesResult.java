@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the results of the <a>DescribeWorkspaceDirectories</a> operation.
  * </p>
  */
-public class DescribeWorkspaceDirectoriesResult implements Serializable,
-        Cloneable {
+public class DescribeWorkspaceDirectoriesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

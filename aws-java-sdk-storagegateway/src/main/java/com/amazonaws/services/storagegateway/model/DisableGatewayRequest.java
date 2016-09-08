@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * DisableGatewayInput
  * </p>
  */
-public class DisableGatewayRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DisableGatewayRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String gatewayARN;
 

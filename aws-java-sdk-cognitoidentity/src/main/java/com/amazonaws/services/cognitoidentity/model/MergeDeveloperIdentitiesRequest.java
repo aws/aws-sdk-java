@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input to the <code>MergeDeveloperIdentities</code> action.
  * </p>
  */
-public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class MergeDeveloperIdentitiesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

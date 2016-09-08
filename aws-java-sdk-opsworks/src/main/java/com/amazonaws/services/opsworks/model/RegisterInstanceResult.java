@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Contains the response to a <code>RegisterInstanceResult</code> request.
  * </p>
  */
-public class RegisterInstanceResult implements Serializable, Cloneable {
+public class RegisterInstanceResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

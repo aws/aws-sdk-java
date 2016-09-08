@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request object for the <code>DeleteConfigurationRecorder</code> action.
  * </p>
  */
-public class DeleteConfigurationRecorderRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteConfigurationRecorderRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

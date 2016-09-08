@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Response for GetSubscriptionAttributes action.
  * </p>
  */
-public class GetSubscriptionAttributesResult implements Serializable, Cloneable {
+public class GetSubscriptionAttributesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

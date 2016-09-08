@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * The output for the GetBulkPublishDetails operation.
  */
-public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
+public class GetBulkPublishDetailsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,

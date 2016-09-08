@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UnsubscribeFromEventRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UnsubscribeFromEventRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

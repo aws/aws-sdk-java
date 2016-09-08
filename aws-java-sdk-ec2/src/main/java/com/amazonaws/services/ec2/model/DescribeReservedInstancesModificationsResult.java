@@ -15,14 +15,16 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <p>
  * Contains the output of DescribeReservedInstancesModifications.
  * </p>
  */
-public class DescribeReservedInstancesModificationsResult implements
-        Serializable, Cloneable {
+public class DescribeReservedInstancesModificationsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

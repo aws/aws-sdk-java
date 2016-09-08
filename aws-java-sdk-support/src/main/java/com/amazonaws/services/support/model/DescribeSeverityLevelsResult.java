@@ -22,7 +22,9 @@ import java.io.Serializable;
  * operation.
  * </p>
  */
-public class DescribeSeverityLevelsResult implements Serializable, Cloneable {
+public class DescribeSeverityLevelsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

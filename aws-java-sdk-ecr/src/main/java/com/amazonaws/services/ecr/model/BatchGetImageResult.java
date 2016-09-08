@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class BatchGetImageResult implements Serializable, Cloneable {
+public class BatchGetImageResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

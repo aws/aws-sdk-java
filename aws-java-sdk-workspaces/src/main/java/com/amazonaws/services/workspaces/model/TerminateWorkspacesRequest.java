@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the inputs for the <a>TerminateWorkspaces</a> operation.
  * </p>
  */
-public class TerminateWorkspacesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class TerminateWorkspacesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

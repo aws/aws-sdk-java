@@ -35,7 +35,9 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html"
  * >Models and Mappings</a> </div>
  */
-public class GetModelResult implements Serializable, Cloneable {
+public class GetModelResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

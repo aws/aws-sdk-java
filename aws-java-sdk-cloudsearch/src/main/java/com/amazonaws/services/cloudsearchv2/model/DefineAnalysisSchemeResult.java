@@ -22,7 +22,9 @@ import java.io.Serializable;
  * the status of the newly-configured analysis scheme.
  * </p>
  */
-public class DefineAnalysisSchemeResult implements Serializable, Cloneable {
+public class DefineAnalysisSchemeResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private AnalysisSchemeStatus analysisScheme;
 

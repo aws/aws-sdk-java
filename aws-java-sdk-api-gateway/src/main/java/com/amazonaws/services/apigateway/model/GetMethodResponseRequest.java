@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to describe a <a>MethodResponse</a> resource.
  * </p>
  */
-public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetMethodResponseRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

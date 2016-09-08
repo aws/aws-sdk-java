@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListByteMatchSetsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListByteMatchSetsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

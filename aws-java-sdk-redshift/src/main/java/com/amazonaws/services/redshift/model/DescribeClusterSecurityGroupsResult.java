@@ -20,8 +20,9 @@ import java.io.Serializable;
  * <p>
  * </p>
  */
-public class DescribeClusterSecurityGroupsResult implements Serializable,
-        Cloneable {
+public class DescribeClusterSecurityGroupsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

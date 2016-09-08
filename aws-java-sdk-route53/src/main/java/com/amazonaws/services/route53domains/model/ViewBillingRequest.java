@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The ViewBilling request includes the following elements.
  * </p>
  */
-public class ViewBillingRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

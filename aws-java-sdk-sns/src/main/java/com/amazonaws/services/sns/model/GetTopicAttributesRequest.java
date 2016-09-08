@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for GetTopicAttributes action.
  * </p>
  */
-public class GetTopicAttributesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetTopicAttributesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

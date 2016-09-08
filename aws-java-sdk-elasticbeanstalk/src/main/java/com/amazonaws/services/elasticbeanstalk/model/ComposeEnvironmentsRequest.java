@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to create or update a group of environments.
  * </p>
  */
-public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ComposeEnvironmentsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

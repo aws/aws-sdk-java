@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to resend the confirmation code.
  * </p>
  */
-public class ResendConfirmationCodeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ResendConfirmationCodeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

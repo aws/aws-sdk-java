@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to update the user pool client.
  * </p>
  */
-public class UpdateUserPoolClientRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateUserPoolClientRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

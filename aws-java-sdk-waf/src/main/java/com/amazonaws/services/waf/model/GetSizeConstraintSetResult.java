@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class GetSizeConstraintSetResult implements Serializable, Cloneable {
+public class GetSizeConstraintSetResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

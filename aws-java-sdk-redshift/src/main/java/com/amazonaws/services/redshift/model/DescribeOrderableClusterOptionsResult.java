@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output from the <a>DescribeOrderableClusterOptions</a> action.
  * </p>
  */
-public class DescribeOrderableClusterOptionsResult implements Serializable,
-        Cloneable {
+public class DescribeOrderableClusterOptionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

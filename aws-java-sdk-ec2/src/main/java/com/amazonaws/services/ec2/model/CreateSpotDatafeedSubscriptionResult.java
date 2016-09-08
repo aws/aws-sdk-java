@@ -15,14 +15,16 @@
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
+import com.amazonaws.AmazonWebServiceResult;
 
 /**
  * <p>
  * Contains the output of CreateSpotDatafeedSubscription.
  * </p>
  */
-public class CreateSpotDatafeedSubscriptionResult implements Serializable,
-        Cloneable {
+public class CreateSpotDatafeedSubscriptionResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

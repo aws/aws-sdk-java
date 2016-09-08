@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteEvaluationResultsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteEvaluationResultsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

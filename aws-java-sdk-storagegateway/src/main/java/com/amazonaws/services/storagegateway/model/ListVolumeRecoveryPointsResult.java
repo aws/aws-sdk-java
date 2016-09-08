@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListVolumeRecoveryPointsResult implements Serializable, Cloneable {
+public class ListVolumeRecoveryPointsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

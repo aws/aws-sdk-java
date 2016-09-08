@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * request to the <code>/2013-04-01/healthcheckcount</code> resource.
  * </p>
  */
-public class GetHealthCheckCountRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetHealthCheckCountRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

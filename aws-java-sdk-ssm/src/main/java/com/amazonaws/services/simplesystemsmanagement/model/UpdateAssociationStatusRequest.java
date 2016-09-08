@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class UpdateAssociationStatusRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateAssociationStatusRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

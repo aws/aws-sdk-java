@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * A request for usage information on an identity pool.
  */
-public class ListIdentityPoolUsageRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ListIdentityPoolUsageRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** A pagination token for obtaining the next page of results. */
     private String nextToken;

@@ -22,7 +22,9 @@ import java.io.Serializable;
  * the indexing operation, including the fields being indexed.
  * </p>
  */
-public class IndexDocumentsResult implements Serializable, Cloneable {
+public class IndexDocumentsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

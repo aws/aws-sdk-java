@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class BatchCheckLayerAvailabilityRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class BatchCheckLayerAvailabilityRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

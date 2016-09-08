@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to the list artifacts operation.
  * </p>
  */
-public class ListArtifactsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class AddCacheRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class AddCacheRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

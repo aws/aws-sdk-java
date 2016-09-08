@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for ModifyListener.
  * </p>
  */
-public class ModifyListenerRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ModifyListenerRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

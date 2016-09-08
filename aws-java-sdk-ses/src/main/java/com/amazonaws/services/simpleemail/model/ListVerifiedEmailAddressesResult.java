@@ -22,8 +22,9 @@ import java.io.Serializable;
  * AWS account.
  * </p>
  */
-public class ListVerifiedEmailAddressesResult implements Serializable,
-        Cloneable {
+public class ListVerifiedEmailAddressesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

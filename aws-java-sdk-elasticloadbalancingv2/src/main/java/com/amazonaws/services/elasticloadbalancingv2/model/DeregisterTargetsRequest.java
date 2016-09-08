@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DeregisterTargets.
  * </p>
  */
-public class DeregisterTargetsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeregisterTargetsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -22,7 +22,9 @@ import java.io.Serializable;
  * SDK.
  * </p>
  */
-public class GetExportResult implements Serializable, Cloneable {
+public class GetExportResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

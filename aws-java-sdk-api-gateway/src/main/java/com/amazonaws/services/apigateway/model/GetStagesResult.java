@@ -25,7 +25,9 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/apigateway/latest/developerguide/stages.html"
  * >Deploying API in Stages</a></div>
  */
-public class GetStagesResult implements Serializable, Cloneable {
+public class GetStagesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

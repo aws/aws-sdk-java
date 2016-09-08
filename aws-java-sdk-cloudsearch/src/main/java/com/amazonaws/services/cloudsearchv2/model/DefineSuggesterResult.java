@@ -22,7 +22,9 @@ import java.io.Serializable;
  * the newly-configured suggester.
  * </p>
  */
-public class DefineSuggesterResult implements Serializable, Cloneable {
+public class DefineSuggesterResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private SuggesterStatus suggester;
 

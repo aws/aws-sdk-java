@@ -22,8 +22,9 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class DescribeStackProvisioningParametersResult implements Serializable,
-        Cloneable {
+public class DescribeStackProvisioningParametersResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

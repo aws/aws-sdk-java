@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to get a streaming distribution's information.
  */
-public class GetStreamingDistributionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetStreamingDistributionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The streaming distribution's id. */
     private String id;

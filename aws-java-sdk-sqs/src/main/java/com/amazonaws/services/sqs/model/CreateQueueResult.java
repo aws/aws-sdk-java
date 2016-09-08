@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Returns the QueueUrl element of the created queue.
  * </p>
  */
-public class CreateQueueResult implements Serializable, Cloneable {
+public class CreateQueueResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * of the domain you want to update and the Multi-AZ availability option.
  * </p>
  */
-public class UpdateAvailabilityOptionsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateAvailabilityOptionsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
     /**

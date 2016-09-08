@@ -23,7 +23,9 @@ import java.io.Serializable;
  * all tasks and events in the life of the workflow execution.
  * </p>
  */
-public class History implements Serializable, Cloneable {
+public class History extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

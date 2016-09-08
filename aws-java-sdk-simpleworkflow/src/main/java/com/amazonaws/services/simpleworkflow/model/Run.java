@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Specifies the <code>runId</code> of a workflow execution.
  * </p>
  */
-public class Run implements Serializable, Cloneable {
+public class Run extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

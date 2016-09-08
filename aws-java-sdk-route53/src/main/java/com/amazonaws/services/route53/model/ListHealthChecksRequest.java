@@ -36,8 +36,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * </note>
  */
-public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListHealthChecksRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

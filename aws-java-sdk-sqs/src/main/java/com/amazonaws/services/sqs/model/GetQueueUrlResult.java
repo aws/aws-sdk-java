@@ -23,7 +23,9 @@ import java.io.Serializable;
  * >Responses</a> in the <i>Amazon SQS Developer Guide</i>.
  * </p>
  */
-public class GetQueueUrlResult implements Serializable, Cloneable {
+public class GetQueueUrlResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

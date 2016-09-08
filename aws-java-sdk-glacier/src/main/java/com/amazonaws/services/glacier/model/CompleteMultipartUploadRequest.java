@@ -26,8 +26,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * URI path of the newly created archive resource.
  * </p>
  */
-public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CompleteMultipartUploadRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

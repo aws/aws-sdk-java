@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The RegisterDomain response includes the following element.
  * </p>
  */
-public class RegisterDomainResult implements Serializable, Cloneable {
+public class RegisterDomainResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a <i>BatchGetItem</i> operation.
  * </p>
  */
-public class BatchGetItemRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

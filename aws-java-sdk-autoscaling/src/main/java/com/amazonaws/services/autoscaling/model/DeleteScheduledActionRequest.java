@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DeleteScheduledAction.
  * </p>
  */
-public class DeleteScheduledActionRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteScheduledActionRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

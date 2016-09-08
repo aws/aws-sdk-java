@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the <a>StopConfigurationRecorder</a> action.
  * </p>
  */
-public class StopConfigurationRecorderRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class StopConfigurationRecorderRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

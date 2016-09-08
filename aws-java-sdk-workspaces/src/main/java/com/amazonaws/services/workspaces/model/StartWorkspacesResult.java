@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class StartWorkspacesResult implements Serializable, Cloneable {
+public class StartWorkspacesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

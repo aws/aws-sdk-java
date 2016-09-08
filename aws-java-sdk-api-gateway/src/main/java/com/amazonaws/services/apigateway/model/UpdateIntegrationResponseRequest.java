@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents an update integration response request.
  * </p>
  */
-public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateIntegrationResponseRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

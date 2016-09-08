@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to update user attributes.
  * </p>
  */
-public class UpdateUserAttributesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateUserAttributesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

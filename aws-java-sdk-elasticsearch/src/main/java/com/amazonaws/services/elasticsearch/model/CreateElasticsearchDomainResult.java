@@ -22,7 +22,9 @@ import java.io.Serializable;
  * the status of the newly created Elasticsearch domain.
  * </p>
  */
-public class CreateElasticsearchDomainResult implements Serializable, Cloneable {
+public class CreateElasticsearchDomainResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

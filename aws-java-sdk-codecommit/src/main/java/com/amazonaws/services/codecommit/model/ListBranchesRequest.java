@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a list branches operation.
  * </p>
  */
-public class ListBranchesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListBranchesRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

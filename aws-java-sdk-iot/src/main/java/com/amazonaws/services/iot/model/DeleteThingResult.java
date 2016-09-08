@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output of the DeleteThing operation.
  * </p>
  */
-public class DeleteThingResult implements Serializable, Cloneable {
+public class DeleteThingResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

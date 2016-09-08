@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DecryptResult implements Serializable, Cloneable {
+public class DecryptResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

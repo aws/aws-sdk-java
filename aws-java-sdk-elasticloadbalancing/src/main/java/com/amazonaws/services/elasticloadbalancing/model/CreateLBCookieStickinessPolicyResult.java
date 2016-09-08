@@ -21,8 +21,9 @@ import java.io.Serializable;
  * Contains the output for CreateLBCookieStickinessPolicy.
  * </p>
  */
-public class CreateLBCookieStickinessPolicyResult implements Serializable,
-        Cloneable {
+public class CreateLBCookieStickinessPolicyResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * </p>
  */
-public class DescribeReservedNodesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeReservedNodesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

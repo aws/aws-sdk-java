@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for ReportTaskProgress.
  * </p>
  */
-public class ReportTaskProgressRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class ReportTaskProgressRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

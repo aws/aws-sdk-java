@@ -25,7 +25,9 @@ import java.io.Serializable;
  * for the <code>MLModel</code>.
  * </p>
  */
-public class DeleteRealtimeEndpointResult implements Serializable, Cloneable {
+public class DeleteRealtimeEndpointResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

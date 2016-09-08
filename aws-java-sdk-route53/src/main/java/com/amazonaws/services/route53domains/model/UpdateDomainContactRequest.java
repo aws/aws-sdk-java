@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The UpdateDomainContact request includes the following elements.
  * </p>
  */
-public class UpdateDomainContactRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateDomainContactRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

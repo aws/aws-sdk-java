@@ -34,7 +34,9 @@ import java.io.Serializable;
  * the interconnect determines how these resources are assigned.
  * </p>
  */
-public class CreateInterconnectResult implements Serializable, Cloneable {
+public class CreateInterconnectResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String interconnectId;
 

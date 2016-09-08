@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class DeleteSnapshotScheduleRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteSnapshotScheduleRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String volumeARN;
 

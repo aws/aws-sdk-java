@@ -19,7 +19,10 @@ import java.io.Serializable;
 /**
  * 
  */
-public class ListDomainsResult implements Serializable, Cloneable {
+public class ListDomainsResult
+        extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.services.simpledb.SimpleDBResponseMetadata>
+        implements Serializable, Cloneable {
 
     /** A list of domain names that match the expression. */
     private com.amazonaws.internal.SdkInternalList<String> domainNames;

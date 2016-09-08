@@ -21,7 +21,9 @@ import java.io.Serializable;
  * An empty element returned on a successful request.
  * </p>
  */
-public class DeleteIdentityResult implements Serializable, Cloneable {
+public class DeleteIdentityResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

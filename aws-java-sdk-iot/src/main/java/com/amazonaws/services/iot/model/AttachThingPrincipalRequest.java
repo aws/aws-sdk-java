@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the AttachThingPrincipal operation.
  * </p>
  */
-public class AttachThingPrincipalRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class AttachThingPrincipalRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

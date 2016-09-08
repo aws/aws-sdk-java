@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the input of a create pipeline action.
  * </p>
  */
-public class CreatePipelineRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreatePipelineRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private PipelineDeclaration pipeline;
 

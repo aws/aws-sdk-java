@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output for the <a>DescribeAccountLimits</a> action.
  * </p>
  */
-public class DescribeAccountLimitsResult implements Serializable, Cloneable {
+public class DescribeAccountLimitsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

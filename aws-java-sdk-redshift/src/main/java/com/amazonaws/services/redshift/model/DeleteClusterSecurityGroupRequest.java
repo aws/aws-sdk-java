@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * </p>
  */
-public class DeleteClusterSecurityGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteClusterSecurityGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

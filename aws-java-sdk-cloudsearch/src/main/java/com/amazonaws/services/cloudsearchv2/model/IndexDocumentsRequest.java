@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * operation. Specifies the name of the domain you want to re-index.
  * </p>
  */
-public class IndexDocumentsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class IndexDocumentsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
 

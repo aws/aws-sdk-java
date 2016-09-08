@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The ListDomains response includes the following elements.
  * </p>
  */
-public class ListDomainsResult implements Serializable, Cloneable {
+public class ListDomainsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

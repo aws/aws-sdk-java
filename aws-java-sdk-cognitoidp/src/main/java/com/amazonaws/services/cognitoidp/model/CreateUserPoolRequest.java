@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to create a user pool.
  * </p>
  */
-public class CreateUserPoolRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateUserPoolRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

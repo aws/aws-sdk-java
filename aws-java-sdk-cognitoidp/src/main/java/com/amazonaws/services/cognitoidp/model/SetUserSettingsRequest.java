@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to set user settings.
  * </p>
  */
-public class SetUserSettingsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class SetUserSettingsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

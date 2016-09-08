@@ -24,8 +24,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * suggester configuration.
  * </p>
  */
-public class DefineSuggesterRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DefineSuggesterRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     private String domainName;
 

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the result of a get run request.
  * </p>
  */
-public class GetRunResult implements Serializable, Cloneable {
+public class GetRunResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private Run run;
 

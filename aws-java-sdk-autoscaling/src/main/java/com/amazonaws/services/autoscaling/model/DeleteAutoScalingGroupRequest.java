@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DeleteAutoScalingGroup.
  * </p>
  */
-public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteAutoScalingGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

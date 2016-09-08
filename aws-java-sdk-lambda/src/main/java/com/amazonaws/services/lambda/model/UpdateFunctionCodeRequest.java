@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class UpdateFunctionCodeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output from the GetLoggingOptions operation.
  * </p>
  */
-public class GetLoggingOptionsResult implements Serializable, Cloneable {
+public class GetLoggingOptionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

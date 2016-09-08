@@ -21,8 +21,9 @@ import java.io.Serializable;
  * DescribeTapeRecoveryPointsOutput
  * </p>
  */
-public class DescribeTapeRecoveryPointsResult implements Serializable,
-        Cloneable {
+public class DescribeTapeRecoveryPointsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
     /**

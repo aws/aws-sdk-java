@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request to list information about a collection of resources.
  * </p>
  */
-public class GetResourcesRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p/>
  */
-public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ModifyDBClusterRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

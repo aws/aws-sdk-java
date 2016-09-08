@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * <p/>
  */
-public class DescribeOptionGroupOptionsResult implements Serializable,
-        Cloneable {
+public class DescribeOptionGroupOptionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<OptionGroupOption> optionGroupOptions;
     /**

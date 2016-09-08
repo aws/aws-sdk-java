@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for DescribeLoadBalancers.
  * </p>
  */
-public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DescribeLoadBalancersRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

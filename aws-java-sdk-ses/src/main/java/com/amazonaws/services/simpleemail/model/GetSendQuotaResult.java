@@ -22,7 +22,9 @@ import java.io.Serializable;
  * number of emails you have sent in the last 24 hours.
  * </p>
  */
-public class GetSendQuotaResult implements Serializable, Cloneable {
+public class GetSendQuotaResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

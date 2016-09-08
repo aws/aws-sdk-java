@@ -21,7 +21,9 @@ import java.io.Serializable;
  * TBD
  * </p>
  */
-public class CreateApplicationResult implements Serializable, Cloneable {
+public class CreateApplicationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

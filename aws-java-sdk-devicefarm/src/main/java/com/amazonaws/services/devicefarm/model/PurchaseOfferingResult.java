@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The result of the purchase offering (e.g., success or failure).
  * </p>
  */
-public class PurchaseOfferingResult implements Serializable, Cloneable {
+public class PurchaseOfferingResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

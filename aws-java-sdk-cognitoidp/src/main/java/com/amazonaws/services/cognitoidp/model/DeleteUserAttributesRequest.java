@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to delete user attributes.
  * </p>
  */
-public class DeleteUserAttributesRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeleteUserAttributesRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

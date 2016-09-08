@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * 
  */
-public class ListDomainsRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * The maximum number of domain names you want returned. The range is 1 to

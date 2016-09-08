@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * The request to create a new distribution with tags
  */
-public class CreateDistributionWithTagsRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class CreateDistributionWithTagsRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /** The distribution's configuration information. */
     private DistributionConfigWithTags distributionConfigWithTags;

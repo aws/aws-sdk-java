@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains the parameters for CreateTargetGroup.
  * </p>
  */
-public class CreateTargetGroupRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateTargetGroupRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

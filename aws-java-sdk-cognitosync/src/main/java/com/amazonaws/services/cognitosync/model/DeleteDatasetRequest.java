@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * A request to delete the specific dataset.
  */
-public class DeleteDatasetRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteDatasetRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * A name-spaced GUID (for example,

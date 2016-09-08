@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * to the <code>/2013-04-01/hostedzonecount</code> resource.
  * </p>
  */
-public class GetHostedZoneCountRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class GetHostedZoneCountRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and

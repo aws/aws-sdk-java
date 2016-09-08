@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input to the <code>DescribeIdentity</code> action.
  * </p>
  */
-public class DescribeIdentityRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DescribeIdentityRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

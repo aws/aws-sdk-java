@@ -22,7 +22,9 @@ import java.io.Serializable;
  * status of the domain's availability options.
  * </p>
  */
-public class UpdateAvailabilityOptionsResult implements Serializable, Cloneable {
+public class UpdateAvailabilityOptionsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

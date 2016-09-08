@@ -22,7 +22,9 @@ import java.io.Serializable;
  * content is essentially a list of <code>MLModel</code>.
  * </p>
  */
-public class DescribeMLModelsResult implements Serializable, Cloneable {
+public class DescribeMLModelsResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

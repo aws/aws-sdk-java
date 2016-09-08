@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing the id of the gateway to delete.
  * </p>
  */
-public class DeleteGatewayRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteGatewayRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     private String gatewayARN;
 

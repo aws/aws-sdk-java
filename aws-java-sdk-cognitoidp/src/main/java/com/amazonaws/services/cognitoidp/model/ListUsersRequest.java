@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents the request to list users.
  * </p>
  */
-public class ListUsersRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

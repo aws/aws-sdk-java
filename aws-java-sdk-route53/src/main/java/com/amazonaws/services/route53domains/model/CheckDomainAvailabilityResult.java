@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The CheckDomainAvailability response includes the following elements.
  * </p>
  */
-public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
+public class CheckDomainAvailabilityResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

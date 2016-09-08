@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Provides options for deleting a vault from Amazon Glacier.
  * </p>
  */
-public class DeleteVaultRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class DeleteVaultRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

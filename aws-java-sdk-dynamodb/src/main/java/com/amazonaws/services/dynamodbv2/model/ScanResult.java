@@ -21,7 +21,9 @@ import java.io.Serializable;
  * Represents the output of a <i>Scan</i> operation.
  * </p>
  */
-public class ScanResult implements Serializable, Cloneable {
+public class ScanResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

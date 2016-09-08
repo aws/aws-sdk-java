@@ -22,8 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The input for the DeprecateThingType operation.
  * </p>
  */
-public class DeprecateThingTypeRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class DeprecateThingTypeRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>

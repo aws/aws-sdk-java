@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes the inputs for PutMetricData.
  * </p>
  */
-public class PutMetricDataRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

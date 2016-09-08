@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Input for CreateTopic action.
  * </p>
  */
-public class CreateTopicRequest extends AmazonWebServiceRequest implements
-        Serializable, Cloneable {
+public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
      * <p>

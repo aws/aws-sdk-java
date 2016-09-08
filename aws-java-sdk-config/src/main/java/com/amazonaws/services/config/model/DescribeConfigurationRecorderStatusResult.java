@@ -22,8 +22,9 @@ import java.io.Serializable;
  * format.
  * </p>
  */
-public class DescribeConfigurationRecorderStatusResult implements Serializable,
-        Cloneable {
+public class DescribeConfigurationRecorderStatusResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

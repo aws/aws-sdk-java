@@ -21,7 +21,9 @@ import java.io.Serializable;
  * This output contains the list of instances.
  * </p>
  */
-public class ListInstancesResult implements Serializable, Cloneable {
+public class ListInstancesResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>

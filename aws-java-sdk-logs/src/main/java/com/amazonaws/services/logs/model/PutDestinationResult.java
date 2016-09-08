@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * 
  */
-public class PutDestinationResult implements Serializable, Cloneable {
+public class PutDestinationResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     private Destination destination;
 

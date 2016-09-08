@@ -18,25 +18,33 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
-public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest
-        implements Serializable, Cloneable {
+public class RefreshTrustedAdvisorCheckRequest extends
+        com.amazonaws.AmazonWebServiceRequest implements Serializable,
+        Cloneable {
 
     /**
      * <p>
-     * The unique identifier for the Trusted Advisor check.
+     * The unique identifier for the Trusted Advisor check to refresh.
+     * <b>Note:</b> Specifying the check ID of a check that is automatically
+     * refreshed causes an <code>InvalidParameterValue</code> error.
      * </p>
      */
     private String checkId;
 
     /**
      * <p>
-     * The unique identifier for the Trusted Advisor check.
+     * The unique identifier for the Trusted Advisor check to refresh.
+     * <b>Note:</b> Specifying the check ID of a check that is automatically
+     * refreshed causes an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @param checkId
-     *        The unique identifier for the Trusted Advisor check.
+     *        The unique identifier for the Trusted Advisor check to refresh.
+     *        <b>Note:</b> Specifying the check ID of a check that is
+     *        automatically refreshed causes an
+     *        <code>InvalidParameterValue</code> error.
      */
 
     public void setCheckId(String checkId) {
@@ -45,10 +53,15 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique identifier for the Trusted Advisor check.
+     * The unique identifier for the Trusted Advisor check to refresh.
+     * <b>Note:</b> Specifying the check ID of a check that is automatically
+     * refreshed causes an <code>InvalidParameterValue</code> error.
      * </p>
      * 
-     * @return The unique identifier for the Trusted Advisor check.
+     * @return The unique identifier for the Trusted Advisor check to refresh.
+     *         <b>Note:</b> Specifying the check ID of a check that is
+     *         automatically refreshed causes an
+     *         <code>InvalidParameterValue</code> error.
      */
 
     public String getCheckId() {
@@ -57,11 +70,16 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique identifier for the Trusted Advisor check.
+     * The unique identifier for the Trusted Advisor check to refresh.
+     * <b>Note:</b> Specifying the check ID of a check that is automatically
+     * refreshed causes an <code>InvalidParameterValue</code> error.
      * </p>
      * 
      * @param checkId
-     *        The unique identifier for the Trusted Advisor check.
+     *        The unique identifier for the Trusted Advisor check to refresh.
+     *        <b>Note:</b> Specifying the check ID of a check that is
+     *        automatically refreshed causes an
+     *        <code>InvalidParameterValue</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

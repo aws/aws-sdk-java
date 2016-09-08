@@ -21,7 +21,9 @@ import java.io.Serializable;
  * The output of the CreateKeysAndCertificate operation.
  * </p>
  */
-public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
+public class CreateKeysAndCertificateResult extends
+        com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
+        implements Serializable, Cloneable {
 
     /**
      * <p>
