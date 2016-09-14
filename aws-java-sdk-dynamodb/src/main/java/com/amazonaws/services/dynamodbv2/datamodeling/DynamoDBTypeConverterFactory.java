@@ -14,16 +14,17 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
-import com.amazonaws.annotation.NotThreadSafe;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Vector;
 
-import java.util.AbstractMap;
+import java.util.AbstractMap.SimpleImmutableEntry;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * Interface for converting types.
  */
-public interface DynamoDBTypeConverterFactory {
+public abstract class DynamoDBTypeConverterFactory {
 
     /**
      * Gets the type-converter matching the target conversion type.
@@ -33,70 +34,84 @@ public interface DynamoDBTypeConverterFactory {
      * @param targetType The target conversion type.
      * @return The type-converter, or null if no match.
      */
-    <S,T> DynamoDBTypeConverter<S,T> getConverter(Class<S> sourceType, Class<T> targetType);
+    public abstract <S,T> DynamoDBTypeConverter<S,T> getConverter(Class<S> sourceType, Class<T> targetType);
+
+    /**
+     * Creates a type-converter factory builder using this factory as defaults.
+     */
+    public final Builder override() {
+        return new Builder(this);
+    }
+
+    /**
+     * Returns the standard type-converter factory. To override, the factory,
+     * @see DynamoDBTypeConverterFactory#override
+     */
+    public static final DynamoDBTypeConverterFactory standard() {
+        return StandardTypeConverters.factory();
+    }
+
+    /**
+     * Builder for overriding type-converters.
+     */
+    public static final class Builder {
+        private final Map<Entry<Class<?>,Class<?>>,DynamoDBTypeConverter<?,?>> overrides;
+        private final DynamoDBTypeConverterFactory defaults;
+
+        private Builder(final DynamoDBTypeConverterFactory defaults) {
+            this.overrides = new LinkedHashMap<Entry<Class<?>,Class<?>>,DynamoDBTypeConverter<?,?>>();
+            this.defaults = defaults;
+        }
+
+        public <S,T> Builder with(Class<S> sourceType, Class<T> targetType, DynamoDBTypeConverter<? extends S,? extends T> converter) {
+            if (Vector.SET.is(sourceType) || Vector.LIST.is(sourceType) || Vector.MAP.is(sourceType)) {
+                throw new DynamoDBMappingException("type [" + sourceType + "] is not supported" +
+                    "; type-converter factory only supports scalar conversions");
+            }
+            overrides.put(new SimpleImmutableEntry(sourceType, targetType), converter);
+            return this;
+        }
+
+        public DynamoDBTypeConverterFactory build() {
+            return new OverrideFactory(this);
+        }
+    }
+
+    /**
+     * A delegating {@link DynamoDBTypeConverterFactory}.
+     */
+    public static abstract class AbstractDelegateFactory extends DynamoDBTypeConverterFactory {
+        private final DynamoDBTypeConverterFactory delegate;
+
+        public AbstractDelegateFactory(final DynamoDBTypeConverterFactory delegate) {
+            this.delegate = delegate;
+        }
+
+        @Override
+        public <S,T> DynamoDBTypeConverter<S,T> getConverter(final Class<S> sourceType, final Class<T> targetType) {
+            return delegate.getConverter(sourceType, targetType);
+        }
+    }
 
     /**
      * Delegate factory to allow selected types to be overriden.
      */
-    @NotThreadSafe
-    public static class OverrideFactory implements DynamoDBTypeConverterFactory {
-        private final Map<Key<?,?>,DynamoDBTypeConverter<?,?>> overrides = new LinkedHashMap<Key<?,?>,DynamoDBTypeConverter<?,?>>();
-        private final DynamoDBTypeConverterFactory delegate;
+    private static final class OverrideFactory extends AbstractDelegateFactory {
+        private final Map<Entry<Class<?>,Class<?>>,DynamoDBTypeConverter<?,?>> overrides;
 
-        /**
-         * Constructs a new override factory with the delegate as fallback.
-         */
-        public OverrideFactory(final DynamoDBTypeConverterFactory delegate) {
-            this.delegate = delegate;
+        private OverrideFactory(final Builder builder) {
+            super(builder.defaults);
+            this.overrides = builder.overrides;
         }
 
-        /**
-         * Adds or replaces the source to target conversion override.
-         */
-        public <S,T> OverrideFactory with(final Class<S> sourceType, final Class<T> targetType, final DynamoDBTypeConverter<S,T> converter) {
-            this.overrides.put(new Key(sourceType, targetType), converter);
-            return this;
-        }
-
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public <S,T> DynamoDBTypeConverter<S,T> getConverter(final Class<S> sourceType, final Class<T> targetType) {
-            for (final Map.Entry<Key<?,?>,DynamoDBTypeConverter<?,?>> entry : this.overrides.entrySet()) {
-                if (entry.getKey().isAssignableFrom(sourceType, targetType)) {
+            for (final Entry<Entry<Class<?>,Class<?>>,DynamoDBTypeConverter<?,?>> entry : overrides.entrySet()) {
+                if (entry.getKey().getKey().isAssignableFrom(sourceType) && entry.getKey().getValue().isAssignableFrom(targetType)) {
                     return (DynamoDBTypeConverter<S,T>)entry.getValue();
                 }
             }
-            return this.delegate.getConverter(sourceType, targetType);
-        }
-
-        /**
-         * Joins the source and target converters.
-         */
-        public static final <S,T,U> DynamoDBTypeConverter<S,U> join(final DynamoDBTypeConverter<S,T> source, final DynamoDBTypeConverter<T,U> target) {
-            return new DynamoDBTypeConverter<S,U>() {
-                public final S convert(final U o) {
-                    final T object = o == null ? null : target.convert(o);
-                    return object == null ? null : source.convert(object);
-                }
-                public final U unconvert(final S o) {
-                    final T object = o == null ? null : source.unconvert(o);
-                    return object == null ? null : target.unconvert(object);
-                }
-            };
-        }
-
-        /**
-         * Source and target conversion type pair.
-         */
-        public static final class Key<S,T> extends AbstractMap.SimpleImmutableEntry<Class<S>,Class<T>> {
-            public Key(final Class<S> sourceType, final Class<T> targetType) {
-                super(sourceType, targetType);
-            }
-            public boolean isAssignableFrom(final Class<?> sourceType, final Class<?> targetType) {
-                return getKey().isAssignableFrom(sourceType) && getValue().isAssignableFrom(targetType);
-            }
+            return super.getConverter(sourceType, targetType);
         }
     }
 

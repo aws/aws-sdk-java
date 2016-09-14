@@ -29,13 +29,10 @@ import static com.amazonaws.services.dynamodbv2.model.ComparisonOperator.LT;
 import static com.amazonaws.services.dynamodbv2.model.ComparisonOperator.NE;
 import static com.amazonaws.services.dynamodbv2.model.ComparisonOperator.NOT_CONTAINS;
 import static com.amazonaws.services.dynamodbv2.model.ComparisonOperator.NOT_NULL;
-import static com.amazonaws.services.dynamodbv2.model.KeyType.HASH;
-import static com.amazonaws.services.dynamodbv2.model.KeyType.RANGE;
 
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
 import com.amazonaws.services.dynamodbv2.model.Condition;
-import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
 
 import java.util.Arrays;
@@ -65,7 +62,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
      * @param builder The builder.
      */
     private DynamoDBMapperFieldModel(final DynamoDBMapperFieldModel.Builder<T,V> builder) {
-        this.properties = new DynamoDBMapperFieldModel.Properties.Immutable(builder);
+        this.properties = new DynamoDBMapperFieldModel.Properties.Immutable<T,V>(builder);
         this.attributeValueConverter = builder.attributeValueConverter;
         this.reflect = builder.reflect;
     }
@@ -176,6 +173,24 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
     }
 
     /**
+     * Get the current value from the object and convert it.
+     * @param object The object instance.
+     * @return The converted value.
+     */
+    public final AttributeValue getAndConvert(final T object) {
+        return convert(get(object));
+    }
+
+    /**
+     * Unconverts the value and sets it on the object.
+     * @param object The object instance.
+     * @param value The attribute value.
+     */
+    public final void unconvertAndSet(final T object, final AttributeValue value) {
+        set(object, unconvert(value));
+    }
+
+    /**
      * Gets the DynamoDB attribute type.
      * @return The DynamoDB attribute type.
      */
@@ -185,7 +200,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
 
     /**
      * Gets the key type.
-     * @return The key type, or null if not a key.
+     * @return The key type if a key field, null otherwise.
      */
     public final KeyType keyType() {
         return properties.keyType();
@@ -220,57 +235,11 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
     }
 
     /**
-     * Returns true if the field matches any key or index key.
-     * @param keyTypes The key types.
-     * @return True if matching any key type.
+     * Returns true if the field has any indexes.
+     * @return True if the propery matches.
      */
-    public final boolean anyKey(final KeyType ... keyTypes) {
-        for (final KeyType k : (keyTypes.length == 0 ? KeyType.values() : keyTypes)) {
-            if (keyType() == k) {
-                return true;
-            } else if (!globalSecondaryIndexNames(k).isEmpty()) {
-                return true;
-            } else if (RANGE == k && !localSecondaryIndexNames().isEmpty()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Creates an expectation that the value should exist.
-     * @param value The value.
-     * @return The expected value.
-     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBSaveExpression#withExpectedEntry
-     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDeleteExpression#withExpectedEntry
-     * @see com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue
-     */
-    public final ExpectedAttributeValue expectedExists(final V value) {
-        return new ExpectedAttributeValue().withExists(true).withValue(convert(value));
-    }
-
-    /**
-     * Creates an expectation that the value should not exist.
-     * @return The expected value.
-     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBSaveExpression#withExpectedEntry
-     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDeleteExpression#withExpectedEntry
-     * @see com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue
-     */
-    public final ExpectedAttributeValue expectedNotExists() {
-        return new ExpectedAttributeValue().withExists(false);
-    }
-
-    /**
-     * Creates an expectation that the value should exist if the value is not
-     * null or an expectation that the value should not exist otherwise.
-     * @param value The value.
-     * @return The expected value.
-     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBSaveExpression#withExpectedEntry
-     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDeleteExpression#withExpectedEntry
-     * @see com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue
-     */
-    public final ExpectedAttributeValue expectedIfExists(final V value) {
-        return value == null ? expectedNotExists() : expectedExists(value);
+    public final boolean indexed() {
+        return !properties.globalSecondaryIndexNames().isEmpty() || !properties.localSecondaryIndexNames().isEmpty();
     }
 
     /**

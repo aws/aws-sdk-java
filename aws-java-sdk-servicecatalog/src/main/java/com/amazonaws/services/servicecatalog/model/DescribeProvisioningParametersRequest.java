@@ -26,7 +26,8 @@ public class DescribeProvisioningParametersRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -65,7 +66,8 @@ public class DescribeProvisioningParametersRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -81,8 +83,8 @@ public class DescribeProvisioningParametersRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        Optional language code. Supported language codes are as
-     *        follows:</p>
+     *        The language code to use for this operation. Supported language
+     *        codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>
@@ -102,7 +104,8 @@ public class DescribeProvisioningParametersRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -117,8 +120,8 @@ public class DescribeProvisioningParametersRequest extends
      * If no code is specified, "en" is used as the default.
      * </p>
      * 
-     * @return Optional language code. Supported language codes are as
-     *         follows:</p>
+     * @return The language code to use for this operation. Supported language
+     *         codes are as follows:</p>
      *         <p>
      *         "en" (English)
      *         </p>
@@ -138,7 +141,8 @@ public class DescribeProvisioningParametersRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -154,8 +158,8 @@ public class DescribeProvisioningParametersRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        Optional language code. Supported language codes are as
-     *        follows:</p>
+     *        The language code to use for this operation. Supported language
+     *        codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>

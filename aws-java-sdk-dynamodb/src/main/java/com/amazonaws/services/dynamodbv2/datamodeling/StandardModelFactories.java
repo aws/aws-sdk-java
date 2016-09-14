@@ -32,8 +32,8 @@ final class StandardModelFactories {
     /**
      * Creats a new standard {@link DynamoDBMapperModelFactory} factory.
      */
-    static final DynamoDBMapperModelFactory.Factory newFactory(final S3ClientCache s3cc) {
-        return new ConversionSchemaFactory(s3cc);
+    static final DynamoDBMapperModelFactory.Factory of(final S3Link.Factory s3Links) {
+        return new ConversionSchemaFactory(s3Links);
     }
 
     /**
@@ -41,19 +41,19 @@ final class StandardModelFactories {
      */
     private static final class ConversionSchemaFactory implements DynamoDBMapperModelFactory.Factory {
         private final ConcurrentMap<ConversionSchema,DynamoDBMapperModelFactory> cache;
-        private final S3ClientCache s3cc;
+        private final S3Link.Factory s3Links;
 
-        private ConversionSchemaFactory(final S3ClientCache s3cc) {
+        private ConversionSchemaFactory(final S3Link.Factory s3Links) {
             this.cache = new ConcurrentHashMap<ConversionSchema,DynamoDBMapperModelFactory>();
-            this.s3cc = s3cc;
+            this.s3Links = s3Links;
         }
 
         @Override
         public DynamoDBMapperModelFactory getModelFactory(final DynamoDBMapperConfig config) {
             final ConversionSchema schema = config.getConversionSchema();
             if (!cache.containsKey(schema)) {
-                RuleFactory rules = StandardConverterRules.of(config, this, s3cc);
-                rules = new ConversionSchemas.ItemConverterRuleFactory(config, s3cc, rules);
+                RuleFactory rules = StandardConverterRules.of(config, s3Links, this);
+                rules = new ConversionSchemas.ItemConverterRuleFactory(config, s3Links.getS3ClientCache(), rules);
                 cache.putIfAbsent(schema, new StandardModelFactory(rules));
             }
             return cache.get(schema);

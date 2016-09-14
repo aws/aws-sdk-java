@@ -73,6 +73,12 @@ public class ScanProvisionedProductsRequestMarshaller
                 jsonGenerator.writeFieldName("AcceptLanguage").writeValue(
                         scanProvisionedProductsRequest.getAcceptLanguage());
             }
+            if (scanProvisionedProductsRequest.getAccessLevelFilter() != null) {
+                jsonGenerator.writeFieldName("AccessLevelFilter");
+                AccessLevelFilterJsonMarshaller.getInstance().marshall(
+                        scanProvisionedProductsRequest.getAccessLevelFilter(),
+                        jsonGenerator);
+            }
             if (scanProvisionedProductsRequest.getPageSize() != null) {
                 jsonGenerator.writeFieldName("PageSize").writeValue(
                         scanProvisionedProductsRequest.getPageSize());

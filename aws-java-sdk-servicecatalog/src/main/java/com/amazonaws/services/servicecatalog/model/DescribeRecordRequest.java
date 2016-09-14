@@ -26,7 +26,8 @@ public class DescribeRecordRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -53,7 +54,7 @@ public class DescribeRecordRequest extends
     private String id;
     /**
      * <p>
-     * The page token of the first page retrieve. If null, this retrieves the
+     * The page token of the first page retrieved. If null, this retrieves the
      * first page of size <code>PageSize</code>.
      * </p>
      */
@@ -69,7 +70,8 @@ public class DescribeRecordRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -85,8 +87,8 @@ public class DescribeRecordRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        Optional language code. Supported language codes are as
-     *        follows:</p>
+     *        The language code to use for this operation. Supported language
+     *        codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>
@@ -106,7 +108,8 @@ public class DescribeRecordRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -121,8 +124,8 @@ public class DescribeRecordRequest extends
      * If no code is specified, "en" is used as the default.
      * </p>
      * 
-     * @return Optional language code. Supported language codes are as
-     *         follows:</p>
+     * @return The language code to use for this operation. Supported language
+     *         codes are as follows:</p>
      *         <p>
      *         "en" (English)
      *         </p>
@@ -142,7 +145,8 @@ public class DescribeRecordRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -158,8 +162,8 @@ public class DescribeRecordRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        Optional language code. Supported language codes are as
-     *        follows:</p>
+     *        The language code to use for this operation. Supported language
+     *        codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>
@@ -241,13 +245,13 @@ public class DescribeRecordRequest extends
 
     /**
      * <p>
-     * The page token of the first page retrieve. If null, this retrieves the
+     * The page token of the first page retrieved. If null, this retrieves the
      * first page of size <code>PageSize</code>.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieve. If null, this retrieves
-     *        the first page of size <code>PageSize</code>.
+     *        The page token of the first page retrieved. If null, this
+     *        retrieves the first page of size <code>PageSize</code>.
      */
 
     public void setPageToken(String pageToken) {
@@ -256,11 +260,11 @@ public class DescribeRecordRequest extends
 
     /**
      * <p>
-     * The page token of the first page retrieve. If null, this retrieves the
+     * The page token of the first page retrieved. If null, this retrieves the
      * first page of size <code>PageSize</code>.
      * </p>
      * 
-     * @return The page token of the first page retrieve. If null, this
+     * @return The page token of the first page retrieved. If null, this
      *         retrieves the first page of size <code>PageSize</code>.
      */
 
@@ -270,13 +274,13 @@ public class DescribeRecordRequest extends
 
     /**
      * <p>
-     * The page token of the first page retrieve. If null, this retrieves the
+     * The page token of the first page retrieved. If null, this retrieves the
      * first page of size <code>PageSize</code>.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieve. If null, this retrieves
-     *        the first page of size <code>PageSize</code>.
+     *        The page token of the first page retrieved. If null, this
+     *        retrieves the first page of size <code>PageSize</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

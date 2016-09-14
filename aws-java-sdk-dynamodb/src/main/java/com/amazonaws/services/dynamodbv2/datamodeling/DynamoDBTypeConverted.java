@@ -68,7 +68,7 @@ import java.lang.annotation.Target;
  *
  *     public static final class Converter implements DynamoDBTypeConverter&lt;String,Currency&gt; {
  *         private final String separator;
- *         public Converter(final CurrencyFormat annotation) {
+ *         public Converter(final Class&lt;Currency&gt; targetType, final CurrencyFormat annotation) {
  *             this.separator = annotation.separator();
  *         }
  *         public Converter() {
@@ -133,22 +133,21 @@ public @interface DynamoDBTypeConverted {
                 }
             }
 
+            Class<DynamoDBTypeConverter<S,T>> clazz = (Class<DynamoDBTypeConverter<S,T>>)converted.converter();
             DynamoDBTypeConverter<S,T> converter = null;
 
             try {
                 if (annotation != converted) {
                     try {
-                        converter = converted.converter()
-                            .getConstructor(Class.class, annotation.annotationType())
+                        converter = clazz.getConstructor(Class.class, annotation.annotationType())
                             .newInstance(targetType, annotation);
                     } catch (final NoSuchMethodException no) {}
                 }
                 if (converter == null) {
                     try {
-                        converter = converted.converter().getConstructor(Class.class)
-                            .newInstance(targetType);
+                        converter = clazz.getConstructor(Class.class).newInstance(targetType);
                     } catch (final NoSuchMethodException no) {
-                        converter = converted.converter().newInstance();
+                        converter = clazz.newInstance();
                     }
                 }
             } catch (final Exception e) {

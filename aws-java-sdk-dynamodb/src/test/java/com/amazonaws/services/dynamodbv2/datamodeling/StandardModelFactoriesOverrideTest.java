@@ -24,7 +24,7 @@ public class StandardModelFactoriesOverrideTest extends StandardModelFactoriesV2
         .withConversionSchema(ConversionSchemas.v2Builder("V2Override").build())
         .build();
 
-    private final DynamoDBMapperModelFactory.Factory factory = StandardModelFactories.newFactory(null);
+    private final DynamoDBMapperModelFactory.Factory factory = StandardModelFactories.of(S3Link.Factory.of(null));
     private final DynamoDBMapperModelFactory models = factory.getModelFactory(config);
 
     @Override

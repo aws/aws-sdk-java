@@ -17,7 +17,6 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.DynamoDBAttributeType;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.Reflect;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverterFactory.OverrideFactory;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ScalarAttributeType;
 
@@ -213,7 +212,7 @@ final class StandardAttributeTypes {
          * Creates a new attribute value converter with the target conversion.
          */
         <S,V> DynamoDBTypeConverter<AttributeValue,V> join(final DynamoDBTypeConverter<S,V> target) {
-            return OverrideFactory.join((DynamoDBTypeConverter<AttributeValue,S>)this, target);
+            return StandardTypeConverters.join((DynamoDBTypeConverter<AttributeValue,S>)this, target);
         }
 
         /**
@@ -253,12 +252,19 @@ final class StandardAttributeTypes {
         }
 
         /**
-         * Copies the contents from the fist {@link AttributeValue} into the second.
+         * Copies the value of this {@link AttributeValue} into the second.
          */
-        static final void copyAll(final AttributeValue from, final AttributeValue into) {
-            for (final AttributeType attribute : AttributeType.values()) {
-                attribute.reflect.set(into, attribute.reflect.get(from));
-            }
+        final void copy(final AttributeValue from, final AttributeValue into) {
+            this.reflect.set(into, this.reflect.get(from));
+        }
+    }
+
+    /**
+     * Copies the contents from the fist {@link AttributeValue} into the second.
+     */
+    static final void copy(final AttributeValue from, final AttributeValue into) {
+        for (final AttributeType attribute : AttributeType.values()) {
+            attribute.copy(from, into);
         }
     }
 

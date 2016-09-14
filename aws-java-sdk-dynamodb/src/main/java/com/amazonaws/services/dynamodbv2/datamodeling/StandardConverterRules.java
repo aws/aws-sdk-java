@@ -36,7 +36,6 @@ import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.DynamoDBAttributeType;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.Properties;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.Reflect;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverterFactory.OverrideFactory;
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardAttributeTypes.AttributeType;
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties.Bean;
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardParameterTypes.ParamType;
@@ -62,58 +61,61 @@ final class StandardConverterRules {
     /**
      * Creates a new set of conversion rules based on the configuration.
      */
-    static final <V> RuleFactory<V> of(final DynamoDBMapperConfig config, final DynamoDBMapperModelFactory.Factory factory, final S3ClientCache s3cc) {
-        final Rules<V> rules = new Rules<V>(StandardTypeConverters.factory());
-        rules.with(String.class, S3Link.class, new S3Link.Factory(s3cc));
+    static final <V> RuleFactory<V> of(final DynamoDBMapperConfig config, final S3Link.Factory s3Links, final DynamoDBMapperModelFactory.Factory models) {
+        final Rules<V> factory = new Rules<V>(StandardTypeConverters.factory().override()
+            .with(String.class, S3Link.class, s3Links)
+            .build());
         if (config.getConversionSchema() == ConversionSchemas.V1) {
-            rules.with(rules.new NativeBool(true));
-            rules.with(rules.new SimpleScalar(S));
-            rules.with(rules.new SimpleScalar(N));
-            rules.with(rules.new SimpleScalar(B));
-            rules.with(rules.new SimpleScalarSet(SS));
-            rules.with(rules.new SimpleScalarSet(NS));
-            rules.with(rules.new SimpleScalarSet(BS));
-            rules.with(rules.new ObjectToStringSet());
+            factory.with(factory.new NativeBool(true));
+            factory.with(factory.new SimpleScalar(S));
+            factory.with(factory.new SimpleScalar(N));
+            factory.with(factory.new SimpleScalar(B));
+            factory.with(factory.new SimpleScalarSet(SS));
+            factory.with(factory.new SimpleScalarSet(NS));
+            factory.with(factory.new SimpleScalarSet(BS));
+            factory.with(factory.new ObjectStringSet());
         } else if (config.getConversionSchema() == ConversionSchemas.V2) {
-            rules.with(rules.new NativeBool(false));
-            rules.with(rules.new SimpleScalar(S));
-            rules.with(rules.new SimpleScalar(N));
-            rules.with(rules.new SimpleScalar(B));
-            rules.with(rules.new NativeBoolSet());
-            rules.with(rules.new SimpleScalarSet(SS));
-            rules.with(rules.new SimpleScalarSet(NS));
-            rules.with(rules.new SimpleScalarSet(BS));
-            rules.with(rules.new ObjectSetOrList());
-            rules.with(rules.new ObjectStringKeyMap());
-            rules.with(rules.new ObjectDocumentMap(config, factory));
+            factory.with(factory.new NativeBool(false));
+            factory.with(factory.new SimpleScalar(S));
+            factory.with(factory.new SimpleScalar(N));
+            factory.with(factory.new SimpleScalar(B));
+            factory.with(factory.new NativeBoolSet());
+            factory.with(factory.new SimpleScalarSet(SS));
+            factory.with(factory.new SimpleScalarSet(NS));
+            factory.with(factory.new SimpleScalarSet(BS));
+            factory.with(factory.new ObjectSet());
+            factory.with(factory.new ObjectList());
+            factory.with(factory.new ObjectMap());
+            factory.with(factory.new DocumentObjectMap(config, models));
         } else {
-            rules.with(rules.new NativeBool(true));
-            rules.with(rules.new SimpleScalar(S));
-            rules.with(rules.new SimpleScalar(N));
-            rules.with(rules.new SimpleScalar(B));
-            rules.with(rules.new SimpleScalarSet(SS));
-            rules.with(rules.new SimpleScalarSet(NS));
-            rules.with(rules.new SimpleScalarSet(BS));
-            rules.with(rules.new ObjectToStringSet());
-            rules.with(rules.new ObjectSetOrList());
-            rules.with(rules.new ObjectStringKeyMap());
-            rules.with(rules.new ObjectDocumentMap(config, factory));
+            factory.with(factory.new NativeBool(true));
+            factory.with(factory.new SimpleScalar(S));
+            factory.with(factory.new SimpleScalar(N));
+            factory.with(factory.new SimpleScalar(B));
+            factory.with(factory.new SimpleScalarSet(SS));
+            factory.with(factory.new SimpleScalarSet(NS));
+            factory.with(factory.new SimpleScalarSet(BS));
+            factory.with(factory.new ObjectStringSet());
+            factory.with(factory.new ObjectList());
+            factory.with(factory.new ObjectMap());
+            factory.with(factory.new DocumentObjectMap(config, models));
         }
-        return rules;
+        return factory;
     }
 
     /**
      * Groups the conversion rules to be evaluated.
      */
-    private static final class Rules<V> extends OverrideFactory implements RuleFactory<V> {
+    private static final class Rules<V> implements RuleFactory<V> {
         private final Set<Rule<V>> rules = new LinkedHashSet<Rule<V>>();
+        private final DynamoDBTypeConverterFactory scalars;
 
         /**
          * Constructs a new conversion evaluator with the specified scalar
          * type-converter factory.
          */
-        private Rules(final DynamoDBTypeConverterFactory converters) {
-            super(converters);
+        private Rules(final DynamoDBTypeConverterFactory scalars) {
+            this.scalars = scalars;
         }
 
         /**
@@ -168,7 +170,7 @@ final class StandardConverterRules {
             @Override
             public DynamoDBTypeConverter<AttributeValue,V> newConverter(final ParamType<V> type) {
                 final DynamoDBTypeConverter<AttributeValue,V> source = rule.newConverter(sourceType);
-                return join(source, target);
+                return StandardTypeConverters.join(source, target);
             }
             @Override
             public DynamoDBAttributeType getAttributeType() {
@@ -220,7 +222,7 @@ final class StandardConverterRules {
             }
             @Override
             public DynamoDBTypeConverter<AttributeValue,V> newConverter(final ParamType<V> type) {
-                final DynamoDBTypeConverter<?,V> target = getConverter(sourceType, type.type());
+                final DynamoDBTypeConverter<?,V> target = scalars.getConverter(sourceType, type.type());
                 return attribute.join(target);
             }
             @Override
@@ -248,7 +250,7 @@ final class StandardConverterRules {
             }
             @Override
             public DynamoDBTypeConverter<AttributeValue,Collection<V>> newConverter(final ParamType<Collection<V>> type) {
-                final DynamoDBTypeConverter<?,V> target = getConverter(sourceType, type.<V>param(0).type());
+                final DynamoDBTypeConverter<?,V> target = scalars.getConverter(sourceType, type.<V>param(0).type());
                 return attribute.join(SET.join(target));
             }
             @Override
@@ -260,7 +262,7 @@ final class StandardConverterRules {
         /**
          * V1 Object set conversions.
          */
-        private final class ObjectToStringSet implements Rule<Collection<V>> {
+        private final class ObjectStringSet implements Rule<Collection<V>> {
             @Override
             public boolean isAssignableFrom(final ParamType<?> type, final Properties<?,?> props) {
                 if (props.attributeType() == null) {
@@ -296,7 +298,7 @@ final class StandardConverterRules {
             }
             @Override
             public DynamoDBTypeConverter<AttributeValue,Collection<V>> newConverter(final ParamType<Collection<V>> type) {
-                return join(new DynamoDBTypeConverter<AttributeValue,List<AttributeValue>>() {
+                return StandardTypeConverters.join(new DynamoDBTypeConverter<AttributeValue,List<AttributeValue>>() {
                     public final AttributeValue convert(final List<AttributeValue> o) {
                         return L.convert(o);
                     }
@@ -317,11 +319,11 @@ final class StandardConverterRules {
         /**
          * Any {@link List} conversions.
          */
-        private final class ObjectSetOrList implements Rule<Collection<V>> {
+        private final class ObjectSet implements Rule<Collection<V>> {
             @Override
             public boolean isAssignableFrom(final ParamType<?> type, final Properties<?,?> props) {
                 if (props.attributeType() == null) {
-                    return (SET.is(type.type()) || LIST.is(type.type())) && type.param(0) != null;
+                    return SET.is(type.type()) && type.param(0) != null;
                 }
                 return false;
             }
@@ -329,7 +331,30 @@ final class StandardConverterRules {
             public DynamoDBTypeConverter<AttributeValue,Collection<V>> newConverter(final ParamType<Collection<V>> type) {
                 final Rule<V> rule = getRule(type.<V>param(0), Properties.Immutable.<V,V>empty());
                 final DynamoDBTypeConverter<AttributeValue,V> target = NULL.join(rule.newConverter(type.<V>param(0)));
-                return L.join(SET.is(type.type()) ? SET.join(target) : LIST.join(target));
+                return L.join(SET.join(target));
+            }
+            @Override
+            public DynamoDBAttributeType getAttributeType() {
+                return L.attributeType();
+            }
+        }
+
+        /**
+         * Any {@link List} conversions.
+         */
+        private final class ObjectList implements Rule<List<V>> {
+            @Override
+            public boolean isAssignableFrom(final ParamType<?> type, final Properties<?,?> props) {
+                if (props.attributeType() == null) {
+                    return LIST.is(type.type()) && type.param(0) != null;
+                }
+                return false;
+            }
+            @Override
+            public DynamoDBTypeConverter<AttributeValue,List<V>> newConverter(final ParamType<List<V>> type) {
+                final Rule<V> rule = getRule(type.<V>param(0), Properties.Immutable.<V,V>empty());
+                final DynamoDBTypeConverter<AttributeValue,V> target = NULL.join(rule.newConverter(type.<V>param(0)));
+                return L.join(LIST.join(target));
             }
             @Override
             public DynamoDBAttributeType getAttributeType() {
@@ -340,7 +365,7 @@ final class StandardConverterRules {
         /**
          * Any {@link Map} conversions.
          */
-        private final class ObjectStringKeyMap implements Rule<Map<String,V>> {
+        private final class ObjectMap implements Rule<Map<String,V>> {
             @Override
             public boolean isAssignableFrom(final ParamType<?> type, final Properties<?,?> props) {
                 if (props.attributeType() == null) {
@@ -363,11 +388,11 @@ final class StandardConverterRules {
         /**
          * All {@link DynamoDBDocument} conversions.
          */
-        private final class ObjectDocumentMap implements Rule<V> {
-            private final DynamoDBMapperModelFactory.Factory factory;
+        private final class DocumentObjectMap implements Rule<V> {
+            private final DynamoDBMapperModelFactory.Factory models;
             private final DynamoDBMapperConfig config;
-            private ObjectDocumentMap(final DynamoDBMapperConfig config, final DynamoDBMapperModelFactory.Factory factory) {
-                this.factory = factory;
+            private DocumentObjectMap(final DynamoDBMapperConfig config, final DynamoDBMapperModelFactory.Factory models) {
+                this.models = models;
                 this.config = config;
             }
             @Override
@@ -381,10 +406,10 @@ final class StandardConverterRules {
             public DynamoDBTypeConverter<AttributeValue,V> newConverter(final ParamType<V> type) {
                 return M.join(new DynamoDBTypeConverter<Map<String,AttributeValue>,V>() {
                     public final Map<String,AttributeValue> convert(final V o) {
-                        return factory.getModelFactory(config).getTableModel(type.type()).convert(o);
+                        return models.getModelFactory(config).getTableModel(type.type()).convert(o);
                     }
                     public final V unconvert(final Map<String,AttributeValue> o) {
-                        return factory.getModelFactory(config).getTableModel(type.type()).unconvert(o);
+                        return models.getModelFactory(config).getTableModel(type.type()).unconvert(o);
                     }
                 });
             }

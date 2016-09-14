@@ -26,7 +26,8 @@ public class ListRecordHistoryRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -44,7 +45,14 @@ public class ListRecordHistoryRequest extends
     private String acceptLanguage;
     /**
      * <p>
-     * (Optional) The filter to limit search results.
+     * The access level for obtaining results. If left unspecified,
+     * <code>User</code> level access is used.
+     * </p>
+     */
+    private AccessLevelFilter accessLevelFilter;
+    /**
+     * <p>
+     * The filter to limit search results.
      * </p>
      */
     private ListRecordHistorySearchFilter searchFilter;
@@ -58,7 +66,7 @@ public class ListRecordHistoryRequest extends
     private Integer pageSize;
     /**
      * <p>
-     * The page token of the first page retrieve. If null, this retrieves the
+     * The page token of the first page retrieved. If null, this retrieves the
      * first page of size <code>PageSize</code>.
      * </p>
      */
@@ -66,7 +74,8 @@ public class ListRecordHistoryRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -82,8 +91,8 @@ public class ListRecordHistoryRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        Optional language code. Supported language codes are as
-     *        follows:</p>
+     *        The language code to use for this operation. Supported language
+     *        codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>
@@ -103,7 +112,8 @@ public class ListRecordHistoryRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -118,8 +128,8 @@ public class ListRecordHistoryRequest extends
      * If no code is specified, "en" is used as the default.
      * </p>
      * 
-     * @return Optional language code. Supported language codes are as
-     *         follows:</p>
+     * @return The language code to use for this operation. Supported language
+     *         codes are as follows:</p>
      *         <p>
      *         "en" (English)
      *         </p>
@@ -139,7 +149,8 @@ public class ListRecordHistoryRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -155,8 +166,8 @@ public class ListRecordHistoryRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        Optional language code. Supported language codes are as
-     *        follows:</p>
+     *        The language code to use for this operation. Supported language
+     *        codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>
@@ -179,11 +190,59 @@ public class ListRecordHistoryRequest extends
 
     /**
      * <p>
-     * (Optional) The filter to limit search results.
+     * The access level for obtaining results. If left unspecified,
+     * <code>User</code> level access is used.
+     * </p>
+     * 
+     * @param accessLevelFilter
+     *        The access level for obtaining results. If left unspecified,
+     *        <code>User</code> level access is used.
+     */
+
+    public void setAccessLevelFilter(AccessLevelFilter accessLevelFilter) {
+        this.accessLevelFilter = accessLevelFilter;
+    }
+
+    /**
+     * <p>
+     * The access level for obtaining results. If left unspecified,
+     * <code>User</code> level access is used.
+     * </p>
+     * 
+     * @return The access level for obtaining results. If left unspecified,
+     *         <code>User</code> level access is used.
+     */
+
+    public AccessLevelFilter getAccessLevelFilter() {
+        return this.accessLevelFilter;
+    }
+
+    /**
+     * <p>
+     * The access level for obtaining results. If left unspecified,
+     * <code>User</code> level access is used.
+     * </p>
+     * 
+     * @param accessLevelFilter
+     *        The access level for obtaining results. If left unspecified,
+     *        <code>User</code> level access is used.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ListRecordHistoryRequest withAccessLevelFilter(
+            AccessLevelFilter accessLevelFilter) {
+        setAccessLevelFilter(accessLevelFilter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The filter to limit search results.
      * </p>
      * 
      * @param searchFilter
-     *        (Optional) The filter to limit search results.
+     *        The filter to limit search results.
      */
 
     public void setSearchFilter(ListRecordHistorySearchFilter searchFilter) {
@@ -192,10 +251,10 @@ public class ListRecordHistoryRequest extends
 
     /**
      * <p>
-     * (Optional) The filter to limit search results.
+     * The filter to limit search results.
      * </p>
      * 
-     * @return (Optional) The filter to limit search results.
+     * @return The filter to limit search results.
      */
 
     public ListRecordHistorySearchFilter getSearchFilter() {
@@ -204,11 +263,11 @@ public class ListRecordHistoryRequest extends
 
     /**
      * <p>
-     * (Optional) The filter to limit search results.
+     * The filter to limit search results.
      * </p>
      * 
      * @param searchFilter
-     *        (Optional) The filter to limit search results.
+     *        The filter to limit search results.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -275,13 +334,13 @@ public class ListRecordHistoryRequest extends
 
     /**
      * <p>
-     * The page token of the first page retrieve. If null, this retrieves the
+     * The page token of the first page retrieved. If null, this retrieves the
      * first page of size <code>PageSize</code>.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieve. If null, this retrieves
-     *        the first page of size <code>PageSize</code>.
+     *        The page token of the first page retrieved. If null, this
+     *        retrieves the first page of size <code>PageSize</code>.
      */
 
     public void setPageToken(String pageToken) {
@@ -290,11 +349,11 @@ public class ListRecordHistoryRequest extends
 
     /**
      * <p>
-     * The page token of the first page retrieve. If null, this retrieves the
+     * The page token of the first page retrieved. If null, this retrieves the
      * first page of size <code>PageSize</code>.
      * </p>
      * 
-     * @return The page token of the first page retrieve. If null, this
+     * @return The page token of the first page retrieved. If null, this
      *         retrieves the first page of size <code>PageSize</code>.
      */
 
@@ -304,13 +363,13 @@ public class ListRecordHistoryRequest extends
 
     /**
      * <p>
-     * The page token of the first page retrieve. If null, this retrieves the
+     * The page token of the first page retrieved. If null, this retrieves the
      * first page of size <code>PageSize</code>.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieve. If null, this retrieves
-     *        the first page of size <code>PageSize</code>.
+     *        The page token of the first page retrieved. If null, this
+     *        retrieves the first page of size <code>PageSize</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -334,6 +393,8 @@ public class ListRecordHistoryRequest extends
         sb.append("{");
         if (getAcceptLanguage() != null)
             sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+        if (getAccessLevelFilter() != null)
+            sb.append("AccessLevelFilter: " + getAccessLevelFilter() + ",");
         if (getSearchFilter() != null)
             sb.append("SearchFilter: " + getSearchFilter() + ",");
         if (getPageSize() != null)
@@ -359,6 +420,13 @@ public class ListRecordHistoryRequest extends
             return false;
         if (other.getAcceptLanguage() != null
                 && other.getAcceptLanguage().equals(this.getAcceptLanguage()) == false)
+            return false;
+        if (other.getAccessLevelFilter() == null
+                ^ this.getAccessLevelFilter() == null)
+            return false;
+        if (other.getAccessLevelFilter() != null
+                && other.getAccessLevelFilter().equals(
+                        this.getAccessLevelFilter()) == false)
             return false;
         if (other.getSearchFilter() == null ^ this.getSearchFilter() == null)
             return false;
@@ -387,6 +455,10 @@ public class ListRecordHistoryRequest extends
                 * hashCode
                 + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAccessLevelFilter() == null) ? 0
+                        : getAccessLevelFilter().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getSearchFilter() == null) ? 0 : getSearchFilter()

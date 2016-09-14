@@ -26,7 +26,8 @@ public class ScanProvisionedProductsRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -44,6 +45,13 @@ public class ScanProvisionedProductsRequest extends
     private String acceptLanguage;
     /**
      * <p>
+     * The access level for obtaining results. If left unspecified,
+     * <code>User</code> level access is used.
+     * </p>
+     */
+    private AccessLevelFilter accessLevelFilter;
+    /**
+     * <p>
      * The maximum number of items to return in the results. If more results
      * exist than fit in the specified <code>PageSize</code>, the value of
      * <code>NextPageToken</code> in the response is non-null.
@@ -52,7 +60,7 @@ public class ScanProvisionedProductsRequest extends
     private Integer pageSize;
     /**
      * <p>
-     * The page token of the first page retrieve. If null, this retrieves the
+     * The page token of the first page retrieved. If null, this retrieves the
      * first page of size <code>PageSize</code>.
      * </p>
      */
@@ -60,7 +68,8 @@ public class ScanProvisionedProductsRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -76,8 +85,8 @@ public class ScanProvisionedProductsRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        Optional language code. Supported language codes are as
-     *        follows:</p>
+     *        The language code to use for this operation. Supported language
+     *        codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>
@@ -97,7 +106,8 @@ public class ScanProvisionedProductsRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -112,8 +122,8 @@ public class ScanProvisionedProductsRequest extends
      * If no code is specified, "en" is used as the default.
      * </p>
      * 
-     * @return Optional language code. Supported language codes are as
-     *         follows:</p>
+     * @return The language code to use for this operation. Supported language
+     *         codes are as follows:</p>
      *         <p>
      *         "en" (English)
      *         </p>
@@ -133,7 +143,8 @@ public class ScanProvisionedProductsRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -149,8 +160,8 @@ public class ScanProvisionedProductsRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        Optional language code. Supported language codes are as
-     *        follows:</p>
+     *        The language code to use for this operation. Supported language
+     *        codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>
@@ -169,6 +180,54 @@ public class ScanProvisionedProductsRequest extends
     public ScanProvisionedProductsRequest withAcceptLanguage(
             String acceptLanguage) {
         setAcceptLanguage(acceptLanguage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The access level for obtaining results. If left unspecified,
+     * <code>User</code> level access is used.
+     * </p>
+     * 
+     * @param accessLevelFilter
+     *        The access level for obtaining results. If left unspecified,
+     *        <code>User</code> level access is used.
+     */
+
+    public void setAccessLevelFilter(AccessLevelFilter accessLevelFilter) {
+        this.accessLevelFilter = accessLevelFilter;
+    }
+
+    /**
+     * <p>
+     * The access level for obtaining results. If left unspecified,
+     * <code>User</code> level access is used.
+     * </p>
+     * 
+     * @return The access level for obtaining results. If left unspecified,
+     *         <code>User</code> level access is used.
+     */
+
+    public AccessLevelFilter getAccessLevelFilter() {
+        return this.accessLevelFilter;
+    }
+
+    /**
+     * <p>
+     * The access level for obtaining results. If left unspecified,
+     * <code>User</code> level access is used.
+     * </p>
+     * 
+     * @param accessLevelFilter
+     *        The access level for obtaining results. If left unspecified,
+     *        <code>User</code> level access is used.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ScanProvisionedProductsRequest withAccessLevelFilter(
+            AccessLevelFilter accessLevelFilter) {
+        setAccessLevelFilter(accessLevelFilter);
         return this;
     }
 
@@ -228,13 +287,13 @@ public class ScanProvisionedProductsRequest extends
 
     /**
      * <p>
-     * The page token of the first page retrieve. If null, this retrieves the
+     * The page token of the first page retrieved. If null, this retrieves the
      * first page of size <code>PageSize</code>.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieve. If null, this retrieves
-     *        the first page of size <code>PageSize</code>.
+     *        The page token of the first page retrieved. If null, this
+     *        retrieves the first page of size <code>PageSize</code>.
      */
 
     public void setPageToken(String pageToken) {
@@ -243,11 +302,11 @@ public class ScanProvisionedProductsRequest extends
 
     /**
      * <p>
-     * The page token of the first page retrieve. If null, this retrieves the
+     * The page token of the first page retrieved. If null, this retrieves the
      * first page of size <code>PageSize</code>.
      * </p>
      * 
-     * @return The page token of the first page retrieve. If null, this
+     * @return The page token of the first page retrieved. If null, this
      *         retrieves the first page of size <code>PageSize</code>.
      */
 
@@ -257,13 +316,13 @@ public class ScanProvisionedProductsRequest extends
 
     /**
      * <p>
-     * The page token of the first page retrieve. If null, this retrieves the
+     * The page token of the first page retrieved. If null, this retrieves the
      * first page of size <code>PageSize</code>.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieve. If null, this retrieves
-     *        the first page of size <code>PageSize</code>.
+     *        The page token of the first page retrieved. If null, this
+     *        retrieves the first page of size <code>PageSize</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -287,6 +346,8 @@ public class ScanProvisionedProductsRequest extends
         sb.append("{");
         if (getAcceptLanguage() != null)
             sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+        if (getAccessLevelFilter() != null)
+            sb.append("AccessLevelFilter: " + getAccessLevelFilter() + ",");
         if (getPageSize() != null)
             sb.append("PageSize: " + getPageSize() + ",");
         if (getPageToken() != null)
@@ -311,6 +372,13 @@ public class ScanProvisionedProductsRequest extends
         if (other.getAcceptLanguage() != null
                 && other.getAcceptLanguage().equals(this.getAcceptLanguage()) == false)
             return false;
+        if (other.getAccessLevelFilter() == null
+                ^ this.getAccessLevelFilter() == null)
+            return false;
+        if (other.getAccessLevelFilter() != null
+                && other.getAccessLevelFilter().equals(
+                        this.getAccessLevelFilter()) == false)
+            return false;
         if (other.getPageSize() == null ^ this.getPageSize() == null)
             return false;
         if (other.getPageSize() != null
@@ -333,6 +401,10 @@ public class ScanProvisionedProductsRequest extends
                 * hashCode
                 + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAccessLevelFilter() == null) ? 0
+                        : getAccessLevelFilter().hashCode());
         hashCode = prime * hashCode
                 + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
         hashCode = prime * hashCode

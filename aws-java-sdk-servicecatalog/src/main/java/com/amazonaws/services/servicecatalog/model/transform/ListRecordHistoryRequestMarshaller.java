@@ -72,6 +72,12 @@ public class ListRecordHistoryRequestMarshaller implements
                 jsonGenerator.writeFieldName("AcceptLanguage").writeValue(
                         listRecordHistoryRequest.getAcceptLanguage());
             }
+            if (listRecordHistoryRequest.getAccessLevelFilter() != null) {
+                jsonGenerator.writeFieldName("AccessLevelFilter");
+                AccessLevelFilterJsonMarshaller.getInstance().marshall(
+                        listRecordHistoryRequest.getAccessLevelFilter(),
+                        jsonGenerator);
+            }
             if (listRecordHistoryRequest.getSearchFilter() != null) {
                 jsonGenerator.writeFieldName("SearchFilter");
                 ListRecordHistorySearchFilterJsonMarshaller.getInstance()

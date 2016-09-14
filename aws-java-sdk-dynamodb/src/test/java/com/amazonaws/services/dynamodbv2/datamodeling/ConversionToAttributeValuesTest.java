@@ -32,7 +32,7 @@ public class ConversionToAttributeValuesTest {
         finalConfig = new DynamoDBMapperConfig.Builder()
                 .withConversionSchema(ConversionSchemas.V2)
                 .build();
-        this.models = StandardModelFactories.newFactory(null);
+        this.models = StandardModelFactories.of(S3Link.Factory.of(null));
     }
 
     @Test

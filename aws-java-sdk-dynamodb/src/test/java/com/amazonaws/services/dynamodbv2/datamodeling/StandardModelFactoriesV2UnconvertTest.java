@@ -47,7 +47,7 @@ public class StandardModelFactoriesV2UnconvertTest {
         .withConversionSchema(ConversionSchemas.V2)
         .build();
 
-    private static final DynamoDBMapperModelFactory.Factory factory = StandardModelFactories.newFactory(new S3ClientCache((AWSCredentialsProvider)null));
+    private static final DynamoDBMapperModelFactory.Factory factory = StandardModelFactories.of(new S3Link.Factory(new S3ClientCache((AWSCredentialsProvider)null)));
     private static final DynamoDBMapperModelFactory models = factory.getModelFactory(CONFIG);
 
     protected <T> Object unconvert(Class<T> clazz, Method getter, Method setter, AttributeValue value) {

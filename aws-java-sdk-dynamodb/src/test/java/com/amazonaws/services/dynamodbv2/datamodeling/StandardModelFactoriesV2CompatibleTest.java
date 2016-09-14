@@ -46,7 +46,7 @@ public class StandardModelFactoriesV2CompatibleTest {
         .withConversionSchema(ConversionSchemas.V2_COMPATIBLE)
         .build();
 
-    private static final DynamoDBMapperModelFactory.Factory factory = StandardModelFactories.newFactory(null);
+    private static final DynamoDBMapperModelFactory.Factory factory = StandardModelFactories.of(S3Link.Factory.of(null));
     private static final DynamoDBMapperModelFactory models = factory.getModelFactory(CONFIG);
 
     protected <T> AttributeValue convert(Class<T> clazz, Method getter, Object value) {

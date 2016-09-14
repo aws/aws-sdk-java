@@ -205,4 +205,24 @@ public class ClientConfigurationTest {
         System.clearProperty("http.proxyPassword");
     }
 
+    @Test
+    public void testHeadersDeepCopyInConstructor() {
+        String key1 = "key1", value1 = "value1";
+        String key2 = "key2", value2 = "value2";
+
+        ClientConfiguration source = new ClientConfiguration().withHeader(key1, value1).withHeader(key2, value2);
+        ClientConfiguration target = new ClientConfiguration(source);
+
+        assertEquals(2, target.getHeaders().size());
+        assertEquals(value1, target.getHeaders().get(key1));
+        assertEquals(value2, target.getHeaders().get(key2));
+
+        source.withHeader(key1, "value3");
+        source.withHeader("new key", "new value");
+
+        assertEquals(2, target.getHeaders().size());
+        assertEquals(value1, target.getHeaders().get(key1));
+        assertEquals(value2, target.getHeaders().get(key2));
+    }
+
 }

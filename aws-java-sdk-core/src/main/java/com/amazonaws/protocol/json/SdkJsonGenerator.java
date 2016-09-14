@@ -16,7 +16,6 @@ package com.amazonaws.protocol.json;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.annotation.SdkInternalApi;
-import com.amazonaws.protocol.json.StructuredJsonGenerator;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
 import com.fasterxml.jackson.core.JsonFactory;
@@ -213,7 +212,12 @@ public class SdkJsonGenerator implements StructuredJsonGenerator {
     @Override
     public StructuredJsonGenerator writeValue(BigDecimal value) {
         try {
-            generator.writeNumber(value);
+            /**
+             * Note that this is not how the backend represents BigDecimal types. On the wire
+             * it's normally a JSON number but this causes problems with certain JSON implementations
+             * that parse JSON numbers as floating points automatically. (See API-433)
+             */
+            generator.writeString(value.toString());
         } catch (IOException e) {
             throw new JsonGenerationException(e);
         }

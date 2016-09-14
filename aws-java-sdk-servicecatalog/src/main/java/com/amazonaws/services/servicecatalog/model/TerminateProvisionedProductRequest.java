@@ -52,15 +52,16 @@ public class TerminateProvisionedProductRequest extends
     private String terminateToken;
     /**
      * <p>
-     * Optional Boolean parameter. If set to true, AWS Service Catalog stops
-     * managing the specified ProvisionedProduct object even if it cannot delete
-     * the underlying resources.
+     * If set to true, AWS Service Catalog stops managing the specified
+     * ProvisionedProduct object even if it cannot delete the underlying
+     * resources.
      * </p>
      */
     private Boolean ignoreErrors;
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -256,15 +257,15 @@ public class TerminateProvisionedProductRequest extends
 
     /**
      * <p>
-     * Optional Boolean parameter. If set to true, AWS Service Catalog stops
-     * managing the specified ProvisionedProduct object even if it cannot delete
-     * the underlying resources.
+     * If set to true, AWS Service Catalog stops managing the specified
+     * ProvisionedProduct object even if it cannot delete the underlying
+     * resources.
      * </p>
      * 
      * @param ignoreErrors
-     *        Optional Boolean parameter. If set to true, AWS Service Catalog
-     *        stops managing the specified ProvisionedProduct object even if it
-     *        cannot delete the underlying resources.
+     *        If set to true, AWS Service Catalog stops managing the specified
+     *        ProvisionedProduct object even if it cannot delete the underlying
+     *        resources.
      */
 
     public void setIgnoreErrors(Boolean ignoreErrors) {
@@ -273,14 +274,14 @@ public class TerminateProvisionedProductRequest extends
 
     /**
      * <p>
-     * Optional Boolean parameter. If set to true, AWS Service Catalog stops
-     * managing the specified ProvisionedProduct object even if it cannot delete
-     * the underlying resources.
+     * If set to true, AWS Service Catalog stops managing the specified
+     * ProvisionedProduct object even if it cannot delete the underlying
+     * resources.
      * </p>
      * 
-     * @return Optional Boolean parameter. If set to true, AWS Service Catalog
-     *         stops managing the specified ProvisionedProduct object even if it
-     *         cannot delete the underlying resources.
+     * @return If set to true, AWS Service Catalog stops managing the specified
+     *         ProvisionedProduct object even if it cannot delete the underlying
+     *         resources.
      */
 
     public Boolean getIgnoreErrors() {
@@ -289,15 +290,15 @@ public class TerminateProvisionedProductRequest extends
 
     /**
      * <p>
-     * Optional Boolean parameter. If set to true, AWS Service Catalog stops
-     * managing the specified ProvisionedProduct object even if it cannot delete
-     * the underlying resources.
+     * If set to true, AWS Service Catalog stops managing the specified
+     * ProvisionedProduct object even if it cannot delete the underlying
+     * resources.
      * </p>
      * 
      * @param ignoreErrors
-     *        Optional Boolean parameter. If set to true, AWS Service Catalog
-     *        stops managing the specified ProvisionedProduct object even if it
-     *        cannot delete the underlying resources.
+     *        If set to true, AWS Service Catalog stops managing the specified
+     *        ProvisionedProduct object even if it cannot delete the underlying
+     *        resources.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -310,14 +311,14 @@ public class TerminateProvisionedProductRequest extends
 
     /**
      * <p>
-     * Optional Boolean parameter. If set to true, AWS Service Catalog stops
-     * managing the specified ProvisionedProduct object even if it cannot delete
-     * the underlying resources.
+     * If set to true, AWS Service Catalog stops managing the specified
+     * ProvisionedProduct object even if it cannot delete the underlying
+     * resources.
      * </p>
      * 
-     * @return Optional Boolean parameter. If set to true, AWS Service Catalog
-     *         stops managing the specified ProvisionedProduct object even if it
-     *         cannot delete the underlying resources.
+     * @return If set to true, AWS Service Catalog stops managing the specified
+     *         ProvisionedProduct object even if it cannot delete the underlying
+     *         resources.
      */
 
     public Boolean isIgnoreErrors() {
@@ -326,7 +327,8 @@ public class TerminateProvisionedProductRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -342,8 +344,8 @@ public class TerminateProvisionedProductRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        Optional language code. Supported language codes are as
-     *        follows:</p>
+     *        The language code to use for this operation. Supported language
+     *        codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>
@@ -363,7 +365,8 @@ public class TerminateProvisionedProductRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -378,8 +381,8 @@ public class TerminateProvisionedProductRequest extends
      * If no code is specified, "en" is used as the default.
      * </p>
      * 
-     * @return Optional language code. Supported language codes are as
-     *         follows:</p>
+     * @return The language code to use for this operation. Supported language
+     *         codes are as follows:</p>
      *         <p>
      *         "en" (English)
      *         </p>
@@ -399,7 +402,8 @@ public class TerminateProvisionedProductRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -415,8 +419,8 @@ public class TerminateProvisionedProductRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        Optional language code. Supported language codes are as
-     *        follows:</p>
+     *        The language code to use for this operation. Supported language
+     *        codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>

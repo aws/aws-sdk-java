@@ -45,11 +45,11 @@ final class StandardAnnotationMaps {
      */
     static final <T> TableMap<T> of(final Class<T> clazz) {
         final DynamoDBMapperTableModel.Properties.Buildable<T> defaults;
-        defaults = new DynamoDBMapperTableModel.Properties.Buildable();
+        defaults = new DynamoDBMapperTableModel.Properties.Buildable<T>();
         defaults.withId(new DynamoDBMapperTableModel.Id<T>(clazz));
         defaults.withTargetType(clazz);
 
-        final TableMap<T> map = new TableMap(defaults);
+        final TableMap<T> map = new TableMap<T>(defaults);
         map.putAll(clazz);
         return map;
     }
@@ -65,8 +65,8 @@ final class StandardAnnotationMaps {
         name = StringUtils.lowerCase(name.substring(0, 1)) + name.substring(1);
 
         final DynamoDBMapperFieldModel.Properties.Buildable<T,V> defaults;
-        defaults = new DynamoDBMapperFieldModel.Properties.Buildable();
-        defaults.withId(new DynamoDBMapperFieldModel.Id(clazz, name));
+        defaults = new DynamoDBMapperFieldModel.Properties.Buildable<T,V>();
+        defaults.withId(new DynamoDBMapperFieldModel.Id<T>(clazz, name));
         defaults.withTargetType((Class<V>)getter.getReturnType());
         defaults.withAttributeName(name);
 
@@ -77,7 +77,7 @@ final class StandardAnnotationMaps {
             throw new DynamoDBMappingException(defaults.id().err("no access to field for " + getter), e);
         } catch (final NoSuchFieldException no) {}
 
-        final FieldMap<T,V> map = new FieldMap(defaults);
+        final FieldMap<T,V> map = new FieldMap<T,V>(defaults);
         map.putAll(defaults.targetType());
         map.putAll(declaredField);
         map.putAll(getter);
@@ -87,7 +87,7 @@ final class StandardAnnotationMaps {
     /**
      * Map of annotation type to annotation instance.
      */
-    static abstract class AnnotationMap<T> {
+    static abstract class AnnotationMap {
         private final Map<Class<? extends Annotation>,Annotation> map = new LinkedHashMap<Class<? extends Annotation>,Annotation>();
 
         /**
@@ -151,7 +151,7 @@ final class StandardAnnotationMaps {
     /**
      * {@link DynamoDBMapperTableModel} annotations.
      */
-    static final class TableMap<T> extends AnnotationMap<T> implements DynamoDBMapperTableModel.Properties<T> {
+    static final class TableMap<T> extends AnnotationMap implements DynamoDBMapperTableModel.Properties<T> {
         private final DynamoDBMapperTableModel.Properties<T> defaults;
 
         /**
@@ -217,7 +217,7 @@ final class StandardAnnotationMaps {
     /**
      * {@link DynamoDBMapperFieldModel} annotations.
      */
-    static final class FieldMap<T,V> extends AnnotationMap<V> implements DynamoDBMapperFieldModel.Properties<T,V> {
+    static final class FieldMap<T,V> extends AnnotationMap implements DynamoDBMapperFieldModel.Properties<T,V> {
         private final DynamoDBMapperFieldModel.Properties<T,V> defaults;
 
         /**
@@ -395,6 +395,8 @@ final class StandardAnnotationMaps {
                 return attribute().attributeName();
             } else if (version() != null && !version().attributeName().isEmpty()) {
                 return version().attributeName();
+            } else if (scalarAttribute() != null && !scalarAttribute().attributeName().isEmpty()) {
+                return scalarAttribute().attributeName();
             }
             return defaults.attributeName();
         }

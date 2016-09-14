@@ -57,7 +57,7 @@ public class ClientConfiguration {
      * The default on whether to utilize the USE_EXPECT_CONTINUE handshake for operations. Currently
      * only honored for PUT operations.
      */
-    private static final boolean DEFAULT_USE_EXPECT_CONTINUE = true;
+    public static final boolean DEFAULT_USE_EXPECT_CONTINUE = true;
 
     /** The default HTTP user agent header for AWS Java SDK clients. */
     public static final String DEFAULT_USER_AGENT = VersionInfoUtils.getUserAgent();
@@ -338,6 +338,12 @@ public class ClientConfiguration {
         this.useExpectContinue = other.useExpectContinue;
         this.apacheHttpClientConfig = new ApacheHttpClientConfig(other.apacheHttpClientConfig);
         this.cacheResponseMetadata = other.cacheResponseMetadata;
+        this.connectionTTL = other.connectionTTL;
+        this.connectionMaxIdleMillis = other.connectionMaxIdleMillis;
+        this.tcpKeepAlive = other.tcpKeepAlive;
+        this.secureRandom = other.secureRandom;
+        this.headers.clear();
+        this.headers.putAll(other.headers);
     }
 
     /**
@@ -555,7 +561,7 @@ public class ClientConfiguration {
 
     /**
      * Returns the Java system property for proxy host depending on
-     * {@link this.getProtocol()}: i.e. if protocol is https, returns
+     * {@link #getProtocol()}: i.e. if protocol is https, returns
      * the value of the system property https.proxyHost, otherwise
      * returns value of http.proxyHost.
      */
@@ -569,7 +575,7 @@ public class ClientConfiguration {
      * Returns the optional proxy host the client will connect
      * through.  Returns either the proxyHost set on this object, or
      * if not provided, checks the value of the Java system property
-     * for proxy host according to {@link this.getProtocol()}: i.e. if
+     * for proxy host according to {@link #getProtocol()}: i.e. if
      * protocol is https, returns the value of the system property
      * https.proxyHost, otherwise returns value of http.proxyHost.
      *
@@ -604,7 +610,7 @@ public class ClientConfiguration {
 
     /**
      * Returns the Java system property for proxy port depending on
-     * {@link this.getProtocol()}: i.e. if protocol is https, returns
+     * {@link #getProtocol()}: i.e. if protocol is https, returns
      * the value of the system property https.proxyPort, otherwise
      * returns value of http.proxyPort.  Defaults to {@link this.proxyPort}
      * if the system property is not set with a valid port number.
@@ -624,7 +630,7 @@ public class ClientConfiguration {
      * Returns the optional proxy port the client will connect
      * through.  Returns either the proxyPort set on this object, or
      * if not provided, checks the value of the Java system property
-     * for proxy port according to {@link this.getProtocol()}: i.e. if
+     * for proxy port according to {@link #getProtocol()}: i.e. if
      * protocol is https, returns the value of the system property
      * https.proxyPort, otherwise returns value of http.proxyPort.
      *
@@ -659,7 +665,7 @@ public class ClientConfiguration {
 
     /**
      * Returns the Java system property for proxy user name depending on
-     * {@link this.getProtocol()}: i.e. if protocol is https, returns
+     * {@link #getProtocol()}: i.e. if protocol is https, returns
      * the value of the system property https.proxyUser, otherwise
      * returns value of http.proxyUser.
      */
@@ -673,7 +679,7 @@ public class ClientConfiguration {
      * Returns the optional proxy user name to use if connecting
      * through a proxy.  Returns either the proxyUsername set on this
      * object, or if not provided, checks the value of the Java system
-     * property for proxy user name according to {@link this.getProtocol()}:
+     * property for proxy user name according to {@link #getProtocol()}:
      * i.e. if protocol is https, returns the value of the system
      * property https.proxyUsername, otherwise returns value of
      * http.proxyUsername.
@@ -709,7 +715,7 @@ public class ClientConfiguration {
 
     /**
      * Returns the Java system property for proxy password depending on
-     * {@link this.getProtocol()}: i.e. if protocol is https, returns
+     * {@link #getProtocol()}: i.e. if protocol is https, returns
      * the value of the system property https.proxyPassword, otherwise
      * returns value of http.proxyPassword.
      */
@@ -723,7 +729,7 @@ public class ClientConfiguration {
      * Returns the optional proxy password to use if connecting
      * through a proxy.  Returns either the proxyPassword set on this
      * object, or if not provided, checks the value of the Java system
-     * property for proxy password according to {@link this.getProtocol()}:
+     * property for proxy password according to {@link #getProtocol()}:
      * i.e. if protocol is https, returns the value of the system
      * property https.proxyPassword, otherwise returns value of
      * http.proxyPassword.
@@ -829,7 +835,7 @@ public class ClientConfiguration {
 
     /**
      * Returns the Java system property for nonProxyHosts. We still honor this property even
-     * {@link this.getProtocol()} is https, see http://docs.oracle.com/javase/7/docs/api/java/net/doc-files/net-properties.html.
+     * {@link #getProtocol()} is https, see http://docs.oracle.com/javase/7/docs/api/java/net/doc-files/net-properties.html.
      */
     private String getNonProxyHostsProperty() {
         return getSystemProperty("http.nonProxyHosts");
@@ -839,7 +845,7 @@ public class ClientConfiguration {
      * Returns the optional hosts the client will access without going
      * through the proxy. Returns either the nonProxyHosts set on this
      * object, or if not provided, checks the value of the Java system property
-     * for nonProxyHosts according to {@link this.getProtocol()}: i.e. if
+     * for nonProxyHosts according to {@link #getProtocol()}: i.e. if
      * protocol is https, returns null, otherwise returns value of http.nonProxyHosts.
      *
      * @return The hosts the client will connect through bypassing the proxy.
@@ -1175,7 +1181,7 @@ public class ClientConfiguration {
      *
      * @param clientExecutionTimeout
      *            The amount of time (in milliseconds) to allow the client to complete the execution
-     *            of an API call. A value of null disables this feature for this request.
+     *            of an API call. A value of '0' disables this feature.
      * @see {@link ClientConfiguration#setRequestTimeout(int)} to enforce a timeout per HTTP request
      */
     public void setClientExecutionTimeout(int clientExecutionTimeout) {
@@ -1210,7 +1216,7 @@ public class ClientConfiguration {
      *
      * @param clientExecutionTimeout
      *            The amount of time (in milliseconds) to allow the client to complete the execution
-     *            of an API call. A value of null disables this feature for this request.
+     *            of an API call. A value of '0' disables this feature.
      * @return The updated ClientConfiguration object for method chaining
      * @see {@link ClientConfiguration#setRequestTimeout(int)} to enforce a timeout per HTTP request
      */

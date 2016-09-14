@@ -36,7 +36,7 @@ import java.lang.annotation.Target;
  *     public UUID getKey() { return this.key; }
  *     public void setKey(UUID key) { this.key = key; }
  *
- *     &#064;DynamoDBScalarAttribute(type=ScalarAttributeType.S)
+ *     &#064;DynamoDBScalarAttribute(attributeName=&quot;userLocale&quot;, type=ScalarAttributeType.S)
  *     public Locale getLocale() { return this.locale; }
  *     public void setLocale(Locale locale) { this.locale = locale; }
  * }
@@ -45,33 +45,34 @@ import java.lang.annotation.Target;
  * <p>Here we are overriding the standard {@link java.util.UUID} type conversion
  * to {@link java.nio.ByteBuffer} rather than the default {@link String}.</p>
  *
- * <p>Please note, the conversion function needs to be present in the
- * type-converter factory.</p>
- *
- * <p>To add or override scalar type-conversions,</p>
+ * <p>Please note, the {@link DynamoDBTypeConverter} for the source and target
+ * need to be present in the type-converter factory. To add or override one or
+ * more, scalar type-conversions, using the standard conversion factory as the
+ * default/fallback,</p>
  * <pre class="brush: java">
- * final DynamoDBMapperConfig.Builder builder = new DynamoDBMapperConfig.Builder();
-
- * final DynamoDBTypeConverterFactory.OverrideFactory factory = builder.newTypeConverterFactory();
- * factory.with(String.class, Locale.class, new DynamoDBTypeConverter&lt;String,Locale&gt;() {
- *     public String convert(Locale object) {
- *         return object.toLanguageTag();
- *     }
- *     public Locale unconvert(final String object) {
- *         return Locale.forLanguageTag(object);
- *     }
- * });
- *
- * final DynamoDBMapperConfig config = builder.build();
+ * return DynamoDBMapperConfig.builder()
+ *     .withTypeConverterFactory(DynamoDBTypeConverterFactory.standard().override()
+ *         .with(String.class, Locale.class, new StringToLocaleConverter())
+ *         .with(String.class, DateTime.class, new StringToDateTimeConverter())
+ *         .with(String.class, LocalDateTime.class, new StringToLocalDateTimeConverter())
+           .build())
+ *     .build();
  * </pre>
  *
- * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverted
+ * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig#getTypeConverterFactory
+ * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverterFactory#standard
  * @see com.amazonaws.services.dynamodbv2.model.ScalarAttributeType
  */
 @DynamoDB
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBScalarAttribute {
+
+    /**
+     * Optional parameter when the name of the attribute as stored in DynamoDB
+     * should differ from the name used by the getter / setter.
+     */
+    String attributeName() default "";
 
     /**
      * The scalar attirbute type.

@@ -26,7 +26,8 @@ public class ProvisionProductRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -79,7 +80,7 @@ public class ProvisionProductRequest extends
     private java.util.List<ProvisioningParameter> provisioningParameters;
     /**
      * <p>
-     * (Optional) A list of tags to use as provisioning options.
+     * A list of tags to use as provisioning options.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -99,7 +100,8 @@ public class ProvisionProductRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -115,8 +117,8 @@ public class ProvisionProductRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        Optional language code. Supported language codes are as
-     *        follows:</p>
+     *        The language code to use for this operation. Supported language
+     *        codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>
@@ -136,7 +138,8 @@ public class ProvisionProductRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -151,8 +154,8 @@ public class ProvisionProductRequest extends
      * If no code is specified, "en" is used as the default.
      * </p>
      * 
-     * @return Optional language code. Supported language codes are as
-     *         follows:</p>
+     * @return The language code to use for this operation. Supported language
+     *         codes are as follows:</p>
      *         <p>
      *         "en" (English)
      *         </p>
@@ -172,7 +175,8 @@ public class ProvisionProductRequest extends
 
     /**
      * <p>
-     * Optional language code. Supported language codes are as follows:
+     * The language code to use for this operation. Supported language codes are
+     * as follows:
      * </p>
      * <p>
      * "en" (English)
@@ -188,8 +192,8 @@ public class ProvisionProductRequest extends
      * </p>
      * 
      * @param acceptLanguage
-     *        Optional language code. Supported language codes are as
-     *        follows:</p>
+     *        The language code to use for this operation. Supported language
+     *        codes are as follows:</p>
      *        <p>
      *        "en" (English)
      *        </p>
@@ -489,10 +493,10 @@ public class ProvisionProductRequest extends
 
     /**
      * <p>
-     * (Optional) A list of tags to use as provisioning options.
+     * A list of tags to use as provisioning options.
      * </p>
      * 
-     * @return (Optional) A list of tags to use as provisioning options.
+     * @return A list of tags to use as provisioning options.
      */
 
     public java.util.List<Tag> getTags() {
@@ -501,11 +505,11 @@ public class ProvisionProductRequest extends
 
     /**
      * <p>
-     * (Optional) A list of tags to use as provisioning options.
+     * A list of tags to use as provisioning options.
      * </p>
      * 
      * @param tags
-     *        (Optional) A list of tags to use as provisioning options.
+     *        A list of tags to use as provisioning options.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -519,7 +523,7 @@ public class ProvisionProductRequest extends
 
     /**
      * <p>
-     * (Optional) A list of tags to use as provisioning options.
+     * A list of tags to use as provisioning options.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -529,7 +533,7 @@ public class ProvisionProductRequest extends
      * </p>
      * 
      * @param tags
-     *        (Optional) A list of tags to use as provisioning options.
+     *        A list of tags to use as provisioning options.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -546,11 +550,11 @@ public class ProvisionProductRequest extends
 
     /**
      * <p>
-     * (Optional) A list of tags to use as provisioning options.
+     * A list of tags to use as provisioning options.
      * </p>
      * 
      * @param tags
-     *        (Optional) A list of tags to use as provisioning options.
+     *        A list of tags to use as provisioning options.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

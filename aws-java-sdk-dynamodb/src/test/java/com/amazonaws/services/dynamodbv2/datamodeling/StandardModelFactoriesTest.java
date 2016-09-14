@@ -44,7 +44,7 @@ import org.junit.Test;
  */
 public class StandardModelFactoriesTest {
 
-    private static final DynamoDBMapperModelFactory.Factory factory = StandardModelFactories.newFactory(null);
+    private static final DynamoDBMapperModelFactory.Factory factory = StandardModelFactories.of(S3Link.Factory.of(null));
     private static final DynamoDBMapperModelFactory models = factory.getModelFactory(DynamoDBMapperConfig.DEFAULT);
 
     /**
@@ -120,6 +120,23 @@ public class StandardModelFactoriesTest {
         final AttributeValue converted = model.field("val").convert(val);
         assertNotNull(converted.getB());
         assertEquals(val, model.field("val").unconvert(converted));
+    }
+
+    /**
+     * Test mappings.
+     */
+    @Test
+    public void testScalarAttributeAttributeName() {
+        final Object obj = new AutoKeyAndVal<String>() {
+            @DynamoDBHashKey
+            public String getKey() { return super.getKey(); }
+            @DynamoDBScalarAttribute(attributeName="value", type=ScalarAttributeType.S)
+            public String getVal() { return super.getVal(); }
+            public void setVal(final String val) { super.setVal(val); }
+        };
+        final DynamoDBMapperTableModel<Object> model = models.getTableModel((Class<Object>)obj.getClass());
+        final DynamoDBMapperFieldModel<Object,String> val = model.field("value");
+        assertEquals(DynamoDBAttributeType.S, val.attributeType());
     }
 
     /**
@@ -1222,8 +1239,6 @@ public class StandardModelFactoriesTest {
     private static <T,V> void assertFieldKeyType(KeyType keyType, DynamoDBMapperFieldModel<T,V> field, DynamoDBMapperTableModel<T> model) {
         assertEquals(keyType, field.keyType());
         if (keyType != null) {
-            assertEquals(true, field.anyKey(keyType));
-            assertEquals(true, field.anyKey());
             if (keyType == KeyType.HASH) {
                 assertEquals(field, model.hashKey());
             } else if (keyType == KeyType.RANGE) {
@@ -1238,6 +1253,7 @@ public class StandardModelFactoriesTest {
      */
     private static <T,V> void assertFieldGsiNames(List<String> names, KeyType keyType, DynamoDBMapperFieldModel<T,V> field, DynamoDBMapperTableModel<T> model) {
         assertEquals(names == null ? 0 : names.size(), field.globalSecondaryIndexNames(keyType).size());
+        assertEquals(true, field.indexed());
         if (names != null) {
             for (final String name : names) {
                 assertEquals(true, field.globalSecondaryIndexNames(keyType).contains(name));
@@ -1252,6 +1268,7 @@ public class StandardModelFactoriesTest {
      */
     private static <T,V> void assertFieldLsiNames(List<String> names, DynamoDBMapperFieldModel<T,V> field, DynamoDBMapperTableModel<T> model) {
         assertEquals(names == null ? 0 : names.size(), field.localSecondaryIndexNames().size());
+        assertEquals(true, field.indexed());
         if (names != null) {
             for (final String name : names) {
                 assertEquals(true, field.localSecondaryIndexNames().contains(name));
