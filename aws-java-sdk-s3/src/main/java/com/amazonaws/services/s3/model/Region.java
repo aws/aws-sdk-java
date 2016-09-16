@@ -244,8 +244,9 @@ public enum Region {
 
     /**
      * Returns the Amazon S3 Region enumeration value representing the specified Amazon
-     * S3 Region ID string. If specified string doesn't map to a known Amazon S3
-     * Region, then an <code>IllegalArgumentException</code> is thrown.
+     * S3 Region ID string. If specified string is 'null', 'us-east-1', or 'US',
+     * then {@link #US_Standard} is returned, and if specified string doesn't map
+     * to a known Amazon S3 Region, then an <code>IllegalArgumentException</code> is thrown.
      *
      * @param s3RegionId
      *            The Amazon S3 region ID string.
@@ -257,9 +258,8 @@ public enum Region {
      *             If the specified value does not map to one of the known
      *             Amazon S3 regions.
      */
-    public static Region fromValue(final String s3RegionId) throws IllegalArgumentException
-    {
-        if (s3RegionId == null || s3RegionId.equals("US"))
+    public static Region fromValue(final String s3RegionId) throws IllegalArgumentException {
+        if (null == s3RegionId || "US".equals(s3RegionId) || "us-east-1".equals(s3RegionId))
             return Region.US_Standard;
         for (Region region : Region.values()) {
             List<String> regionIds = region.regionIds;
