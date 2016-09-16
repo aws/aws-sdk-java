@@ -447,7 +447,9 @@ public class AmazonHttpClient {
                     clientExecutionTimer.startTimer(getClientExecutionTimeout(request.getOriginalRequest())));
             return doExecute(request, responseHandler, errorResponseHandler, executionContext);
         } finally {
-            executionContext.getClientExecutionTrackerTask().cancelTask();
+            if (executionContext.getClientExecutionTrackerTask() != null) {
+                executionContext.getClientExecutionTrackerTask().cancelTask();
+            }
         }
     }
 
