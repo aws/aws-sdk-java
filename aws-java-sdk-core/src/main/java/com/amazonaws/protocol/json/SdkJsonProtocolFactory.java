@@ -96,20 +96,33 @@ public class SdkJsonProtocolFactory {
      * @return Instance of {@link SdkStructuredJsonFactory} to use in creating handlers.
      */
     private SdkStructuredJsonFactory getSdkFactory() {
-        return isCborEnabled() ? SdkStructuredCborFactory.SDK_CBOR_FACTORY :
-                SdkStructuredPlainJsonFactory.SDK_JSON_FACTORY;
+        if (isCborEnabled()) {
+            return SdkStructuredCborFactory.SDK_CBOR_FACTORY;
+        } else if (isIonEnabled()) {
+            return SdkStructuredIonFactory.SDK_ION_FACTORY;
+        } else {
+            return SdkStructuredPlainJsonFactory.SDK_JSON_FACTORY;
+        }
     }
 
     /**
      * @return Content type resolver implementation to use.
      */
     private JsonContentTypeResolver getContentTypeResolver() {
-        return isCborEnabled() ? JsonContentTypeResolver.CBOR : JsonContentTypeResolver.JSON;
+        if (isCborEnabled()) {
+            return JsonContentTypeResolver.CBOR;
+        } else if (isIonEnabled()){
+            return JsonContentTypeResolver.ION;
+        } else {
+            return JsonContentTypeResolver.JSON;
+        }
     }
 
     private boolean isCborEnabled() {
         return metadata.isSupportsCbor() && !SDKGlobalConfiguration.isCborDisabled();
     }
 
-
+    private boolean isIonEnabled() {
+        return metadata.isSupportsIon();
+    }
 }

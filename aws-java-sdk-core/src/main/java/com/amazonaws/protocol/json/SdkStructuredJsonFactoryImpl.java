@@ -16,6 +16,7 @@ package com.amazonaws.protocol.json;
 
 import com.amazonaws.http.JsonErrorResponseHandler;
 import com.amazonaws.http.JsonResponseHandler;
+import com.amazonaws.internal.http.ErrorCodeParser;
 import com.amazonaws.internal.http.JsonErrorCodeParser;
 import com.amazonaws.internal.http.JsonErrorMessageParser;
 import com.amazonaws.transform.JsonErrorUnmarshaller;
@@ -67,7 +68,7 @@ public abstract class SdkStructuredJsonFactoryImpl implements SdkStructuredJsonF
                                             jsonFactory);
     }
 
-    private JsonErrorCodeParser getErrorCodeParser(String customErrorCodeFieldName) {
+    protected ErrorCodeParser getErrorCodeParser(String customErrorCodeFieldName) {
         return new JsonErrorCodeParser(customErrorCodeFieldName);
     }
 

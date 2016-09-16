@@ -19,6 +19,7 @@ import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.internal.http.JsonErrorCodeParser;
 import com.amazonaws.internal.http.JsonErrorMessageParser;
+import com.amazonaws.protocol.json.JsonContent;
 import com.amazonaws.transform.JsonErrorUnmarshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
@@ -38,7 +39,6 @@ import static org.hamcrest.Matchers.hasEntry;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Matchers.anyMapOf;
 import static org.mockito.Matchers.anyObject;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.when;
@@ -60,7 +60,7 @@ public class JsonErrorResponseHandlerTest {
     public void setup() throws UnsupportedEncodingException {
         MockitoAnnotations.initMocks(this);
         when(errorCodeParser
-                     .parseErrorCode(anyMapOf(String.class, String.class), (JsonNode) anyObject()))
+                     .parseErrorCode((HttpResponse) anyObject(), (JsonContent) anyObject()))
                 .thenReturn(ERROR_CODE);
 
         httpResponse = new HttpResponse(new DefaultRequest<String>(SERVICE_NAME), null);

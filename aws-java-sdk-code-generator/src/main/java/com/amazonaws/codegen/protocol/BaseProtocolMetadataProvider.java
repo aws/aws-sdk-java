@@ -47,6 +47,14 @@ public abstract class BaseProtocolMetadataProvider implements ProtocolMetadataPr
     }
 
     /**
+     * Default is false, subclasses can override to indicate they are Ion protocols.
+     */
+    @Override
+    public boolean isIonProtocol() {
+        return false;
+    }
+
+    /**
      * Content type is hardcoded for very few protocols so we return null here for convenience.
      * Subclasses may override to set an explicit content type.
      */

@@ -2954,9 +2954,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns a list that includes the status of each source AWS Region that
-     * the current region can get a Read Replica or a DB snapshot from. This API
-     * action supports pagination.
+     * Returns a list of the source AWS regions where the current AWS region can
+     * create a Read Replica or copy a DB snapshot from. This API action
+     * supports pagination.
      * </p>
      * 
      * @param describeSourceRegionsRequest
@@ -2969,9 +2969,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns a list that includes the status of each source AWS Region that
-     * the current region can get a Read Replica or a DB snapshot from. This API
-     * action supports pagination.
+     * Returns a list of the source AWS regions where the current AWS region can
+     * create a Read Replica or copy a DB snapshot from. This API action
+     * supports pagination.
      * </p>
      * 
      * @param describeSourceRegionsRequest

@@ -38,6 +38,8 @@ public class JsonClientMetadata {
 
     private boolean supportsCbor;
 
+    private boolean supportsIon;
+
     /**
      * Base class is initialized to {@link AmazonServiceException} for backwards compatibility.
      */
@@ -81,6 +83,15 @@ public class JsonClientMetadata {
 
     public JsonClientMetadata withSupportsCbor(boolean supportsCbor) {
         this.supportsCbor = supportsCbor;
+        return this;
+    }
+
+    public boolean isSupportsIon() {
+        return supportsIon;
+    }
+
+    public JsonClientMetadata withSupportsIon(boolean supportsIon) {
+        this.supportsIon = supportsIon;
         return this;
     }
 

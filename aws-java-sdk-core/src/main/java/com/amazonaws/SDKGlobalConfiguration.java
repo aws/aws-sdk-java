@@ -211,7 +211,6 @@ public class SDKGlobalConfiguration {
      */
     public static final String AWS_CBOR_DISABLE_SYSTEM_PROPERTY = "com.amazonaws.sdk.disableCbor";
 
-
     /**
      * @deprecated by {@link SDKGlobalTime#setGlobalTimeOffset(int)}
      */

@@ -76,6 +76,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(true)
+                    .withSupportsIon(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidArgumentException")

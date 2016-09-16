@@ -38,7 +38,7 @@ public class FirehoseAction implements Serializable, Cloneable {
     /**
      * <p>
      * A character separator that will be used to separate records written to
-     * the firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
+     * the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
      * (Windows newline), ',' (comma).
      * </p>
      */
@@ -132,13 +132,13 @@ public class FirehoseAction implements Serializable, Cloneable {
     /**
      * <p>
      * A character separator that will be used to separate records written to
-     * the firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
+     * the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
      * (Windows newline), ',' (comma).
      * </p>
      * 
      * @param separator
      *        A character separator that will be used to separate records
-     *        written to the firehose stream. Valid values are: '\n' (newline),
+     *        written to the Firehose stream. Valid values are: '\n' (newline),
      *        '\t' (tab), '\r\n' (Windows newline), ',' (comma).
      */
 
@@ -149,12 +149,12 @@ public class FirehoseAction implements Serializable, Cloneable {
     /**
      * <p>
      * A character separator that will be used to separate records written to
-     * the firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
+     * the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
      * (Windows newline), ',' (comma).
      * </p>
      * 
      * @return A character separator that will be used to separate records
-     *         written to the firehose stream. Valid values are: '\n' (newline),
+     *         written to the Firehose stream. Valid values are: '\n' (newline),
      *         '\t' (tab), '\r\n' (Windows newline), ',' (comma).
      */
 
@@ -165,13 +165,13 @@ public class FirehoseAction implements Serializable, Cloneable {
     /**
      * <p>
      * A character separator that will be used to separate records written to
-     * the firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
+     * the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
      * (Windows newline), ',' (comma).
      * </p>
      * 
      * @param separator
      *        A character separator that will be used to separate records
-     *        written to the firehose stream. Valid values are: '\n' (newline),
+     *        written to the Firehose stream. Valid values are: '\n' (newline),
      *        '\t' (tab), '\r\n' (Windows newline), ',' (comma).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

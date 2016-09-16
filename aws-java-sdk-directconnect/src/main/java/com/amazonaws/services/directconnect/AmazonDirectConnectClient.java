@@ -82,6 +82,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
+                    .withSupportsIon(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(

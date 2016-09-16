@@ -10,6 +10,7 @@ started in minutes using ***Maven*** or by downloading a [single zip file][insta
 * [Forum][sdk-forum]
 * [Issues][sdk-issues]
 * [SDK Blog][blog]
+* [Release Notes][release-notes]
 
 ## Getting Started
 
@@ -39,7 +40,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.11.34</version>
+      <version>1.11.35</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -122,3 +123,4 @@ mvn clean install -Dgpg.skip=true
 [sdk-license]: http://aws.amazon.com/apache2.0/
 [sdk-website]: http://aws.amazon.com/sdkforjava
 [aws-java-sdk-bom]: https://github.com/aws/aws-sdk-java/tree/master/aws-java-sdk-bom
+[release-notes]: https://aws.amazon.com/releasenotes/Java?browse=1

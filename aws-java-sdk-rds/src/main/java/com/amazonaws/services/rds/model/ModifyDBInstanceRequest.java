@@ -631,12 +631,11 @@ public class ModifyDBInstanceRequest extends
     private String cACertificateIdentifier;
     /**
      * <p>
-     * Specify the Active Directory Domain to move the instance to.
-     * </p>
-     * <p>
-     * The specified Active Directory Domain must be created prior to this
-     * operation. Currently only a SQL Server instance can be created in a
-     * Active Directory Domain.
+     * The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The
+     * domain must be created prior to this operation. Currently only a
+     * Microsoft SQL Server instance can be created in a Active Directory
+     * Domain.
      * </p>
      */
     private String domain;
@@ -778,8 +777,8 @@ public class ModifyDBInstanceRequest extends
     private String monitoringRoleArn;
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.
+     * The name of the IAM role to use when making API calls to the Directory
+     * Service.
      * </p>
      */
     private String domainIAMRoleName;
@@ -4917,20 +4916,19 @@ public class ModifyDBInstanceRequest extends
 
     /**
      * <p>
-     * Specify the Active Directory Domain to move the instance to.
-     * </p>
-     * <p>
-     * The specified Active Directory Domain must be created prior to this
-     * operation. Currently only a SQL Server instance can be created in a
-     * Active Directory Domain.
+     * The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The
+     * domain must be created prior to this operation. Currently only a
+     * Microsoft SQL Server instance can be created in a Active Directory
+     * Domain.
      * </p>
      * 
      * @param domain
-     *        Specify the Active Directory Domain to move the instance to.</p>
-     *        <p>
-     *        The specified Active Directory Domain must be created prior to
-     *        this operation. Currently only a SQL Server instance can be
-     *        created in a Active Directory Domain.
+     *        The Active Directory Domain to move the instance to. Specify
+     *        <code>none</code> to remove the instance from its current domain.
+     *        The domain must be created prior to this operation. Currently only
+     *        a Microsoft SQL Server instance can be created in a Active
+     *        Directory Domain.
      */
 
     public void setDomain(String domain) {
@@ -4939,19 +4937,18 @@ public class ModifyDBInstanceRequest extends
 
     /**
      * <p>
-     * Specify the Active Directory Domain to move the instance to.
-     * </p>
-     * <p>
-     * The specified Active Directory Domain must be created prior to this
-     * operation. Currently only a SQL Server instance can be created in a
-     * Active Directory Domain.
+     * The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The
+     * domain must be created prior to this operation. Currently only a
+     * Microsoft SQL Server instance can be created in a Active Directory
+     * Domain.
      * </p>
      * 
-     * @return Specify the Active Directory Domain to move the instance to.</p>
-     *         <p>
-     *         The specified Active Directory Domain must be created prior to
-     *         this operation. Currently only a SQL Server instance can be
-     *         created in a Active Directory Domain.
+     * @return The Active Directory Domain to move the instance to. Specify
+     *         <code>none</code> to remove the instance from its current domain.
+     *         The domain must be created prior to this operation. Currently
+     *         only a Microsoft SQL Server instance can be created in a Active
+     *         Directory Domain.
      */
 
     public String getDomain() {
@@ -4960,20 +4957,19 @@ public class ModifyDBInstanceRequest extends
 
     /**
      * <p>
-     * Specify the Active Directory Domain to move the instance to.
-     * </p>
-     * <p>
-     * The specified Active Directory Domain must be created prior to this
-     * operation. Currently only a SQL Server instance can be created in a
-     * Active Directory Domain.
+     * The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The
+     * domain must be created prior to this operation. Currently only a
+     * Microsoft SQL Server instance can be created in a Active Directory
+     * Domain.
      * </p>
      * 
      * @param domain
-     *        Specify the Active Directory Domain to move the instance to.</p>
-     *        <p>
-     *        The specified Active Directory Domain must be created prior to
-     *        this operation. Currently only a SQL Server instance can be
-     *        created in a Active Directory Domain.
+     *        The Active Directory Domain to move the instance to. Specify
+     *        <code>none</code> to remove the instance from its current domain.
+     *        The domain must be created prior to this operation. Currently only
+     *        a Microsoft SQL Server instance can be created in a Active
+     *        Directory Domain.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -5883,13 +5879,13 @@ public class ModifyDBInstanceRequest extends
 
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.
+     * The name of the IAM role to use when making API calls to the Directory
+     * Service.
      * </p>
      * 
      * @param domainIAMRoleName
-     *        Specify the name of the IAM role to be used when making API calls
-     *        to the Directory Service.
+     *        The name of the IAM role to use when making API calls to the
+     *        Directory Service.
      */
 
     public void setDomainIAMRoleName(String domainIAMRoleName) {
@@ -5898,12 +5894,12 @@ public class ModifyDBInstanceRequest extends
 
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.
+     * The name of the IAM role to use when making API calls to the Directory
+     * Service.
      * </p>
      * 
-     * @return Specify the name of the IAM role to be used when making API calls
-     *         to the Directory Service.
+     * @return The name of the IAM role to use when making API calls to the
+     *         Directory Service.
      */
 
     public String getDomainIAMRoleName() {
@@ -5912,13 +5908,13 @@ public class ModifyDBInstanceRequest extends
 
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.
+     * The name of the IAM role to use when making API calls to the Directory
+     * Service.
      * </p>
      * 
      * @param domainIAMRoleName
-     *        Specify the name of the IAM role to be used when making API calls
-     *        to the Directory Service.
+     *        The name of the IAM role to use when making API calls to the
+     *        Directory Service.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

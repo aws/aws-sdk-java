@@ -80,6 +80,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
+                    .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()

@@ -17,7 +17,7 @@ package com.amazonaws.http;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.annotation.SdkInternalApi;
-import com.amazonaws.internal.http.JsonErrorCodeParser;
+import com.amazonaws.internal.http.ErrorCodeParser;
 import com.amazonaws.internal.http.JsonErrorMessageParser;
 import com.amazonaws.protocol.json.JsonContent;
 import com.amazonaws.transform.JsonErrorUnmarshaller;
@@ -36,13 +36,13 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
     private static final Log LOG = LogFactory.getLog(JsonErrorResponseHandler.class);
 
     private final List<JsonErrorUnmarshaller> unmarshallers;
-    private final JsonErrorCodeParser errorCodeParser;
+    private final ErrorCodeParser errorCodeParser;
     private final JsonErrorMessageParser errorMessageParser;
     private final JsonFactory jsonFactory;
 
     public JsonErrorResponseHandler(
             List<JsonErrorUnmarshaller> errorUnmarshallers,
-            JsonErrorCodeParser errorCodeParser,
+            ErrorCodeParser errorCodeParser,
             JsonErrorMessageParser errorMessageParser,
             JsonFactory jsonFactory) {
         this.unmarshallers = errorUnmarshallers;
@@ -59,7 +59,7 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
     @Override
     public AmazonServiceException handle(HttpResponse response) throws Exception {
         JsonContent jsonContent = JsonContent.createJsonContent(response, jsonFactory);
-        String errorCode = errorCodeParser.parseErrorCode(response.getHeaders(), jsonContent.getJsonNode());
+        String errorCode = errorCodeParser.parseErrorCode(response, jsonContent);
         AmazonServiceException ase = createException(errorCode, jsonContent);
 
         // Jackson has special-casing for 'message' values when deserializing

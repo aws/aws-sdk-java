@@ -142,6 +142,23 @@ public class DBCluster implements Serializable, Cloneable {
     private String endpoint;
     /**
      * <p>
+     * The reader endpoint for the DB cluster. The reader endpoint for a DB
+     * cluster load-balances connections across the Aurora Replicas that are
+     * available in a DB cluster. As clients request new connections to the
+     * reader endpoint, Aurora distributes the connection requests among the
+     * Aurora Replicas in the DB cluster. This functionality can help balance
+     * your read workload across multiple Aurora Replicas in your DB cluster.
+     * </p>
+     * <p>
+     * If a failover occurs, and the Aurora Replica that you are connected to is
+     * promoted to be the primary instance, your connection will be dropped. To
+     * continue sending your read workload to other Aurora Replicas in the
+     * cluster, you can then recoonect to the reader endpoint.
+     * </p>
+     */
+    private String readerEndpoint;
+    /**
+     * <p>
      * Provides the name of the database engine to be used for this DB cluster.
      * </p>
      */
@@ -847,6 +864,116 @@ public class DBCluster implements Serializable, Cloneable {
 
     public DBCluster withEndpoint(String endpoint) {
         setEndpoint(endpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reader endpoint for the DB cluster. The reader endpoint for a DB
+     * cluster load-balances connections across the Aurora Replicas that are
+     * available in a DB cluster. As clients request new connections to the
+     * reader endpoint, Aurora distributes the connection requests among the
+     * Aurora Replicas in the DB cluster. This functionality can help balance
+     * your read workload across multiple Aurora Replicas in your DB cluster.
+     * </p>
+     * <p>
+     * If a failover occurs, and the Aurora Replica that you are connected to is
+     * promoted to be the primary instance, your connection will be dropped. To
+     * continue sending your read workload to other Aurora Replicas in the
+     * cluster, you can then recoonect to the reader endpoint.
+     * </p>
+     * 
+     * @param readerEndpoint
+     *        The reader endpoint for the DB cluster. The reader endpoint for a
+     *        DB cluster load-balances connections across the Aurora Replicas
+     *        that are available in a DB cluster. As clients request new
+     *        connections to the reader endpoint, Aurora distributes the
+     *        connection requests among the Aurora Replicas in the DB cluster.
+     *        This functionality can help balance your read workload across
+     *        multiple Aurora Replicas in your DB cluster. </p>
+     *        <p>
+     *        If a failover occurs, and the Aurora Replica that you are
+     *        connected to is promoted to be the primary instance, your
+     *        connection will be dropped. To continue sending your read workload
+     *        to other Aurora Replicas in the cluster, you can then recoonect to
+     *        the reader endpoint.
+     */
+
+    public void setReaderEndpoint(String readerEndpoint) {
+        this.readerEndpoint = readerEndpoint;
+    }
+
+    /**
+     * <p>
+     * The reader endpoint for the DB cluster. The reader endpoint for a DB
+     * cluster load-balances connections across the Aurora Replicas that are
+     * available in a DB cluster. As clients request new connections to the
+     * reader endpoint, Aurora distributes the connection requests among the
+     * Aurora Replicas in the DB cluster. This functionality can help balance
+     * your read workload across multiple Aurora Replicas in your DB cluster.
+     * </p>
+     * <p>
+     * If a failover occurs, and the Aurora Replica that you are connected to is
+     * promoted to be the primary instance, your connection will be dropped. To
+     * continue sending your read workload to other Aurora Replicas in the
+     * cluster, you can then recoonect to the reader endpoint.
+     * </p>
+     * 
+     * @return The reader endpoint for the DB cluster. The reader endpoint for a
+     *         DB cluster load-balances connections across the Aurora Replicas
+     *         that are available in a DB cluster. As clients request new
+     *         connections to the reader endpoint, Aurora distributes the
+     *         connection requests among the Aurora Replicas in the DB cluster.
+     *         This functionality can help balance your read workload across
+     *         multiple Aurora Replicas in your DB cluster. </p>
+     *         <p>
+     *         If a failover occurs, and the Aurora Replica that you are
+     *         connected to is promoted to be the primary instance, your
+     *         connection will be dropped. To continue sending your read
+     *         workload to other Aurora Replicas in the cluster, you can then
+     *         recoonect to the reader endpoint.
+     */
+
+    public String getReaderEndpoint() {
+        return this.readerEndpoint;
+    }
+
+    /**
+     * <p>
+     * The reader endpoint for the DB cluster. The reader endpoint for a DB
+     * cluster load-balances connections across the Aurora Replicas that are
+     * available in a DB cluster. As clients request new connections to the
+     * reader endpoint, Aurora distributes the connection requests among the
+     * Aurora Replicas in the DB cluster. This functionality can help balance
+     * your read workload across multiple Aurora Replicas in your DB cluster.
+     * </p>
+     * <p>
+     * If a failover occurs, and the Aurora Replica that you are connected to is
+     * promoted to be the primary instance, your connection will be dropped. To
+     * continue sending your read workload to other Aurora Replicas in the
+     * cluster, you can then recoonect to the reader endpoint.
+     * </p>
+     * 
+     * @param readerEndpoint
+     *        The reader endpoint for the DB cluster. The reader endpoint for a
+     *        DB cluster load-balances connections across the Aurora Replicas
+     *        that are available in a DB cluster. As clients request new
+     *        connections to the reader endpoint, Aurora distributes the
+     *        connection requests among the Aurora Replicas in the DB cluster.
+     *        This functionality can help balance your read workload across
+     *        multiple Aurora Replicas in your DB cluster. </p>
+     *        <p>
+     *        If a failover occurs, and the Aurora Replica that you are
+     *        connected to is promoted to be the primary instance, your
+     *        connection will be dropped. To continue sending your read workload
+     *        to other Aurora Replicas in the cluster, you can then recoonect to
+     *        the reader endpoint.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBCluster withReaderEndpoint(String readerEndpoint) {
+        setReaderEndpoint(readerEndpoint);
         return this;
     }
 
@@ -1832,6 +1959,8 @@ public class DBCluster implements Serializable, Cloneable {
                     + ",");
         if (getEndpoint() != null)
             sb.append("Endpoint: " + getEndpoint() + ",");
+        if (getReaderEndpoint() != null)
+            sb.append("ReaderEndpoint: " + getReaderEndpoint() + ",");
         if (getEngine() != null)
             sb.append("Engine: " + getEngine() + ",");
         if (getEngineVersion() != null)
@@ -1960,6 +2089,12 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getEndpoint() != null
                 && other.getEndpoint().equals(this.getEndpoint()) == false)
+            return false;
+        if (other.getReaderEndpoint() == null
+                ^ this.getReaderEndpoint() == null)
+            return false;
+        if (other.getReaderEndpoint() != null
+                && other.getReaderEndpoint().equals(this.getReaderEndpoint()) == false)
             return false;
         if (other.getEngine() == null ^ this.getEngine() == null)
             return false;
@@ -2119,6 +2254,10 @@ public class DBCluster implements Serializable, Cloneable {
                         : getEarliestRestorableTime().hashCode());
         hashCode = prime * hashCode
                 + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getReaderEndpoint() == null) ? 0 : getReaderEndpoint()
+                        .hashCode());
         hashCode = prime * hashCode
                 + ((getEngine() == null) ? 0 : getEngine().hashCode());
         hashCode = prime

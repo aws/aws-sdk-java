@@ -82,6 +82,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
+                    .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()

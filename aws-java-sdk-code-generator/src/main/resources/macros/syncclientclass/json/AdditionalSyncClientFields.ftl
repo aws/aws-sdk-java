@@ -2,6 +2,7 @@
     private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
         .withProtocolVersion("${serviceModelRoot.metadata.jsonVersion}")
         .withSupportsCbor(${serviceModelRoot.metadata.cborProtocol?c})
+        .withSupportsIon(${serviceModelRoot.metadata.ionProtocol?c})
         <#if serviceModelRoot.metadata.contentType??>
         .withContentTypeOverride("${serviceModelRoot.metadata.contentType}")
         </#if>

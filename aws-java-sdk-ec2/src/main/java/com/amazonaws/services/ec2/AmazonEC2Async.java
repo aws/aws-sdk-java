@@ -280,10 +280,15 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * instance or a network interface, you get an error unless you allow
      * reassociation.
      * </p>
+     * <important>
      * <p>
      * This is an idempotent operation. If you perform the operation more than
-     * once, Amazon EC2 doesn't return an error.
+     * once, Amazon EC2 doesn't return an error, and you may be charged for each
+     * time the Elastic IP address is remapped to the same instance. For more
+     * information, see the <i>Elastic IP Addresses</i> section of <a
+     * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.
      * </p>
+     * </important>
      * 
      * @param associateAddressRequest
      *        Contains the parameters for AssociateAddress.
@@ -317,10 +322,15 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * instance or a network interface, you get an error unless you allow
      * reassociation.
      * </p>
+     * <important>
      * <p>
      * This is an idempotent operation. If you perform the operation more than
-     * once, Amazon EC2 doesn't return an error.
+     * once, Amazon EC2 doesn't return an error, and you may be charged for each
+     * time the Elastic IP address is remapped to the same instance. For more
+     * information, see the <i>Elastic IP Addresses</i> section of <a
+     * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.
      * </p>
+     * </important>
      * 
      * @param associateAddressRequest
      *        Contains the parameters for AssociateAddress.

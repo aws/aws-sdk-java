@@ -20,6 +20,8 @@ import java.io.InputStream;
 
 import javax.net.ssl.SSLSocket;
 
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.util.AWSRequestMetrics;
 
 /**
@@ -33,17 +35,22 @@ public class SdkSSLMetricsSocket extends DelegateSSLSocket {
         super(sock);
     }
 
-    public void setMetrics(AWSRequestMetrics metrics) {
-        if (metricsIS == null) {
-            throw new IllegalStateException(
-                    "The underlying input stream must be initialized!");
-        }
+    public void setMetrics(AWSRequestMetrics metrics) throws IOException {
+        // make sure metricsIS is initialized.
+        getInputStream();
         metricsIS.setMetrics(metrics);
     }
 
     @Override
     public InputStream getInputStream() throws IOException {
-        metricsIS = new MetricsInputStream(sock.getInputStream());
+        if (metricsIS == null) {
+            metricsIS = new MetricsInputStream(sock.getInputStream());
+        }
+        return metricsIS;
+    }
+
+    @SdkTestInternalApi
+    MetricsInputStream getMetricsInputStream() {
         return metricsIS;
     }
 }

@@ -41,6 +41,15 @@ public class S3Action implements Serializable, Cloneable {
      * </p>
      */
     private String key;
+    /**
+     * <p>
+     * The Amazon S3 canned ACL that controls access to the object identified by
+     * the object key. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl"
+     * >S3 canned ACLs</a>.
+     * </p>
+     */
+    private String cannedAcl;
 
     /**
      * <p>
@@ -166,6 +175,111 @@ public class S3Action implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon S3 canned ACL that controls access to the object identified by
+     * the object key. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl"
+     * >S3 canned ACLs</a>.
+     * </p>
+     * 
+     * @param cannedAcl
+     *        The Amazon S3 canned ACL that controls access to the object
+     *        identified by the object key. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl"
+     *        >S3 canned ACLs</a>.
+     * @see CannedAccessControlList
+     */
+
+    public void setCannedAcl(String cannedAcl) {
+        this.cannedAcl = cannedAcl;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 canned ACL that controls access to the object identified by
+     * the object key. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl"
+     * >S3 canned ACLs</a>.
+     * </p>
+     * 
+     * @return The Amazon S3 canned ACL that controls access to the object
+     *         identified by the object key. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl"
+     *         >S3 canned ACLs</a>.
+     * @see CannedAccessControlList
+     */
+
+    public String getCannedAcl() {
+        return this.cannedAcl;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 canned ACL that controls access to the object identified by
+     * the object key. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl"
+     * >S3 canned ACLs</a>.
+     * </p>
+     * 
+     * @param cannedAcl
+     *        The Amazon S3 canned ACL that controls access to the object
+     *        identified by the object key. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl"
+     *        >S3 canned ACLs</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see CannedAccessControlList
+     */
+
+    public S3Action withCannedAcl(String cannedAcl) {
+        setCannedAcl(cannedAcl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 canned ACL that controls access to the object identified by
+     * the object key. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl"
+     * >S3 canned ACLs</a>.
+     * </p>
+     * 
+     * @param cannedAcl
+     *        The Amazon S3 canned ACL that controls access to the object
+     *        identified by the object key. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl"
+     *        >S3 canned ACLs</a>.
+     * @see CannedAccessControlList
+     */
+
+    public void setCannedAcl(CannedAccessControlList cannedAcl) {
+        this.cannedAcl = cannedAcl.toString();
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 canned ACL that controls access to the object identified by
+     * the object key. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl"
+     * >S3 canned ACLs</a>.
+     * </p>
+     * 
+     * @param cannedAcl
+     *        The Amazon S3 canned ACL that controls access to the object
+     *        identified by the object key. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl"
+     *        >S3 canned ACLs</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see CannedAccessControlList
+     */
+
+    public S3Action withCannedAcl(CannedAccessControlList cannedAcl) {
+        setCannedAcl(cannedAcl);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -182,7 +296,9 @@ public class S3Action implements Serializable, Cloneable {
         if (getBucketName() != null)
             sb.append("BucketName: " + getBucketName() + ",");
         if (getKey() != null)
-            sb.append("Key: " + getKey());
+            sb.append("Key: " + getKey() + ",");
+        if (getCannedAcl() != null)
+            sb.append("CannedAcl: " + getCannedAcl());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +328,11 @@ public class S3Action implements Serializable, Cloneable {
         if (other.getKey() != null
                 && other.getKey().equals(this.getKey()) == false)
             return false;
+        if (other.getCannedAcl() == null ^ this.getCannedAcl() == null)
+            return false;
+        if (other.getCannedAcl() != null
+                && other.getCannedAcl().equals(this.getCannedAcl()) == false)
+            return false;
         return true;
     }
 
@@ -226,6 +347,8 @@ public class S3Action implements Serializable, Cloneable {
                 + ((getBucketName() == null) ? 0 : getBucketName().hashCode());
         hashCode = prime * hashCode
                 + ((getKey() == null) ? 0 : getKey().hashCode());
+        hashCode = prime * hashCode
+                + ((getCannedAcl() == null) ? 0 : getCannedAcl().hashCode());
         return hashCode;
     }
 

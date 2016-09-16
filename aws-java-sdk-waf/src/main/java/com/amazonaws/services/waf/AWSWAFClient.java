@@ -75,6 +75,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
+                    .withSupportsIon(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("WAFReferencedItemException")

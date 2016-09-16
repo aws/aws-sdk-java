@@ -14,6 +14,7 @@
  */
 package com.amazonaws.protocol.json;
 
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.util.IOUtils;
 import com.fasterxml.jackson.core.JsonFactory;
@@ -27,6 +28,7 @@ import org.apache.commons.logging.LogFactory;
 /**
  * Simple struct like class to hold both the raw json string content and it's parsed JsonNode
  */
+@SdkInternalApi
 public class JsonContent {
 
     private static final Log LOG = LogFactory.getLog(JsonContent.class);
@@ -50,6 +52,11 @@ public class JsonContent {
         }
         return new JsonContent(rawJsonContent, new ObjectMapper(jsonFactory)
                 .configure(JsonParser.Feature.ALLOW_COMMENTS, true));
+    }
+
+    public JsonContent(byte[] rawJsonContent, JsonNode jsonNode) {
+        this.rawContent = rawJsonContent;
+        this.jsonNode = jsonNode;
     }
 
     private JsonContent(byte[] rawJsonContent, ObjectMapper mapper) {

@@ -85,7 +85,7 @@ public class Action implements Serializable, Cloneable {
     private CloudwatchAlarmAction cloudwatchAlarm;
     /**
      * <p>
-     * Write data to an Amazon Elasticsearch Service; domain.
+     * Write data to an Amazon Elasticsearch Service domain.
      * </p>
      */
     private ElasticsearchAction elasticsearch;
@@ -502,11 +502,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Write data to an Amazon Elasticsearch Service; domain.
+     * Write data to an Amazon Elasticsearch Service domain.
      * </p>
      * 
      * @param elasticsearch
-     *        Write data to an Amazon Elasticsearch Service; domain.
+     *        Write data to an Amazon Elasticsearch Service domain.
      */
 
     public void setElasticsearch(ElasticsearchAction elasticsearch) {
@@ -515,10 +515,10 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Write data to an Amazon Elasticsearch Service; domain.
+     * Write data to an Amazon Elasticsearch Service domain.
      * </p>
      * 
-     * @return Write data to an Amazon Elasticsearch Service; domain.
+     * @return Write data to an Amazon Elasticsearch Service domain.
      */
 
     public ElasticsearchAction getElasticsearch() {
@@ -527,11 +527,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Write data to an Amazon Elasticsearch Service; domain.
+     * Write data to an Amazon Elasticsearch Service domain.
      * </p>
      * 
      * @param elasticsearch
-     *        Write data to an Amazon Elasticsearch Service; domain.
+     *        Write data to an Amazon Elasticsearch Service domain.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -270,6 +270,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
             new JsonClientMetadata()
                     .withProtocolVersion("1.0")
                     .withSupportsCbor(false)
+                    .withSupportsIon(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(

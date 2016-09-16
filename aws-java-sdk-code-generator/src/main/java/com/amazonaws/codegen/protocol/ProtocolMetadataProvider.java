@@ -35,6 +35,11 @@ public interface ProtocolMetadataProvider {
     boolean isCborProtocol();
 
     /**
+     * @return True if protocol uses Ion as the wire format. False otherwise.
+     */
+    boolean isIonProtocol();
+
+    /**
      * @return The content type to use when sending requests. Currently only respected by JSON
      * protocols.
      */

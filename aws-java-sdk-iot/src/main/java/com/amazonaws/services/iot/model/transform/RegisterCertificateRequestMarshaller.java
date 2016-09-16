@@ -89,6 +89,10 @@ public class RegisterCertificateRequestMarshaller
                 jsonGenerator.writeFieldName("caCertificatePem").writeValue(
                         registerCertificateRequest.getCaCertificatePem());
             }
+            if (registerCertificateRequest.getStatus() != null) {
+                jsonGenerator.writeFieldName("status").writeValue(
+                        registerCertificateRequest.getStatus());
+            }
 
             jsonGenerator.writeEndObject();
 

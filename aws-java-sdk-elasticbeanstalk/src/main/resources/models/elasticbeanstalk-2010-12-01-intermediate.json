@@ -25,6 +25,7 @@
     "cucumberModuleInjectorClassName" : "AWSElasticBeanstalkModuleInjector",
     "smokeTestsPackageName" : "com.amazonaws.services.elasticbeanstalk.smoketests",
     "serviceName" : "Elastic Beanstalk",
+    "ionProtocol" : false,
     "cborProtocol" : false,
     "xmlProtocol" : true,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",

@@ -345,6 +345,10 @@ public class Metadata {
         return this;
     }
 
+    public boolean isIonProtocol() {
+        return protocolMetadataProvider.isIonProtocol();
+    }
+
     public boolean isCborProtocol() {
         return protocolMetadataProvider.isCborProtocol();
     }

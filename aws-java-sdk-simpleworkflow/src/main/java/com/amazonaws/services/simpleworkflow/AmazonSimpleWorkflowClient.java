@@ -89,6 +89,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
             new JsonClientMetadata()
                     .withProtocolVersion("1.0")
                     .withSupportsCbor(false)
+                    .withSupportsIon(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("DomainAlreadyExistsFault")

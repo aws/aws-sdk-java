@@ -19,17 +19,18 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "ecr",
     "signingName" : "ecr",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonECRClientBuilder",
     "asyncClientBuilderClassName" : "AmazonECRAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AmazonECRModuleInjector",
     "smokeTestsPackageName" : "com.amazonaws.services.ecr.smoketests",
     "serviceName" : "Amazon ECR",
+    "ionProtocol" : false,
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "jsonProtocol" : true,
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "BatchCheckLayerAvailability" : {
@@ -771,11 +772,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -917,11 +918,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3966,11 +3967,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4218,11 +4219,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4392,11 +4393,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "ImageIdentifier",
           "templateType" : "java.util.List<ImageIdentifier>",
-          "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+          "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4511,11 +4512,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "ImageFailure",
           "templateType" : "java.util.List<ImageFailure>",
-          "templateImplType" : "java.util.ArrayList<ImageFailure>"
+          "templateImplType" : "java.util.ArrayList<ImageFailure>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4653,11 +4654,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "ImageIdentifier",
             "templateType" : "java.util.List<ImageIdentifier>",
-            "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+            "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4773,11 +4774,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "ImageFailure",
             "templateType" : "java.util.List<ImageFailure>",
-            "templateImplType" : "java.util.ArrayList<ImageFailure>"
+            "templateImplType" : "java.util.ArrayList<ImageFailure>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6277,11 +6278,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Image",
           "templateType" : "java.util.List<Image>",
-          "templateImplType" : "java.util.ArrayList<Image>"
+          "templateImplType" : "java.util.ArrayList<Image>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6396,11 +6397,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "ImageFailure",
           "templateType" : "java.util.List<ImageFailure>",
-          "templateImplType" : "java.util.ArrayList<ImageFailure>"
+          "templateImplType" : "java.util.ArrayList<ImageFailure>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6538,11 +6539,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Image",
             "templateType" : "java.util.List<Image>",
-            "templateImplType" : "java.util.ArrayList<Image>"
+            "templateImplType" : "java.util.ArrayList<Image>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6658,11 +6659,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "ImageFailure",
             "templateType" : "java.util.List<ImageFailure>",
-            "templateImplType" : "java.util.ArrayList<ImageFailure>"
+            "templateImplType" : "java.util.ArrayList<ImageFailure>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7130,11 +7131,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7380,11 +7381,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7672,11 +7673,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "ImageIdentifier",
           "templateType" : "java.util.List<ImageIdentifier>",
-          "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+          "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7866,11 +7867,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "ImageIdentifier",
             "templateType" : "java.util.List<ImageIdentifier>",
-            "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+            "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10734,11 +10735,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "ImageIdentifier",
           "templateType" : "java.util.List<ImageIdentifier>",
-          "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+          "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10880,11 +10881,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "ImageIdentifier",
             "templateType" : "java.util.List<ImageIdentifier>",
-            "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+            "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11416,11 +11417,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11721,11 +11722,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12309,11 +12310,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "ImageIdentifier",
           "templateType" : "java.util.List<ImageIdentifier>",
-          "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+          "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12455,11 +12456,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "ImageIdentifier",
             "templateType" : "java.util.List<ImageIdentifier>",
-            "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+            "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12808,11 +12809,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Repository",
           "templateType" : "java.util.List<Repository>",
-          "templateImplType" : "java.util.ArrayList<Repository>"
+          "templateImplType" : "java.util.ArrayList<Repository>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13002,11 +13003,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Repository",
             "templateType" : "java.util.List<Repository>",
-            "templateImplType" : "java.util.ArrayList<Repository>"
+            "templateImplType" : "java.util.ArrayList<Repository>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13708,11 +13709,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "AuthorizationData",
           "templateType" : "java.util.List<AuthorizationData>",
-          "templateImplType" : "java.util.ArrayList<AuthorizationData>"
+          "templateImplType" : "java.util.ArrayList<AuthorizationData>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13850,11 +13851,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "AuthorizationData",
             "templateType" : "java.util.List<AuthorizationData>",
-            "templateImplType" : "java.util.ArrayList<AuthorizationData>"
+            "templateImplType" : "java.util.ArrayList<AuthorizationData>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14548,11 +14549,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Layer",
           "templateType" : "java.util.List<Layer>",
-          "templateImplType" : "java.util.ArrayList<Layer>"
+          "templateImplType" : "java.util.ArrayList<Layer>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14667,11 +14668,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "LayerFailure",
           "templateType" : "java.util.List<LayerFailure>",
-          "templateImplType" : "java.util.ArrayList<LayerFailure>"
+          "templateImplType" : "java.util.ArrayList<LayerFailure>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14809,11 +14810,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Layer",
             "templateType" : "java.util.List<Layer>",
-            "templateImplType" : "java.util.ArrayList<Layer>"
+            "templateImplType" : "java.util.ArrayList<Layer>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14929,11 +14930,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "LayerFailure",
             "templateType" : "java.util.List<LayerFailure>",
-            "templateImplType" : "java.util.ArrayList<LayerFailure>"
+            "templateImplType" : "java.util.ArrayList<LayerFailure>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16738,12 +16739,12 @@
     },
     "version" : "1.0"
   },
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.ecr.model.AmazonECRException",
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
-  "sdkModeledExceptionBaseClassName" : "AmazonECRException",
   "hasWaiters" : false,
-  "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>"
+  "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
+  "sdkModeledExceptionBaseClassName" : "AmazonECRException"
 }

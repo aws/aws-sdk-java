@@ -25,6 +25,7 @@
     "cucumberModuleInjectorClassName" : "AWSDirectoryServiceModuleInjector",
     "smokeTestsPackageName" : "com.amazonaws.services.directory.smoketests",
     "serviceName" : "Directory Service",
+    "ionProtocol" : false,
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",

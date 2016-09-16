@@ -75,6 +75,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
+                    .withSupportsIon(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(

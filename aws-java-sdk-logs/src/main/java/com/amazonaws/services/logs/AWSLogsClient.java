@@ -112,6 +112,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
+                    .withSupportsIon(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidParameterException")

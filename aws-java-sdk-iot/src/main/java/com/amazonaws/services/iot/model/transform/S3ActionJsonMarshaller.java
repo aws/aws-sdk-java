@@ -57,6 +57,10 @@ public class S3ActionJsonMarshaller {
                 jsonGenerator.writeFieldName("key").writeValue(
                         s3Action.getKey());
             }
+            if (s3Action.getCannedAcl() != null) {
+                jsonGenerator.writeFieldName("cannedAcl").writeValue(
+                        s3Action.getCannedAcl());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

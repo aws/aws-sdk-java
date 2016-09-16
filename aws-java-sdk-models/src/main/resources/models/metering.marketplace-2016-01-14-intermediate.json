@@ -19,17 +19,18 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "metering.marketplace",
     "signingName" : "aws-marketplace",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSMarketplaceMeteringClientBuilder",
     "asyncClientBuilderClassName" : "AWSMarketplaceMeteringAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AWSMarketplaceMeteringModuleInjector",
     "smokeTestsPackageName" : "com.amazonaws.services.marketplacemetering.smoketests",
     "serviceName" : "AWSMarketplace Metering",
+    "ionProtocol" : false,
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "MeterUsage" : {

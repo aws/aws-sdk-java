@@ -18,6 +18,7 @@ package com.amazonaws.codegen.model.intermediate;
 import com.amazonaws.codegen.protocol.AwsCborProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.AwsJsonProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.Ec2ProtocolMetdataProvider;
+import com.amazonaws.codegen.protocol.IonProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.ProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.QueryProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.RestJsonProtocolMetdataProvider;
@@ -31,7 +32,8 @@ public enum Protocol {
     REST_JSON("rest-json", new RestJsonProtocolMetdataProvider()),
     CBOR("cbor", new AwsCborProtocolMetadataProvider()),
     QUERY("query", new QueryProtocolMetadataProvider()),
-    REST_XML("rest-xml", new RestXmlProtocolMetadataProvider()),;
+    REST_XML("rest-xml", new RestXmlProtocolMetadataProvider()),
+    ION("ion", new IonProtocolMetadataProvider());
 
     private String protocol;
     private ProtocolMetadataProvider metadataProvider;

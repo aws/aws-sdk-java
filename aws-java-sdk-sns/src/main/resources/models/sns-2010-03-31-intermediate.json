@@ -19,17 +19,18 @@
     "jsonVersion" : null,
     "endpointPrefix" : "sns",
     "signingName" : "sns",
-    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "jsonProtocol" : false,
+    "xmlProtocol" : true,
+    "cborProtocol" : false,
+    "ionProtocol" : false,
+    "unmarshallerContextClassName" : "StaxUnmarshallerContext",
+    "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "syncClientBuilderClassName" : "AmazonSNSClientBuilder",
     "asyncClientBuilderClassName" : "AmazonSNSAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AmazonSNSModuleInjector",
     "smokeTestsPackageName" : "com.amazonaws.services.sns.smoketests",
     "serviceName" : "Amazon SNS",
-    "jsonProtocol" : false,
-    "cborProtocol" : false,
-    "xmlProtocol" : true,
-    "unmarshallerContextClassName" : "StaxUnmarshallerContext",
-    "unmarshallerClassSuffix" : "StaxUnmarshaller"
+    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller"
   },
   "operations" : {
     "AddPermission" : {
@@ -63,12 +64,12 @@
         "documentation" : "<p>Indicates that the requested resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AddPermissionResult",
       "asyncReturnType" : "AddPermissionResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddPermissionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddPermissionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult>",
-      "authenticated" : true,
       "methodName" : "addPermission"
     },
     "CheckIfPhoneNumberIsOptedOut" : {
@@ -102,12 +103,12 @@
         "documentation" : "<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CheckIfPhoneNumberIsOptedOutResult",
       "asyncReturnType" : "CheckIfPhoneNumberIsOptedOutResult",
       "asyncFutureType" : "java.util.concurrent.Future<CheckIfPhoneNumberIsOptedOutResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CheckIfPhoneNumberIsOptedOutResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CheckIfPhoneNumberIsOptedOutRequest, CheckIfPhoneNumberIsOptedOutResult>",
-      "authenticated" : true,
       "methodName" : "checkIfPhoneNumberIsOptedOut"
     },
     "ConfirmSubscription" : {
@@ -144,12 +145,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ConfirmSubscriptionResult",
       "asyncReturnType" : "ConfirmSubscriptionResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConfirmSubscriptionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConfirmSubscriptionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmSubscriptionRequest, ConfirmSubscriptionResult>",
-      "authenticated" : true,
       "methodName" : "confirmSubscription"
     },
     "CreatePlatformApplication" : {
@@ -180,12 +181,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreatePlatformApplicationResult",
       "asyncReturnType" : "CreatePlatformApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePlatformApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePlatformApplicationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePlatformApplicationRequest, CreatePlatformApplicationResult>",
-      "authenticated" : true,
       "methodName" : "createPlatformApplication"
     },
     "CreatePlatformEndpoint" : {
@@ -219,12 +220,12 @@
         "documentation" : "<p>Indicates that the requested resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreatePlatformEndpointResult",
       "asyncReturnType" : "CreatePlatformEndpointResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePlatformEndpointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePlatformEndpointResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePlatformEndpointRequest, CreatePlatformEndpointResult>",
-      "authenticated" : true,
       "methodName" : "createPlatformEndpoint"
     },
     "CreateTopic" : {
@@ -258,12 +259,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateTopicResult",
       "asyncReturnType" : "CreateTopicResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTopicResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTopicResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTopicRequest, CreateTopicResult>",
-      "authenticated" : true,
       "methodName" : "createTopic"
     },
     "DeleteEndpoint" : {
@@ -294,12 +295,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteEndpointResult",
       "asyncReturnType" : "DeleteEndpointResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteEndpointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteEndpointResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, DeleteEndpointResult>",
-      "authenticated" : true,
       "methodName" : "deleteEndpoint"
     },
     "DeletePlatformApplication" : {
@@ -330,12 +331,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeletePlatformApplicationResult",
       "asyncReturnType" : "DeletePlatformApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeletePlatformApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeletePlatformApplicationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePlatformApplicationRequest, DeletePlatformApplicationResult>",
-      "authenticated" : true,
       "methodName" : "deletePlatformApplication"
     },
     "DeleteTopic" : {
@@ -369,12 +370,12 @@
         "documentation" : "<p>Indicates that the requested resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteTopicResult",
       "asyncReturnType" : "DeleteTopicResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTopicResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTopicResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, DeleteTopicResult>",
-      "authenticated" : true,
       "methodName" : "deleteTopic"
     },
     "GetEndpointAttributes" : {
@@ -408,12 +409,12 @@
         "documentation" : "<p>Indicates that the requested resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetEndpointAttributesResult",
       "asyncReturnType" : "GetEndpointAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetEndpointAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetEndpointAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetEndpointAttributesRequest, GetEndpointAttributesResult>",
-      "authenticated" : true,
       "methodName" : "getEndpointAttributes"
     },
     "GetPlatformApplicationAttributes" : {
@@ -447,12 +448,12 @@
         "documentation" : "<p>Indicates that the requested resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetPlatformApplicationAttributesResult",
       "asyncReturnType" : "GetPlatformApplicationAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetPlatformApplicationAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetPlatformApplicationAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetPlatformApplicationAttributesRequest, GetPlatformApplicationAttributesResult>",
-      "authenticated" : true,
       "methodName" : "getPlatformApplicationAttributes"
     },
     "GetSMSAttributes" : {
@@ -486,12 +487,12 @@
         "documentation" : "<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetSMSAttributesResult",
       "asyncReturnType" : "GetSMSAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSMSAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetSMSAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSMSAttributesRequest, GetSMSAttributesResult>",
-      "authenticated" : true,
       "methodName" : "getSMSAttributes"
     },
     "GetSubscriptionAttributes" : {
@@ -525,12 +526,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetSubscriptionAttributesResult",
       "asyncReturnType" : "GetSubscriptionAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSubscriptionAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetSubscriptionAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResult>",
-      "authenticated" : true,
       "methodName" : "getSubscriptionAttributes"
     },
     "GetTopicAttributes" : {
@@ -564,12 +565,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetTopicAttributesResult",
       "asyncReturnType" : "GetTopicAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTopicAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTopicAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTopicAttributesRequest, GetTopicAttributesResult>",
-      "authenticated" : true,
       "methodName" : "getTopicAttributes"
     },
     "ListEndpointsByPlatformApplication" : {
@@ -603,12 +604,12 @@
         "documentation" : "<p>Indicates that the requested resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListEndpointsByPlatformApplicationResult",
       "asyncReturnType" : "ListEndpointsByPlatformApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListEndpointsByPlatformApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListEndpointsByPlatformApplicationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListEndpointsByPlatformApplicationRequest, ListEndpointsByPlatformApplicationResult>",
-      "authenticated" : true,
       "methodName" : "listEndpointsByPlatformApplication"
     },
     "ListPhoneNumbersOptedOut" : {
@@ -642,12 +643,12 @@
         "documentation" : "<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListPhoneNumbersOptedOutResult",
       "asyncReturnType" : "ListPhoneNumbersOptedOutResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPhoneNumbersOptedOutResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPhoneNumbersOptedOutResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPhoneNumbersOptedOutRequest, ListPhoneNumbersOptedOutResult>",
-      "authenticated" : true,
       "methodName" : "listPhoneNumbersOptedOut"
     },
     "ListPlatformApplications" : {
@@ -678,12 +679,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListPlatformApplicationsResult",
       "asyncReturnType" : "ListPlatformApplicationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPlatformApplicationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPlatformApplicationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPlatformApplicationsRequest, ListPlatformApplicationsResult>",
-      "authenticated" : true,
       "methodName" : "listPlatformApplications"
     },
     "ListSubscriptions" : {
@@ -714,12 +715,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListSubscriptionsResult",
       "asyncReturnType" : "ListSubscriptionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListSubscriptionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListSubscriptionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListSubscriptionsRequest, ListSubscriptionsResult>",
-      "authenticated" : true,
       "methodName" : "listSubscriptions"
     },
     "ListSubscriptionsByTopic" : {
@@ -753,12 +754,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListSubscriptionsByTopicResult",
       "asyncReturnType" : "ListSubscriptionsByTopicResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListSubscriptionsByTopicResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListSubscriptionsByTopicResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResult>",
-      "authenticated" : true,
       "methodName" : "listSubscriptionsByTopic"
     },
     "ListTopics" : {
@@ -789,12 +790,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTopicsResult",
       "asyncReturnType" : "ListTopicsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTopicsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTopicsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTopicsRequest, ListTopicsResult>",
-      "authenticated" : true,
       "methodName" : "listTopics"
     },
     "OptInPhoneNumber" : {
@@ -828,12 +829,12 @@
         "documentation" : "<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "OptInPhoneNumberResult",
       "asyncReturnType" : "OptInPhoneNumberResult",
       "asyncFutureType" : "java.util.concurrent.Future<OptInPhoneNumberResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<OptInPhoneNumberResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<OptInPhoneNumberRequest, OptInPhoneNumberResult>",
-      "authenticated" : true,
       "methodName" : "optInPhoneNumber"
     },
     "Publish" : {
@@ -876,12 +877,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PublishResult",
       "asyncReturnType" : "PublishResult",
       "asyncFutureType" : "java.util.concurrent.Future<PublishResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PublishResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult>",
-      "authenticated" : true,
       "methodName" : "publish"
     },
     "RemovePermission" : {
@@ -915,12 +916,12 @@
         "documentation" : "<p>Indicates that the requested resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RemovePermissionResult",
       "asyncReturnType" : "RemovePermissionResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemovePermissionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemovePermissionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult>",
-      "authenticated" : true,
       "methodName" : "removePermission"
     },
     "SetEndpointAttributes" : {
@@ -954,12 +955,12 @@
         "documentation" : "<p>Indicates that the requested resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SetEndpointAttributesResult",
       "asyncReturnType" : "SetEndpointAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetEndpointAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetEndpointAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetEndpointAttributesRequest, SetEndpointAttributesResult>",
-      "authenticated" : true,
       "methodName" : "setEndpointAttributes"
     },
     "SetPlatformApplicationAttributes" : {
@@ -993,12 +994,12 @@
         "documentation" : "<p>Indicates that the requested resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SetPlatformApplicationAttributesResult",
       "asyncReturnType" : "SetPlatformApplicationAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetPlatformApplicationAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetPlatformApplicationAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetPlatformApplicationAttributesRequest, SetPlatformApplicationAttributesResult>",
-      "authenticated" : true,
       "methodName" : "setPlatformApplicationAttributes"
     },
     "SetSMSAttributes" : {
@@ -1032,12 +1033,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SetSMSAttributesResult",
       "asyncReturnType" : "SetSMSAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetSMSAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetSMSAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetSMSAttributesRequest, SetSMSAttributesResult>",
-      "authenticated" : true,
       "methodName" : "setSMSAttributes"
     },
     "SetSubscriptionAttributes" : {
@@ -1071,12 +1072,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SetSubscriptionAttributesResult",
       "asyncReturnType" : "SetSubscriptionAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetSubscriptionAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetSubscriptionAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResult>",
-      "authenticated" : true,
       "methodName" : "setSubscriptionAttributes"
     },
     "SetTopicAttributes" : {
@@ -1110,12 +1111,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SetTopicAttributesResult",
       "asyncReturnType" : "SetTopicAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetTopicAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetTopicAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetTopicAttributesRequest, SetTopicAttributesResult>",
-      "authenticated" : true,
       "methodName" : "setTopicAttributes"
     },
     "Subscribe" : {
@@ -1152,12 +1153,12 @@
         "documentation" : "<p>Indicates that the user has been denied access to the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SubscribeResult",
       "asyncReturnType" : "SubscribeResult",
       "asyncFutureType" : "java.util.concurrent.Future<SubscribeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SubscribeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SubscribeRequest, SubscribeResult>",
-      "authenticated" : true,
       "methodName" : "subscribe"
     },
     "Unsubscribe" : {
@@ -1191,12 +1192,12 @@
         "documentation" : "<p>Indicates that the requested resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UnsubscribeResult",
       "asyncReturnType" : "UnsubscribeResult",
       "asyncFutureType" : "java.util.concurrent.Future<UnsubscribeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UnsubscribeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, UnsubscribeResult>",
-      "authenticated" : true,
       "methodName" : "unsubscribe"
     }
   },
@@ -1346,12 +1347,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -1488,12 +1489,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -1922,12 +1923,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -2068,12 +2069,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -2360,12 +2361,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -2506,12 +2507,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -3360,12 +3361,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -3502,12 +3503,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -4603,11 +4604,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Topic",
           "templateType" : "java.util.List<Topic>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Topic>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Topic>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4797,11 +4798,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Topic",
             "templateType" : "java.util.List<Topic>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Topic>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Topic>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6430,12 +6431,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -6572,12 +6573,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -7425,12 +7426,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7567,12 +7568,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8157,12 +8158,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,MessageAttributeValue>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,MessageAttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, MessageAttributeValue>",
-          "templateType" : "java.util.Map<String,MessageAttributeValue>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,MessageAttributeValue>"
+          "entryType" : "Map.Entry<String, MessageAttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -8303,12 +8304,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,MessageAttributeValue>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,MessageAttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, MessageAttributeValue>",
-            "templateType" : "java.util.Map<String,MessageAttributeValue>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,MessageAttributeValue>"
+            "entryType" : "Map.Entry<String, MessageAttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8899,11 +8900,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Subscription",
           "templateType" : "java.util.List<Subscription>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9146,11 +9147,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Subscription",
             "templateType" : "java.util.List<Subscription>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9569,11 +9570,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9763,11 +9764,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10231,12 +10232,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -10373,12 +10374,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -10506,11 +10507,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10652,11 +10653,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11172,12 +11173,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -11314,12 +11315,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -11640,12 +11641,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -11782,12 +11783,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -12055,12 +12056,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -12201,12 +12202,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -12419,11 +12420,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Subscription",
           "templateType" : "java.util.List<Subscription>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12666,11 +12667,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Subscription",
             "templateType" : "java.util.List<Subscription>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13230,11 +13231,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "PlatformApplication",
           "templateType" : "java.util.List<PlatformApplication>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PlatformApplication>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PlatformApplication>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13477,11 +13478,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "PlatformApplication",
             "templateType" : "java.util.List<PlatformApplication>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PlatformApplication>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PlatformApplication>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14030,11 +14031,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Endpoint",
           "templateType" : "java.util.List<Endpoint>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Endpoint>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Endpoint>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14224,11 +14225,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Endpoint",
             "templateType" : "java.util.List<Endpoint>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Endpoint>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Endpoint>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14977,12 +14978,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -15176,12 +15177,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -15414,12 +15415,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -15560,12 +15561,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -16241,11 +16242,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16360,11 +16361,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16506,11 +16507,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16679,11 +16680,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16944,12 +16945,12 @@
     "examples" : { },
     "version" : "1.0"
   },
+  "sdkModeledExceptionBaseClassName" : "AmazonSNSException",
+  "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller",
   "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.sns.model.AmazonSNSException",
   "hasWaiters" : false,
-  "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
-  "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller",
-  "sdkModeledExceptionBaseClassName" : "AmazonSNSException"
+  "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>"
 }

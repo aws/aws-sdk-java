@@ -26,7 +26,7 @@ public class DescribeSourceRegionsRequest extends
 
     /**
      * <p>
-     * The source region name, for example US West (Oregon).
+     * The source region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -34,7 +34,7 @@ public class DescribeSourceRegionsRequest extends
      * <ul>
      * <li>
      * <p>
-     * Must specify a valid AWS Region name, for example US West (Oregon).
+     * Must specify a valid AWS Region name.
      * </p>
      * </li>
      * </ul>
@@ -73,7 +73,7 @@ public class DescribeSourceRegionsRequest extends
 
     /**
      * <p>
-     * The source region name, for example US West (Oregon).
+     * The source region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -81,21 +81,20 @@ public class DescribeSourceRegionsRequest extends
      * <ul>
      * <li>
      * <p>
-     * Must specify a valid AWS Region name, for example US West (Oregon).
+     * Must specify a valid AWS Region name.
      * </p>
      * </li>
      * </ul>
      * 
      * @param regionName
-     *        The source region name, for example US West (Oregon).</p>
+     *        The source region name. For example, <code>us-east-1</code>.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must specify a valid AWS Region name, for example US West
-     *        (Oregon).
+     *        Must specify a valid AWS Region name.
      *        </p>
      *        </li>
      */
@@ -106,7 +105,7 @@ public class DescribeSourceRegionsRequest extends
 
     /**
      * <p>
-     * The source region name, for example US West (Oregon).
+     * The source region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -114,20 +113,19 @@ public class DescribeSourceRegionsRequest extends
      * <ul>
      * <li>
      * <p>
-     * Must specify a valid AWS Region name, for example US West (Oregon).
+     * Must specify a valid AWS Region name.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The source region name, for example US West (Oregon).</p>
+     * @return The source region name. For example, <code>us-east-1</code>.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Must specify a valid AWS Region name, for example US West
-     *         (Oregon).
+     *         Must specify a valid AWS Region name.
      *         </p>
      *         </li>
      */
@@ -138,7 +136,7 @@ public class DescribeSourceRegionsRequest extends
 
     /**
      * <p>
-     * The source region name, for example US West (Oregon).
+     * The source region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -146,21 +144,20 @@ public class DescribeSourceRegionsRequest extends
      * <ul>
      * <li>
      * <p>
-     * Must specify a valid AWS Region name, for example US West (Oregon).
+     * Must specify a valid AWS Region name.
      * </p>
      * </li>
      * </ul>
      * 
      * @param regionName
-     *        The source region name, for example US West (Oregon).</p>
+     *        The source region name. For example, <code>us-east-1</code>.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must specify a valid AWS Region name, for example US West
-     *        (Oregon).
+     *        Must specify a valid AWS Region name.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be

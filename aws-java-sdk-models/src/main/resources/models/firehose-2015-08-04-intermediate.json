@@ -19,17 +19,18 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "firehose",
     "signingName" : "firehose",
-    "smokeTestsPackageName" : "com.amazonaws.services.kinesisfirehose.smoketests",
-    "serviceName" : "Firehose",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonKinesisFirehoseClientBuilder",
     "asyncClientBuilderClassName" : "AmazonKinesisFirehoseAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AmazonKinesisFirehoseModuleInjector",
+    "smokeTestsPackageName" : "com.amazonaws.services.kinesisfirehose.smoketests",
+    "serviceName" : "Firehose",
+    "ionProtocol" : false,
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "jsonProtocol" : true
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "CreateDeliveryStream" : {

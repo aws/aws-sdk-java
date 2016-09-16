@@ -125,6 +125,12 @@ public class DBClusterStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("ReaderEndpoint", targetDepth)) {
+                    dBCluster.setReaderEndpoint(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Engine", targetDepth)) {
                     dBCluster.setEngine(StringStaxUnmarshaller.getInstance()
                             .unmarshall(context));

@@ -43,7 +43,10 @@ public class RegisterCertificateRequest extends
      * A boolean value that specifies if the CA certificate is set to active.
      * </p>
      */
+    @Deprecated
     private Boolean setAsActive;
+
+    private String status;
 
     /**
      * <p>
@@ -140,7 +143,7 @@ public class RegisterCertificateRequest extends
      *        A boolean value that specifies if the CA certificate is set to
      *        active.
      */
-
+    @Deprecated
     public void setSetAsActive(Boolean setAsActive) {
         this.setAsActive = setAsActive;
     }
@@ -153,7 +156,7 @@ public class RegisterCertificateRequest extends
      * @return A boolean value that specifies if the CA certificate is set to
      *         active.
      */
-
+    @Deprecated
     public Boolean getSetAsActive() {
         return this.setAsActive;
     }
@@ -169,7 +172,7 @@ public class RegisterCertificateRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
-
+    @Deprecated
     public RegisterCertificateRequest withSetAsActive(Boolean setAsActive) {
         setSetAsActive(setAsActive);
         return this;
@@ -183,9 +186,60 @@ public class RegisterCertificateRequest extends
      * @return A boolean value that specifies if the CA certificate is set to
      *         active.
      */
-
+    @Deprecated
     public Boolean isSetAsActive() {
         return this.setAsActive;
+    }
+
+    /**
+     * @param status
+     * @see CertificateStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * @return
+     * @see CertificateStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * @param status
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see CertificateStatus
+     */
+
+    public RegisterCertificateRequest withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * @param status
+     * @see CertificateStatus
+     */
+
+    public void setStatus(CertificateStatus status) {
+        this.status = status.toString();
+    }
+
+    /**
+     * @param status
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see CertificateStatus
+     */
+
+    public RegisterCertificateRequest withStatus(CertificateStatus status) {
+        setStatus(status);
+        return this;
     }
 
     /**
@@ -205,7 +259,9 @@ public class RegisterCertificateRequest extends
         if (getCaCertificatePem() != null)
             sb.append("CaCertificatePem: " + getCaCertificatePem() + ",");
         if (getSetAsActive() != null)
-            sb.append("SetAsActive: " + getSetAsActive());
+            sb.append("SetAsActive: " + getSetAsActive() + ",");
+        if (getStatus() != null)
+            sb.append("Status: " + getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -238,6 +294,11 @@ public class RegisterCertificateRequest extends
         if (other.getSetAsActive() != null
                 && other.getSetAsActive().equals(this.getSetAsActive()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null
+                && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -257,6 +318,8 @@ public class RegisterCertificateRequest extends
         hashCode = prime
                 * hashCode
                 + ((getSetAsActive() == null) ? 0 : getSetAsActive().hashCode());
+        hashCode = prime * hashCode
+                + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

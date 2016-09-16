@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an action that writes data to an Amazon Elasticsearch Service;
+ * Describes an action that writes data to an Amazon Elasticsearch Service
  * domain.
  * </p>
  */
