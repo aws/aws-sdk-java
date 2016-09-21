@@ -35,7 +35,7 @@ public class StringUtils {
 
     public static final Charset UTF8 = Charset.forName(DEFAULT_ENCODING);
 
-    private static final Locale LOCALE_ENGLSIH = Locale.ENGLISH;
+    private static final Locale LOCALE_ENGLISH = Locale.ENGLISH;
 
     // white space character that match Pattern.compile("\\s")
     private static final char CHAR_SPACE = ' ';
@@ -210,7 +210,7 @@ public class StringUtils {
         if(isNullOrEmpty(str)) {
             return str;
         }
-        return str.toLowerCase(LOCALE_ENGLSIH);
+        return str.toLowerCase(LOCALE_ENGLISH);
     }
 
     /**
@@ -223,7 +223,7 @@ public class StringUtils {
         if(isNullOrEmpty(str)) {
             return str;
         }
-        return str.toUpperCase(LOCALE_ENGLSIH);
+        return str.toUpperCase(LOCALE_ENGLISH);
     }
 
     /**
@@ -241,7 +241,7 @@ public class StringUtils {
             throw new IllegalArgumentException("Arguments cannot be null");
         }
 
-        Collator collator = Collator.getInstance(LOCALE_ENGLSIH);
+        Collator collator = Collator.getInstance(LOCALE_ENGLISH);
         return collator.compare(str1, str2);
     }
 
