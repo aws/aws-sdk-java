@@ -107,8 +107,21 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * The means by which the deployment was created:
      * </p>
      * <ul>
-     * <li>user: A user created the deployment.</li>
-     * <li>autoscaling: Auto Scaling created the deployment.</li>
+     * <li>
+     * <p>
+     * user: A user created the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * autoscaling: Auto Scaling created the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * codeDeployRollback: A rollback process created the deployment.
+     * </p>
+     * </li>
      * </ul>
      */
     private String creator;
@@ -127,6 +140,26 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * </p>
      */
     private Boolean ignoreApplicationStopFailures;
+    /**
+     * <p>
+     * Information about the automatic rollback configuration associated with
+     * the deployment.
+     * </p>
+     */
+    private AutoRollbackConfiguration autoRollbackConfiguration;
+    /**
+     * <p>
+     * Indicates whether only instances that are not running the latest
+     * application revision are to be deployed to.
+     * </p>
+     */
+    private Boolean updateOutdatedInstancesOnly;
+    /**
+     * <p>
+     * Information about a deployment rollback.
+     * </p>
+     */
+    private RollbackInfo rollbackInfo;
 
     /**
      * <p>
@@ -705,15 +738,41 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * The means by which the deployment was created:
      * </p>
      * <ul>
-     * <li>user: A user created the deployment.</li>
-     * <li>autoscaling: Auto Scaling created the deployment.</li>
+     * <li>
+     * <p>
+     * user: A user created the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * autoscaling: Auto Scaling created the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * codeDeployRollback: A rollback process created the deployment.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param creator
      *        The means by which the deployment was created:</p>
      *        <ul>
-     *        <li>user: A user created the deployment.</li>
-     *        <li>autoscaling: Auto Scaling created the deployment.</li>
+     *        <li>
+     *        <p>
+     *        user: A user created the deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        autoscaling: Auto Scaling created the deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        codeDeployRollback: A rollback process created the deployment.
+     *        </p>
+     *        </li>
      * @see DeploymentCreator
      */
 
@@ -726,14 +785,40 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * The means by which the deployment was created:
      * </p>
      * <ul>
-     * <li>user: A user created the deployment.</li>
-     * <li>autoscaling: Auto Scaling created the deployment.</li>
+     * <li>
+     * <p>
+     * user: A user created the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * autoscaling: Auto Scaling created the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * codeDeployRollback: A rollback process created the deployment.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The means by which the deployment was created:</p>
      *         <ul>
-     *         <li>user: A user created the deployment.</li>
-     *         <li>autoscaling: Auto Scaling created the deployment.</li>
+     *         <li>
+     *         <p>
+     *         user: A user created the deployment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         autoscaling: Auto Scaling created the deployment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         codeDeployRollback: A rollback process created the deployment.
+     *         </p>
+     *         </li>
      * @see DeploymentCreator
      */
 
@@ -746,15 +831,41 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * The means by which the deployment was created:
      * </p>
      * <ul>
-     * <li>user: A user created the deployment.</li>
-     * <li>autoscaling: Auto Scaling created the deployment.</li>
+     * <li>
+     * <p>
+     * user: A user created the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * autoscaling: Auto Scaling created the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * codeDeployRollback: A rollback process created the deployment.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param creator
      *        The means by which the deployment was created:</p>
      *        <ul>
-     *        <li>user: A user created the deployment.</li>
-     *        <li>autoscaling: Auto Scaling created the deployment.</li>
+     *        <li>
+     *        <p>
+     *        user: A user created the deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        autoscaling: Auto Scaling created the deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        codeDeployRollback: A rollback process created the deployment.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DeploymentCreator
@@ -770,15 +881,41 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * The means by which the deployment was created:
      * </p>
      * <ul>
-     * <li>user: A user created the deployment.</li>
-     * <li>autoscaling: Auto Scaling created the deployment.</li>
+     * <li>
+     * <p>
+     * user: A user created the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * autoscaling: Auto Scaling created the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * codeDeployRollback: A rollback process created the deployment.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param creator
      *        The means by which the deployment was created:</p>
      *        <ul>
-     *        <li>user: A user created the deployment.</li>
-     *        <li>autoscaling: Auto Scaling created the deployment.</li>
+     *        <li>
+     *        <p>
+     *        user: A user created the deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        autoscaling: Auto Scaling created the deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        codeDeployRollback: A rollback process created the deployment.
+     *        </p>
+     *        </li>
      * @see DeploymentCreator
      */
 
@@ -791,15 +928,41 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * The means by which the deployment was created:
      * </p>
      * <ul>
-     * <li>user: A user created the deployment.</li>
-     * <li>autoscaling: Auto Scaling created the deployment.</li>
+     * <li>
+     * <p>
+     * user: A user created the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * autoscaling: Auto Scaling created the deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * codeDeployRollback: A rollback process created the deployment.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param creator
      *        The means by which the deployment was created:</p>
      *        <ul>
-     *        <li>user: A user created the deployment.</li>
-     *        <li>autoscaling: Auto Scaling created the deployment.</li>
+     *        <li>
+     *        <p>
+     *        user: A user created the deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        autoscaling: Auto Scaling created the deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        codeDeployRollback: A rollback process created the deployment.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DeploymentCreator
@@ -938,6 +1101,159 @@ public class DeploymentInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the automatic rollback configuration associated with
+     * the deployment.
+     * </p>
+     * 
+     * @param autoRollbackConfiguration
+     *        Information about the automatic rollback configuration associated
+     *        with the deployment.
+     */
+
+    public void setAutoRollbackConfiguration(
+            AutoRollbackConfiguration autoRollbackConfiguration) {
+        this.autoRollbackConfiguration = autoRollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information about the automatic rollback configuration associated with
+     * the deployment.
+     * </p>
+     * 
+     * @return Information about the automatic rollback configuration associated
+     *         with the deployment.
+     */
+
+    public AutoRollbackConfiguration getAutoRollbackConfiguration() {
+        return this.autoRollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information about the automatic rollback configuration associated with
+     * the deployment.
+     * </p>
+     * 
+     * @param autoRollbackConfiguration
+     *        Information about the automatic rollback configuration associated
+     *        with the deployment.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DeploymentInfo withAutoRollbackConfiguration(
+            AutoRollbackConfiguration autoRollbackConfiguration) {
+        setAutoRollbackConfiguration(autoRollbackConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether only instances that are not running the latest
+     * application revision are to be deployed to.
+     * </p>
+     * 
+     * @param updateOutdatedInstancesOnly
+     *        Indicates whether only instances that are not running the latest
+     *        application revision are to be deployed to.
+     */
+
+    public void setUpdateOutdatedInstancesOnly(
+            Boolean updateOutdatedInstancesOnly) {
+        this.updateOutdatedInstancesOnly = updateOutdatedInstancesOnly;
+    }
+
+    /**
+     * <p>
+     * Indicates whether only instances that are not running the latest
+     * application revision are to be deployed to.
+     * </p>
+     * 
+     * @return Indicates whether only instances that are not running the latest
+     *         application revision are to be deployed to.
+     */
+
+    public Boolean getUpdateOutdatedInstancesOnly() {
+        return this.updateOutdatedInstancesOnly;
+    }
+
+    /**
+     * <p>
+     * Indicates whether only instances that are not running the latest
+     * application revision are to be deployed to.
+     * </p>
+     * 
+     * @param updateOutdatedInstancesOnly
+     *        Indicates whether only instances that are not running the latest
+     *        application revision are to be deployed to.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DeploymentInfo withUpdateOutdatedInstancesOnly(
+            Boolean updateOutdatedInstancesOnly) {
+        setUpdateOutdatedInstancesOnly(updateOutdatedInstancesOnly);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether only instances that are not running the latest
+     * application revision are to be deployed to.
+     * </p>
+     * 
+     * @return Indicates whether only instances that are not running the latest
+     *         application revision are to be deployed to.
+     */
+
+    public Boolean isUpdateOutdatedInstancesOnly() {
+        return this.updateOutdatedInstancesOnly;
+    }
+
+    /**
+     * <p>
+     * Information about a deployment rollback.
+     * </p>
+     * 
+     * @param rollbackInfo
+     *        Information about a deployment rollback.
+     */
+
+    public void setRollbackInfo(RollbackInfo rollbackInfo) {
+        this.rollbackInfo = rollbackInfo;
+    }
+
+    /**
+     * <p>
+     * Information about a deployment rollback.
+     * </p>
+     * 
+     * @return Information about a deployment rollback.
+     */
+
+    public RollbackInfo getRollbackInfo() {
+        return this.rollbackInfo;
+    }
+
+    /**
+     * <p>
+     * Information about a deployment rollback.
+     * </p>
+     * 
+     * @param rollbackInfo
+     *        Information about a deployment rollback.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DeploymentInfo withRollbackInfo(RollbackInfo rollbackInfo) {
+        setRollbackInfo(rollbackInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -978,7 +1294,15 @@ public class DeploymentInfo implements Serializable, Cloneable {
             sb.append("Creator: " + getCreator() + ",");
         if (getIgnoreApplicationStopFailures() != null)
             sb.append("IgnoreApplicationStopFailures: "
-                    + getIgnoreApplicationStopFailures());
+                    + getIgnoreApplicationStopFailures() + ",");
+        if (getAutoRollbackConfiguration() != null)
+            sb.append("AutoRollbackConfiguration: "
+                    + getAutoRollbackConfiguration() + ",");
+        if (getUpdateOutdatedInstancesOnly() != null)
+            sb.append("UpdateOutdatedInstancesOnly: "
+                    + getUpdateOutdatedInstancesOnly() + ",");
+        if (getRollbackInfo() != null)
+            sb.append("RollbackInfo: " + getRollbackInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -1074,6 +1398,25 @@ public class DeploymentInfo implements Serializable, Cloneable {
                 && other.getIgnoreApplicationStopFailures().equals(
                         this.getIgnoreApplicationStopFailures()) == false)
             return false;
+        if (other.getAutoRollbackConfiguration() == null
+                ^ this.getAutoRollbackConfiguration() == null)
+            return false;
+        if (other.getAutoRollbackConfiguration() != null
+                && other.getAutoRollbackConfiguration().equals(
+                        this.getAutoRollbackConfiguration()) == false)
+            return false;
+        if (other.getUpdateOutdatedInstancesOnly() == null
+                ^ this.getUpdateOutdatedInstancesOnly() == null)
+            return false;
+        if (other.getUpdateOutdatedInstancesOnly() != null
+                && other.getUpdateOutdatedInstancesOnly().equals(
+                        this.getUpdateOutdatedInstancesOnly()) == false)
+            return false;
+        if (other.getRollbackInfo() == null ^ this.getRollbackInfo() == null)
+            return false;
+        if (other.getRollbackInfo() != null
+                && other.getRollbackInfo().equals(this.getRollbackInfo()) == false)
+            return false;
         return true;
     }
 
@@ -1127,6 +1470,18 @@ public class DeploymentInfo implements Serializable, Cloneable {
                 * hashCode
                 + ((getIgnoreApplicationStopFailures() == null) ? 0
                         : getIgnoreApplicationStopFailures().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAutoRollbackConfiguration() == null) ? 0
+                        : getAutoRollbackConfiguration().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getUpdateOutdatedInstancesOnly() == null) ? 0
+                        : getUpdateOutdatedInstancesOnly().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRollbackInfo() == null) ? 0 : getRollbackInfo()
+                        .hashCode());
         return hashCode;
     }
 

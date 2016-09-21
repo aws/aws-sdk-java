@@ -34,10 +34,33 @@ import java.util.Set;
  * @see JsonMarshaller
  *
  * @deprecated Replaced by {@link DynamoDBTypeConverted}
+ *
+ * <p>A {@link DynamoDBTypeConverted} with {@link String} as source would
+ * perform the same conversion. Please consider, if your marshaller is thread
+ * safe before replacing. In the new implementation, a single instance of
+ * {@link DynamoDBTypeConverted} is created per field/attribute. In the old,
+ * an new instance of the marshaller was created for each call to
+ * {@code marshall} and {@code unmarshall}. If your marshaller/converter is not
+ * thread safe, it is recomended to specify a converter which will instantiate
+ * a new marshaller per call.</p>
+ *
+ * <pre class="brush: java">
+ * public class CustomConverter&lt;T&gt; implements DynamoDBTypeConverter&lt;String,T&gt; {
+ *     &#064;Override
+ *     public final String convert(final T object) {
+ *         return ...
+ *     }
+ *     &#064;Override
+ *     public final T unconvert(final String object) {
+ *         return ...
+ *     }
+ * }
+ * </pre>
  */
 @Deprecated
 @DynamoDB
 @DynamoDBTypeConverted(converter=DynamoDBMarshalling.Converter.class)
+@DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.S)
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBMarshalling {

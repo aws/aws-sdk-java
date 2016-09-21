@@ -75,6 +75,23 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * </p>
      */
     private Boolean publiclyAccessible;
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     */
+    private Boolean enhancedVpcRouting;
 
     /**
      * <p>
@@ -447,6 +464,152 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @param enhancedVpcRouting
+     *        An option that specifies whether to create the cluster with
+     *        enhanced VPC routing enabled. To create a cluster that uses
+     *        enhanced VPC routing, the cluster must be in a VPC. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *        >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *        Management Guide.</p>
+     *        <p>
+     *        If this option is <code>true</code>, enhanced VPC routing is
+     *        enabled.
+     *        </p>
+     *        <p>
+     *        Default: false
+     */
+
+    public void setEnhancedVpcRouting(Boolean enhancedVpcRouting) {
+        this.enhancedVpcRouting = enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @return An option that specifies whether to create the cluster with
+     *         enhanced VPC routing enabled. To create a cluster that uses
+     *         enhanced VPC routing, the cluster must be in a VPC. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *         >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *         Management Guide.</p>
+     *         <p>
+     *         If this option is <code>true</code>, enhanced VPC routing is
+     *         enabled.
+     *         </p>
+     *         <p>
+     *         Default: false
+     */
+
+    public Boolean getEnhancedVpcRouting() {
+        return this.enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @param enhancedVpcRouting
+     *        An option that specifies whether to create the cluster with
+     *        enhanced VPC routing enabled. To create a cluster that uses
+     *        enhanced VPC routing, the cluster must be in a VPC. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *        >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *        Management Guide.</p>
+     *        <p>
+     *        If this option is <code>true</code>, enhanced VPC routing is
+     *        enabled.
+     *        </p>
+     *        <p>
+     *        Default: false
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public PendingModifiedValues withEnhancedVpcRouting(
+            Boolean enhancedVpcRouting) {
+        setEnhancedVpcRouting(enhancedVpcRouting);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @return An option that specifies whether to create the cluster with
+     *         enhanced VPC routing enabled. To create a cluster that uses
+     *         enhanced VPC routing, the cluster must be in a VPC. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *         >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *         Management Guide.</p>
+     *         <p>
+     *         If this option is <code>true</code>, enhanced VPC routing is
+     *         enabled.
+     *         </p>
+     *         <p>
+     *         Default: false
+     */
+
+    public Boolean isEnhancedVpcRouting() {
+        return this.enhancedVpcRouting;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -474,7 +637,9 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         if (getClusterIdentifier() != null)
             sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
         if (getPubliclyAccessible() != null)
-            sb.append("PubliclyAccessible: " + getPubliclyAccessible());
+            sb.append("PubliclyAccessible: " + getPubliclyAccessible() + ",");
+        if (getEnhancedVpcRouting() != null)
+            sb.append("EnhancedVpcRouting: " + getEnhancedVpcRouting());
         sb.append("}");
         return sb.toString();
     }
@@ -538,6 +703,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
                 && other.getPubliclyAccessible().equals(
                         this.getPubliclyAccessible()) == false)
             return false;
+        if (other.getEnhancedVpcRouting() == null
+                ^ this.getEnhancedVpcRouting() == null)
+            return false;
+        if (other.getEnhancedVpcRouting() != null
+                && other.getEnhancedVpcRouting().equals(
+                        this.getEnhancedVpcRouting()) == false)
+            return false;
         return true;
     }
 
@@ -575,6 +747,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
                 * hashCode
                 + ((getPubliclyAccessible() == null) ? 0
                         : getPubliclyAccessible().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEnhancedVpcRouting() == null) ? 0
+                        : getEnhancedVpcRouting().hashCode());
         return hashCode;
     }
 

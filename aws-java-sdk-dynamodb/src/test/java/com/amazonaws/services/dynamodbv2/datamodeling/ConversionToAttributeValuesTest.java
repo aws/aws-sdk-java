@@ -30,6 +30,7 @@ public class ConversionToAttributeValuesTest {
     @Before
     public void setUp() throws Exception {
         finalConfig = new DynamoDBMapperConfig.Builder()
+                .withTypeConverterFactory(DynamoDBMapperConfig.DEFAULT.getTypeConverterFactory())
                 .withConversionSchema(ConversionSchemas.V2)
                 .build();
         this.models = StandardModelFactories.of(S3Link.Factory.of(null));

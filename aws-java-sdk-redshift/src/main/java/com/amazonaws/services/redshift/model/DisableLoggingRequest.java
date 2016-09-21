@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DisableLoggingRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -44,8 +43,8 @@ public class DisableLoggingRequest extends
      * </p>
      * 
      * @param clusterIdentifier
-     *        The identifier of the cluster on which logging is to be stopped.
-     *        </p>
+     *        The identifier of the cluster on which logging is to be
+     *        stopped.</p>
      *        <p>
      *        Example: <code>examplecluster</code>
      */
@@ -62,8 +61,8 @@ public class DisableLoggingRequest extends
      * Example: <code>examplecluster</code>
      * </p>
      * 
-     * @return The identifier of the cluster on which logging is to be stopped.
-     *         </p>
+     * @return The identifier of the cluster on which logging is to be
+     *         stopped.</p>
      *         <p>
      *         Example: <code>examplecluster</code>
      */
@@ -81,8 +80,8 @@ public class DisableLoggingRequest extends
      * </p>
      * 
      * @param clusterIdentifier
-     *        The identifier of the cluster on which logging is to be stopped.
-     *        </p>
+     *        The identifier of the cluster on which logging is to be
+     *        stopped.</p>
      *        <p>
      *        Example: <code>examplecluster</code>
      * @return Returns a reference to this object so that method calls can be

@@ -40,12 +40,36 @@ public class InstanceSummary implements Serializable, Cloneable {
      * The deployment status for this instance:
      * </p>
      * <ul>
-     * <li>Pending: The deployment is pending for this instance.</li>
-     * <li>In Progress: The deployment is in progress for this instance.</li>
-     * <li>Succeeded: The deployment has succeeded for this instance.</li>
-     * <li>Failed: The deployment has failed for this instance.</li>
-     * <li>Skipped: The deployment has been skipped for this instance.</li>
-     * <li>Unknown: The deployment status is unknown for this instance.</li>
+     * <li>
+     * <p>
+     * Pending: The deployment is pending for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress: The deployment is in progress for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The deployment has succeeded for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: The deployment has failed for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Skipped: The deployment has been skipped for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unknown: The deployment status is unknown for this instance.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -149,23 +173,71 @@ public class InstanceSummary implements Serializable, Cloneable {
      * The deployment status for this instance:
      * </p>
      * <ul>
-     * <li>Pending: The deployment is pending for this instance.</li>
-     * <li>In Progress: The deployment is in progress for this instance.</li>
-     * <li>Succeeded: The deployment has succeeded for this instance.</li>
-     * <li>Failed: The deployment has failed for this instance.</li>
-     * <li>Skipped: The deployment has been skipped for this instance.</li>
-     * <li>Unknown: The deployment status is unknown for this instance.</li>
+     * <li>
+     * <p>
+     * Pending: The deployment is pending for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress: The deployment is in progress for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The deployment has succeeded for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: The deployment has failed for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Skipped: The deployment has been skipped for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unknown: The deployment status is unknown for this instance.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The deployment status for this instance:</p>
      *        <ul>
-     *        <li>Pending: The deployment is pending for this instance.</li>
-     *        <li>In Progress: The deployment is in progress for this instance.</li>
-     *        <li>Succeeded: The deployment has succeeded for this instance.</li>
-     *        <li>Failed: The deployment has failed for this instance.</li>
-     *        <li>Skipped: The deployment has been skipped for this instance.</li>
-     *        <li>Unknown: The deployment status is unknown for this instance.</li>
+     *        <li>
+     *        <p>
+     *        Pending: The deployment is pending for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In Progress: The deployment is in progress for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: The deployment has succeeded for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed: The deployment has failed for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Skipped: The deployment has been skipped for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unknown: The deployment status is unknown for this instance.
+     *        </p>
+     *        </li>
      * @see InstanceStatus
      */
 
@@ -178,23 +250,70 @@ public class InstanceSummary implements Serializable, Cloneable {
      * The deployment status for this instance:
      * </p>
      * <ul>
-     * <li>Pending: The deployment is pending for this instance.</li>
-     * <li>In Progress: The deployment is in progress for this instance.</li>
-     * <li>Succeeded: The deployment has succeeded for this instance.</li>
-     * <li>Failed: The deployment has failed for this instance.</li>
-     * <li>Skipped: The deployment has been skipped for this instance.</li>
-     * <li>Unknown: The deployment status is unknown for this instance.</li>
+     * <li>
+     * <p>
+     * Pending: The deployment is pending for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress: The deployment is in progress for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The deployment has succeeded for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: The deployment has failed for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Skipped: The deployment has been skipped for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unknown: The deployment status is unknown for this instance.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The deployment status for this instance:</p>
      *         <ul>
-     *         <li>Pending: The deployment is pending for this instance.</li>
-     *         <li>In Progress: The deployment is in progress for this instance.
+     *         <li>
+     *         <p>
+     *         Pending: The deployment is pending for this instance.
+     *         </p>
      *         </li>
-     *         <li>Succeeded: The deployment has succeeded for this instance.</li>
-     *         <li>Failed: The deployment has failed for this instance.</li>
-     *         <li>Skipped: The deployment has been skipped for this instance.</li>
-     *         <li>Unknown: The deployment status is unknown for this instance.</li>
+     *         <li>
+     *         <p>
+     *         In Progress: The deployment is in progress for this instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Succeeded: The deployment has succeeded for this instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Failed: The deployment has failed for this instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Skipped: The deployment has been skipped for this instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Unknown: The deployment status is unknown for this instance.
+     *         </p>
+     *         </li>
      * @see InstanceStatus
      */
 
@@ -207,23 +326,71 @@ public class InstanceSummary implements Serializable, Cloneable {
      * The deployment status for this instance:
      * </p>
      * <ul>
-     * <li>Pending: The deployment is pending for this instance.</li>
-     * <li>In Progress: The deployment is in progress for this instance.</li>
-     * <li>Succeeded: The deployment has succeeded for this instance.</li>
-     * <li>Failed: The deployment has failed for this instance.</li>
-     * <li>Skipped: The deployment has been skipped for this instance.</li>
-     * <li>Unknown: The deployment status is unknown for this instance.</li>
+     * <li>
+     * <p>
+     * Pending: The deployment is pending for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress: The deployment is in progress for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The deployment has succeeded for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: The deployment has failed for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Skipped: The deployment has been skipped for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unknown: The deployment status is unknown for this instance.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The deployment status for this instance:</p>
      *        <ul>
-     *        <li>Pending: The deployment is pending for this instance.</li>
-     *        <li>In Progress: The deployment is in progress for this instance.</li>
-     *        <li>Succeeded: The deployment has succeeded for this instance.</li>
-     *        <li>Failed: The deployment has failed for this instance.</li>
-     *        <li>Skipped: The deployment has been skipped for this instance.</li>
-     *        <li>Unknown: The deployment status is unknown for this instance.</li>
+     *        <li>
+     *        <p>
+     *        Pending: The deployment is pending for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In Progress: The deployment is in progress for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: The deployment has succeeded for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed: The deployment has failed for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Skipped: The deployment has been skipped for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unknown: The deployment status is unknown for this instance.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstanceStatus
@@ -239,23 +406,71 @@ public class InstanceSummary implements Serializable, Cloneable {
      * The deployment status for this instance:
      * </p>
      * <ul>
-     * <li>Pending: The deployment is pending for this instance.</li>
-     * <li>In Progress: The deployment is in progress for this instance.</li>
-     * <li>Succeeded: The deployment has succeeded for this instance.</li>
-     * <li>Failed: The deployment has failed for this instance.</li>
-     * <li>Skipped: The deployment has been skipped for this instance.</li>
-     * <li>Unknown: The deployment status is unknown for this instance.</li>
+     * <li>
+     * <p>
+     * Pending: The deployment is pending for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress: The deployment is in progress for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The deployment has succeeded for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: The deployment has failed for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Skipped: The deployment has been skipped for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unknown: The deployment status is unknown for this instance.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The deployment status for this instance:</p>
      *        <ul>
-     *        <li>Pending: The deployment is pending for this instance.</li>
-     *        <li>In Progress: The deployment is in progress for this instance.</li>
-     *        <li>Succeeded: The deployment has succeeded for this instance.</li>
-     *        <li>Failed: The deployment has failed for this instance.</li>
-     *        <li>Skipped: The deployment has been skipped for this instance.</li>
-     *        <li>Unknown: The deployment status is unknown for this instance.</li>
+     *        <li>
+     *        <p>
+     *        Pending: The deployment is pending for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In Progress: The deployment is in progress for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: The deployment has succeeded for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed: The deployment has failed for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Skipped: The deployment has been skipped for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unknown: The deployment status is unknown for this instance.
+     *        </p>
+     *        </li>
      * @see InstanceStatus
      */
 
@@ -268,23 +483,71 @@ public class InstanceSummary implements Serializable, Cloneable {
      * The deployment status for this instance:
      * </p>
      * <ul>
-     * <li>Pending: The deployment is pending for this instance.</li>
-     * <li>In Progress: The deployment is in progress for this instance.</li>
-     * <li>Succeeded: The deployment has succeeded for this instance.</li>
-     * <li>Failed: The deployment has failed for this instance.</li>
-     * <li>Skipped: The deployment has been skipped for this instance.</li>
-     * <li>Unknown: The deployment status is unknown for this instance.</li>
+     * <li>
+     * <p>
+     * Pending: The deployment is pending for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress: The deployment is in progress for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The deployment has succeeded for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: The deployment has failed for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Skipped: The deployment has been skipped for this instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unknown: The deployment status is unknown for this instance.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The deployment status for this instance:</p>
      *        <ul>
-     *        <li>Pending: The deployment is pending for this instance.</li>
-     *        <li>In Progress: The deployment is in progress for this instance.</li>
-     *        <li>Succeeded: The deployment has succeeded for this instance.</li>
-     *        <li>Failed: The deployment has failed for this instance.</li>
-     *        <li>Skipped: The deployment has been skipped for this instance.</li>
-     *        <li>Unknown: The deployment status is unknown for this instance.</li>
+     *        <li>
+     *        <p>
+     *        Pending: The deployment is pending for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In Progress: The deployment is in progress for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: The deployment has succeeded for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed: The deployment has failed for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Skipped: The deployment has been skipped for this instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unknown: The deployment status is unknown for this instance.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstanceStatus

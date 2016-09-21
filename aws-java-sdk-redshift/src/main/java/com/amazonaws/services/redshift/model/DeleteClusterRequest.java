@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -32,10 +31,26 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain lowercase characters.</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain lowercase characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      */
     private String clusterIdentifier;
@@ -46,9 +61,12 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * cluster snapshot is not created. If <code>false</code>, a final cluster
      * snapshot is created before the cluster is deleted.
      * </p>
-     * <note>The <i>FinalClusterSnapshotIdentifier</i> parameter must be
-     * specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>
-     * .</note>
+     * <note>
+     * <p>
+     * The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if
+     * <i>SkipFinalClusterSnapshot</i> is <code>false</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>false</code>
      * </p>
@@ -64,9 +82,21 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      */
     private String finalClusterSnapshotIdentifier;
@@ -79,22 +109,54 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain lowercase characters.</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain lowercase characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param clusterIdentifier
-     *        The identifier of the cluster to be deleted. </p>
+     *        The identifier of the cluster to be deleted.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain lowercase characters.</li>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain lowercase characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      */
 
     public void setClusterIdentifier(String clusterIdentifier) {
@@ -109,22 +171,53 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain lowercase characters.</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain lowercase characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The identifier of the cluster to be deleted. </p>
+     * @return The identifier of the cluster to be deleted.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain lowercase characters.</li>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         <li>
+     *         <p>
+     *         Must contain lowercase characters.
+     *         </p>
      *         </li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
      */
 
     public String getClusterIdentifier() {
@@ -139,22 +232,54 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain lowercase characters.</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain lowercase characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param clusterIdentifier
-     *        The identifier of the cluster to be deleted. </p>
+     *        The identifier of the cluster to be deleted.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain lowercase characters.</li>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain lowercase characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -171,9 +296,12 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * cluster snapshot is not created. If <code>false</code>, a final cluster
      * snapshot is created before the cluster is deleted.
      * </p>
-     * <note>The <i>FinalClusterSnapshotIdentifier</i> parameter must be
-     * specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>
-     * .</note>
+     * <note>
+     * <p>
+     * The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if
+     * <i>SkipFinalClusterSnapshot</i> is <code>false</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>false</code>
      * </p>
@@ -183,9 +311,13 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        before Amazon Redshift deletes the cluster. If <code>true</code>,
      *        a final cluster snapshot is not created. If <code>false</code>, a
      *        final cluster snapshot is created before the cluster is deleted.
-     *        </p> <note>The <i>FinalClusterSnapshotIdentifier</i> parameter
-     *        must be specified if <i>SkipFinalClusterSnapshot</i> is
-     *        <code>false</code>.</note>
+     *        </p> <note>
+     *        <p>
+     *        The <i>FinalClusterSnapshotIdentifier</i> parameter must be
+     *        specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>
+     *        .
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -201,9 +333,12 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * cluster snapshot is not created. If <code>false</code>, a final cluster
      * snapshot is created before the cluster is deleted.
      * </p>
-     * <note>The <i>FinalClusterSnapshotIdentifier</i> parameter must be
-     * specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>
-     * .</note>
+     * <note>
+     * <p>
+     * The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if
+     * <i>SkipFinalClusterSnapshot</i> is <code>false</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>false</code>
      * </p>
@@ -212,9 +347,13 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *         before Amazon Redshift deletes the cluster. If <code>true</code>,
      *         a final cluster snapshot is not created. If <code>false</code>, a
      *         final cluster snapshot is created before the cluster is deleted.
-     *         </p> <note>The <i>FinalClusterSnapshotIdentifier</i> parameter
-     *         must be specified if <i>SkipFinalClusterSnapshot</i> is
-     *         <code>false</code>.</note>
+     *         </p> <note>
+     *         <p>
+     *         The <i>FinalClusterSnapshotIdentifier</i> parameter must be
+     *         specified if <i>SkipFinalClusterSnapshot</i> is
+     *         <code>false</code>.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -230,9 +369,12 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * cluster snapshot is not created. If <code>false</code>, a final cluster
      * snapshot is created before the cluster is deleted.
      * </p>
-     * <note>The <i>FinalClusterSnapshotIdentifier</i> parameter must be
-     * specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>
-     * .</note>
+     * <note>
+     * <p>
+     * The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if
+     * <i>SkipFinalClusterSnapshot</i> is <code>false</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>false</code>
      * </p>
@@ -242,9 +384,13 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        before Amazon Redshift deletes the cluster. If <code>true</code>,
      *        a final cluster snapshot is not created. If <code>false</code>, a
      *        final cluster snapshot is created before the cluster is deleted.
-     *        </p> <note>The <i>FinalClusterSnapshotIdentifier</i> parameter
-     *        must be specified if <i>SkipFinalClusterSnapshot</i> is
-     *        <code>false</code>.</note>
+     *        </p> <note>
+     *        <p>
+     *        The <i>FinalClusterSnapshotIdentifier</i> parameter must be
+     *        specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>
+     *        .
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be
@@ -264,9 +410,12 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * cluster snapshot is not created. If <code>false</code>, a final cluster
      * snapshot is created before the cluster is deleted.
      * </p>
-     * <note>The <i>FinalClusterSnapshotIdentifier</i> parameter must be
-     * specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>
-     * .</note>
+     * <note>
+     * <p>
+     * The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if
+     * <i>SkipFinalClusterSnapshot</i> is <code>false</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>false</code>
      * </p>
@@ -275,9 +424,13 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *         before Amazon Redshift deletes the cluster. If <code>true</code>,
      *         a final cluster snapshot is not created. If <code>false</code>, a
      *         final cluster snapshot is created before the cluster is deleted.
-     *         </p> <note>The <i>FinalClusterSnapshotIdentifier</i> parameter
-     *         must be specified if <i>SkipFinalClusterSnapshot</i> is
-     *         <code>false</code>.</note>
+     *         </p> <note>
+     *         <p>
+     *         The <i>FinalClusterSnapshotIdentifier</i> parameter must be
+     *         specified if <i>SkipFinalClusterSnapshot</i> is
+     *         <code>false</code>.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -296,9 +449,21 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param finalClusterSnapshotIdentifier
@@ -310,9 +475,21 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      */
 
     public void setFinalClusterSnapshotIdentifier(
@@ -330,9 +507,21 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the final snapshot that is to be created
@@ -343,9 +532,21 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 255 alphanumeric characters.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
      */
 
     public String getFinalClusterSnapshotIdentifier() {
@@ -362,9 +563,21 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param finalClusterSnapshotIdentifier
@@ -376,9 +589,21 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

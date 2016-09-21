@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DescribeClustersRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -102,7 +101,7 @@ public class DescribeClustersRequest extends
      * 
      * @param clusterIdentifier
      *        The unique identifier of a cluster whose properties you are
-     *        requesting. This parameter is case sensitive. </p>
+     *        requesting. This parameter is case sensitive.</p>
      *        <p>
      *        The default is that all clusters defined for an account are
      *        returned.
@@ -122,7 +121,7 @@ public class DescribeClustersRequest extends
      * </p>
      * 
      * @return The unique identifier of a cluster whose properties you are
-     *         requesting. This parameter is case sensitive. </p>
+     *         requesting. This parameter is case sensitive.</p>
      *         <p>
      *         The default is that all clusters defined for an account are
      *         returned.
@@ -143,7 +142,7 @@ public class DescribeClustersRequest extends
      * 
      * @param clusterIdentifier
      *        The unique identifier of a cluster whose properties you are
-     *        requesting. This parameter is case sensitive. </p>
+     *        requesting. This parameter is case sensitive.</p>
      *        <p>
      *        The default is that all clusters defined for an account are
      *        returned.

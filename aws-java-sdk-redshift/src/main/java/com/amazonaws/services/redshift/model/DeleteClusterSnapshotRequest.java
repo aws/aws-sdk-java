@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DeleteClusterSnapshotRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -58,7 +57,7 @@ public class DeleteClusterSnapshotRequest extends
      * </p>
      * 
      * @param snapshotIdentifier
-     *        The unique identifier of the manual snapshot to be deleted. </p>
+     *        The unique identifier of the manual snapshot to be deleted.</p>
      *        <p>
      *        Constraints: Must be the name of an existing snapshot that is in
      *        the <code>available</code> state.
@@ -77,7 +76,7 @@ public class DeleteClusterSnapshotRequest extends
      * <code>available</code> state.
      * </p>
      * 
-     * @return The unique identifier of the manual snapshot to be deleted. </p>
+     * @return The unique identifier of the manual snapshot to be deleted.</p>
      *         <p>
      *         Constraints: Must be the name of an existing snapshot that is in
      *         the <code>available</code> state.
@@ -97,7 +96,7 @@ public class DeleteClusterSnapshotRequest extends
      * </p>
      * 
      * @param snapshotIdentifier
-     *        The unique identifier of the manual snapshot to be deleted. </p>
+     *        The unique identifier of the manual snapshot to be deleted.</p>
      *        <p>
      *        Constraints: Must be the name of an existing snapshot that is in
      *        the <code>available</code> state.
@@ -126,7 +125,7 @@ public class DeleteClusterSnapshotRequest extends
      *        The unique identifier of the cluster the snapshot was created
      *        from. This parameter is required if your IAM user has a policy
      *        containing a snapshot resource element that specifies anything
-     *        other than * for the cluster name. </p>
+     *        other than * for the cluster name.</p>
      *        <p>
      *        Constraints: Must be the name of valid cluster.
      */
@@ -149,7 +148,7 @@ public class DeleteClusterSnapshotRequest extends
      * @return The unique identifier of the cluster the snapshot was created
      *         from. This parameter is required if your IAM user has a policy
      *         containing a snapshot resource element that specifies anything
-     *         other than * for the cluster name. </p>
+     *         other than * for the cluster name.</p>
      *         <p>
      *         Constraints: Must be the name of valid cluster.
      */
@@ -173,7 +172,7 @@ public class DeleteClusterSnapshotRequest extends
      *        The unique identifier of the cluster the snapshot was created
      *        from. This parameter is required if your IAM user has a policy
      *        containing a snapshot resource element that specifies anything
-     *        other than * for the cluster name. </p>
+     *        other than * for the cluster name.</p>
      *        <p>
      *        Constraints: Must be the name of valid cluster.
      * @return Returns a reference to this object so that method calls can be

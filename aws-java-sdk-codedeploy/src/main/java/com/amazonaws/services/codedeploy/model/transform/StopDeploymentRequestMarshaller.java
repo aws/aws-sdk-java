@@ -71,6 +71,10 @@ public class StopDeploymentRequestMarshaller implements
                 jsonGenerator.writeFieldName("deploymentId").writeValue(
                         stopDeploymentRequest.getDeploymentId());
             }
+            if (stopDeploymentRequest.getAutoRollbackEnabled() != null) {
+                jsonGenerator.writeFieldName("autoRollbackEnabled").writeValue(
+                        stopDeploymentRequest.getAutoRollbackEnabled());
+            }
 
             jsonGenerator.writeEndObject();
 

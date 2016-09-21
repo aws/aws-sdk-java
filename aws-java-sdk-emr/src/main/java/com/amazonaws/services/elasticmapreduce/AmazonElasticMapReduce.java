@@ -186,6 +186,47 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Creates a security configuration using EMR Security Configurations, which
+     * are stored in the service. Security Configurations enable you to more
+     * easily create a configuration, reuse it, and apply it whenever a cluster
+     * is created.
+     * </p>
+     * 
+     * @param createSecurityConfigurationRequest
+     * @return Result of the CreateSecurityConfiguration operation returned by
+     *         the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the
+     *         EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user
+     *         input.
+     * @sample AmazonElasticMapReduce.CreateSecurityConfiguration
+     */
+    CreateSecurityConfigurationResult createSecurityConfiguration(
+            CreateSecurityConfigurationRequest createSecurityConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes a security configuration.
+     * </p>
+     * 
+     * @param deleteSecurityConfigurationRequest
+     * @return Result of the DeleteSecurityConfiguration operation returned by
+     *         the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the
+     *         EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user
+     *         input.
+     * @sample AmazonElasticMapReduce.DeleteSecurityConfiguration
+     */
+    DeleteSecurityConfigurationResult deleteSecurityConfiguration(
+            DeleteSecurityConfigurationRequest deleteSecurityConfigurationRequest);
+
+    /**
+     * <p>
      * Provides cluster-level details including status, hardware and software
      * configuration, VPC settings, and so on. For information about the cluster
      * steps, see <a>ListSteps</a>.
@@ -262,6 +303,26 @@ public interface AmazonElasticMapReduce {
      */
     @Deprecated
     DescribeJobFlowsResult describeJobFlows();
+
+    /**
+     * <p>
+     * Provides the details of a security configuration by returning the
+     * configuration JSON.
+     * </p>
+     * 
+     * @param describeSecurityConfigurationRequest
+     * @return Result of the DescribeSecurityConfiguration operation returned by
+     *         the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the
+     *         EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user
+     *         input.
+     * @sample AmazonElasticMapReduce.DescribeSecurityConfiguration
+     */
+    DescribeSecurityConfigurationResult describeSecurityConfiguration(
+            DescribeSecurityConfigurationRequest describeSecurityConfigurationRequest);
 
     /**
      * <p>
@@ -373,6 +434,28 @@ public interface AmazonElasticMapReduce {
      * @sample AmazonElasticMapReduce.ListInstances
      */
     ListInstancesResult listInstances(ListInstancesRequest listInstancesRequest);
+
+    /**
+     * <p>
+     * Lists all the security configurations visible to this account, providing
+     * their creation dates and times, and their names. This call returns a
+     * maximum of 50 clusters per call, but returns a marker to track the paging
+     * of the cluster list across multiple ListSecurityConfigurations calls.
+     * </p>
+     * 
+     * @param listSecurityConfigurationsRequest
+     * @return Result of the ListSecurityConfigurations operation returned by
+     *         the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the
+     *         EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user
+     *         input.
+     * @sample AmazonElasticMapReduce.ListSecurityConfigurations
+     */
+    ListSecurityConfigurationsResult listSecurityConfigurations(
+            ListSecurityConfigurationsRequest listSecurityConfigurationsRequest);
 
     /**
      * <p>

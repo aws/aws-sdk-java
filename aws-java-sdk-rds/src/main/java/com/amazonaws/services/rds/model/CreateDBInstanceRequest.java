@@ -1244,6 +1244,15 @@ public class CreateDBInstanceRequest extends
      * </p>
      */
     private Integer promotionTier;
+    /**
+     * <p>
+     * The time zone of the DB instance. The time zone parameter is currently
+     * supported only by <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone"
+     * >Microsoft SQL Server</a>.
+     * </p>
+     */
+    private String timezone;
 
     /**
      * Default constructor for CreateDBInstanceRequest object. Callers should
@@ -9289,6 +9298,65 @@ public class CreateDBInstanceRequest extends
     }
 
     /**
+     * <p>
+     * The time zone of the DB instance. The time zone parameter is currently
+     * supported only by <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone"
+     * >Microsoft SQL Server</a>.
+     * </p>
+     * 
+     * @param timezone
+     *        The time zone of the DB instance. The time zone parameter is
+     *        currently supported only by <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone"
+     *        >Microsoft SQL Server</a>.
+     */
+
+    public void setTimezone(String timezone) {
+        this.timezone = timezone;
+    }
+
+    /**
+     * <p>
+     * The time zone of the DB instance. The time zone parameter is currently
+     * supported only by <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone"
+     * >Microsoft SQL Server</a>.
+     * </p>
+     * 
+     * @return The time zone of the DB instance. The time zone parameter is
+     *         currently supported only by <a href=
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone"
+     *         >Microsoft SQL Server</a>.
+     */
+
+    public String getTimezone() {
+        return this.timezone;
+    }
+
+    /**
+     * <p>
+     * The time zone of the DB instance. The time zone parameter is currently
+     * supported only by <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone"
+     * >Microsoft SQL Server</a>.
+     * </p>
+     * 
+     * @param timezone
+     *        The time zone of the DB instance. The time zone parameter is
+     *        currently supported only by <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone"
+     *        >Microsoft SQL Server</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateDBInstanceRequest withTimezone(String timezone) {
+        setTimezone(timezone);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -9380,7 +9448,9 @@ public class CreateDBInstanceRequest extends
         if (getDomainIAMRoleName() != null)
             sb.append("DomainIAMRoleName: " + getDomainIAMRoleName() + ",");
         if (getPromotionTier() != null)
-            sb.append("PromotionTier: " + getPromotionTier());
+            sb.append("PromotionTier: " + getPromotionTier() + ",");
+        if (getTimezone() != null)
+            sb.append("Timezone: " + getTimezone());
         sb.append("}");
         return sb.toString();
     }
@@ -9627,6 +9697,11 @@ public class CreateDBInstanceRequest extends
         if (other.getPromotionTier() != null
                 && other.getPromotionTier().equals(this.getPromotionTier()) == false)
             return false;
+        if (other.getTimezone() == null ^ this.getTimezone() == null)
+            return false;
+        if (other.getTimezone() != null
+                && other.getTimezone().equals(this.getTimezone()) == false)
+            return false;
         return true;
     }
 
@@ -9766,6 +9841,8 @@ public class CreateDBInstanceRequest extends
                 * hashCode
                 + ((getPromotionTier() == null) ? 0 : getPromotionTier()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         return hashCode;
     }
 

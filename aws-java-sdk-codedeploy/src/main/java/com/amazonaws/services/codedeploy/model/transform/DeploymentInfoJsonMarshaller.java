@@ -106,6 +106,23 @@ public class DeploymentInfoJsonMarshaller {
                                 deploymentInfo
                                         .getIgnoreApplicationStopFailures());
             }
+            if (deploymentInfo.getAutoRollbackConfiguration() != null) {
+                jsonGenerator.writeFieldName("autoRollbackConfiguration");
+                AutoRollbackConfigurationJsonMarshaller.getInstance().marshall(
+                        deploymentInfo.getAutoRollbackConfiguration(),
+                        jsonGenerator);
+            }
+            if (deploymentInfo.getUpdateOutdatedInstancesOnly() != null) {
+                jsonGenerator
+                        .writeFieldName("updateOutdatedInstancesOnly")
+                        .writeValue(
+                                deploymentInfo.getUpdateOutdatedInstancesOnly());
+            }
+            if (deploymentInfo.getRollbackInfo() != null) {
+                jsonGenerator.writeFieldName("rollbackInfo");
+                RollbackInfoJsonMarshaller.getInstance().marshall(
+                        deploymentInfo.getRollbackInfo(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

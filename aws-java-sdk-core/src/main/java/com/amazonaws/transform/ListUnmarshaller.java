@@ -14,14 +14,17 @@
  */
 package com.amazonaws.transform;
 
-import static com.fasterxml.jackson.core.JsonToken.END_ARRAY;
-import static com.fasterxml.jackson.core.JsonToken.END_OBJECT;
+import com.fasterxml.jackson.core.JsonToken;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.core.JsonToken;
+import static com.fasterxml.jackson.core.JsonToken.END_ARRAY;
 
+/**
+ * This unmarshaller assumes that the start array token as already been consumed before getting
+ * control of the context.
+ */
 public class ListUnmarshaller<T> implements
         Unmarshaller<List<T>, JsonUnmarshallerContext> {
 
@@ -73,22 +76,18 @@ public class ListUnmarshaller<T> implements
             throws Exception {
         List<T> list = new ArrayList<T>();
 
-        int originalDepth = context.getCurrentDepth();
-
         if (context.getCurrentToken() == JsonToken.VALUE_NULL) {
             return null;
         }
 
         while (true) {
             JsonToken token = context.nextToken();
-            if (token == null)
+            if (token == null) {
                 return list;
+            }
 
-            if (token == JsonToken.START_ARRAY) {
-                continue;
-            } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() < originalDepth)
-                    return list;
+            if (token == END_ARRAY) {
+                return list;
             } else {
                 list.add(itemUnmarshaller.unmarshall(context));
             }

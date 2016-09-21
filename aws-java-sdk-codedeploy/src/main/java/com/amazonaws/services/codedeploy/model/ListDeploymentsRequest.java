@@ -44,12 +44,36 @@ public class ListDeploymentsRequest extends
      * A subset of deployments to list by status:
      * </p>
      * <ul>
-     * <li>Created: Include created deployments in the resulting list.</li>
-     * <li>Queued: Include queued deployments in the resulting list.</li>
-     * <li>In Progress: Include in-progress deployments in the resulting list.</li>
-     * <li>Succeeded: Include successful deployments in the resulting list.</li>
-     * <li>Failed: Include failed deployments in the resulting list.</li>
-     * <li>Stopped: Include stopped deployments in the resulting list.</li>
+     * <li>
+     * <p>
+     * Created: Include created deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Queued: Include queued deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress: Include in-progress deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: Include successful deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: Include failed deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Stopped: Include stopped deployments in the resulting list.
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> includeOnlyStatuses;
@@ -165,24 +189,71 @@ public class ListDeploymentsRequest extends
      * A subset of deployments to list by status:
      * </p>
      * <ul>
-     * <li>Created: Include created deployments in the resulting list.</li>
-     * <li>Queued: Include queued deployments in the resulting list.</li>
-     * <li>In Progress: Include in-progress deployments in the resulting list.</li>
-     * <li>Succeeded: Include successful deployments in the resulting list.</li>
-     * <li>Failed: Include failed deployments in the resulting list.</li>
-     * <li>Stopped: Include stopped deployments in the resulting list.</li>
+     * <li>
+     * <p>
+     * Created: Include created deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Queued: Include queued deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress: Include in-progress deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: Include successful deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: Include failed deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Stopped: Include stopped deployments in the resulting list.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return A subset of deployments to list by status:</p>
      *         <ul>
-     *         <li>Created: Include created deployments in the resulting list.</li>
-     *         <li>Queued: Include queued deployments in the resulting list.</li>
-     *         <li>In Progress: Include in-progress deployments in the resulting
-     *         list.</li>
-     *         <li>Succeeded: Include successful deployments in the resulting
-     *         list.</li>
-     *         <li>Failed: Include failed deployments in the resulting list.</li>
-     *         <li>Stopped: Include stopped deployments in the resulting list.</li>
+     *         <li>
+     *         <p>
+     *         Created: Include created deployments in the resulting list.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Queued: Include queued deployments in the resulting list.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         In Progress: Include in-progress deployments in the resulting
+     *         list.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Succeeded: Include successful deployments in the resulting list.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Failed: Include failed deployments in the resulting list.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Stopped: Include stopped deployments in the resulting list.
+     *         </p>
+     *         </li>
      * @see DeploymentStatus
      */
 
@@ -198,25 +269,72 @@ public class ListDeploymentsRequest extends
      * A subset of deployments to list by status:
      * </p>
      * <ul>
-     * <li>Created: Include created deployments in the resulting list.</li>
-     * <li>Queued: Include queued deployments in the resulting list.</li>
-     * <li>In Progress: Include in-progress deployments in the resulting list.</li>
-     * <li>Succeeded: Include successful deployments in the resulting list.</li>
-     * <li>Failed: Include failed deployments in the resulting list.</li>
-     * <li>Stopped: Include stopped deployments in the resulting list.</li>
+     * <li>
+     * <p>
+     * Created: Include created deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Queued: Include queued deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress: Include in-progress deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: Include successful deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: Include failed deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Stopped: Include stopped deployments in the resulting list.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param includeOnlyStatuses
      *        A subset of deployments to list by status:</p>
      *        <ul>
-     *        <li>Created: Include created deployments in the resulting list.</li>
-     *        <li>Queued: Include queued deployments in the resulting list.</li>
-     *        <li>In Progress: Include in-progress deployments in the resulting
-     *        list.</li>
-     *        <li>Succeeded: Include successful deployments in the resulting
-     *        list.</li>
-     *        <li>Failed: Include failed deployments in the resulting list.</li>
-     *        <li>Stopped: Include stopped deployments in the resulting list.</li>
+     *        <li>
+     *        <p>
+     *        Created: Include created deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Queued: Include queued deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In Progress: Include in-progress deployments in the resulting
+     *        list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: Include successful deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed: Include failed deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Stopped: Include stopped deployments in the resulting list.
+     *        </p>
+     *        </li>
      * @see DeploymentStatus
      */
 
@@ -236,12 +354,36 @@ public class ListDeploymentsRequest extends
      * A subset of deployments to list by status:
      * </p>
      * <ul>
-     * <li>Created: Include created deployments in the resulting list.</li>
-     * <li>Queued: Include queued deployments in the resulting list.</li>
-     * <li>In Progress: Include in-progress deployments in the resulting list.</li>
-     * <li>Succeeded: Include successful deployments in the resulting list.</li>
-     * <li>Failed: Include failed deployments in the resulting list.</li>
-     * <li>Stopped: Include stopped deployments in the resulting list.</li>
+     * <li>
+     * <p>
+     * Created: Include created deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Queued: Include queued deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress: Include in-progress deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: Include successful deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: Include failed deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Stopped: Include stopped deployments in the resulting list.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -253,14 +395,37 @@ public class ListDeploymentsRequest extends
      * @param includeOnlyStatuses
      *        A subset of deployments to list by status:</p>
      *        <ul>
-     *        <li>Created: Include created deployments in the resulting list.</li>
-     *        <li>Queued: Include queued deployments in the resulting list.</li>
-     *        <li>In Progress: Include in-progress deployments in the resulting
-     *        list.</li>
-     *        <li>Succeeded: Include successful deployments in the resulting
-     *        list.</li>
-     *        <li>Failed: Include failed deployments in the resulting list.</li>
-     *        <li>Stopped: Include stopped deployments in the resulting list.</li>
+     *        <li>
+     *        <p>
+     *        Created: Include created deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Queued: Include queued deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In Progress: Include in-progress deployments in the resulting
+     *        list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: Include successful deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed: Include failed deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Stopped: Include stopped deployments in the resulting list.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DeploymentStatus
@@ -283,25 +448,72 @@ public class ListDeploymentsRequest extends
      * A subset of deployments to list by status:
      * </p>
      * <ul>
-     * <li>Created: Include created deployments in the resulting list.</li>
-     * <li>Queued: Include queued deployments in the resulting list.</li>
-     * <li>In Progress: Include in-progress deployments in the resulting list.</li>
-     * <li>Succeeded: Include successful deployments in the resulting list.</li>
-     * <li>Failed: Include failed deployments in the resulting list.</li>
-     * <li>Stopped: Include stopped deployments in the resulting list.</li>
+     * <li>
+     * <p>
+     * Created: Include created deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Queued: Include queued deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress: Include in-progress deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: Include successful deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: Include failed deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Stopped: Include stopped deployments in the resulting list.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param includeOnlyStatuses
      *        A subset of deployments to list by status:</p>
      *        <ul>
-     *        <li>Created: Include created deployments in the resulting list.</li>
-     *        <li>Queued: Include queued deployments in the resulting list.</li>
-     *        <li>In Progress: Include in-progress deployments in the resulting
-     *        list.</li>
-     *        <li>Succeeded: Include successful deployments in the resulting
-     *        list.</li>
-     *        <li>Failed: Include failed deployments in the resulting list.</li>
-     *        <li>Stopped: Include stopped deployments in the resulting list.</li>
+     *        <li>
+     *        <p>
+     *        Created: Include created deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Queued: Include queued deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In Progress: Include in-progress deployments in the resulting
+     *        list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: Include successful deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed: Include failed deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Stopped: Include stopped deployments in the resulting list.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DeploymentStatus
@@ -318,25 +530,72 @@ public class ListDeploymentsRequest extends
      * A subset of deployments to list by status:
      * </p>
      * <ul>
-     * <li>Created: Include created deployments in the resulting list.</li>
-     * <li>Queued: Include queued deployments in the resulting list.</li>
-     * <li>In Progress: Include in-progress deployments in the resulting list.</li>
-     * <li>Succeeded: Include successful deployments in the resulting list.</li>
-     * <li>Failed: Include failed deployments in the resulting list.</li>
-     * <li>Stopped: Include stopped deployments in the resulting list.</li>
+     * <li>
+     * <p>
+     * Created: Include created deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Queued: Include queued deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress: Include in-progress deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: Include successful deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: Include failed deployments in the resulting list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Stopped: Include stopped deployments in the resulting list.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param includeOnlyStatuses
      *        A subset of deployments to list by status:</p>
      *        <ul>
-     *        <li>Created: Include created deployments in the resulting list.</li>
-     *        <li>Queued: Include queued deployments in the resulting list.</li>
-     *        <li>In Progress: Include in-progress deployments in the resulting
-     *        list.</li>
-     *        <li>Succeeded: Include successful deployments in the resulting
-     *        list.</li>
-     *        <li>Failed: Include failed deployments in the resulting list.</li>
-     *        <li>Stopped: Include stopped deployments in the resulting list.</li>
+     *        <li>
+     *        <p>
+     *        Created: Include created deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Queued: Include queued deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In Progress: Include in-progress deployments in the resulting
+     *        list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: Include successful deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed: Include failed deployments in the resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Stopped: Include stopped deployments in the resulting list.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DeploymentStatus

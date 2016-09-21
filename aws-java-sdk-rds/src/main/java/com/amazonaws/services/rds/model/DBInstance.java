@@ -146,8 +146,8 @@ public class DBInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<DBSecurityGroupMembership> dBSecurityGroups;
     /**
      * <p>
-     * Provides List of VPC security group elements that the DB instance belongs
-     * to.
+     * Provides a list of VPC security group elements that the DB instance
+     * belongs to.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VpcSecurityGroupMembership> vpcSecurityGroups;
@@ -307,7 +307,7 @@ public class DBInstance implements Serializable, Cloneable {
     private String storageType;
     /**
      * <p>
-     * The ARN from the Key Store with which the instance is associated for TDE
+     * The ARN from the key store with which the instance is associated for TDE
      * encryption.
      * </p>
      */
@@ -405,6 +405,15 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      */
     private String dBInstanceArn;
+    /**
+     * <p>
+     * The time zone of the DB instance. In most cases, the
+     * <code>Timezone</code> element is empty. <code>Timezone</code> content
+     * appears only for Microsoft SQL Server DB instances that were created with
+     * a time zone specified.
+     * </p>
+     */
+    private String timezone;
 
     /**
      * <p>
@@ -1121,12 +1130,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides List of VPC security group elements that the DB instance belongs
-     * to.
+     * Provides a list of VPC security group elements that the DB instance
+     * belongs to.
      * </p>
      * 
-     * @return Provides List of VPC security group elements that the DB instance
-     *         belongs to.
+     * @return Provides a list of VPC security group elements that the DB
+     *         instance belongs to.
      */
 
     public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroups() {
@@ -1138,13 +1147,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides List of VPC security group elements that the DB instance belongs
-     * to.
+     * Provides a list of VPC security group elements that the DB instance
+     * belongs to.
      * </p>
      * 
      * @param vpcSecurityGroups
-     *        Provides List of VPC security group elements that the DB instance
-     *        belongs to.
+     *        Provides a list of VPC security group elements that the DB
+     *        instance belongs to.
      */
 
     public void setVpcSecurityGroups(
@@ -1160,8 +1169,8 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides List of VPC security group elements that the DB instance belongs
-     * to.
+     * Provides a list of VPC security group elements that the DB instance
+     * belongs to.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1171,8 +1180,8 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param vpcSecurityGroups
-     *        Provides List of VPC security group elements that the DB instance
-     *        belongs to.
+     *        Provides a list of VPC security group elements that the DB
+     *        instance belongs to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1191,13 +1200,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides List of VPC security group elements that the DB instance belongs
-     * to.
+     * Provides a list of VPC security group elements that the DB instance
+     * belongs to.
      * </p>
      * 
      * @param vpcSecurityGroups
-     *        Provides List of VPC security group elements that the DB instance
-     *        belongs to.
+     *        Provides a list of VPC security group elements that the DB
+     *        instance belongs to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2499,12 +2508,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN from the Key Store with which the instance is associated for TDE
+     * The ARN from the key store with which the instance is associated for TDE
      * encryption.
      * </p>
      * 
      * @param tdeCredentialArn
-     *        The ARN from the Key Store with which the instance is associated
+     *        The ARN from the key store with which the instance is associated
      *        for TDE encryption.
      */
 
@@ -2514,11 +2523,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN from the Key Store with which the instance is associated for TDE
+     * The ARN from the key store with which the instance is associated for TDE
      * encryption.
      * </p>
      * 
-     * @return The ARN from the Key Store with which the instance is associated
+     * @return The ARN from the key store with which the instance is associated
      *         for TDE encryption.
      */
 
@@ -2528,12 +2537,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN from the Key Store with which the instance is associated for TDE
+     * The ARN from the key store with which the instance is associated for TDE
      * encryption.
      * </p>
      * 
      * @param tdeCredentialArn
-     *        The ARN from the Key Store with which the instance is associated
+     *        The ARN from the key store with which the instance is associated
      *        for TDE encryption.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -3241,6 +3250,65 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time zone of the DB instance. In most cases, the
+     * <code>Timezone</code> element is empty. <code>Timezone</code> content
+     * appears only for Microsoft SQL Server DB instances that were created with
+     * a time zone specified.
+     * </p>
+     * 
+     * @param timezone
+     *        The time zone of the DB instance. In most cases, the
+     *        <code>Timezone</code> element is empty. <code>Timezone</code>
+     *        content appears only for Microsoft SQL Server DB instances that
+     *        were created with a time zone specified.
+     */
+
+    public void setTimezone(String timezone) {
+        this.timezone = timezone;
+    }
+
+    /**
+     * <p>
+     * The time zone of the DB instance. In most cases, the
+     * <code>Timezone</code> element is empty. <code>Timezone</code> content
+     * appears only for Microsoft SQL Server DB instances that were created with
+     * a time zone specified.
+     * </p>
+     * 
+     * @return The time zone of the DB instance. In most cases, the
+     *         <code>Timezone</code> element is empty. <code>Timezone</code>
+     *         content appears only for Microsoft SQL Server DB instances that
+     *         were created with a time zone specified.
+     */
+
+    public String getTimezone() {
+        return this.timezone;
+    }
+
+    /**
+     * <p>
+     * The time zone of the DB instance. In most cases, the
+     * <code>Timezone</code> element is empty. <code>Timezone</code> content
+     * appears only for Microsoft SQL Server DB instances that were created with
+     * a time zone specified.
+     * </p>
+     * 
+     * @param timezone
+     *        The time zone of the DB instance. In most cases, the
+     *        <code>Timezone</code> element is empty. <code>Timezone</code>
+     *        content appears only for Microsoft SQL Server DB instances that
+     *        were created with a time zone specified.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBInstance withTimezone(String timezone) {
+        setTimezone(timezone);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -3356,7 +3424,9 @@ public class DBInstance implements Serializable, Cloneable {
         if (getPromotionTier() != null)
             sb.append("PromotionTier: " + getPromotionTier() + ",");
         if (getDBInstanceArn() != null)
-            sb.append("DBInstanceArn: " + getDBInstanceArn());
+            sb.append("DBInstanceArn: " + getDBInstanceArn() + ",");
+        if (getTimezone() != null)
+            sb.append("Timezone: " + getTimezone());
         sb.append("}");
         return sb.toString();
     }
@@ -3662,6 +3732,11 @@ public class DBInstance implements Serializable, Cloneable {
         if (other.getDBInstanceArn() != null
                 && other.getDBInstanceArn().equals(this.getDBInstanceArn()) == false)
             return false;
+        if (other.getTimezone() == null ^ this.getTimezone() == null)
+            return false;
+        if (other.getTimezone() != null
+                && other.getTimezone().equals(this.getTimezone()) == false)
+            return false;
         return true;
     }
 
@@ -3840,6 +3915,8 @@ public class DBInstance implements Serializable, Cloneable {
                 * hashCode
                 + ((getDBInstanceArn() == null) ? 0 : getDBInstanceArn()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         return hashCode;
     }
 

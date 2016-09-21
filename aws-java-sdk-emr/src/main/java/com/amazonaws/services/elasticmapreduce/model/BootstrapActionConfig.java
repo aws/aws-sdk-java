@@ -17,23 +17,12 @@ package com.amazonaws.services.elasticmapreduce.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Configuration of a bootstrap action.
- * </p>
+ * 
  */
 public class BootstrapActionConfig implements Serializable, Cloneable {
 
-    /**
-     * <p>
-     * The name of the bootstrap action.
-     * </p>
-     */
     private String name;
-    /**
-     * <p>
-     * The script run by the bootstrap action.
-     * </p>
-     */
+
     private ScriptBootstrapActionConfig scriptBootstrapAction;
 
     /**
@@ -50,9 +39,7 @@ public class BootstrapActionConfig implements Serializable, Cloneable {
      * object members.
      * 
      * @param name
-     *        The name of the bootstrap action.
      * @param scriptBootstrapAction
-     *        The script run by the bootstrap action.
      */
     public BootstrapActionConfig(String name,
             ScriptBootstrapActionConfig scriptBootstrapAction) {
@@ -61,12 +48,7 @@ public class BootstrapActionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The name of the bootstrap action.
-     * </p>
-     * 
      * @param name
-     *        The name of the bootstrap action.
      */
 
     public void setName(String name) {
@@ -74,11 +56,7 @@ public class BootstrapActionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The name of the bootstrap action.
-     * </p>
-     * 
-     * @return The name of the bootstrap action.
+     * @return
      */
 
     public String getName() {
@@ -86,12 +64,7 @@ public class BootstrapActionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The name of the bootstrap action.
-     * </p>
-     * 
      * @param name
-     *        The name of the bootstrap action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -102,12 +75,7 @@ public class BootstrapActionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The script run by the bootstrap action.
-     * </p>
-     * 
      * @param scriptBootstrapAction
-     *        The script run by the bootstrap action.
      */
 
     public void setScriptBootstrapAction(
@@ -116,11 +84,7 @@ public class BootstrapActionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The script run by the bootstrap action.
-     * </p>
-     * 
-     * @return The script run by the bootstrap action.
+     * @return
      */
 
     public ScriptBootstrapActionConfig getScriptBootstrapAction() {
@@ -128,12 +92,7 @@ public class BootstrapActionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The script run by the bootstrap action.
-     * </p>
-     * 
      * @param scriptBootstrapAction
-     *        The script run by the bootstrap action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

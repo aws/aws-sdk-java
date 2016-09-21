@@ -136,6 +136,18 @@ public class DeploymentGroupInfoJsonMarshaller {
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (deploymentGroupInfo.getAlarmConfiguration() != null) {
+                jsonGenerator.writeFieldName("alarmConfiguration");
+                AlarmConfigurationJsonMarshaller.getInstance().marshall(
+                        deploymentGroupInfo.getAlarmConfiguration(),
+                        jsonGenerator);
+            }
+            if (deploymentGroupInfo.getAutoRollbackConfiguration() != null) {
+                jsonGenerator.writeFieldName("autoRollbackConfiguration");
+                AutoRollbackConfigurationJsonMarshaller.getInstance().marshall(
+                        deploymentGroupInfo.getAutoRollbackConfiguration(),
+                        jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

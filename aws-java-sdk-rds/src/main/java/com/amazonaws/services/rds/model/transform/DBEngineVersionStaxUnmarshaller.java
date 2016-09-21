@@ -107,6 +107,14 @@ public class DBEngineVersionStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("SupportedTimezones/Timezone",
+                        targetDepth)) {
+                    dBEngineVersion
+                            .withSupportedTimezones(TimezoneStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBEngineVersion;

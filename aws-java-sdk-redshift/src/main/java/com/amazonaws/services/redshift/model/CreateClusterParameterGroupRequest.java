@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class CreateClusterParameterGroupRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -33,12 +32,32 @@ public class CreateClusterParameterGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique withing your AWS account.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique withing your AWS account.
+     * </p>
+     * </li>
      * </ul>
-     * <note>This value is stored as a lower-case string.</note>
+     * <note>
+     * <p>
+     * This value is stored as a lower-case string.
+     * </p>
+     * </note>
      */
     private String parameterGroupName;
     /**
@@ -78,25 +97,64 @@ public class CreateClusterParameterGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique withing your AWS account.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique withing your AWS account.
+     * </p>
+     * </li>
      * </ul>
-     * <note>This value is stored as a lower-case string.</note>
+     * <note>
+     * <p>
+     * This value is stored as a lower-case string.
+     * </p>
+     * </note>
      * 
      * @param parameterGroupName
-     *        The name of the cluster parameter group. </p>
+     *        The name of the cluster parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *        <li>Must be unique withing your AWS account.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique withing your AWS account.
+     *        </p>
+     *        </li>
      *        </ul>
-     *        <note>This value is stored as a lower-case string.
+     *        <note>
+     *        <p>
+     *        This value is stored as a lower-case string.
+     *        </p>
      */
 
     public void setParameterGroupName(String parameterGroupName) {
@@ -111,24 +169,63 @@ public class CreateClusterParameterGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique withing your AWS account.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique withing your AWS account.
+     * </p>
+     * </li>
      * </ul>
-     * <note>This value is stored as a lower-case string.</note>
+     * <note>
+     * <p>
+     * This value is stored as a lower-case string.
+     * </p>
+     * </note>
      * 
-     * @return The name of the cluster parameter group. </p>
+     * @return The name of the cluster parameter group.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *         <li>Must be unique withing your AWS account.</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be unique withing your AWS account.
+     *         </p>
+     *         </li>
      *         </ul>
-     *         <note>This value is stored as a lower-case string.
+     *         <note>
+     *         <p>
+     *         This value is stored as a lower-case string.
+     *         </p>
      */
 
     public String getParameterGroupName() {
@@ -143,25 +240,64 @@ public class CreateClusterParameterGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique withing your AWS account.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique withing your AWS account.
+     * </p>
+     * </li>
      * </ul>
-     * <note>This value is stored as a lower-case string.</note>
+     * <note>
+     * <p>
+     * This value is stored as a lower-case string.
+     * </p>
+     * </note>
      * 
      * @param parameterGroupName
-     *        The name of the cluster parameter group. </p>
+     *        The name of the cluster parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *        <li>Must be unique withing your AWS account.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique withing your AWS account.
+     *        </p>
+     *        </li>
      *        </ul>
-     *        <note>This value is stored as a lower-case string.
+     *        <note>
+     *        <p>
+     *        This value is stored as a lower-case string.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -190,7 +326,7 @@ public class CreateClusterParameterGroupRequest extends
      * @param parameterGroupFamily
      *        The Amazon Redshift engine version to which the cluster parameter
      *        group applies. The cluster engine version determines the set of
-     *        parameters. </p>
+     *        parameters.</p>
      *        <p>
      *        To get a list of valid parameter group family names, you can call
      *        <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift
@@ -222,7 +358,7 @@ public class CreateClusterParameterGroupRequest extends
      * 
      * @return The Amazon Redshift engine version to which the cluster parameter
      *         group applies. The cluster engine version determines the set of
-     *         parameters. </p>
+     *         parameters.</p>
      *         <p>
      *         To get a list of valid parameter group family names, you can call
      *         <a>DescribeClusterParameterGroups</a>. By default, Amazon
@@ -256,7 +392,7 @@ public class CreateClusterParameterGroupRequest extends
      * @param parameterGroupFamily
      *        The Amazon Redshift engine version to which the cluster parameter
      *        group applies. The cluster engine version determines the set of
-     *        parameters. </p>
+     *        parameters.</p>
      *        <p>
      *        To get a list of valid parameter group family names, you can call
      *        <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift

@@ -28,6 +28,7 @@ import java.lang.annotation.Target;
  * This annotation is required for tables that use a range key.
  */
 @DynamoDB
+@DynamoDBKeyed(com.amazonaws.services.dynamodbv2.model.KeyType.RANGE)
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBRangeKey {

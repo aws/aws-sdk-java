@@ -79,6 +79,20 @@ public class CreateDeploymentRequest extends
      * </p>
      */
     private Boolean ignoreApplicationStopFailures;
+    /**
+     * <p>
+     * Configuration information for an automatic rollback that is added when a
+     * deployment is created.
+     * </p>
+     */
+    private AutoRollbackConfiguration autoRollbackConfiguration;
+    /**
+     * <p>
+     * Indicates whether to deploy to all instances or only to instances that
+     * are not running the latest application revision.
+     * </p>
+     */
+    private Boolean updateOutdatedInstancesOnly;
 
     /**
      * <p>
@@ -460,6 +474,118 @@ public class CreateDeploymentRequest extends
     }
 
     /**
+     * <p>
+     * Configuration information for an automatic rollback that is added when a
+     * deployment is created.
+     * </p>
+     * 
+     * @param autoRollbackConfiguration
+     *        Configuration information for an automatic rollback that is added
+     *        when a deployment is created.
+     */
+
+    public void setAutoRollbackConfiguration(
+            AutoRollbackConfiguration autoRollbackConfiguration) {
+        this.autoRollbackConfiguration = autoRollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information for an automatic rollback that is added when a
+     * deployment is created.
+     * </p>
+     * 
+     * @return Configuration information for an automatic rollback that is added
+     *         when a deployment is created.
+     */
+
+    public AutoRollbackConfiguration getAutoRollbackConfiguration() {
+        return this.autoRollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information for an automatic rollback that is added when a
+     * deployment is created.
+     * </p>
+     * 
+     * @param autoRollbackConfiguration
+     *        Configuration information for an automatic rollback that is added
+     *        when a deployment is created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateDeploymentRequest withAutoRollbackConfiguration(
+            AutoRollbackConfiguration autoRollbackConfiguration) {
+        setAutoRollbackConfiguration(autoRollbackConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to deploy to all instances or only to instances that
+     * are not running the latest application revision.
+     * </p>
+     * 
+     * @param updateOutdatedInstancesOnly
+     *        Indicates whether to deploy to all instances or only to instances
+     *        that are not running the latest application revision.
+     */
+
+    public void setUpdateOutdatedInstancesOnly(
+            Boolean updateOutdatedInstancesOnly) {
+        this.updateOutdatedInstancesOnly = updateOutdatedInstancesOnly;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to deploy to all instances or only to instances that
+     * are not running the latest application revision.
+     * </p>
+     * 
+     * @return Indicates whether to deploy to all instances or only to instances
+     *         that are not running the latest application revision.
+     */
+
+    public Boolean getUpdateOutdatedInstancesOnly() {
+        return this.updateOutdatedInstancesOnly;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to deploy to all instances or only to instances that
+     * are not running the latest application revision.
+     * </p>
+     * 
+     * @param updateOutdatedInstancesOnly
+     *        Indicates whether to deploy to all instances or only to instances
+     *        that are not running the latest application revision.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateDeploymentRequest withUpdateOutdatedInstancesOnly(
+            Boolean updateOutdatedInstancesOnly) {
+        setUpdateOutdatedInstancesOnly(updateOutdatedInstancesOnly);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to deploy to all instances or only to instances that
+     * are not running the latest application revision.
+     * </p>
+     * 
+     * @return Indicates whether to deploy to all instances or only to instances
+     *         that are not running the latest application revision.
+     */
+
+    public Boolean isUpdateOutdatedInstancesOnly() {
+        return this.updateOutdatedInstancesOnly;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -484,7 +610,13 @@ public class CreateDeploymentRequest extends
             sb.append("Description: " + getDescription() + ",");
         if (getIgnoreApplicationStopFailures() != null)
             sb.append("IgnoreApplicationStopFailures: "
-                    + getIgnoreApplicationStopFailures());
+                    + getIgnoreApplicationStopFailures() + ",");
+        if (getAutoRollbackConfiguration() != null)
+            sb.append("AutoRollbackConfiguration: "
+                    + getAutoRollbackConfiguration() + ",");
+        if (getUpdateOutdatedInstancesOnly() != null)
+            sb.append("UpdateOutdatedInstancesOnly: "
+                    + getUpdateOutdatedInstancesOnly());
         sb.append("}");
         return sb.toString();
     }
@@ -536,6 +668,20 @@ public class CreateDeploymentRequest extends
                 && other.getIgnoreApplicationStopFailures().equals(
                         this.getIgnoreApplicationStopFailures()) == false)
             return false;
+        if (other.getAutoRollbackConfiguration() == null
+                ^ this.getAutoRollbackConfiguration() == null)
+            return false;
+        if (other.getAutoRollbackConfiguration() != null
+                && other.getAutoRollbackConfiguration().equals(
+                        this.getAutoRollbackConfiguration()) == false)
+            return false;
+        if (other.getUpdateOutdatedInstancesOnly() == null
+                ^ this.getUpdateOutdatedInstancesOnly() == null)
+            return false;
+        if (other.getUpdateOutdatedInstancesOnly() != null
+                && other.getUpdateOutdatedInstancesOnly().equals(
+                        this.getUpdateOutdatedInstancesOnly()) == false)
+            return false;
         return true;
     }
 
@@ -565,6 +711,14 @@ public class CreateDeploymentRequest extends
                 * hashCode
                 + ((getIgnoreApplicationStopFailures() == null) ? 0
                         : getIgnoreApplicationStopFailures().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAutoRollbackConfiguration() == null) ? 0
+                        : getAutoRollbackConfiguration().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getUpdateOutdatedInstancesOnly() == null) ? 0
+                        : getUpdateOutdatedInstancesOnly().hashCode());
         return hashCode;
     }
 

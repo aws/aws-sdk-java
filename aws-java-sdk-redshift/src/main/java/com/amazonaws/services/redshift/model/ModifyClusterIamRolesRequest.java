@@ -33,17 +33,17 @@ public class ModifyClusterIamRolesRequest extends
     private String clusterIdentifier;
     /**
      * <p>
-     * Zero or more IAM roles (in their ARN format) to associate with the
-     * cluster. You can associate up to 10 IAM roles with a single cluster in a
-     * single request.
+     * Zero or more IAM roles to associate with the cluster. The roles must be
+     * in their Amazon Resource Name (ARN) format. You can associate up to 10
+     * IAM roles with a single cluster in a single request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> addIamRoles;
     /**
      * <p>
-     * Zero or more IAM roles (in their ARN format) to disassociate from the
-     * cluster. You can disassociate up to 10 IAM roles from a single cluster in
-     * a single request.
+     * Zero or more IAM roles in ARN format to disassociate from the cluster.
+     * You can disassociate up to 10 IAM roles from a single cluster in a single
+     * request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> removeIamRoles;
@@ -98,14 +98,15 @@ public class ModifyClusterIamRolesRequest extends
 
     /**
      * <p>
-     * Zero or more IAM roles (in their ARN format) to associate with the
-     * cluster. You can associate up to 10 IAM roles with a single cluster in a
-     * single request.
+     * Zero or more IAM roles to associate with the cluster. The roles must be
+     * in their Amazon Resource Name (ARN) format. You can associate up to 10
+     * IAM roles with a single cluster in a single request.
      * </p>
      * 
-     * @return Zero or more IAM roles (in their ARN format) to associate with
-     *         the cluster. You can associate up to 10 IAM roles with a single
-     *         cluster in a single request.
+     * @return Zero or more IAM roles to associate with the cluster. The roles
+     *         must be in their Amazon Resource Name (ARN) format. You can
+     *         associate up to 10 IAM roles with a single cluster in a single
+     *         request.
      */
 
     public java.util.List<String> getAddIamRoles() {
@@ -117,15 +118,16 @@ public class ModifyClusterIamRolesRequest extends
 
     /**
      * <p>
-     * Zero or more IAM roles (in their ARN format) to associate with the
-     * cluster. You can associate up to 10 IAM roles with a single cluster in a
-     * single request.
+     * Zero or more IAM roles to associate with the cluster. The roles must be
+     * in their Amazon Resource Name (ARN) format. You can associate up to 10
+     * IAM roles with a single cluster in a single request.
      * </p>
      * 
      * @param addIamRoles
-     *        Zero or more IAM roles (in their ARN format) to associate with the
-     *        cluster. You can associate up to 10 IAM roles with a single
-     *        cluster in a single request.
+     *        Zero or more IAM roles to associate with the cluster. The roles
+     *        must be in their Amazon Resource Name (ARN) format. You can
+     *        associate up to 10 IAM roles with a single cluster in a single
+     *        request.
      */
 
     public void setAddIamRoles(java.util.Collection<String> addIamRoles) {
@@ -140,9 +142,9 @@ public class ModifyClusterIamRolesRequest extends
 
     /**
      * <p>
-     * Zero or more IAM roles (in their ARN format) to associate with the
-     * cluster. You can associate up to 10 IAM roles with a single cluster in a
-     * single request.
+     * Zero or more IAM roles to associate with the cluster. The roles must be
+     * in their Amazon Resource Name (ARN) format. You can associate up to 10
+     * IAM roles with a single cluster in a single request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -152,9 +154,10 @@ public class ModifyClusterIamRolesRequest extends
      * </p>
      * 
      * @param addIamRoles
-     *        Zero or more IAM roles (in their ARN format) to associate with the
-     *        cluster. You can associate up to 10 IAM roles with a single
-     *        cluster in a single request.
+     *        Zero or more IAM roles to associate with the cluster. The roles
+     *        must be in their Amazon Resource Name (ARN) format. You can
+     *        associate up to 10 IAM roles with a single cluster in a single
+     *        request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -172,15 +175,16 @@ public class ModifyClusterIamRolesRequest extends
 
     /**
      * <p>
-     * Zero or more IAM roles (in their ARN format) to associate with the
-     * cluster. You can associate up to 10 IAM roles with a single cluster in a
-     * single request.
+     * Zero or more IAM roles to associate with the cluster. The roles must be
+     * in their Amazon Resource Name (ARN) format. You can associate up to 10
+     * IAM roles with a single cluster in a single request.
      * </p>
      * 
      * @param addIamRoles
-     *        Zero or more IAM roles (in their ARN format) to associate with the
-     *        cluster. You can associate up to 10 IAM roles with a single
-     *        cluster in a single request.
+     *        Zero or more IAM roles to associate with the cluster. The roles
+     *        must be in their Amazon Resource Name (ARN) format. You can
+     *        associate up to 10 IAM roles with a single cluster in a single
+     *        request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -193,14 +197,14 @@ public class ModifyClusterIamRolesRequest extends
 
     /**
      * <p>
-     * Zero or more IAM roles (in their ARN format) to disassociate from the
-     * cluster. You can disassociate up to 10 IAM roles from a single cluster in
-     * a single request.
+     * Zero or more IAM roles in ARN format to disassociate from the cluster.
+     * You can disassociate up to 10 IAM roles from a single cluster in a single
+     * request.
      * </p>
      * 
-     * @return Zero or more IAM roles (in their ARN format) to disassociate from
-     *         the cluster. You can disassociate up to 10 IAM roles from a
-     *         single cluster in a single request.
+     * @return Zero or more IAM roles in ARN format to disassociate from the
+     *         cluster. You can disassociate up to 10 IAM roles from a single
+     *         cluster in a single request.
      */
 
     public java.util.List<String> getRemoveIamRoles() {
@@ -212,14 +216,14 @@ public class ModifyClusterIamRolesRequest extends
 
     /**
      * <p>
-     * Zero or more IAM roles (in their ARN format) to disassociate from the
-     * cluster. You can disassociate up to 10 IAM roles from a single cluster in
-     * a single request.
+     * Zero or more IAM roles in ARN format to disassociate from the cluster.
+     * You can disassociate up to 10 IAM roles from a single cluster in a single
+     * request.
      * </p>
      * 
      * @param removeIamRoles
-     *        Zero or more IAM roles (in their ARN format) to disassociate from
-     *        the cluster. You can disassociate up to 10 IAM roles from a single
+     *        Zero or more IAM roles in ARN format to disassociate from the
+     *        cluster. You can disassociate up to 10 IAM roles from a single
      *        cluster in a single request.
      */
 
@@ -235,9 +239,9 @@ public class ModifyClusterIamRolesRequest extends
 
     /**
      * <p>
-     * Zero or more IAM roles (in their ARN format) to disassociate from the
-     * cluster. You can disassociate up to 10 IAM roles from a single cluster in
-     * a single request.
+     * Zero or more IAM roles in ARN format to disassociate from the cluster.
+     * You can disassociate up to 10 IAM roles from a single cluster in a single
+     * request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -247,8 +251,8 @@ public class ModifyClusterIamRolesRequest extends
      * </p>
      * 
      * @param removeIamRoles
-     *        Zero or more IAM roles (in their ARN format) to disassociate from
-     *        the cluster. You can disassociate up to 10 IAM roles from a single
+     *        Zero or more IAM roles in ARN format to disassociate from the
+     *        cluster. You can disassociate up to 10 IAM roles from a single
      *        cluster in a single request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -268,14 +272,14 @@ public class ModifyClusterIamRolesRequest extends
 
     /**
      * <p>
-     * Zero or more IAM roles (in their ARN format) to disassociate from the
-     * cluster. You can disassociate up to 10 IAM roles from a single cluster in
-     * a single request.
+     * Zero or more IAM roles in ARN format to disassociate from the cluster.
+     * You can disassociate up to 10 IAM roles from a single cluster in a single
+     * request.
      * </p>
      * 
      * @param removeIamRoles
-     *        Zero or more IAM roles (in their ARN format) to disassociate from
-     *        the cluster. You can disassociate up to 10 IAM roles from a single
+     *        Zero or more IAM roles in ARN format to disassociate from the
+     *        cluster. You can disassociate up to 10 IAM roles from a single
      *        cluster in a single request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

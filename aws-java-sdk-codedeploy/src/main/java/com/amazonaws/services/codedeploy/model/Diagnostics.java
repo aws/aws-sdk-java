@@ -29,15 +29,38 @@ public class Diagnostics implements Serializable, Cloneable {
      * The associated error code:
      * </p>
      * <ul>
-     * <li>Success: The specified script ran.</li>
-     * <li>ScriptMissing: The specified script was not found in the specified
-     * location.</li>
-     * <li>ScriptNotExecutable: The specified script is not a recognized
-     * executable file type.</li>
-     * <li>ScriptTimedOut: The specified script did not finish running in the
-     * specified time period.</li>
-     * <li>ScriptFailed: The specified script failed to run as expected.</li>
-     * <li>UnknownError: The specified script did not run for an unknown reason.
+     * <li>
+     * <p>
+     * Success: The specified script ran.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptMissing: The specified script was not found in the specified
+     * location.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptNotExecutable: The specified script is not a recognized executable
+     * file type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptTimedOut: The specified script did not finish running in the
+     * specified time period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptFailed: The specified script failed to run as expected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UnknownError: The specified script did not run for an unknown reason.
+     * </p>
      * </li>
      * </ul>
      */
@@ -70,31 +93,78 @@ public class Diagnostics implements Serializable, Cloneable {
      * The associated error code:
      * </p>
      * <ul>
-     * <li>Success: The specified script ran.</li>
-     * <li>ScriptMissing: The specified script was not found in the specified
-     * location.</li>
-     * <li>ScriptNotExecutable: The specified script is not a recognized
-     * executable file type.</li>
-     * <li>ScriptTimedOut: The specified script did not finish running in the
-     * specified time period.</li>
-     * <li>ScriptFailed: The specified script failed to run as expected.</li>
-     * <li>UnknownError: The specified script did not run for an unknown reason.
+     * <li>
+     * <p>
+     * Success: The specified script ran.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptMissing: The specified script was not found in the specified
+     * location.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptNotExecutable: The specified script is not a recognized executable
+     * file type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptTimedOut: The specified script did not finish running in the
+     * specified time period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptFailed: The specified script failed to run as expected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UnknownError: The specified script did not run for an unknown reason.
+     * </p>
      * </li>
      * </ul>
      * 
      * @param errorCode
      *        The associated error code:</p>
      *        <ul>
-     *        <li>Success: The specified script ran.</li>
-     *        <li>ScriptMissing: The specified script was not found in the
-     *        specified location.</li>
-     *        <li>ScriptNotExecutable: The specified script is not a recognized
-     *        executable file type.</li>
-     *        <li>ScriptTimedOut: The specified script did not finish running in
-     *        the specified time period.</li>
-     *        <li>ScriptFailed: The specified script failed to run as expected.</li>
-     *        <li>UnknownError: The specified script did not run for an unknown
-     *        reason.</li>
+     *        <li>
+     *        <p>
+     *        Success: The specified script ran.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptMissing: The specified script was not found in the specified
+     *        location.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptNotExecutable: The specified script is not a recognized
+     *        executable file type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptTimedOut: The specified script did not finish running in the
+     *        specified time period.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptFailed: The specified script failed to run as expected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UnknownError: The specified script did not run for an unknown
+     *        reason.
+     *        </p>
+     *        </li>
      * @see LifecycleErrorCode
      */
 
@@ -107,31 +177,77 @@ public class Diagnostics implements Serializable, Cloneable {
      * The associated error code:
      * </p>
      * <ul>
-     * <li>Success: The specified script ran.</li>
-     * <li>ScriptMissing: The specified script was not found in the specified
-     * location.</li>
-     * <li>ScriptNotExecutable: The specified script is not a recognized
-     * executable file type.</li>
-     * <li>ScriptTimedOut: The specified script did not finish running in the
-     * specified time period.</li>
-     * <li>ScriptFailed: The specified script failed to run as expected.</li>
-     * <li>UnknownError: The specified script did not run for an unknown reason.
+     * <li>
+     * <p>
+     * Success: The specified script ran.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptMissing: The specified script was not found in the specified
+     * location.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptNotExecutable: The specified script is not a recognized executable
+     * file type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptTimedOut: The specified script did not finish running in the
+     * specified time period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptFailed: The specified script failed to run as expected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UnknownError: The specified script did not run for an unknown reason.
+     * </p>
      * </li>
      * </ul>
      * 
      * @return The associated error code:</p>
      *         <ul>
-     *         <li>Success: The specified script ran.</li>
-     *         <li>ScriptMissing: The specified script was not found in the
-     *         specified location.</li>
-     *         <li>ScriptNotExecutable: The specified script is not a recognized
-     *         executable file type.</li>
-     *         <li>ScriptTimedOut: The specified script did not finish running
-     *         in the specified time period.</li>
-     *         <li>ScriptFailed: The specified script failed to run as expected.
+     *         <li>
+     *         <p>
+     *         Success: The specified script ran.
+     *         </p>
      *         </li>
-     *         <li>UnknownError: The specified script did not run for an unknown
-     *         reason.</li>
+     *         <li>
+     *         <p>
+     *         ScriptMissing: The specified script was not found in the
+     *         specified location.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ScriptNotExecutable: The specified script is not a recognized
+     *         executable file type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ScriptTimedOut: The specified script did not finish running in
+     *         the specified time period.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ScriptFailed: The specified script failed to run as expected.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UnknownError: The specified script did not run for an unknown
+     *         reason.
+     *         </p>
+     *         </li>
      * @see LifecycleErrorCode
      */
 
@@ -144,31 +260,78 @@ public class Diagnostics implements Serializable, Cloneable {
      * The associated error code:
      * </p>
      * <ul>
-     * <li>Success: The specified script ran.</li>
-     * <li>ScriptMissing: The specified script was not found in the specified
-     * location.</li>
-     * <li>ScriptNotExecutable: The specified script is not a recognized
-     * executable file type.</li>
-     * <li>ScriptTimedOut: The specified script did not finish running in the
-     * specified time period.</li>
-     * <li>ScriptFailed: The specified script failed to run as expected.</li>
-     * <li>UnknownError: The specified script did not run for an unknown reason.
+     * <li>
+     * <p>
+     * Success: The specified script ran.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptMissing: The specified script was not found in the specified
+     * location.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptNotExecutable: The specified script is not a recognized executable
+     * file type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptTimedOut: The specified script did not finish running in the
+     * specified time period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptFailed: The specified script failed to run as expected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UnknownError: The specified script did not run for an unknown reason.
+     * </p>
      * </li>
      * </ul>
      * 
      * @param errorCode
      *        The associated error code:</p>
      *        <ul>
-     *        <li>Success: The specified script ran.</li>
-     *        <li>ScriptMissing: The specified script was not found in the
-     *        specified location.</li>
-     *        <li>ScriptNotExecutable: The specified script is not a recognized
-     *        executable file type.</li>
-     *        <li>ScriptTimedOut: The specified script did not finish running in
-     *        the specified time period.</li>
-     *        <li>ScriptFailed: The specified script failed to run as expected.</li>
-     *        <li>UnknownError: The specified script did not run for an unknown
-     *        reason.</li>
+     *        <li>
+     *        <p>
+     *        Success: The specified script ran.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptMissing: The specified script was not found in the specified
+     *        location.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptNotExecutable: The specified script is not a recognized
+     *        executable file type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptTimedOut: The specified script did not finish running in the
+     *        specified time period.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptFailed: The specified script failed to run as expected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UnknownError: The specified script did not run for an unknown
+     *        reason.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see LifecycleErrorCode
@@ -184,31 +347,78 @@ public class Diagnostics implements Serializable, Cloneable {
      * The associated error code:
      * </p>
      * <ul>
-     * <li>Success: The specified script ran.</li>
-     * <li>ScriptMissing: The specified script was not found in the specified
-     * location.</li>
-     * <li>ScriptNotExecutable: The specified script is not a recognized
-     * executable file type.</li>
-     * <li>ScriptTimedOut: The specified script did not finish running in the
-     * specified time period.</li>
-     * <li>ScriptFailed: The specified script failed to run as expected.</li>
-     * <li>UnknownError: The specified script did not run for an unknown reason.
+     * <li>
+     * <p>
+     * Success: The specified script ran.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptMissing: The specified script was not found in the specified
+     * location.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptNotExecutable: The specified script is not a recognized executable
+     * file type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptTimedOut: The specified script did not finish running in the
+     * specified time period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptFailed: The specified script failed to run as expected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UnknownError: The specified script did not run for an unknown reason.
+     * </p>
      * </li>
      * </ul>
      * 
      * @param errorCode
      *        The associated error code:</p>
      *        <ul>
-     *        <li>Success: The specified script ran.</li>
-     *        <li>ScriptMissing: The specified script was not found in the
-     *        specified location.</li>
-     *        <li>ScriptNotExecutable: The specified script is not a recognized
-     *        executable file type.</li>
-     *        <li>ScriptTimedOut: The specified script did not finish running in
-     *        the specified time period.</li>
-     *        <li>ScriptFailed: The specified script failed to run as expected.</li>
-     *        <li>UnknownError: The specified script did not run for an unknown
-     *        reason.</li>
+     *        <li>
+     *        <p>
+     *        Success: The specified script ran.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptMissing: The specified script was not found in the specified
+     *        location.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptNotExecutable: The specified script is not a recognized
+     *        executable file type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptTimedOut: The specified script did not finish running in the
+     *        specified time period.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptFailed: The specified script failed to run as expected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UnknownError: The specified script did not run for an unknown
+     *        reason.
+     *        </p>
+     *        </li>
      * @see LifecycleErrorCode
      */
 
@@ -221,31 +431,78 @@ public class Diagnostics implements Serializable, Cloneable {
      * The associated error code:
      * </p>
      * <ul>
-     * <li>Success: The specified script ran.</li>
-     * <li>ScriptMissing: The specified script was not found in the specified
-     * location.</li>
-     * <li>ScriptNotExecutable: The specified script is not a recognized
-     * executable file type.</li>
-     * <li>ScriptTimedOut: The specified script did not finish running in the
-     * specified time period.</li>
-     * <li>ScriptFailed: The specified script failed to run as expected.</li>
-     * <li>UnknownError: The specified script did not run for an unknown reason.
+     * <li>
+     * <p>
+     * Success: The specified script ran.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptMissing: The specified script was not found in the specified
+     * location.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptNotExecutable: The specified script is not a recognized executable
+     * file type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptTimedOut: The specified script did not finish running in the
+     * specified time period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptFailed: The specified script failed to run as expected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UnknownError: The specified script did not run for an unknown reason.
+     * </p>
      * </li>
      * </ul>
      * 
      * @param errorCode
      *        The associated error code:</p>
      *        <ul>
-     *        <li>Success: The specified script ran.</li>
-     *        <li>ScriptMissing: The specified script was not found in the
-     *        specified location.</li>
-     *        <li>ScriptNotExecutable: The specified script is not a recognized
-     *        executable file type.</li>
-     *        <li>ScriptTimedOut: The specified script did not finish running in
-     *        the specified time period.</li>
-     *        <li>ScriptFailed: The specified script failed to run as expected.</li>
-     *        <li>UnknownError: The specified script did not run for an unknown
-     *        reason.</li>
+     *        <li>
+     *        <p>
+     *        Success: The specified script ran.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptMissing: The specified script was not found in the specified
+     *        location.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptNotExecutable: The specified script is not a recognized
+     *        executable file type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptTimedOut: The specified script did not finish running in the
+     *        specified time period.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptFailed: The specified script failed to run as expected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UnknownError: The specified script did not run for an unknown
+     *        reason.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see LifecycleErrorCode

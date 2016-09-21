@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DescribeReservedNodesRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,

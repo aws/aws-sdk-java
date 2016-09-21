@@ -63,6 +63,7 @@ public class DynamoDBMapperConfig {
         .withTableNameResolver(DefaultTableNameResolver.INSTANCE)
         .withBatchWriteRetryStrategy(DefaultBatchWriteRetryStrategy.INSTANCE)
         .withBatchLoadRetryStrategy(DefaultBatchLoadRetryStrategy.INSTANCE)
+        .withTypeConverterFactory(DynamoDBTypeConverterFactory.standard())
         .withConversionSchema(ConversionSchemas.DEFAULT)
         .build();
 
@@ -88,6 +89,7 @@ public class DynamoDBMapperConfig {
         private ConversionSchema conversionSchema;
         private BatchWriteRetryStrategy batchWriteRetryStrategy;
         private BatchLoadRetryStrategy batchLoadRetryStrategy;
+        private DynamoDBTypeConverterFactory typeConverterFactory;
 
         /**
          * Creates a new builder initialized with the {@link #DEFAULT} values.
@@ -125,6 +127,7 @@ public class DynamoDBMapperConfig {
             if (o.conversionSchema != null) conversionSchema = o.conversionSchema;
             if (o.batchWriteRetryStrategy != null) batchWriteRetryStrategy = o.batchWriteRetryStrategy;
             if (o.batchLoadRetryStrategy != null) batchLoadRetryStrategy = o.batchLoadRetryStrategy;
+            if (o.typeConverterFactory != null) typeConverterFactory = o.typeConverterFactory;
             return this;
         }
 
@@ -370,6 +373,29 @@ public class DynamoDBMapperConfig {
                 value = NoRetryBatchLoadRetryStrategy.INSTANCE;
             }
             setBatchLoadRetryStrategy(value);
+            return this;
+        }
+
+        /**
+         * @return the current type-converter factory
+         */
+        public final DynamoDBTypeConverterFactory getTypeConverterFactory() {
+            return typeConverterFactory;
+        }
+
+        /**
+         * @param value the new type-converter factory
+         */
+        public final void setTypeConverterFactory(DynamoDBTypeConverterFactory value) {
+            this.typeConverterFactory = value;
+        }
+
+        /**
+         * @param value the new type-converter factory
+         * @return this builder
+         */
+        public final Builder withTypeConverterFactory(DynamoDBTypeConverterFactory value) {
+            setTypeConverterFactory(value);
             return this;
         }
 
@@ -622,12 +648,12 @@ public class DynamoDBMapperConfig {
             }
 
             final StandardBeanProperties.Beans<?> beans = StandardBeanProperties.of(clazz);
-            if (beans.tableName() == null) {
-                throw new DynamoDBMappingException(beans.id().err("not annotated with @DynamoDBTable"));
+            if (beans.properties().tableName() == null) {
+                throw new DynamoDBMappingException(clazz + " not annotated with @DynamoDBTable");
             }
 
             final String prefix = override == null ? null : override.getTableNamePrefix();
-            return prefix == null ? beans.tableName() : prefix + beans.tableName();
+            return prefix == null ? beans.properties().tableName() : prefix + beans.properties().tableName();
         }
 
         private final DynamoDBMapperConfig config = builder().withTableNameResolver(this).build();
@@ -844,6 +870,7 @@ public class DynamoDBMapperConfig {
     private final ConversionSchema conversionSchema;
     private final BatchWriteRetryStrategy batchWriteRetryStrategy;
     private final BatchLoadRetryStrategy batchLoadRetryStrategy;
+    private final DynamoDBTypeConverterFactory typeConverterFactory;
 
     /**
      * Internal constructor; builds from the builder.
@@ -859,6 +886,7 @@ public class DynamoDBMapperConfig {
         this.conversionSchema = builder.conversionSchema;
         this.batchWriteRetryStrategy = builder.batchWriteRetryStrategy;
         this.batchLoadRetryStrategy = builder.batchLoadRetryStrategy;
+        this.typeConverterFactory = builder.typeConverterFactory;
     }
 
     /**
@@ -969,6 +997,7 @@ public class DynamoDBMapperConfig {
         this.conversionSchema = conversionSchema;
         this.batchWriteRetryStrategy = batchWriteRetryStrategy;
         this.batchLoadRetryStrategy = batchLoadRetryStrategy;
+        this.typeConverterFactory = null;
     }
 
     /**
@@ -1158,6 +1187,13 @@ public class DynamoDBMapperConfig {
      */
     public BatchWriteRetryStrategy getBatchWriteRetryStrategy() {
         return batchWriteRetryStrategy;
+    }
+
+    /**
+     * @return the current type-converter factory
+     */
+    public final DynamoDBTypeConverterFactory getTypeConverterFactory() {
+        return typeConverterFactory;
     }
 
 }

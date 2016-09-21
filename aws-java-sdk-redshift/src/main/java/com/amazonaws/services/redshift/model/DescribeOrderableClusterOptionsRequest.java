@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DescribeOrderableClusterOptionsRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -90,7 +89,7 @@ public class DescribeOrderableClusterOptionsRequest extends
      * 
      * @param clusterVersion
      *        The version filter value. Specify this parameter to show only the
-     *        available offerings matching the specified version. </p>
+     *        available offerings matching the specified version.</p>
      *        <p>
      *        Default: All versions.
      *        </p>
@@ -117,7 +116,7 @@ public class DescribeOrderableClusterOptionsRequest extends
      * </p>
      * 
      * @return The version filter value. Specify this parameter to show only the
-     *         available offerings matching the specified version. </p>
+     *         available offerings matching the specified version.</p>
      *         <p>
      *         Default: All versions.
      *         </p>
@@ -145,7 +144,7 @@ public class DescribeOrderableClusterOptionsRequest extends
      * 
      * @param clusterVersion
      *        The version filter value. Specify this parameter to show only the
-     *        available offerings matching the specified version. </p>
+     *        available offerings matching the specified version.</p>
      *        <p>
      *        Default: All versions.
      *        </p>

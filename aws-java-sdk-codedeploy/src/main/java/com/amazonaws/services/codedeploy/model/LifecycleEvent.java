@@ -53,12 +53,36 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * The deployment lifecycle event status:
      * </p>
      * <ul>
-     * <li>Pending: The deployment lifecycle event is pending.</li>
-     * <li>InProgress: The deployment lifecycle event is in progress.</li>
-     * <li>Succeeded: The deployment lifecycle event ran successfully.</li>
-     * <li>Failed: The deployment lifecycle event has failed.</li>
-     * <li>Skipped: The deployment lifecycle event has been skipped.</li>
-     * <li>Unknown: The deployment lifecycle event is unknown.</li>
+     * <li>
+     * <p>
+     * Pending: The deployment lifecycle event is pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InProgress: The deployment lifecycle event is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The deployment lifecycle event ran successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: The deployment lifecycle event has failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Skipped: The deployment lifecycle event has been skipped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unknown: The deployment lifecycle event is unknown.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -242,23 +266,71 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * The deployment lifecycle event status:
      * </p>
      * <ul>
-     * <li>Pending: The deployment lifecycle event is pending.</li>
-     * <li>InProgress: The deployment lifecycle event is in progress.</li>
-     * <li>Succeeded: The deployment lifecycle event ran successfully.</li>
-     * <li>Failed: The deployment lifecycle event has failed.</li>
-     * <li>Skipped: The deployment lifecycle event has been skipped.</li>
-     * <li>Unknown: The deployment lifecycle event is unknown.</li>
+     * <li>
+     * <p>
+     * Pending: The deployment lifecycle event is pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InProgress: The deployment lifecycle event is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The deployment lifecycle event ran successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: The deployment lifecycle event has failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Skipped: The deployment lifecycle event has been skipped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unknown: The deployment lifecycle event is unknown.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The deployment lifecycle event status:</p>
      *        <ul>
-     *        <li>Pending: The deployment lifecycle event is pending.</li>
-     *        <li>InProgress: The deployment lifecycle event is in progress.</li>
-     *        <li>Succeeded: The deployment lifecycle event ran successfully.</li>
-     *        <li>Failed: The deployment lifecycle event has failed.</li>
-     *        <li>Skipped: The deployment lifecycle event has been skipped.</li>
-     *        <li>Unknown: The deployment lifecycle event is unknown.</li>
+     *        <li>
+     *        <p>
+     *        Pending: The deployment lifecycle event is pending.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        InProgress: The deployment lifecycle event is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: The deployment lifecycle event ran successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed: The deployment lifecycle event has failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Skipped: The deployment lifecycle event has been skipped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unknown: The deployment lifecycle event is unknown.
+     *        </p>
+     *        </li>
      * @see LifecycleEventStatus
      */
 
@@ -271,22 +343,70 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * The deployment lifecycle event status:
      * </p>
      * <ul>
-     * <li>Pending: The deployment lifecycle event is pending.</li>
-     * <li>InProgress: The deployment lifecycle event is in progress.</li>
-     * <li>Succeeded: The deployment lifecycle event ran successfully.</li>
-     * <li>Failed: The deployment lifecycle event has failed.</li>
-     * <li>Skipped: The deployment lifecycle event has been skipped.</li>
-     * <li>Unknown: The deployment lifecycle event is unknown.</li>
+     * <li>
+     * <p>
+     * Pending: The deployment lifecycle event is pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InProgress: The deployment lifecycle event is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The deployment lifecycle event ran successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: The deployment lifecycle event has failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Skipped: The deployment lifecycle event has been skipped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unknown: The deployment lifecycle event is unknown.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The deployment lifecycle event status:</p>
      *         <ul>
-     *         <li>Pending: The deployment lifecycle event is pending.</li>
-     *         <li>InProgress: The deployment lifecycle event is in progress.</li>
-     *         <li>Succeeded: The deployment lifecycle event ran successfully.</li>
-     *         <li>Failed: The deployment lifecycle event has failed.</li>
-     *         <li>Skipped: The deployment lifecycle event has been skipped.</li>
-     *         <li>Unknown: The deployment lifecycle event is unknown.</li>
+     *         <li>
+     *         <p>
+     *         Pending: The deployment lifecycle event is pending.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         InProgress: The deployment lifecycle event is in progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Succeeded: The deployment lifecycle event ran successfully.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Failed: The deployment lifecycle event has failed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Skipped: The deployment lifecycle event has been skipped.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Unknown: The deployment lifecycle event is unknown.
+     *         </p>
+     *         </li>
      * @see LifecycleEventStatus
      */
 
@@ -299,23 +419,71 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * The deployment lifecycle event status:
      * </p>
      * <ul>
-     * <li>Pending: The deployment lifecycle event is pending.</li>
-     * <li>InProgress: The deployment lifecycle event is in progress.</li>
-     * <li>Succeeded: The deployment lifecycle event ran successfully.</li>
-     * <li>Failed: The deployment lifecycle event has failed.</li>
-     * <li>Skipped: The deployment lifecycle event has been skipped.</li>
-     * <li>Unknown: The deployment lifecycle event is unknown.</li>
+     * <li>
+     * <p>
+     * Pending: The deployment lifecycle event is pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InProgress: The deployment lifecycle event is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The deployment lifecycle event ran successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: The deployment lifecycle event has failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Skipped: The deployment lifecycle event has been skipped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unknown: The deployment lifecycle event is unknown.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The deployment lifecycle event status:</p>
      *        <ul>
-     *        <li>Pending: The deployment lifecycle event is pending.</li>
-     *        <li>InProgress: The deployment lifecycle event is in progress.</li>
-     *        <li>Succeeded: The deployment lifecycle event ran successfully.</li>
-     *        <li>Failed: The deployment lifecycle event has failed.</li>
-     *        <li>Skipped: The deployment lifecycle event has been skipped.</li>
-     *        <li>Unknown: The deployment lifecycle event is unknown.</li>
+     *        <li>
+     *        <p>
+     *        Pending: The deployment lifecycle event is pending.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        InProgress: The deployment lifecycle event is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: The deployment lifecycle event ran successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed: The deployment lifecycle event has failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Skipped: The deployment lifecycle event has been skipped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unknown: The deployment lifecycle event is unknown.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see LifecycleEventStatus
@@ -331,23 +499,71 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * The deployment lifecycle event status:
      * </p>
      * <ul>
-     * <li>Pending: The deployment lifecycle event is pending.</li>
-     * <li>InProgress: The deployment lifecycle event is in progress.</li>
-     * <li>Succeeded: The deployment lifecycle event ran successfully.</li>
-     * <li>Failed: The deployment lifecycle event has failed.</li>
-     * <li>Skipped: The deployment lifecycle event has been skipped.</li>
-     * <li>Unknown: The deployment lifecycle event is unknown.</li>
+     * <li>
+     * <p>
+     * Pending: The deployment lifecycle event is pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InProgress: The deployment lifecycle event is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The deployment lifecycle event ran successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: The deployment lifecycle event has failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Skipped: The deployment lifecycle event has been skipped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unknown: The deployment lifecycle event is unknown.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The deployment lifecycle event status:</p>
      *        <ul>
-     *        <li>Pending: The deployment lifecycle event is pending.</li>
-     *        <li>InProgress: The deployment lifecycle event is in progress.</li>
-     *        <li>Succeeded: The deployment lifecycle event ran successfully.</li>
-     *        <li>Failed: The deployment lifecycle event has failed.</li>
-     *        <li>Skipped: The deployment lifecycle event has been skipped.</li>
-     *        <li>Unknown: The deployment lifecycle event is unknown.</li>
+     *        <li>
+     *        <p>
+     *        Pending: The deployment lifecycle event is pending.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        InProgress: The deployment lifecycle event is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: The deployment lifecycle event ran successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed: The deployment lifecycle event has failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Skipped: The deployment lifecycle event has been skipped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unknown: The deployment lifecycle event is unknown.
+     *        </p>
+     *        </li>
      * @see LifecycleEventStatus
      */
 
@@ -360,23 +576,71 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * The deployment lifecycle event status:
      * </p>
      * <ul>
-     * <li>Pending: The deployment lifecycle event is pending.</li>
-     * <li>InProgress: The deployment lifecycle event is in progress.</li>
-     * <li>Succeeded: The deployment lifecycle event ran successfully.</li>
-     * <li>Failed: The deployment lifecycle event has failed.</li>
-     * <li>Skipped: The deployment lifecycle event has been skipped.</li>
-     * <li>Unknown: The deployment lifecycle event is unknown.</li>
+     * <li>
+     * <p>
+     * Pending: The deployment lifecycle event is pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InProgress: The deployment lifecycle event is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The deployment lifecycle event ran successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed: The deployment lifecycle event has failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Skipped: The deployment lifecycle event has been skipped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unknown: The deployment lifecycle event is unknown.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The deployment lifecycle event status:</p>
      *        <ul>
-     *        <li>Pending: The deployment lifecycle event is pending.</li>
-     *        <li>InProgress: The deployment lifecycle event is in progress.</li>
-     *        <li>Succeeded: The deployment lifecycle event ran successfully.</li>
-     *        <li>Failed: The deployment lifecycle event has failed.</li>
-     *        <li>Skipped: The deployment lifecycle event has been skipped.</li>
-     *        <li>Unknown: The deployment lifecycle event is unknown.</li>
+     *        <li>
+     *        <p>
+     *        Pending: The deployment lifecycle event is pending.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        InProgress: The deployment lifecycle event is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: The deployment lifecycle event ran successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed: The deployment lifecycle event has failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Skipped: The deployment lifecycle event has been skipped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unknown: The deployment lifecycle event is unknown.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see LifecycleEventStatus

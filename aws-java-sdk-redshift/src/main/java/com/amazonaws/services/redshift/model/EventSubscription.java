@@ -51,12 +51,18 @@ public class EventSubscription implements Serializable, Cloneable {
      * Constraints:
      * </p>
      * <ul>
-     * <li>Can be one of the following: active | no-permission | topic-not-exist
+     * <li>
+     * <p>
+     * Can be one of the following: active | no-permission | topic-not-exist
+     * </p>
      * </li>
-     * <li>The status "no-permission" indicates that Amazon Redshift no longer
-     * has permission to post to the Amazon SNS topic. The status
-     * "topic-not-exist" indicates that the topic was deleted after the
-     * subscription was created.</li>
+     * <li>
+     * <p>
+     * The status "no-permission" indicates that Amazon Redshift no longer has
+     * permission to post to the Amazon SNS topic. The status "topic-not-exist"
+     * indicates that the topic was deleted after the subscription was created.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -258,12 +264,18 @@ public class EventSubscription implements Serializable, Cloneable {
      * Constraints:
      * </p>
      * <ul>
-     * <li>Can be one of the following: active | no-permission | topic-not-exist
+     * <li>
+     * <p>
+     * Can be one of the following: active | no-permission | topic-not-exist
+     * </p>
      * </li>
-     * <li>The status "no-permission" indicates that Amazon Redshift no longer
-     * has permission to post to the Amazon SNS topic. The status
-     * "topic-not-exist" indicates that the topic was deleted after the
-     * subscription was created.</li>
+     * <li>
+     * <p>
+     * The status "no-permission" indicates that Amazon Redshift no longer has
+     * permission to post to the Amazon SNS topic. The status "topic-not-exist"
+     * indicates that the topic was deleted after the subscription was created.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -273,12 +285,20 @@ public class EventSubscription implements Serializable, Cloneable {
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Can be one of the following: active | no-permission |
-     *        topic-not-exist</li>
-     *        <li>The status "no-permission" indicates that Amazon Redshift no
+     *        <li>
+     *        <p>
+     *        Can be one of the following: active | no-permission |
+     *        topic-not-exist
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The status "no-permission" indicates that Amazon Redshift no
      *        longer has permission to post to the Amazon SNS topic. The status
      *        "topic-not-exist" indicates that the topic was deleted after the
-     *        subscription was created.</li>
+     *        subscription was created.
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -293,12 +313,18 @@ public class EventSubscription implements Serializable, Cloneable {
      * Constraints:
      * </p>
      * <ul>
-     * <li>Can be one of the following: active | no-permission | topic-not-exist
+     * <li>
+     * <p>
+     * Can be one of the following: active | no-permission | topic-not-exist
+     * </p>
      * </li>
-     * <li>The status "no-permission" indicates that Amazon Redshift no longer
-     * has permission to post to the Amazon SNS topic. The status
-     * "topic-not-exist" indicates that the topic was deleted after the
-     * subscription was created.</li>
+     * <li>
+     * <p>
+     * The status "no-permission" indicates that Amazon Redshift no longer has
+     * permission to post to the Amazon SNS topic. The status "topic-not-exist"
+     * indicates that the topic was deleted after the subscription was created.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The status of the Amazon Redshift event notification
@@ -307,12 +333,20 @@ public class EventSubscription implements Serializable, Cloneable {
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Can be one of the following: active | no-permission |
-     *         topic-not-exist</li>
-     *         <li>The status "no-permission" indicates that Amazon Redshift no
+     *         <li>
+     *         <p>
+     *         Can be one of the following: active | no-permission |
+     *         topic-not-exist
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The status "no-permission" indicates that Amazon Redshift no
      *         longer has permission to post to the Amazon SNS topic. The status
      *         "topic-not-exist" indicates that the topic was deleted after the
-     *         subscription was created.</li>
+     *         subscription was created.
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -327,12 +361,18 @@ public class EventSubscription implements Serializable, Cloneable {
      * Constraints:
      * </p>
      * <ul>
-     * <li>Can be one of the following: active | no-permission | topic-not-exist
+     * <li>
+     * <p>
+     * Can be one of the following: active | no-permission | topic-not-exist
+     * </p>
      * </li>
-     * <li>The status "no-permission" indicates that Amazon Redshift no longer
-     * has permission to post to the Amazon SNS topic. The status
-     * "topic-not-exist" indicates that the topic was deleted after the
-     * subscription was created.</li>
+     * <li>
+     * <p>
+     * The status "no-permission" indicates that Amazon Redshift no longer has
+     * permission to post to the Amazon SNS topic. The status "topic-not-exist"
+     * indicates that the topic was deleted after the subscription was created.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -342,12 +382,20 @@ public class EventSubscription implements Serializable, Cloneable {
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Can be one of the following: active | no-permission |
-     *        topic-not-exist</li>
-     *        <li>The status "no-permission" indicates that Amazon Redshift no
+     *        <li>
+     *        <p>
+     *        Can be one of the following: active | no-permission |
+     *        topic-not-exist
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The status "no-permission" indicates that Amazon Redshift no
      *        longer has permission to post to the Amazon SNS topic. The status
      *        "topic-not-exist" indicates that the topic was deleted after the
-     *        subscription was created.</li>
+     *        subscription was created.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

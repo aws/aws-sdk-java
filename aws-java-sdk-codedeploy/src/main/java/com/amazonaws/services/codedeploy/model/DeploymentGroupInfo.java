@@ -80,10 +80,23 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
     private RevisionLocation targetRevision;
     /**
      * <p>
-     * A list of associated triggers.
+     * Information about triggers associated with the deployment group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TriggerConfig> triggerConfigurations;
+    /**
+     * <p>
+     * A list of alarms associated with the deployment group.
+     * </p>
+     */
+    private AlarmConfiguration alarmConfiguration;
+    /**
+     * <p>
+     * Information about the automatic rollback configuration associated with
+     * the deployment group.
+     * </p>
+     */
+    private AutoRollbackConfiguration autoRollbackConfiguration;
 
     /**
      * <p>
@@ -584,10 +597,10 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of associated triggers.
+     * Information about triggers associated with the deployment group.
      * </p>
      * 
-     * @return A list of associated triggers.
+     * @return Information about triggers associated with the deployment group.
      */
 
     public java.util.List<TriggerConfig> getTriggerConfigurations() {
@@ -599,11 +612,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of associated triggers.
+     * Information about triggers associated with the deployment group.
      * </p>
      * 
      * @param triggerConfigurations
-     *        A list of associated triggers.
+     *        Information about triggers associated with the deployment group.
      */
 
     public void setTriggerConfigurations(
@@ -619,7 +632,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of associated triggers.
+     * Information about triggers associated with the deployment group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -629,7 +642,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param triggerConfigurations
-     *        A list of associated triggers.
+     *        Information about triggers associated with the deployment group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -648,11 +661,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of associated triggers.
+     * Information about triggers associated with the deployment group.
      * </p>
      * 
      * @param triggerConfigurations
-     *        A list of associated triggers.
+     *        Information about triggers associated with the deployment group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -660,6 +673,97 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
     public DeploymentGroupInfo withTriggerConfigurations(
             java.util.Collection<TriggerConfig> triggerConfigurations) {
         setTriggerConfigurations(triggerConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of alarms associated with the deployment group.
+     * </p>
+     * 
+     * @param alarmConfiguration
+     *        A list of alarms associated with the deployment group.
+     */
+
+    public void setAlarmConfiguration(AlarmConfiguration alarmConfiguration) {
+        this.alarmConfiguration = alarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * A list of alarms associated with the deployment group.
+     * </p>
+     * 
+     * @return A list of alarms associated with the deployment group.
+     */
+
+    public AlarmConfiguration getAlarmConfiguration() {
+        return this.alarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * A list of alarms associated with the deployment group.
+     * </p>
+     * 
+     * @param alarmConfiguration
+     *        A list of alarms associated with the deployment group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DeploymentGroupInfo withAlarmConfiguration(
+            AlarmConfiguration alarmConfiguration) {
+        setAlarmConfiguration(alarmConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the automatic rollback configuration associated with
+     * the deployment group.
+     * </p>
+     * 
+     * @param autoRollbackConfiguration
+     *        Information about the automatic rollback configuration associated
+     *        with the deployment group.
+     */
+
+    public void setAutoRollbackConfiguration(
+            AutoRollbackConfiguration autoRollbackConfiguration) {
+        this.autoRollbackConfiguration = autoRollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information about the automatic rollback configuration associated with
+     * the deployment group.
+     * </p>
+     * 
+     * @return Information about the automatic rollback configuration associated
+     *         with the deployment group.
+     */
+
+    public AutoRollbackConfiguration getAutoRollbackConfiguration() {
+        return this.autoRollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information about the automatic rollback configuration associated with
+     * the deployment group.
+     * </p>
+     * 
+     * @param autoRollbackConfiguration
+     *        Information about the automatic rollback configuration associated
+     *        with the deployment group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DeploymentGroupInfo withAutoRollbackConfiguration(
+            AutoRollbackConfiguration autoRollbackConfiguration) {
+        setAutoRollbackConfiguration(autoRollbackConfiguration);
         return this;
     }
 
@@ -696,7 +800,13 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
         if (getTargetRevision() != null)
             sb.append("TargetRevision: " + getTargetRevision() + ",");
         if (getTriggerConfigurations() != null)
-            sb.append("TriggerConfigurations: " + getTriggerConfigurations());
+            sb.append("TriggerConfigurations: " + getTriggerConfigurations()
+                    + ",");
+        if (getAlarmConfiguration() != null)
+            sb.append("AlarmConfiguration: " + getAlarmConfiguration() + ",");
+        if (getAutoRollbackConfiguration() != null)
+            sb.append("AutoRollbackConfiguration: "
+                    + getAutoRollbackConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -776,6 +886,20 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
                 && other.getTriggerConfigurations().equals(
                         this.getTriggerConfigurations()) == false)
             return false;
+        if (other.getAlarmConfiguration() == null
+                ^ this.getAlarmConfiguration() == null)
+            return false;
+        if (other.getAlarmConfiguration() != null
+                && other.getAlarmConfiguration().equals(
+                        this.getAlarmConfiguration()) == false)
+            return false;
+        if (other.getAutoRollbackConfiguration() == null
+                ^ this.getAutoRollbackConfiguration() == null)
+            return false;
+        if (other.getAutoRollbackConfiguration() != null
+                && other.getAutoRollbackConfiguration().equals(
+                        this.getAutoRollbackConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -824,6 +948,14 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
                 * hashCode
                 + ((getTriggerConfigurations() == null) ? 0
                         : getTriggerConfigurations().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAlarmConfiguration() == null) ? 0
+                        : getAlarmConfiguration().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAutoRollbackConfiguration() == null) ? 0
+                        : getAutoRollbackConfiguration().hashCode());
         return hashCode;
     }
 

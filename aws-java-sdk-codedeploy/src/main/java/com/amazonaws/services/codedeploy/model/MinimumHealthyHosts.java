@@ -34,10 +34,17 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * The minimum healthy instance type:
      * </p>
      * <ul>
-     * <li>HOST_COUNT: The minimum number of healthy instance as an absolute
-     * value.</li>
-     * <li>FLEET_PERCENT: The minimum number of healthy instance as a percentage
-     * of the total number of instance in the deployment.</li>
+     * <li>
+     * <p>
+     * HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FLEET_PERCENT: The minimum number of healthy instance as a percentage of
+     * the total number of instance in the deployment.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * In an example of nine instance, if a HOST_COUNT of six is specified,
@@ -48,7 +55,9 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * successful if four or more instance are deployed to successfully;
      * otherwise, the deployment fails.
      * </p>
-     * <note>In a call to the get deployment configuration operation,
+     * <note>
+     * <p>
+     * In a call to the get deployment configuration operation,
      * CodeDeployDefault.OneAtATime will return a minimum healthy instance type
      * of MOST_CONCURRENCY and a value of 1. This means a deployment to only one
      * instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to
@@ -57,7 +66,9 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * instances but one are kept in a healthy state during the deployment.
      * Although this allows one instance at a time to be taken offline for a new
      * deployment, it also means that if the deployment to the last instance
-     * fails, the overall deployment still succeeds.</note>
+     * fails, the overall deployment still succeeds.
+     * </p>
+     * </note>
      */
     private String type;
 
@@ -107,10 +118,17 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * The minimum healthy instance type:
      * </p>
      * <ul>
-     * <li>HOST_COUNT: The minimum number of healthy instance as an absolute
-     * value.</li>
-     * <li>FLEET_PERCENT: The minimum number of healthy instance as a percentage
-     * of the total number of instance in the deployment.</li>
+     * <li>
+     * <p>
+     * HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FLEET_PERCENT: The minimum number of healthy instance as a percentage of
+     * the total number of instance in the deployment.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * In an example of nine instance, if a HOST_COUNT of six is specified,
@@ -121,7 +139,9 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * successful if four or more instance are deployed to successfully;
      * otherwise, the deployment fails.
      * </p>
-     * <note>In a call to the get deployment configuration operation,
+     * <note>
+     * <p>
+     * In a call to the get deployment configuration operation,
      * CodeDeployDefault.OneAtATime will return a minimum healthy instance type
      * of MOST_CONCURRENCY and a value of 1. This means a deployment to only one
      * instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to
@@ -130,15 +150,25 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * instances but one are kept in a healthy state during the deployment.
      * Although this allows one instance at a time to be taken offline for a new
      * deployment, it also means that if the deployment to the last instance
-     * fails, the overall deployment still succeeds.</note>
+     * fails, the overall deployment still succeeds.
+     * </p>
+     * </note>
      * 
      * @param type
      *        The minimum healthy instance type:</p>
      *        <ul>
-     *        <li>HOST_COUNT: The minimum number of healthy instance as an
-     *        absolute value.</li>
-     *        <li>FLEET_PERCENT: The minimum number of healthy instance as a
-     *        percentage of the total number of instance in the deployment.</li>
+     *        <li>
+     *        <p>
+     *        HOST_COUNT: The minimum number of healthy instance as an absolute
+     *        value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FLEET_PERCENT: The minimum number of healthy instance as a
+     *        percentage of the total number of instance in the deployment.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        In an example of nine instance, if a HOST_COUNT of six is
@@ -149,7 +179,9 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *        a time. The deployment will be successful if four or more instance
      *        are deployed to successfully; otherwise, the deployment fails.
      *        </p>
-     *        <note>In a call to the get deployment configuration operation,
+     *        <note>
+     *        <p>
+     *        In a call to the get deployment configuration operation,
      *        CodeDeployDefault.OneAtATime will return a minimum healthy
      *        instance type of MOST_CONCURRENCY and a value of 1. This means a
      *        deployment to only one instance at a time. (You cannot set the
@@ -160,6 +192,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *        a time to be taken offline for a new deployment, it also means
      *        that if the deployment to the last instance fails, the overall
      *        deployment still succeeds.
+     *        </p>
      * @see MinimumHealthyHostsType
      */
 
@@ -172,10 +205,17 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * The minimum healthy instance type:
      * </p>
      * <ul>
-     * <li>HOST_COUNT: The minimum number of healthy instance as an absolute
-     * value.</li>
-     * <li>FLEET_PERCENT: The minimum number of healthy instance as a percentage
-     * of the total number of instance in the deployment.</li>
+     * <li>
+     * <p>
+     * HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FLEET_PERCENT: The minimum number of healthy instance as a percentage of
+     * the total number of instance in the deployment.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * In an example of nine instance, if a HOST_COUNT of six is specified,
@@ -186,7 +226,9 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * successful if four or more instance are deployed to successfully;
      * otherwise, the deployment fails.
      * </p>
-     * <note>In a call to the get deployment configuration operation,
+     * <note>
+     * <p>
+     * In a call to the get deployment configuration operation,
      * CodeDeployDefault.OneAtATime will return a minimum healthy instance type
      * of MOST_CONCURRENCY and a value of 1. This means a deployment to only one
      * instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to
@@ -195,14 +237,24 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * instances but one are kept in a healthy state during the deployment.
      * Although this allows one instance at a time to be taken offline for a new
      * deployment, it also means that if the deployment to the last instance
-     * fails, the overall deployment still succeeds.</note>
+     * fails, the overall deployment still succeeds.
+     * </p>
+     * </note>
      * 
      * @return The minimum healthy instance type:</p>
      *         <ul>
-     *         <li>HOST_COUNT: The minimum number of healthy instance as an
-     *         absolute value.</li>
-     *         <li>FLEET_PERCENT: The minimum number of healthy instance as a
-     *         percentage of the total number of instance in the deployment.</li>
+     *         <li>
+     *         <p>
+     *         HOST_COUNT: The minimum number of healthy instance as an absolute
+     *         value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         FLEET_PERCENT: The minimum number of healthy instance as a
+     *         percentage of the total number of instance in the deployment.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         In an example of nine instance, if a HOST_COUNT of six is
@@ -214,7 +266,9 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         instance are deployed to successfully; otherwise, the deployment
      *         fails.
      *         </p>
-     *         <note>In a call to the get deployment configuration operation,
+     *         <note>
+     *         <p>
+     *         In a call to the get deployment configuration operation,
      *         CodeDeployDefault.OneAtATime will return a minimum healthy
      *         instance type of MOST_CONCURRENCY and a value of 1. This means a
      *         deployment to only one instance at a time. (You cannot set the
@@ -225,6 +279,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         instance at a time to be taken offline for a new deployment, it
      *         also means that if the deployment to the last instance fails, the
      *         overall deployment still succeeds.
+     *         </p>
      * @see MinimumHealthyHostsType
      */
 
@@ -237,10 +292,17 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * The minimum healthy instance type:
      * </p>
      * <ul>
-     * <li>HOST_COUNT: The minimum number of healthy instance as an absolute
-     * value.</li>
-     * <li>FLEET_PERCENT: The minimum number of healthy instance as a percentage
-     * of the total number of instance in the deployment.</li>
+     * <li>
+     * <p>
+     * HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FLEET_PERCENT: The minimum number of healthy instance as a percentage of
+     * the total number of instance in the deployment.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * In an example of nine instance, if a HOST_COUNT of six is specified,
@@ -251,7 +313,9 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * successful if four or more instance are deployed to successfully;
      * otherwise, the deployment fails.
      * </p>
-     * <note>In a call to the get deployment configuration operation,
+     * <note>
+     * <p>
+     * In a call to the get deployment configuration operation,
      * CodeDeployDefault.OneAtATime will return a minimum healthy instance type
      * of MOST_CONCURRENCY and a value of 1. This means a deployment to only one
      * instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to
@@ -260,15 +324,25 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * instances but one are kept in a healthy state during the deployment.
      * Although this allows one instance at a time to be taken offline for a new
      * deployment, it also means that if the deployment to the last instance
-     * fails, the overall deployment still succeeds.</note>
+     * fails, the overall deployment still succeeds.
+     * </p>
+     * </note>
      * 
      * @param type
      *        The minimum healthy instance type:</p>
      *        <ul>
-     *        <li>HOST_COUNT: The minimum number of healthy instance as an
-     *        absolute value.</li>
-     *        <li>FLEET_PERCENT: The minimum number of healthy instance as a
-     *        percentage of the total number of instance in the deployment.</li>
+     *        <li>
+     *        <p>
+     *        HOST_COUNT: The minimum number of healthy instance as an absolute
+     *        value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FLEET_PERCENT: The minimum number of healthy instance as a
+     *        percentage of the total number of instance in the deployment.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        In an example of nine instance, if a HOST_COUNT of six is
@@ -279,7 +353,9 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *        a time. The deployment will be successful if four or more instance
      *        are deployed to successfully; otherwise, the deployment fails.
      *        </p>
-     *        <note>In a call to the get deployment configuration operation,
+     *        <note>
+     *        <p>
+     *        In a call to the get deployment configuration operation,
      *        CodeDeployDefault.OneAtATime will return a minimum healthy
      *        instance type of MOST_CONCURRENCY and a value of 1. This means a
      *        deployment to only one instance at a time. (You cannot set the
@@ -290,6 +366,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *        a time to be taken offline for a new deployment, it also means
      *        that if the deployment to the last instance fails, the overall
      *        deployment still succeeds.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MinimumHealthyHostsType
@@ -305,10 +382,17 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * The minimum healthy instance type:
      * </p>
      * <ul>
-     * <li>HOST_COUNT: The minimum number of healthy instance as an absolute
-     * value.</li>
-     * <li>FLEET_PERCENT: The minimum number of healthy instance as a percentage
-     * of the total number of instance in the deployment.</li>
+     * <li>
+     * <p>
+     * HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FLEET_PERCENT: The minimum number of healthy instance as a percentage of
+     * the total number of instance in the deployment.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * In an example of nine instance, if a HOST_COUNT of six is specified,
@@ -319,7 +403,9 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * successful if four or more instance are deployed to successfully;
      * otherwise, the deployment fails.
      * </p>
-     * <note>In a call to the get deployment configuration operation,
+     * <note>
+     * <p>
+     * In a call to the get deployment configuration operation,
      * CodeDeployDefault.OneAtATime will return a minimum healthy instance type
      * of MOST_CONCURRENCY and a value of 1. This means a deployment to only one
      * instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to
@@ -328,15 +414,25 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * instances but one are kept in a healthy state during the deployment.
      * Although this allows one instance at a time to be taken offline for a new
      * deployment, it also means that if the deployment to the last instance
-     * fails, the overall deployment still succeeds.</note>
+     * fails, the overall deployment still succeeds.
+     * </p>
+     * </note>
      * 
      * @param type
      *        The minimum healthy instance type:</p>
      *        <ul>
-     *        <li>HOST_COUNT: The minimum number of healthy instance as an
-     *        absolute value.</li>
-     *        <li>FLEET_PERCENT: The minimum number of healthy instance as a
-     *        percentage of the total number of instance in the deployment.</li>
+     *        <li>
+     *        <p>
+     *        HOST_COUNT: The minimum number of healthy instance as an absolute
+     *        value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FLEET_PERCENT: The minimum number of healthy instance as a
+     *        percentage of the total number of instance in the deployment.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        In an example of nine instance, if a HOST_COUNT of six is
@@ -347,7 +443,9 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *        a time. The deployment will be successful if four or more instance
      *        are deployed to successfully; otherwise, the deployment fails.
      *        </p>
-     *        <note>In a call to the get deployment configuration operation,
+     *        <note>
+     *        <p>
+     *        In a call to the get deployment configuration operation,
      *        CodeDeployDefault.OneAtATime will return a minimum healthy
      *        instance type of MOST_CONCURRENCY and a value of 1. This means a
      *        deployment to only one instance at a time. (You cannot set the
@@ -358,6 +456,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *        a time to be taken offline for a new deployment, it also means
      *        that if the deployment to the last instance fails, the overall
      *        deployment still succeeds.
+     *        </p>
      * @see MinimumHealthyHostsType
      */
 
@@ -370,10 +469,17 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * The minimum healthy instance type:
      * </p>
      * <ul>
-     * <li>HOST_COUNT: The minimum number of healthy instance as an absolute
-     * value.</li>
-     * <li>FLEET_PERCENT: The minimum number of healthy instance as a percentage
-     * of the total number of instance in the deployment.</li>
+     * <li>
+     * <p>
+     * HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FLEET_PERCENT: The minimum number of healthy instance as a percentage of
+     * the total number of instance in the deployment.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * In an example of nine instance, if a HOST_COUNT of six is specified,
@@ -384,7 +490,9 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * successful if four or more instance are deployed to successfully;
      * otherwise, the deployment fails.
      * </p>
-     * <note>In a call to the get deployment configuration operation,
+     * <note>
+     * <p>
+     * In a call to the get deployment configuration operation,
      * CodeDeployDefault.OneAtATime will return a minimum healthy instance type
      * of MOST_CONCURRENCY and a value of 1. This means a deployment to only one
      * instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to
@@ -393,15 +501,25 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * instances but one are kept in a healthy state during the deployment.
      * Although this allows one instance at a time to be taken offline for a new
      * deployment, it also means that if the deployment to the last instance
-     * fails, the overall deployment still succeeds.</note>
+     * fails, the overall deployment still succeeds.
+     * </p>
+     * </note>
      * 
      * @param type
      *        The minimum healthy instance type:</p>
      *        <ul>
-     *        <li>HOST_COUNT: The minimum number of healthy instance as an
-     *        absolute value.</li>
-     *        <li>FLEET_PERCENT: The minimum number of healthy instance as a
-     *        percentage of the total number of instance in the deployment.</li>
+     *        <li>
+     *        <p>
+     *        HOST_COUNT: The minimum number of healthy instance as an absolute
+     *        value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FLEET_PERCENT: The minimum number of healthy instance as a
+     *        percentage of the total number of instance in the deployment.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        In an example of nine instance, if a HOST_COUNT of six is
@@ -412,7 +530,9 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *        a time. The deployment will be successful if four or more instance
      *        are deployed to successfully; otherwise, the deployment fails.
      *        </p>
-     *        <note>In a call to the get deployment configuration operation,
+     *        <note>
+     *        <p>
+     *        In a call to the get deployment configuration operation,
      *        CodeDeployDefault.OneAtATime will return a minimum healthy
      *        instance type of MOST_CONCURRENCY and a value of 1. This means a
      *        deployment to only one instance at a time. (You cannot set the
@@ -423,6 +543,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *        a time to be taken offline for a new deployment, it also means
      *        that if the deployment to the last instance fails, the overall
      *        deployment still succeeds.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MinimumHealthyHostsType

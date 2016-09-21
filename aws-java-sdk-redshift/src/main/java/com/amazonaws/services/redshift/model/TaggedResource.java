@@ -40,18 +40,54 @@ public class TaggedResource implements Serializable, Cloneable {
      * <p>
      * The type of resource with which the tag is associated. Valid resource
      * types are:
-     * <ul>
-     * <li>Cluster</li>
-     * <li>CIDR/IP</li>
-     * <li>EC2 security group</li>
-     * <li>Snapshot</li>
-     * <li>Cluster security group</li>
-     * <li>Subnet group</li>
-     * <li>HSM connection</li>
-     * <li>HSM certificate</li>
-     * <li>Parameter group</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CIDR/IP
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cluster security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subnet group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM connection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parameter group
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information about Amazon Redshift resource types and
      * constructing ARNs, go to <a href=
@@ -157,18 +193,54 @@ public class TaggedResource implements Serializable, Cloneable {
      * <p>
      * The type of resource with which the tag is associated. Valid resource
      * types are:
-     * <ul>
-     * <li>Cluster</li>
-     * <li>CIDR/IP</li>
-     * <li>EC2 security group</li>
-     * <li>Snapshot</li>
-     * <li>Cluster security group</li>
-     * <li>Subnet group</li>
-     * <li>HSM connection</li>
-     * <li>HSM certificate</li>
-     * <li>Parameter group</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CIDR/IP
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cluster security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subnet group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM connection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parameter group
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information about Amazon Redshift resource types and
      * constructing ARNs, go to <a href=
@@ -179,19 +251,54 @@ public class TaggedResource implements Serializable, Cloneable {
      * 
      * @param resourceType
      *        The type of resource with which the tag is associated. Valid
-     *        resource types are:
+     *        resource types are: </p>
      *        <ul>
-     *        <li>Cluster</li>
-     *        <li>CIDR/IP</li>
-     *        <li>EC2 security group</li>
-     *        <li>Snapshot</li>
-     *        <li>Cluster security group</li>
-     *        <li>Subnet group</li>
-     *        <li>HSM connection</li>
-     *        <li>HSM certificate</li>
-     *        <li>Parameter group</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Cluster
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CIDR/IP
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EC2 security group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Snapshot
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cluster security group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Subnet group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HSM connection
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HSM certificate
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Parameter group
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        For more information about Amazon Redshift resource types and
      *        constructing ARNs, go to <a href=
@@ -208,18 +315,54 @@ public class TaggedResource implements Serializable, Cloneable {
      * <p>
      * The type of resource with which the tag is associated. Valid resource
      * types are:
-     * <ul>
-     * <li>Cluster</li>
-     * <li>CIDR/IP</li>
-     * <li>EC2 security group</li>
-     * <li>Snapshot</li>
-     * <li>Cluster security group</li>
-     * <li>Subnet group</li>
-     * <li>HSM connection</li>
-     * <li>HSM certificate</li>
-     * <li>Parameter group</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CIDR/IP
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cluster security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subnet group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM connection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parameter group
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information about Amazon Redshift resource types and
      * constructing ARNs, go to <a href=
@@ -229,19 +372,54 @@ public class TaggedResource implements Serializable, Cloneable {
      * </p>
      * 
      * @return The type of resource with which the tag is associated. Valid
-     *         resource types are:
+     *         resource types are: </p>
      *         <ul>
-     *         <li>Cluster</li>
-     *         <li>CIDR/IP</li>
-     *         <li>EC2 security group</li>
-     *         <li>Snapshot</li>
-     *         <li>Cluster security group</li>
-     *         <li>Subnet group</li>
-     *         <li>HSM connection</li>
-     *         <li>HSM certificate</li>
-     *         <li>Parameter group</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Cluster
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CIDR/IP
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EC2 security group
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Snapshot
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cluster security group
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Subnet group
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HSM connection
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HSM certificate
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Parameter group
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         For more information about Amazon Redshift resource types and
      *         constructing ARNs, go to <a href=
@@ -258,18 +436,54 @@ public class TaggedResource implements Serializable, Cloneable {
      * <p>
      * The type of resource with which the tag is associated. Valid resource
      * types are:
-     * <ul>
-     * <li>Cluster</li>
-     * <li>CIDR/IP</li>
-     * <li>EC2 security group</li>
-     * <li>Snapshot</li>
-     * <li>Cluster security group</li>
-     * <li>Subnet group</li>
-     * <li>HSM connection</li>
-     * <li>HSM certificate</li>
-     * <li>Parameter group</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CIDR/IP
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cluster security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subnet group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM connection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parameter group
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information about Amazon Redshift resource types and
      * constructing ARNs, go to <a href=
@@ -280,19 +494,54 @@ public class TaggedResource implements Serializable, Cloneable {
      * 
      * @param resourceType
      *        The type of resource with which the tag is associated. Valid
-     *        resource types are:
+     *        resource types are: </p>
      *        <ul>
-     *        <li>Cluster</li>
-     *        <li>CIDR/IP</li>
-     *        <li>EC2 security group</li>
-     *        <li>Snapshot</li>
-     *        <li>Cluster security group</li>
-     *        <li>Subnet group</li>
-     *        <li>HSM connection</li>
-     *        <li>HSM certificate</li>
-     *        <li>Parameter group</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Cluster
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CIDR/IP
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EC2 security group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Snapshot
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cluster security group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Subnet group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HSM connection
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HSM certificate
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Parameter group
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        For more information about Amazon Redshift resource types and
      *        constructing ARNs, go to <a href=

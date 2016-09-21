@@ -225,6 +225,11 @@ public class SnapshotStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("EnhancedVpcRouting", targetDepth)) {
+                    snapshot.setEnhancedVpcRouting(BooleanStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return snapshot;

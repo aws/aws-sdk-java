@@ -74,6 +74,36 @@ public class AbstractAmazonElasticMapReduceAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSecurityConfigurationResult> createSecurityConfigurationAsync(
+            CreateSecurityConfigurationRequest request) {
+
+        return createSecurityConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSecurityConfigurationResult> createSecurityConfigurationAsync(
+            CreateSecurityConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateSecurityConfigurationRequest, CreateSecurityConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSecurityConfigurationResult> deleteSecurityConfigurationAsync(
+            DeleteSecurityConfigurationRequest request) {
+
+        return deleteSecurityConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSecurityConfigurationResult> deleteSecurityConfigurationAsync(
+            DeleteSecurityConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteSecurityConfigurationRequest, DeleteSecurityConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(
             DescribeClusterRequest request) {
 
@@ -129,6 +159,21 @@ public class AbstractAmazonElasticMapReduceAsync extends
 
         return describeJobFlowsAsync(new DescribeJobFlowsRequest(),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSecurityConfigurationResult> describeSecurityConfigurationAsync(
+            DescribeSecurityConfigurationRequest request) {
+
+        return describeSecurityConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSecurityConfigurationResult> describeSecurityConfigurationAsync(
+            DescribeSecurityConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeSecurityConfigurationRequest, DescribeSecurityConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -226,6 +271,21 @@ public class AbstractAmazonElasticMapReduceAsync extends
     public java.util.concurrent.Future<ListInstancesResult> listInstancesAsync(
             ListInstancesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListInstancesRequest, ListInstancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityConfigurationsResult> listSecurityConfigurationsAsync(
+            ListSecurityConfigurationsRequest request) {
+
+        return listSecurityConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityConfigurationsResult> listSecurityConfigurationsAsync(
+            ListSecurityConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSecurityConfigurationsRequest, ListSecurityConfigurationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DescribeResizeRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -49,7 +48,7 @@ public class DescribeResizeRequest extends
      * 
      * @param clusterIdentifier
      *        The unique identifier of a cluster whose resize progress you are
-     *        requesting. This parameter is case-sensitive. </p>
+     *        requesting. This parameter is case-sensitive.</p>
      *        <p>
      *        By default, resize operations for all clusters defined for an AWS
      *        account are returned.
@@ -70,7 +69,7 @@ public class DescribeResizeRequest extends
      * </p>
      * 
      * @return The unique identifier of a cluster whose resize progress you are
-     *         requesting. This parameter is case-sensitive. </p>
+     *         requesting. This parameter is case-sensitive.</p>
      *         <p>
      *         By default, resize operations for all clusters defined for an AWS
      *         account are returned.
@@ -92,7 +91,7 @@ public class DescribeResizeRequest extends
      * 
      * @param clusterIdentifier
      *        The unique identifier of a cluster whose resize progress you are
-     *        requesting. This parameter is case-sensitive. </p>
+     *        requesting. This parameter is case-sensitive.</p>
      *        <p>
      *        By default, resize operations for all clusters defined for an AWS
      *        account are returned.

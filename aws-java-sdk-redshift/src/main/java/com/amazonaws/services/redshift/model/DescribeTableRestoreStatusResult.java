@@ -17,7 +17,7 @@ package com.amazonaws.services.redshift.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p/>
  */
 public class DescribeTableRestoreStatusResult extends
         com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>

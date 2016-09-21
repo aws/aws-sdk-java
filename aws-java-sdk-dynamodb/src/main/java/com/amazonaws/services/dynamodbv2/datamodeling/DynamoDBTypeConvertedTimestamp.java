@@ -18,6 +18,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+
 import java.util.Date;
 import java.util.TimeZone;
 
@@ -61,43 +62,45 @@ import org.joda.time.format.DateTimeFormatter;
  * @see java.util.TimeZone
  */
 @DynamoDBTypeConverted(converter=DynamoDBTypeConvertedTimestamp.Converter.class)
+@DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.S)
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBTypeConvertedTimestamp {
 
     /**
-     * The time zone.
+     * The pattern format; default is ISO8601.
+     * @see java.text.SimpleDateFormat
+     */
+    String pattern() default "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+
+    /**
+     * The time zone; default is {@code UTC}.
      * @see java.util.TimeZone
      */
     String timeZone() default "UTC";
 
     /**
-     * The pattern format.
-     * @see java.text.SimpleDateFormat
-     */
-    String pattern();
-
-    /**
      * Timestamp format converter.
      */
     static final class Converter<T> implements DynamoDBTypeConverter<String,T> {
-        private final DynamoDBTypeConverter<Date,T> converter;
+        private final DynamoDBTypeConverter<DateTime,T> converter;
         private final DateTimeFormatter formatter;
 
-        public Converter(final Class<T> targetType, final DynamoDBTypeConvertedTimestamp annotation) {
-            final TimeZone tz = StandardTypeConverters.Scalar.TIME_ZONE.convert(annotation.timeZone());
-            this.formatter = DateTimeFormat.forPattern(annotation.pattern()).withZone(DateTimeZone.forTimeZone(tz));
-            this.converter = StandardTypeConverters.Scalar.DATE.join(targetType);
+        public Converter(Class<T> targetType, DynamoDBTypeConvertedTimestamp annotation) {
+            this.formatter = DateTimeFormat.forPattern(annotation.pattern()).withZone(
+                DateTimeZone.forTimeZone(StandardTypeConverters.Scalar.TIME_ZONE.<TimeZone>convert(annotation.timeZone()))
+            );
+            this.converter = StandardTypeConverters.factory().getConverter(DateTime.class, targetType);
         }
 
         @Override
         public final String convert(final T object) {
-            return formatter.print(new DateTime(converter.convert(object)));
+            return formatter.print(converter.convert(object));
         }
 
         @Override
         public final T unconvert(final String object) {
-            return converter.unconvert(formatter.parseDateTime(object).toDate());
+            return converter.unconvert(formatter.parseDateTime(object));
         }
     }
 

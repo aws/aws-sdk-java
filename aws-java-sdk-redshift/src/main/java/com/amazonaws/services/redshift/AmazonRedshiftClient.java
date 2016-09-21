@@ -47,7 +47,10 @@ import com.amazonaws.services.redshift.model.transform.*;
  * Client for accessing Amazon Redshift. All service calls made using this
  * client are blocking, and will not return until the service call completes.
  * <p>
- * <fullname>Amazon Redshift</fullname> <b>Overview</b>
+ * <fullname>Amazon Redshift</fullname>
+ * <p>
+ * <b>Overview</b>
+ * </p>
  * <p>
  * This is an interface reference for Amazon Redshift. It contains documentation
  * for one of the programming or command line interfaces you can use to manage
@@ -59,7 +62,7 @@ import com.amazonaws.services.redshift.model.transform.*;
  * maintenance window. For a summary of the Amazon Redshift cluster management
  * interfaces, go to <a
  * href="http://docs.aws.amazon.com/redshift/latest/mgmt/using-aws-sdk.html"
- * >Using the Amazon Redshift Management Interfaces </a>.
+ * >Using the Amazon Redshift Management Interfaces</a>.
  * </p>
  * <p>
  * Amazon Redshift manages all the work of setting up, operating, and scaling a
@@ -70,9 +73,9 @@ import com.amazonaws.services.redshift.model.transform.*;
  * </p>
  * <p>
  * If you are a first-time user of Amazon Redshift, we recommend that you begin
- * by reading the The <a
+ * by reading the <a
  * href="http://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html"
- * >Amazon Redshift Getting Started Guide</a>
+ * >Amazon Redshift Getting Started Guide</a>.
  * </p>
  * <p>
  * If you are a database developer, the <a
@@ -674,15 +677,16 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a new cluster. To create the cluster in virtual private cloud
-     * (VPC), you must provide cluster subnet group name. If you don't provide a
-     * cluster subnet group name or the cluster security group parameter, Amazon
-     * Redshift creates a non-VPC cluster, it associates the default cluster
-     * security group with the cluster. For more information about managing
-     * clusters, go to <a href=
+     * Creates a new cluster.
+     * </p>
+     * <p>
+     * To create the cluster in Virtual Private Cloud (VPC), you must provide a
+     * cluster subnet group name. The cluster subnet group identifies the
+     * subnets of your VPC that Amazon Redshift uses when creating the cluster.
+     * For more information about managing clusters, go to <a href=
      * "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"
      * >Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster
-     * Management Guide</i> .
+     * Management Guide</i>.
      * </p>
      * 
      * @param createClusterRequest
@@ -1441,7 +1445,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements
      * information about managing clusters, go to <a href=
      * "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"
      * >Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster
-     * Management Guide</i> .
+     * Management Guide</i>.
      * </p>
      * <p>
      * If you want to shut down the cluster and retain it for future use, set
@@ -1456,7 +1460,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements
      * For more information about managing clusters, go to <a href=
      * "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"
      * >Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster
-     * Management Guide</i> .
+     * Management Guide</i>.
      * </p>
      * 
      * @param deleteClusterRequest
@@ -1508,9 +1512,13 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Deletes a specified Amazon Redshift parameter group. <note>You cannot
-     * delete a parameter group if it is associated with a cluster.</note>
+     * Deletes a specified Amazon Redshift parameter group.
      * </p>
+     * <note>
+     * <p>
+     * You cannot delete a parameter group if it is associated with a cluster.
+     * </p>
+     * </note>
      * 
      * @param deleteClusterParameterGroupRequest
      * @return Result of the DeleteClusterParameterGroup operation returned by
@@ -1562,8 +1570,12 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements
      * <p>
      * Deletes an Amazon Redshift security group.
      * </p>
-     * <note>You cannot delete a security group that is associated with any
-     * clusters. You cannot delete the default security group.</note>
+     * <note>
+     * <p>
+     * You cannot delete a security group that is associated with any clusters.
+     * You cannot delete the default security group.
+     * </p>
+     * </note>
      * <p>
      * For information about managing security groups, go to <a href=
      * "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"
@@ -2345,7 +2357,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements
      * managing clusters, go to <a href=
      * "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"
      * >Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster
-     * Management Guide</i>
+     * Management Guide</i>.
      * </p>
      * 
      * @param describeClusterVersionsRequest
@@ -2400,7 +2412,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements
      * pagination. For more information about managing clusters, go to <a href=
      * "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"
      * >Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster
-     * Management Guide</i> .
+     * Management Guide</i>.
      * </p>
      * <p>
      * If you specify both tag keys and tag values in the same request, Amazon
@@ -2872,7 +2884,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements
      * information about managing clusters, go to <a href=
      * "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"
      * >Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster
-     * Management Guide</i>
+     * Management Guide</i>.
      * </p>
      * 
      * @param describeOrderableClusterOptionsRequest
@@ -3222,15 +3234,27 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * The following are limitations for <code>DescribeTags</code>:
-     * <ul>
-     * <li>You cannot specify an ARN and a resource-type value together in the
-     * same request.</li>
-     * <li>You cannot use the <code>MaxRecords</code> and <code>Marker</code>
-     * parameters together with the ARN parameter.</li>
-     * <li>The <code>MaxRecords</code> parameter can be a range from 10 to 50
-     * results to return in a request.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You cannot specify an ARN and a resource-type value together in the same
+     * request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot use the <code>MaxRecords</code> and <code>Marker</code>
+     * parameters together with the ARN parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>MaxRecords</code> parameter can be a range from 10 to 50
+     * results to return in a request.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * If you specify both tag keys and tag values in the same request, Amazon
      * Redshift returns all resources that match any combination of the
@@ -3541,7 +3565,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements
      * go to <a href=
      * "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"
      * >Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster
-     * Management Guide</i> .
+     * Management Guide</i>.
      * </p>
      * <p>
      * You can also change node type and the number of nodes to scale up or down
@@ -4015,7 +4039,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements
      * about managing clusters, go to <a href=
      * "http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"
      * >Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster
-     * Management Guide</i>
+     * Management Guide</i>.
      * </p>
      * 
      * @param rebootClusterRequest

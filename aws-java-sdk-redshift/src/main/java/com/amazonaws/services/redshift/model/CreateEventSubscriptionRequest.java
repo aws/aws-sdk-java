@@ -32,10 +32,26 @@ public class CreateEventSubscriptionRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank.</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      */
     private String subscriptionName;
@@ -119,23 +135,54 @@ public class CreateEventSubscriptionRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank.</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param subscriptionName
-     *        The name of the event subscription to be created. </p>
+     *        The name of the event subscription to be created.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot be null, empty, or blank.</li>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        <li>
+     *        <p>
+     *        Cannot be null, empty, or blank.
+     *        </p>
      *        </li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      */
 
     public void setSubscriptionName(String subscriptionName) {
@@ -150,22 +197,53 @@ public class CreateEventSubscriptionRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank.</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The name of the event subscription to be created. </p>
+     * @return The name of the event subscription to be created.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Cannot be null, empty, or blank.</li>
-     *         <li>Must contain from 1 to 255 alphanumeric characters or
-     *         hyphens.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *         <li>
+     *         <p>
+     *         Cannot be null, empty, or blank.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
      */
 
     public String getSubscriptionName() {
@@ -180,23 +258,54 @@ public class CreateEventSubscriptionRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank.</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param subscriptionName
-     *        The name of the event subscription to be created. </p>
+     *        The name of the event subscription to be created.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot be null, empty, or blank.</li>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        <li>
+     *        <p>
+     *        Cannot be null, empty, or blank.
+     *        </p>
      *        </li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -279,7 +388,7 @@ public class CreateEventSubscriptionRequest extends
      *        cluster, you would set this parameter to cluster. If this value is
      *        not specified, events are returned for all Amazon Redshift objects
      *        in your AWS account. You must specify a source type in order to
-     *        specify source IDs. </p>
+     *        specify source IDs.</p>
      *        <p>
      *        Valid values: cluster, cluster-parameter-group,
      *        cluster-security-group, and cluster-snapshot.
@@ -307,7 +416,7 @@ public class CreateEventSubscriptionRequest extends
      *         cluster, you would set this parameter to cluster. If this value
      *         is not specified, events are returned for all Amazon Redshift
      *         objects in your AWS account. You must specify a source type in
-     *         order to specify source IDs. </p>
+     *         order to specify source IDs.</p>
      *         <p>
      *         Valid values: cluster, cluster-parameter-group,
      *         cluster-security-group, and cluster-snapshot.
@@ -336,7 +445,7 @@ public class CreateEventSubscriptionRequest extends
      *        cluster, you would set this parameter to cluster. If this value is
      *        not specified, events are returned for all Amazon Redshift objects
      *        in your AWS account. You must specify a source type in order to
-     *        specify source IDs. </p>
+     *        specify source IDs.</p>
      *        <p>
      *        Valid values: cluster, cluster-parameter-group,
      *        cluster-security-group, and cluster-snapshot.
@@ -369,7 +478,7 @@ public class CreateEventSubscriptionRequest extends
      *         specified in the source type parameter. The event subscription
      *         will return only events generated by the specified objects. If
      *         not specified, then events are returned for all objects within
-     *         the source type specified. </p>
+     *         the source type specified.</p>
      *         <p>
      *         Example: my-cluster-1, my-cluster-2
      *         </p>
@@ -405,7 +514,7 @@ public class CreateEventSubscriptionRequest extends
      *        specified in the source type parameter. The event subscription
      *        will return only events generated by the specified objects. If not
      *        specified, then events are returned for all objects within the
-     *        source type specified. </p>
+     *        source type specified.</p>
      *        <p>
      *        Example: my-cluster-1, my-cluster-2
      *        </p>
@@ -450,7 +559,7 @@ public class CreateEventSubscriptionRequest extends
      *        specified in the source type parameter. The event subscription
      *        will return only events generated by the specified objects. If not
      *        specified, then events are returned for all objects within the
-     *        source type specified. </p>
+     *        source type specified.</p>
      *        <p>
      *        Example: my-cluster-1, my-cluster-2
      *        </p>
@@ -492,7 +601,7 @@ public class CreateEventSubscriptionRequest extends
      *        specified in the source type parameter. The event subscription
      *        will return only events generated by the specified objects. If not
      *        specified, then events are returned for all objects within the
-     *        source type specified. </p>
+     *        source type specified.</p>
      *        <p>
      *        Example: my-cluster-1, my-cluster-2
      *        </p>

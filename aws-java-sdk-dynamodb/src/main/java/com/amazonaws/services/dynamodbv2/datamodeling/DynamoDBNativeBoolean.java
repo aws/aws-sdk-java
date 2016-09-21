@@ -31,8 +31,12 @@ import java.lang.annotation.Target;
  * type. Old versions of the {@code DynamoDBMapper} which do not know about the
  * BOOL type will be unable to read items containing BOOLs, so don't use me
  * unless all readers of your table are using an updated version of the mapper.
+ *
+ * @deprecated - Replaced by {@link DynamoDBTyped}
  */
+@Deprecated
 @DynamoDB
+@DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.BOOL)
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBNativeBoolean {

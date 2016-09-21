@@ -213,6 +213,11 @@ public class RunJobFlowRequestMarshaller implements
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (runJobFlowRequest.getSecurityConfiguration() != null) {
+                jsonGenerator.writeFieldName("SecurityConfiguration")
+                        .writeValue(
+                                runJobFlowRequest.getSecurityConfiguration());
+            }
 
             jsonGenerator.writeEndObject();
 

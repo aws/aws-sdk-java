@@ -17,8 +17,7 @@ package com.amazonaws.services.redshift.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DescribeEventCategoriesResult extends
         com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>

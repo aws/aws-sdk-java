@@ -468,6 +468,115 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
 
     /**
      * <p>
+     * Creates a security configuration using EMR Security Configurations, which
+     * are stored in the service. Security Configurations enable you to more
+     * easily create a configuration, reuse it, and apply it whenever a cluster
+     * is created.
+     * </p>
+     * 
+     * @param createSecurityConfigurationRequest
+     * @return Result of the CreateSecurityConfiguration operation returned by
+     *         the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the
+     *         EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user
+     *         input.
+     * @sample AmazonElasticMapReduce.CreateSecurityConfiguration
+     */
+    @Override
+    public CreateSecurityConfigurationResult createSecurityConfiguration(
+            CreateSecurityConfigurationRequest createSecurityConfigurationRequest) {
+        ExecutionContext executionContext = createExecutionContext(createSecurityConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSecurityConfigurationRequest> request = null;
+        Response<CreateSecurityConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSecurityConfigurationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createSecurityConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSecurityConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new CreateSecurityConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a security configuration.
+     * </p>
+     * 
+     * @param deleteSecurityConfigurationRequest
+     * @return Result of the DeleteSecurityConfiguration operation returned by
+     *         the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the
+     *         EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user
+     *         input.
+     * @sample AmazonElasticMapReduce.DeleteSecurityConfiguration
+     */
+    @Override
+    public DeleteSecurityConfigurationResult deleteSecurityConfiguration(
+            DeleteSecurityConfigurationRequest deleteSecurityConfigurationRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteSecurityConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSecurityConfigurationRequest> request = null;
+        Response<DeleteSecurityConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSecurityConfigurationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteSecurityConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSecurityConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DeleteSecurityConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides cluster-level details including status, hardware and software
      * configuration, VPC settings, and so on. For information about the cluster
      * steps, see <a>ListSteps</a>.
@@ -609,6 +718,61 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
     @Deprecated
     public DescribeJobFlowsResult describeJobFlows() {
         return describeJobFlows(new DescribeJobFlowsRequest());
+    }
+
+    /**
+     * <p>
+     * Provides the details of a security configuration by returning the
+     * configuration JSON.
+     * </p>
+     * 
+     * @param describeSecurityConfigurationRequest
+     * @return Result of the DescribeSecurityConfiguration operation returned by
+     *         the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the
+     *         EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user
+     *         input.
+     * @sample AmazonElasticMapReduce.DescribeSecurityConfiguration
+     */
+    @Override
+    public DescribeSecurityConfigurationResult describeSecurityConfiguration(
+            DescribeSecurityConfigurationRequest describeSecurityConfigurationRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeSecurityConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSecurityConfigurationRequest> request = null;
+        Response<DescribeSecurityConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSecurityConfigurationRequestMarshaller(
+                        protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(describeSecurityConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSecurityConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeSecurityConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -880,6 +1044,62 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new ListInstancesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the security configurations visible to this account, providing
+     * their creation dates and times, and their names. This call returns a
+     * maximum of 50 clusters per call, but returns a marker to track the paging
+     * of the cluster list across multiple ListSecurityConfigurations calls.
+     * </p>
+     * 
+     * @param listSecurityConfigurationsRequest
+     * @return Result of the ListSecurityConfigurations operation returned by
+     *         the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the
+     *         EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user
+     *         input.
+     * @sample AmazonElasticMapReduce.ListSecurityConfigurations
+     */
+    @Override
+    public ListSecurityConfigurationsResult listSecurityConfigurations(
+            ListSecurityConfigurationsRequest listSecurityConfigurationsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listSecurityConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSecurityConfigurationsRequest> request = null;
+        Response<ListSecurityConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSecurityConfigurationsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listSecurityConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSecurityConfigurationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new ListSecurityConfigurationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

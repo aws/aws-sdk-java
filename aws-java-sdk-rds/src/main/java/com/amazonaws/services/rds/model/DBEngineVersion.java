@@ -65,7 +65,8 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the character sets supported by this engine for the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API.
+     * <code>CharacterSetName</code> parameter of the
+     * <code>CreateDBInstance</code> action.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CharacterSet> supportedCharacterSets;
@@ -76,6 +77,14 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<UpgradeTarget> validUpgradeTarget;
+    /**
+     * <p>
+     * A list of the time zones supported by this engine for the
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code>
+     * action.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Timezone> supportedTimezones;
 
     /**
      * <p>
@@ -342,12 +351,13 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the character sets supported by this engine for the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API.
+     * <code>CharacterSetName</code> parameter of the
+     * <code>CreateDBInstance</code> action.
      * </p>
      * 
      * @return A list of the character sets supported by this engine for the
-     *         <code>CharacterSetName</code> parameter of the CreateDBInstance
-     *         API.
+     *         <code>CharacterSetName</code> parameter of the
+     *         <code>CreateDBInstance</code> action.
      */
 
     public java.util.List<CharacterSet> getSupportedCharacterSets() {
@@ -360,13 +370,14 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the character sets supported by this engine for the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API.
+     * <code>CharacterSetName</code> parameter of the
+     * <code>CreateDBInstance</code> action.
      * </p>
      * 
      * @param supportedCharacterSets
      *        A list of the character sets supported by this engine for the
-     *        <code>CharacterSetName</code> parameter of the CreateDBInstance
-     *        API.
+     *        <code>CharacterSetName</code> parameter of the
+     *        <code>CreateDBInstance</code> action.
      */
 
     public void setSupportedCharacterSets(
@@ -383,7 +394,8 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the character sets supported by this engine for the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API.
+     * <code>CharacterSetName</code> parameter of the
+     * <code>CreateDBInstance</code> action.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -394,8 +406,8 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * 
      * @param supportedCharacterSets
      *        A list of the character sets supported by this engine for the
-     *        <code>CharacterSetName</code> parameter of the CreateDBInstance
-     *        API.
+     *        <code>CharacterSetName</code> parameter of the
+     *        <code>CreateDBInstance</code> action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -415,13 +427,14 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the character sets supported by this engine for the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API.
+     * <code>CharacterSetName</code> parameter of the
+     * <code>CreateDBInstance</code> action.
      * </p>
      * 
      * @param supportedCharacterSets
      *        A list of the character sets supported by this engine for the
-     *        <code>CharacterSetName</code> parameter of the CreateDBInstance
-     *        API.
+     *        <code>CharacterSetName</code> parameter of the
+     *        <code>CreateDBInstance</code> action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -522,6 +535,103 @@ public class DBEngineVersion implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of the time zones supported by this engine for the
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code>
+     * action.
+     * </p>
+     * 
+     * @return A list of the time zones supported by this engine for the
+     *         <code>Timezone</code> parameter of the
+     *         <code>CreateDBInstance</code> action.
+     */
+
+    public java.util.List<Timezone> getSupportedTimezones() {
+        if (supportedTimezones == null) {
+            supportedTimezones = new com.amazonaws.internal.SdkInternalList<Timezone>();
+        }
+        return supportedTimezones;
+    }
+
+    /**
+     * <p>
+     * A list of the time zones supported by this engine for the
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code>
+     * action.
+     * </p>
+     * 
+     * @param supportedTimezones
+     *        A list of the time zones supported by this engine for the
+     *        <code>Timezone</code> parameter of the
+     *        <code>CreateDBInstance</code> action.
+     */
+
+    public void setSupportedTimezones(
+            java.util.Collection<Timezone> supportedTimezones) {
+        if (supportedTimezones == null) {
+            this.supportedTimezones = null;
+            return;
+        }
+
+        this.supportedTimezones = new com.amazonaws.internal.SdkInternalList<Timezone>(
+                supportedTimezones);
+    }
+
+    /**
+     * <p>
+     * A list of the time zones supported by this engine for the
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code>
+     * action.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSupportedTimezones(java.util.Collection)} or
+     * {@link #withSupportedTimezones(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param supportedTimezones
+     *        A list of the time zones supported by this engine for the
+     *        <code>Timezone</code> parameter of the
+     *        <code>CreateDBInstance</code> action.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBEngineVersion withSupportedTimezones(
+            Timezone... supportedTimezones) {
+        if (this.supportedTimezones == null) {
+            setSupportedTimezones(new com.amazonaws.internal.SdkInternalList<Timezone>(
+                    supportedTimezones.length));
+        }
+        for (Timezone ele : supportedTimezones) {
+            this.supportedTimezones.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the time zones supported by this engine for the
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code>
+     * action.
+     * </p>
+     * 
+     * @param supportedTimezones
+     *        A list of the time zones supported by this engine for the
+     *        <code>Timezone</code> parameter of the
+     *        <code>CreateDBInstance</code> action.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBEngineVersion withSupportedTimezones(
+            java.util.Collection<Timezone> supportedTimezones) {
+        setSupportedTimezones(supportedTimezones);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -551,7 +661,9 @@ public class DBEngineVersion implements Serializable, Cloneable {
             sb.append("SupportedCharacterSets: " + getSupportedCharacterSets()
                     + ",");
         if (getValidUpgradeTarget() != null)
-            sb.append("ValidUpgradeTarget: " + getValidUpgradeTarget());
+            sb.append("ValidUpgradeTarget: " + getValidUpgradeTarget() + ",");
+        if (getSupportedTimezones() != null)
+            sb.append("SupportedTimezones: " + getSupportedTimezones());
         sb.append("}");
         return sb.toString();
     }
@@ -618,6 +730,13 @@ public class DBEngineVersion implements Serializable, Cloneable {
                 && other.getValidUpgradeTarget().equals(
                         this.getValidUpgradeTarget()) == false)
             return false;
+        if (other.getSupportedTimezones() == null
+                ^ this.getSupportedTimezones() == null)
+            return false;
+        if (other.getSupportedTimezones() != null
+                && other.getSupportedTimezones().equals(
+                        this.getSupportedTimezones()) == false)
+            return false;
         return true;
     }
 
@@ -656,6 +775,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
                 * hashCode
                 + ((getValidUpgradeTarget() == null) ? 0
                         : getValidUpgradeTarget().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSupportedTimezones() == null) ? 0
+                        : getSupportedTimezones().hashCode());
         return hashCode;
     }
 

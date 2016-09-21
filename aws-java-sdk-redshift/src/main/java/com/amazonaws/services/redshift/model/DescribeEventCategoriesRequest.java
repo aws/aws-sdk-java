@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DescribeEventCategoriesRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -49,7 +48,7 @@ public class DescribeEventCategoriesRequest extends
      * 
      * @param sourceType
      *        The source type, such as cluster or parameter group, to which the
-     *        described event categories apply. </p>
+     *        described event categories apply.</p>
      *        <p>
      *        Valid values: cluster, cluster-snapshot, cluster-parameter-group,
      *        and cluster-security-group.
@@ -70,7 +69,7 @@ public class DescribeEventCategoriesRequest extends
      * </p>
      * 
      * @return The source type, such as cluster or parameter group, to which the
-     *         described event categories apply. </p>
+     *         described event categories apply.</p>
      *         <p>
      *         Valid values: cluster, cluster-snapshot, cluster-parameter-group,
      *         and cluster-security-group.
@@ -92,7 +91,7 @@ public class DescribeEventCategoriesRequest extends
      * 
      * @param sourceType
      *        The source type, such as cluster or parameter group, to which the
-     *        described event categories apply. </p>
+     *        described event categories apply.</p>
      *        <p>
      *        Valid values: cluster, cluster-snapshot, cluster-parameter-group,
      *        and cluster-security-group.

@@ -55,6 +55,18 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
+    public CreateSecurityConfigurationResult createSecurityConfiguration(
+            CreateSecurityConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSecurityConfigurationResult deleteSecurityConfiguration(
+            DeleteSecurityConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeClusterResult describeCluster(DescribeClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -70,6 +82,12 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     @Deprecated
     public DescribeJobFlowsResult describeJobFlows() {
         return describeJobFlows(new DescribeJobFlowsRequest());
+    }
+
+    @Override
+    public DescribeSecurityConfigurationResult describeSecurityConfiguration(
+            DescribeSecurityConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -101,6 +119,12 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
 
     @Override
     public ListInstancesResult listInstances(ListInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSecurityConfigurationsResult listSecurityConfigurations(
+            ListSecurityConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

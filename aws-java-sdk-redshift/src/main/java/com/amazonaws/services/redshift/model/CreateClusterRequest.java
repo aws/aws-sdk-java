@@ -41,12 +41,24 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters.</li>
-     * <li>Must contain only lowercase letters.</li>
-     * <li>Cannot be a word that is reserved by the service. A list of reserved
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain only lowercase letters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word that is reserved by the service. A list of reserved
      * words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html"
-     * >Reserved Words</a> in the Amazon Redshift Database Developer Guide.</li>
+     * >Reserved Words</a> in the Amazon Redshift Database Developer Guide.
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBName;
@@ -60,11 +72,31 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>myexamplecluster</code>
@@ -74,13 +106,20 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of the cluster. When cluster type is specified as
-     * <ul>
-     * <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
-     * required.</li>
-     * <li><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is
-     * required.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
+     * required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Valid Values: <code>multi-node</code> | <code>single-node</code>
      * </p>
@@ -113,12 +152,23 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 - 128 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word. A list of reserved words can be found in
-     * <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html"
-     * >Reserved Words</a> in the Amazon Redshift Database Developer Guide.</li>
+     * <li>
+     * <p>
+     * Must be 1 - 128 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word. A list of reserved words can be found in <a
+     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">
+     * Reserved Words</a> in the Amazon Redshift Database Developer Guide.
+     * </p>
+     * </li>
      * </ul>
      */
     private String masterUsername;
@@ -131,12 +181,32 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be between 8 and 64 characters in length.</li>
-     * <li>Must contain at least one uppercase letter.</li>
-     * <li>Must contain at least one lowercase letter.</li>
-     * <li>Must contain one number.</li>
-     * <li>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</li>
+     * <li>
+     * <p>
+     * Must be between 8 and 64 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one uppercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one lowercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain one number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be any printable ASCII character (ASCII code 33 to 126) except '
+     * (single quote), " (double quote), \, /, @, or space.
+     * </p>
+     * </li>
      * </ul>
      */
     private String masterUserPassword;
@@ -226,9 +296,21 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      */
     private String clusterParameterGroupName;
@@ -380,6 +462,23 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
     private String kmsKeyId;
     /**
      * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     */
+    private Boolean enhancedVpcRouting;
+    /**
+     * <p>
      * Reserved.
      * </p>
      */
@@ -392,7 +491,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * IAM roles in a single request.
      * </p>
      * <p>
-     * A cluster can have up to 10 IAM roles associated at any time.
+     * A cluster can have up to 10 IAM roles associated with it at any time.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> iamRoles;
@@ -415,17 +514,29 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters.</li>
-     * <li>Must contain only lowercase letters.</li>
-     * <li>Cannot be a word that is reserved by the service. A list of reserved
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain only lowercase letters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word that is reserved by the service. A list of reserved
      * words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html"
-     * >Reserved Words</a> in the Amazon Redshift Database Developer Guide.</li>
+     * >Reserved Words</a> in the Amazon Redshift Database Developer Guide.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBName
      *        The name of the first database to be created when the cluster is
-     *        created. </p>
+     *        created.</p>
      *        <p>
      *        To create additional databases after the cluster is created,
      *        connect to the cluster with a SQL client and use SQL commands to
@@ -441,13 +552,25 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain 1 to 64 alphanumeric characters.</li>
-     *        <li>Must contain only lowercase letters.</li>
-     *        <li>Cannot be a word that is reserved by the service. A list of
+     *        <li>
+     *        <p>
+     *        Must contain 1 to 64 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain only lowercase letters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a word that is reserved by the service. A list of
      *        reserved words can be found in <a href=
      *        "http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html"
      *        >Reserved Words</a> in the Amazon Redshift Database Developer
-     *        Guide.</li>
+     *        Guide.
+     *        </p>
+     *        </li>
      */
 
     public void setDBName(String dBName) {
@@ -472,16 +595,28 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters.</li>
-     * <li>Must contain only lowercase letters.</li>
-     * <li>Cannot be a word that is reserved by the service. A list of reserved
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain only lowercase letters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word that is reserved by the service. A list of reserved
      * words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html"
-     * >Reserved Words</a> in the Amazon Redshift Database Developer Guide.</li>
+     * >Reserved Words</a> in the Amazon Redshift Database Developer Guide.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The name of the first database to be created when the cluster is
-     *         created. </p>
+     *         created.</p>
      *         <p>
      *         To create additional databases after the cluster is created,
      *         connect to the cluster with a SQL client and use SQL commands to
@@ -497,13 +632,25 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain 1 to 64 alphanumeric characters.</li>
-     *         <li>Must contain only lowercase letters.</li>
-     *         <li>Cannot be a word that is reserved by the service. A list of
+     *         <li>
+     *         <p>
+     *         Must contain 1 to 64 alphanumeric characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must contain only lowercase letters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be a word that is reserved by the service. A list of
      *         reserved words can be found in <a href=
      *         "http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html"
      *         >Reserved Words</a> in the Amazon Redshift Database Developer
-     *         Guide.</li>
+     *         Guide.
+     *         </p>
+     *         </li>
      */
 
     public String getDBName() {
@@ -528,17 +675,29 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters.</li>
-     * <li>Must contain only lowercase letters.</li>
-     * <li>Cannot be a word that is reserved by the service. A list of reserved
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain only lowercase letters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word that is reserved by the service. A list of reserved
      * words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html"
-     * >Reserved Words</a> in the Amazon Redshift Database Developer Guide.</li>
+     * >Reserved Words</a> in the Amazon Redshift Database Developer Guide.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBName
      *        The name of the first database to be created when the cluster is
-     *        created. </p>
+     *        created.</p>
      *        <p>
      *        To create additional databases after the cluster is created,
      *        connect to the cluster with a SQL client and use SQL commands to
@@ -554,13 +713,25 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain 1 to 64 alphanumeric characters.</li>
-     *        <li>Must contain only lowercase letters.</li>
-     *        <li>Cannot be a word that is reserved by the service. A list of
+     *        <li>
+     *        <p>
+     *        Must contain 1 to 64 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain only lowercase letters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a word that is reserved by the service. A list of
      *        reserved words can be found in <a href=
      *        "http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html"
      *        >Reserved Words</a> in the Amazon Redshift Database Developer
-     *        Guide.</li>
+     *        Guide.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -580,11 +751,31 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>myexamplecluster</code>
@@ -594,16 +785,36 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        A unique identifier for the cluster. You use this identifier to
      *        refer to the cluster for any subsequent cluster operations such as
      *        deleting or modifying. The identifier also appears in the Amazon
-     *        Redshift console. </p>
+     *        Redshift console.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>Alphabetic characters must be lowercase.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *        <li>Must be unique for all clusters within an AWS account.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alphabetic characters must be lowercase.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for all clusters within an AWS account.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>myexamplecluster</code>
@@ -623,11 +834,31 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>myexamplecluster</code>
@@ -636,17 +867,36 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return A unique identifier for the cluster. You use this identifier to
      *         refer to the cluster for any subsequent cluster operations such
      *         as deleting or modifying. The identifier also appears in the
-     *         Amazon Redshift console. </p>
+     *         Amazon Redshift console.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         </p>
      *         </li>
-     *         <li>Alphabetic characters must be lowercase.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *         <li>Must be unique for all clusters within an AWS account.</li>
+     *         <li>
+     *         <p>
+     *         Alphabetic characters must be lowercase.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be unique for all clusters within an AWS account.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>myexamplecluster</code>
@@ -666,11 +916,31 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>myexamplecluster</code>
@@ -680,16 +950,36 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        A unique identifier for the cluster. You use this identifier to
      *        refer to the cluster for any subsequent cluster operations such as
      *        deleting or modifying. The identifier also appears in the Amazon
-     *        Redshift console. </p>
+     *        Redshift console.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>Alphabetic characters must be lowercase.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *        <li>Must be unique for all clusters within an AWS account.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alphabetic characters must be lowercase.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for all clusters within an AWS account.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>myexamplecluster</code>
@@ -705,13 +995,20 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of the cluster. When cluster type is specified as
-     * <ul>
-     * <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
-     * required.</li>
-     * <li><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is
-     * required.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
+     * required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Valid Values: <code>multi-node</code> | <code>single-node</code>
      * </p>
@@ -720,14 +1017,21 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param clusterType
-     *        The type of the cluster. When cluster type is specified as
+     *        The type of the cluster. When cluster type is specified as</p>
      *        <ul>
-     *        <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter
-     *        is not required.</li>
-     *        <li><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is
-     *        required.</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <code>single-node</code>, the <b>NumberOfNodes</b> parameter is
+     *        not required.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>multi-node</code>, the <b>NumberOfNodes</b> parameter is
+     *        required.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Valid Values: <code>multi-node</code> | <code>single-node</code>
      *        </p>
@@ -742,13 +1046,20 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of the cluster. When cluster type is specified as
-     * <ul>
-     * <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
-     * required.</li>
-     * <li><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is
-     * required.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
+     * required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Valid Values: <code>multi-node</code> | <code>single-node</code>
      * </p>
@@ -756,14 +1067,21 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Default: <code>multi-node</code>
      * </p>
      * 
-     * @return The type of the cluster. When cluster type is specified as
+     * @return The type of the cluster. When cluster type is specified as</p>
      *         <ul>
-     *         <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter
-     *         is not required.</li>
-     *         <li><code>multi-node</code>, the <b>NumberOfNodes</b> parameter
-     *         is required.</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         <code>single-node</code>, the <b>NumberOfNodes</b> parameter is
+     *         not required.
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>multi-node</code>, the <b>NumberOfNodes</b> parameter is
+     *         required.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         Valid Values: <code>multi-node</code> | <code>single-node</code>
      *         </p>
@@ -778,13 +1096,20 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of the cluster. When cluster type is specified as
-     * <ul>
-     * <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
-     * required.</li>
-     * <li><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is
-     * required.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
+     * required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Valid Values: <code>multi-node</code> | <code>single-node</code>
      * </p>
@@ -793,14 +1118,21 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param clusterType
-     *        The type of the cluster. When cluster type is specified as
+     *        The type of the cluster. When cluster type is specified as</p>
      *        <ul>
-     *        <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter
-     *        is not required.</li>
-     *        <li><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is
-     *        required.</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <code>single-node</code>, the <b>NumberOfNodes</b> parameter is
+     *        not required.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>multi-node</code>, the <b>NumberOfNodes</b> parameter is
+     *        required.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Valid Values: <code>multi-node</code> | <code>single-node</code>
      *        </p>
@@ -916,28 +1248,51 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 - 128 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word. A list of reserved words can be found in
-     * <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html"
-     * >Reserved Words</a> in the Amazon Redshift Database Developer Guide.</li>
+     * <li>
+     * <p>
+     * Must be 1 - 128 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word. A list of reserved words can be found in <a
+     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">
+     * Reserved Words</a> in the Amazon Redshift Database Developer Guide.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param masterUsername
      *        The user name associated with the master user account for the
-     *        cluster that is being created. </p>
+     *        cluster that is being created.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 - 128 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word. A list of reserved words can be
-     *        found in <a href=
+     *        <li>
+     *        <p>
+     *        Must be 1 - 128 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word. A list of reserved words can be found
+     *        in <a href=
      *        "http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html"
      *        >Reserved Words</a> in the Amazon Redshift Database Developer
-     *        Guide.</li>
+     *        Guide.
+     *        </p>
+     *        </li>
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -953,27 +1308,50 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 - 128 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word. A list of reserved words can be found in
-     * <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html"
-     * >Reserved Words</a> in the Amazon Redshift Database Developer Guide.</li>
+     * <li>
+     * <p>
+     * Must be 1 - 128 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word. A list of reserved words can be found in <a
+     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">
+     * Reserved Words</a> in the Amazon Redshift Database Developer Guide.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The user name associated with the master user account for the
-     *         cluster that is being created. </p>
+     *         cluster that is being created.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 - 128 alphanumeric characters.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot be a reserved word. A list of reserved words can be
-     *         found in <a href=
+     *         <li>
+     *         <p>
+     *         Must be 1 - 128 alphanumeric characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be a reserved word. A list of reserved words can be found
+     *         in <a href=
      *         "http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html"
      *         >Reserved Words</a> in the Amazon Redshift Database Developer
-     *         Guide.</li>
+     *         Guide.
+     *         </p>
+     *         </li>
      */
 
     public String getMasterUsername() {
@@ -989,28 +1367,51 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 - 128 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word. A list of reserved words can be found in
-     * <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html"
-     * >Reserved Words</a> in the Amazon Redshift Database Developer Guide.</li>
+     * <li>
+     * <p>
+     * Must be 1 - 128 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word. A list of reserved words can be found in <a
+     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">
+     * Reserved Words</a> in the Amazon Redshift Database Developer Guide.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param masterUsername
      *        The user name associated with the master user account for the
-     *        cluster that is being created. </p>
+     *        cluster that is being created.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 - 128 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word. A list of reserved words can be
-     *        found in <a href=
+     *        <li>
+     *        <p>
+     *        Must be 1 - 128 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word. A list of reserved words can be found
+     *        in <a href=
      *        "http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html"
      *        >Reserved Words</a> in the Amazon Redshift Database Developer
-     *        Guide.</li>
+     *        Guide.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1029,27 +1430,67 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be between 8 and 64 characters in length.</li>
-     * <li>Must contain at least one uppercase letter.</li>
-     * <li>Must contain at least one lowercase letter.</li>
-     * <li>Must contain one number.</li>
-     * <li>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</li>
+     * <li>
+     * <p>
+     * Must be between 8 and 64 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one uppercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one lowercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain one number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be any printable ASCII character (ASCII code 33 to 126) except '
+     * (single quote), " (double quote), \, /, @, or space.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param masterUserPassword
      *        The password associated with the master user account for the
-     *        cluster that is being created. </p>
+     *        cluster that is being created.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be between 8 and 64 characters in length.</li>
-     *        <li>Must contain at least one uppercase letter.</li>
-     *        <li>Must contain at least one lowercase letter.</li>
-     *        <li>Must contain one number.</li>
-     *        <li>Can be any printable ASCII character (ASCII code 33 to 126)
-     *        except ' (single quote), " (double quote), \, /, @, or space.</li>
+     *        <li>
+     *        <p>
+     *        Must be between 8 and 64 characters in length.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain at least one uppercase letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain at least one lowercase letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain one number.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can be any printable ASCII character (ASCII code 33 to 126) except
+     *        ' (single quote), " (double quote), \, /, @, or space.
+     *        </p>
+     *        </li>
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -1065,26 +1506,66 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be between 8 and 64 characters in length.</li>
-     * <li>Must contain at least one uppercase letter.</li>
-     * <li>Must contain at least one lowercase letter.</li>
-     * <li>Must contain one number.</li>
-     * <li>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</li>
+     * <li>
+     * <p>
+     * Must be between 8 and 64 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one uppercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one lowercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain one number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be any printable ASCII character (ASCII code 33 to 126) except '
+     * (single quote), " (double quote), \, /, @, or space.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The password associated with the master user account for the
-     *         cluster that is being created. </p>
+     *         cluster that is being created.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be between 8 and 64 characters in length.</li>
-     *         <li>Must contain at least one uppercase letter.</li>
-     *         <li>Must contain at least one lowercase letter.</li>
-     *         <li>Must contain one number.</li>
-     *         <li>Can be any printable ASCII character (ASCII code 33 to 126)
-     *         except ' (single quote), " (double quote), \, /, @, or space.</li>
+     *         <li>
+     *         <p>
+     *         Must be between 8 and 64 characters in length.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must contain at least one uppercase letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must contain at least one lowercase letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must contain one number.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can be any printable ASCII character (ASCII code 33 to 126)
+     *         except ' (single quote), " (double quote), \, /, @, or space.
+     *         </p>
+     *         </li>
      */
 
     public String getMasterUserPassword() {
@@ -1100,27 +1581,67 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be between 8 and 64 characters in length.</li>
-     * <li>Must contain at least one uppercase letter.</li>
-     * <li>Must contain at least one lowercase letter.</li>
-     * <li>Must contain one number.</li>
-     * <li>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</li>
+     * <li>
+     * <p>
+     * Must be between 8 and 64 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one uppercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one lowercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain one number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be any printable ASCII character (ASCII code 33 to 126) except '
+     * (single quote), " (double quote), \, /, @, or space.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param masterUserPassword
      *        The password associated with the master user account for the
-     *        cluster that is being created. </p>
+     *        cluster that is being created.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be between 8 and 64 characters in length.</li>
-     *        <li>Must contain at least one uppercase letter.</li>
-     *        <li>Must contain at least one lowercase letter.</li>
-     *        <li>Must contain one number.</li>
-     *        <li>Can be any printable ASCII character (ASCII code 33 to 126)
-     *        except ' (single quote), " (double quote), \, /, @, or space.</li>
+     *        <li>
+     *        <p>
+     *        Must be between 8 and 64 characters in length.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain at least one uppercase letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain at least one lowercase letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain one number.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can be any printable ASCII character (ASCII code 33 to 126) except
+     *        ' (single quote), " (double quote), \, /, @, or space.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1138,8 +1659,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Default: The default cluster security group for Amazon Redshift.
      * </p>
      * 
-     * @return A list of security groups to be associated with this cluster.
-     *         </p>
+     * @return A list of security groups to be associated with this cluster.</p>
      *         <p>
      *         Default: The default cluster security group for Amazon Redshift.
      */
@@ -1160,7 +1680,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param clusterSecurityGroups
-     *        A list of security groups to be associated with this cluster. </p>
+     *        A list of security groups to be associated with this cluster.</p>
      *        <p>
      *        Default: The default cluster security group for Amazon Redshift.
      */
@@ -1191,7 +1711,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param clusterSecurityGroups
-     *        A list of security groups to be associated with this cluster. </p>
+     *        A list of security groups to be associated with this cluster.</p>
      *        <p>
      *        Default: The default cluster security group for Amazon Redshift.
      * @return Returns a reference to this object so that method calls can be
@@ -1219,7 +1739,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param clusterSecurityGroups
-     *        A list of security groups to be associated with this cluster. </p>
+     *        A list of security groups to be associated with this cluster.</p>
      *        <p>
      *        Default: The default cluster security group for Amazon Redshift.
      * @return Returns a reference to this object so that method calls can be
@@ -1356,7 +1876,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param clusterSubnetGroupName
      *        The name of a cluster subnet group to be associated with this
-     *        cluster. </p>
+     *        cluster.</p>
      *        <p>
      *        If this parameter is not provided the resulting cluster will be
      *        deployed outside virtual private cloud (VPC).
@@ -1376,7 +1896,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return The name of a cluster subnet group to be associated with this
-     *         cluster. </p>
+     *         cluster.</p>
      *         <p>
      *         If this parameter is not provided the resulting cluster will be
      *         deployed outside virtual private cloud (VPC).
@@ -1397,7 +1917,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param clusterSubnetGroupName
      *        The name of a cluster subnet group to be associated with this
-     *        cluster. </p>
+     *        cluster.</p>
      *        <p>
      *        If this parameter is not provided the resulting cluster will be
      *        deployed outside virtual private cloud (VPC).
@@ -1435,7 +1955,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        to provision the cluster. For example, if you have several EC2
      *        instances running in a specific Availability Zone, then you might
      *        want the cluster to be provisioned in the same zone in order to
-     *        decrease network latency. </p>
+     *        decrease network latency.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone in the region
      *        that is specified by the endpoint.
@@ -1475,7 +1995,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *         to provision the cluster. For example, if you have several EC2
      *         instances running in a specific Availability Zone, then you might
      *         want the cluster to be provisioned in the same zone in order to
-     *         decrease network latency. </p>
+     *         decrease network latency.</p>
      *         <p>
      *         Default: A random, system-chosen Availability Zone in the region
      *         that is specified by the endpoint.
@@ -1516,7 +2036,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        to provision the cluster. For example, if you have several EC2
      *        instances running in a specific Availability Zone, then you might
      *        want the cluster to be provisioned in the same zone in order to
-     *        decrease network latency. </p>
+     *        decrease network latency.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone in the region
      *        that is specified by the endpoint.
@@ -1560,7 +2080,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param preferredMaintenanceWindow
      *        The weekly time range (in UTC) during which automated cluster
-     *        maintenance can occur. </p>
+     *        maintenance can occur.</p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
@@ -1607,7 +2127,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return The weekly time range (in UTC) during which automated cluster
-     *         maintenance can occur. </p>
+     *         maintenance can occur.</p>
      *         <p>
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
@@ -1655,7 +2175,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param preferredMaintenanceWindow
      *        The weekly time range (in UTC) during which automated cluster
-     *        maintenance can occur. </p>
+     *        maintenance can occur.</p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
@@ -1697,14 +2217,26 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param clusterParameterGroupName
      *        The name of the parameter group to be associated with this
-     *        cluster. </p>
+     *        cluster.</p>
      *        <p>
      *        Default: The default Amazon Redshift cluster parameter group. For
      *        information about the default parameter group, go to <a href=
@@ -1715,9 +2247,21 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      */
 
     public void setClusterParameterGroupName(String clusterParameterGroupName) {
@@ -1738,13 +2282,25 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The name of the parameter group to be associated with this
-     *         cluster. </p>
+     *         cluster.</p>
      *         <p>
      *         Default: The default Amazon Redshift cluster parameter group. For
      *         information about the default parameter group, go to <a href=
@@ -1755,9 +2311,21 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters or hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
      */
 
     public String getClusterParameterGroupName() {
@@ -1778,14 +2346,26 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param clusterParameterGroupName
      *        The name of the parameter group to be associated with this
-     *        cluster. </p>
+     *        cluster.</p>
      *        <p>
      *        Default: The default Amazon Redshift cluster parameter group. For
      *        information about the default parameter group, go to <a href=
@@ -1796,9 +2376,21 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1920,8 +2512,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param port
-     *        The port number on which the cluster accepts incoming connections.
-     *        </p>
+     *        The port number on which the cluster accepts incoming
+     *        connections.</p>
      *        <p>
      *        The cluster is accessible only via the JDBC and ODBC connection
      *        strings. Part of the connection string requires the port on which
@@ -1955,7 +2547,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return The port number on which the cluster accepts incoming
-     *         connections. </p>
+     *         connections.</p>
      *         <p>
      *         The cluster is accessible only via the JDBC and ODBC connection
      *         strings. Part of the connection string requires the port on which
@@ -1989,8 +2581,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param port
-     *        The port number on which the cluster accepts incoming connections.
-     *        </p>
+     *        The port number on which the cluster accepts incoming
+     *        connections.</p>
      *        <p>
      *        The cluster is accessible only via the JDBC and ODBC connection
      *        strings. Part of the connection string requires the port on which
@@ -2027,7 +2619,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param clusterVersion
      *        The version of the Amazon Redshift engine software that you want
-     *        to deploy on the cluster. </p>
+     *        to deploy on the cluster.</p>
      *        <p>
      *        The version selected runs on all the nodes in the cluster.
      *        </p>
@@ -2058,7 +2650,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return The version of the Amazon Redshift engine software that you want
-     *         to deploy on the cluster. </p>
+     *         to deploy on the cluster.</p>
      *         <p>
      *         The version selected runs on all the nodes in the cluster.
      *         </p>
@@ -2090,7 +2682,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param clusterVersion
      *        The version of the Amazon Redshift engine software that you want
-     *        to deploy on the cluster. </p>
+     *        to deploy on the cluster.</p>
      *        <p>
      *        The version selected runs on all the nodes in the cluster.
      *        </p>
@@ -2851,6 +3443,152 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @param enhancedVpcRouting
+     *        An option that specifies whether to create the cluster with
+     *        enhanced VPC routing enabled. To create a cluster that uses
+     *        enhanced VPC routing, the cluster must be in a VPC. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *        >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *        Management Guide.</p>
+     *        <p>
+     *        If this option is <code>true</code>, enhanced VPC routing is
+     *        enabled.
+     *        </p>
+     *        <p>
+     *        Default: false
+     */
+
+    public void setEnhancedVpcRouting(Boolean enhancedVpcRouting) {
+        this.enhancedVpcRouting = enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @return An option that specifies whether to create the cluster with
+     *         enhanced VPC routing enabled. To create a cluster that uses
+     *         enhanced VPC routing, the cluster must be in a VPC. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *         >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *         Management Guide.</p>
+     *         <p>
+     *         If this option is <code>true</code>, enhanced VPC routing is
+     *         enabled.
+     *         </p>
+     *         <p>
+     *         Default: false
+     */
+
+    public Boolean getEnhancedVpcRouting() {
+        return this.enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @param enhancedVpcRouting
+     *        An option that specifies whether to create the cluster with
+     *        enhanced VPC routing enabled. To create a cluster that uses
+     *        enhanced VPC routing, the cluster must be in a VPC. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *        >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *        Management Guide.</p>
+     *        <p>
+     *        If this option is <code>true</code>, enhanced VPC routing is
+     *        enabled.
+     *        </p>
+     *        <p>
+     *        Default: false
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateClusterRequest withEnhancedVpcRouting(
+            Boolean enhancedVpcRouting) {
+        setEnhancedVpcRouting(enhancedVpcRouting);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @return An option that specifies whether to create the cluster with
+     *         enhanced VPC routing enabled. To create a cluster that uses
+     *         enhanced VPC routing, the cluster must be in a VPC. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *         >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *         Management Guide.</p>
+     *         <p>
+     *         If this option is <code>true</code>, enhanced VPC routing is
+     *         enabled.
+     *         </p>
+     *         <p>
+     *         Default: false
+     */
+
+    public Boolean isEnhancedVpcRouting() {
+        return this.enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
      * Reserved.
      * </p>
      * 
@@ -2898,7 +3636,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * IAM roles in a single request.
      * </p>
      * <p>
-     * A cluster can have up to 10 IAM roles associated at any time.
+     * A cluster can have up to 10 IAM roles associated with it at any time.
      * </p>
      * 
      * @return A list of AWS Identity and Access Management (IAM) roles that can
@@ -2906,7 +3644,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *         supply the IAM roles in their Amazon Resource Name (ARN) format.
      *         You can supply up to 10 IAM roles in a single request.</p>
      *         <p>
-     *         A cluster can have up to 10 IAM roles associated at any time.
+     *         A cluster can have up to 10 IAM roles associated with it at any
+     *         time.
      */
 
     public java.util.List<String> getIamRoles() {
@@ -2924,7 +3663,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * IAM roles in a single request.
      * </p>
      * <p>
-     * A cluster can have up to 10 IAM roles associated at any time.
+     * A cluster can have up to 10 IAM roles associated with it at any time.
      * </p>
      * 
      * @param iamRoles
@@ -2933,7 +3672,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        supply the IAM roles in their Amazon Resource Name (ARN) format.
      *        You can supply up to 10 IAM roles in a single request.</p>
      *        <p>
-     *        A cluster can have up to 10 IAM roles associated at any time.
+     *        A cluster can have up to 10 IAM roles associated with it at any
+     *        time.
      */
 
     public void setIamRoles(java.util.Collection<String> iamRoles) {
@@ -2954,7 +3694,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * IAM roles in a single request.
      * </p>
      * <p>
-     * A cluster can have up to 10 IAM roles associated at any time.
+     * A cluster can have up to 10 IAM roles associated with it at any time.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -2969,7 +3709,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        supply the IAM roles in their Amazon Resource Name (ARN) format.
      *        You can supply up to 10 IAM roles in a single request.</p>
      *        <p>
-     *        A cluster can have up to 10 IAM roles associated at any time.
+     *        A cluster can have up to 10 IAM roles associated with it at any
+     *        time.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2993,7 +3734,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * IAM roles in a single request.
      * </p>
      * <p>
-     * A cluster can have up to 10 IAM roles associated at any time.
+     * A cluster can have up to 10 IAM roles associated with it at any time.
      * </p>
      * 
      * @param iamRoles
@@ -3002,7 +3743,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        supply the IAM roles in their Amazon Resource Name (ARN) format.
      *        You can supply up to 10 IAM roles in a single request.</p>
      *        <p>
-     *        A cluster can have up to 10 IAM roles associated at any time.
+     *        A cluster can have up to 10 IAM roles associated with it at any
+     *        time.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -3080,6 +3822,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Tags: " + getTags() + ",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+        if (getEnhancedVpcRouting() != null)
+            sb.append("EnhancedVpcRouting: " + getEnhancedVpcRouting() + ",");
         if (getAdditionalInfo() != null)
             sb.append("AdditionalInfo: " + getAdditionalInfo() + ",");
         if (getIamRoles() != null)
@@ -3246,6 +3990,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
         if (other.getKmsKeyId() != null
                 && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getEnhancedVpcRouting() == null
+                ^ this.getEnhancedVpcRouting() == null)
+            return false;
+        if (other.getEnhancedVpcRouting() != null
+                && other.getEnhancedVpcRouting().equals(
+                        this.getEnhancedVpcRouting()) == false)
+            return false;
         if (other.getAdditionalInfo() == null
                 ^ this.getAdditionalInfo() == null)
             return false;
@@ -3346,6 +4097,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest
                 + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode
                 + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEnhancedVpcRouting() == null) ? 0
+                        : getEnhancedVpcRouting().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo()

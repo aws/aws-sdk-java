@@ -121,6 +121,12 @@ public class DescribeDBEngineVersionsRequestMarshaller
                             .getListSupportedCharacterSets()));
         }
 
+        if (describeDBEngineVersionsRequest.getListSupportedTimezones() != null) {
+            request.addParameter("ListSupportedTimezones", StringUtils
+                    .fromBoolean(describeDBEngineVersionsRequest
+                            .getListSupportedTimezones()));
+        }
+
         return request;
     }
 

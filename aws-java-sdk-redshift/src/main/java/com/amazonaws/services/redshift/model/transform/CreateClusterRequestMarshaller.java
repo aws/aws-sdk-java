@@ -215,6 +215,11 @@ public class CreateClusterRequestMarshaller implements
                     StringUtils.fromString(createClusterRequest.getKmsKeyId()));
         }
 
+        if (createClusterRequest.getEnhancedVpcRouting() != null) {
+            request.addParameter("EnhancedVpcRouting", StringUtils
+                    .fromBoolean(createClusterRequest.getEnhancedVpcRouting()));
+        }
+
         if (createClusterRequest.getAdditionalInfo() != null) {
             request.addParameter("AdditionalInfo", StringUtils
                     .fromString(createClusterRequest.getAdditionalInfo()));

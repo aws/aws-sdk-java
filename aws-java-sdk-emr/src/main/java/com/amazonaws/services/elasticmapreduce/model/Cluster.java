@@ -143,6 +143,12 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Configuration> configurations;
+    /**
+     * <p>
+     * The name of the security configuration applied to the cluster.
+     * </p>
+     */
+    private String securityConfiguration;
 
     /**
      * <p>
@@ -1141,6 +1147,47 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the security configuration applied to the cluster.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the security configuration applied to the cluster.
+     */
+
+    public void setSecurityConfiguration(String securityConfiguration) {
+        this.securityConfiguration = securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the security configuration applied to the cluster.
+     * </p>
+     * 
+     * @return The name of the security configuration applied to the cluster.
+     */
+
+    public String getSecurityConfiguration() {
+        return this.securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the security configuration applied to the cluster.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the security configuration applied to the cluster.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Cluster withSecurityConfiguration(String securityConfiguration) {
+        setSecurityConfiguration(securityConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1188,7 +1235,9 @@ public class Cluster implements Serializable, Cloneable {
         if (getMasterPublicDnsName() != null)
             sb.append("MasterPublicDnsName: " + getMasterPublicDnsName() + ",");
         if (getConfigurations() != null)
-            sb.append("Configurations: " + getConfigurations());
+            sb.append("Configurations: " + getConfigurations() + ",");
+        if (getSecurityConfiguration() != null)
+            sb.append("SecurityConfiguration: " + getSecurityConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1303,6 +1352,13 @@ public class Cluster implements Serializable, Cloneable {
         if (other.getConfigurations() != null
                 && other.getConfigurations().equals(this.getConfigurations()) == false)
             return false;
+        if (other.getSecurityConfiguration() == null
+                ^ this.getSecurityConfiguration() == null)
+            return false;
+        if (other.getSecurityConfiguration() != null
+                && other.getSecurityConfiguration().equals(
+                        this.getSecurityConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1368,6 +1424,10 @@ public class Cluster implements Serializable, Cloneable {
                 * hashCode
                 + ((getConfigurations() == null) ? 0 : getConfigurations()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSecurityConfiguration() == null) ? 0
+                        : getSecurityConfiguration().hashCode());
         return hashCode;
     }
 

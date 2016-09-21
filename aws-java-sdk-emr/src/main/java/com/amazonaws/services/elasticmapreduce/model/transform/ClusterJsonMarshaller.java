@@ -148,6 +148,10 @@ public class ClusterJsonMarshaller {
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (cluster.getSecurityConfiguration() != null) {
+                jsonGenerator.writeFieldName("SecurityConfiguration")
+                        .writeValue(cluster.getSecurityConfiguration());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

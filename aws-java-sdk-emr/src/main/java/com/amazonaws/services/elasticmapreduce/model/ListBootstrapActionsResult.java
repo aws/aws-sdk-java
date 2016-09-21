@@ -33,7 +33,7 @@ public class ListBootstrapActionsResult extends
     private com.amazonaws.internal.SdkInternalList<Command> bootstrapActions;
     /**
      * <p>
-     * The pagination token that indicates the next set of results to retrieve .
+     * The pagination token that indicates the next set of results to retrieve.
      * </p>
      */
     private String marker;
@@ -121,12 +121,12 @@ public class ListBootstrapActionsResult extends
 
     /**
      * <p>
-     * The pagination token that indicates the next set of results to retrieve .
+     * The pagination token that indicates the next set of results to retrieve.
      * </p>
      * 
      * @param marker
      *        The pagination token that indicates the next set of results to
-     *        retrieve .
+     *        retrieve.
      */
 
     public void setMarker(String marker) {
@@ -135,11 +135,11 @@ public class ListBootstrapActionsResult extends
 
     /**
      * <p>
-     * The pagination token that indicates the next set of results to retrieve .
+     * The pagination token that indicates the next set of results to retrieve.
      * </p>
      * 
      * @return The pagination token that indicates the next set of results to
-     *         retrieve .
+     *         retrieve.
      */
 
     public String getMarker() {
@@ -148,12 +148,12 @@ public class ListBootstrapActionsResult extends
 
     /**
      * <p>
-     * The pagination token that indicates the next set of results to retrieve .
+     * The pagination token that indicates the next set of results to retrieve.
      * </p>
      * 
      * @param marker
      *        The pagination token that indicates the next set of results to
-     *        retrieve .
+     *        retrieve.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

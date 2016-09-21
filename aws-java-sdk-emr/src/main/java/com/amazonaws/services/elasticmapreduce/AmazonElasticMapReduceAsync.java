@@ -202,6 +202,76 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Creates a security configuration using EMR Security Configurations, which
+     * are stored in the service. Security Configurations enable you to more
+     * easily create a configuration, reuse it, and apply it whenever a cluster
+     * is created.
+     * </p>
+     * 
+     * @param createSecurityConfigurationRequest
+     * @return A Java Future containing the result of the
+     *         CreateSecurityConfiguration operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.CreateSecurityConfiguration
+     */
+    java.util.concurrent.Future<CreateSecurityConfigurationResult> createSecurityConfigurationAsync(
+            CreateSecurityConfigurationRequest createSecurityConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a security configuration using EMR Security Configurations, which
+     * are stored in the service. Security Configurations enable you to more
+     * easily create a configuration, reuse it, and apply it whenever a cluster
+     * is created.
+     * </p>
+     * 
+     * @param createSecurityConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         CreateSecurityConfiguration operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.CreateSecurityConfiguration
+     */
+    java.util.concurrent.Future<CreateSecurityConfigurationResult> createSecurityConfigurationAsync(
+            CreateSecurityConfigurationRequest createSecurityConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSecurityConfigurationRequest, CreateSecurityConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a security configuration.
+     * </p>
+     * 
+     * @param deleteSecurityConfigurationRequest
+     * @return A Java Future containing the result of the
+     *         DeleteSecurityConfiguration operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.DeleteSecurityConfiguration
+     */
+    java.util.concurrent.Future<DeleteSecurityConfigurationResult> deleteSecurityConfigurationAsync(
+            DeleteSecurityConfigurationRequest deleteSecurityConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes a security configuration.
+     * </p>
+     * 
+     * @param deleteSecurityConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteSecurityConfiguration operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.DeleteSecurityConfiguration
+     */
+    java.util.concurrent.Future<DeleteSecurityConfigurationResult> deleteSecurityConfigurationAsync(
+            DeleteSecurityConfigurationRequest deleteSecurityConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSecurityConfigurationRequest, DeleteSecurityConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides cluster-level details including status, hardware and software
      * configuration, VPC settings, and so on. For information about the cluster
      * steps, see <a>ListSteps</a>.
@@ -357,6 +427,40 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      */
     java.util.concurrent.Future<DescribeJobFlowsResult> describeJobFlowsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeJobFlowsRequest, DescribeJobFlowsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides the details of a security configuration by returning the
+     * configuration JSON.
+     * </p>
+     * 
+     * @param describeSecurityConfigurationRequest
+     * @return A Java Future containing the result of the
+     *         DescribeSecurityConfiguration operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.DescribeSecurityConfiguration
+     */
+    java.util.concurrent.Future<DescribeSecurityConfigurationResult> describeSecurityConfigurationAsync(
+            DescribeSecurityConfigurationRequest describeSecurityConfigurationRequest);
+
+    /**
+     * <p>
+     * Provides the details of a security configuration by returning the
+     * configuration JSON.
+     * </p>
+     * 
+     * @param describeSecurityConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeSecurityConfiguration operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.DescribeSecurityConfiguration
+     */
+    java.util.concurrent.Future<DescribeSecurityConfigurationResult> describeSecurityConfigurationAsync(
+            DescribeSecurityConfigurationRequest describeSecurityConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSecurityConfigurationRequest, DescribeSecurityConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -564,6 +668,44 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
     java.util.concurrent.Future<ListInstancesResult> listInstancesAsync(
             ListInstancesRequest listInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<ListInstancesRequest, ListInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the security configurations visible to this account, providing
+     * their creation dates and times, and their names. This call returns a
+     * maximum of 50 clusters per call, but returns a marker to track the paging
+     * of the cluster list across multiple ListSecurityConfigurations calls.
+     * </p>
+     * 
+     * @param listSecurityConfigurationsRequest
+     * @return A Java Future containing the result of the
+     *         ListSecurityConfigurations operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.ListSecurityConfigurations
+     */
+    java.util.concurrent.Future<ListSecurityConfigurationsResult> listSecurityConfigurationsAsync(
+            ListSecurityConfigurationsRequest listSecurityConfigurationsRequest);
+
+    /**
+     * <p>
+     * Lists all the security configurations visible to this account, providing
+     * their creation dates and times, and their names. This call returns a
+     * maximum of 50 clusters per call, but returns a marker to track the paging
+     * of the cluster list across multiple ListSecurityConfigurations calls.
+     * </p>
+     * 
+     * @param listSecurityConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ListSecurityConfigurations operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.ListSecurityConfigurations
+     */
+    java.util.concurrent.Future<ListSecurityConfigurationsResult> listSecurityConfigurationsAsync(
+            ListSecurityConfigurationsRequest listSecurityConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSecurityConfigurationsRequest, ListSecurityConfigurationsResult> asyncHandler);
 
     /**
      * <p>

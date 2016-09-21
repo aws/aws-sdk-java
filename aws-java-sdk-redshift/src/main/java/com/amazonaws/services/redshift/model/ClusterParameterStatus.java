@@ -37,23 +37,50 @@ public class ClusterParameterStatus implements Serializable, Cloneable {
      * </p>
      * <p>
      * The following are possible statuses and descriptions.
-     * <ul>
-     * <li><code>in-sync</code>: The parameter value is in sync with the
-     * database.</li>
-     * <li><code>pending-reboot</code>: The parameter value will be applied
-     * after the cluster reboots.</li>
-     * <li><code>applying</code>: The parameter value is being applied to the
-     * database.</li>
-     * <li><code>invalid-parameter</code>: Cannot apply the parameter value
-     * because it has an invalid value or syntax.</li>
-     * <li><code>apply-deferred</code>: The parameter contains static property
-     * changes. The changes are deferred until the cluster reboots.</li>
-     * <li><code>apply-error</code>: Cannot connect to the cluster. The
-     * parameter change will be applied after the cluster reboots.</li>
-     * <li><code>unknown-error</code>: Cannot apply the parameter change right
-     * now. The change will be applied after the cluster reboots.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>in-sync</code>: The parameter value is in sync with the database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending-reboot</code>: The parameter value will be applied after
+     * the cluster reboots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>applying</code>: The parameter value is being applied to the
+     * database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>invalid-parameter</code>: Cannot apply the parameter value because
+     * it has an invalid value or syntax.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>apply-deferred</code>: The parameter contains static property
+     * changes. The changes are deferred until the cluster reboots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>apply-error</code>: Cannot connect to the cluster. The parameter
+     * change will be applied after the cluster reboots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unknown-error</code>: Cannot apply the parameter change right now.
+     * The change will be applied after the cluster reboots.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String parameterApplyStatus;
     /**
@@ -113,23 +140,50 @@ public class ClusterParameterStatus implements Serializable, Cloneable {
      * </p>
      * <p>
      * The following are possible statuses and descriptions.
-     * <ul>
-     * <li><code>in-sync</code>: The parameter value is in sync with the
-     * database.</li>
-     * <li><code>pending-reboot</code>: The parameter value will be applied
-     * after the cluster reboots.</li>
-     * <li><code>applying</code>: The parameter value is being applied to the
-     * database.</li>
-     * <li><code>invalid-parameter</code>: Cannot apply the parameter value
-     * because it has an invalid value or syntax.</li>
-     * <li><code>apply-deferred</code>: The parameter contains static property
-     * changes. The changes are deferred until the cluster reboots.</li>
-     * <li><code>apply-error</code>: Cannot connect to the cluster. The
-     * parameter change will be applied after the cluster reboots.</li>
-     * <li><code>unknown-error</code>: Cannot apply the parameter change right
-     * now. The change will be applied after the cluster reboots.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>in-sync</code>: The parameter value is in sync with the database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending-reboot</code>: The parameter value will be applied after
+     * the cluster reboots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>applying</code>: The parameter value is being applied to the
+     * database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>invalid-parameter</code>: Cannot apply the parameter value because
+     * it has an invalid value or syntax.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>apply-deferred</code>: The parameter contains static property
+     * changes. The changes are deferred until the cluster reboots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>apply-error</code>: Cannot connect to the cluster. The parameter
+     * change will be applied after the cluster reboots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unknown-error</code>: Cannot apply the parameter change right now.
+     * The change will be applied after the cluster reboots.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param parameterApplyStatus
      *        The status of the parameter that indicates whether the parameter
@@ -137,23 +191,51 @@ public class ClusterParameterStatus implements Serializable, Cloneable {
      *        encountered an error when being applied.</p>
      *        <p>
      *        The following are possible statuses and descriptions.
+     *        </p>
      *        <ul>
-     *        <li><code>in-sync</code>: The parameter value is in sync with the
-     *        database.</li>
-     *        <li><code>pending-reboot</code>: The parameter value will be
-     *        applied after the cluster reboots.</li>
-     *        <li><code>applying</code>: The parameter value is being applied to
-     *        the database.</li>
-     *        <li><code>invalid-parameter</code>: Cannot apply the parameter
-     *        value because it has an invalid value or syntax.</li>
-     *        <li><code>apply-deferred</code>: The parameter contains static
+     *        <li>
+     *        <p>
+     *        <code>in-sync</code>: The parameter value is in sync with the
+     *        database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending-reboot</code>: The parameter value will be applied
+     *        after the cluster reboots.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>applying</code>: The parameter value is being applied to the
+     *        database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>invalid-parameter</code>: Cannot apply the parameter value
+     *        because it has an invalid value or syntax.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>apply-deferred</code>: The parameter contains static
      *        property changes. The changes are deferred until the cluster
-     *        reboots.</li>
-     *        <li><code>apply-error</code>: Cannot connect to the cluster. The
-     *        parameter change will be applied after the cluster reboots.</li>
-     *        <li><code>unknown-error</code>: Cannot apply the parameter change
-     *        right now. The change will be applied after the cluster reboots.</li>
-     *        </ul>
+     *        reboots.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>apply-error</code>: Cannot connect to the cluster. The
+     *        parameter change will be applied after the cluster reboots.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown-error</code>: Cannot apply the parameter change
+     *        right now. The change will be applied after the cluster reboots.
+     *        </p>
+     *        </li>
      */
 
     public void setParameterApplyStatus(String parameterApplyStatus) {
@@ -168,46 +250,101 @@ public class ClusterParameterStatus implements Serializable, Cloneable {
      * </p>
      * <p>
      * The following are possible statuses and descriptions.
-     * <ul>
-     * <li><code>in-sync</code>: The parameter value is in sync with the
-     * database.</li>
-     * <li><code>pending-reboot</code>: The parameter value will be applied
-     * after the cluster reboots.</li>
-     * <li><code>applying</code>: The parameter value is being applied to the
-     * database.</li>
-     * <li><code>invalid-parameter</code>: Cannot apply the parameter value
-     * because it has an invalid value or syntax.</li>
-     * <li><code>apply-deferred</code>: The parameter contains static property
-     * changes. The changes are deferred until the cluster reboots.</li>
-     * <li><code>apply-error</code>: Cannot connect to the cluster. The
-     * parameter change will be applied after the cluster reboots.</li>
-     * <li><code>unknown-error</code>: Cannot apply the parameter change right
-     * now. The change will be applied after the cluster reboots.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>in-sync</code>: The parameter value is in sync with the database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending-reboot</code>: The parameter value will be applied after
+     * the cluster reboots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>applying</code>: The parameter value is being applied to the
+     * database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>invalid-parameter</code>: Cannot apply the parameter value because
+     * it has an invalid value or syntax.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>apply-deferred</code>: The parameter contains static property
+     * changes. The changes are deferred until the cluster reboots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>apply-error</code>: Cannot connect to the cluster. The parameter
+     * change will be applied after the cluster reboots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unknown-error</code>: Cannot apply the parameter change right now.
+     * The change will be applied after the cluster reboots.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The status of the parameter that indicates whether the parameter
      *         is in sync with the database, waiting for a cluster reboot, or
      *         encountered an error when being applied.</p>
      *         <p>
      *         The following are possible statuses and descriptions.
+     *         </p>
      *         <ul>
-     *         <li><code>in-sync</code>: The parameter value is in sync with the
-     *         database.</li>
-     *         <li><code>pending-reboot</code>: The parameter value will be
-     *         applied after the cluster reboots.</li>
-     *         <li><code>applying</code>: The parameter value is being applied
-     *         to the database.</li>
-     *         <li><code>invalid-parameter</code>: Cannot apply the parameter
-     *         value because it has an invalid value or syntax.</li>
-     *         <li><code>apply-deferred</code>: The parameter contains static
+     *         <li>
+     *         <p>
+     *         <code>in-sync</code>: The parameter value is in sync with the
+     *         database.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>pending-reboot</code>: The parameter value will be applied
+     *         after the cluster reboots.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>applying</code>: The parameter value is being applied to
+     *         the database.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>invalid-parameter</code>: Cannot apply the parameter value
+     *         because it has an invalid value or syntax.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>apply-deferred</code>: The parameter contains static
      *         property changes. The changes are deferred until the cluster
-     *         reboots.</li>
-     *         <li><code>apply-error</code>: Cannot connect to the cluster. The
-     *         parameter change will be applied after the cluster reboots.</li>
-     *         <li><code>unknown-error</code>: Cannot apply the parameter change
-     *         right now. The change will be applied after the cluster reboots.</li>
-     *         </ul>
+     *         reboots.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>apply-error</code>: Cannot connect to the cluster. The
+     *         parameter change will be applied after the cluster reboots.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>unknown-error</code>: Cannot apply the parameter change
+     *         right now. The change will be applied after the cluster reboots.
+     *         </p>
+     *         </li>
      */
 
     public String getParameterApplyStatus() {
@@ -222,23 +359,50 @@ public class ClusterParameterStatus implements Serializable, Cloneable {
      * </p>
      * <p>
      * The following are possible statuses and descriptions.
-     * <ul>
-     * <li><code>in-sync</code>: The parameter value is in sync with the
-     * database.</li>
-     * <li><code>pending-reboot</code>: The parameter value will be applied
-     * after the cluster reboots.</li>
-     * <li><code>applying</code>: The parameter value is being applied to the
-     * database.</li>
-     * <li><code>invalid-parameter</code>: Cannot apply the parameter value
-     * because it has an invalid value or syntax.</li>
-     * <li><code>apply-deferred</code>: The parameter contains static property
-     * changes. The changes are deferred until the cluster reboots.</li>
-     * <li><code>apply-error</code>: Cannot connect to the cluster. The
-     * parameter change will be applied after the cluster reboots.</li>
-     * <li><code>unknown-error</code>: Cannot apply the parameter change right
-     * now. The change will be applied after the cluster reboots.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>in-sync</code>: The parameter value is in sync with the database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending-reboot</code>: The parameter value will be applied after
+     * the cluster reboots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>applying</code>: The parameter value is being applied to the
+     * database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>invalid-parameter</code>: Cannot apply the parameter value because
+     * it has an invalid value or syntax.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>apply-deferred</code>: The parameter contains static property
+     * changes. The changes are deferred until the cluster reboots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>apply-error</code>: Cannot connect to the cluster. The parameter
+     * change will be applied after the cluster reboots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unknown-error</code>: Cannot apply the parameter change right now.
+     * The change will be applied after the cluster reboots.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param parameterApplyStatus
      *        The status of the parameter that indicates whether the parameter
@@ -246,23 +410,51 @@ public class ClusterParameterStatus implements Serializable, Cloneable {
      *        encountered an error when being applied.</p>
      *        <p>
      *        The following are possible statuses and descriptions.
+     *        </p>
      *        <ul>
-     *        <li><code>in-sync</code>: The parameter value is in sync with the
-     *        database.</li>
-     *        <li><code>pending-reboot</code>: The parameter value will be
-     *        applied after the cluster reboots.</li>
-     *        <li><code>applying</code>: The parameter value is being applied to
-     *        the database.</li>
-     *        <li><code>invalid-parameter</code>: Cannot apply the parameter
-     *        value because it has an invalid value or syntax.</li>
-     *        <li><code>apply-deferred</code>: The parameter contains static
+     *        <li>
+     *        <p>
+     *        <code>in-sync</code>: The parameter value is in sync with the
+     *        database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending-reboot</code>: The parameter value will be applied
+     *        after the cluster reboots.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>applying</code>: The parameter value is being applied to the
+     *        database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>invalid-parameter</code>: Cannot apply the parameter value
+     *        because it has an invalid value or syntax.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>apply-deferred</code>: The parameter contains static
      *        property changes. The changes are deferred until the cluster
-     *        reboots.</li>
-     *        <li><code>apply-error</code>: Cannot connect to the cluster. The
-     *        parameter change will be applied after the cluster reboots.</li>
-     *        <li><code>unknown-error</code>: Cannot apply the parameter change
-     *        right now. The change will be applied after the cluster reboots.</li>
-     *        </ul>
+     *        reboots.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>apply-error</code>: Cannot connect to the cluster. The
+     *        parameter change will be applied after the cluster reboots.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown-error</code>: Cannot apply the parameter change
+     *        right now. The change will be applied after the cluster reboots.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

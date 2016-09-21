@@ -46,14 +46,26 @@ public class Snapshot implements Serializable, Cloneable {
      * <p>
      * The snapshot status. The value of the status depends on the API operation
      * used.
-     * <ul>
-     * <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> returns
-     * status as "creating".</li>
-     * <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-     * "available", "final snapshot", or "failed".</li>
-     * <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> returns
+     * status as "creating".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeClusterSnapshots</a> returns status as "creating",
+     * "available", "final snapshot", or "failed".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteClusterSnapshot</a> returns status as "deleted".
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
     /**
@@ -217,6 +229,23 @@ public class Snapshot implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> restorableNodeTypes;
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     */
+    private Boolean enhancedVpcRouting;
 
     /**
      * <p>
@@ -352,25 +381,48 @@ public class Snapshot implements Serializable, Cloneable {
      * <p>
      * The snapshot status. The value of the status depends on the API operation
      * used.
-     * <ul>
-     * <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> returns
-     * status as "creating".</li>
-     * <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-     * "available", "final snapshot", or "failed".</li>
-     * <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> returns
+     * status as "creating".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeClusterSnapshots</a> returns status as "creating",
+     * "available", "final snapshot", or "failed".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteClusterSnapshot</a> returns status as "deleted".
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
      *        The snapshot status. The value of the status depends on the API
-     *        operation used.
+     *        operation used. </p>
      *        <ul>
-     *        <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
-     *        returns status as "creating".</li>
-     *        <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-     *        "available", "final snapshot", or "failed".</li>
-     *        <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
+     *        returns status as "creating".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>DescribeClusterSnapshots</a> returns status as "creating",
+     *        "available", "final snapshot", or "failed".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>DeleteClusterSnapshot</a> returns status as "deleted".
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -381,24 +433,47 @@ public class Snapshot implements Serializable, Cloneable {
      * <p>
      * The snapshot status. The value of the status depends on the API operation
      * used.
-     * <ul>
-     * <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> returns
-     * status as "creating".</li>
-     * <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-     * "available", "final snapshot", or "failed".</li>
-     * <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> returns
+     * status as "creating".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeClusterSnapshots</a> returns status as "creating",
+     * "available", "final snapshot", or "failed".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteClusterSnapshot</a> returns status as "deleted".
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The snapshot status. The value of the status depends on the API
-     *         operation used.
+     *         operation used. </p>
      *         <ul>
-     *         <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
-     *         returns status as "creating".</li>
-     *         <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-     *         "available", "final snapshot", or "failed".</li>
-     *         <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
+     *         returns status as "creating".
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>DescribeClusterSnapshots</a> returns status as "creating",
+     *         "available", "final snapshot", or "failed".
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>DeleteClusterSnapshot</a> returns status as "deleted".
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -409,25 +484,48 @@ public class Snapshot implements Serializable, Cloneable {
      * <p>
      * The snapshot status. The value of the status depends on the API operation
      * used.
-     * <ul>
-     * <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> returns
-     * status as "creating".</li>
-     * <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-     * "available", "final snapshot", or "failed".</li>
-     * <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> returns
+     * status as "creating".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeClusterSnapshots</a> returns status as "creating",
+     * "available", "final snapshot", or "failed".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteClusterSnapshot</a> returns status as "deleted".
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
      *        The snapshot status. The value of the status depends on the API
-     *        operation used.
+     *        operation used. </p>
      *        <ul>
-     *        <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
-     *        returns status as "creating".</li>
-     *        <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-     *        "available", "final snapshot", or "failed".</li>
-     *        <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
+     *        returns status as "creating".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>DescribeClusterSnapshots</a> returns status as "creating",
+     *        "available", "final snapshot", or "failed".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>DeleteClusterSnapshot</a> returns status as "deleted".
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1696,6 +1794,151 @@ public class Snapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @param enhancedVpcRouting
+     *        An option that specifies whether to create the cluster with
+     *        enhanced VPC routing enabled. To create a cluster that uses
+     *        enhanced VPC routing, the cluster must be in a VPC. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *        >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *        Management Guide.</p>
+     *        <p>
+     *        If this option is <code>true</code>, enhanced VPC routing is
+     *        enabled.
+     *        </p>
+     *        <p>
+     *        Default: false
+     */
+
+    public void setEnhancedVpcRouting(Boolean enhancedVpcRouting) {
+        this.enhancedVpcRouting = enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @return An option that specifies whether to create the cluster with
+     *         enhanced VPC routing enabled. To create a cluster that uses
+     *         enhanced VPC routing, the cluster must be in a VPC. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *         >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *         Management Guide.</p>
+     *         <p>
+     *         If this option is <code>true</code>, enhanced VPC routing is
+     *         enabled.
+     *         </p>
+     *         <p>
+     *         Default: false
+     */
+
+    public Boolean getEnhancedVpcRouting() {
+        return this.enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @param enhancedVpcRouting
+     *        An option that specifies whether to create the cluster with
+     *        enhanced VPC routing enabled. To create a cluster that uses
+     *        enhanced VPC routing, the cluster must be in a VPC. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *        >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *        Management Guide.</p>
+     *        <p>
+     *        If this option is <code>true</code>, enhanced VPC routing is
+     *        enabled.
+     *        </p>
+     *        <p>
+     *        Default: false
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Snapshot withEnhancedVpcRouting(Boolean enhancedVpcRouting) {
+        setEnhancedVpcRouting(enhancedVpcRouting);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @return An option that specifies whether to create the cluster with
+     *         enhanced VPC routing enabled. To create a cluster that uses
+     *         enhanced VPC routing, the cluster must be in a VPC. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *         >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *         Management Guide.</p>
+     *         <p>
+     *         If this option is <code>true</code>, enhanced VPC routing is
+     *         enabled.
+     *         </p>
+     *         <p>
+     *         Default: false
+     */
+
+    public Boolean isEnhancedVpcRouting() {
+        return this.enhancedVpcRouting;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1769,7 +2012,9 @@ public class Snapshot implements Serializable, Cloneable {
         if (getTags() != null)
             sb.append("Tags: " + getTags() + ",");
         if (getRestorableNodeTypes() != null)
-            sb.append("RestorableNodeTypes: " + getRestorableNodeTypes());
+            sb.append("RestorableNodeTypes: " + getRestorableNodeTypes() + ",");
+        if (getEnhancedVpcRouting() != null)
+            sb.append("EnhancedVpcRouting: " + getEnhancedVpcRouting());
         sb.append("}");
         return sb.toString();
     }
@@ -1954,6 +2199,13 @@ public class Snapshot implements Serializable, Cloneable {
                 && other.getRestorableNodeTypes().equals(
                         this.getRestorableNodeTypes()) == false)
             return false;
+        if (other.getEnhancedVpcRouting() == null
+                ^ this.getEnhancedVpcRouting() == null)
+            return false;
+        if (other.getEnhancedVpcRouting() != null
+                && other.getEnhancedVpcRouting().equals(
+                        this.getEnhancedVpcRouting()) == false)
+            return false;
         return true;
     }
 
@@ -2059,6 +2311,10 @@ public class Snapshot implements Serializable, Cloneable {
                 * hashCode
                 + ((getRestorableNodeTypes() == null) ? 0
                         : getRestorableNodeTypes().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEnhancedVpcRouting() == null) ? 0
+                        : getEnhancedVpcRouting().hashCode());
         return hashCode;
     }
 

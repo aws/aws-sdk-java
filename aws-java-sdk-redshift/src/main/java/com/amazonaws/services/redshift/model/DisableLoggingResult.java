@@ -68,7 +68,8 @@ public class DisableLoggingResult extends
      * </p>
      * 
      * @param loggingEnabled
-     *        true</code> if logging is on, <code>false
+     *        <code>true</code> if logging is on, <code>false</code> if logging
+     *        is off.
      */
 
     public void setLoggingEnabled(Boolean loggingEnabled) {
@@ -80,7 +81,8 @@ public class DisableLoggingResult extends
      * <code>true</code> if logging is on, <code>false</code> if logging is off.
      * </p>
      * 
-     * @return true</code> if logging is on, <code>false
+     * @return <code>true</code> if logging is on, <code>false</code> if logging
+     *         is off.
      */
 
     public Boolean getLoggingEnabled() {
@@ -93,7 +95,8 @@ public class DisableLoggingResult extends
      * </p>
      * 
      * @param loggingEnabled
-     *        true</code> if logging is on, <code>false
+     *        <code>true</code> if logging is on, <code>false</code> if logging
+     *        is off.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -108,7 +111,8 @@ public class DisableLoggingResult extends
      * <code>true</code> if logging is on, <code>false</code> if logging is off.
      * </p>
      * 
-     * @return true</code> if logging is on, <code>false
+     * @return <code>true</code> if logging is on, <code>false</code> if logging
+     *         is off.
      */
 
     public Boolean isLoggingEnabled() {

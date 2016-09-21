@@ -358,6 +358,12 @@ public class DBInstanceStaxUnmarshaller implements
                             .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Timezone", targetDepth)) {
+                    dBInstance.setTimezone(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBInstance;

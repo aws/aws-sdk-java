@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class RotateEncryptionKeyRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -49,7 +48,7 @@ public class RotateEncryptionKeyRequest extends
      * 
      * @param clusterIdentifier
      *        The unique identifier of the cluster that you want to rotate the
-     *        encryption keys for. </p>
+     *        encryption keys for.</p>
      *        <p>
      *        Constraints: Must be the name of valid cluster that has encryption
      *        enabled.
@@ -70,7 +69,7 @@ public class RotateEncryptionKeyRequest extends
      * </p>
      * 
      * @return The unique identifier of the cluster that you want to rotate the
-     *         encryption keys for. </p>
+     *         encryption keys for.</p>
      *         <p>
      *         Constraints: Must be the name of valid cluster that has
      *         encryption enabled.
@@ -92,7 +91,7 @@ public class RotateEncryptionKeyRequest extends
      * 
      * @param clusterIdentifier
      *        The unique identifier of the cluster that you want to rotate the
-     *        encryption keys for. </p>
+     *        encryption keys for.</p>
      *        <p>
      *        Constraints: Must be the name of valid cluster that has encryption
      *        enabled.

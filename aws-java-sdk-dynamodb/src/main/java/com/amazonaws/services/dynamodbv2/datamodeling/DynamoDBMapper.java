@@ -711,14 +711,9 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                 } else if ( field.keyType() != null ) {
                     AttributeValue newAttributeValue = field.convert(field.get(object));
                     if ( newAttributeValue == null ) {
-                        throw new DynamoDBMappingException(field.id().err("null or empty value for primary key"));
-                    }
-                    if ( newAttributeValue.getS() == null
-                            && newAttributeValue.getN() == null
-                            && newAttributeValue.getB() == null) {
-                        throw new DynamoDBMappingException(field.id().err(
-                                "keys must be scalar values (String, Number, "
-                                + "or Binary). Got " + newAttributeValue));
+                        throw new DynamoDBMappingException(
+                            clazz.getSimpleName() + "[" + field.name() + "]; null or empty value for primary key"
+                        );
                     }
                     onPrimaryKeyAttributeValue(field.name(), newAttributeValue);
                 } else {
@@ -999,7 +994,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
                 AttributeValueUpdate update = updateValues.get(entry.getKey());
                 if (update != null) {
-                    StandardAttributeTypes.copy(entry.getValue(), update.getValue());
+                    StandardModelFactories.CopyConverter.set(update.getValue(), entry.getValue());
                 } else {
                     updateValues.put(entry.getKey(),
                                      new AttributeValueUpdate(entry.getValue(),
@@ -1029,19 +1024,15 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
          * pretend it doesn't have a version field after all.
          */
         Map<String, ExpectedAttributeValue> internalAssertions = new HashMap<String, ExpectedAttributeValue>();
-        if ( config.getSaveBehavior() != SaveBehavior.CLOBBER ) {
-            for ( final DynamoDBMapperFieldModel<T,Object> field : model.fields() ) {
-                if ( field.versioned() ) {
-                    final Object current = field.get(object);
-                    if (current == null) {
-                        internalAssertions.put(field.name(),
-                            new ExpectedAttributeValue().withExists(false));
-                    } else {
-                        internalAssertions.put(field.name(),
-                            new ExpectedAttributeValue().withExists(true).withValue(field.convert(current)));
-                    }
-                    break;
+        if ( config.getSaveBehavior() != SaveBehavior.CLOBBER && model.versioned() ) {
+            for ( final DynamoDBMapperFieldModel<T,Object> field : model.versions() ) {
+                final AttributeValue current = field.getAndConvert(object);
+                if (current == null) {
+                    internalAssertions.put(field.name(), new ExpectedAttributeValue(false));
+                } else {
+                    internalAssertions.put(field.name(), new ExpectedAttributeValue(true).withValue(current));
                 }
+                break;
             }
         }
 
@@ -2137,31 +2128,23 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         config = mergeConfig(config);
         final DynamoDBMapperTableModel<T> model = getTableModel(clazz, config);
 
-        CreateTableRequest createTableRequest = new CreateTableRequest();
-        createTableRequest.setTableName(getTableName(clazz, config));
-
-        createTableRequest.withKeySchema(new KeySchemaElement(model.hashKey().name(), HASH));
+        final CreateTableRequest request = new CreateTableRequest();
+        request.setTableName(getTableName(clazz, config));
+        request.withKeySchema(new KeySchemaElement(model.hashKey().name(), HASH));
         if (model.rangeKeyIfExists() != null) {
-            createTableRequest.withKeySchema(new KeySchemaElement(model.rangeKey().name(), RANGE));
+            request.withKeySchema(new KeySchemaElement(model.rangeKey().name(), RANGE));
         }
-
-        createTableRequest.setGlobalSecondaryIndexes(model.globalSecondaryIndexes());
-        createTableRequest.setLocalSecondaryIndexes(model.localSecondaryIndexes());
-
+        request.setGlobalSecondaryIndexes(model.globalSecondaryIndexes());
+        request.setLocalSecondaryIndexes(model.localSecondaryIndexes());
         for (final DynamoDBMapperFieldModel<T,Object> field : model.fields()) {
             if (field.keyType() != null || field.indexed()) {
-                final ScalarAttributeType scalarAttributeType;
-                try {
-                    scalarAttributeType = ScalarAttributeType.valueOf(field.attributeType().name());
-                } catch (final RuntimeException e) {
-                    throw new DynamoDBMappingException(field.id().err(
-                        "must be scalar (B, N, or S) but is %s", field.attributeType()), e);
-                }
-                createTableRequest.withAttributeDefinitions(new AttributeDefinition(field.name(), scalarAttributeType));
+                request.withAttributeDefinitions(new AttributeDefinition()
+                    .withAttributeType(ScalarAttributeType.valueOf(field.attributeType().name()))
+                    .withAttributeName(field.name())
+                );
             }
         }
-
-        return createTableRequest;
+        return request;
     }
 
     @Override

@@ -40,18 +40,6 @@ public class TriggerConfig implements Serializable, Cloneable {
      * <p>
      * The event type or types for which notifications are triggered.
      * </p>
-     * <p>
-     * The following event type values are supported:
-     * </p>
-     * <ul>
-     * <li>DEPLOYMENT_START</li>
-     * <li>DEPLOYMENT_SUCCESS</li>
-     * <li>DEPLOYMENT_FAILURE</li>
-     * <li>DEPLOYMENT_STOP</li>
-     * <li>INSTANCE_START</li>
-     * <li>INSTANCE_SUCCESS</li>
-     * <li>INSTANCE_FAILURE</li>
-     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> triggerEvents;
 
@@ -147,32 +135,8 @@ public class TriggerConfig implements Serializable, Cloneable {
      * <p>
      * The event type or types for which notifications are triggered.
      * </p>
-     * <p>
-     * The following event type values are supported:
-     * </p>
-     * <ul>
-     * <li>DEPLOYMENT_START</li>
-     * <li>DEPLOYMENT_SUCCESS</li>
-     * <li>DEPLOYMENT_FAILURE</li>
-     * <li>DEPLOYMENT_STOP</li>
-     * <li>INSTANCE_START</li>
-     * <li>INSTANCE_SUCCESS</li>
-     * <li>INSTANCE_FAILURE</li>
-     * </ul>
      * 
-     * @return The event type or types for which notifications are
-     *         triggered.</p>
-     *         <p>
-     *         The following event type values are supported:
-     *         </p>
-     *         <ul>
-     *         <li>DEPLOYMENT_START</li>
-     *         <li>DEPLOYMENT_SUCCESS</li>
-     *         <li>DEPLOYMENT_FAILURE</li>
-     *         <li>DEPLOYMENT_STOP</li>
-     *         <li>INSTANCE_START</li>
-     *         <li>INSTANCE_SUCCESS</li>
-     *         <li>INSTANCE_FAILURE</li>
+     * @return The event type or types for which notifications are triggered.
      * @see TriggerEventType
      */
 
@@ -187,32 +151,9 @@ public class TriggerConfig implements Serializable, Cloneable {
      * <p>
      * The event type or types for which notifications are triggered.
      * </p>
-     * <p>
-     * The following event type values are supported:
-     * </p>
-     * <ul>
-     * <li>DEPLOYMENT_START</li>
-     * <li>DEPLOYMENT_SUCCESS</li>
-     * <li>DEPLOYMENT_FAILURE</li>
-     * <li>DEPLOYMENT_STOP</li>
-     * <li>INSTANCE_START</li>
-     * <li>INSTANCE_SUCCESS</li>
-     * <li>INSTANCE_FAILURE</li>
-     * </ul>
      * 
      * @param triggerEvents
-     *        The event type or types for which notifications are triggered.</p>
-     *        <p>
-     *        The following event type values are supported:
-     *        </p>
-     *        <ul>
-     *        <li>DEPLOYMENT_START</li>
-     *        <li>DEPLOYMENT_SUCCESS</li>
-     *        <li>DEPLOYMENT_FAILURE</li>
-     *        <li>DEPLOYMENT_STOP</li>
-     *        <li>INSTANCE_START</li>
-     *        <li>INSTANCE_SUCCESS</li>
-     *        <li>INSTANCE_FAILURE</li>
+     *        The event type or types for which notifications are triggered.
      * @see TriggerEventType
      */
 
@@ -231,18 +172,6 @@ public class TriggerConfig implements Serializable, Cloneable {
      * The event type or types for which notifications are triggered.
      * </p>
      * <p>
-     * The following event type values are supported:
-     * </p>
-     * <ul>
-     * <li>DEPLOYMENT_START</li>
-     * <li>DEPLOYMENT_SUCCESS</li>
-     * <li>DEPLOYMENT_FAILURE</li>
-     * <li>DEPLOYMENT_STOP</li>
-     * <li>INSTANCE_START</li>
-     * <li>INSTANCE_SUCCESS</li>
-     * <li>INSTANCE_FAILURE</li>
-     * </ul>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTriggerEvents(java.util.Collection)} or
      * {@link #withTriggerEvents(java.util.Collection)} if you want to override
@@ -250,18 +179,7 @@ public class TriggerConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param triggerEvents
-     *        The event type or types for which notifications are triggered.</p>
-     *        <p>
-     *        The following event type values are supported:
-     *        </p>
-     *        <ul>
-     *        <li>DEPLOYMENT_START</li>
-     *        <li>DEPLOYMENT_SUCCESS</li>
-     *        <li>DEPLOYMENT_FAILURE</li>
-     *        <li>DEPLOYMENT_STOP</li>
-     *        <li>INSTANCE_START</li>
-     *        <li>INSTANCE_SUCCESS</li>
-     *        <li>INSTANCE_FAILURE</li>
+     *        The event type or types for which notifications are triggered.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TriggerEventType
@@ -282,32 +200,9 @@ public class TriggerConfig implements Serializable, Cloneable {
      * <p>
      * The event type or types for which notifications are triggered.
      * </p>
-     * <p>
-     * The following event type values are supported:
-     * </p>
-     * <ul>
-     * <li>DEPLOYMENT_START</li>
-     * <li>DEPLOYMENT_SUCCESS</li>
-     * <li>DEPLOYMENT_FAILURE</li>
-     * <li>DEPLOYMENT_STOP</li>
-     * <li>INSTANCE_START</li>
-     * <li>INSTANCE_SUCCESS</li>
-     * <li>INSTANCE_FAILURE</li>
-     * </ul>
      * 
      * @param triggerEvents
-     *        The event type or types for which notifications are triggered.</p>
-     *        <p>
-     *        The following event type values are supported:
-     *        </p>
-     *        <ul>
-     *        <li>DEPLOYMENT_START</li>
-     *        <li>DEPLOYMENT_SUCCESS</li>
-     *        <li>DEPLOYMENT_FAILURE</li>
-     *        <li>DEPLOYMENT_STOP</li>
-     *        <li>INSTANCE_START</li>
-     *        <li>INSTANCE_SUCCESS</li>
-     *        <li>INSTANCE_FAILURE</li>
+     *        The event type or types for which notifications are triggered.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TriggerEventType
@@ -323,32 +218,9 @@ public class TriggerConfig implements Serializable, Cloneable {
      * <p>
      * The event type or types for which notifications are triggered.
      * </p>
-     * <p>
-     * The following event type values are supported:
-     * </p>
-     * <ul>
-     * <li>DEPLOYMENT_START</li>
-     * <li>DEPLOYMENT_SUCCESS</li>
-     * <li>DEPLOYMENT_FAILURE</li>
-     * <li>DEPLOYMENT_STOP</li>
-     * <li>INSTANCE_START</li>
-     * <li>INSTANCE_SUCCESS</li>
-     * <li>INSTANCE_FAILURE</li>
-     * </ul>
      * 
      * @param triggerEvents
-     *        The event type or types for which notifications are triggered.</p>
-     *        <p>
-     *        The following event type values are supported:
-     *        </p>
-     *        <ul>
-     *        <li>DEPLOYMENT_START</li>
-     *        <li>DEPLOYMENT_SUCCESS</li>
-     *        <li>DEPLOYMENT_FAILURE</li>
-     *        <li>DEPLOYMENT_STOP</li>
-     *        <li>INSTANCE_START</li>
-     *        <li>INSTANCE_SUCCESS</li>
-     *        <li>INSTANCE_FAILURE</li>
+     *        The event type or types for which notifications are triggered.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TriggerEventType

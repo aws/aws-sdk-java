@@ -237,7 +237,7 @@ public class Event implements Serializable, Cloneable {
      * Values: Configuration, Management, Monitoring, Security
      * </p>
      * 
-     * @return A list of the event categories. </p>
+     * @return A list of the event categories.</p>
      *         <p>
      *         Values: Configuration, Management, Monitoring, Security
      */
@@ -258,7 +258,7 @@ public class Event implements Serializable, Cloneable {
      * </p>
      * 
      * @param eventCategories
-     *        A list of the event categories. </p>
+     *        A list of the event categories.</p>
      *        <p>
      *        Values: Configuration, Management, Monitoring, Security
      */
@@ -288,7 +288,7 @@ public class Event implements Serializable, Cloneable {
      * </p>
      * 
      * @param eventCategories
-     *        A list of the event categories. </p>
+     *        A list of the event categories.</p>
      *        <p>
      *        Values: Configuration, Management, Monitoring, Security
      * @return Returns a reference to this object so that method calls can be
@@ -315,7 +315,7 @@ public class Event implements Serializable, Cloneable {
      * </p>
      * 
      * @param eventCategories
-     *        A list of the event categories. </p>
+     *        A list of the event categories.</p>
      *        <p>
      *        Values: Configuration, Management, Monitoring, Security
      * @return Returns a reference to this object so that method calls can be

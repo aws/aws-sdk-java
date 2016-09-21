@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
+import static com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.actualOf;
+
 import java.lang.annotation.Annotation;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -91,21 +93,22 @@ import java.lang.annotation.Target;
  * }
  * </pre>
  *
- * Alternatively, the property/field may be annotated directly (which requires
- * the converter to provide a default constructor),
+ * <p>Alternatively, the property/field may be annotated directly (which
+ * requires the converter to provide a default constructor or a constructor
+ * with only the {@code targetType}),</p>
  * <pre class="brush: java">
  * &#064;DynamoDBTypeConverted(converter=CurrencyFormat.Converter.class)
  * public Currency getCurrency() { return currency; }
  * </pre>
  *
- * Precedence for selecting a type-converter first goes to getter annotations,
- * then field, then finally type.
+ * <p>All converters are null-safe, a {@code null} value will never be passed
+ * to {@link DynamoDBTypeConverter#convert}
+ * or {@link DynamoDBTypeConverter#unconvert}.</p>
  *
- * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDelimited
- * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConvertedEnum
- * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConvertedJson
- * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConvertedTimestamp
- * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverter
+ * <p>Precedence for selecting a type-converter first goes to getter annotations,
+ * then field, then finally type.</p>
+ *
+ * <p>May be used as a meta-annotation.</p>
  */
 @DynamoDB
 @Retention(RetentionPolicy.RUNTIME)
@@ -115,25 +118,18 @@ public @interface DynamoDBTypeConverted {
     /**
      * The class of the converter for this property.
      */
+    @SuppressWarnings("rawtypes")
     Class<? extends DynamoDBTypeConverter> converter();
 
     /**
      * Annotation type-converter factory.
      */
+    @SuppressWarnings("unchecked")
     static final class Converters {
-        static <S,T> DynamoDBTypeConverter<S,T> of(final Class<T> targetType, final Annotation annotation) {
-            final DynamoDBTypeConverted converted;
-
-            if (annotation.annotationType() == DynamoDBTypeConverted.class) {
-                converted = (DynamoDBTypeConverted)annotation;
-            } else {
-                converted = annotation.annotationType().getAnnotation(DynamoDBTypeConverted.class);
-                if (converted == null) {
-                    throw new DynamoDBMappingException("could not resolve type-converter: " + annotation);
-                }
-            }
-
+        static <S,T> DynamoDBTypeConverter<S,T> of(Class<T> targetType, Annotation annotation) {
+            DynamoDBTypeConverted converted = actualOf(DynamoDBTypeConverted.class, annotation);
             Class<DynamoDBTypeConverter<S,T>> clazz = (Class<DynamoDBTypeConverter<S,T>>)converted.converter();
+
             DynamoDBTypeConverter<S,T> converter = null;
 
             try {

@@ -245,6 +245,12 @@ public class ClusterStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("EnhancedVpcRouting", targetDepth)) {
+                    cluster.setEnhancedVpcRouting(BooleanStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("IamRoles/ClusterIamRole",
                         targetDepth)) {
                     cluster.withIamRoles(ClusterIamRoleStaxUnmarshaller

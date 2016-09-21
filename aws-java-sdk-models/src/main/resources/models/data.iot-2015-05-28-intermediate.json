@@ -1,61 +1,138 @@
 {
+  "customizationConfig" : {
+    "additionalShapeConstructors" : null,
+    "authPolicyActions" : {
+      "actionPrefix" : null,
+      "fileNamePrefix" : null,
+      "skip" : true
+    },
+    "calculateCRC32FromCompressedData" : false,
+    "convenienceTypeOverloads" : [ ],
+    "customClientConfigFactory" : null,
+    "customCodeTemplates" : null,
+    "customErrorCodeFieldName" : null,
+    "customExceptionUnmarshallerImpl" : null,
+    "customFileHeader" : null,
+    "customResponseMetadataClassName" : null,
+    "customServiceMetadata" : null,
+    "customServiceNameForRequest" : null,
+    "customSignerProvider" : null,
+    "operationModifiers" : null,
+    "operationsWithResponseStreamContentLengthValidation" : null,
+    "renameShapes" : null,
+    "requestMetrics" : null,
+    "requiredParamValidationEnabled" : false,
+    "sdkModeledExceptionBaseClassName" : null,
+    "sendEmptyAutoConstructedListAsEmptyList" : null,
+    "sendExplicitlyEmptyListsForQuery" : false,
+    "serviceClientHoldInputStream" : false,
+    "shapeModifiers" : null,
+    "shapeSubstitutions" : null,
+    "simpleMethods" : null,
+    "skipInterfaceAdditions" : false,
+    "skipSmokeTests" : true,
+    "useAutoConstructList" : false,
+    "useAutoConstructMap" : false
+  },
   "metadata" : {
     "apiVersion" : "2015-05-28",
-    "protocol" : "rest-json",
+    "asyncClient" : "AWSIotDataAsyncClient",
+    "asyncClientBuilderClassName" : "AWSIotDataAsyncClientBuilder",
+    "asyncInterface" : "AWSIotDataAsync",
+    "cborProtocol" : false,
     "checksumFormat" : null,
-    "documentation" : "<fullname>AWS IoT</fullname> <p>AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud.</p>",
+    "contentType" : "",
+    "cucumberModuleInjectorClassName" : "AWSIotDataModuleInjector",
     "defaultEndpoint" : "https://data.iot.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "data.iot.us-east-1.amazonaws.com",
-    "syncInterface" : "AWSIotData",
-    "syncClient" : "AWSIotDataClient",
-    "asyncInterface" : "AWSIotDataAsync",
-    "asyncClient" : "AWSIotDataAsyncClient",
+    "documentation" : "<fullname>AWS IoT</fullname> <p>AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud.</p>",
+    "endpointPrefix" : "data.iot",
+    "hasApiWithStreamInput" : false,
+    "ionProtocol" : false,
+    "jsonProtocol" : true,
+    "jsonVersion" : "1.1",
     "packageName" : "com.amazonaws.services.iotdata",
     "packagePath" : "com/amazonaws/services/iotdata",
+    "protocol" : "rest-json",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS IoT Data Plane",
-    "hasApiWithStreamInput" : false,
-    "contentType" : "",
-    "jsonVersion" : "1.1",
-    "endpointPrefix" : "data.iot",
-    "signingName" : "iotdata",
-    "syncClientBuilderClassName" : "AWSIotDataClientBuilder",
-    "asyncClientBuilderClassName" : "AWSIotDataAsyncClientBuilder",
-    "cucumberModuleInjectorClassName" : "AWSIotDataModuleInjector",
-    "smokeTestsPackageName" : "com.amazonaws.services.iotdata.smoketests",
     "serviceName" : "AWS IoT Data Plane",
-    "jsonProtocol" : true,
-    "xmlProtocol" : false,
-    "cborProtocol" : false,
-    "ionProtocol" : false,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "signingName" : "iotdata",
+    "smokeTestsPackageName" : "com.amazonaws.services.iotdata.smoketests",
+    "syncClient" : "AWSIotDataClient",
+    "syncClientBuilderClassName" : "AWSIotDataClientBuilder",
+    "syncInterface" : "AWSIotData",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "xmlProtocol" : false
   },
   "operations" : {
     "DeleteThingShadow" : {
-      "documentation" : "<p>Deletes the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html\">DeleteThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>",
-      "operationName" : "DeleteThingShadow",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteThingShadowResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteThingShadowResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteThingShadowRequest, DeleteThingShadowResult>",
+      "asyncReturnType" : "DeleteThingShadowResult",
+      "authenticated" : true,
       "deprecated" : false,
+      "documentation" : "<p>Deletes the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html\">DeleteThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The specified resource does not exist.</p>"
+      }, {
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : "<p>The request is not valid.</p>"
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The rate exceeds the limit.</p>"
+      }, {
+        "exceptionName" : "UnauthorizedException",
+        "documentation" : "<p>You are not authorized to perform this operation.</p>"
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : "<p>The service is temporarily unavailable.</p>"
+      }, {
+        "exceptionName" : "InternalFailureException",
+        "documentation" : "<p>An unexpected error has occurred.</p>"
+      }, {
+        "exceptionName" : "MethodNotAllowedException",
+        "documentation" : "<p>The specified combination of HTTP verb and URI is not supported.</p>"
+      }, {
+        "exceptionName" : "UnsupportedDocumentEncodingException",
+        "documentation" : "<p>The document encoding is not supported.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : true,
       "input" : {
+        "variableDeclarationType" : "DeleteThingShadowRequest",
         "variableName" : "deleteThingShadowRequest",
         "variableType" : "DeleteThingShadowRequest",
-        "variableDeclarationType" : "DeleteThingShadowRequest",
         "documentation" : "<p>The input for the DeleteThingShadow operation.</p>",
         "simpleType" : "DeleteThingShadowRequest",
         "variableSetterType" : "DeleteThingShadowRequest"
       },
       "inputStreamPropertyName" : null,
+      "methodName" : "deleteThingShadow",
+      "operationName" : "DeleteThingShadow",
       "returnType" : {
         "returnType" : "DeleteThingShadowResult",
         "documentation" : "<p>The output from the DeleteThingShadow operation.</p>"
       },
+      "syncReturnType" : "DeleteThingShadowResult"
+    },
+    "GetThingShadow" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<GetThingShadowResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<GetThingShadowResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetThingShadowRequest, GetThingShadowResult>",
+      "asyncReturnType" : "GetThingShadowResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Gets the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html\">GetThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>",
       "exceptions" : [ {
-        "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>The specified resource does not exist.</p>"
-      }, {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>"
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The specified resource does not exist.</p>"
       }, {
         "exceptionName" : "ThrottlingException",
         "documentation" : "<p>The rate exceeds the limit.</p>"
@@ -76,82 +153,31 @@
         "documentation" : "<p>The document encoding is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : true,
-      "authenticated" : true,
-      "syncReturnType" : "DeleteThingShadowResult",
-      "asyncReturnType" : "DeleteThingShadowResult",
-      "asyncFutureType" : "java.util.concurrent.Future<DeleteThingShadowResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<DeleteThingShadowResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteThingShadowRequest, DeleteThingShadowResult>",
-      "methodName" : "deleteThingShadow"
-    },
-    "GetThingShadow" : {
-      "documentation" : "<p>Gets the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html\">GetThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>",
-      "operationName" : "GetThingShadow",
-      "deprecated" : false,
       "input" : {
+        "variableDeclarationType" : "GetThingShadowRequest",
         "variableName" : "getThingShadowRequest",
         "variableType" : "GetThingShadowRequest",
-        "variableDeclarationType" : "GetThingShadowRequest",
         "documentation" : "<p>The input for the GetThingShadow operation.</p>",
         "simpleType" : "GetThingShadowRequest",
         "variableSetterType" : "GetThingShadowRequest"
       },
       "inputStreamPropertyName" : null,
+      "methodName" : "getThingShadow",
+      "operationName" : "GetThingShadow",
       "returnType" : {
         "returnType" : "GetThingShadowResult",
         "documentation" : "<p>The output from the GetThingShadow operation.</p>"
       },
-      "exceptions" : [ {
-        "exceptionName" : "InvalidRequestException",
-        "documentation" : "<p>The request is not valid.</p>"
-      }, {
-        "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>The specified resource does not exist.</p>"
-      }, {
-        "exceptionName" : "ThrottlingException",
-        "documentation" : "<p>The rate exceeds the limit.</p>"
-      }, {
-        "exceptionName" : "UnauthorizedException",
-        "documentation" : "<p>You are not authorized to perform this operation.</p>"
-      }, {
-        "exceptionName" : "ServiceUnavailableException",
-        "documentation" : "<p>The service is temporarily unavailable.</p>"
-      }, {
-        "exceptionName" : "InternalFailureException",
-        "documentation" : "<p>An unexpected error has occurred.</p>"
-      }, {
-        "exceptionName" : "MethodNotAllowedException",
-        "documentation" : "<p>The specified combination of HTTP verb and URI is not supported.</p>"
-      }, {
-        "exceptionName" : "UnsupportedDocumentEncodingException",
-        "documentation" : "<p>The document encoding is not supported.</p>"
-      } ],
-      "hasBlobMemberAsPayload" : true,
-      "authenticated" : true,
-      "syncReturnType" : "GetThingShadowResult",
-      "asyncReturnType" : "GetThingShadowResult",
-      "asyncFutureType" : "java.util.concurrent.Future<GetThingShadowResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<GetThingShadowResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetThingShadowRequest, GetThingShadowResult>",
-      "methodName" : "getThingShadow"
+      "syncReturnType" : "GetThingShadowResult"
     },
     "Publish" : {
-      "documentation" : "<p>Publishes state information.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http\">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>",
-      "operationName" : "Publish",
+      "asyncCallableType" : "java.util.concurrent.Callable<PublishResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<PublishResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult>",
+      "asyncReturnType" : "PublishResult",
+      "authenticated" : true,
       "deprecated" : false,
-      "input" : {
-        "variableName" : "publishRequest",
-        "variableType" : "PublishRequest",
-        "variableDeclarationType" : "PublishRequest",
-        "documentation" : "<p>The input for the Publish operation.</p>",
-        "simpleType" : "PublishRequest",
-        "variableSetterType" : "PublishRequest"
-      },
-      "inputStreamPropertyName" : null,
-      "returnType" : {
-        "returnType" : "PublishResult",
-        "documentation" : null
-      },
+      "documentation" : "<p>Publishes state information.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http\">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>",
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p>An unexpected error has occurred.</p>"
@@ -166,31 +192,31 @@
         "documentation" : "<p>The specified combination of HTTP verb and URI is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
-      "syncReturnType" : "PublishResult",
-      "asyncReturnType" : "PublishResult",
-      "asyncFutureType" : "java.util.concurrent.Future<PublishResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<PublishResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult>",
-      "methodName" : "publish"
-    },
-    "UpdateThingShadow" : {
-      "documentation" : "<p>Updates the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html\">UpdateThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>",
-      "operationName" : "UpdateThingShadow",
-      "deprecated" : false,
       "input" : {
-        "variableName" : "updateThingShadowRequest",
-        "variableType" : "UpdateThingShadowRequest",
-        "variableDeclarationType" : "UpdateThingShadowRequest",
-        "documentation" : "<p>The input for the UpdateThingShadow operation.</p>",
-        "simpleType" : "UpdateThingShadowRequest",
-        "variableSetterType" : "UpdateThingShadowRequest"
+        "variableDeclarationType" : "PublishRequest",
+        "variableName" : "publishRequest",
+        "variableType" : "PublishRequest",
+        "documentation" : "<p>The input for the Publish operation.</p>",
+        "simpleType" : "PublishRequest",
+        "variableSetterType" : "PublishRequest"
       },
       "inputStreamPropertyName" : null,
+      "methodName" : "publish",
+      "operationName" : "Publish",
       "returnType" : {
-        "returnType" : "UpdateThingShadowResult",
-        "documentation" : "<p>The output from the UpdateThingShadow operation.</p>"
+        "returnType" : "PublishResult",
+        "documentation" : null
       },
+      "syncReturnType" : "PublishResult"
+    },
+    "UpdateThingShadow" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<UpdateThingShadowResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<UpdateThingShadowResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateThingShadowRequest, UpdateThingShadowResult>",
+      "asyncReturnType" : "UpdateThingShadowResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Updates the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html\">UpdateThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>",
       "exceptions" : [ {
         "exceptionName" : "ConflictException",
         "documentation" : "<p>The specified version does not match the version of the document.</p>"
@@ -220,1735 +246,1709 @@
         "documentation" : "<p>The document encoding is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : true,
-      "authenticated" : true,
-      "syncReturnType" : "UpdateThingShadowResult",
-      "asyncReturnType" : "UpdateThingShadowResult",
-      "asyncFutureType" : "java.util.concurrent.Future<UpdateThingShadowResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<UpdateThingShadowResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateThingShadowRequest, UpdateThingShadowResult>",
-      "methodName" : "updateThingShadow"
+      "input" : {
+        "variableDeclarationType" : "UpdateThingShadowRequest",
+        "variableName" : "updateThingShadowRequest",
+        "variableType" : "UpdateThingShadowRequest",
+        "documentation" : "<p>The input for the UpdateThingShadow operation.</p>",
+        "simpleType" : "UpdateThingShadowRequest",
+        "variableSetterType" : "UpdateThingShadowRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "updateThingShadow",
+      "operationName" : "UpdateThingShadow",
+      "returnType" : {
+        "returnType" : "UpdateThingShadowResult",
+        "documentation" : "<p>The output from the UpdateThingShadow operation.</p>"
+      },
+      "syncReturnType" : "UpdateThingShadowResult"
     }
   },
   "shapes" : {
-    "UnsupportedDocumentEncodingException" : {
-      "c2jName" : "UnsupportedDocumentEncodingException",
-      "documentation" : "<p>The document encoding is not supported.</p>",
-      "shapeName" : "UnsupportedDocumentEncodingException",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "unsupportedDocumentEncodingException",
-        "variableType" : "UnsupportedDocumentEncodingException",
-        "variableDeclarationType" : "UnsupportedDocumentEncodingException",
-        "documentation" : null,
-        "simpleType" : "UnsupportedDocumentEncodingException",
-        "variableSetterType" : "UnsupportedDocumentEncodingException"
-      },
-      "marshaller" : null,
-      "unmarshaller" : null,
-      "errorCode" : "UnsupportedDocumentEncodingException",
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
-    },
-    "MethodNotAllowedException" : {
-      "c2jName" : "MethodNotAllowedException",
-      "documentation" : "<p>The specified combination of HTTP verb and URI is not supported.</p>",
-      "shapeName" : "MethodNotAllowedException",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "methodNotAllowedException",
-        "variableType" : "MethodNotAllowedException",
-        "variableDeclarationType" : "MethodNotAllowedException",
-        "documentation" : null,
-        "simpleType" : "MethodNotAllowedException",
-        "variableSetterType" : "MethodNotAllowedException"
-      },
-      "marshaller" : null,
-      "unmarshaller" : null,
-      "errorCode" : "MethodNotAllowedException",
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
-    },
     "ConflictException" : {
       "c2jName" : "ConflictException",
-      "documentation" : "<p>The specified version does not match the version of the document.</p>",
-      "shapeName" : "ConflictException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
       "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
+      "documentation" : "<p>The specified version does not match the version of the document.</p>",
+      "enums" : null,
+      "errorCode" : "ConflictException",
       "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "wrapper" : false,
+      "marshaller" : null,
       "members" : [ ],
-      "enums" : null,
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "ConflictException",
+      "unmarshaller" : null,
       "variable" : {
+        "variableDeclarationType" : "ConflictException",
         "variableName" : "conflictException",
         "variableType" : "ConflictException",
-        "variableDeclarationType" : "ConflictException",
         "documentation" : null,
         "simpleType" : "ConflictException",
         "variableSetterType" : "ConflictException"
       },
-      "marshaller" : null,
-      "unmarshaller" : null,
-      "errorCode" : "ConflictException",
+      "wrapper" : false
+    },
+    "DeleteThingShadowRequest" : {
+      "c2jName" : "DeleteThingShadowRequest",
       "customization" : {
         "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
         "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
         "skipGeneratingUnmarshaller" : false
       },
-      "membersAsMap" : { }
-    },
-    "UpdateThingShadowRequest" : {
-      "c2jName" : "UpdateThingShadowRequest",
-      "documentation" : "<p>The input for the UpdateThingShadow operation.</p>",
-      "shapeName" : "UpdateThingShadowRequest",
       "deprecated" : false,
-      "required" : [ "thingName", "payload" ],
-      "hasPayloadMember" : true,
+      "documentation" : "<p>The input for the DeleteThingShadow operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
       "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "wrapper" : false,
+      "marshaller" : {
+        "action" : "DeleteThingShadow",
+        "locationName" : null,
+        "requestUri" : "/things/{thingName}/shadow",
+        "target" : null,
+        "verb" : "DELETE",
+        "xmlNameSpaceUri" : null
+      },
       "members" : [ {
-        "documentation" : "<p>The name of the thing.</p>",
-        "name" : "ThingName",
         "c2jName" : "thingName",
         "c2jShape" : "ThingName",
-        "variable" : {
-          "variableName" : "thingName",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>The name of the thing.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "thingName",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
+        "deprecated" : false,
+        "documentation" : "<p>The name of the thing.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
         },
         "http" : {
-          "unmarshallLocationName" : "thingName",
-          "marshallLocationName" : "thingName",
-          "additionalUnmarshallingPath" : null,
           "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
           "location" : "uri",
-          "flattened" : false,
-          "header" : false,
-          "uri" : true,
+          "marshallLocationName" : "thingName",
+          "queryString" : false,
           "statusCode" : false,
-          "queryString" : false
+          "unmarshallLocationName" : "thingName",
+          "uri" : true
         },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "simple" : true,
         "list" : false,
+        "listModel" : null,
         "map" : false,
+        "mapModel" : null,
+        "name" : "ThingName",
         "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
-        "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
-        "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      }, {
-        "documentation" : "<p>The state information, in JSON format.</p>",
-        "name" : "Payload",
-        "c2jName" : "payload",
-        "c2jShape" : "JsonDocument",
-        "variable" : {
-          "variableName" : "payload",
-          "variableType" : "java.nio.ByteBuffer",
-          "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : "<p>The state information, in JSON format.</p>",
-          "simpleType" : "ByteBuffer",
-          "variableSetterType" : "java.nio.ByteBuffer"
-        },
         "setterModel" : {
-          "variableName" : "payload",
-          "variableType" : "java.nio.ByteBuffer",
-          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "variableDeclarationType" : "String",
+          "variableName" : "thingName",
+          "variableType" : "String",
           "documentation" : "",
-          "simpleType" : "ByteBuffer",
-          "variableSetterType" : "java.nio.ByteBuffer"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
-        "getterModel" : {
-          "returnType" : "java.nio.ByteBuffer",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "payload",
-          "marshallLocationName" : "payload",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : true,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
         "simple" : true,
-        "list" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
-        "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
-        "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "updateThingShadowRequest",
-        "variableType" : "UpdateThingShadowRequest",
-        "variableDeclarationType" : "UpdateThingShadowRequest",
-        "documentation" : null,
-        "simpleType" : "UpdateThingShadowRequest",
-        "variableSetterType" : "UpdateThingShadowRequest"
-      },
-      "marshaller" : {
-        "action" : "UpdateThingShadow",
-        "verb" : "POST",
-        "target" : null,
-        "requestUri" : "/things/{thingName}/shadow",
-        "locationName" : null,
-        "xmlNameSpaceUri" : null
-      },
-      "unmarshaller" : null,
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : {
-        "Payload" : {
-          "documentation" : "<p>The state information, in JSON format.</p>",
-          "name" : "Payload",
-          "c2jName" : "payload",
-          "c2jShape" : "JsonDocument",
-          "variable" : {
-            "variableName" : "payload",
-            "variableType" : "java.nio.ByteBuffer",
-            "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : "<p>The state information, in JSON format.</p>",
-            "simpleType" : "ByteBuffer",
-            "variableSetterType" : "java.nio.ByteBuffer"
-          },
-          "setterModel" : {
-            "variableName" : "payload",
-            "variableType" : "java.nio.ByteBuffer",
-            "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : "",
-            "simpleType" : "ByteBuffer",
-            "variableSetterType" : "java.nio.ByteBuffer"
-          },
-          "getterModel" : {
-            "returnType" : "java.nio.ByteBuffer",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "payload",
-            "marshallLocationName" : "payload",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : true,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "simple" : true,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
-          "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
-          "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        },
-        "ThingName" : {
+        "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "thingName",
+          "variableType" : "String",
           "documentation" : "<p>The name of the thing.</p>",
-          "name" : "ThingName",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ThingName" : {
           "c2jName" : "thingName",
           "c2jShape" : "ThingName",
-          "variable" : {
-            "variableName" : "thingName",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>The name of the thing.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "thingName",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
+          "deprecated" : false,
+          "documentation" : "<p>The name of the thing.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
           },
           "http" : {
-            "unmarshallLocationName" : "thingName",
-            "marshallLocationName" : "thingName",
-            "additionalUnmarshallingPath" : null,
             "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
             "location" : "uri",
-            "flattened" : false,
-            "header" : false,
-            "uri" : true,
+            "marshallLocationName" : "thingName",
+            "queryString" : false,
             "statusCode" : false,
-            "queryString" : false
+            "unmarshallLocationName" : "thingName",
+            "uri" : true
           },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "simple" : true,
           "list" : false,
+          "listModel" : null,
           "map" : false,
+          "mapModel" : null,
+          "name" : "ThingName",
           "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
-          "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
-          "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "thingName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "thingName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the thing.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
         }
-      }
-    },
-    "ServiceUnavailableException" : {
-      "c2jName" : "ServiceUnavailableException",
-      "documentation" : "<p>The service is temporarily unavailable.</p>",
-      "shapeName" : "ServiceUnavailableException",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "serviceUnavailableException",
-        "variableType" : "ServiceUnavailableException",
-        "variableDeclarationType" : "ServiceUnavailableException",
-        "documentation" : null,
-        "simpleType" : "ServiceUnavailableException",
-        "variableSetterType" : "ServiceUnavailableException"
       },
-      "marshaller" : null,
+      "required" : [ "thingName" ],
+      "shapeName" : "DeleteThingShadowRequest",
       "unmarshaller" : null,
-      "errorCode" : "ServiceUnavailableException",
+      "variable" : {
+        "variableDeclarationType" : "DeleteThingShadowRequest",
+        "variableName" : "deleteThingShadowRequest",
+        "variableType" : "DeleteThingShadowRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteThingShadowRequest",
+        "variableSetterType" : "DeleteThingShadowRequest"
+      },
+      "wrapper" : false
+    },
+    "DeleteThingShadowResult" : {
+      "c2jName" : "DeleteThingShadowResponse",
       "customization" : {
         "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
         "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
         "skipGeneratingUnmarshaller" : false
       },
-      "membersAsMap" : { }
-    },
-    "PublishRequest" : {
-      "c2jName" : "PublishRequest",
-      "documentation" : "<p>The input for the Publish operation.</p>",
-      "shapeName" : "PublishRequest",
       "deprecated" : false,
-      "required" : [ "topic" ],
-      "hasPayloadMember" : true,
+      "documentation" : "<p>The output from the DeleteThingShadow operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
       "hasHeaderMember" : false,
+      "hasPayloadMember" : true,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "wrapper" : false,
+      "marshaller" : null,
       "members" : [ {
-        "documentation" : "<p>The name of the MQTT topic.</p>",
-        "name" : "Topic",
-        "c2jName" : "topic",
-        "c2jShape" : "Topic",
-        "variable" : {
-          "variableName" : "topic",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>The name of the MQTT topic.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+        "c2jName" : "payload",
+        "c2jShape" : "JsonDocument",
+        "deprecated" : false,
+        "documentation" : "<p>The state information, in JSON format.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+        "getterModel" : {
+          "returnType" : "java.nio.ByteBuffer",
+          "documentation" : null
         },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : true,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "payload",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "payload",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Payload",
+        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
         "setterModel" : {
-          "variableName" : "topic",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "documentation" : "<p>The state information, in JSON format.</p>",
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Payload" : {
+          "c2jName" : "payload",
+          "c2jShape" : "JsonDocument",
+          "deprecated" : false,
+          "documentation" : "<p>The state information, in JSON format.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+          "getterModel" : {
+            "returnType" : "java.nio.ByteBuffer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : true,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "payload",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "payload",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Payload",
+          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "documentation" : "",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "documentation" : "<p>The state information, in JSON format.</p>",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "payload" ],
+      "shapeName" : "DeleteThingShadowResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "DeleteThingShadowResult",
+        "variableName" : "deleteThingShadowResult",
+        "variableType" : "DeleteThingShadowResult",
+        "documentation" : null,
+        "simpleType" : "DeleteThingShadowResult",
+        "variableSetterType" : "DeleteThingShadowResult"
+      },
+      "wrapper" : false
+    },
+    "GetThingShadowRequest" : {
+      "c2jName" : "GetThingShadowRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The input for the GetThingShadow operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "GetThingShadow",
+        "locationName" : null,
+        "requestUri" : "/things/{thingName}/shadow",
+        "target" : null,
+        "verb" : "GET",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "thingName",
+        "c2jShape" : "ThingName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the thing.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
         },
         "http" : {
-          "unmarshallLocationName" : "topic",
-          "marshallLocationName" : "topic",
-          "additionalUnmarshallingPath" : null,
           "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
           "location" : "uri",
+          "marshallLocationName" : "thingName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "thingName",
+          "uri" : true
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ThingName",
+        "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "thingName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "thingName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the thing.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ThingName" : {
+          "c2jName" : "thingName",
+          "c2jShape" : "ThingName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the thing.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "marshallLocationName" : "thingName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "thingName",
+            "uri" : true
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ThingName",
+          "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "thingName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "thingName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the thing.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "thingName" ],
+      "shapeName" : "GetThingShadowRequest",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "GetThingShadowRequest",
+        "variableName" : "getThingShadowRequest",
+        "variableType" : "GetThingShadowRequest",
+        "documentation" : null,
+        "simpleType" : "GetThingShadowRequest",
+        "variableSetterType" : "GetThingShadowRequest"
+      },
+      "wrapper" : false
+    },
+    "GetThingShadowResult" : {
+      "c2jName" : "GetThingShadowResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The output from the GetThingShadow operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : true,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "payload",
+        "c2jShape" : "JsonDocument",
+        "deprecated" : false,
+        "documentation" : "<p>The state information, in JSON format.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+        "getterModel" : {
+          "returnType" : "java.nio.ByteBuffer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
           "flattened" : false,
           "header" : false,
-          "uri" : true,
+          "isPayload" : true,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "payload",
+          "queryString" : false,
           "statusCode" : false,
-          "queryString" : false
+          "unmarshallLocationName" : "payload",
+          "uri" : false
         },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "simple" : true,
         "list" : false,
+        "listModel" : null,
         "map" : false,
-        "setterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.*/",
-        "getterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@return The name of the MQTT topic.*/",
+        "mapModel" : null,
+        "name" : "Payload",
+        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "documentation" : "",
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "documentation" : "<p>The state information, in JSON format.</p>",
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Payload" : {
+          "c2jName" : "payload",
+          "c2jShape" : "JsonDocument",
+          "deprecated" : false,
+          "documentation" : "<p>The state information, in JSON format.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+          "getterModel" : {
+            "returnType" : "java.nio.ByteBuffer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : true,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "payload",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "payload",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Payload",
+          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "documentation" : "",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "documentation" : "<p>The state information, in JSON format.</p>",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "GetThingShadowResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "GetThingShadowResult",
+        "variableName" : "getThingShadowResult",
+        "variableType" : "GetThingShadowResult",
+        "documentation" : null,
+        "simpleType" : "GetThingShadowResult",
+        "variableSetterType" : "GetThingShadowResult"
+      },
+      "wrapper" : false
+    },
+    "InternalFailureException" : {
+      "c2jName" : "InternalFailureException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>An unexpected error has occurred.</p>",
+      "enums" : null,
+      "errorCode" : "InternalFailureException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "InternalFailureException",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "InternalFailureException",
+        "variableName" : "internalFailureException",
+        "variableType" : "InternalFailureException",
+        "documentation" : null,
+        "simpleType" : "InternalFailureException",
+        "variableSetterType" : "InternalFailureException"
+      },
+      "wrapper" : false
+    },
+    "InvalidRequestException" : {
+      "c2jName" : "InvalidRequestException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The request is not valid.</p>",
+      "enums" : null,
+      "errorCode" : "InvalidRequestException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "InvalidRequestException",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "InvalidRequestException",
+        "variableName" : "invalidRequestException",
+        "variableType" : "InvalidRequestException",
+        "documentation" : null,
+        "simpleType" : "InvalidRequestException",
+        "variableSetterType" : "InvalidRequestException"
+      },
+      "wrapper" : false
+    },
+    "MethodNotAllowedException" : {
+      "c2jName" : "MethodNotAllowedException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The specified combination of HTTP verb and URI is not supported.</p>",
+      "enums" : null,
+      "errorCode" : "MethodNotAllowedException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "MethodNotAllowedException",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "MethodNotAllowedException",
+        "variableName" : "methodNotAllowedException",
+        "variableType" : "MethodNotAllowedException",
+        "documentation" : null,
+        "simpleType" : "MethodNotAllowedException",
+        "variableSetterType" : "MethodNotAllowedException"
+      },
+      "wrapper" : false
+    },
+    "PublishRequest" : {
+      "c2jName" : "PublishRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The input for the Publish operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : true,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "Publish",
+        "locationName" : null,
+        "requestUri" : "/topics/{topic}",
+        "target" : null,
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "topic",
+        "c2jShape" : "Topic",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the MQTT topic.</p>",
+        "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "getterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@return The name of the MQTT topic.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "marshallLocationName" : "topic",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "topic",
+          "uri" : true
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Topic",
+        "setterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "topic",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "topic",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the MQTT topic.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       }, {
-        "documentation" : "<p>The Quality of Service (QoS) level.</p>",
-        "name" : "Qos",
         "c2jName" : "qos",
         "c2jShape" : "Qos",
-        "variable" : {
-          "variableName" : "qos",
-          "variableType" : "Integer",
-          "variableDeclarationType" : "Integer",
-          "documentation" : "<p>The Quality of Service (QoS) level.</p>",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
-        },
-        "setterModel" : {
-          "variableName" : "qos",
-          "variableType" : "Integer",
-          "variableDeclarationType" : "Integer",
-          "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
-        },
+        "deprecated" : false,
+        "documentation" : "<p>The Quality of Service (QoS) level.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@return The Quality of Service (QoS) level.*/",
         "getterModel" : {
           "returnType" : "Integer",
           "documentation" : null
         },
         "http" : {
-          "unmarshallLocationName" : "qos",
-          "marshallLocationName" : "qos",
-          "additionalUnmarshallingPath" : null,
           "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
           "location" : "querystring",
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
+          "marshallLocationName" : "qos",
+          "queryString" : true,
           "statusCode" : false,
-          "queryString" : true
+          "unmarshallLocationName" : "qos",
+          "uri" : false
         },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "simple" : true,
         "list" : false,
+        "listModel" : null,
         "map" : false,
+        "mapModel" : null,
+        "name" : "Qos",
         "setterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.*/",
-        "getterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@return The Quality of Service (QoS) level.*/",
-        "fluentSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterModel" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "qos",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "qos",
+          "variableType" : "Integer",
+          "documentation" : "<p>The Quality of Service (QoS) level.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
       }, {
-        "documentation" : "<p>The state information, in JSON format.</p>",
-        "name" : "Payload",
         "c2jName" : "payload",
         "c2jShape" : "Payload",
-        "variable" : {
-          "variableName" : "payload",
-          "variableType" : "java.nio.ByteBuffer",
-          "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : "<p>The state information, in JSON format.</p>",
-          "simpleType" : "ByteBuffer",
-          "variableSetterType" : "java.nio.ByteBuffer"
-        },
-        "setterModel" : {
-          "variableName" : "payload",
-          "variableType" : "java.nio.ByteBuffer",
-          "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : "",
-          "simpleType" : "ByteBuffer",
-          "variableSetterType" : "java.nio.ByteBuffer"
-        },
+        "deprecated" : false,
+        "documentation" : "<p>The state information, in JSON format.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
         "getterModel" : {
           "returnType" : "java.nio.ByteBuffer",
           "documentation" : null
         },
         "http" : {
-          "unmarshallLocationName" : "payload",
-          "marshallLocationName" : "payload",
-          "additionalUnmarshallingPath" : null,
           "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
           "isPayload" : true,
           "isStreaming" : false,
           "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
+          "marshallLocationName" : "payload",
+          "queryString" : false,
           "statusCode" : false,
-          "queryString" : false
+          "unmarshallLocationName" : "payload",
+          "uri" : false
         },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "simple" : true,
         "list" : false,
+        "listModel" : null,
         "map" : false,
+        "mapModel" : null,
+        "name" : "Payload",
         "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
-        "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
-        "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "publishRequest",
-        "variableType" : "PublishRequest",
-        "variableDeclarationType" : "PublishRequest",
-        "documentation" : null,
-        "simpleType" : "PublishRequest",
-        "variableSetterType" : "PublishRequest"
-      },
-      "marshaller" : {
-        "action" : "Publish",
-        "verb" : "POST",
-        "target" : null,
-        "requestUri" : "/topics/{topic}",
-        "locationName" : null,
+        "setterModel" : {
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "documentation" : "",
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "documentation" : "<p>The state information, in JSON format.</p>",
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
         "xmlNameSpaceUri" : null
-      },
-      "unmarshaller" : null,
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
+      } ],
       "membersAsMap" : {
+        "Payload" : {
+          "c2jName" : "payload",
+          "c2jShape" : "Payload",
+          "deprecated" : false,
+          "documentation" : "<p>The state information, in JSON format.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+          "getterModel" : {
+            "returnType" : "java.nio.ByteBuffer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : true,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "payload",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "payload",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Payload",
+          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "documentation" : "",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "documentation" : "<p>The state information, in JSON format.</p>",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Qos" : {
-          "documentation" : "<p>The Quality of Service (QoS) level.</p>",
-          "name" : "Qos",
           "c2jName" : "qos",
           "c2jShape" : "Qos",
-          "variable" : {
-            "variableName" : "qos",
-            "variableType" : "Integer",
-            "variableDeclarationType" : "Integer",
-            "documentation" : "<p>The Quality of Service (QoS) level.</p>",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
-          },
-          "setterModel" : {
-            "variableName" : "qos",
-            "variableType" : "Integer",
-            "variableDeclarationType" : "Integer",
-            "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
-          },
+          "deprecated" : false,
+          "documentation" : "<p>The Quality of Service (QoS) level.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@return The Quality of Service (QoS) level.*/",
           "getterModel" : {
             "returnType" : "Integer",
             "documentation" : null
           },
           "http" : {
-            "unmarshallLocationName" : "qos",
-            "marshallLocationName" : "qos",
-            "additionalUnmarshallingPath" : null,
             "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
             "location" : "querystring",
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
+            "marshallLocationName" : "qos",
+            "queryString" : true,
             "statusCode" : false,
-            "queryString" : true
+            "unmarshallLocationName" : "qos",
+            "uri" : false
           },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "simple" : true,
           "list" : false,
+          "listModel" : null,
           "map" : false,
+          "mapModel" : null,
+          "name" : "Qos",
           "setterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.*/",
-          "getterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@return The Quality of Service (QoS) level.*/",
-          "fluentSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        },
-        "Payload" : {
-          "documentation" : "<p>The state information, in JSON format.</p>",
-          "name" : "Payload",
-          "c2jName" : "payload",
-          "c2jShape" : "Payload",
-          "variable" : {
-            "variableName" : "payload",
-            "variableType" : "java.nio.ByteBuffer",
-            "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : "<p>The state information, in JSON format.</p>",
-            "simpleType" : "ByteBuffer",
-            "variableSetterType" : "java.nio.ByteBuffer"
-          },
           "setterModel" : {
-            "variableName" : "payload",
-            "variableType" : "java.nio.ByteBuffer",
-            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "variableDeclarationType" : "Integer",
+            "variableName" : "qos",
+            "variableType" : "Integer",
             "documentation" : "",
-            "simpleType" : "ByteBuffer",
-            "variableSetterType" : "java.nio.ByteBuffer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "qos",
+            "variableType" : "Integer",
+            "documentation" : "<p>The Quality of Service (QoS) level.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Topic" : {
+          "c2jName" : "topic",
+          "c2jShape" : "Topic",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the MQTT topic.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@return The name of the MQTT topic.*/",
           "getterModel" : {
-            "returnType" : "java.nio.ByteBuffer",
+            "returnType" : "String",
             "documentation" : null
           },
           "http" : {
-            "unmarshallLocationName" : "payload",
-            "marshallLocationName" : "payload",
-            "additionalUnmarshallingPath" : null,
             "additionalMarshallingPath" : null,
-            "isPayload" : true,
-            "isStreaming" : false,
-            "location" : null,
+            "additionalUnmarshallingPath" : null,
             "flattened" : false,
             "header" : false,
-            "uri" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "marshallLocationName" : "topic",
+            "queryString" : false,
             "statusCode" : false,
-            "queryString" : false
+            "unmarshallLocationName" : "topic",
+            "uri" : true
           },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "simple" : true,
           "list" : false,
+          "listModel" : null,
           "map" : false,
-          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
-          "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
-          "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        },
-        "Topic" : {
-          "documentation" : "<p>The name of the MQTT topic.</p>",
+          "mapModel" : null,
           "name" : "Topic",
-          "c2jName" : "topic",
-          "c2jShape" : "Topic",
-          "variable" : {
+          "setterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
             "variableName" : "topic",
             "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
             "variableDeclarationType" : "String",
+            "variableName" : "topic",
+            "variableType" : "String",
             "documentation" : "<p>The name of the MQTT topic.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "setterModel" : {
-            "variableName" : "topic",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "topic",
-            "marshallLocationName" : "topic",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : "uri",
-            "flattened" : false,
-            "header" : false,
-            "uri" : true,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "simple" : true,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.*/",
-          "getterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@return The name of the MQTT topic.*/",
-          "fluentSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "xmlNameSpaceUri" : null
         }
-      }
-    },
-    "DeleteThingShadowRequest" : {
-      "c2jName" : "DeleteThingShadowRequest",
-      "documentation" : "<p>The input for the DeleteThingShadow operation.</p>",
-      "shapeName" : "DeleteThingShadowRequest",
-      "deprecated" : false,
-      "required" : [ "thingName" ],
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ {
-        "documentation" : "<p>The name of the thing.</p>",
-        "name" : "ThingName",
-        "c2jName" : "thingName",
-        "c2jShape" : "ThingName",
-        "variable" : {
-          "variableName" : "thingName",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>The name of the thing.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "thingName",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "thingName",
-          "marshallLocationName" : "thingName",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : "uri",
-          "flattened" : false,
-          "header" : false,
-          "uri" : true,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "simple" : true,
-        "list" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
-        "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
-        "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "deleteThingShadowRequest",
-        "variableType" : "DeleteThingShadowRequest",
-        "variableDeclarationType" : "DeleteThingShadowRequest",
-        "documentation" : null,
-        "simpleType" : "DeleteThingShadowRequest",
-        "variableSetterType" : "DeleteThingShadowRequest"
       },
-      "marshaller" : {
-        "action" : "DeleteThingShadow",
-        "verb" : "DELETE",
-        "target" : null,
-        "requestUri" : "/things/{thingName}/shadow",
-        "locationName" : null,
-        "xmlNameSpaceUri" : null
-      },
+      "required" : [ "topic" ],
+      "shapeName" : "PublishRequest",
       "unmarshaller" : null,
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : {
-        "ThingName" : {
-          "documentation" : "<p>The name of the thing.</p>",
-          "name" : "ThingName",
-          "c2jName" : "thingName",
-          "c2jShape" : "ThingName",
-          "variable" : {
-            "variableName" : "thingName",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>The name of the thing.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "thingName",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "thingName",
-            "marshallLocationName" : "thingName",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : "uri",
-            "flattened" : false,
-            "header" : false,
-            "uri" : true,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "simple" : true,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
-          "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
-          "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
-    },
-    "InternalFailureException" : {
-      "c2jName" : "InternalFailureException",
-      "documentation" : "<p>An unexpected error has occurred.</p>",
-      "shapeName" : "InternalFailureException",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ ],
-      "enums" : null,
       "variable" : {
-        "variableName" : "internalFailureException",
-        "variableType" : "InternalFailureException",
-        "variableDeclarationType" : "InternalFailureException",
+        "variableDeclarationType" : "PublishRequest",
+        "variableName" : "publishRequest",
+        "variableType" : "PublishRequest",
         "documentation" : null,
-        "simpleType" : "InternalFailureException",
-        "variableSetterType" : "InternalFailureException"
+        "simpleType" : "PublishRequest",
+        "variableSetterType" : "PublishRequest"
       },
-      "marshaller" : null,
-      "unmarshaller" : null,
-      "errorCode" : "InternalFailureException",
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
+      "wrapper" : false
     },
     "PublishResult" : {
       "c2jName" : "PublishResult",
-      "documentation" : null,
-      "shapeName" : "PublishResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
       "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
+      "documentation" : null,
+      "enums" : null,
+      "errorCode" : null,
       "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "wrapper" : false,
+      "marshaller" : null,
       "members" : null,
-      "enums" : null,
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "PublishResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
       "variable" : {
+        "variableDeclarationType" : "PublishResult",
         "variableName" : "publishResult",
         "variableType" : "PublishResult",
-        "variableDeclarationType" : "PublishResult",
         "documentation" : null,
         "simpleType" : "PublishResult",
         "variableSetterType" : "PublishResult"
       },
-      "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
-      },
-      "errorCode" : null,
+      "wrapper" : false
+    },
+    "RequestEntityTooLargeException" : {
+      "c2jName" : "RequestEntityTooLargeException",
       "customization" : {
         "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
         "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
         "skipGeneratingUnmarshaller" : false
       },
-      "membersAsMap" : { }
-    },
-    "GetThingShadowResult" : {
-      "c2jName" : "GetThingShadowResponse",
-      "documentation" : "<p>The output from the GetThingShadow operation.</p>",
-      "shapeName" : "GetThingShadowResult",
       "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : true,
+      "documentation" : "<p>The payload exceeds the maximum size allowed.</p>",
+      "enums" : null,
+      "errorCode" : "RequestEntityTooLargeException",
       "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ {
-        "documentation" : "<p>The state information, in JSON format.</p>",
-        "name" : "Payload",
-        "c2jName" : "payload",
-        "c2jShape" : "JsonDocument",
-        "variable" : {
-          "variableName" : "payload",
-          "variableType" : "java.nio.ByteBuffer",
-          "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : "<p>The state information, in JSON format.</p>",
-          "simpleType" : "ByteBuffer",
-          "variableSetterType" : "java.nio.ByteBuffer"
-        },
-        "setterModel" : {
-          "variableName" : "payload",
-          "variableType" : "java.nio.ByteBuffer",
-          "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : "",
-          "simpleType" : "ByteBuffer",
-          "variableSetterType" : "java.nio.ByteBuffer"
-        },
-        "getterModel" : {
-          "returnType" : "java.nio.ByteBuffer",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "payload",
-          "marshallLocationName" : "payload",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : true,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "simple" : true,
-        "list" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
-        "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
-        "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "getThingShadowResult",
-        "variableType" : "GetThingShadowResult",
-        "variableDeclarationType" : "GetThingShadowResult",
-        "documentation" : null,
-        "simpleType" : "GetThingShadowResult",
-        "variableSetterType" : "GetThingShadowResult"
-      },
       "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
+      "members" : [ ],
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "RequestEntityTooLargeException",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "RequestEntityTooLargeException",
+        "variableName" : "requestEntityTooLargeException",
+        "variableType" : "RequestEntityTooLargeException",
+        "documentation" : null,
+        "simpleType" : "RequestEntityTooLargeException",
+        "variableSetterType" : "RequestEntityTooLargeException"
       },
-      "errorCode" : null,
+      "wrapper" : false
+    },
+    "ResourceNotFoundException" : {
+      "c2jName" : "ResourceNotFoundException",
       "customization" : {
         "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
         "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
         "skipGeneratingUnmarshaller" : false
       },
-      "membersAsMap" : {
-        "Payload" : {
-          "documentation" : "<p>The state information, in JSON format.</p>",
-          "name" : "Payload",
-          "c2jName" : "payload",
-          "c2jShape" : "JsonDocument",
-          "variable" : {
-            "variableName" : "payload",
-            "variableType" : "java.nio.ByteBuffer",
-            "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : "<p>The state information, in JSON format.</p>",
-            "simpleType" : "ByteBuffer",
-            "variableSetterType" : "java.nio.ByteBuffer"
-          },
-          "setterModel" : {
-            "variableName" : "payload",
-            "variableType" : "java.nio.ByteBuffer",
-            "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : "",
-            "simpleType" : "ByteBuffer",
-            "variableSetterType" : "java.nio.ByteBuffer"
-          },
-          "getterModel" : {
-            "returnType" : "java.nio.ByteBuffer",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "payload",
-            "marshallLocationName" : "payload",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : true,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "simple" : true,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
-          "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
-          "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
+      "deprecated" : false,
+      "documentation" : "<p>The specified resource does not exist.</p>",
+      "enums" : null,
+      "errorCode" : "ResourceNotFoundException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "ResourceNotFoundException",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "ResourceNotFoundException",
+        "variableName" : "resourceNotFoundException",
+        "variableType" : "ResourceNotFoundException",
+        "documentation" : null,
+        "simpleType" : "ResourceNotFoundException",
+        "variableSetterType" : "ResourceNotFoundException"
+      },
+      "wrapper" : false
+    },
+    "ServiceUnavailableException" : {
+      "c2jName" : "ServiceUnavailableException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The service is temporarily unavailable.</p>",
+      "enums" : null,
+      "errorCode" : "ServiceUnavailableException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "ServiceUnavailableException",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "ServiceUnavailableException",
+        "variableName" : "serviceUnavailableException",
+        "variableType" : "ServiceUnavailableException",
+        "documentation" : null,
+        "simpleType" : "ServiceUnavailableException",
+        "variableSetterType" : "ServiceUnavailableException"
+      },
+      "wrapper" : false
+    },
+    "ThrottlingException" : {
+      "c2jName" : "ThrottlingException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The rate exceeds the limit.</p>",
+      "enums" : null,
+      "errorCode" : "ThrottlingException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "ThrottlingException",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "ThrottlingException",
+        "variableName" : "throttlingException",
+        "variableType" : "ThrottlingException",
+        "documentation" : null,
+        "simpleType" : "ThrottlingException",
+        "variableSetterType" : "ThrottlingException"
+      },
+      "wrapper" : false
     },
     "UnauthorizedException" : {
       "c2jName" : "UnauthorizedException",
-      "documentation" : "<p>You are not authorized to perform this operation.</p>",
-      "shapeName" : "UnauthorizedException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
       "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
+      "documentation" : "<p>You are not authorized to perform this operation.</p>",
+      "enums" : null,
+      "errorCode" : "UnauthorizedException",
       "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "wrapper" : false,
+      "marshaller" : null,
       "members" : [ ],
-      "enums" : null,
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "UnauthorizedException",
+      "unmarshaller" : null,
       "variable" : {
+        "variableDeclarationType" : "UnauthorizedException",
         "variableName" : "unauthorizedException",
         "variableType" : "UnauthorizedException",
-        "variableDeclarationType" : "UnauthorizedException",
         "documentation" : null,
         "simpleType" : "UnauthorizedException",
         "variableSetterType" : "UnauthorizedException"
       },
-      "marshaller" : null,
-      "unmarshaller" : null,
-      "errorCode" : "UnauthorizedException",
+      "wrapper" : false
+    },
+    "UnsupportedDocumentEncodingException" : {
+      "c2jName" : "UnsupportedDocumentEncodingException",
       "customization" : {
         "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
         "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
         "skipGeneratingUnmarshaller" : false
       },
-      "membersAsMap" : { }
-    },
-    "GetThingShadowRequest" : {
-      "c2jName" : "GetThingShadowRequest",
-      "documentation" : "<p>The input for the GetThingShadow operation.</p>",
-      "shapeName" : "GetThingShadowRequest",
       "deprecated" : false,
-      "required" : [ "thingName" ],
-      "hasPayloadMember" : false,
+      "documentation" : "<p>The document encoding is not supported.</p>",
+      "enums" : null,
+      "errorCode" : "UnsupportedDocumentEncodingException",
       "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "wrapper" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "UnsupportedDocumentEncodingException",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "UnsupportedDocumentEncodingException",
+        "variableName" : "unsupportedDocumentEncodingException",
+        "variableType" : "UnsupportedDocumentEncodingException",
+        "documentation" : null,
+        "simpleType" : "UnsupportedDocumentEncodingException",
+        "variableSetterType" : "UnsupportedDocumentEncodingException"
+      },
+      "wrapper" : false
+    },
+    "UpdateThingShadowRequest" : {
+      "c2jName" : "UpdateThingShadowRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The input for the UpdateThingShadow operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : true,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "UpdateThingShadow",
+        "locationName" : null,
+        "requestUri" : "/things/{thingName}/shadow",
+        "target" : null,
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
       "members" : [ {
-        "documentation" : "<p>The name of the thing.</p>",
-        "name" : "ThingName",
         "c2jName" : "thingName",
         "c2jShape" : "ThingName",
-        "variable" : {
-          "variableName" : "thingName",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>The name of the thing.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "thingName",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
+        "deprecated" : false,
+        "documentation" : "<p>The name of the thing.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
         },
         "http" : {
-          "unmarshallLocationName" : "thingName",
-          "marshallLocationName" : "thingName",
-          "additionalUnmarshallingPath" : null,
           "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
           "location" : "uri",
+          "marshallLocationName" : "thingName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "thingName",
+          "uri" : true
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ThingName",
+        "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "thingName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "thingName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the thing.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "payload",
+        "c2jShape" : "JsonDocument",
+        "deprecated" : false,
+        "documentation" : "<p>The state information, in JSON format.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+        "getterModel" : {
+          "returnType" : "java.nio.ByteBuffer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
           "flattened" : false,
           "header" : false,
-          "uri" : true,
+          "isPayload" : true,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "payload",
+          "queryString" : false,
           "statusCode" : false,
-          "queryString" : false
+          "unmarshallLocationName" : "payload",
+          "uri" : false
         },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "simple" : true,
         "list" : false,
+        "listModel" : null,
         "map" : false,
-        "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
-        "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
-        "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "getThingShadowRequest",
-        "variableType" : "GetThingShadowRequest",
-        "variableDeclarationType" : "GetThingShadowRequest",
-        "documentation" : null,
-        "simpleType" : "GetThingShadowRequest",
-        "variableSetterType" : "GetThingShadowRequest"
-      },
-      "marshaller" : {
-        "action" : "GetThingShadow",
-        "verb" : "GET",
-        "target" : null,
-        "requestUri" : "/things/{thingName}/shadow",
-        "locationName" : null,
+        "mapModel" : null,
+        "name" : "Payload",
+        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "documentation" : "",
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "documentation" : "<p>The state information, in JSON format.</p>",
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
         "xmlNameSpaceUri" : null
-      },
-      "unmarshaller" : null,
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
+      } ],
       "membersAsMap" : {
+        "Payload" : {
+          "c2jName" : "payload",
+          "c2jShape" : "JsonDocument",
+          "deprecated" : false,
+          "documentation" : "<p>The state information, in JSON format.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+          "getterModel" : {
+            "returnType" : "java.nio.ByteBuffer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : true,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "payload",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "payload",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Payload",
+          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "documentation" : "",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "documentation" : "<p>The state information, in JSON format.</p>",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "ThingName" : {
-          "documentation" : "<p>The name of the thing.</p>",
-          "name" : "ThingName",
           "c2jName" : "thingName",
           "c2jShape" : "ThingName",
-          "variable" : {
-            "variableName" : "thingName",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>The name of the thing.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "thingName",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
+          "deprecated" : false,
+          "documentation" : "<p>The name of the thing.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
           },
           "http" : {
-            "unmarshallLocationName" : "thingName",
-            "marshallLocationName" : "thingName",
-            "additionalUnmarshallingPath" : null,
             "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
             "location" : "uri",
-            "flattened" : false,
-            "header" : false,
-            "uri" : true,
+            "marshallLocationName" : "thingName",
+            "queryString" : false,
             "statusCode" : false,
-            "queryString" : false
+            "unmarshallLocationName" : "thingName",
+            "uri" : true
           },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "simple" : true,
           "list" : false,
+          "listModel" : null,
           "map" : false,
+          "mapModel" : null,
+          "name" : "ThingName",
           "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
-          "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
-          "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "thingName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "thingName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the thing.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
         }
-      }
-    },
-    "RequestEntityTooLargeException" : {
-      "c2jName" : "RequestEntityTooLargeException",
-      "documentation" : "<p>The payload exceeds the maximum size allowed.</p>",
-      "shapeName" : "RequestEntityTooLargeException",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "requestEntityTooLargeException",
-        "variableType" : "RequestEntityTooLargeException",
-        "variableDeclarationType" : "RequestEntityTooLargeException",
-        "documentation" : null,
-        "simpleType" : "RequestEntityTooLargeException",
-        "variableSetterType" : "RequestEntityTooLargeException"
       },
-      "marshaller" : null,
+      "required" : [ "thingName", "payload" ],
+      "shapeName" : "UpdateThingShadowRequest",
       "unmarshaller" : null,
-      "errorCode" : "RequestEntityTooLargeException",
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
+      "variable" : {
+        "variableDeclarationType" : "UpdateThingShadowRequest",
+        "variableName" : "updateThingShadowRequest",
+        "variableType" : "UpdateThingShadowRequest",
+        "documentation" : null,
+        "simpleType" : "UpdateThingShadowRequest",
+        "variableSetterType" : "UpdateThingShadowRequest"
       },
-      "membersAsMap" : { }
+      "wrapper" : false
     },
     "UpdateThingShadowResult" : {
       "c2jName" : "UpdateThingShadowResponse",
-      "documentation" : "<p>The output from the UpdateThingShadow operation.</p>",
-      "shapeName" : "UpdateThingShadowResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
       "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : true,
+      "documentation" : "<p>The output from the UpdateThingShadow operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
       "hasHeaderMember" : false,
+      "hasPayloadMember" : true,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "wrapper" : false,
+      "marshaller" : null,
       "members" : [ {
-        "documentation" : "<p>The state information, in JSON format.</p>",
-        "name" : "Payload",
         "c2jName" : "payload",
         "c2jShape" : "JsonDocument",
-        "variable" : {
-          "variableName" : "payload",
-          "variableType" : "java.nio.ByteBuffer",
-          "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : "<p>The state information, in JSON format.</p>",
-          "simpleType" : "ByteBuffer",
-          "variableSetterType" : "java.nio.ByteBuffer"
-        },
-        "setterModel" : {
-          "variableName" : "payload",
-          "variableType" : "java.nio.ByteBuffer",
-          "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : "",
-          "simpleType" : "ByteBuffer",
-          "variableSetterType" : "java.nio.ByteBuffer"
-        },
+        "deprecated" : false,
+        "documentation" : "<p>The state information, in JSON format.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
         "getterModel" : {
           "returnType" : "java.nio.ByteBuffer",
           "documentation" : null
         },
         "http" : {
-          "unmarshallLocationName" : "payload",
-          "marshallLocationName" : "payload",
-          "additionalUnmarshallingPath" : null,
           "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
           "isPayload" : true,
           "isStreaming" : false,
           "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
+          "marshallLocationName" : "payload",
+          "queryString" : false,
           "statusCode" : false,
-          "queryString" : false
+          "unmarshallLocationName" : "payload",
+          "uri" : false
         },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "simple" : true,
         "list" : false,
+        "listModel" : null,
         "map" : false,
+        "mapModel" : null,
+        "name" : "Payload",
         "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
-        "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
-        "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterModel" : {
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "documentation" : "",
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "variableName" : "payload",
+          "variableType" : "java.nio.ByteBuffer",
+          "documentation" : "<p>The state information, in JSON format.</p>",
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "xmlNameSpaceUri" : null
       } ],
-      "enums" : null,
+      "membersAsMap" : {
+        "Payload" : {
+          "c2jName" : "payload",
+          "c2jShape" : "JsonDocument",
+          "deprecated" : false,
+          "documentation" : "<p>The state information, in JSON format.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
+          "getterModel" : {
+            "returnType" : "java.nio.ByteBuffer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : true,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "payload",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "payload",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Payload",
+          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "documentation" : "",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "variableName" : "payload",
+            "variableType" : "java.nio.ByteBuffer",
+            "documentation" : "<p>The state information, in JSON format.</p>",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "UpdateThingShadowResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
       "variable" : {
+        "variableDeclarationType" : "UpdateThingShadowResult",
         "variableName" : "updateThingShadowResult",
         "variableType" : "UpdateThingShadowResult",
-        "variableDeclarationType" : "UpdateThingShadowResult",
         "documentation" : null,
         "simpleType" : "UpdateThingShadowResult",
         "variableSetterType" : "UpdateThingShadowResult"
       },
-      "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
-      },
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : {
-        "Payload" : {
-          "documentation" : "<p>The state information, in JSON format.</p>",
-          "name" : "Payload",
-          "c2jName" : "payload",
-          "c2jShape" : "JsonDocument",
-          "variable" : {
-            "variableName" : "payload",
-            "variableType" : "java.nio.ByteBuffer",
-            "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : "<p>The state information, in JSON format.</p>",
-            "simpleType" : "ByteBuffer",
-            "variableSetterType" : "java.nio.ByteBuffer"
-          },
-          "setterModel" : {
-            "variableName" : "payload",
-            "variableType" : "java.nio.ByteBuffer",
-            "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : "",
-            "simpleType" : "ByteBuffer",
-            "variableSetterType" : "java.nio.ByteBuffer"
-          },
-          "getterModel" : {
-            "returnType" : "java.nio.ByteBuffer",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "payload",
-            "marshallLocationName" : "payload",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : true,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "simple" : true,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
-          "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
-          "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
-    },
-    "InvalidRequestException" : {
-      "c2jName" : "InvalidRequestException",
-      "documentation" : "<p>The request is not valid.</p>",
-      "shapeName" : "InvalidRequestException",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "invalidRequestException",
-        "variableType" : "InvalidRequestException",
-        "variableDeclarationType" : "InvalidRequestException",
-        "documentation" : null,
-        "simpleType" : "InvalidRequestException",
-        "variableSetterType" : "InvalidRequestException"
-      },
-      "marshaller" : null,
-      "unmarshaller" : null,
-      "errorCode" : "InvalidRequestException",
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
-    },
-    "ThrottlingException" : {
-      "c2jName" : "ThrottlingException",
-      "documentation" : "<p>The rate exceeds the limit.</p>",
-      "shapeName" : "ThrottlingException",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "throttlingException",
-        "variableType" : "ThrottlingException",
-        "variableDeclarationType" : "ThrottlingException",
-        "documentation" : null,
-        "simpleType" : "ThrottlingException",
-        "variableSetterType" : "ThrottlingException"
-      },
-      "marshaller" : null,
-      "unmarshaller" : null,
-      "errorCode" : "ThrottlingException",
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
-    },
-    "ResourceNotFoundException" : {
-      "c2jName" : "ResourceNotFoundException",
-      "documentation" : "<p>The specified resource does not exist.</p>",
-      "shapeName" : "ResourceNotFoundException",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "resourceNotFoundException",
-        "variableType" : "ResourceNotFoundException",
-        "variableDeclarationType" : "ResourceNotFoundException",
-        "documentation" : null,
-        "simpleType" : "ResourceNotFoundException",
-        "variableSetterType" : "ResourceNotFoundException"
-      },
-      "marshaller" : null,
-      "unmarshaller" : null,
-      "errorCode" : "ResourceNotFoundException",
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
-    },
-    "DeleteThingShadowResult" : {
-      "c2jName" : "DeleteThingShadowResponse",
-      "documentation" : "<p>The output from the DeleteThingShadow operation.</p>",
-      "shapeName" : "DeleteThingShadowResult",
-      "deprecated" : false,
-      "required" : [ "payload" ],
-      "hasPayloadMember" : true,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ {
-        "documentation" : "<p>The state information, in JSON format.</p>",
-        "name" : "Payload",
-        "c2jName" : "payload",
-        "c2jShape" : "JsonDocument",
-        "variable" : {
-          "variableName" : "payload",
-          "variableType" : "java.nio.ByteBuffer",
-          "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : "<p>The state information, in JSON format.</p>",
-          "simpleType" : "ByteBuffer",
-          "variableSetterType" : "java.nio.ByteBuffer"
-        },
-        "setterModel" : {
-          "variableName" : "payload",
-          "variableType" : "java.nio.ByteBuffer",
-          "variableDeclarationType" : "java.nio.ByteBuffer",
-          "documentation" : "",
-          "simpleType" : "ByteBuffer",
-          "variableSetterType" : "java.nio.ByteBuffer"
-        },
-        "getterModel" : {
-          "returnType" : "java.nio.ByteBuffer",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "payload",
-          "marshallLocationName" : "payload",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : true,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "simple" : true,
-        "list" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
-        "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
-        "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "deleteThingShadowResult",
-        "variableType" : "DeleteThingShadowResult",
-        "variableDeclarationType" : "DeleteThingShadowResult",
-        "documentation" : null,
-        "simpleType" : "DeleteThingShadowResult",
-        "variableSetterType" : "DeleteThingShadowResult"
-      },
-      "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
-      },
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : {
-        "Payload" : {
-          "documentation" : "<p>The state information, in JSON format.</p>",
-          "name" : "Payload",
-          "c2jName" : "payload",
-          "c2jShape" : "JsonDocument",
-          "variable" : {
-            "variableName" : "payload",
-            "variableType" : "java.nio.ByteBuffer",
-            "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : "<p>The state information, in JSON format.</p>",
-            "simpleType" : "ByteBuffer",
-            "variableSetterType" : "java.nio.ByteBuffer"
-          },
-          "setterModel" : {
-            "variableName" : "payload",
-            "variableType" : "java.nio.ByteBuffer",
-            "variableDeclarationType" : "java.nio.ByteBuffer",
-            "documentation" : "",
-            "simpleType" : "ByteBuffer",
-            "variableSetterType" : "java.nio.ByteBuffer"
-          },
-          "getterModel" : {
-            "returnType" : "java.nio.ByteBuffer",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "payload",
-            "marshallLocationName" : "payload",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : true,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "simple" : true,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
-          "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
-          "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
+      "wrapper" : false
     }
   },
-  "customizationConfig" : {
-    "requestMetrics" : null,
-    "useAutoConstructList" : false,
-    "useAutoConstructMap" : false,
-    "serviceClientHoldInputStream" : false,
-    "operationsWithResponseStreamContentLengthValidation" : null,
-    "customExceptionUnmarshallerImpl" : null,
-    "customClientConfigFactory" : null,
-    "customResponseMetadataClassName" : null,
-    "skipInterfaceAdditions" : false,
-    "customServiceNameForRequest" : null,
-    "requiredParamValidationEnabled" : false,
-    "additionalShapeConstructors" : null,
-    "simpleMethods" : null,
-    "renameShapes" : null,
-    "sendEmptyAutoConstructedListAsEmptyList" : null,
-    "sendExplicitlyEmptyListsForQuery" : false,
-    "authPolicyActions" : {
-      "skip" : true,
-      "actionPrefix" : null,
-      "fileNamePrefix" : null
-    },
-    "customServiceMetadata" : null,
-    "customCodeTemplates" : null,
-    "operationModifiers" : null,
-    "shapeSubstitutions" : null,
-    "shapeModifiers" : null,
-    "customErrorCodeFieldName" : null,
-    "sdkModeledExceptionBaseClassName" : null,
-    "customSignerProvider" : null,
-    "calculateCRC32FromCompressedData" : false,
-    "customFileHeader" : null,
-    "convenienceTypeOverloads" : [ ],
-    "skipSmokeTests" : true
-  },
+  "clientConfigFactory" : "ClientConfigurationFactory",
   "examples" : {
     "examples" : { },
     "version" : "1.0"
   },
-  "sdkModeledExceptionBaseClassName" : "AWSIotDataException",
   "exceptionUnmarshallerImpl" : null,
   "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
-  "clientConfigFactory" : "ClientConfigurationFactory",
-  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
-  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.iotdata.model.AWSIotDataException",
   "hasWaiters" : false,
-  "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>"
+  "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
+  "sdkModeledExceptionBaseClassName" : "AWSIotDataException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.iotdata.model.AWSIotDataException",
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException"
 }

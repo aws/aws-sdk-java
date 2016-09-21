@@ -4045,9 +4045,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * bucket. Amazon RDS must be authorized to access the Amazon S3 bucket and
      * the data must be created using the Percona XtraBackup utility as
      * described in <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.html"
-     * >Migrating Data from an External MySQL Database to an Amazon Aurora DB
-     * Cluster</a>.
+     * "AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3"
+     * >Migrating Data from MySQL by Using an Amazon S3 Bucket</a>.
      * </p>
      * 
      * @param restoreDBClusterFromS3Request
@@ -4064,9 +4063,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * bucket. Amazon RDS must be authorized to access the Amazon S3 bucket and
      * the data must be created using the Percona XtraBackup utility as
      * described in <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.html"
-     * >Migrating Data from an External MySQL Database to an Amazon Aurora DB
-     * Cluster</a>.
+     * "AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3"
+     * >Migrating Data from MySQL by Using an Amazon S3 Bucket</a>.
      * </p>
      * 
      * @param restoreDBClusterFromS3Request

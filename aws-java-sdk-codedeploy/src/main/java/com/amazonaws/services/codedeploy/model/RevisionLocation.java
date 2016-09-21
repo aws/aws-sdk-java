@@ -28,8 +28,16 @@ public class RevisionLocation implements Serializable, Cloneable {
      * The type of application revision:
      * </p>
      * <ul>
-     * <li>S3: An application revision stored in Amazon S3.</li>
-     * <li>GitHub: An application revision stored in GitHub.</li>
+     * <li>
+     * <p>
+     * S3: An application revision stored in Amazon S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GitHub: An application revision stored in GitHub.
+     * </p>
+     * </li>
      * </ul>
      */
     private String revisionType;
@@ -43,15 +51,31 @@ public class RevisionLocation implements Serializable, Cloneable {
      * The type of application revision:
      * </p>
      * <ul>
-     * <li>S3: An application revision stored in Amazon S3.</li>
-     * <li>GitHub: An application revision stored in GitHub.</li>
+     * <li>
+     * <p>
+     * S3: An application revision stored in Amazon S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GitHub: An application revision stored in GitHub.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param revisionType
      *        The type of application revision:</p>
      *        <ul>
-     *        <li>S3: An application revision stored in Amazon S3.</li>
-     *        <li>GitHub: An application revision stored in GitHub.</li>
+     *        <li>
+     *        <p>
+     *        S3: An application revision stored in Amazon S3.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GitHub: An application revision stored in GitHub.
+     *        </p>
+     *        </li>
      * @see RevisionLocationType
      */
 
@@ -64,14 +88,30 @@ public class RevisionLocation implements Serializable, Cloneable {
      * The type of application revision:
      * </p>
      * <ul>
-     * <li>S3: An application revision stored in Amazon S3.</li>
-     * <li>GitHub: An application revision stored in GitHub.</li>
+     * <li>
+     * <p>
+     * S3: An application revision stored in Amazon S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GitHub: An application revision stored in GitHub.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The type of application revision:</p>
      *         <ul>
-     *         <li>S3: An application revision stored in Amazon S3.</li>
-     *         <li>GitHub: An application revision stored in GitHub.</li>
+     *         <li>
+     *         <p>
+     *         S3: An application revision stored in Amazon S3.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         GitHub: An application revision stored in GitHub.
+     *         </p>
+     *         </li>
      * @see RevisionLocationType
      */
 
@@ -84,15 +124,31 @@ public class RevisionLocation implements Serializable, Cloneable {
      * The type of application revision:
      * </p>
      * <ul>
-     * <li>S3: An application revision stored in Amazon S3.</li>
-     * <li>GitHub: An application revision stored in GitHub.</li>
+     * <li>
+     * <p>
+     * S3: An application revision stored in Amazon S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GitHub: An application revision stored in GitHub.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param revisionType
      *        The type of application revision:</p>
      *        <ul>
-     *        <li>S3: An application revision stored in Amazon S3.</li>
-     *        <li>GitHub: An application revision stored in GitHub.</li>
+     *        <li>
+     *        <p>
+     *        S3: An application revision stored in Amazon S3.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GitHub: An application revision stored in GitHub.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RevisionLocationType
@@ -108,15 +164,31 @@ public class RevisionLocation implements Serializable, Cloneable {
      * The type of application revision:
      * </p>
      * <ul>
-     * <li>S3: An application revision stored in Amazon S3.</li>
-     * <li>GitHub: An application revision stored in GitHub.</li>
+     * <li>
+     * <p>
+     * S3: An application revision stored in Amazon S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GitHub: An application revision stored in GitHub.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param revisionType
      *        The type of application revision:</p>
      *        <ul>
-     *        <li>S3: An application revision stored in Amazon S3.</li>
-     *        <li>GitHub: An application revision stored in GitHub.</li>
+     *        <li>
+     *        <p>
+     *        S3: An application revision stored in Amazon S3.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GitHub: An application revision stored in GitHub.
+     *        </p>
+     *        </li>
      * @see RevisionLocationType
      */
 
@@ -129,15 +201,31 @@ public class RevisionLocation implements Serializable, Cloneable {
      * The type of application revision:
      * </p>
      * <ul>
-     * <li>S3: An application revision stored in Amazon S3.</li>
-     * <li>GitHub: An application revision stored in GitHub.</li>
+     * <li>
+     * <p>
+     * S3: An application revision stored in Amazon S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GitHub: An application revision stored in GitHub.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param revisionType
      *        The type of application revision:</p>
      *        <ul>
-     *        <li>S3: An application revision stored in Amazon S3.</li>
-     *        <li>GitHub: An application revision stored in GitHub.</li>
+     *        <li>
+     *        <p>
+     *        S3: An application revision stored in Amazon S3.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GitHub: An application revision stored in GitHub.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RevisionLocationType

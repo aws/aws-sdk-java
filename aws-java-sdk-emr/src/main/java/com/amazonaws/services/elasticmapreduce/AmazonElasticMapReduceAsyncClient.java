@@ -379,6 +379,78 @@ public class AmazonElasticMapReduceAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSecurityConfigurationResult> createSecurityConfigurationAsync(
+            CreateSecurityConfigurationRequest request) {
+
+        return createSecurityConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSecurityConfigurationResult> createSecurityConfigurationAsync(
+            final CreateSecurityConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSecurityConfigurationRequest, CreateSecurityConfigurationResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateSecurityConfigurationResult>() {
+                    @Override
+                    public CreateSecurityConfigurationResult call()
+                            throws Exception {
+                        CreateSecurityConfigurationResult result;
+
+                        try {
+                            result = createSecurityConfiguration(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSecurityConfigurationResult> deleteSecurityConfigurationAsync(
+            DeleteSecurityConfigurationRequest request) {
+
+        return deleteSecurityConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSecurityConfigurationResult> deleteSecurityConfigurationAsync(
+            final DeleteSecurityConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSecurityConfigurationRequest, DeleteSecurityConfigurationResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteSecurityConfigurationResult>() {
+                    @Override
+                    public DeleteSecurityConfigurationResult call()
+                            throws Exception {
+                        DeleteSecurityConfigurationResult result;
+
+                        try {
+                            result = deleteSecurityConfiguration(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(
             DescribeClusterRequest request) {
 
@@ -474,6 +546,42 @@ public class AmazonElasticMapReduceAsyncClient extends
 
         return describeJobFlowsAsync(new DescribeJobFlowsRequest(),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSecurityConfigurationResult> describeSecurityConfigurationAsync(
+            DescribeSecurityConfigurationRequest request) {
+
+        return describeSecurityConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSecurityConfigurationResult> describeSecurityConfigurationAsync(
+            final DescribeSecurityConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSecurityConfigurationRequest, DescribeSecurityConfigurationResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeSecurityConfigurationResult>() {
+                    @Override
+                    public DescribeSecurityConfigurationResult call()
+                            throws Exception {
+                        DescribeSecurityConfigurationResult result;
+
+                        try {
+                            result = describeSecurityConfiguration(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
     }
 
     @Override
@@ -660,6 +768,42 @@ public class AmazonElasticMapReduceAsyncClient extends
 
                         try {
                             result = listInstances(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityConfigurationsResult> listSecurityConfigurationsAsync(
+            ListSecurityConfigurationsRequest request) {
+
+        return listSecurityConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityConfigurationsResult> listSecurityConfigurationsAsync(
+            final ListSecurityConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSecurityConfigurationsRequest, ListSecurityConfigurationsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListSecurityConfigurationsResult>() {
+                    @Override
+                    public ListSecurityConfigurationsResult call()
+                            throws Exception {
+                        ListSecurityConfigurationsResult result;
+
+                        try {
+                            result = listSecurityConfigurations(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

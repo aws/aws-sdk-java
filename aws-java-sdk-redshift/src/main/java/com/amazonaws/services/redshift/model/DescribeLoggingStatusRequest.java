@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DescribeLoggingStatusRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -45,7 +44,7 @@ public class DescribeLoggingStatusRequest extends
      * 
      * @param clusterIdentifier
      *        The identifier of the cluster from which to get the logging
-     *        status. </p>
+     *        status.</p>
      *        <p>
      *        Example: <code>examplecluster</code>
      */
@@ -63,7 +62,7 @@ public class DescribeLoggingStatusRequest extends
      * </p>
      * 
      * @return The identifier of the cluster from which to get the logging
-     *         status. </p>
+     *         status.</p>
      *         <p>
      *         Example: <code>examplecluster</code>
      */
@@ -82,7 +81,7 @@ public class DescribeLoggingStatusRequest extends
      * 
      * @param clusterIdentifier
      *        The identifier of the cluster from which to get the logging
-     *        status. </p>
+     *        status.</p>
      *        <p>
      *        Example: <code>examplecluster</code>
      * @return Returns a reference to this object so that method calls can be

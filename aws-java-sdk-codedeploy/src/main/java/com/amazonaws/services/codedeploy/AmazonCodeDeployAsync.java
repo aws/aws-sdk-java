@@ -22,14 +22,19 @@ import com.amazonaws.services.codedeploy.model.*;
  * overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * <fullname>AWS CodeDeploy</fullname> <b>Overview</b>
+ * <fullname>AWS CodeDeploy</fullname>
+ * <p>
+ * <b>Overview</b>
+ * </p>
  * <p>
  * This reference guide provides descriptions of the AWS CodeDeploy APIs. For
  * more information about AWS CodeDeploy, see the <a
- * href="docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
- * Guide</a>.
+ * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+ * User Guide</a>.
  * </p>
+ * <p>
  * <b>Using the APIs</b>
+ * </p>
  * <p>
  * You can use the AWS CodeDeploy APIs to work with the following:
  * </p>
@@ -91,7 +96,7 @@ import com.amazonaws.services.codedeploy.model.*;
  * web pages, executable files, and deployment scripts) along with an
  * application specification (AppSpec) file. (The AppSpec file is unique to AWS
  * CodeDeploy; it defines the deployment actions you want AWS CodeDeploy to
- * execute.) Ffor application revisions stored in Amazon S3 buckets, an
+ * execute.) For application revisions stored in Amazon S3 buckets, an
  * application revision is uniquely identified by its Amazon S3 object key and
  * its ETag, version, or both. For application revisions stored in GitHub
  * repositories, an application revision is uniquely identified by its
@@ -585,8 +590,12 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * <p>
      * Deletes a deployment configuration.
      * </p>
-     * <note>A deployment configuration cannot be deleted if it is currently in
-     * use. Predefined configurations cannot be deleted.</note>
+     * <note>
+     * <p>
+     * A deployment configuration cannot be deleted if it is currently in use.
+     * Predefined configurations cannot be deleted.
+     * </p>
+     * </note>
      * 
      * @param deleteDeploymentConfigRequest
      *        Represents the input of a delete deployment configuration
@@ -602,8 +611,12 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * <p>
      * Deletes a deployment configuration.
      * </p>
-     * <note>A deployment configuration cannot be deleted if it is currently in
-     * use. Predefined configurations cannot be deleted.</note>
+     * <note>
+     * <p>
+     * A deployment configuration cannot be deleted if it is currently in use.
+     * Predefined configurations cannot be deleted.
+     * </p>
+     * </note>
      * 
      * @param deleteDeploymentConfigRequest
      *        Represents the input of a delete deployment configuration

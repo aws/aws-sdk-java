@@ -31,10 +31,17 @@ public enum ElasticMapReduceActions implements Action {
     AddJobFlowSteps("elasticmapreduce:AddJobFlowSteps"),
     /** Action for the AddTags operation. */
     AddTags("elasticmapreduce:AddTags"),
+    /** Action for the CreateSecurityConfiguration operation. */
+    CreateSecurityConfiguration("elasticmapreduce:CreateSecurityConfiguration"),
+    /** Action for the DeleteSecurityConfiguration operation. */
+    DeleteSecurityConfiguration("elasticmapreduce:DeleteSecurityConfiguration"),
     /** Action for the DescribeCluster operation. */
     DescribeCluster("elasticmapreduce:DescribeCluster"),
     /** Action for the DescribeJobFlows operation. */
     DescribeJobFlows("elasticmapreduce:DescribeJobFlows"),
+    /** Action for the DescribeSecurityConfiguration operation. */
+    DescribeSecurityConfiguration(
+            "elasticmapreduce:DescribeSecurityConfiguration"),
     /** Action for the DescribeStep operation. */
     DescribeStep("elasticmapreduce:DescribeStep"),
     /** Action for the ListBootstrapActions operation. */
@@ -45,6 +52,8 @@ public enum ElasticMapReduceActions implements Action {
     ListInstanceGroups("elasticmapreduce:ListInstanceGroups"),
     /** Action for the ListInstances operation. */
     ListInstances("elasticmapreduce:ListInstances"),
+    /** Action for the ListSecurityConfigurations operation. */
+    ListSecurityConfigurations("elasticmapreduce:ListSecurityConfigurations"),
     /** Action for the ListSteps operation. */
     ListSteps("elasticmapreduce:ListSteps"),
     /** Action for the ModifyInstanceGroups operation. */

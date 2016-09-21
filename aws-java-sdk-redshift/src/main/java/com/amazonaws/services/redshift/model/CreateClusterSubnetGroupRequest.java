@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class CreateClusterSubnetGroupRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -34,10 +33,22 @@ public class CreateClusterSubnetGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain no more than 255 alphanumeric characters or hyphens.</li>
-     * <li>Must not be "Default".</li>
-     * <li>Must be unique for all subnet groups that are created by your AWS
-     * account.</li>
+     * <li>
+     * <p>
+     * Must contain no more than 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not be "Default".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all subnet groups that are created by your AWS
+     * account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>examplesubnetgroup</code>
@@ -73,10 +84,22 @@ public class CreateClusterSubnetGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain no more than 255 alphanumeric characters or hyphens.</li>
-     * <li>Must not be "Default".</li>
-     * <li>Must be unique for all subnet groups that are created by your AWS
-     * account.</li>
+     * <li>
+     * <p>
+     * Must contain no more than 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not be "Default".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all subnet groups that are created by your AWS
+     * account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>examplesubnetgroup</code>
@@ -84,16 +107,27 @@ public class CreateClusterSubnetGroupRequest extends
      * 
      * @param clusterSubnetGroupName
      *        The name for the subnet group. Amazon Redshift stores the value as
-     *        a lowercase string. </p>
+     *        a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain no more than 255 alphanumeric characters or
-     *        hyphens.</li>
-     *        <li>Must not be "Default".</li>
-     *        <li>Must be unique for all subnet groups that are created by your
-     *        AWS account.</li>
+     *        <li>
+     *        <p>
+     *        Must contain no more than 255 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not be "Default".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for all subnet groups that are created by your AWS
+     *        account.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>examplesubnetgroup</code>
@@ -112,26 +146,49 @@ public class CreateClusterSubnetGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain no more than 255 alphanumeric characters or hyphens.</li>
-     * <li>Must not be "Default".</li>
-     * <li>Must be unique for all subnet groups that are created by your AWS
-     * account.</li>
+     * <li>
+     * <p>
+     * Must contain no more than 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not be "Default".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all subnet groups that are created by your AWS
+     * account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>examplesubnetgroup</code>
      * </p>
      * 
      * @return The name for the subnet group. Amazon Redshift stores the value
-     *         as a lowercase string. </p>
+     *         as a lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain no more than 255 alphanumeric characters or
-     *         hyphens.</li>
-     *         <li>Must not be "Default".</li>
-     *         <li>Must be unique for all subnet groups that are created by your
-     *         AWS account.</li>
+     *         <li>
+     *         <p>
+     *         Must contain no more than 255 alphanumeric characters or hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must not be "Default".
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be unique for all subnet groups that are created by your AWS
+     *         account.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>examplesubnetgroup</code>
@@ -150,10 +207,22 @@ public class CreateClusterSubnetGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain no more than 255 alphanumeric characters or hyphens.</li>
-     * <li>Must not be "Default".</li>
-     * <li>Must be unique for all subnet groups that are created by your AWS
-     * account.</li>
+     * <li>
+     * <p>
+     * Must contain no more than 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not be "Default".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all subnet groups that are created by your AWS
+     * account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>examplesubnetgroup</code>
@@ -161,16 +230,27 @@ public class CreateClusterSubnetGroupRequest extends
      * 
      * @param clusterSubnetGroupName
      *        The name for the subnet group. Amazon Redshift stores the value as
-     *        a lowercase string. </p>
+     *        a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain no more than 255 alphanumeric characters or
-     *        hyphens.</li>
-     *        <li>Must not be "Default".</li>
-     *        <li>Must be unique for all subnet groups that are created by your
-     *        AWS account.</li>
+     *        <li>
+     *        <p>
+     *        Must contain no more than 255 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not be "Default".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for all subnet groups that are created by your AWS
+     *        account.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>examplesubnetgroup</code>

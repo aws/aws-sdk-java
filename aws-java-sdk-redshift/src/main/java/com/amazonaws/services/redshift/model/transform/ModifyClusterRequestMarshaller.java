@@ -163,6 +163,11 @@ public class ModifyClusterRequestMarshaller implements
                     StringUtils.fromString(modifyClusterRequest.getElasticIp()));
         }
 
+        if (modifyClusterRequest.getEnhancedVpcRouting() != null) {
+            request.addParameter("EnhancedVpcRouting", StringUtils
+                    .fromBoolean(modifyClusterRequest.getEnhancedVpcRouting()));
+        }
+
         return request;
     }
 

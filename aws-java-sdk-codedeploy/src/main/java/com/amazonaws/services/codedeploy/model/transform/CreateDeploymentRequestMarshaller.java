@@ -97,6 +97,18 @@ public class CreateDeploymentRequestMarshaller implements
                                 createDeploymentRequest
                                         .getIgnoreApplicationStopFailures());
             }
+            if (createDeploymentRequest.getAutoRollbackConfiguration() != null) {
+                jsonGenerator.writeFieldName("autoRollbackConfiguration");
+                AutoRollbackConfigurationJsonMarshaller.getInstance().marshall(
+                        createDeploymentRequest.getAutoRollbackConfiguration(),
+                        jsonGenerator);
+            }
+            if (createDeploymentRequest.getUpdateOutdatedInstancesOnly() != null) {
+                jsonGenerator.writeFieldName("updateOutdatedInstancesOnly")
+                        .writeValue(
+                                createDeploymentRequest
+                                        .getUpdateOutdatedInstancesOnly());
+            }
 
             jsonGenerator.writeEndObject();
 

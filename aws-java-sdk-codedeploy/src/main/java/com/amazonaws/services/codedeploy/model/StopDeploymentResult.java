@@ -30,8 +30,16 @@ public class StopDeploymentResult extends
      * The status of the stop deployment operation:
      * </p>
      * <ul>
-     * <li>Pending: The stop operation is pending.</li>
-     * <li>Succeeded: The stop operation was successful.</li>
+     * <li>
+     * <p>
+     * Pending: The stop operation is pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The stop operation was successful.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -47,15 +55,31 @@ public class StopDeploymentResult extends
      * The status of the stop deployment operation:
      * </p>
      * <ul>
-     * <li>Pending: The stop operation is pending.</li>
-     * <li>Succeeded: The stop operation was successful.</li>
+     * <li>
+     * <p>
+     * Pending: The stop operation is pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The stop operation was successful.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The status of the stop deployment operation:</p>
      *        <ul>
-     *        <li>Pending: The stop operation is pending.</li>
-     *        <li>Succeeded: The stop operation was successful.</li>
+     *        <li>
+     *        <p>
+     *        Pending: The stop operation is pending.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: The stop operation was successful.
+     *        </p>
+     *        </li>
      * @see StopStatus
      */
 
@@ -68,14 +92,30 @@ public class StopDeploymentResult extends
      * The status of the stop deployment operation:
      * </p>
      * <ul>
-     * <li>Pending: The stop operation is pending.</li>
-     * <li>Succeeded: The stop operation was successful.</li>
+     * <li>
+     * <p>
+     * Pending: The stop operation is pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The stop operation was successful.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The status of the stop deployment operation:</p>
      *         <ul>
-     *         <li>Pending: The stop operation is pending.</li>
-     *         <li>Succeeded: The stop operation was successful.</li>
+     *         <li>
+     *         <p>
+     *         Pending: The stop operation is pending.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Succeeded: The stop operation was successful.
+     *         </p>
+     *         </li>
      * @see StopStatus
      */
 
@@ -88,15 +128,31 @@ public class StopDeploymentResult extends
      * The status of the stop deployment operation:
      * </p>
      * <ul>
-     * <li>Pending: The stop operation is pending.</li>
-     * <li>Succeeded: The stop operation was successful.</li>
+     * <li>
+     * <p>
+     * Pending: The stop operation is pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The stop operation was successful.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The status of the stop deployment operation:</p>
      *        <ul>
-     *        <li>Pending: The stop operation is pending.</li>
-     *        <li>Succeeded: The stop operation was successful.</li>
+     *        <li>
+     *        <p>
+     *        Pending: The stop operation is pending.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: The stop operation was successful.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see StopStatus
@@ -112,15 +168,31 @@ public class StopDeploymentResult extends
      * The status of the stop deployment operation:
      * </p>
      * <ul>
-     * <li>Pending: The stop operation is pending.</li>
-     * <li>Succeeded: The stop operation was successful.</li>
+     * <li>
+     * <p>
+     * Pending: The stop operation is pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The stop operation was successful.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The status of the stop deployment operation:</p>
      *        <ul>
-     *        <li>Pending: The stop operation is pending.</li>
-     *        <li>Succeeded: The stop operation was successful.</li>
+     *        <li>
+     *        <p>
+     *        Pending: The stop operation is pending.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: The stop operation was successful.
+     *        </p>
+     *        </li>
      * @see StopStatus
      */
 
@@ -133,15 +205,31 @@ public class StopDeploymentResult extends
      * The status of the stop deployment operation:
      * </p>
      * <ul>
-     * <li>Pending: The stop operation is pending.</li>
-     * <li>Succeeded: The stop operation was successful.</li>
+     * <li>
+     * <p>
+     * Pending: The stop operation is pending.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded: The stop operation was successful.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The status of the stop deployment operation:</p>
      *        <ul>
-     *        <li>Pending: The stop operation is pending.</li>
-     *        <li>Succeeded: The stop operation was successful.</li>
+     *        <li>
+     *        <p>
+     *        Pending: The stop operation is pending.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded: The stop operation was successful.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see StopStatus

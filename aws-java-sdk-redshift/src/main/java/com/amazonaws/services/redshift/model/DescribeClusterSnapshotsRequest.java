@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DescribeClusterSnapshotsRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -242,7 +241,7 @@ public class DescribeClusterSnapshotsRequest extends
      * 
      * @param snapshotType
      *        The type of snapshots for which you are requesting information. By
-     *        default, snapshots of all types are returned. </p>
+     *        default, snapshots of all types are returned.</p>
      *        <p>
      *        Valid Values: <code>automated</code> | <code>manual</code>
      */
@@ -261,7 +260,7 @@ public class DescribeClusterSnapshotsRequest extends
      * </p>
      * 
      * @return The type of snapshots for which you are requesting information.
-     *         By default, snapshots of all types are returned. </p>
+     *         By default, snapshots of all types are returned.</p>
      *         <p>
      *         Valid Values: <code>automated</code> | <code>manual</code>
      */
@@ -281,7 +280,7 @@ public class DescribeClusterSnapshotsRequest extends
      * 
      * @param snapshotType
      *        The type of snapshots for which you are requesting information. By
-     *        default, snapshots of all types are returned. </p>
+     *        default, snapshots of all types are returned.</p>
      *        <p>
      *        Valid Values: <code>automated</code> | <code>manual</code>
      * @return Returns a reference to this object so that method calls can be

@@ -38,12 +38,24 @@ public class ListApplicationRevisionsRequest extends
      * The column name to use to sort the list results:
      * </p>
      * <ul>
-     * <li>registerTime: Sort by the time the revisions were registered with AWS
-     * CodeDeploy.</li>
-     * <li>firstUsedTime: Sort by the time the revisions were first used in a
-     * deployment.</li>
-     * <li>lastUsedTime: Sort by the time the revisions were last used in a
-     * deployment.</li>
+     * <li>
+     * <p>
+     * registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * firstUsedTime: Sort by the time the revisions were first used in a
+     * deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * lastUsedTime: Sort by the time the revisions were last used in a
+     * deployment.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If not specified or set to null, the results will be returned in an
@@ -56,8 +68,16 @@ public class ListApplicationRevisionsRequest extends
      * The order in which to sort the list results:
      * </p>
      * <ul>
-     * <li>ascending: ascending order.</li>
-     * <li>descending: descending order.</li>
+     * <li>
+     * <p>
+     * ascending: ascending order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * descending: descending order.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If not specified, the results will be sorted in ascending order.
@@ -89,11 +109,22 @@ public class ListApplicationRevisionsRequest extends
      * revision of an deployment group:
      * </p>
      * <ul>
-     * <li>include: List revisions that are target revisions of a deployment
-     * group.</li>
-     * <li>exclude: Do not list revisions that are target revisions of a
-     * deployment group.</li>
-     * <li>ignore: List all revisions.</li>
+     * <li>
+     * <p>
+     * include: List revisions that are target revisions of a deployment group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * exclude: Do not list revisions that are target revisions of a deployment
+     * group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ignore: List all revisions.
+     * </p>
+     * </li>
      * </ul>
      */
     private String deployed;
@@ -158,12 +189,24 @@ public class ListApplicationRevisionsRequest extends
      * The column name to use to sort the list results:
      * </p>
      * <ul>
-     * <li>registerTime: Sort by the time the revisions were registered with AWS
-     * CodeDeploy.</li>
-     * <li>firstUsedTime: Sort by the time the revisions were first used in a
-     * deployment.</li>
-     * <li>lastUsedTime: Sort by the time the revisions were last used in a
-     * deployment.</li>
+     * <li>
+     * <p>
+     * registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * firstUsedTime: Sort by the time the revisions were first used in a
+     * deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * lastUsedTime: Sort by the time the revisions were last used in a
+     * deployment.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If not specified or set to null, the results will be returned in an
@@ -173,12 +216,24 @@ public class ListApplicationRevisionsRequest extends
      * @param sortBy
      *        The column name to use to sort the list results:</p>
      *        <ul>
-     *        <li>registerTime: Sort by the time the revisions were registered
-     *        with AWS CodeDeploy.</li>
-     *        <li>firstUsedTime: Sort by the time the revisions were first used
-     *        in a deployment.</li>
-     *        <li>lastUsedTime: Sort by the time the revisions were last used in
-     *        a deployment.</li>
+     *        <li>
+     *        <p>
+     *        registerTime: Sort by the time the revisions were registered with
+     *        AWS CodeDeploy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        firstUsedTime: Sort by the time the revisions were first used in a
+     *        deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        lastUsedTime: Sort by the time the revisions were last used in a
+     *        deployment.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If not specified or set to null, the results will be returned in
@@ -195,12 +250,24 @@ public class ListApplicationRevisionsRequest extends
      * The column name to use to sort the list results:
      * </p>
      * <ul>
-     * <li>registerTime: Sort by the time the revisions were registered with AWS
-     * CodeDeploy.</li>
-     * <li>firstUsedTime: Sort by the time the revisions were first used in a
-     * deployment.</li>
-     * <li>lastUsedTime: Sort by the time the revisions were last used in a
-     * deployment.</li>
+     * <li>
+     * <p>
+     * registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * firstUsedTime: Sort by the time the revisions were first used in a
+     * deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * lastUsedTime: Sort by the time the revisions were last used in a
+     * deployment.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If not specified or set to null, the results will be returned in an
@@ -209,12 +276,24 @@ public class ListApplicationRevisionsRequest extends
      * 
      * @return The column name to use to sort the list results:</p>
      *         <ul>
-     *         <li>registerTime: Sort by the time the revisions were registered
-     *         with AWS CodeDeploy.</li>
-     *         <li>firstUsedTime: Sort by the time the revisions were first used
-     *         in a deployment.</li>
-     *         <li>lastUsedTime: Sort by the time the revisions were last used
-     *         in a deployment.</li>
+     *         <li>
+     *         <p>
+     *         registerTime: Sort by the time the revisions were registered with
+     *         AWS CodeDeploy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         firstUsedTime: Sort by the time the revisions were first used in
+     *         a deployment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         lastUsedTime: Sort by the time the revisions were last used in a
+     *         deployment.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         If not specified or set to null, the results will be returned in
@@ -231,12 +310,24 @@ public class ListApplicationRevisionsRequest extends
      * The column name to use to sort the list results:
      * </p>
      * <ul>
-     * <li>registerTime: Sort by the time the revisions were registered with AWS
-     * CodeDeploy.</li>
-     * <li>firstUsedTime: Sort by the time the revisions were first used in a
-     * deployment.</li>
-     * <li>lastUsedTime: Sort by the time the revisions were last used in a
-     * deployment.</li>
+     * <li>
+     * <p>
+     * registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * firstUsedTime: Sort by the time the revisions were first used in a
+     * deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * lastUsedTime: Sort by the time the revisions were last used in a
+     * deployment.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If not specified or set to null, the results will be returned in an
@@ -246,12 +337,24 @@ public class ListApplicationRevisionsRequest extends
      * @param sortBy
      *        The column name to use to sort the list results:</p>
      *        <ul>
-     *        <li>registerTime: Sort by the time the revisions were registered
-     *        with AWS CodeDeploy.</li>
-     *        <li>firstUsedTime: Sort by the time the revisions were first used
-     *        in a deployment.</li>
-     *        <li>lastUsedTime: Sort by the time the revisions were last used in
-     *        a deployment.</li>
+     *        <li>
+     *        <p>
+     *        registerTime: Sort by the time the revisions were registered with
+     *        AWS CodeDeploy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        firstUsedTime: Sort by the time the revisions were first used in a
+     *        deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        lastUsedTime: Sort by the time the revisions were last used in a
+     *        deployment.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If not specified or set to null, the results will be returned in
@@ -271,12 +374,24 @@ public class ListApplicationRevisionsRequest extends
      * The column name to use to sort the list results:
      * </p>
      * <ul>
-     * <li>registerTime: Sort by the time the revisions were registered with AWS
-     * CodeDeploy.</li>
-     * <li>firstUsedTime: Sort by the time the revisions were first used in a
-     * deployment.</li>
-     * <li>lastUsedTime: Sort by the time the revisions were last used in a
-     * deployment.</li>
+     * <li>
+     * <p>
+     * registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * firstUsedTime: Sort by the time the revisions were first used in a
+     * deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * lastUsedTime: Sort by the time the revisions were last used in a
+     * deployment.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If not specified or set to null, the results will be returned in an
@@ -286,12 +401,24 @@ public class ListApplicationRevisionsRequest extends
      * @param sortBy
      *        The column name to use to sort the list results:</p>
      *        <ul>
-     *        <li>registerTime: Sort by the time the revisions were registered
-     *        with AWS CodeDeploy.</li>
-     *        <li>firstUsedTime: Sort by the time the revisions were first used
-     *        in a deployment.</li>
-     *        <li>lastUsedTime: Sort by the time the revisions were last used in
-     *        a deployment.</li>
+     *        <li>
+     *        <p>
+     *        registerTime: Sort by the time the revisions were registered with
+     *        AWS CodeDeploy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        firstUsedTime: Sort by the time the revisions were first used in a
+     *        deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        lastUsedTime: Sort by the time the revisions were last used in a
+     *        deployment.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If not specified or set to null, the results will be returned in
@@ -308,12 +435,24 @@ public class ListApplicationRevisionsRequest extends
      * The column name to use to sort the list results:
      * </p>
      * <ul>
-     * <li>registerTime: Sort by the time the revisions were registered with AWS
-     * CodeDeploy.</li>
-     * <li>firstUsedTime: Sort by the time the revisions were first used in a
-     * deployment.</li>
-     * <li>lastUsedTime: Sort by the time the revisions were last used in a
-     * deployment.</li>
+     * <li>
+     * <p>
+     * registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * firstUsedTime: Sort by the time the revisions were first used in a
+     * deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * lastUsedTime: Sort by the time the revisions were last used in a
+     * deployment.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If not specified or set to null, the results will be returned in an
@@ -323,12 +462,24 @@ public class ListApplicationRevisionsRequest extends
      * @param sortBy
      *        The column name to use to sort the list results:</p>
      *        <ul>
-     *        <li>registerTime: Sort by the time the revisions were registered
-     *        with AWS CodeDeploy.</li>
-     *        <li>firstUsedTime: Sort by the time the revisions were first used
-     *        in a deployment.</li>
-     *        <li>lastUsedTime: Sort by the time the revisions were last used in
-     *        a deployment.</li>
+     *        <li>
+     *        <p>
+     *        registerTime: Sort by the time the revisions were registered with
+     *        AWS CodeDeploy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        firstUsedTime: Sort by the time the revisions were first used in a
+     *        deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        lastUsedTime: Sort by the time the revisions were last used in a
+     *        deployment.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If not specified or set to null, the results will be returned in
@@ -349,8 +500,16 @@ public class ListApplicationRevisionsRequest extends
      * The order in which to sort the list results:
      * </p>
      * <ul>
-     * <li>ascending: ascending order.</li>
-     * <li>descending: descending order.</li>
+     * <li>
+     * <p>
+     * ascending: ascending order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * descending: descending order.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If not specified, the results will be sorted in ascending order.
@@ -362,8 +521,16 @@ public class ListApplicationRevisionsRequest extends
      * @param sortOrder
      *        The order in which to sort the list results:</p>
      *        <ul>
-     *        <li>ascending: ascending order.</li>
-     *        <li>descending: descending order.</li>
+     *        <li>
+     *        <p>
+     *        ascending: ascending order.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        descending: descending order.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If not specified, the results will be sorted in ascending order.
@@ -382,8 +549,16 @@ public class ListApplicationRevisionsRequest extends
      * The order in which to sort the list results:
      * </p>
      * <ul>
-     * <li>ascending: ascending order.</li>
-     * <li>descending: descending order.</li>
+     * <li>
+     * <p>
+     * ascending: ascending order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * descending: descending order.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If not specified, the results will be sorted in ascending order.
@@ -394,8 +569,16 @@ public class ListApplicationRevisionsRequest extends
      * 
      * @return The order in which to sort the list results:</p>
      *         <ul>
-     *         <li>ascending: ascending order.</li>
-     *         <li>descending: descending order.</li>
+     *         <li>
+     *         <p>
+     *         ascending: ascending order.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         descending: descending order.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         If not specified, the results will be sorted in ascending order.
@@ -414,8 +597,16 @@ public class ListApplicationRevisionsRequest extends
      * The order in which to sort the list results:
      * </p>
      * <ul>
-     * <li>ascending: ascending order.</li>
-     * <li>descending: descending order.</li>
+     * <li>
+     * <p>
+     * ascending: ascending order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * descending: descending order.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If not specified, the results will be sorted in ascending order.
@@ -427,8 +618,16 @@ public class ListApplicationRevisionsRequest extends
      * @param sortOrder
      *        The order in which to sort the list results:</p>
      *        <ul>
-     *        <li>ascending: ascending order.</li>
-     *        <li>descending: descending order.</li>
+     *        <li>
+     *        <p>
+     *        ascending: ascending order.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        descending: descending order.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If not specified, the results will be sorted in ascending order.
@@ -450,8 +649,16 @@ public class ListApplicationRevisionsRequest extends
      * The order in which to sort the list results:
      * </p>
      * <ul>
-     * <li>ascending: ascending order.</li>
-     * <li>descending: descending order.</li>
+     * <li>
+     * <p>
+     * ascending: ascending order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * descending: descending order.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If not specified, the results will be sorted in ascending order.
@@ -463,8 +670,16 @@ public class ListApplicationRevisionsRequest extends
      * @param sortOrder
      *        The order in which to sort the list results:</p>
      *        <ul>
-     *        <li>ascending: ascending order.</li>
-     *        <li>descending: descending order.</li>
+     *        <li>
+     *        <p>
+     *        ascending: ascending order.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        descending: descending order.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If not specified, the results will be sorted in ascending order.
@@ -483,8 +698,16 @@ public class ListApplicationRevisionsRequest extends
      * The order in which to sort the list results:
      * </p>
      * <ul>
-     * <li>ascending: ascending order.</li>
-     * <li>descending: descending order.</li>
+     * <li>
+     * <p>
+     * ascending: ascending order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * descending: descending order.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If not specified, the results will be sorted in ascending order.
@@ -496,8 +719,16 @@ public class ListApplicationRevisionsRequest extends
      * @param sortOrder
      *        The order in which to sort the list results:</p>
      *        <ul>
-     *        <li>ascending: ascending order.</li>
-     *        <li>descending: descending order.</li>
+     *        <li>
+     *        <p>
+     *        ascending: ascending order.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        descending: descending order.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If not specified, the results will be sorted in ascending order.
@@ -623,22 +854,45 @@ public class ListApplicationRevisionsRequest extends
      * revision of an deployment group:
      * </p>
      * <ul>
-     * <li>include: List revisions that are target revisions of a deployment
-     * group.</li>
-     * <li>exclude: Do not list revisions that are target revisions of a
-     * deployment group.</li>
-     * <li>ignore: List all revisions.</li>
+     * <li>
+     * <p>
+     * include: List revisions that are target revisions of a deployment group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * exclude: Do not list revisions that are target revisions of a deployment
+     * group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ignore: List all revisions.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param deployed
      *        Whether to list revisions based on whether the revision is the
      *        target revision of an deployment group:</p>
      *        <ul>
-     *        <li>include: List revisions that are target revisions of a
-     *        deployment group.</li>
-     *        <li>exclude: Do not list revisions that are target revisions of a
-     *        deployment group.</li>
-     *        <li>ignore: List all revisions.</li>
+     *        <li>
+     *        <p>
+     *        include: List revisions that are target revisions of a deployment
+     *        group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        exclude: Do not list revisions that are target revisions of a
+     *        deployment group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ignore: List all revisions.
+     *        </p>
+     *        </li>
      * @see ListStateFilterAction
      */
 
@@ -652,21 +906,44 @@ public class ListApplicationRevisionsRequest extends
      * revision of an deployment group:
      * </p>
      * <ul>
-     * <li>include: List revisions that are target revisions of a deployment
-     * group.</li>
-     * <li>exclude: Do not list revisions that are target revisions of a
-     * deployment group.</li>
-     * <li>ignore: List all revisions.</li>
+     * <li>
+     * <p>
+     * include: List revisions that are target revisions of a deployment group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * exclude: Do not list revisions that are target revisions of a deployment
+     * group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ignore: List all revisions.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Whether to list revisions based on whether the revision is the
      *         target revision of an deployment group:</p>
      *         <ul>
-     *         <li>include: List revisions that are target revisions of a
-     *         deployment group.</li>
-     *         <li>exclude: Do not list revisions that are target revisions of a
-     *         deployment group.</li>
-     *         <li>ignore: List all revisions.</li>
+     *         <li>
+     *         <p>
+     *         include: List revisions that are target revisions of a deployment
+     *         group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         exclude: Do not list revisions that are target revisions of a
+     *         deployment group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ignore: List all revisions.
+     *         </p>
+     *         </li>
      * @see ListStateFilterAction
      */
 
@@ -680,22 +957,45 @@ public class ListApplicationRevisionsRequest extends
      * revision of an deployment group:
      * </p>
      * <ul>
-     * <li>include: List revisions that are target revisions of a deployment
-     * group.</li>
-     * <li>exclude: Do not list revisions that are target revisions of a
-     * deployment group.</li>
-     * <li>ignore: List all revisions.</li>
+     * <li>
+     * <p>
+     * include: List revisions that are target revisions of a deployment group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * exclude: Do not list revisions that are target revisions of a deployment
+     * group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ignore: List all revisions.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param deployed
      *        Whether to list revisions based on whether the revision is the
      *        target revision of an deployment group:</p>
      *        <ul>
-     *        <li>include: List revisions that are target revisions of a
-     *        deployment group.</li>
-     *        <li>exclude: Do not list revisions that are target revisions of a
-     *        deployment group.</li>
-     *        <li>ignore: List all revisions.</li>
+     *        <li>
+     *        <p>
+     *        include: List revisions that are target revisions of a deployment
+     *        group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        exclude: Do not list revisions that are target revisions of a
+     *        deployment group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ignore: List all revisions.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ListStateFilterAction
@@ -712,22 +1012,45 @@ public class ListApplicationRevisionsRequest extends
      * revision of an deployment group:
      * </p>
      * <ul>
-     * <li>include: List revisions that are target revisions of a deployment
-     * group.</li>
-     * <li>exclude: Do not list revisions that are target revisions of a
-     * deployment group.</li>
-     * <li>ignore: List all revisions.</li>
+     * <li>
+     * <p>
+     * include: List revisions that are target revisions of a deployment group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * exclude: Do not list revisions that are target revisions of a deployment
+     * group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ignore: List all revisions.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param deployed
      *        Whether to list revisions based on whether the revision is the
      *        target revision of an deployment group:</p>
      *        <ul>
-     *        <li>include: List revisions that are target revisions of a
-     *        deployment group.</li>
-     *        <li>exclude: Do not list revisions that are target revisions of a
-     *        deployment group.</li>
-     *        <li>ignore: List all revisions.</li>
+     *        <li>
+     *        <p>
+     *        include: List revisions that are target revisions of a deployment
+     *        group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        exclude: Do not list revisions that are target revisions of a
+     *        deployment group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ignore: List all revisions.
+     *        </p>
+     *        </li>
      * @see ListStateFilterAction
      */
 
@@ -741,22 +1064,45 @@ public class ListApplicationRevisionsRequest extends
      * revision of an deployment group:
      * </p>
      * <ul>
-     * <li>include: List revisions that are target revisions of a deployment
-     * group.</li>
-     * <li>exclude: Do not list revisions that are target revisions of a
-     * deployment group.</li>
-     * <li>ignore: List all revisions.</li>
+     * <li>
+     * <p>
+     * include: List revisions that are target revisions of a deployment group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * exclude: Do not list revisions that are target revisions of a deployment
+     * group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ignore: List all revisions.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param deployed
      *        Whether to list revisions based on whether the revision is the
      *        target revision of an deployment group:</p>
      *        <ul>
-     *        <li>include: List revisions that are target revisions of a
-     *        deployment group.</li>
-     *        <li>exclude: Do not list revisions that are target revisions of a
-     *        deployment group.</li>
-     *        <li>ignore: List all revisions.</li>
+     *        <li>
+     *        <p>
+     *        include: List revisions that are target revisions of a deployment
+     *        group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        exclude: Do not list revisions that are target revisions of a
+     *        deployment group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ignore: List all revisions.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ListStateFilterAction

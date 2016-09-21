@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DescribeClusterParameterGroupsRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,

@@ -40,9 +40,21 @@ public class TagFilter implements Serializable, Cloneable {
      * The on-premises instance tag filter type:
      * </p>
      * <ul>
-     * <li>KEY_ONLY: Key only.</li>
-     * <li>VALUE_ONLY: Value only.</li>
-     * <li>KEY_AND_VALUE: Key and value.</li>
+     * <li>
+     * <p>
+     * KEY_ONLY: Key only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALUE_ONLY: Value only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_AND_VALUE: Key and value.
+     * </p>
+     * </li>
      * </ul>
      */
     private String type;
@@ -134,17 +146,41 @@ public class TagFilter implements Serializable, Cloneable {
      * The on-premises instance tag filter type:
      * </p>
      * <ul>
-     * <li>KEY_ONLY: Key only.</li>
-     * <li>VALUE_ONLY: Value only.</li>
-     * <li>KEY_AND_VALUE: Key and value.</li>
+     * <li>
+     * <p>
+     * KEY_ONLY: Key only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALUE_ONLY: Value only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_AND_VALUE: Key and value.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
      *        The on-premises instance tag filter type:</p>
      *        <ul>
-     *        <li>KEY_ONLY: Key only.</li>
-     *        <li>VALUE_ONLY: Value only.</li>
-     *        <li>KEY_AND_VALUE: Key and value.</li>
+     *        <li>
+     *        <p>
+     *        KEY_ONLY: Key only.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VALUE_ONLY: Value only.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KEY_AND_VALUE: Key and value.
+     *        </p>
+     *        </li>
      * @see TagFilterType
      */
 
@@ -157,16 +193,40 @@ public class TagFilter implements Serializable, Cloneable {
      * The on-premises instance tag filter type:
      * </p>
      * <ul>
-     * <li>KEY_ONLY: Key only.</li>
-     * <li>VALUE_ONLY: Value only.</li>
-     * <li>KEY_AND_VALUE: Key and value.</li>
+     * <li>
+     * <p>
+     * KEY_ONLY: Key only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALUE_ONLY: Value only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_AND_VALUE: Key and value.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The on-premises instance tag filter type:</p>
      *         <ul>
-     *         <li>KEY_ONLY: Key only.</li>
-     *         <li>VALUE_ONLY: Value only.</li>
-     *         <li>KEY_AND_VALUE: Key and value.</li>
+     *         <li>
+     *         <p>
+     *         KEY_ONLY: Key only.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         VALUE_ONLY: Value only.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         KEY_AND_VALUE: Key and value.
+     *         </p>
+     *         </li>
      * @see TagFilterType
      */
 
@@ -179,17 +239,41 @@ public class TagFilter implements Serializable, Cloneable {
      * The on-premises instance tag filter type:
      * </p>
      * <ul>
-     * <li>KEY_ONLY: Key only.</li>
-     * <li>VALUE_ONLY: Value only.</li>
-     * <li>KEY_AND_VALUE: Key and value.</li>
+     * <li>
+     * <p>
+     * KEY_ONLY: Key only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALUE_ONLY: Value only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_AND_VALUE: Key and value.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
      *        The on-premises instance tag filter type:</p>
      *        <ul>
-     *        <li>KEY_ONLY: Key only.</li>
-     *        <li>VALUE_ONLY: Value only.</li>
-     *        <li>KEY_AND_VALUE: Key and value.</li>
+     *        <li>
+     *        <p>
+     *        KEY_ONLY: Key only.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VALUE_ONLY: Value only.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KEY_AND_VALUE: Key and value.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TagFilterType
@@ -205,17 +289,41 @@ public class TagFilter implements Serializable, Cloneable {
      * The on-premises instance tag filter type:
      * </p>
      * <ul>
-     * <li>KEY_ONLY: Key only.</li>
-     * <li>VALUE_ONLY: Value only.</li>
-     * <li>KEY_AND_VALUE: Key and value.</li>
+     * <li>
+     * <p>
+     * KEY_ONLY: Key only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALUE_ONLY: Value only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_AND_VALUE: Key and value.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
      *        The on-premises instance tag filter type:</p>
      *        <ul>
-     *        <li>KEY_ONLY: Key only.</li>
-     *        <li>VALUE_ONLY: Value only.</li>
-     *        <li>KEY_AND_VALUE: Key and value.</li>
+     *        <li>
+     *        <p>
+     *        KEY_ONLY: Key only.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VALUE_ONLY: Value only.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KEY_AND_VALUE: Key and value.
+     *        </p>
+     *        </li>
      * @see TagFilterType
      */
 
@@ -228,17 +336,41 @@ public class TagFilter implements Serializable, Cloneable {
      * The on-premises instance tag filter type:
      * </p>
      * <ul>
-     * <li>KEY_ONLY: Key only.</li>
-     * <li>VALUE_ONLY: Value only.</li>
-     * <li>KEY_AND_VALUE: Key and value.</li>
+     * <li>
+     * <p>
+     * KEY_ONLY: Key only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALUE_ONLY: Value only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_AND_VALUE: Key and value.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
      *        The on-premises instance tag filter type:</p>
      *        <ul>
-     *        <li>KEY_ONLY: Key only.</li>
-     *        <li>VALUE_ONLY: Value only.</li>
-     *        <li>KEY_AND_VALUE: Key and value.</li>
+     *        <li>
+     *        <p>
+     *        KEY_ONLY: Key only.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VALUE_ONLY: Value only.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KEY_AND_VALUE: Key and value.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TagFilterType

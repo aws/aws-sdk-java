@@ -285,6 +285,11 @@ public class CreateDBInstanceRequestMarshaller implements
                     .fromInteger(createDBInstanceRequest.getPromotionTier()));
         }
 
+        if (createDBInstanceRequest.getTimezone() != null) {
+            request.addParameter("Timezone", StringUtils
+                    .fromString(createDBInstanceRequest.getTimezone()));
+        }
+
         return request;
     }
 

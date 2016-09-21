@@ -60,15 +60,15 @@ public class CreateDeploymentGroupRequest extends
      * <li>
      * <p>
      * <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an application
-     * revision to as many instance as possible at once. The status of the
+     * revision to as many instances as possible at once. The status of the
      * overall deployment will be displayed as <b>Succeeded</b> if the
      * application revision is deployed to one or more of the instances. The
      * status of the overall deployment will be displayed as <b>Failed</b> if
      * the application revision is not deployed to any of the instances. Using
-     * an example of nine instance, CodeDeployDefault.AllAtOnce will attempt to
-     * deploy to all nine instance at once. The overall deployment will succeed
+     * an example of nine instances, CodeDeployDefault.AllAtOnce will attempt to
+     * deploy to all nine instances at once. The overall deployment will succeed
      * if deployment to even a single instance is successful; it will fail only
-     * if deployments to all nine instance fail.
+     * if deployments to all nine instances fail.
      * </p>
      * </li>
      * <li>
@@ -77,7 +77,7 @@ public class CreateDeploymentGroupRequest extends
      * instances at a time (with fractions rounded down). The overall deployment
      * succeeds if the application revision is deployed to at least half of the
      * instances (with fractions rounded up); otherwise, the deployment fails.
-     * In the example of nine instances, it will deploy to up to four instance
+     * In the example of nine instances, it will deploy to up to four instances
      * at a time. The overall deployment succeeds if deployment to five or more
      * instances succeed; otherwise, the deployment fails. The deployment may be
      * successfully deployed to some instances even if the overall deployment
@@ -112,10 +112,10 @@ public class CreateDeploymentGroupRequest extends
      * </li>
      * <li>
      * <p>
-     * In an example using nine instance, it will deploy to one instance at a
+     * In an example using nine instances, it will deploy to one instance at a
      * time. The overall deployment succeeds if deployment to the first eight
-     * instance is successful; the overall deployment fails if deployment to any
-     * of the first eight instance fails.
+     * instances is successful; the overall deployment fails if deployment to
+     * any of the first eight instances fails.
      * </p>
      * </li>
      * </ul>
@@ -156,10 +156,27 @@ public class CreateDeploymentGroupRequest extends
     /**
      * <p>
      * Information about triggers to create when the deployment group is
-     * created.
+     * created. For examples, see <a href=
+     * "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html"
+     * >Create a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy
+     * User Guide.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TriggerConfig> triggerConfigurations;
+    /**
+     * <p>
+     * Information to add about Amazon CloudWatch alarms when the deployment
+     * group is created.
+     * </p>
+     */
+    private AlarmConfiguration alarmConfiguration;
+    /**
+     * <p>
+     * Configuration information for an automatic rollback that is added when a
+     * deployment group is created.
+     * </p>
+     */
+    private AutoRollbackConfiguration autoRollbackConfiguration;
 
     /**
      * <p>
@@ -272,15 +289,15 @@ public class CreateDeploymentGroupRequest extends
      * <li>
      * <p>
      * <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an application
-     * revision to as many instance as possible at once. The status of the
+     * revision to as many instances as possible at once. The status of the
      * overall deployment will be displayed as <b>Succeeded</b> if the
      * application revision is deployed to one or more of the instances. The
      * status of the overall deployment will be displayed as <b>Failed</b> if
      * the application revision is not deployed to any of the instances. Using
-     * an example of nine instance, CodeDeployDefault.AllAtOnce will attempt to
-     * deploy to all nine instance at once. The overall deployment will succeed
+     * an example of nine instances, CodeDeployDefault.AllAtOnce will attempt to
+     * deploy to all nine instances at once. The overall deployment will succeed
      * if deployment to even a single instance is successful; it will fail only
-     * if deployments to all nine instance fail.
+     * if deployments to all nine instances fail.
      * </p>
      * </li>
      * <li>
@@ -289,7 +306,7 @@ public class CreateDeploymentGroupRequest extends
      * instances at a time (with fractions rounded down). The overall deployment
      * succeeds if the application revision is deployed to at least half of the
      * instances (with fractions rounded up); otherwise, the deployment fails.
-     * In the example of nine instances, it will deploy to up to four instance
+     * In the example of nine instances, it will deploy to up to four instances
      * at a time. The overall deployment succeeds if deployment to five or more
      * instances succeed; otherwise, the deployment fails. The deployment may be
      * successfully deployed to some instances even if the overall deployment
@@ -324,10 +341,10 @@ public class CreateDeploymentGroupRequest extends
      * </li>
      * <li>
      * <p>
-     * In an example using nine instance, it will deploy to one instance at a
+     * In an example using nine instances, it will deploy to one instance at a
      * time. The overall deployment succeeds if deployment to the first eight
-     * instance is successful; the overall deployment fails if deployment to any
-     * of the first eight instance fails.
+     * instances is successful; the overall deployment fails if deployment to
+     * any of the first eight instances fails.
      * </p>
      * </li>
      * </ul>
@@ -357,16 +374,16 @@ public class CreateDeploymentGroupRequest extends
      *        <li>
      *        <p>
      *        <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an
-     *        application revision to as many instance as possible at once. The
+     *        application revision to as many instances as possible at once. The
      *        status of the overall deployment will be displayed as
      *        <b>Succeeded</b> if the application revision is deployed to one or
      *        more of the instances. The status of the overall deployment will
      *        be displayed as <b>Failed</b> if the application revision is not
      *        deployed to any of the instances. Using an example of nine
-     *        instance, CodeDeployDefault.AllAtOnce will attempt to deploy to
-     *        all nine instance at once. The overall deployment will succeed if
+     *        instances, CodeDeployDefault.AllAtOnce will attempt to deploy to
+     *        all nine instances at once. The overall deployment will succeed if
      *        deployment to even a single instance is successful; it will fail
-     *        only if deployments to all nine instance fail.
+     *        only if deployments to all nine instances fail.
      *        </p>
      *        </li>
      *        <li>
@@ -376,7 +393,7 @@ public class CreateDeploymentGroupRequest extends
      *        deployment succeeds if the application revision is deployed to at
      *        least half of the instances (with fractions rounded up);
      *        otherwise, the deployment fails. In the example of nine instances,
-     *        it will deploy to up to four instance at a time. The overall
+     *        it will deploy to up to four instances at a time. The overall
      *        deployment succeeds if deployment to five or more instances
      *        succeed; otherwise, the deployment fails. The deployment may be
      *        successfully deployed to some instances even if the overall
@@ -412,10 +429,10 @@ public class CreateDeploymentGroupRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        In an example using nine instance, it will deploy to one instance
+     *        In an example using nine instances, it will deploy to one instance
      *        at a time. The overall deployment succeeds if deployment to the
-     *        first eight instance is successful; the overall deployment fails
-     *        if deployment to any of the first eight instance fails.
+     *        first eight instances is successful; the overall deployment fails
+     *        if deployment to any of the first eight instances fails.
      *        </p>
      *        </li>
      *        </ul>
@@ -452,15 +469,15 @@ public class CreateDeploymentGroupRequest extends
      * <li>
      * <p>
      * <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an application
-     * revision to as many instance as possible at once. The status of the
+     * revision to as many instances as possible at once. The status of the
      * overall deployment will be displayed as <b>Succeeded</b> if the
      * application revision is deployed to one or more of the instances. The
      * status of the overall deployment will be displayed as <b>Failed</b> if
      * the application revision is not deployed to any of the instances. Using
-     * an example of nine instance, CodeDeployDefault.AllAtOnce will attempt to
-     * deploy to all nine instance at once. The overall deployment will succeed
+     * an example of nine instances, CodeDeployDefault.AllAtOnce will attempt to
+     * deploy to all nine instances at once. The overall deployment will succeed
      * if deployment to even a single instance is successful; it will fail only
-     * if deployments to all nine instance fail.
+     * if deployments to all nine instances fail.
      * </p>
      * </li>
      * <li>
@@ -469,7 +486,7 @@ public class CreateDeploymentGroupRequest extends
      * instances at a time (with fractions rounded down). The overall deployment
      * succeeds if the application revision is deployed to at least half of the
      * instances (with fractions rounded up); otherwise, the deployment fails.
-     * In the example of nine instances, it will deploy to up to four instance
+     * In the example of nine instances, it will deploy to up to four instances
      * at a time. The overall deployment succeeds if deployment to five or more
      * instances succeed; otherwise, the deployment fails. The deployment may be
      * successfully deployed to some instances even if the overall deployment
@@ -504,10 +521,10 @@ public class CreateDeploymentGroupRequest extends
      * </li>
      * <li>
      * <p>
-     * In an example using nine instance, it will deploy to one instance at a
+     * In an example using nine instances, it will deploy to one instance at a
      * time. The overall deployment succeeds if deployment to the first eight
-     * instance is successful; the overall deployment fails if deployment to any
-     * of the first eight instance fails.
+     * instances is successful; the overall deployment fails if deployment to
+     * any of the first eight instances fails.
      * </p>
      * </li>
      * </ul>
@@ -536,16 +553,16 @@ public class CreateDeploymentGroupRequest extends
      *         <li>
      *         <p>
      *         <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an
-     *         application revision to as many instance as possible at once. The
-     *         status of the overall deployment will be displayed as
+     *         application revision to as many instances as possible at once.
+     *         The status of the overall deployment will be displayed as
      *         <b>Succeeded</b> if the application revision is deployed to one
      *         or more of the instances. The status of the overall deployment
      *         will be displayed as <b>Failed</b> if the application revision is
      *         not deployed to any of the instances. Using an example of nine
-     *         instance, CodeDeployDefault.AllAtOnce will attempt to deploy to
-     *         all nine instance at once. The overall deployment will succeed if
-     *         deployment to even a single instance is successful; it will fail
-     *         only if deployments to all nine instance fail.
+     *         instances, CodeDeployDefault.AllAtOnce will attempt to deploy to
+     *         all nine instances at once. The overall deployment will succeed
+     *         if deployment to even a single instance is successful; it will
+     *         fail only if deployments to all nine instances fail.
      *         </p>
      *         </li>
      *         <li>
@@ -555,7 +572,7 @@ public class CreateDeploymentGroupRequest extends
      *         deployment succeeds if the application revision is deployed to at
      *         least half of the instances (with fractions rounded up);
      *         otherwise, the deployment fails. In the example of nine
-     *         instances, it will deploy to up to four instance at a time. The
+     *         instances, it will deploy to up to four instances at a time. The
      *         overall deployment succeeds if deployment to five or more
      *         instances succeed; otherwise, the deployment fails. The
      *         deployment may be successfully deployed to some instances even if
@@ -591,10 +608,11 @@ public class CreateDeploymentGroupRequest extends
      *         </li>
      *         <li>
      *         <p>
-     *         In an example using nine instance, it will deploy to one instance
-     *         at a time. The overall deployment succeeds if deployment to the
-     *         first eight instance is successful; the overall deployment fails
-     *         if deployment to any of the first eight instance fails.
+     *         In an example using nine instances, it will deploy to one
+     *         instance at a time. The overall deployment succeeds if deployment
+     *         to the first eight instances is successful; the overall
+     *         deployment fails if deployment to any of the first eight
+     *         instances fails.
      *         </p>
      *         </li>
      *         </ul>
@@ -631,15 +649,15 @@ public class CreateDeploymentGroupRequest extends
      * <li>
      * <p>
      * <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an application
-     * revision to as many instance as possible at once. The status of the
+     * revision to as many instances as possible at once. The status of the
      * overall deployment will be displayed as <b>Succeeded</b> if the
      * application revision is deployed to one or more of the instances. The
      * status of the overall deployment will be displayed as <b>Failed</b> if
      * the application revision is not deployed to any of the instances. Using
-     * an example of nine instance, CodeDeployDefault.AllAtOnce will attempt to
-     * deploy to all nine instance at once. The overall deployment will succeed
+     * an example of nine instances, CodeDeployDefault.AllAtOnce will attempt to
+     * deploy to all nine instances at once. The overall deployment will succeed
      * if deployment to even a single instance is successful; it will fail only
-     * if deployments to all nine instance fail.
+     * if deployments to all nine instances fail.
      * </p>
      * </li>
      * <li>
@@ -648,7 +666,7 @@ public class CreateDeploymentGroupRequest extends
      * instances at a time (with fractions rounded down). The overall deployment
      * succeeds if the application revision is deployed to at least half of the
      * instances (with fractions rounded up); otherwise, the deployment fails.
-     * In the example of nine instances, it will deploy to up to four instance
+     * In the example of nine instances, it will deploy to up to four instances
      * at a time. The overall deployment succeeds if deployment to five or more
      * instances succeed; otherwise, the deployment fails. The deployment may be
      * successfully deployed to some instances even if the overall deployment
@@ -683,10 +701,10 @@ public class CreateDeploymentGroupRequest extends
      * </li>
      * <li>
      * <p>
-     * In an example using nine instance, it will deploy to one instance at a
+     * In an example using nine instances, it will deploy to one instance at a
      * time. The overall deployment succeeds if deployment to the first eight
-     * instance is successful; the overall deployment fails if deployment to any
-     * of the first eight instance fails.
+     * instances is successful; the overall deployment fails if deployment to
+     * any of the first eight instances fails.
      * </p>
      * </li>
      * </ul>
@@ -716,16 +734,16 @@ public class CreateDeploymentGroupRequest extends
      *        <li>
      *        <p>
      *        <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an
-     *        application revision to as many instance as possible at once. The
+     *        application revision to as many instances as possible at once. The
      *        status of the overall deployment will be displayed as
      *        <b>Succeeded</b> if the application revision is deployed to one or
      *        more of the instances. The status of the overall deployment will
      *        be displayed as <b>Failed</b> if the application revision is not
      *        deployed to any of the instances. Using an example of nine
-     *        instance, CodeDeployDefault.AllAtOnce will attempt to deploy to
-     *        all nine instance at once. The overall deployment will succeed if
+     *        instances, CodeDeployDefault.AllAtOnce will attempt to deploy to
+     *        all nine instances at once. The overall deployment will succeed if
      *        deployment to even a single instance is successful; it will fail
-     *        only if deployments to all nine instance fail.
+     *        only if deployments to all nine instances fail.
      *        </p>
      *        </li>
      *        <li>
@@ -735,7 +753,7 @@ public class CreateDeploymentGroupRequest extends
      *        deployment succeeds if the application revision is deployed to at
      *        least half of the instances (with fractions rounded up);
      *        otherwise, the deployment fails. In the example of nine instances,
-     *        it will deploy to up to four instance at a time. The overall
+     *        it will deploy to up to four instances at a time. The overall
      *        deployment succeeds if deployment to five or more instances
      *        succeed; otherwise, the deployment fails. The deployment may be
      *        successfully deployed to some instances even if the overall
@@ -771,10 +789,10 @@ public class CreateDeploymentGroupRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        In an example using nine instance, it will deploy to one instance
+     *        In an example using nine instances, it will deploy to one instance
      *        at a time. The overall deployment succeeds if deployment to the
-     *        first eight instance is successful; the overall deployment fails
-     *        if deployment to any of the first eight instance fails.
+     *        first eight instances is successful; the overall deployment fails
+     *        if deployment to any of the first eight instances fails.
      *        </p>
      *        </li>
      *        </ul>
@@ -1087,11 +1105,17 @@ public class CreateDeploymentGroupRequest extends
     /**
      * <p>
      * Information about triggers to create when the deployment group is
-     * created.
+     * created. For examples, see <a href=
+     * "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html"
+     * >Create a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy
+     * User Guide.
      * </p>
      * 
      * @return Information about triggers to create when the deployment group is
-     *         created.
+     *         created. For examples, see <a href=
+     *         "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html"
+     *         >Create a Trigger for an AWS CodeDeploy Event</a> in the AWS
+     *         CodeDeploy User Guide.
      */
 
     public java.util.List<TriggerConfig> getTriggerConfigurations() {
@@ -1104,12 +1128,18 @@ public class CreateDeploymentGroupRequest extends
     /**
      * <p>
      * Information about triggers to create when the deployment group is
-     * created.
+     * created. For examples, see <a href=
+     * "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html"
+     * >Create a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy
+     * User Guide.
      * </p>
      * 
      * @param triggerConfigurations
      *        Information about triggers to create when the deployment group is
-     *        created.
+     *        created. For examples, see <a href=
+     *        "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html"
+     *        >Create a Trigger for an AWS CodeDeploy Event</a> in the AWS
+     *        CodeDeploy User Guide.
      */
 
     public void setTriggerConfigurations(
@@ -1126,7 +1156,10 @@ public class CreateDeploymentGroupRequest extends
     /**
      * <p>
      * Information about triggers to create when the deployment group is
-     * created.
+     * created. For examples, see <a href=
+     * "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html"
+     * >Create a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy
+     * User Guide.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1137,7 +1170,10 @@ public class CreateDeploymentGroupRequest extends
      * 
      * @param triggerConfigurations
      *        Information about triggers to create when the deployment group is
-     *        created.
+     *        created. For examples, see <a href=
+     *        "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html"
+     *        >Create a Trigger for an AWS CodeDeploy Event</a> in the AWS
+     *        CodeDeploy User Guide.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1157,12 +1193,18 @@ public class CreateDeploymentGroupRequest extends
     /**
      * <p>
      * Information about triggers to create when the deployment group is
-     * created.
+     * created. For examples, see <a href=
+     * "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html"
+     * >Create a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy
+     * User Guide.
      * </p>
      * 
      * @param triggerConfigurations
      *        Information about triggers to create when the deployment group is
-     *        created.
+     *        created. For examples, see <a href=
+     *        "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html"
+     *        >Create a Trigger for an AWS CodeDeploy Event</a> in the AWS
+     *        CodeDeploy User Guide.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1170,6 +1212,103 @@ public class CreateDeploymentGroupRequest extends
     public CreateDeploymentGroupRequest withTriggerConfigurations(
             java.util.Collection<TriggerConfig> triggerConfigurations) {
         setTriggerConfigurations(triggerConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information to add about Amazon CloudWatch alarms when the deployment
+     * group is created.
+     * </p>
+     * 
+     * @param alarmConfiguration
+     *        Information to add about Amazon CloudWatch alarms when the
+     *        deployment group is created.
+     */
+
+    public void setAlarmConfiguration(AlarmConfiguration alarmConfiguration) {
+        this.alarmConfiguration = alarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information to add about Amazon CloudWatch alarms when the deployment
+     * group is created.
+     * </p>
+     * 
+     * @return Information to add about Amazon CloudWatch alarms when the
+     *         deployment group is created.
+     */
+
+    public AlarmConfiguration getAlarmConfiguration() {
+        return this.alarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information to add about Amazon CloudWatch alarms when the deployment
+     * group is created.
+     * </p>
+     * 
+     * @param alarmConfiguration
+     *        Information to add about Amazon CloudWatch alarms when the
+     *        deployment group is created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateDeploymentGroupRequest withAlarmConfiguration(
+            AlarmConfiguration alarmConfiguration) {
+        setAlarmConfiguration(alarmConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information for an automatic rollback that is added when a
+     * deployment group is created.
+     * </p>
+     * 
+     * @param autoRollbackConfiguration
+     *        Configuration information for an automatic rollback that is added
+     *        when a deployment group is created.
+     */
+
+    public void setAutoRollbackConfiguration(
+            AutoRollbackConfiguration autoRollbackConfiguration) {
+        this.autoRollbackConfiguration = autoRollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information for an automatic rollback that is added when a
+     * deployment group is created.
+     * </p>
+     * 
+     * @return Configuration information for an automatic rollback that is added
+     *         when a deployment group is created.
+     */
+
+    public AutoRollbackConfiguration getAutoRollbackConfiguration() {
+        return this.autoRollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information for an automatic rollback that is added when a
+     * deployment group is created.
+     * </p>
+     * 
+     * @param autoRollbackConfiguration
+     *        Configuration information for an automatic rollback that is added
+     *        when a deployment group is created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateDeploymentGroupRequest withAutoRollbackConfiguration(
+            AutoRollbackConfiguration autoRollbackConfiguration) {
+        setAutoRollbackConfiguration(autoRollbackConfiguration);
         return this;
     }
 
@@ -1202,7 +1341,13 @@ public class CreateDeploymentGroupRequest extends
         if (getServiceRoleArn() != null)
             sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
         if (getTriggerConfigurations() != null)
-            sb.append("TriggerConfigurations: " + getTriggerConfigurations());
+            sb.append("TriggerConfigurations: " + getTriggerConfigurations()
+                    + ",");
+        if (getAlarmConfiguration() != null)
+            sb.append("AlarmConfiguration: " + getAlarmConfiguration() + ",");
+        if (getAutoRollbackConfiguration() != null)
+            sb.append("AutoRollbackConfiguration: "
+                    + getAutoRollbackConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1269,6 +1414,20 @@ public class CreateDeploymentGroupRequest extends
                 && other.getTriggerConfigurations().equals(
                         this.getTriggerConfigurations()) == false)
             return false;
+        if (other.getAlarmConfiguration() == null
+                ^ this.getAlarmConfiguration() == null)
+            return false;
+        if (other.getAlarmConfiguration() != null
+                && other.getAlarmConfiguration().equals(
+                        this.getAlarmConfiguration()) == false)
+            return false;
+        if (other.getAutoRollbackConfiguration() == null
+                ^ this.getAutoRollbackConfiguration() == null)
+            return false;
+        if (other.getAutoRollbackConfiguration() != null
+                && other.getAutoRollbackConfiguration().equals(
+                        this.getAutoRollbackConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1309,6 +1468,14 @@ public class CreateDeploymentGroupRequest extends
                 * hashCode
                 + ((getTriggerConfigurations() == null) ? 0
                         : getTriggerConfigurations().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAlarmConfiguration() == null) ? 0
+                        : getAlarmConfiguration().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAutoRollbackConfiguration() == null) ? 0
+                        : getAutoRollbackConfiguration().hashCode());
         return hashCode;
     }
 

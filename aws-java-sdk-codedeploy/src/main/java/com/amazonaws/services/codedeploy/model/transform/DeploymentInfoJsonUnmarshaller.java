@@ -126,6 +126,26 @@ public class DeploymentInfoJsonUnmarshaller implements
                                     .getUnmarshaller(Boolean.class).unmarshall(
                                             context));
                 }
+                if (context.testExpression("autoRollbackConfiguration",
+                        targetDepth)) {
+                    context.nextToken();
+                    deploymentInfo
+                            .setAutoRollbackConfiguration(AutoRollbackConfigurationJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("updateOutdatedInstancesOnly",
+                        targetDepth)) {
+                    context.nextToken();
+                    deploymentInfo
+                            .setUpdateOutdatedInstancesOnly(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
+                }
+                if (context.testExpression("rollbackInfo", targetDepth)) {
+                    context.nextToken();
+                    deploymentInfo.setRollbackInfo(RollbackInfoJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

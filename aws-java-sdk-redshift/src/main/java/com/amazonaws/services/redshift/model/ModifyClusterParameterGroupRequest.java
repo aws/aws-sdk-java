@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class ModifyClusterParameterGroupRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -106,7 +105,7 @@ public class ModifyClusterParameterGroupRequest extends
      * </p>
      * 
      * @return An array of parameters to be modified. A maximum of 20 parameters
-     *         can be modified in a single request. </p>
+     *         can be modified in a single request.</p>
      *         <p>
      *         For each parameter to be modified, you must supply at least the
      *         parameter name and parameter value; other name-value pairs of the
@@ -141,7 +140,7 @@ public class ModifyClusterParameterGroupRequest extends
      * 
      * @param parameters
      *        An array of parameters to be modified. A maximum of 20 parameters
-     *        can be modified in a single request. </p>
+     *        can be modified in a single request.</p>
      *        <p>
      *        For each parameter to be modified, you must supply at least the
      *        parameter name and parameter value; other name-value pairs of the
@@ -185,7 +184,7 @@ public class ModifyClusterParameterGroupRequest extends
      * 
      * @param parameters
      *        An array of parameters to be modified. A maximum of 20 parameters
-     *        can be modified in a single request. </p>
+     *        can be modified in a single request.</p>
      *        <p>
      *        For each parameter to be modified, you must supply at least the
      *        parameter name and parameter value; other name-value pairs of the
@@ -227,7 +226,7 @@ public class ModifyClusterParameterGroupRequest extends
      * 
      * @param parameters
      *        An array of parameters to be modified. A maximum of 20 parameters
-     *        can be modified in a single request. </p>
+     *        can be modified in a single request.</p>
      *        <p>
      *        For each parameter to be modified, you must supply at least the
      *        parameter name and parameter value; other name-value pairs of the

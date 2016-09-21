@@ -85,10 +85,27 @@ public class UpdateDeploymentGroupRequest extends
     /**
      * <p>
      * Information about triggers to change when the deployment group is
-     * updated.
+     * updated. For examples, see <a href=
+     * "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html"
+     * >Modify Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS
+     * CodeDeploy User Guide.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TriggerConfig> triggerConfigurations;
+    /**
+     * <p>
+     * Information to add or change about Amazon CloudWatch alarms when the
+     * deployment group is updated.
+     * </p>
+     */
+    private AlarmConfiguration alarmConfiguration;
+    /**
+     * <p>
+     * Information for an automatic rollback configuration that is added or
+     * changed when a deployment group is updated.
+     * </p>
+     */
+    private AutoRollbackConfiguration autoRollbackConfiguration;
 
     /**
      * <p>
@@ -610,11 +627,17 @@ public class UpdateDeploymentGroupRequest extends
     /**
      * <p>
      * Information about triggers to change when the deployment group is
-     * updated.
+     * updated. For examples, see <a href=
+     * "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html"
+     * >Modify Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS
+     * CodeDeploy User Guide.
      * </p>
      * 
      * @return Information about triggers to change when the deployment group is
-     *         updated.
+     *         updated. For examples, see <a href=
+     *         "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html"
+     *         >Modify Triggers in an AWS CodeDeploy Deployment Group</a> in the
+     *         AWS CodeDeploy User Guide.
      */
 
     public java.util.List<TriggerConfig> getTriggerConfigurations() {
@@ -627,12 +650,18 @@ public class UpdateDeploymentGroupRequest extends
     /**
      * <p>
      * Information about triggers to change when the deployment group is
-     * updated.
+     * updated. For examples, see <a href=
+     * "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html"
+     * >Modify Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS
+     * CodeDeploy User Guide.
      * </p>
      * 
      * @param triggerConfigurations
      *        Information about triggers to change when the deployment group is
-     *        updated.
+     *        updated. For examples, see <a href=
+     *        "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html"
+     *        >Modify Triggers in an AWS CodeDeploy Deployment Group</a> in the
+     *        AWS CodeDeploy User Guide.
      */
 
     public void setTriggerConfigurations(
@@ -649,7 +678,10 @@ public class UpdateDeploymentGroupRequest extends
     /**
      * <p>
      * Information about triggers to change when the deployment group is
-     * updated.
+     * updated. For examples, see <a href=
+     * "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html"
+     * >Modify Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS
+     * CodeDeploy User Guide.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -660,7 +692,10 @@ public class UpdateDeploymentGroupRequest extends
      * 
      * @param triggerConfigurations
      *        Information about triggers to change when the deployment group is
-     *        updated.
+     *        updated. For examples, see <a href=
+     *        "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html"
+     *        >Modify Triggers in an AWS CodeDeploy Deployment Group</a> in the
+     *        AWS CodeDeploy User Guide.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -680,12 +715,18 @@ public class UpdateDeploymentGroupRequest extends
     /**
      * <p>
      * Information about triggers to change when the deployment group is
-     * updated.
+     * updated. For examples, see <a href=
+     * "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html"
+     * >Modify Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS
+     * CodeDeploy User Guide.
      * </p>
      * 
      * @param triggerConfigurations
      *        Information about triggers to change when the deployment group is
-     *        updated.
+     *        updated. For examples, see <a href=
+     *        "http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html"
+     *        >Modify Triggers in an AWS CodeDeploy Deployment Group</a> in the
+     *        AWS CodeDeploy User Guide.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -693,6 +734,103 @@ public class UpdateDeploymentGroupRequest extends
     public UpdateDeploymentGroupRequest withTriggerConfigurations(
             java.util.Collection<TriggerConfig> triggerConfigurations) {
         setTriggerConfigurations(triggerConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information to add or change about Amazon CloudWatch alarms when the
+     * deployment group is updated.
+     * </p>
+     * 
+     * @param alarmConfiguration
+     *        Information to add or change about Amazon CloudWatch alarms when
+     *        the deployment group is updated.
+     */
+
+    public void setAlarmConfiguration(AlarmConfiguration alarmConfiguration) {
+        this.alarmConfiguration = alarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information to add or change about Amazon CloudWatch alarms when the
+     * deployment group is updated.
+     * </p>
+     * 
+     * @return Information to add or change about Amazon CloudWatch alarms when
+     *         the deployment group is updated.
+     */
+
+    public AlarmConfiguration getAlarmConfiguration() {
+        return this.alarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information to add or change about Amazon CloudWatch alarms when the
+     * deployment group is updated.
+     * </p>
+     * 
+     * @param alarmConfiguration
+     *        Information to add or change about Amazon CloudWatch alarms when
+     *        the deployment group is updated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UpdateDeploymentGroupRequest withAlarmConfiguration(
+            AlarmConfiguration alarmConfiguration) {
+        setAlarmConfiguration(alarmConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information for an automatic rollback configuration that is added or
+     * changed when a deployment group is updated.
+     * </p>
+     * 
+     * @param autoRollbackConfiguration
+     *        Information for an automatic rollback configuration that is added
+     *        or changed when a deployment group is updated.
+     */
+
+    public void setAutoRollbackConfiguration(
+            AutoRollbackConfiguration autoRollbackConfiguration) {
+        this.autoRollbackConfiguration = autoRollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information for an automatic rollback configuration that is added or
+     * changed when a deployment group is updated.
+     * </p>
+     * 
+     * @return Information for an automatic rollback configuration that is added
+     *         or changed when a deployment group is updated.
+     */
+
+    public AutoRollbackConfiguration getAutoRollbackConfiguration() {
+        return this.autoRollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information for an automatic rollback configuration that is added or
+     * changed when a deployment group is updated.
+     * </p>
+     * 
+     * @param autoRollbackConfiguration
+     *        Information for an automatic rollback configuration that is added
+     *        or changed when a deployment group is updated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UpdateDeploymentGroupRequest withAutoRollbackConfiguration(
+            AutoRollbackConfiguration autoRollbackConfiguration) {
+        setAutoRollbackConfiguration(autoRollbackConfiguration);
         return this;
     }
 
@@ -729,7 +867,13 @@ public class UpdateDeploymentGroupRequest extends
         if (getServiceRoleArn() != null)
             sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
         if (getTriggerConfigurations() != null)
-            sb.append("TriggerConfigurations: " + getTriggerConfigurations());
+            sb.append("TriggerConfigurations: " + getTriggerConfigurations()
+                    + ",");
+        if (getAlarmConfiguration() != null)
+            sb.append("AlarmConfiguration: " + getAlarmConfiguration() + ",");
+        if (getAutoRollbackConfiguration() != null)
+            sb.append("AutoRollbackConfiguration: "
+                    + getAutoRollbackConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -803,6 +947,20 @@ public class UpdateDeploymentGroupRequest extends
                 && other.getTriggerConfigurations().equals(
                         this.getTriggerConfigurations()) == false)
             return false;
+        if (other.getAlarmConfiguration() == null
+                ^ this.getAlarmConfiguration() == null)
+            return false;
+        if (other.getAlarmConfiguration() != null
+                && other.getAlarmConfiguration().equals(
+                        this.getAlarmConfiguration()) == false)
+            return false;
+        if (other.getAutoRollbackConfiguration() == null
+                ^ this.getAutoRollbackConfiguration() == null)
+            return false;
+        if (other.getAutoRollbackConfiguration() != null
+                && other.getAutoRollbackConfiguration().equals(
+                        this.getAutoRollbackConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -847,6 +1005,14 @@ public class UpdateDeploymentGroupRequest extends
                 * hashCode
                 + ((getTriggerConfigurations() == null) ? 0
                         : getTriggerConfigurations().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAlarmConfiguration() == null) ? 0
+                        : getAlarmConfiguration().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAutoRollbackConfiguration() == null) ? 0
+                        : getAutoRollbackConfiguration().hashCode());
         return hashCode;
     }
 

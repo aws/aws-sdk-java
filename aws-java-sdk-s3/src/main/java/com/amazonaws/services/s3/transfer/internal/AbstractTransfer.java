@@ -121,10 +121,6 @@ public abstract class AbstractTransfer implements Transfer {
      */
     public AmazonClientException waitForException() throws InterruptedException {
         try {
-
-            while (!monitor.isDone()) {
-                monitor.getFuture().get();
-            }
             monitor.getFuture().get();
             return null;
         } catch (ExecutionException e) {

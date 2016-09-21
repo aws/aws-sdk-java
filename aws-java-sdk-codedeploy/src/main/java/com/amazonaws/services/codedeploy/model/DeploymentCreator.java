@@ -20,7 +20,8 @@ package com.amazonaws.services.codedeploy.model;
 public enum DeploymentCreator {
 
     User("user"),
-    Autoscaling("autoscaling");
+    Autoscaling("autoscaling"),
+    CodeDeployRollback("codeDeployRollback");
 
     private String value;
 

@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DescribeEventsRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -39,14 +38,30 @@ public class DescribeEventsRequest extends
      * provided.
      * </p>
      * <ul>
-     * <li>Specify a cluster identifier when <i>SourceType</i> is
-     * <code>cluster</code>.</li>
-     * <li>Specify a cluster security group name when <i>SourceType</i> is
-     * <code>cluster-security-group</code>.</li>
-     * <li>Specify a cluster parameter group name when <i>SourceType</i> is
-     * <code>cluster-parameter-group</code>.</li>
-     * <li>Specify a cluster snapshot identifier when <i>SourceType</i> is
-     * <code>cluster-snapshot</code>.</li>
+     * <li>
+     * <p>
+     * Specify a cluster identifier when <i>SourceType</i> is
+     * <code>cluster</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify a cluster security group name when <i>SourceType</i> is
+     * <code>cluster-security-group</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify a cluster parameter group name when <i>SourceType</i> is
+     * <code>cluster-parameter-group</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify a cluster snapshot identifier when <i>SourceType</i> is
+     * <code>cluster-snapshot</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String sourceIdentifier;
@@ -63,14 +78,30 @@ public class DescribeEventsRequest extends
      * provided.
      * </p>
      * <ul>
-     * <li>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a
-     * cluster identifier.</li>
-     * <li>Specify <code>cluster-security-group</code> when
-     * <i>SourceIdentifier</i> is a cluster security group name.</li>
-     * <li>Specify <code>cluster-parameter-group</code> when
-     * <i>SourceIdentifier</i> is a cluster parameter group name.</li>
-     * <li>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is
-     * a cluster snapshot identifier.</li>
+     * <li>
+     * <p>
+     * Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster
+     * identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i>
+     * is a cluster security group name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i>
+     * is a cluster parameter group name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a
+     * cluster snapshot identifier.
+     * </p>
+     * </li>
      * </ul>
      */
     private String sourceType;
@@ -150,20 +181,36 @@ public class DescribeEventsRequest extends
      * provided.
      * </p>
      * <ul>
-     * <li>Specify a cluster identifier when <i>SourceType</i> is
-     * <code>cluster</code>.</li>
-     * <li>Specify a cluster security group name when <i>SourceType</i> is
-     * <code>cluster-security-group</code>.</li>
-     * <li>Specify a cluster parameter group name when <i>SourceType</i> is
-     * <code>cluster-parameter-group</code>.</li>
-     * <li>Specify a cluster snapshot identifier when <i>SourceType</i> is
-     * <code>cluster-snapshot</code>.</li>
+     * <li>
+     * <p>
+     * Specify a cluster identifier when <i>SourceType</i> is
+     * <code>cluster</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify a cluster security group name when <i>SourceType</i> is
+     * <code>cluster-security-group</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify a cluster parameter group name when <i>SourceType</i> is
+     * <code>cluster-parameter-group</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify a cluster snapshot identifier when <i>SourceType</i> is
+     * <code>cluster-snapshot</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceIdentifier
      *        The identifier of the event source for which events will be
      *        returned. If this parameter is not specified, then all sources are
-     *        included in the response. </p>
+     *        included in the response.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -172,14 +219,30 @@ public class DescribeEventsRequest extends
      *        also be provided.
      *        </p>
      *        <ul>
-     *        <li>Specify a cluster identifier when <i>SourceType</i> is
-     *        <code>cluster</code>.</li>
-     *        <li>Specify a cluster security group name when <i>SourceType</i>
-     *        is <code>cluster-security-group</code>.</li>
-     *        <li>Specify a cluster parameter group name when <i>SourceType</i>
-     *        is <code>cluster-parameter-group</code>.</li>
-     *        <li>Specify a cluster snapshot identifier when <i>SourceType</i>
-     *        is <code>cluster-snapshot</code>.</li>
+     *        <li>
+     *        <p>
+     *        Specify a cluster identifier when <i>SourceType</i> is
+     *        <code>cluster</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify a cluster security group name when <i>SourceType</i> is
+     *        <code>cluster-security-group</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify a cluster parameter group name when <i>SourceType</i> is
+     *        <code>cluster-parameter-group</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify a cluster snapshot identifier when <i>SourceType</i> is
+     *        <code>cluster-snapshot</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setSourceIdentifier(String sourceIdentifier) {
@@ -200,19 +263,35 @@ public class DescribeEventsRequest extends
      * provided.
      * </p>
      * <ul>
-     * <li>Specify a cluster identifier when <i>SourceType</i> is
-     * <code>cluster</code>.</li>
-     * <li>Specify a cluster security group name when <i>SourceType</i> is
-     * <code>cluster-security-group</code>.</li>
-     * <li>Specify a cluster parameter group name when <i>SourceType</i> is
-     * <code>cluster-parameter-group</code>.</li>
-     * <li>Specify a cluster snapshot identifier when <i>SourceType</i> is
-     * <code>cluster-snapshot</code>.</li>
+     * <li>
+     * <p>
+     * Specify a cluster identifier when <i>SourceType</i> is
+     * <code>cluster</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify a cluster security group name when <i>SourceType</i> is
+     * <code>cluster-security-group</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify a cluster parameter group name when <i>SourceType</i> is
+     * <code>cluster-parameter-group</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify a cluster snapshot identifier when <i>SourceType</i> is
+     * <code>cluster-snapshot</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the event source for which events will be
      *         returned. If this parameter is not specified, then all sources
-     *         are included in the response. </p>
+     *         are included in the response.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -221,14 +300,30 @@ public class DescribeEventsRequest extends
      *         also be provided.
      *         </p>
      *         <ul>
-     *         <li>Specify a cluster identifier when <i>SourceType</i> is
-     *         <code>cluster</code>.</li>
-     *         <li>Specify a cluster security group name when <i>SourceType</i>
-     *         is <code>cluster-security-group</code>.</li>
-     *         <li>Specify a cluster parameter group name when <i>SourceType</i>
-     *         is <code>cluster-parameter-group</code>.</li>
-     *         <li>Specify a cluster snapshot identifier when <i>SourceType</i>
-     *         is <code>cluster-snapshot</code>.</li>
+     *         <li>
+     *         <p>
+     *         Specify a cluster identifier when <i>SourceType</i> is
+     *         <code>cluster</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify a cluster security group name when <i>SourceType</i> is
+     *         <code>cluster-security-group</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify a cluster parameter group name when <i>SourceType</i> is
+     *         <code>cluster-parameter-group</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify a cluster snapshot identifier when <i>SourceType</i> is
+     *         <code>cluster-snapshot</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getSourceIdentifier() {
@@ -249,20 +344,36 @@ public class DescribeEventsRequest extends
      * provided.
      * </p>
      * <ul>
-     * <li>Specify a cluster identifier when <i>SourceType</i> is
-     * <code>cluster</code>.</li>
-     * <li>Specify a cluster security group name when <i>SourceType</i> is
-     * <code>cluster-security-group</code>.</li>
-     * <li>Specify a cluster parameter group name when <i>SourceType</i> is
-     * <code>cluster-parameter-group</code>.</li>
-     * <li>Specify a cluster snapshot identifier when <i>SourceType</i> is
-     * <code>cluster-snapshot</code>.</li>
+     * <li>
+     * <p>
+     * Specify a cluster identifier when <i>SourceType</i> is
+     * <code>cluster</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify a cluster security group name when <i>SourceType</i> is
+     * <code>cluster-security-group</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify a cluster parameter group name when <i>SourceType</i> is
+     * <code>cluster-parameter-group</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify a cluster snapshot identifier when <i>SourceType</i> is
+     * <code>cluster-snapshot</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceIdentifier
      *        The identifier of the event source for which events will be
      *        returned. If this parameter is not specified, then all sources are
-     *        included in the response. </p>
+     *        included in the response.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -271,14 +382,30 @@ public class DescribeEventsRequest extends
      *        also be provided.
      *        </p>
      *        <ul>
-     *        <li>Specify a cluster identifier when <i>SourceType</i> is
-     *        <code>cluster</code>.</li>
-     *        <li>Specify a cluster security group name when <i>SourceType</i>
-     *        is <code>cluster-security-group</code>.</li>
-     *        <li>Specify a cluster parameter group name when <i>SourceType</i>
-     *        is <code>cluster-parameter-group</code>.</li>
-     *        <li>Specify a cluster snapshot identifier when <i>SourceType</i>
-     *        is <code>cluster-snapshot</code>.</li>
+     *        <li>
+     *        <p>
+     *        Specify a cluster identifier when <i>SourceType</i> is
+     *        <code>cluster</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify a cluster security group name when <i>SourceType</i> is
+     *        <code>cluster-security-group</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify a cluster parameter group name when <i>SourceType</i> is
+     *        <code>cluster-parameter-group</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify a cluster snapshot identifier when <i>SourceType</i> is
+     *        <code>cluster-snapshot</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -301,19 +428,35 @@ public class DescribeEventsRequest extends
      * provided.
      * </p>
      * <ul>
-     * <li>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a
-     * cluster identifier.</li>
-     * <li>Specify <code>cluster-security-group</code> when
-     * <i>SourceIdentifier</i> is a cluster security group name.</li>
-     * <li>Specify <code>cluster-parameter-group</code> when
-     * <i>SourceIdentifier</i> is a cluster parameter group name.</li>
-     * <li>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is
-     * a cluster snapshot identifier.</li>
+     * <li>
+     * <p>
+     * Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster
+     * identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i>
+     * is a cluster security group name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i>
+     * is a cluster parameter group name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a
+     * cluster snapshot identifier.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceType
      *        The event source to retrieve events for. If no value is specified,
-     *        all events are returned. </p>
+     *        all events are returned.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -322,14 +465,30 @@ public class DescribeEventsRequest extends
      *        also be provided.
      *        </p>
      *        <ul>
-     *        <li>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a
-     *        cluster identifier.</li>
-     *        <li>Specify <code>cluster-security-group</code> when
-     *        <i>SourceIdentifier</i> is a cluster security group name.</li>
-     *        <li>Specify <code>cluster-parameter-group</code> when
-     *        <i>SourceIdentifier</i> is a cluster parameter group name.</li>
-     *        <li>Specify <code>cluster-snapshot</code> when
-     *        <i>SourceIdentifier</i> is a cluster snapshot identifier.</li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster</code> when <i>SourceIdentifier</i> is a
+     *        cluster identifier.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster-security-group</code> when
+     *        <i>SourceIdentifier</i> is a cluster security group name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster-parameter-group</code> when
+     *        <i>SourceIdentifier</i> is a cluster parameter group name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i>
+     *        is a cluster snapshot identifier.
+     *        </p>
+     *        </li>
      * @see SourceType
      */
 
@@ -350,18 +509,34 @@ public class DescribeEventsRequest extends
      * provided.
      * </p>
      * <ul>
-     * <li>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a
-     * cluster identifier.</li>
-     * <li>Specify <code>cluster-security-group</code> when
-     * <i>SourceIdentifier</i> is a cluster security group name.</li>
-     * <li>Specify <code>cluster-parameter-group</code> when
-     * <i>SourceIdentifier</i> is a cluster parameter group name.</li>
-     * <li>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is
-     * a cluster snapshot identifier.</li>
+     * <li>
+     * <p>
+     * Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster
+     * identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i>
+     * is a cluster security group name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i>
+     * is a cluster parameter group name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a
+     * cluster snapshot identifier.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The event source to retrieve events for. If no value is
-     *         specified, all events are returned. </p>
+     *         specified, all events are returned.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -370,14 +545,30 @@ public class DescribeEventsRequest extends
      *         also be provided.
      *         </p>
      *         <ul>
-     *         <li>Specify <code>cluster</code> when <i>SourceIdentifier</i> is
-     *         a cluster identifier.</li>
-     *         <li>Specify <code>cluster-security-group</code> when
-     *         <i>SourceIdentifier</i> is a cluster security group name.</li>
-     *         <li>Specify <code>cluster-parameter-group</code> when
-     *         <i>SourceIdentifier</i> is a cluster parameter group name.</li>
-     *         <li>Specify <code>cluster-snapshot</code> when
-     *         <i>SourceIdentifier</i> is a cluster snapshot identifier.</li>
+     *         <li>
+     *         <p>
+     *         Specify <code>cluster</code> when <i>SourceIdentifier</i> is a
+     *         cluster identifier.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify <code>cluster-security-group</code> when
+     *         <i>SourceIdentifier</i> is a cluster security group name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify <code>cluster-parameter-group</code> when
+     *         <i>SourceIdentifier</i> is a cluster parameter group name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify <code>cluster-snapshot</code> when
+     *         <i>SourceIdentifier</i> is a cluster snapshot identifier.
+     *         </p>
+     *         </li>
      * @see SourceType
      */
 
@@ -398,19 +589,35 @@ public class DescribeEventsRequest extends
      * provided.
      * </p>
      * <ul>
-     * <li>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a
-     * cluster identifier.</li>
-     * <li>Specify <code>cluster-security-group</code> when
-     * <i>SourceIdentifier</i> is a cluster security group name.</li>
-     * <li>Specify <code>cluster-parameter-group</code> when
-     * <i>SourceIdentifier</i> is a cluster parameter group name.</li>
-     * <li>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is
-     * a cluster snapshot identifier.</li>
+     * <li>
+     * <p>
+     * Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster
+     * identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i>
+     * is a cluster security group name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i>
+     * is a cluster parameter group name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a
+     * cluster snapshot identifier.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceType
      *        The event source to retrieve events for. If no value is specified,
-     *        all events are returned. </p>
+     *        all events are returned.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -419,14 +626,30 @@ public class DescribeEventsRequest extends
      *        also be provided.
      *        </p>
      *        <ul>
-     *        <li>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a
-     *        cluster identifier.</li>
-     *        <li>Specify <code>cluster-security-group</code> when
-     *        <i>SourceIdentifier</i> is a cluster security group name.</li>
-     *        <li>Specify <code>cluster-parameter-group</code> when
-     *        <i>SourceIdentifier</i> is a cluster parameter group name.</li>
-     *        <li>Specify <code>cluster-snapshot</code> when
-     *        <i>SourceIdentifier</i> is a cluster snapshot identifier.</li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster</code> when <i>SourceIdentifier</i> is a
+     *        cluster identifier.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster-security-group</code> when
+     *        <i>SourceIdentifier</i> is a cluster security group name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster-parameter-group</code> when
+     *        <i>SourceIdentifier</i> is a cluster parameter group name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i>
+     *        is a cluster snapshot identifier.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see SourceType
@@ -450,19 +673,35 @@ public class DescribeEventsRequest extends
      * provided.
      * </p>
      * <ul>
-     * <li>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a
-     * cluster identifier.</li>
-     * <li>Specify <code>cluster-security-group</code> when
-     * <i>SourceIdentifier</i> is a cluster security group name.</li>
-     * <li>Specify <code>cluster-parameter-group</code> when
-     * <i>SourceIdentifier</i> is a cluster parameter group name.</li>
-     * <li>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is
-     * a cluster snapshot identifier.</li>
+     * <li>
+     * <p>
+     * Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster
+     * identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i>
+     * is a cluster security group name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i>
+     * is a cluster parameter group name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a
+     * cluster snapshot identifier.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceType
      *        The event source to retrieve events for. If no value is specified,
-     *        all events are returned. </p>
+     *        all events are returned.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -471,14 +710,30 @@ public class DescribeEventsRequest extends
      *        also be provided.
      *        </p>
      *        <ul>
-     *        <li>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a
-     *        cluster identifier.</li>
-     *        <li>Specify <code>cluster-security-group</code> when
-     *        <i>SourceIdentifier</i> is a cluster security group name.</li>
-     *        <li>Specify <code>cluster-parameter-group</code> when
-     *        <i>SourceIdentifier</i> is a cluster parameter group name.</li>
-     *        <li>Specify <code>cluster-snapshot</code> when
-     *        <i>SourceIdentifier</i> is a cluster snapshot identifier.</li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster</code> when <i>SourceIdentifier</i> is a
+     *        cluster identifier.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster-security-group</code> when
+     *        <i>SourceIdentifier</i> is a cluster security group name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster-parameter-group</code> when
+     *        <i>SourceIdentifier</i> is a cluster parameter group name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i>
+     *        is a cluster snapshot identifier.
+     *        </p>
+     *        </li>
      * @see SourceType
      */
 
@@ -499,19 +754,35 @@ public class DescribeEventsRequest extends
      * provided.
      * </p>
      * <ul>
-     * <li>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a
-     * cluster identifier.</li>
-     * <li>Specify <code>cluster-security-group</code> when
-     * <i>SourceIdentifier</i> is a cluster security group name.</li>
-     * <li>Specify <code>cluster-parameter-group</code> when
-     * <i>SourceIdentifier</i> is a cluster parameter group name.</li>
-     * <li>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is
-     * a cluster snapshot identifier.</li>
+     * <li>
+     * <p>
+     * Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster
+     * identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i>
+     * is a cluster security group name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i>
+     * is a cluster parameter group name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a
+     * cluster snapshot identifier.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceType
      *        The event source to retrieve events for. If no value is specified,
-     *        all events are returned. </p>
+     *        all events are returned.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -520,14 +791,30 @@ public class DescribeEventsRequest extends
      *        also be provided.
      *        </p>
      *        <ul>
-     *        <li>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a
-     *        cluster identifier.</li>
-     *        <li>Specify <code>cluster-security-group</code> when
-     *        <i>SourceIdentifier</i> is a cluster security group name.</li>
-     *        <li>Specify <code>cluster-parameter-group</code> when
-     *        <i>SourceIdentifier</i> is a cluster parameter group name.</li>
-     *        <li>Specify <code>cluster-snapshot</code> when
-     *        <i>SourceIdentifier</i> is a cluster snapshot identifier.</li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster</code> when <i>SourceIdentifier</i> is a
+     *        cluster identifier.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster-security-group</code> when
+     *        <i>SourceIdentifier</i> is a cluster security group name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster-parameter-group</code> when
+     *        <i>SourceIdentifier</i> is a cluster parameter group name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i>
+     *        is a cluster snapshot identifier.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see SourceType
@@ -697,7 +984,7 @@ public class DescribeEventsRequest extends
      *        The number of minutes prior to the time of the request for which
      *        to retrieve events. For example, if the request is sent at 18:00
      *        and you specify a duration of 60, then only events which have
-     *        occurred after 17:00 will be returned. </p>
+     *        occurred after 17:00 will be returned.</p>
      *        <p>
      *        Default: <code>60</code>
      */
@@ -720,7 +1007,7 @@ public class DescribeEventsRequest extends
      * @return The number of minutes prior to the time of the request for which
      *         to retrieve events. For example, if the request is sent at 18:00
      *         and you specify a duration of 60, then only events which have
-     *         occurred after 17:00 will be returned. </p>
+     *         occurred after 17:00 will be returned.</p>
      *         <p>
      *         Default: <code>60</code>
      */
@@ -744,7 +1031,7 @@ public class DescribeEventsRequest extends
      *        The number of minutes prior to the time of the request for which
      *        to retrieve events. For example, if the request is sent at 18:00
      *        and you specify a duration of 60, then only events which have
-     *        occurred after 17:00 will be returned. </p>
+     *        occurred after 17:00 will be returned.</p>
      *        <p>
      *        Default: <code>60</code>
      * @return Returns a reference to this object so that method calls can be

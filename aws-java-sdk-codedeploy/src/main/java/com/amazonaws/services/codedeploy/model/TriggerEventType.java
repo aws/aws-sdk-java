@@ -23,6 +23,7 @@ public enum TriggerEventType {
     DeploymentSuccess("DeploymentSuccess"),
     DeploymentFailure("DeploymentFailure"),
     DeploymentStop("DeploymentStop"),
+    DeploymentRollback("DeploymentRollback"),
     InstanceStart("InstanceStart"),
     InstanceSuccess("InstanceSuccess"),
     InstanceFailure("InstanceFailure");

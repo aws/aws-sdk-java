@@ -162,13 +162,13 @@ public class DBSnapshot implements Serializable, Cloneable {
     private String sourceDBSnapshotIdentifier;
     /**
      * <p>
-     * Specifies the storage type associated with DB Snapshot.
+     * Specifies the storage type associated with DB snapshot.
      * </p>
      */
     private String storageType;
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE
+     * The ARN from the key store with which to associate the instance for TDE
      * encryption.
      * </p>
      */
@@ -192,6 +192,15 @@ public class DBSnapshot implements Serializable, Cloneable {
      * </p>
      */
     private String dBSnapshotArn;
+    /**
+     * <p>
+     * The time zone of the DB snapshot. In most cases, the
+     * <code>Timezone</code> element is empty. <code>Timezone</code> content
+     * appears only for snapshots taken from Microsoft SQL Server DB instances
+     * that were created with a time zone specified.
+     * </p>
+     */
+    private String timezone;
 
     /**
      * <p>
@@ -1017,11 +1026,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage type associated with DB Snapshot.
+     * Specifies the storage type associated with DB snapshot.
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type associated with DB Snapshot.
+     *        Specifies the storage type associated with DB snapshot.
      */
 
     public void setStorageType(String storageType) {
@@ -1030,10 +1039,10 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage type associated with DB Snapshot.
+     * Specifies the storage type associated with DB snapshot.
      * </p>
      * 
-     * @return Specifies the storage type associated with DB Snapshot.
+     * @return Specifies the storage type associated with DB snapshot.
      */
 
     public String getStorageType() {
@@ -1042,11 +1051,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage type associated with DB Snapshot.
+     * Specifies the storage type associated with DB snapshot.
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type associated with DB Snapshot.
+     *        Specifies the storage type associated with DB snapshot.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1058,12 +1067,12 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE
+     * The ARN from the key store with which to associate the instance for TDE
      * encryption.
      * </p>
      * 
      * @param tdeCredentialArn
-     *        The ARN from the Key Store with which to associate the instance
+     *        The ARN from the key store with which to associate the instance
      *        for TDE encryption.
      */
 
@@ -1073,11 +1082,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE
+     * The ARN from the key store with which to associate the instance for TDE
      * encryption.
      * </p>
      * 
-     * @return The ARN from the Key Store with which to associate the instance
+     * @return The ARN from the key store with which to associate the instance
      *         for TDE encryption.
      */
 
@@ -1087,12 +1096,12 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE
+     * The ARN from the key store with which to associate the instance for TDE
      * encryption.
      * </p>
      * 
      * @param tdeCredentialArn
-     *        The ARN from the Key Store with which to associate the instance
+     *        The ARN from the key store with which to associate the instance
      *        for TDE encryption.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -1245,6 +1254,65 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time zone of the DB snapshot. In most cases, the
+     * <code>Timezone</code> element is empty. <code>Timezone</code> content
+     * appears only for snapshots taken from Microsoft SQL Server DB instances
+     * that were created with a time zone specified.
+     * </p>
+     * 
+     * @param timezone
+     *        The time zone of the DB snapshot. In most cases, the
+     *        <code>Timezone</code> element is empty. <code>Timezone</code>
+     *        content appears only for snapshots taken from Microsoft SQL Server
+     *        DB instances that were created with a time zone specified.
+     */
+
+    public void setTimezone(String timezone) {
+        this.timezone = timezone;
+    }
+
+    /**
+     * <p>
+     * The time zone of the DB snapshot. In most cases, the
+     * <code>Timezone</code> element is empty. <code>Timezone</code> content
+     * appears only for snapshots taken from Microsoft SQL Server DB instances
+     * that were created with a time zone specified.
+     * </p>
+     * 
+     * @return The time zone of the DB snapshot. In most cases, the
+     *         <code>Timezone</code> element is empty. <code>Timezone</code>
+     *         content appears only for snapshots taken from Microsoft SQL
+     *         Server DB instances that were created with a time zone specified.
+     */
+
+    public String getTimezone() {
+        return this.timezone;
+    }
+
+    /**
+     * <p>
+     * The time zone of the DB snapshot. In most cases, the
+     * <code>Timezone</code> element is empty. <code>Timezone</code> content
+     * appears only for snapshots taken from Microsoft SQL Server DB instances
+     * that were created with a time zone specified.
+     * </p>
+     * 
+     * @param timezone
+     *        The time zone of the DB snapshot. In most cases, the
+     *        <code>Timezone</code> element is empty. <code>Timezone</code>
+     *        content appears only for snapshots taken from Microsoft SQL Server
+     *        DB instances that were created with a time zone specified.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBSnapshot withTimezone(String timezone) {
+        setTimezone(timezone);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1306,7 +1374,9 @@ public class DBSnapshot implements Serializable, Cloneable {
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: " + getKmsKeyId() + ",");
         if (getDBSnapshotArn() != null)
-            sb.append("DBSnapshotArn: " + getDBSnapshotArn());
+            sb.append("DBSnapshotArn: " + getDBSnapshotArn() + ",");
+        if (getTimezone() != null)
+            sb.append("Timezone: " + getTimezone());
         sb.append("}");
         return sb.toString();
     }
@@ -1460,6 +1530,11 @@ public class DBSnapshot implements Serializable, Cloneable {
         if (other.getDBSnapshotArn() != null
                 && other.getDBSnapshotArn().equals(this.getDBSnapshotArn()) == false)
             return false;
+        if (other.getTimezone() == null ^ this.getTimezone() == null)
+            return false;
+        if (other.getTimezone() != null
+                && other.getTimezone().equals(this.getTimezone()) == false)
+            return false;
         return true;
     }
 
@@ -1549,6 +1624,8 @@ public class DBSnapshot implements Serializable, Cloneable {
                 * hashCode
                 + ((getDBSnapshotArn() == null) ? 0 : getDBSnapshotArn()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         return hashCode;
     }
 

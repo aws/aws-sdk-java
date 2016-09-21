@@ -21,6 +21,7 @@ import java.lang.reflect.Method;
 public class StandardModelFactoriesOverrideTest extends StandardModelFactoriesV2Test {
 
     private final DynamoDBMapperConfig config = new DynamoDBMapperConfig.Builder()
+        .withTypeConverterFactory(DynamoDBMapperConfig.DEFAULT.getTypeConverterFactory())
         .withConversionSchema(ConversionSchemas.v2Builder("V2Override").build())
         .build();
 
@@ -29,7 +30,7 @@ public class StandardModelFactoriesOverrideTest extends StandardModelFactoriesV2
 
     @Override
     protected <T> AttributeValue convert(Class<T> clazz, Method getter, Object value) {
-        final StandardAnnotationMaps.FieldMap<T,Object> map = StandardAnnotationMaps.of(clazz, getter);
+        final StandardAnnotationMaps.FieldTypedMap<Object> map = StandardAnnotationMaps.of(getter, null);
         return models.getTableModel(clazz).field(map.attributeName()).convert(value);
     }
 

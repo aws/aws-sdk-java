@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class CreateClusterSnapshotRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -34,10 +33,26 @@ public class CreateClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
@@ -66,10 +81,26 @@ public class CreateClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
@@ -78,15 +109,31 @@ public class CreateClusterSnapshotRequest extends
      * @param snapshotIdentifier
      *        A unique identifier for the snapshot that you are requesting. This
      *        identifier must be unique for all snapshots within the AWS
-     *        account. </p>
+     *        account.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot be null, empty, or blank</li>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Cannot be null, empty, or blank
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-snapshot-id</code>
@@ -105,10 +152,26 @@ public class CreateClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
@@ -116,16 +179,31 @@ public class CreateClusterSnapshotRequest extends
      * 
      * @return A unique identifier for the snapshot that you are requesting.
      *         This identifier must be unique for all snapshots within the AWS
-     *         account. </p>
+     *         account.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Cannot be null, empty, or blank</li>
-     *         <li>Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         <li>
+     *         <p>
+     *         Cannot be null, empty, or blank
+     *         </p>
      *         </li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>my-snapshot-id</code>
@@ -144,10 +222,26 @@ public class CreateClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
@@ -156,15 +250,31 @@ public class CreateClusterSnapshotRequest extends
      * @param snapshotIdentifier
      *        A unique identifier for the snapshot that you are requesting. This
      *        identifier must be unique for all snapshots within the AWS
-     *        account. </p>
+     *        account.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot be null, empty, or blank</li>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Cannot be null, empty, or blank
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-snapshot-id</code>

@@ -87,20 +87,17 @@ final class DynamoDBMappingsRegistry {
         private Mapping(final Bean<Object,Object> bean) {
             this.bean = bean;
         }
-        final Bean<Object,Object> bean() {
-            return this.bean;
-        }
         final Method getter() {
-            return bean.getter();
+            return bean.type().getter();
         }
         final boolean isPrimaryKey() {
-            return bean.keyType() != null;
+            return bean.properties().keyType() != null;
         }
         final boolean isVersion() {
-            return bean.versioned();
+            return bean.properties().versioned();
         }
         final String getAttributeName() {
-            return bean.attributeName();
+            return bean.properties().attributeName();
         }
     }
 

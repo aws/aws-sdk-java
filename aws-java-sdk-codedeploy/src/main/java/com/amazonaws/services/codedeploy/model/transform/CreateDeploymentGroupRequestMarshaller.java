@@ -150,6 +150,21 @@ public class CreateDeploymentGroupRequestMarshaller
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (createDeploymentGroupRequest.getAlarmConfiguration() != null) {
+                jsonGenerator.writeFieldName("alarmConfiguration");
+                AlarmConfigurationJsonMarshaller.getInstance().marshall(
+                        createDeploymentGroupRequest.getAlarmConfiguration(),
+                        jsonGenerator);
+            }
+            if (createDeploymentGroupRequest.getAutoRollbackConfiguration() != null) {
+                jsonGenerator.writeFieldName("autoRollbackConfiguration");
+                AutoRollbackConfigurationJsonMarshaller
+                        .getInstance()
+                        .marshall(
+                                createDeploymentGroupRequest
+                                        .getAutoRollbackConfiguration(),
+                                jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
 

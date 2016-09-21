@@ -22,33 +22,21 @@ import java.lang.annotation.Target;
 /**
  * Annotation for flattening a complex type.
  *
- * A minimal example using getter annotations,
  * <pre class="brush: java">
- * &#064;DynamoDBTable(tableName=&quot;TestTable&quot;)
- * public class TestClass {
- *     private String key;
- *     private DateRange effectiveRange;
- *     private DateRange extensionRange;
+ * &#064;DynamoDBFlattened(attributes={
+ *     &#064;DynamoDBAttribute(mappedBy=&quot;start&quot;, attributeName=&quot;effectiveStartDate&quot;),
+ *     &#064;DynamoDBAttribute(mappedBy=&quot;end&quot;, attributeName=&quot;effectiveEndDate&quot;)})
+ * public DateRange getEffectiveRange() { return effectiveRange; }
+ * public void setEffectiveRange(DateRange effectiveRange) { this.effectiveRange = effectiveRange; }
  *
- *     &#064;DynamoDBHashKey
- *     public String getKey() { return key; }
- *     public void setKey(String key) { this.key = key; }
- *
- *     &#064;DynamoDBFlattened(attributes={
- *         &#064;DynamoDBAttribute(mappedBy=&quot;start&quot;, attributeName=&quot;effectiveStartDate&quot;),
- *         &#064;DynamoDBAttribute(mappedBy=&quot;end&quot;, attributeName=&quot;effectiveEndDate&quot;)})
- *     public DateRange getEffectiveRange() { return effectiveRange; }
- *     public void setEffectiveRange(DateRange effectiveRange) { this.effectiveRange = effectiveRange; }
- *
- *     &#064;DynamoDBFlattened(attributes={
- *         &#064;DynamoDBAttribute(mappedBy=&quot;start&quot;, attributeName=&quot;extensionStartDate&quot;),
- *         &#064;DynamoDBAttribute(mappedBy=&quot;end&quot;, attributeName=&quot;extensionEndDate&quot;)})
- *     public DateRange getExtensionRange() { return extensionRange; }
- *     public void setExtensionRange(DateRange extensionRange) { this.extensionRange = extensionRange; }
- * }
+ * &#064;DynamoDBFlattened(attributes={
+ *     &#064;DynamoDBAttribute(mappedBy=&quot;start&quot;, attributeName=&quot;extensionStartDate&quot;),
+ *     &#064;DynamoDBAttribute(mappedBy=&quot;end&quot;, attributeName=&quot;extensionEndDate&quot;)})
+ * public DateRange getExtensionRange() { return extensionRange; }
+ * public void setExtensionRange(DateRange extensionRange) { this.extensionRange = extensionRange; }
  * </pre>
  *
- * With the following complex type to marshall,
+ * Where,
  * <pre class="brush: java">
  * public class DateRange {
  *     private Date start;
@@ -62,11 +50,13 @@ import java.lang.annotation.Target;
  * }
  * </pre>
  *
- * Attributes defined within the complex type may also be annotated.
+ * <p>Attributes defined within the complex type may also be annotated.</p>
+ *
+ * <p>May be used as a meta-annotation.</p>
  */
 @DynamoDB
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.FIELD, ElementType.METHOD})
+@Target({ElementType.TYPE, ElementType.FIELD, ElementType.METHOD, ElementType.ANNOTATION_TYPE})
 public @interface DynamoDBFlattened {
 
     /**

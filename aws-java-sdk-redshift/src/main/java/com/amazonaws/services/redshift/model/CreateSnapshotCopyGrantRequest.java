@@ -32,17 +32,35 @@ public class CreateSnapshotCopyGrantRequest extends
      * region for the AWS account.
      * </p>
      * <p>
-     * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String snapshotCopyGrantName;
     /**
@@ -66,32 +84,68 @@ public class CreateSnapshotCopyGrantRequest extends
      * region for the AWS account.
      * </p>
      * <p>
-     * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param snapshotCopyGrantName
      *        The name of the snapshot copy grant. This name must be unique in
      *        the region for the AWS account.</p>
      *        <p>
-     *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>Alphabetic characters must be lowercase.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *        <li>Must be unique for all clusters within an AWS account.</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alphabetic characters must be lowercase.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for all clusters within an AWS account.
+     *        </p>
+     *        </li>
      */
 
     public void setSnapshotCopyGrantName(String snapshotCopyGrantName) {
@@ -104,32 +158,67 @@ public class CreateSnapshotCopyGrantRequest extends
      * region for the AWS account.
      * </p>
      * <p>
-     * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The name of the snapshot copy grant. This name must be unique in
      *         the region for the AWS account.</p>
      *         <p>
-     *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         </p>
      *         </li>
-     *         <li>Alphabetic characters must be lowercase.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *         <li>Must be unique for all clusters within an AWS account.</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Alphabetic characters must be lowercase.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be unique for all clusters within an AWS account.
+     *         </p>
+     *         </li>
      */
 
     public String getSnapshotCopyGrantName() {
@@ -142,32 +231,68 @@ public class CreateSnapshotCopyGrantRequest extends
      * region for the AWS account.
      * </p>
      * <p>
-     * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param snapshotCopyGrantName
      *        The name of the snapshot copy grant. This name must be unique in
      *        the region for the AWS account.</p>
      *        <p>
-     *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>Alphabetic characters must be lowercase.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *        <li>Must be unique for all clusters within an AWS account.</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alphabetic characters must be lowercase.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for all clusters within an AWS account.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

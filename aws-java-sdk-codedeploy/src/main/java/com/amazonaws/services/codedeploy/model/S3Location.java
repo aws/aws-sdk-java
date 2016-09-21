@@ -42,9 +42,21 @@ public class S3Location implements Serializable, Cloneable {
      * The file type of the application revision. Must be one of the following:
      * </p>
      * <ul>
-     * <li>tar: A tar archive file.</li>
-     * <li>tgz: A compressed tar archive file.</li>
-     * <li>zip: A zip archive file.</li>
+     * <li>
+     * <p>
+     * tar: A tar archive file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * tgz: A compressed tar archive file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * zip: A zip archive file.
+     * </p>
+     * </li>
      * </ul>
      */
     private String bundleType;
@@ -170,18 +182,42 @@ public class S3Location implements Serializable, Cloneable {
      * The file type of the application revision. Must be one of the following:
      * </p>
      * <ul>
-     * <li>tar: A tar archive file.</li>
-     * <li>tgz: A compressed tar archive file.</li>
-     * <li>zip: A zip archive file.</li>
+     * <li>
+     * <p>
+     * tar: A tar archive file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * tgz: A compressed tar archive file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * zip: A zip archive file.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param bundleType
      *        The file type of the application revision. Must be one of the
      *        following:</p>
      *        <ul>
-     *        <li>tar: A tar archive file.</li>
-     *        <li>tgz: A compressed tar archive file.</li>
-     *        <li>zip: A zip archive file.</li>
+     *        <li>
+     *        <p>
+     *        tar: A tar archive file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        tgz: A compressed tar archive file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        zip: A zip archive file.
+     *        </p>
+     *        </li>
      * @see BundleType
      */
 
@@ -194,17 +230,41 @@ public class S3Location implements Serializable, Cloneable {
      * The file type of the application revision. Must be one of the following:
      * </p>
      * <ul>
-     * <li>tar: A tar archive file.</li>
-     * <li>tgz: A compressed tar archive file.</li>
-     * <li>zip: A zip archive file.</li>
+     * <li>
+     * <p>
+     * tar: A tar archive file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * tgz: A compressed tar archive file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * zip: A zip archive file.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The file type of the application revision. Must be one of the
      *         following:</p>
      *         <ul>
-     *         <li>tar: A tar archive file.</li>
-     *         <li>tgz: A compressed tar archive file.</li>
-     *         <li>zip: A zip archive file.</li>
+     *         <li>
+     *         <p>
+     *         tar: A tar archive file.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         tgz: A compressed tar archive file.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         zip: A zip archive file.
+     *         </p>
+     *         </li>
      * @see BundleType
      */
 
@@ -217,18 +277,42 @@ public class S3Location implements Serializable, Cloneable {
      * The file type of the application revision. Must be one of the following:
      * </p>
      * <ul>
-     * <li>tar: A tar archive file.</li>
-     * <li>tgz: A compressed tar archive file.</li>
-     * <li>zip: A zip archive file.</li>
+     * <li>
+     * <p>
+     * tar: A tar archive file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * tgz: A compressed tar archive file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * zip: A zip archive file.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param bundleType
      *        The file type of the application revision. Must be one of the
      *        following:</p>
      *        <ul>
-     *        <li>tar: A tar archive file.</li>
-     *        <li>tgz: A compressed tar archive file.</li>
-     *        <li>zip: A zip archive file.</li>
+     *        <li>
+     *        <p>
+     *        tar: A tar archive file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        tgz: A compressed tar archive file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        zip: A zip archive file.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see BundleType
@@ -244,18 +328,42 @@ public class S3Location implements Serializable, Cloneable {
      * The file type of the application revision. Must be one of the following:
      * </p>
      * <ul>
-     * <li>tar: A tar archive file.</li>
-     * <li>tgz: A compressed tar archive file.</li>
-     * <li>zip: A zip archive file.</li>
+     * <li>
+     * <p>
+     * tar: A tar archive file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * tgz: A compressed tar archive file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * zip: A zip archive file.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param bundleType
      *        The file type of the application revision. Must be one of the
      *        following:</p>
      *        <ul>
-     *        <li>tar: A tar archive file.</li>
-     *        <li>tgz: A compressed tar archive file.</li>
-     *        <li>zip: A zip archive file.</li>
+     *        <li>
+     *        <p>
+     *        tar: A tar archive file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        tgz: A compressed tar archive file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        zip: A zip archive file.
+     *        </p>
+     *        </li>
      * @see BundleType
      */
 
@@ -268,18 +376,42 @@ public class S3Location implements Serializable, Cloneable {
      * The file type of the application revision. Must be one of the following:
      * </p>
      * <ul>
-     * <li>tar: A tar archive file.</li>
-     * <li>tgz: A compressed tar archive file.</li>
-     * <li>zip: A zip archive file.</li>
+     * <li>
+     * <p>
+     * tar: A tar archive file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * tgz: A compressed tar archive file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * zip: A zip archive file.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param bundleType
      *        The file type of the application revision. Must be one of the
      *        following:</p>
      *        <ul>
-     *        <li>tar: A tar archive file.</li>
-     *        <li>tgz: A compressed tar archive file.</li>
-     *        <li>zip: A zip archive file.</li>
+     *        <li>
+     *        <p>
+     *        tar: A tar archive file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        tgz: A compressed tar archive file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        zip: A zip archive file.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see BundleType

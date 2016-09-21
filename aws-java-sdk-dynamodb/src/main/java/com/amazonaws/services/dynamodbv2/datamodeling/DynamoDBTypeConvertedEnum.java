@@ -29,51 +29,18 @@ import java.lang.annotation.Target;
  * ensure that all systems have the correct code to map it from the item
  * record in DynamoDB to your objects.
  *
- * A minimal example using getter annotations,
  * <pre class="brush: java">
- * &#064;DynamoDBTable(tableName=&quot;TestTable&quot;)
- * public class TestClass {
- *     public static enum Status { OPEN, PENDING, CLOSED }
+ * public static enum Status { OPEN, PENDING, CLOSED }
  *
- *     private String key;
- *     private Status status;
- *
- *     &#064;DynamoDBHashKey
- *     public String getKey() { return key; }
- *     public void setKey(String key) { this.key = key; }
- *
- *     &#064;DynamoDBTypeConvertedEnum
- *     public Status getStatus() { return status; }
- *     public void setStatus(Date status) { this.status = status; }
- * }
+ * &#064;DynamoDBTypeConvertedEnum
+ * public Status getStatus()
  * </pre>
  *
  * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverted
  */
-@DynamoDBTypeConverted(converter=DynamoDBTypeConvertedEnum.Converter.class)
+@DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.S)
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBTypeConvertedEnum {
-
-    /**
-     * Enumeration type converter.
-     */
-    static final class Converter<T extends Enum<T>> implements DynamoDBTypeConverter<String,T> {
-        private final DynamoDBTypeConverter<String,T> converter;
-
-        public Converter(final Class<T> targetType, final DynamoDBTypeConvertedEnum annotation) {
-            this.converter = StandardTypeConverters.Scalar.STRING.join(targetType);
-        }
-
-        @Override
-        public final String convert(final T object) {
-            return converter.convert(object);
-        }
-
-        @Override
-        public final T unconvert(final String object) {
-            return converter.unconvert(object);
-        }
-    }
 
 }

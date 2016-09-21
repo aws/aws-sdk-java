@@ -42,13 +42,21 @@ public class CreateDeploymentConfigRequest extends
      * The type parameter takes either of the following values:
      * </p>
      * <ul>
-     * <li>HOST_COUNT: The value parameter represents the minimum number of
-     * healthy instances as an absolute value.</li>
-     * <li>FLEET_PERCENT: The value parameter represents the minimum number of
+     * <li>
+     * <p>
+     * HOST_COUNT: The value parameter represents the minimum number of healthy
+     * instances as an absolute value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FLEET_PERCENT: The value parameter represents the minimum number of
      * healthy instances as a percentage of the total number of instances in the
      * deployment. If you specify FLEET_PERCENT, at the start of the deployment,
      * AWS CodeDeploy converts the percentage to the equivalent number of
-     * instance and rounds up fractional instances.</li>
+     * instance and rounds up fractional instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The value parameter takes an integer.
@@ -112,13 +120,21 @@ public class CreateDeploymentConfigRequest extends
      * The type parameter takes either of the following values:
      * </p>
      * <ul>
-     * <li>HOST_COUNT: The value parameter represents the minimum number of
-     * healthy instances as an absolute value.</li>
-     * <li>FLEET_PERCENT: The value parameter represents the minimum number of
+     * <li>
+     * <p>
+     * HOST_COUNT: The value parameter represents the minimum number of healthy
+     * instances as an absolute value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FLEET_PERCENT: The value parameter represents the minimum number of
      * healthy instances as a percentage of the total number of instances in the
      * deployment. If you specify FLEET_PERCENT, at the start of the deployment,
      * AWS CodeDeploy converts the percentage to the equivalent number of
-     * instance and rounds up fractional instances.</li>
+     * instance and rounds up fractional instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The value parameter takes an integer.
@@ -136,14 +152,22 @@ public class CreateDeploymentConfigRequest extends
      *        The type parameter takes either of the following values:
      *        </p>
      *        <ul>
-     *        <li>HOST_COUNT: The value parameter represents the minimum number
-     *        of healthy instances as an absolute value.</li>
-     *        <li>FLEET_PERCENT: The value parameter represents the minimum
-     *        number of healthy instances as a percentage of the total number of
+     *        <li>
+     *        <p>
+     *        HOST_COUNT: The value parameter represents the minimum number of
+     *        healthy instances as an absolute value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FLEET_PERCENT: The value parameter represents the minimum number
+     *        of healthy instances as a percentage of the total number of
      *        instances in the deployment. If you specify FLEET_PERCENT, at the
      *        start of the deployment, AWS CodeDeploy converts the percentage to
      *        the equivalent number of instance and rounds up fractional
-     *        instances.</li>
+     *        instances.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The value parameter takes an integer.
@@ -167,13 +191,21 @@ public class CreateDeploymentConfigRequest extends
      * The type parameter takes either of the following values:
      * </p>
      * <ul>
-     * <li>HOST_COUNT: The value parameter represents the minimum number of
-     * healthy instances as an absolute value.</li>
-     * <li>FLEET_PERCENT: The value parameter represents the minimum number of
+     * <li>
+     * <p>
+     * HOST_COUNT: The value parameter represents the minimum number of healthy
+     * instances as an absolute value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FLEET_PERCENT: The value parameter represents the minimum number of
      * healthy instances as a percentage of the total number of instances in the
      * deployment. If you specify FLEET_PERCENT, at the start of the deployment,
      * AWS CodeDeploy converts the percentage to the equivalent number of
-     * instance and rounds up fractional instances.</li>
+     * instance and rounds up fractional instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The value parameter takes an integer.
@@ -190,14 +222,22 @@ public class CreateDeploymentConfigRequest extends
      *         The type parameter takes either of the following values:
      *         </p>
      *         <ul>
-     *         <li>HOST_COUNT: The value parameter represents the minimum number
-     *         of healthy instances as an absolute value.</li>
-     *         <li>FLEET_PERCENT: The value parameter represents the minimum
-     *         number of healthy instances as a percentage of the total number
-     *         of instances in the deployment. If you specify FLEET_PERCENT, at
-     *         the start of the deployment, AWS CodeDeploy converts the
-     *         percentage to the equivalent number of instance and rounds up
-     *         fractional instances.</li>
+     *         <li>
+     *         <p>
+     *         HOST_COUNT: The value parameter represents the minimum number of
+     *         healthy instances as an absolute value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         FLEET_PERCENT: The value parameter represents the minimum number
+     *         of healthy instances as a percentage of the total number of
+     *         instances in the deployment. If you specify FLEET_PERCENT, at the
+     *         start of the deployment, AWS CodeDeploy converts the percentage
+     *         to the equivalent number of instance and rounds up fractional
+     *         instances.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         The value parameter takes an integer.
@@ -221,13 +261,21 @@ public class CreateDeploymentConfigRequest extends
      * The type parameter takes either of the following values:
      * </p>
      * <ul>
-     * <li>HOST_COUNT: The value parameter represents the minimum number of
-     * healthy instances as an absolute value.</li>
-     * <li>FLEET_PERCENT: The value parameter represents the minimum number of
+     * <li>
+     * <p>
+     * HOST_COUNT: The value parameter represents the minimum number of healthy
+     * instances as an absolute value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FLEET_PERCENT: The value parameter represents the minimum number of
      * healthy instances as a percentage of the total number of instances in the
      * deployment. If you specify FLEET_PERCENT, at the start of the deployment,
      * AWS CodeDeploy converts the percentage to the equivalent number of
-     * instance and rounds up fractional instances.</li>
+     * instance and rounds up fractional instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The value parameter takes an integer.
@@ -245,14 +293,22 @@ public class CreateDeploymentConfigRequest extends
      *        The type parameter takes either of the following values:
      *        </p>
      *        <ul>
-     *        <li>HOST_COUNT: The value parameter represents the minimum number
-     *        of healthy instances as an absolute value.</li>
-     *        <li>FLEET_PERCENT: The value parameter represents the minimum
-     *        number of healthy instances as a percentage of the total number of
+     *        <li>
+     *        <p>
+     *        HOST_COUNT: The value parameter represents the minimum number of
+     *        healthy instances as an absolute value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FLEET_PERCENT: The value parameter represents the minimum number
+     *        of healthy instances as a percentage of the total number of
      *        instances in the deployment. If you specify FLEET_PERCENT, at the
      *        start of the deployment, AWS CodeDeploy converts the percentage to
      *        the equivalent number of instance and rounds up fractional
-     *        instances.</li>
+     *        instances.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The value parameter takes an integer.

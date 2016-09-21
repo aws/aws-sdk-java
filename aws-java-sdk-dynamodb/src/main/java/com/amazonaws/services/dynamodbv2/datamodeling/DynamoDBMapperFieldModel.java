@@ -53,8 +53,9 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
 
     public static enum DynamoDBAttributeType { B, N, S, BS, NS, SS, BOOL, NULL, L, M; };
 
-    private final DynamoDBTypeConverter<AttributeValue,V> attributeValueConverter;
-    private final DynamoDBMapperFieldModel.Properties<T,V> properties;
+    private final DynamoDBMapperFieldModel.Properties<V> properties;
+    private final DynamoDBTypeConverter<AttributeValue,V> converter;
+    private final DynamoDBAttributeType attributeType;
     private final DynamoDBMapperFieldModel.Reflect<T,V> reflect;
 
     /**
@@ -62,17 +63,10 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
      * @param builder The builder.
      */
     private DynamoDBMapperFieldModel(final DynamoDBMapperFieldModel.Builder<T,V> builder) {
-        this.properties = new DynamoDBMapperFieldModel.Properties.Immutable<T,V>(builder);
-        this.attributeValueConverter = builder.attributeValueConverter;
+        this.properties = builder.properties;
+        this.converter = builder.converter;
+        this.attributeType = builder.attributeType;
         this.reflect = builder.reflect;
-    }
-
-    /**
-     * Gets the ID.
-     * @return The ID.
-     */
-    final DynamoDBMapperFieldModel.Id<T> id() {
-        return properties.id();
     }
 
     /**
@@ -88,7 +82,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
      */
     @Deprecated
     public DynamoDBAttributeType getDynamoDBAttributeType() {
-        return properties.attributeType();
+        return attributeType;
     }
 
     /**
@@ -105,11 +99,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
      * @return The value.
      */
     public final V get(final T object) {
-        try {
-            return reflect.get(object);
-        } catch (final RuntimeException e) {
-            throw new DynamoDBMappingException(id().err("could not get"), e);
-        }
+        return reflect.get(object);
     }
 
     /**
@@ -118,11 +108,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
      * @param value The value.
      */
     public final void set(final T object, final V value) {
-        try {
-            reflect.set(object, value);
-        } catch (final RuntimeException e) {
-            throw new DynamoDBMappingException(id().err("could not set"), e);
-        }
+        reflect.set(object, value);
     }
 
     /**
@@ -141,11 +127,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
      */
     @Override
     public final V generate(final V currentValue) {
-        try {
-            return properties.autoGenerator().generate(currentValue);
-        } catch (final RuntimeException e) {
-            throw new DynamoDBMappingException(id().err("could not generate"), e);
-        }
+        return properties.autoGenerator().generate(currentValue);
     }
 
     /**
@@ -153,11 +135,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
      */
     @Override
     public final AttributeValue convert(final V object) {
-        try {
-            return attributeValueConverter.convert(object);
-        } catch (final RuntimeException e) {
-            throw new DynamoDBMappingException(id().err("could not convert"), e);
-        }
+        return converter.convert(object);
     }
 
     /**
@@ -165,11 +143,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
      */
     @Override
     public final V unconvert(final AttributeValue object) {
-        try {
-            return attributeValueConverter.unconvert(object);
-        } catch (final RuntimeException e) {
-            throw new DynamoDBMappingException(id().err("could not unconvert"), e);
-        }
+        return converter.unconvert(object);
     }
 
     /**
@@ -195,7 +169,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
      * @return The DynamoDB attribute type.
      */
     public final DynamoDBAttributeType attributeType() {
-        return properties.attributeType();
+        return attributeType;
     }
 
     /**
@@ -413,324 +387,108 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
     }
 
     /**
-     * The field's "global" identifier.
-     */
-    public static final class Id<T> extends DynamoDBMapperTableModel.Id<T> {
-        private final String name;
-
-        /**
-         * Construts a new field identifier.
-         */
-        public Id(final Class<T> type, final String name) {
-            super(type);
-            this.name = name;
-        }
-
-        /**
-         * Constructs a new identifier from an existing one.
-         */
-        public Id(final Id<T> id, final String name) {
-            super(id);
-            this.name = name;
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public final boolean equals(final Object o) {
-            return o instanceof Id && super.equals(o) && ((Id)o).name.equals(name);
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public final int hashCode() {
-            return super.hashCode() ^ name.hashCode();
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public final String toString() {
-            return new StringBuilder().append(super.toString()).append("[").append(name).append("]").toString();
-        }
-    }
-
-    /**
      * {@link DynamoDBMapperFieldModel} builder.
      */
-    static class Builder<T,V> extends DynamoDBMapperFieldModel.Properties.Buildable<T,V> {
-        private DynamoDBTypeConverter<AttributeValue,V> attributeValueConverter;
+    static class Builder<T,V> {
+        private final DynamoDBMapperFieldModel.Properties<V> properties;
+        private DynamoDBTypeConverter<AttributeValue,V> converter;
         private DynamoDBMapperFieldModel.Reflect<T,V> reflect;
+        private DynamoDBAttributeType attributeType;
+        private Class<T> targetType;
 
-        /**
-         * Constructs a new builder with the optional defaults.
-         */
-        public Builder(final DynamoDBMapperFieldModel.Properties<T,V> ... defaults) {
-            super(defaults);
+        public Builder(Class<T> targetType, DynamoDBMapperFieldModel.Properties<V> properties) {
+            this.properties = properties;
+            this.targetType = targetType;
         }
 
-        /**
-         * Sets the attribute value converter.
-         */
-        public final Builder<T,V> with(final DynamoDBTypeConverter<AttributeValue,V> attributeValueConverter) {
-            this.attributeValueConverter = attributeValueConverter;
+        public final Builder<T,V> with(DynamoDBTypeConverter<AttributeValue,V> converter) {
+            this.converter = converter;
             return this;
         }
 
-        /**
-         * Sets the model's reflection property.
-         */
-        public final Builder<T,V> with(final DynamoDBMapperFieldModel.Reflect<T,V> reflect) {
+        public final Builder<T,V> with(DynamoDBAttributeType attributeType) {
+            this.attributeType = attributeType;
+            return this;
+        }
+
+        public final Builder<T,V> with(DynamoDBMapperFieldModel.Reflect<T,V> reflect) {
             this.reflect = reflect;
             return this;
         }
 
-        /**
-         * Builds the instance.
-         */
         public final DynamoDBMapperFieldModel<T,V> build() {
-            if (keyType() != null) {
-                if (attributeType().name().matches("[BNS]") == false) {
-                    throw new DynamoDBMappingException(id().err(
-                        "must be scalar (B, N, or S) for key but is %s", attributeType()));
-                } else if (autoGenerator() != null && autoGenerator().getGenerateStrategy() == ALWAYS) {
-                    throw new DynamoDBMappingException(id().err(
-                        "must not have auto-generated key with ALWAYS strategy"));
-                }
+            final DynamoDBMapperFieldModel<T,V> result = new DynamoDBMapperFieldModel<T,V>(this);
+            if ((result.keyType() != null || result.indexed()) && !result.attributeType().name().matches("[BNS]")) {
+                throw new DynamoDBMappingException(String.format(
+                    "%s[%s]; only scalar (B, N, or S) type allowed for key",
+                    targetType.getSimpleName(), result.name()
+                ));
+            } else if (result.keyType() != null && result.getGenerateStrategy() == ALWAYS) {
+                throw new DynamoDBMappingException(String.format(
+                    "%s[%s]; auto-generated key and ALWAYS not allowed",
+                    targetType.getSimpleName(), result.name()
+                ));
             }
-            return new DynamoDBMapperFieldModel<T,V>(this);
+            return result;
         }
     }
 
     /**
      * The field model properties.
      */
-    static interface Properties<T,V> {
-        public DynamoDBMapperFieldModel.Id<T> id();
-        public Class<V> targetType();
+    static interface Properties<V> {
         public String attributeName();
-        public DynamoDBAttributeType attributeType();
         public KeyType keyType();
         public boolean versioned();
         public Map<KeyType,List<String>> globalSecondaryIndexNames();
         public List<String> localSecondaryIndexNames();
         public DynamoDBAutoGenerator<V> autoGenerator();
-        public <S> DynamoDBTypeConverter<S,V> typeConverter();
 
-        /**
-         * Immutable properties.
-         */
-        static class Immutable<T,V> implements Properties<T,V> {
-            private static final Properties<Object,Object> EMPTY = new Immutable<Object,Object>();
-            static final <T,V> Properties<T,V> empty() {
-                return (Properties<T,V>)Immutable.EMPTY;
+        static final class Immutable<V> implements Properties<V> {
+            private final String attributeName;
+            private final KeyType keyType;
+            private final boolean versioned;
+            private final Map<KeyType,List<String>> globalSecondaryIndexNames;
+            private final List<String> localSecondaryIndexNames;
+            private final DynamoDBAutoGenerator<V> autoGenerator;
+
+            public Immutable(final Properties<V> properties) {
+                this.attributeName = properties.attributeName();
+                this.keyType = properties.keyType();
+                this.versioned = properties.versioned();
+                this.globalSecondaryIndexNames = properties.globalSecondaryIndexNames();
+                this.localSecondaryIndexNames = properties.localSecondaryIndexNames();
+                this.autoGenerator = properties.autoGenerator();
             }
 
-            private DynamoDBMapperFieldModel.Id<T> id;
-            private Class<V> targetType;
-            private String attributeName;
-            private DynamoDBAttributeType attributeType;
-            private KeyType keyType;
-            private boolean versioned;
-            private Map<KeyType,List<String>> globalSecondaryIndexNames;
-            private List<String> localSecondaryIndexNames;
-            private DynamoDBAutoGenerator<V> autoGenerator;
-            private DynamoDBTypeConverter<?,V> typeConverter;
-
-            /**
-             * Populates the builder properties with the specified defaults.
-             */
-            public Immutable(final Properties<T,V> ... defaults) {
-                this.globalSecondaryIndexNames = Collections.emptyMap();
-                this.localSecondaryIndexNames = Collections.emptyList();
-                for (final Properties<T,V> d : defaults) {
-                    this.targetType = d.targetType();
-                    this.attributeName = d.attributeName();
-                    this.attributeType = d.attributeType();
-                    this.keyType = d.keyType();
-                    this.versioned = d.versioned();
-                    this.globalSecondaryIndexNames = d.globalSecondaryIndexNames();
-                    this.localSecondaryIndexNames = d.localSecondaryIndexNames();
-                    this.autoGenerator = d.autoGenerator();
-                    this.typeConverter = d.typeConverter();
-                    this.id = d.id();
-                }
-            }
-
-            /**
-             * {@inheritDoc}
-             */
-            @Override
-            public final DynamoDBMapperFieldModel.Id<T> id() {
-                return this.id;
-            }
-
-            /**
-             * {@inheritDoc}
-             */
-            @Override
-            public final Class<V> targetType() {
-                return this.targetType;
-            }
-
-            /**
-             * {@inheritDoc}
-             */
             @Override
             public final String attributeName() {
                 return this.attributeName;
             }
 
-            /**
-             * {@inheritDoc}
-             */
-            @Override
-            public final DynamoDBAttributeType attributeType() {
-                return this.attributeType;
-            }
-
-            /**
-             * {@inheritDoc}
-             */
             @Override
             public final KeyType keyType() {
                 return this.keyType;
             }
 
-            /**
-             * {@inheritDoc}
-             */
             @Override
             public final boolean versioned() {
                 return this.versioned;
             }
 
-            /**
-             * {@inheritDoc}
-             */
             @Override
             public final Map<KeyType,List<String>> globalSecondaryIndexNames() {
                 return this.globalSecondaryIndexNames;
             }
 
-            /**
-             * {@inheritDoc}
-             */
             @Override
             public final List<String> localSecondaryIndexNames() {
                 return this.localSecondaryIndexNames;
             }
 
-            /**
-             * {@inheritDoc}
-             */
             @Override
             public final DynamoDBAutoGenerator<V> autoGenerator() {
                 return this.autoGenerator;
-            }
-
-            /**
-             * {@inheritDoc}
-             */
-            @Override
-            public final <S> DynamoDBTypeConverter<S,V> typeConverter() {
-                return (DynamoDBTypeConverter<S,V>)this.typeConverter;
-            }
-        }
-
-        /**
-         * Properties builder.
-         */
-        static class Buildable<T,V> extends Immutable<T,V> {
-            /**
-             * Populates the builder properties with the specified defaults.
-             */
-            public Buildable(final Properties<T,V> ... defaults) {
-                super(defaults);
-            }
-
-            /**
-             * Sets the property identifier.
-             */
-            public final Buildable<T,V> withId(final DynamoDBMapperFieldModel.Id<T> id) {
-                super.id = id;
-                return this;
-            }
-
-            /**
-             * Sets the target type.
-             */
-            public final Buildable<T,V> withTargetType(final Class<V> targetType) {
-                super.targetType = targetType;
-                return this;
-            }
-
-            /**
-             * Sets the attribute name.
-             */
-            public final Buildable<T,V> withAttributeName(final String attributeName) {
-                super.attributeName = attributeName;
-                return this;
-            }
-
-            /**
-             * Sets the scalar attribute type.
-             */
-            public final Buildable<T,V> withAttributeType(final DynamoDBAttributeType attributeType) {
-                super.attributeType = attributeType;
-                return this;
-            }
-
-            /**
-             * Sets the key type.
-             */
-            public final Buildable<T,V> withKeyType(final KeyType keyType) {
-                super.keyType = keyType;
-                return this;
-            }
-
-            /**
-             * Sets the key type.
-             */
-            public final Buildable<T,V> withVersioned(final boolean versioned) {
-                super.versioned = versioned;
-                return this;
-            }
-
-            /**
-             * Sets the global secondary index names.
-             */
-            public final Buildable<T,V> withGlobalSecondaryIndexNames(final Map<KeyType,List<String>> names) {
-                super.globalSecondaryIndexNames = names;
-                return this;
-            }
-
-            /**
-             * Sets the local secondary index names.
-             */
-            public final Buildable<T,V> withLocalSecondaryIndexNames(final List<String> names) {
-                super.localSecondaryIndexNames = names;
-                return this;
-            }
-
-            /**
-             * Sets the auto-generator.
-             */
-            public final Buildable<T,V> withAutoGenerator(final DynamoDBAutoGenerator<V> autoGenerator) {
-                super.autoGenerator = autoGenerator;
-                return this;
-            }
-
-            /**
-             * Sets the type-converter.
-             */
-            public final Buildable<T,V> withTypeConverter(final DynamoDBTypeConverter<?,V> typeConverter) {
-                super.typeConverter = typeConverter;
-                return this;
             }
         }
     }

@@ -26,6 +26,7 @@ import java.lang.annotation.Target;
  * but without requiring you to specify a {@code tableName}.
  */
 @DynamoDB
+@DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.M)
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Inherited

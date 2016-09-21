@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -36,19 +35,59 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The type of resource with which you want to view tags. Valid resource
      * types are:
-     * <ul>
-     * <li>Cluster</li>
-     * <li>CIDR/IP</li>
-     * <li>EC2 security group</li>
-     * <li>Snapshot</li>
-     * <li>Cluster security group</li>
-     * <li>Subnet group</li>
-     * <li>HSM connection</li>
-     * <li>HSM certificate</li>
-     * <li>Parameter group</li>
-     * <li>Snapshot copy grant</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CIDR/IP
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cluster security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subnet group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM connection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parameter group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot copy grant
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information about Amazon Redshift resource types and
      * constructing ARNs, go to <a href=
@@ -161,19 +200,59 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The type of resource with which you want to view tags. Valid resource
      * types are:
-     * <ul>
-     * <li>Cluster</li>
-     * <li>CIDR/IP</li>
-     * <li>EC2 security group</li>
-     * <li>Snapshot</li>
-     * <li>Cluster security group</li>
-     * <li>Subnet group</li>
-     * <li>HSM connection</li>
-     * <li>HSM certificate</li>
-     * <li>Parameter group</li>
-     * <li>Snapshot copy grant</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CIDR/IP
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cluster security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subnet group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM connection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parameter group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot copy grant
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information about Amazon Redshift resource types and
      * constructing ARNs, go to <a href=
@@ -184,20 +263,59 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param resourceType
      *        The type of resource with which you want to view tags. Valid
-     *        resource types are:
+     *        resource types are: </p>
      *        <ul>
-     *        <li>Cluster</li>
-     *        <li>CIDR/IP</li>
-     *        <li>EC2 security group</li>
-     *        <li>Snapshot</li>
-     *        <li>Cluster security group</li>
-     *        <li>Subnet group</li>
-     *        <li>HSM connection</li>
-     *        <li>HSM certificate</li>
-     *        <li>Parameter group</li>
-     *        <li>Snapshot copy grant</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Cluster
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CIDR/IP
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EC2 security group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Snapshot
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cluster security group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Subnet group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HSM connection
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HSM certificate
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Parameter group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Snapshot copy grant
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        For more information about Amazon Redshift resource types and
      *        constructing ARNs, go to <a href=
@@ -214,19 +332,59 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The type of resource with which you want to view tags. Valid resource
      * types are:
-     * <ul>
-     * <li>Cluster</li>
-     * <li>CIDR/IP</li>
-     * <li>EC2 security group</li>
-     * <li>Snapshot</li>
-     * <li>Cluster security group</li>
-     * <li>Subnet group</li>
-     * <li>HSM connection</li>
-     * <li>HSM certificate</li>
-     * <li>Parameter group</li>
-     * <li>Snapshot copy grant</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CIDR/IP
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cluster security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subnet group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM connection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parameter group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot copy grant
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information about Amazon Redshift resource types and
      * constructing ARNs, go to <a href=
@@ -236,20 +394,59 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return The type of resource with which you want to view tags. Valid
-     *         resource types are:
+     *         resource types are: </p>
      *         <ul>
-     *         <li>Cluster</li>
-     *         <li>CIDR/IP</li>
-     *         <li>EC2 security group</li>
-     *         <li>Snapshot</li>
-     *         <li>Cluster security group</li>
-     *         <li>Subnet group</li>
-     *         <li>HSM connection</li>
-     *         <li>HSM certificate</li>
-     *         <li>Parameter group</li>
-     *         <li>Snapshot copy grant</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Cluster
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CIDR/IP
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EC2 security group
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Snapshot
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cluster security group
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Subnet group
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HSM connection
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HSM certificate
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Parameter group
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Snapshot copy grant
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         For more information about Amazon Redshift resource types and
      *         constructing ARNs, go to <a href=
@@ -266,19 +463,59 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The type of resource with which you want to view tags. Valid resource
      * types are:
-     * <ul>
-     * <li>Cluster</li>
-     * <li>CIDR/IP</li>
-     * <li>EC2 security group</li>
-     * <li>Snapshot</li>
-     * <li>Cluster security group</li>
-     * <li>Subnet group</li>
-     * <li>HSM connection</li>
-     * <li>HSM certificate</li>
-     * <li>Parameter group</li>
-     * <li>Snapshot copy grant</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CIDR/IP
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cluster security group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subnet group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM connection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HSM certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parameter group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot copy grant
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information about Amazon Redshift resource types and
      * constructing ARNs, go to <a href=
@@ -289,20 +526,59 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param resourceType
      *        The type of resource with which you want to view tags. Valid
-     *        resource types are:
+     *        resource types are: </p>
      *        <ul>
-     *        <li>Cluster</li>
-     *        <li>CIDR/IP</li>
-     *        <li>EC2 security group</li>
-     *        <li>Snapshot</li>
-     *        <li>Cluster security group</li>
-     *        <li>Subnet group</li>
-     *        <li>HSM connection</li>
-     *        <li>HSM certificate</li>
-     *        <li>Parameter group</li>
-     *        <li>Snapshot copy grant</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Cluster
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CIDR/IP
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EC2 security group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Snapshot
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cluster security group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Subnet group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HSM connection
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HSM certificate
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Parameter group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Snapshot copy grant
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        For more information about Amazon Redshift resource types and
      *        constructing ARNs, go to <a href=

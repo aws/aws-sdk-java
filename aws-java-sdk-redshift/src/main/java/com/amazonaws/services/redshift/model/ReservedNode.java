@@ -88,11 +88,23 @@ public class ReservedNode implements Serializable, Cloneable {
      * Possible Values:
      * </p>
      * <ul>
-     * <li>pending-payment-This reserved node has recently been purchased, and
-     * the sale has been approved, but payment has not yet been confirmed.</li>
-     * <li>active-This reserved node is owned by the caller and is available for
-     * use.</li>
-     * <li>payment-failed-Payment failed for the purchase attempt.</li>
+     * <li>
+     * <p>
+     * pending-payment-This reserved node has recently been purchased, and the
+     * sale has been approved, but payment has not yet been confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * active-This reserved node is owned by the caller and is available for
+     * use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * payment-failed-Payment failed for the purchase attempt.
+     * </p>
+     * </li>
      * </ul>
      */
     private String state;
@@ -497,25 +509,49 @@ public class ReservedNode implements Serializable, Cloneable {
      * Possible Values:
      * </p>
      * <ul>
-     * <li>pending-payment-This reserved node has recently been purchased, and
-     * the sale has been approved, but payment has not yet been confirmed.</li>
-     * <li>active-This reserved node is owned by the caller and is available for
-     * use.</li>
-     * <li>payment-failed-Payment failed for the purchase attempt.</li>
+     * <li>
+     * <p>
+     * pending-payment-This reserved node has recently been purchased, and the
+     * sale has been approved, but payment has not yet been confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * active-This reserved node is owned by the caller and is available for
+     * use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * payment-failed-Payment failed for the purchase attempt.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param state
-     *        The state of the reserved compute node. </p>
+     *        The state of the reserved compute node.</p>
      *        <p>
      *        Possible Values:
      *        </p>
      *        <ul>
-     *        <li>pending-payment-This reserved node has recently been
-     *        purchased, and the sale has been approved, but payment has not yet
-     *        been confirmed.</li>
-     *        <li>active-This reserved node is owned by the caller and is
-     *        available for use.</li>
-     *        <li>payment-failed-Payment failed for the purchase attempt.</li>
+     *        <li>
+     *        <p>
+     *        pending-payment-This reserved node has recently been purchased,
+     *        and the sale has been approved, but payment has not yet been
+     *        confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        active-This reserved node is owned by the caller and is available
+     *        for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        payment-failed-Payment failed for the purchase attempt.
+     *        </p>
+     *        </li>
      */
 
     public void setState(String state) {
@@ -530,24 +566,48 @@ public class ReservedNode implements Serializable, Cloneable {
      * Possible Values:
      * </p>
      * <ul>
-     * <li>pending-payment-This reserved node has recently been purchased, and
-     * the sale has been approved, but payment has not yet been confirmed.</li>
-     * <li>active-This reserved node is owned by the caller and is available for
-     * use.</li>
-     * <li>payment-failed-Payment failed for the purchase attempt.</li>
+     * <li>
+     * <p>
+     * pending-payment-This reserved node has recently been purchased, and the
+     * sale has been approved, but payment has not yet been confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * active-This reserved node is owned by the caller and is available for
+     * use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * payment-failed-Payment failed for the purchase attempt.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The state of the reserved compute node. </p>
+     * @return The state of the reserved compute node.</p>
      *         <p>
      *         Possible Values:
      *         </p>
      *         <ul>
-     *         <li>pending-payment-This reserved node has recently been
-     *         purchased, and the sale has been approved, but payment has not
-     *         yet been confirmed.</li>
-     *         <li>active-This reserved node is owned by the caller and is
-     *         available for use.</li>
-     *         <li>payment-failed-Payment failed for the purchase attempt.</li>
+     *         <li>
+     *         <p>
+     *         pending-payment-This reserved node has recently been purchased,
+     *         and the sale has been approved, but payment has not yet been
+     *         confirmed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         active-This reserved node is owned by the caller and is available
+     *         for use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         payment-failed-Payment failed for the purchase attempt.
+     *         </p>
+     *         </li>
      */
 
     public String getState() {
@@ -562,25 +622,49 @@ public class ReservedNode implements Serializable, Cloneable {
      * Possible Values:
      * </p>
      * <ul>
-     * <li>pending-payment-This reserved node has recently been purchased, and
-     * the sale has been approved, but payment has not yet been confirmed.</li>
-     * <li>active-This reserved node is owned by the caller and is available for
-     * use.</li>
-     * <li>payment-failed-Payment failed for the purchase attempt.</li>
+     * <li>
+     * <p>
+     * pending-payment-This reserved node has recently been purchased, and the
+     * sale has been approved, but payment has not yet been confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * active-This reserved node is owned by the caller and is available for
+     * use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * payment-failed-Payment failed for the purchase attempt.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param state
-     *        The state of the reserved compute node. </p>
+     *        The state of the reserved compute node.</p>
      *        <p>
      *        Possible Values:
      *        </p>
      *        <ul>
-     *        <li>pending-payment-This reserved node has recently been
-     *        purchased, and the sale has been approved, but payment has not yet
-     *        been confirmed.</li>
-     *        <li>active-This reserved node is owned by the caller and is
-     *        available for use.</li>
-     *        <li>payment-failed-Payment failed for the purchase attempt.</li>
+     *        <li>
+     *        <p>
+     *        pending-payment-This reserved node has recently been purchased,
+     *        and the sale has been approved, but payment has not yet been
+     *        confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        active-This reserved node is owned by the caller and is available
+     *        for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        payment-failed-Payment failed for the purchase attempt.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

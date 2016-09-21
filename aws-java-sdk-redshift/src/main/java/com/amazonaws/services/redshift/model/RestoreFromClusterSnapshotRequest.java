@@ -30,17 +30,35 @@ public class RestoreFromClusterSnapshotRequest extends
      * snapshot.
      * </p>
      * <p>
-     * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String clusterIdentifier;
     /**
@@ -155,9 +173,21 @@ public class RestoreFromClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      */
     private String clusterParameterGroupName;
@@ -254,6 +284,23 @@ public class RestoreFromClusterSnapshotRequest extends
     private String nodeType;
     /**
      * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     */
+    private Boolean enhancedVpcRouting;
+    /**
+     * <p>
      * Reserved.
      * </p>
      */
@@ -277,32 +324,68 @@ public class RestoreFromClusterSnapshotRequest extends
      * snapshot.
      * </p>
      * <p>
-     * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param clusterIdentifier
      *        The identifier of the cluster that will be created from restoring
-     *        the snapshot. </p>
-     *        <p>
+     *        the snapshot.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>Alphabetic characters must be lowercase.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *        <li>Must be unique for all clusters within an AWS account.</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alphabetic characters must be lowercase.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for all clusters within an AWS account.
+     *        </p>
+     *        </li>
      */
 
     public void setClusterIdentifier(String clusterIdentifier) {
@@ -315,32 +398,67 @@ public class RestoreFromClusterSnapshotRequest extends
      * snapshot.
      * </p>
      * <p>
-     * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The identifier of the cluster that will be created from restoring
-     *         the snapshot. </p>
-     *         <p>
+     *         the snapshot.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         </p>
      *         </li>
-     *         <li>Alphabetic characters must be lowercase.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *         <li>Must be unique for all clusters within an AWS account.</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Alphabetic characters must be lowercase.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be unique for all clusters within an AWS account.
+     *         </p>
+     *         </li>
      */
 
     public String getClusterIdentifier() {
@@ -353,32 +471,68 @@ public class RestoreFromClusterSnapshotRequest extends
      * snapshot.
      * </p>
      * <p>
-     * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param clusterIdentifier
      *        The identifier of the cluster that will be created from restoring
-     *        the snapshot. </p>
-     *        <p>
+     *        the snapshot.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>Alphabetic characters must be lowercase.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *        <li>Must be unique for all clusters within an AWS account.</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alphabetic characters must be lowercase.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for all clusters within an AWS account.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -400,7 +554,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * 
      * @param snapshotIdentifier
      *        The name of the snapshot from which to create the new cluster.
-     *        This parameter isn't case sensitive. </p>
+     *        This parameter isn't case sensitive.</p>
      *        <p>
      *        Example: <code>my-snapshot-id</code>
      */
@@ -419,7 +573,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * </p>
      * 
      * @return The name of the snapshot from which to create the new cluster.
-     *         This parameter isn't case sensitive. </p>
+     *         This parameter isn't case sensitive.</p>
      *         <p>
      *         Example: <code>my-snapshot-id</code>
      */
@@ -439,7 +593,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * 
      * @param snapshotIdentifier
      *        The name of the snapshot from which to create the new cluster.
-     *        This parameter isn't case sensitive. </p>
+     *        This parameter isn't case sensitive.</p>
      *        <p>
      *        Example: <code>my-snapshot-id</code>
      * @return Returns a reference to this object so that method calls can be
@@ -524,7 +678,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * </p>
      * 
      * @param port
-     *        The port number on which the cluster accepts connections. </p>
+     *        The port number on which the cluster accepts connections.</p>
      *        <p>
      *        Default: The same port as the original cluster.
      *        </p>
@@ -548,7 +702,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * Constraints: Must be between <code>1115</code> and <code>65535</code>.
      * </p>
      * 
-     * @return The port number on which the cluster accepts connections. </p>
+     * @return The port number on which the cluster accepts connections.</p>
      *         <p>
      *         Default: The same port as the original cluster.
      *         </p>
@@ -573,7 +727,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * </p>
      * 
      * @param port
-     *        The port number on which the cluster accepts connections. </p>
+     *        The port number on which the cluster accepts connections.</p>
      *        <p>
      *        Default: The same port as the original cluster.
      *        </p>
@@ -601,8 +755,8 @@ public class RestoreFromClusterSnapshotRequest extends
      * </p>
      * 
      * @param availabilityZone
-     *        The Amazon EC2 Availability Zone in which to restore the cluster.
-     *        </p>
+     *        The Amazon EC2 Availability Zone in which to restore the
+     *        cluster.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone.
      *        </p>
@@ -625,8 +779,8 @@ public class RestoreFromClusterSnapshotRequest extends
      * Example: <code>us-east-1a</code>
      * </p>
      * 
-     * @return The Amazon EC2 Availability Zone in which to restore the cluster.
-     *         </p>
+     * @return The Amazon EC2 Availability Zone in which to restore the
+     *         cluster.</p>
      *         <p>
      *         Default: A random, system-chosen Availability Zone.
      *         </p>
@@ -650,8 +804,8 @@ public class RestoreFromClusterSnapshotRequest extends
      * </p>
      * 
      * @param availabilityZone
-     *        The Amazon EC2 Availability Zone in which to restore the cluster.
-     *        </p>
+     *        The Amazon EC2 Availability Zone in which to restore the
+     *        cluster.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone.
      *        </p>
@@ -767,8 +921,8 @@ public class RestoreFromClusterSnapshotRequest extends
      * </p>
      * 
      * @param clusterSubnetGroupName
-     *        The name of the subnet group where you want to cluster restored.
-     *        </p>
+     *        The name of the subnet group where you want to cluster
+     *        restored.</p>
      *        <p>
      *        A snapshot of cluster in VPC can be restored only in VPC.
      *        Therefore, you must provide subnet group name where you want the
@@ -788,8 +942,8 @@ public class RestoreFromClusterSnapshotRequest extends
      * must provide subnet group name where you want the cluster restored.
      * </p>
      * 
-     * @return The name of the subnet group where you want to cluster restored.
-     *         </p>
+     * @return The name of the subnet group where you want to cluster
+     *         restored.</p>
      *         <p>
      *         A snapshot of cluster in VPC can be restored only in VPC.
      *         Therefore, you must provide subnet group name where you want the
@@ -810,8 +964,8 @@ public class RestoreFromClusterSnapshotRequest extends
      * </p>
      * 
      * @param clusterSubnetGroupName
-     *        The name of the subnet group where you want to cluster restored.
-     *        </p>
+     *        The name of the subnet group where you want to cluster
+     *        restored.</p>
      *        <p>
      *        A snapshot of cluster in VPC can be restored only in VPC.
      *        Therefore, you must provide subnet group name where you want the
@@ -1096,14 +1250,26 @@ public class RestoreFromClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param clusterParameterGroupName
      *        The name of the parameter group to be associated with this
-     *        cluster. </p>
+     *        cluster.</p>
      *        <p>
      *        Default: The default Amazon Redshift cluster parameter group. For
      *        information about the default parameter group, go to <a href=
@@ -1114,9 +1280,21 @@ public class RestoreFromClusterSnapshotRequest extends
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      */
 
     public void setClusterParameterGroupName(String clusterParameterGroupName) {
@@ -1137,13 +1315,25 @@ public class RestoreFromClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The name of the parameter group to be associated with this
-     *         cluster. </p>
+     *         cluster.</p>
      *         <p>
      *         Default: The default Amazon Redshift cluster parameter group. For
      *         information about the default parameter group, go to <a href=
@@ -1154,9 +1344,21 @@ public class RestoreFromClusterSnapshotRequest extends
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters or hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
      */
 
     public String getClusterParameterGroupName() {
@@ -1177,14 +1379,26 @@ public class RestoreFromClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param clusterParameterGroupName
      *        The name of the parameter group to be associated with this
-     *        cluster. </p>
+     *        cluster.</p>
      *        <p>
      *        Default: The default Amazon Redshift cluster parameter group. For
      *        information about the default parameter group, go to <a href=
@@ -1195,9 +1409,21 @@ public class RestoreFromClusterSnapshotRequest extends
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1219,8 +1445,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * Cluster security groups only apply to clusters outside of VPCs.
      * </p>
      * 
-     * @return A list of security groups to be associated with this cluster.
-     *         </p>
+     * @return A list of security groups to be associated with this cluster.</p>
      *         <p>
      *         Default: The default cluster security group for Amazon Redshift.
      *         </p>
@@ -1247,7 +1472,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * </p>
      * 
      * @param clusterSecurityGroups
-     *        A list of security groups to be associated with this cluster. </p>
+     *        A list of security groups to be associated with this cluster.</p>
      *        <p>
      *        Default: The default cluster security group for Amazon Redshift.
      *        </p>
@@ -1284,7 +1509,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * </p>
      * 
      * @param clusterSecurityGroups
-     *        A list of security groups to be associated with this cluster. </p>
+     *        A list of security groups to be associated with this cluster.</p>
      *        <p>
      *        Default: The default cluster security group for Amazon Redshift.
      *        </p>
@@ -1318,7 +1543,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * </p>
      * 
      * @param clusterSecurityGroups
-     *        A list of security groups to be associated with this cluster. </p>
+     *        A list of security groups to be associated with this cluster.</p>
      *        <p>
      *        Default: The default cluster security group for Amazon Redshift.
      *        </p>
@@ -1347,7 +1572,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * </p>
      * 
      * @return A list of Virtual Private Cloud (VPC) security groups to be
-     *         associated with the cluster. </p>
+     *         associated with the cluster.</p>
      *         <p>
      *         Default: The default VPC security group is associated with the
      *         cluster.
@@ -1377,7 +1602,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * 
      * @param vpcSecurityGroupIds
      *        A list of Virtual Private Cloud (VPC) security groups to be
-     *        associated with the cluster. </p>
+     *        associated with the cluster.</p>
      *        <p>
      *        Default: The default VPC security group is associated with the
      *        cluster.
@@ -1417,7 +1642,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * 
      * @param vpcSecurityGroupIds
      *        A list of Virtual Private Cloud (VPC) security groups to be
-     *        associated with the cluster. </p>
+     *        associated with the cluster.</p>
      *        <p>
      *        Default: The default VPC security group is associated with the
      *        cluster.
@@ -1454,7 +1679,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * 
      * @param vpcSecurityGroupIds
      *        A list of Virtual Private Cloud (VPC) security groups to be
-     *        associated with the cluster. </p>
+     *        associated with the cluster.</p>
      *        <p>
      *        Default: The default VPC security group is associated with the
      *        cluster.
@@ -1495,7 +1720,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * 
      * @param preferredMaintenanceWindow
      *        The weekly time range (in UTC) during which automated cluster
-     *        maintenance can occur. </p>
+     *        maintenance can occur.</p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
@@ -1541,7 +1766,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * </p>
      * 
      * @return The weekly time range (in UTC) during which automated cluster
-     *         maintenance can occur. </p>
+     *         maintenance can occur.</p>
      *         <p>
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
@@ -1588,7 +1813,7 @@ public class RestoreFromClusterSnapshotRequest extends
      * 
      * @param preferredMaintenanceWindow
      *        The weekly time range (in UTC) during which automated cluster
-     *        maintenance can occur. </p>
+     *        maintenance can occur.</p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
@@ -1892,6 +2117,152 @@ public class RestoreFromClusterSnapshotRequest extends
 
     /**
      * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @param enhancedVpcRouting
+     *        An option that specifies whether to create the cluster with
+     *        enhanced VPC routing enabled. To create a cluster that uses
+     *        enhanced VPC routing, the cluster must be in a VPC. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *        >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *        Management Guide.</p>
+     *        <p>
+     *        If this option is <code>true</code>, enhanced VPC routing is
+     *        enabled.
+     *        </p>
+     *        <p>
+     *        Default: false
+     */
+
+    public void setEnhancedVpcRouting(Boolean enhancedVpcRouting) {
+        this.enhancedVpcRouting = enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @return An option that specifies whether to create the cluster with
+     *         enhanced VPC routing enabled. To create a cluster that uses
+     *         enhanced VPC routing, the cluster must be in a VPC. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *         >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *         Management Guide.</p>
+     *         <p>
+     *         If this option is <code>true</code>, enhanced VPC routing is
+     *         enabled.
+     *         </p>
+     *         <p>
+     *         Default: false
+     */
+
+    public Boolean getEnhancedVpcRouting() {
+        return this.enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @param enhancedVpcRouting
+     *        An option that specifies whether to create the cluster with
+     *        enhanced VPC routing enabled. To create a cluster that uses
+     *        enhanced VPC routing, the cluster must be in a VPC. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *        >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *        Management Guide.</p>
+     *        <p>
+     *        If this option is <code>true</code>, enhanced VPC routing is
+     *        enabled.
+     *        </p>
+     *        <p>
+     *        Default: false
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RestoreFromClusterSnapshotRequest withEnhancedVpcRouting(
+            Boolean enhancedVpcRouting) {
+        setEnhancedVpcRouting(enhancedVpcRouting);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @return An option that specifies whether to create the cluster with
+     *         enhanced VPC routing enabled. To create a cluster that uses
+     *         enhanced VPC routing, the cluster must be in a VPC. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *         >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *         Management Guide.</p>
+     *         <p>
+     *         If this option is <code>true</code>, enhanced VPC routing is
+     *         enabled.
+     *         </p>
+     *         <p>
+     *         Default: false
+     */
+
+    public Boolean isEnhancedVpcRouting() {
+        return this.enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
      * Reserved.
      * </p>
      * 
@@ -2113,6 +2484,8 @@ public class RestoreFromClusterSnapshotRequest extends
             sb.append("KmsKeyId: " + getKmsKeyId() + ",");
         if (getNodeType() != null)
             sb.append("NodeType: " + getNodeType() + ",");
+        if (getEnhancedVpcRouting() != null)
+            sb.append("EnhancedVpcRouting: " + getEnhancedVpcRouting() + ",");
         if (getAdditionalInfo() != null)
             sb.append("AdditionalInfo: " + getAdditionalInfo() + ",");
         if (getIamRoles() != null)
@@ -2254,6 +2627,13 @@ public class RestoreFromClusterSnapshotRequest extends
         if (other.getNodeType() != null
                 && other.getNodeType().equals(this.getNodeType()) == false)
             return false;
+        if (other.getEnhancedVpcRouting() == null
+                ^ this.getEnhancedVpcRouting() == null)
+            return false;
+        if (other.getEnhancedVpcRouting() != null
+                && other.getEnhancedVpcRouting().equals(
+                        this.getEnhancedVpcRouting()) == false)
+            return false;
         if (other.getAdditionalInfo() == null
                 ^ this.getAdditionalInfo() == null)
             return false;
@@ -2341,6 +2721,10 @@ public class RestoreFromClusterSnapshotRequest extends
                 + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode
                 + ((getNodeType() == null) ? 0 : getNodeType().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEnhancedVpcRouting() == null) ? 0
+                        : getEnhancedVpcRouting().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo()

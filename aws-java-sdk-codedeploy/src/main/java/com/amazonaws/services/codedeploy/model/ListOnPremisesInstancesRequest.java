@@ -21,7 +21,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents the input of a list on-premises instances operation.
  * </p>
- * .
  */
 public class ListOnPremisesInstancesRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -32,10 +31,18 @@ public class ListOnPremisesInstancesRequest extends
      * The registration status of the on-premises instances:
      * </p>
      * <ul>
-     * <li>Deregistered: Include deregistered on-premises instances in the
-     * resulting list.</li>
-     * <li>Registered: Include registered on-premises instances in the resulting
-     * list.</li>
+     * <li>
+     * <p>
+     * Deregistered: Include deregistered on-premises instances in the resulting
+     * list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Registered: Include registered on-premises instances in the resulting
+     * list.
+     * </p>
+     * </li>
      * </ul>
      */
     private String registrationStatus;
@@ -60,19 +67,35 @@ public class ListOnPremisesInstancesRequest extends
      * The registration status of the on-premises instances:
      * </p>
      * <ul>
-     * <li>Deregistered: Include deregistered on-premises instances in the
-     * resulting list.</li>
-     * <li>Registered: Include registered on-premises instances in the resulting
-     * list.</li>
+     * <li>
+     * <p>
+     * Deregistered: Include deregistered on-premises instances in the resulting
+     * list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Registered: Include registered on-premises instances in the resulting
+     * list.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param registrationStatus
      *        The registration status of the on-premises instances:</p>
      *        <ul>
-     *        <li>Deregistered: Include deregistered on-premises instances in
-     *        the resulting list.</li>
-     *        <li>Registered: Include registered on-premises instances in the
-     *        resulting list.</li>
+     *        <li>
+     *        <p>
+     *        Deregistered: Include deregistered on-premises instances in the
+     *        resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Registered: Include registered on-premises instances in the
+     *        resulting list.
+     *        </p>
+     *        </li>
      * @see RegistrationStatus
      */
 
@@ -85,18 +108,34 @@ public class ListOnPremisesInstancesRequest extends
      * The registration status of the on-premises instances:
      * </p>
      * <ul>
-     * <li>Deregistered: Include deregistered on-premises instances in the
-     * resulting list.</li>
-     * <li>Registered: Include registered on-premises instances in the resulting
-     * list.</li>
+     * <li>
+     * <p>
+     * Deregistered: Include deregistered on-premises instances in the resulting
+     * list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Registered: Include registered on-premises instances in the resulting
+     * list.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The registration status of the on-premises instances:</p>
      *         <ul>
-     *         <li>Deregistered: Include deregistered on-premises instances in
-     *         the resulting list.</li>
-     *         <li>Registered: Include registered on-premises instances in the
-     *         resulting list.</li>
+     *         <li>
+     *         <p>
+     *         Deregistered: Include deregistered on-premises instances in the
+     *         resulting list.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Registered: Include registered on-premises instances in the
+     *         resulting list.
+     *         </p>
+     *         </li>
      * @see RegistrationStatus
      */
 
@@ -109,19 +148,35 @@ public class ListOnPremisesInstancesRequest extends
      * The registration status of the on-premises instances:
      * </p>
      * <ul>
-     * <li>Deregistered: Include deregistered on-premises instances in the
-     * resulting list.</li>
-     * <li>Registered: Include registered on-premises instances in the resulting
-     * list.</li>
+     * <li>
+     * <p>
+     * Deregistered: Include deregistered on-premises instances in the resulting
+     * list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Registered: Include registered on-premises instances in the resulting
+     * list.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param registrationStatus
      *        The registration status of the on-premises instances:</p>
      *        <ul>
-     *        <li>Deregistered: Include deregistered on-premises instances in
-     *        the resulting list.</li>
-     *        <li>Registered: Include registered on-premises instances in the
-     *        resulting list.</li>
+     *        <li>
+     *        <p>
+     *        Deregistered: Include deregistered on-premises instances in the
+     *        resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Registered: Include registered on-premises instances in the
+     *        resulting list.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RegistrationStatus
@@ -138,19 +193,35 @@ public class ListOnPremisesInstancesRequest extends
      * The registration status of the on-premises instances:
      * </p>
      * <ul>
-     * <li>Deregistered: Include deregistered on-premises instances in the
-     * resulting list.</li>
-     * <li>Registered: Include registered on-premises instances in the resulting
-     * list.</li>
+     * <li>
+     * <p>
+     * Deregistered: Include deregistered on-premises instances in the resulting
+     * list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Registered: Include registered on-premises instances in the resulting
+     * list.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param registrationStatus
      *        The registration status of the on-premises instances:</p>
      *        <ul>
-     *        <li>Deregistered: Include deregistered on-premises instances in
-     *        the resulting list.</li>
-     *        <li>Registered: Include registered on-premises instances in the
-     *        resulting list.</li>
+     *        <li>
+     *        <p>
+     *        Deregistered: Include deregistered on-premises instances in the
+     *        resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Registered: Include registered on-premises instances in the
+     *        resulting list.
+     *        </p>
+     *        </li>
      * @see RegistrationStatus
      */
 
@@ -163,19 +234,35 @@ public class ListOnPremisesInstancesRequest extends
      * The registration status of the on-premises instances:
      * </p>
      * <ul>
-     * <li>Deregistered: Include deregistered on-premises instances in the
-     * resulting list.</li>
-     * <li>Registered: Include registered on-premises instances in the resulting
-     * list.</li>
+     * <li>
+     * <p>
+     * Deregistered: Include deregistered on-premises instances in the resulting
+     * list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Registered: Include registered on-premises instances in the resulting
+     * list.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param registrationStatus
      *        The registration status of the on-premises instances:</p>
      *        <ul>
-     *        <li>Deregistered: Include deregistered on-premises instances in
-     *        the resulting list.</li>
-     *        <li>Registered: Include registered on-premises instances in the
-     *        resulting list.</li>
+     *        <li>
+     *        <p>
+     *        Deregistered: Include deregistered on-premises instances in the
+     *        resulting list.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Registered: Include registered on-premises instances in the
+     *        resulting list.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RegistrationStatus

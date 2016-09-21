@@ -14,7 +14,10 @@
  */
 
 /**
- * <fullname>Amazon Redshift</fullname> <b>Overview</b>
+ * <fullname>Amazon Redshift</fullname>
+ * <p>
+ * <b>Overview</b>
+ * </p>
  * <p>
  * This is an interface reference for Amazon Redshift. It contains documentation
  * for one of the programming or command line interfaces you can use to manage
@@ -26,7 +29,7 @@
  * maintenance window. For a summary of the Amazon Redshift cluster management
  * interfaces, go to <a
  * href="http://docs.aws.amazon.com/redshift/latest/mgmt/using-aws-sdk.html"
- * >Using the Amazon Redshift Management Interfaces </a>.
+ * >Using the Amazon Redshift Management Interfaces</a>.
  * </p>
  * <p>
  * Amazon Redshift manages all the work of setting up, operating, and scaling a
@@ -37,9 +40,9 @@
  * </p>
  * <p>
  * If you are a first-time user of Amazon Redshift, we recommend that you begin
- * by reading the The <a
+ * by reading the <a
  * href="http://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html"
- * >Amazon Redshift Getting Started Guide</a>
+ * >Amazon Redshift Getting Started Guide</a>.
  * </p>
  * <p>
  * If you are a database developer, the <a

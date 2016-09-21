@@ -14,11 +14,12 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
+import static com.amazonaws.services.dynamodbv2.model.KeyType.HASH;
+import static com.amazonaws.services.dynamodbv2.model.KeyType.RANGE;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.DynamoDBAttributeType;
-import com.amazonaws.services.dynamodbv2.datamodeling.StandardAttributeTypes.AttributeType;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
-import com.amazonaws.services.dynamodbv2.model.ScalarAttributeType;
 import com.amazonaws.util.StringUtils;
 
 import java.lang.annotation.Annotation;
@@ -31,6 +32,7 @@ import java.util.EnumMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Map of DynamoDB annotations.
@@ -40,16 +42,9 @@ final class StandardAnnotationMaps {
 
     /**
      * Gets all the DynamoDB annotations for a given class.
-     * @param clazz The object type.
-     * @return The map of annotation type to annotation instance.
      */
-    static final <T> TableMap<T> of(final Class<T> clazz) {
-        final DynamoDBMapperTableModel.Properties.Buildable<T> defaults;
-        defaults = new DynamoDBMapperTableModel.Properties.Buildable<T>();
-        defaults.withId(new DynamoDBMapperTableModel.Id<T>(clazz));
-        defaults.withTargetType(clazz);
-
-        final TableMap<T> map = new TableMap<T>(defaults);
+    static final <T> TableTypedMap<T> of(Class<T> clazz) {
+        final TableTypedMap<T> map = new TableTypedMap<T>(clazz);
         map.putAll(clazz);
         return map;
     }
@@ -57,28 +52,24 @@ final class StandardAnnotationMaps {
     /**
      * Gets all the DynamoDB annotations; method annotations override field
      * level annotations which override class/type level annotations.
-     * @param getter The getter method.
-     * @return The map of annotation type to annotation instance.
      */
-    static final <T,V> FieldMap<T,V> of(final Class<T> clazz, final Method getter) {
-        String name = getter.getName().replaceFirst("^(get|is)","");
-        name = StringUtils.lowerCase(name.substring(0, 1)) + name.substring(1);
-
-        final DynamoDBMapperFieldModel.Properties.Buildable<T,V> defaults;
-        defaults = new DynamoDBMapperFieldModel.Properties.Buildable<T,V>();
-        defaults.withId(new DynamoDBMapperFieldModel.Id<T>(clazz, name));
-        defaults.withTargetType((Class<V>)getter.getReturnType());
-        defaults.withAttributeName(name);
+    static final <T> FieldTypedMap<T> of(Method getter, String defaultName) {
+        final Class<T> targetType = (Class<T>)getter.getReturnType();
+        final String fieldName = StandardBeanProperties.fieldNameOf(getter);
 
         Field declaredField = null;
         try {
-            declaredField = getter.getDeclaringClass().getDeclaredField(name);
+            declaredField = getter.getDeclaringClass().getDeclaredField(fieldName);
         } catch (final SecurityException e) {
-            throw new DynamoDBMappingException(defaults.id().err("no access to field for " + getter), e);
+            throw new DynamoDBMappingException("no access to field for " + getter, e);
         } catch (final NoSuchFieldException no) {}
 
-        final FieldMap<T,V> map = new FieldMap<T,V>(defaults);
-        map.putAll(defaults.targetType());
+        if (defaultName == null) {
+            defaultName = fieldName;
+        }
+
+        final FieldTypedMap<T> map = new FieldTypedMap<T>(targetType, defaultName);
+        map.putAll(targetType);
         map.putAll(declaredField);
         map.putAll(getter);
         return map;
@@ -87,440 +78,291 @@ final class StandardAnnotationMaps {
     /**
      * Map of annotation type to annotation instance.
      */
-    static abstract class AnnotationMap {
-        private final Map<Class<? extends Annotation>,Annotation> map = new LinkedHashMap<Class<? extends Annotation>,Annotation>();
+    private static abstract class AbstractAnnotationMap {
+        private final Annotations map = new Annotations();
 
-        /**
-         * Put all the DynamoDB annotations present on the annotated element.
-         * @param annotated The annotated element.
-         * @return This instance for chaining.
-         */
-        final AnnotationMap putAll(final AnnotatedElement annotated) {
-            if (annotated != null && annotated.getAnnotations().length > 0) {
-                final Map<Class<? extends Annotation>,Annotation> tmp = new LinkedHashMap<Class<? extends Annotation>,Annotation>();
-                for (final Annotation a1 : annotated.getAnnotations()) {
-                    if (a1.annotationType().isAnnotationPresent(DynamoDB.class)) {
-                        if (tmp.containsKey(a1.annotationType())) {
-                            throw new DynamoDBMappingException("conflicting annotations " + a1 + " and " +
-                                tmp.get(a1.annotationType()) + "; allowed only one of @" + a1.annotationType().getSimpleName());
-                        }
-                        tmp.put(a1.annotationType(), a1);
-                    }
-                    for (final Annotation a2 : a1.annotationType().getAnnotations()) {
-                        if (a2.annotationType().isAnnotationPresent(DynamoDB.class)) {
-                            if (tmp.containsKey(a2.annotationType())) {
-                                throw new DynamoDBMappingException("conflicting annotations " + a1 + " and " +
-                                    tmp.get(a2.annotationType()) + "; allowed only one of @" + a2.annotationType().getSimpleName());
-                            }
-                            tmp.put(a2.annotationType(), a1);
-                        }
-                    }
-                }
-                this.map.putAll(tmp);
+        final void putAll(AnnotatedElement annotated) {
+            if (annotated != null) {
+                this.map.putAll(new Annotations().putAll(annotated.getAnnotations()));
             }
-            return this;
         }
 
-        /**
-         * Gets the annotation of the specified type; if the annotation is
-         * mapped to another type and the actual flag is specified, then it's
-         * meta annotation is returned.
-         * @param annotationType The annotation type.
-         * @param mappedBy To return the annotation mapped by the type.
-         * @return The annotation or null if not applicable.
-         */
-        final <A extends Annotation> A get(final Class<A> annotationType, final boolean mappedBy) {
-            final Annotation annotation = this.map.get(annotationType);
-            if (mappedBy == false && annotation != null && annotation.annotationType() != annotationType) {
-                return (A)annotation.annotationType().getAnnotation(annotationType);
-            }
-            return (A)annotation;
+        final <A extends Annotation> A actualOf(final Class<A> annotationType) {
+            return StandardAnnotationMaps.actualOf(annotationType, this.map.get(annotationType));
         }
 
-        /**
-         * Gets the actual annotation of the specified type; if the annotation
-         * is mapped to another type, then it's meta annotatoin is returned.
-         * @param annotationType The annotation type.
-         * @return The annotation or null if not applicable.
-         */
-        final <A extends Annotation> A get(final Class<A> annotationType) {
-            return get(annotationType, false);
+        final <A extends Annotation> Annotation customOf(final Class<A> annotationType) {
+            return this.map.get(annotationType);
+        }
+    }
+
+    /**
+     * Common type-conversions properties.
+     */
+    static abstract class TypedMap<T> extends AbstractAnnotationMap {
+        private final Class<T> targetType;
+
+        private TypedMap(final Class<T> targetType) {
+            this.targetType = targetType;
+        }
+
+        public <S> DynamoDBTypeConverter<S,T> typeConverter() {
+            final Annotation annotation = customOf(DynamoDBTypeConverted.class);
+            if (annotation != null) {
+                return DynamoDBTypeConverted.Converters.<S,T>of(targetType, annotation);
+            }
+            return null;
+        }
+
+        public DynamoDBAttributeType attributeType() {
+            final DynamoDBTyped annotation = actualOf(DynamoDBTyped.class);
+            if (annotation != null) {
+                return annotation.value();
+            }
+            return null;
+        }
+
+        public Class<T> targetType() {
+            return this.targetType;
         }
     }
 
     /**
      * {@link DynamoDBMapperTableModel} annotations.
      */
-    static final class TableMap<T> extends AnnotationMap implements DynamoDBMapperTableModel.Properties<T> {
-        private final DynamoDBMapperTableModel.Properties<T> defaults;
-
-        /**
-         * Constructs a new annotation map.
-         * @param defaults The default properties.
-         */
-        private TableMap(final DynamoDBMapperTableModel.Properties<T> defaults) {
-            this.defaults = defaults;
+    static final class TableTypedMap<T> extends TypedMap<T> implements DynamoDBMapperTableModel.Properties<T> {
+        private TableTypedMap(final Class<T> targetType) {
+            super(targetType);
         }
 
-        /**
-         * Gets the annotation {@code DynamoDBDocument} if present.
-         * @return The annotation if present, null otherwise.
-         */
-        final DynamoDBDocument document() {
-            return get(DynamoDBDocument.class);
-        }
-
-        /**
-         * Gets the annotation {@code DynamoDBTable} if present.
-         * @return The annotation if present, null otherwise.
-         */
-        final DynamoDBTable table() {
-            return get(DynamoDBTable.class);
-        }
-
-        /**
-         * Indicates if the map has typed annotations.
-         * @return True if any typed annotations, false otherwise.
-         */
-        final boolean typed() {
-            return table() != null || document() != null;
-        }
-
-        /**
-         * {@inheritDoc}
-         */
         @Override
-        public DynamoDBMapperTableModel.Id<T> id() {
-            return defaults.id();
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public Class<T> targetType() {
-            return defaults.targetType();
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public final String tableName() {
-            if (table() != null && !table().tableName().isEmpty()) {
-                return table().tableName();
+        public DynamoDBAttributeType attributeType() {
+            DynamoDBAttributeType attributeType = super.attributeType();
+            if (attributeType == null && actualOf(DynamoDBTable.class) != null) {
+                attributeType = DynamoDBAttributeType.M;
             }
-            return defaults.tableName();
+            return attributeType;
+        }
+
+        @Override
+        public String tableName() {
+            final DynamoDBTable annotation = actualOf(DynamoDBTable.class);
+            if (annotation != null && !annotation.tableName().isEmpty()) {
+                return annotation.tableName();
+            }
+            return null;
         }
     }
 
     /**
      * {@link DynamoDBMapperFieldModel} annotations.
      */
-    static final class FieldMap<T,V> extends AnnotationMap implements DynamoDBMapperFieldModel.Properties<T,V> {
-        private final DynamoDBMapperFieldModel.Properties<T,V> defaults;
+    static final class FieldTypedMap<T> extends TypedMap<T> implements DynamoDBMapperFieldModel.Properties<T> {
+        private final String defaultName;
 
-        /**
-         * Constructs a new annotation map.
-         * @param defaults The default properties.
-         */
-        private FieldMap(final DynamoDBMapperFieldModel.Properties<T,V> defaults) {
-            this.defaults = defaults;
+        private FieldTypedMap(Class<T> targetType, String defaultName) {
+            super(targetType);
+            this.defaultName = defaultName;
         }
 
-        /**
-         * Gets the annotation {@code DynamoDBAutoGenerated} if present.
-         * @return The annotation if present, null otherwise.
-         */
-        final Annotation autoGenerated() {
-            return get(DynamoDBAutoGenerated.class, true);
+        public boolean ignored() {
+            return actualOf(DynamoDBIgnore.class) != null;
         }
 
-        /**
-         * Gets the annotation {@code DynamoDBAutoGenerated} if present.
-         * @return The annotation if present, null otherwise.
-         */
-        final Annotation typeConverted() {
-            return get(DynamoDBTypeConverted.class, true);
+        public boolean flattened() {
+            return actualOf(DynamoDBFlattened.class) != null;
         }
 
-        /**
-         * Gets the annotation {@code DynamoDBAttribute} if present.
-         * @return The annotation if present, null otherwise.
-         */
-        final DynamoDBAttribute attribute() {
-            return get(DynamoDBAttribute.class);
-        }
-
-        /**
-         * Gets the annotation {@code DynamoDBDocument} if present.
-         * @return The annotation if present, null otherwise.
-         */
-        final DynamoDBDocument document() {
-            return get(DynamoDBDocument.class);
-        }
-
-        /**
-         * Gets the annotation {@code DynamoDBFlattened} if present.
-         * @return The annotation if present, null otherwise.
-         */
-        final DynamoDBFlattened flattened() {
-            return get(DynamoDBFlattened.class);
-        }
-
-        /**
-         * Gets the annotation {@code DynamoDBHashKey} if present.
-         * @return The annotation if present, null otherwise.
-         */
-        final DynamoDBHashKey hashKey() {
-            return get(DynamoDBHashKey.class);
-        }
-
-        /**
-         * Gets the annotation {@code DynamoDBIgnore} if present.
-         * @return The annotation if present, null otherwise.
-         */
-        final DynamoDBIgnore ignore() {
-            return get(DynamoDBIgnore.class);
-        }
-
-        /**
-         * Gets the annotation {@code DynamoDBIndexHashKey} if present.
-         * @return The annotation if present, null otherwise.
-         */
-        final DynamoDBIndexHashKey indexHashKey() {
-            return get(DynamoDBIndexHashKey.class);
-        }
-
-        /**
-         * Gets the annotation {@code DynamoDBIndexRangeKey} if present.
-         * @return The annotation if present, null otherwise.
-         */
-        final DynamoDBIndexRangeKey indexRangeKey() {
-            return get(DynamoDBIndexRangeKey.class);
-        }
-
-        /**
-         * Gets the annotation {@code DynamoDBNativeBoolean} if present.
-         * @return The annotation if present, null otherwise.
-         */
-        final DynamoDBNativeBoolean nativeBoolean() {
-            return get(DynamoDBNativeBoolean.class);
-        }
-
-        /**
-         * Gets the annotation {@code DynamoDBRangeKey} if present.
-         * @return The annotation if present, null otherwise.
-         */
-        final DynamoDBRangeKey rangeKey() {
-            return get(DynamoDBRangeKey.class);
-        }
-
-        /**
-         * Gets the annotation {@code DynamoDBScalarAttribute} if present.
-         * @return The annotation if present, null otherwise.
-         */
-        final DynamoDBScalarAttribute scalarAttribute() {
-            return get(DynamoDBScalarAttribute.class);
-        }
-
-        /**
-         * Gets the annotation {@code DynamoDBVersionAttribute} if present.
-         * @return The annotation if present, null otherwise.
-         */
-        final DynamoDBVersionAttribute version() {
-            return get(DynamoDBVersionAttribute.class);
-        }
-
-        /**
-         * Indicates if an ignored attribute.
-         * @return True if ignored, false otherwise.
-         */
-        final boolean ignored() {
-            return ignore() != null;
-        }
-
-        /**
-         * Gets the flattened attribute names map.
-         * @return The attribute names map.
-         */
-        final Map<String,String> attributes() {
-            if (flattened() != null) {
-                if (flattened().attributes().length == 0) {
-                    throw new DynamoDBMappingException(id().err("must specify one or more attributes"));
+        public Map<String,String> attributes() {
+            final Map<String,String> attributes = new LinkedHashMap<String,String>();
+            for (final DynamoDBAttribute a : actualOf(DynamoDBFlattened.class).attributes()) {
+                if (a.mappedBy().isEmpty() || a.attributeName().isEmpty()) {
+                    throw new DynamoDBMappingException("@DynamoDBFlattened must specify mappedBy and attributeName");
+                } else if (attributes.put(a.mappedBy(), a.attributeName()) != null) {
+                    throw new DynamoDBMappingException("@DynamoDBFlattened must not duplicate mappedBy=" + a.mappedBy());
                 }
-                final Map<String,String> attributes = new LinkedHashMap<String,String>();
-                for (final DynamoDBAttribute a : flattened().attributes()) {
-                    if (a.mappedBy().isEmpty() || a.attributeName().isEmpty()) {
-                        throw new DynamoDBMappingException(id().err("must specify mappedBy and attributeName"));
-                    } else if (attributes.put(a.mappedBy(), a.attributeName()) != null) {
-                        throw new DynamoDBMappingException(id().err("must not duplicate mappedBy=" + a.mappedBy()));
+            }
+            if (attributes.isEmpty()) {
+                throw new DynamoDBMappingException("@DynamoDBFlattened must specify one or more attributes");
+            }
+            return attributes;
+        }
+
+        @Override
+        public DynamoDBAttributeType attributeType() {
+            final DynamoDBScalarAttribute annotation = actualOf(DynamoDBScalarAttribute.class);
+            if (annotation != null) {
+                if (Set.class.isAssignableFrom(targetType())) {
+                    return DynamoDBAttributeType.valueOf(annotation.type().name() + "S");
+                } else {
+                    return DynamoDBAttributeType.valueOf(annotation.type().name());
+                }
+            }
+            return super.attributeType();
+        }
+
+        @Override
+        public String attributeName() {
+            final DynamoDBHashKey hashKey = actualOf(DynamoDBHashKey.class);
+            if (hashKey != null && !hashKey.attributeName().isEmpty()) {
+                return hashKey.attributeName();
+            }
+            final DynamoDBIndexHashKey indexHashKey = actualOf(DynamoDBIndexHashKey.class);
+            if (indexHashKey != null && !indexHashKey.attributeName().isEmpty()) {
+                return indexHashKey.attributeName();
+            }
+            final DynamoDBRangeKey rangeKey = actualOf(DynamoDBRangeKey.class);
+            if (rangeKey != null && !rangeKey.attributeName().isEmpty()) {
+                return rangeKey.attributeName();
+            }
+            final DynamoDBIndexRangeKey indexRangeKey = actualOf(DynamoDBIndexRangeKey.class);
+            if (indexRangeKey != null && !indexRangeKey.attributeName().isEmpty()) {
+                return indexRangeKey.attributeName();
+            }
+            final DynamoDBAttribute attribute = actualOf(DynamoDBAttribute.class);
+            if (attribute != null && !attribute.attributeName().isEmpty()) {
+                return attribute.attributeName();
+            }
+            final DynamoDBVersionAttribute versionAttribute = actualOf(DynamoDBVersionAttribute.class);
+            if (versionAttribute != null && !versionAttribute.attributeName().isEmpty()) {
+                return versionAttribute.attributeName();
+            }
+            final DynamoDBScalarAttribute scalarAttribute = actualOf(DynamoDBScalarAttribute.class);
+            if (scalarAttribute != null && !scalarAttribute.attributeName().isEmpty()) {
+                return scalarAttribute.attributeName();
+            }
+            final DynamoDBNamed annotation = actualOf(DynamoDBNamed.class);
+            if (annotation != null && !annotation.value().isEmpty()) {
+                return annotation.value();
+            }
+            return this.defaultName;
+        }
+
+        @Override
+        public KeyType keyType() {
+            final DynamoDBKeyed annotation = actualOf(DynamoDBKeyed.class);
+            if (annotation != null) {
+                return annotation.value();
+            }
+            return null;
+        }
+
+        @Override
+        public boolean versioned() {
+            return actualOf(DynamoDBVersioned.class) != null;
+        }
+
+        @Override
+        public Map<KeyType,List<String>> globalSecondaryIndexNames() {
+            final Map<KeyType,List<String>> gsis = new EnumMap<KeyType,List<String>>(KeyType.class);
+            final DynamoDBIndexHashKey indexHashKey = actualOf(DynamoDBIndexHashKey.class);
+            if (indexHashKey != null) {
+                if (!indexHashKey.globalSecondaryIndexName().isEmpty()) {
+                    if (indexHashKey.globalSecondaryIndexNames().length > 0) {
+                        throw new DynamoDBMappingException("@DynamoDBIndexHashKey must not specify both HASH GSI name/names");
                     }
+                    gsis.put(HASH, Collections.singletonList(indexHashKey.globalSecondaryIndexName()));
+                } else if (indexHashKey.globalSecondaryIndexNames().length > 0) {
+                    gsis.put(HASH, Collections.unmodifiableList(Arrays.asList(indexHashKey.globalSecondaryIndexNames())));
+                } else {
+                    throw new DynamoDBMappingException("@DynamoDBIndexHashKey must specify one of HASH GSI name/names");
                 }
-                return attributes;
             }
-            return Collections.emptyMap();
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public DynamoDBMapperFieldModel.Id<T> id() {
-            return defaults.id();
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public Class<V> targetType() {
-            return defaults.targetType();
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public final String attributeName() {
-            if (hashKey() != null && !hashKey().attributeName().isEmpty()) {
-                return hashKey().attributeName();
-            } else if (indexHashKey() != null && !indexHashKey().attributeName().isEmpty()) {
-                return indexHashKey().attributeName();
-            } else if (rangeKey() != null && !rangeKey().attributeName().isEmpty()) {
-                return rangeKey().attributeName();
-            } else if (indexRangeKey() != null && !indexRangeKey().attributeName().isEmpty()) {
-                return indexRangeKey().attributeName();
-            } else if (attribute() != null && !attribute().attributeName().isEmpty()) {
-                return attribute().attributeName();
-            } else if (version() != null && !version().attributeName().isEmpty()) {
-                return version().attributeName();
-            } else if (scalarAttribute() != null && !scalarAttribute().attributeName().isEmpty()) {
-                return scalarAttribute().attributeName();
-            }
-            return defaults.attributeName();
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public final DynamoDBAttributeType attributeType() {
-            if (nativeBoolean() != null) {
-                return AttributeType.BOOL.attributeType();
-            } else if (document() != null) {
-                return AttributeType.M.attributeType();
-            } else if (scalarAttribute() != null) {
-                String name = scalarAttribute().type().name();
-                if (StandardTypeConverters.Vector.SET.is(targetType())) {
-                    name += "S";
+            final DynamoDBIndexRangeKey indexRangeKey = actualOf(DynamoDBIndexRangeKey.class);
+            if (indexRangeKey != null) {
+                if (!indexRangeKey.globalSecondaryIndexName().isEmpty()) {
+                    if (indexRangeKey.globalSecondaryIndexNames().length > 0) {
+                        throw new DynamoDBMappingException("@DynamoDBIndexRangeKey must not specify both RANGE GSI name/names");
+                    }
+                    gsis.put(RANGE, Collections.singletonList(indexRangeKey.globalSecondaryIndexName()));
+                } else if (indexRangeKey.globalSecondaryIndexNames().length > 0) {
+                    gsis.put(RANGE, Collections.unmodifiableList(Arrays.asList(indexRangeKey.globalSecondaryIndexNames())));
+                } else if (localSecondaryIndexNames().isEmpty()) {
+                    throw new DynamoDBMappingException("@DynamoDBIndexRangeKey must specify RANGE GSI and/or LSI name/names");
                 }
-                return AttributeType.valueOf(name).attributeType();
             }
-            return defaults.attributeType();
+            if (!gsis.isEmpty()) {
+                return Collections.unmodifiableMap(gsis);
+            }
+            return Collections.<KeyType,List<String>>emptyMap();
         }
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
-        public final KeyType keyType() {
-            if (hashKey() != null) {
-                return KeyType.HASH;
-            } else if (rangeKey() != null) {
-                return KeyType.RANGE;
+        public List<String> localSecondaryIndexNames() {
+            final DynamoDBIndexRangeKey annotation = actualOf(DynamoDBIndexRangeKey.class);
+            if (annotation != null) {
+                if (!annotation.localSecondaryIndexName().isEmpty()) {
+                    if (annotation.localSecondaryIndexNames().length > 0) {
+                        throw new DynamoDBMappingException("@DynamoDBIndexRangeKey must not specify both LSI name/names");
+                    }
+                    return Collections.singletonList(annotation.localSecondaryIndexName());
+                } else if (annotation.localSecondaryIndexNames().length > 0) {
+                    return Collections.unmodifiableList(Arrays.asList(annotation.localSecondaryIndexNames()));
+                }
             }
-            return defaults.keyType();
+            return Collections.<String>emptyList();
         }
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
-        public final boolean versioned() {
-            if (version() != null) {
-                return Boolean.TRUE;
+        public DynamoDBAutoGenerator<T> autoGenerator() {
+            final Annotation annotation = customOf(DynamoDBAutoGenerated.class);
+            if (annotation != null) {
+                return DynamoDBAutoGenerated.Generators.<T>of(targetType(), annotation);
             }
-            return defaults.versioned();
+            return null;
+        }
+    }
+
+    /**
+     * A map of annotation type to annotation. It will map any first level
+     * custom annotations to any DynamoDB annotation types that are present.
+     * It will support up to two levels of compounded DynamoDB annotations.
+     */
+    private static final class Annotations extends LinkedHashMap<Class<? extends Annotation>,Annotation> {
+        private static final long serialVersionUID = -1L;
+
+        public boolean putIfAnnotated(Class<? extends Annotation> annotationType, Annotation annotation) {
+            if (!annotationType.isAnnotationPresent(DynamoDB.class)) {
+                return false;
+            } else if ((annotation = put(annotationType, annotation)) == null) {
+                return true;
+            }
+            throw new DynamoDBMappingException(
+                "conflicting annotations " + annotation + " and " + get(annotationType) +
+                "; allowed only one of @" + annotationType.getSimpleName()
+            );
         }
 
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public final Map<KeyType,List<String>> globalSecondaryIndexNames() {
-            if (indexHashKey() != null || indexRangeKey() != null) {
-                final Map<KeyType,List<String>> gsis = new EnumMap<KeyType,List<String>>(KeyType.class);
-                if (indexHashKey() != null) {
-                    if (!indexHashKey().globalSecondaryIndexName().isEmpty()) {
-                        if (indexHashKey().globalSecondaryIndexNames().length > 0) {
-                            throw new DynamoDBMappingException(id().err("must not specify both HASH GSI name/names"));
+        public Annotations putAll(Annotation ... annotations) {
+            for (final Annotation a1 : annotations) {
+                putIfAnnotated(a1.annotationType(), a1);
+                for (final Annotation a2 : a1.annotationType().getAnnotations()) {
+                    if (putIfAnnotated(a2.annotationType(), a1)) {
+                        for (final Annotation a3 : a2.annotationType().getAnnotations()) {
+                            putIfAnnotated(a3.annotationType(), a2);
                         }
-                        gsis.put(KeyType.HASH, Collections.singletonList(indexHashKey().globalSecondaryIndexName()));
-                    } else if (indexHashKey().globalSecondaryIndexNames().length > 0) {
-                        gsis.put(KeyType.HASH, Collections.unmodifiableList(Arrays.asList(indexHashKey().globalSecondaryIndexNames())));
-                    } else {
-                        throw new DynamoDBMappingException(id().err("must specify one of HASH GSI name/names"));
                     }
                 }
-                if (indexRangeKey() != null) {
-                    if (!indexRangeKey().globalSecondaryIndexName().isEmpty()) {
-                        if (indexRangeKey().globalSecondaryIndexNames().length > 0) {
-                            throw new DynamoDBMappingException(id().err("must not specify both RANGE GSI name/names"));
-                        }
-                        gsis.put(KeyType.RANGE, Collections.singletonList(indexRangeKey().globalSecondaryIndexName()));
-                    } else if (indexRangeKey().globalSecondaryIndexNames().length > 0) {
-                        gsis.put(KeyType.RANGE, Collections.unmodifiableList(Arrays.asList(indexRangeKey().globalSecondaryIndexNames())));
-                    } else if (localSecondaryIndexNames().isEmpty()) {
-                        throw new DynamoDBMappingException(id().err("must specify RANGE GSI and/or LSI name/names"));
-                    }
-                }
-                if (!gsis.isEmpty()) {
-                    return Collections.unmodifiableMap(gsis);
-                }
             }
-            return defaults.globalSecondaryIndexNames();
+            return this;
         }
+    }
 
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public final List<String> localSecondaryIndexNames() {
-            if (indexRangeKey() != null) {
-                if (!indexRangeKey().localSecondaryIndexName().isEmpty()) {
-                    if (indexRangeKey().localSecondaryIndexNames().length > 0) {
-                        throw new DynamoDBMappingException(id().err("must not specify both LSI name/names"));
-                    }
-                    return Collections.singletonList(indexRangeKey().localSecondaryIndexName());
-                } else if (indexRangeKey().localSecondaryIndexNames().length > 0) {
-                    return Collections.unmodifiableList(Arrays.asList(indexRangeKey().localSecondaryIndexNames()));
-                }
-            }
-            return defaults.localSecondaryIndexNames();
+    /**
+     * Returns the annotation if of the specified type or attempts to resolve
+     * the specified type from the compounded annotations.
+     */
+    @SuppressWarnings("unchecked")
+    static final <A extends Annotation> A actualOf(Class<A> annotationType, Annotation annotation) {
+        if (annotation == null || annotation.annotationType() == annotationType) {
+            return (A)annotation;
+        } else if (annotation.annotationType().isAnnotationPresent(annotationType)) {
+            return annotation.annotationType().getAnnotation(annotationType);
         }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public final DynamoDBAutoGenerator<V> autoGenerator() {
-            if (autoGenerated() != null) {
-                return DynamoDBAutoGenerated.Generators.of(targetType(), autoGenerated());
-            }
-            return defaults.autoGenerator();
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public final <S> DynamoDBTypeConverter<S,V> typeConverter() {
-            if (typeConverted() != null) {
-                return DynamoDBTypeConverted.Converters.of(targetType(), typeConverted());
-            }
-            return defaults.typeConverter();
-        }
+        throw new DynamoDBMappingException(
+            "could not resolve annotation by type" +
+            "; @" + annotationType.getSimpleName() + " not present on " + annotation
+        );
     }
 
 }

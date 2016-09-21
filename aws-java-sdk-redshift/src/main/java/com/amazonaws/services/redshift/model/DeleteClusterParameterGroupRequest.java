@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DeleteClusterParameterGroupRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -33,8 +32,16 @@ public class DeleteClusterParameterGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the name of an existing cluster parameter group.</li>
-     * <li>Cannot delete a default cluster parameter group.</li>
+     * <li>
+     * <p>
+     * Must be the name of an existing cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot delete a default cluster parameter group.
+     * </p>
+     * </li>
      * </ul>
      */
     private String parameterGroupName;
@@ -47,18 +54,34 @@ public class DeleteClusterParameterGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the name of an existing cluster parameter group.</li>
-     * <li>Cannot delete a default cluster parameter group.</li>
+     * <li>
+     * <p>
+     * Must be the name of an existing cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot delete a default cluster parameter group.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param parameterGroupName
-     *        The name of the parameter group to be deleted. </p>
+     *        The name of the parameter group to be deleted.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the name of an existing cluster parameter group.</li>
-     *        <li>Cannot delete a default cluster parameter group.</li>
+     *        <li>
+     *        <p>
+     *        Must be the name of an existing cluster parameter group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot delete a default cluster parameter group.
+     *        </p>
+     *        </li>
      */
 
     public void setParameterGroupName(String parameterGroupName) {
@@ -73,17 +96,33 @@ public class DeleteClusterParameterGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the name of an existing cluster parameter group.</li>
-     * <li>Cannot delete a default cluster parameter group.</li>
+     * <li>
+     * <p>
+     * Must be the name of an existing cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot delete a default cluster parameter group.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The name of the parameter group to be deleted. </p>
+     * @return The name of the parameter group to be deleted.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be the name of an existing cluster parameter group.</li>
-     *         <li>Cannot delete a default cluster parameter group.</li>
+     *         <li>
+     *         <p>
+     *         Must be the name of an existing cluster parameter group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot delete a default cluster parameter group.
+     *         </p>
+     *         </li>
      */
 
     public String getParameterGroupName() {
@@ -98,18 +137,34 @@ public class DeleteClusterParameterGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the name of an existing cluster parameter group.</li>
-     * <li>Cannot delete a default cluster parameter group.</li>
+     * <li>
+     * <p>
+     * Must be the name of an existing cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot delete a default cluster parameter group.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param parameterGroupName
-     *        The name of the parameter group to be deleted. </p>
+     *        The name of the parameter group to be deleted.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the name of an existing cluster parameter group.</li>
-     *        <li>Cannot delete a default cluster parameter group.</li>
+     *        <li>
+     *        <p>
+     *        Must be the name of an existing cluster parameter group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot delete a default cluster parameter group.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

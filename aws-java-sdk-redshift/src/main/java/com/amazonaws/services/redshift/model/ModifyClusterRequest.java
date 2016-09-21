@@ -104,9 +104,21 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> clusterSecurityGroups;
@@ -124,10 +136,14 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.
-     * <note> Operations never return the password, so this operation provides a
-     * way to regain access to the master user account for a cluster if the
-     * password is lost. </note>
      * </p>
+     * <note>
+     * <p>
+     * Operations never return the password, so this operation provides a way to
+     * regain access to the master user account for a cluster if the password is
+     * lost.
+     * </p>
+     * </note>
      * <p>
      * Default: Uses existing setting.
      * </p>
@@ -135,12 +151,32 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be between 8 and 64 characters in length.</li>
-     * <li>Must contain at least one uppercase letter.</li>
-     * <li>Must contain at least one lowercase letter.</li>
-     * <li>Must contain one number.</li>
-     * <li>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</li>
+     * <li>
+     * <p>
+     * Must be between 8 and 64 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one uppercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one lowercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain one number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be any printable ASCII character (ASCII code 33 to 126) except '
+     * (single quote), " (double quote), \, /, @, or space.
+     * </p>
+     * </li>
      * </ul>
      */
     private String masterUserPassword;
@@ -258,11 +294,31 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>examplecluster</code>
@@ -290,6 +346,23 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String elasticIp;
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     */
+    private Boolean enhancedVpcRouting;
 
     /**
      * <p>
@@ -300,7 +373,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param clusterIdentifier
-     *        The unique identifier of the cluster to be modified. </p>
+     *        The unique identifier of the cluster to be modified.</p>
      *        <p>
      *        Example: <code>examplecluster</code>
      */
@@ -317,7 +390,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Example: <code>examplecluster</code>
      * </p>
      * 
-     * @return The unique identifier of the cluster to be modified. </p>
+     * @return The unique identifier of the cluster to be modified.</p>
      *         <p>
      *         Example: <code>examplecluster</code>
      */
@@ -335,7 +408,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param clusterIdentifier
-     *        The unique identifier of the cluster to be modified. </p>
+     *        The unique identifier of the cluster to be modified.</p>
      *        <p>
      *        Example: <code>examplecluster</code>
      * @return Returns a reference to this object so that method calls can be
@@ -364,7 +437,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param clusterType
-     *        The new cluster type. </p>
+     *        The new cluster type.</p>
      *        <p>
      *        When you submit your cluster resize request, your existing cluster
      *        goes into a read-only mode. After Amazon Redshift provisions a new
@@ -397,7 +470,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Valid Values: <code> multi-node | single-node </code>
      * </p>
      * 
-     * @return The new cluster type. </p>
+     * @return The new cluster type.</p>
      *         <p>
      *         When you submit your cluster resize request, your existing
      *         cluster goes into a read-only mode. After Amazon Redshift
@@ -432,7 +505,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param clusterType
-     *        The new cluster type. </p>
+     *        The new cluster type.</p>
      *        <p>
      *        When you submit your cluster resize request, your existing cluster
      *        goes into a read-only mode. After Amazon Redshift provisions a new
@@ -475,7 +548,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param nodeType
      *        The new node type of the cluster. If you specify a new node type,
-     *        you must also specify the number of nodes parameter. </p>
+     *        you must also specify the number of nodes parameter.</p>
      *        <p>
      *        When you submit your request to resize a cluster, Amazon Redshift
      *        sets access permissions for the cluster to read-only. After Amazon
@@ -518,7 +591,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return The new node type of the cluster. If you specify a new node type,
-     *         you must also specify the number of nodes parameter. </p>
+     *         you must also specify the number of nodes parameter.</p>
      *         <p>
      *         When you submit your request to resize a cluster, Amazon Redshift
      *         sets access permissions for the cluster to read-only. After
@@ -563,7 +636,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param nodeType
      *        The new node type of the cluster. If you specify a new node type,
-     *        you must also specify the number of nodes parameter. </p>
+     *        you must also specify the number of nodes parameter.</p>
      *        <p>
      *        When you submit your request to resize a cluster, Amazon Redshift
      *        sets access permissions for the cluster to read-only. After Amazon
@@ -608,8 +681,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param numberOfNodes
      *        The new number of nodes of the cluster. If you specify a new
-     *        number of nodes, you must also specify the node type parameter.
-     *        </p>
+     *        number of nodes, you must also specify the node type
+     *        parameter.</p>
      *        <p>
      *        When you submit your request to resize a cluster, Amazon Redshift
      *        sets access permissions for the cluster to read-only. After Amazon
@@ -648,8 +721,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return The new number of nodes of the cluster. If you specify a new
-     *         number of nodes, you must also specify the node type parameter.
-     *         </p>
+     *         number of nodes, you must also specify the node type
+     *         parameter.</p>
      *         <p>
      *         When you submit your request to resize a cluster, Amazon Redshift
      *         sets access permissions for the cluster to read-only. After
@@ -690,8 +763,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param numberOfNodes
      *        The new number of nodes of the cluster. If you specify a new
-     *        number of nodes, you must also specify the node type parameter.
-     *        </p>
+     *        number of nodes, you must also specify the node type
+     *        parameter.</p>
      *        <p>
      *        When you submit your request to resize a cluster, Amazon Redshift
      *        sets access permissions for the cluster to read-only. After Amazon
@@ -726,14 +799,26 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return A list of cluster security groups to be authorized on this
      *         cluster. This change is asynchronously applied as soon as
-     *         possible. </p>
+     *         possible.</p>
      *         <p>
      *         Security groups currently associated with the cluster, and not in
      *         the list of groups to apply, will be revoked from the cluster.
@@ -742,9 +827,21 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getClusterSecurityGroups() {
@@ -767,15 +864,27 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param clusterSecurityGroups
      *        A list of cluster security groups to be authorized on this
      *        cluster. This change is asynchronously applied as soon as
-     *        possible. </p>
+     *        possible.</p>
      *        <p>
      *        Security groups currently associated with the cluster, and not in
      *        the list of groups to apply, will be revoked from the cluster.
@@ -784,9 +893,21 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setClusterSecurityGroups(
@@ -813,9 +934,21 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -827,7 +960,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param clusterSecurityGroups
      *        A list of cluster security groups to be authorized on this
      *        cluster. This change is asynchronously applied as soon as
-     *        possible. </p>
+     *        possible.</p>
      *        <p>
      *        Security groups currently associated with the cluster, and not in
      *        the list of groups to apply, will be revoked from the cluster.
@@ -836,9 +969,21 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -868,15 +1013,27 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param clusterSecurityGroups
      *        A list of cluster security groups to be authorized on this
      *        cluster. This change is asynchronously applied as soon as
-     *        possible. </p>
+     *        possible.</p>
      *        <p>
      *        Security groups currently associated with the cluster, and not in
      *        the list of groups to apply, will be revoked from the cluster.
@@ -885,9 +1042,21 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -994,10 +1163,14 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.
-     * <note> Operations never return the password, so this operation provides a
-     * way to regain access to the master user account for a cluster if the
-     * password is lost. </note>
      * </p>
+     * <note>
+     * <p>
+     * Operations never return the password, so this operation provides a way to
+     * regain access to the master user account for a cluster if the password is
+     * lost.
+     * </p>
+     * </note>
      * <p>
      * Default: Uses existing setting.
      * </p>
@@ -1005,12 +1178,32 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be between 8 and 64 characters in length.</li>
-     * <li>Must contain at least one uppercase letter.</li>
-     * <li>Must contain at least one lowercase letter.</li>
-     * <li>Must contain one number.</li>
-     * <li>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</li>
+     * <li>
+     * <p>
+     * Must be between 8 and 64 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one uppercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one lowercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain one number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be any printable ASCII character (ASCII code 33 to 126) except '
+     * (single quote), " (double quote), \, /, @, or space.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param masterUserPassword
@@ -1019,9 +1212,13 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        the request and the completion of the request, the
      *        <code>MasterUserPassword</code> element exists in the
      *        <code>PendingModifiedValues</code> element of the operation
-     *        response. <note> Operations never return the password, so this
-     *        operation provides a way to regain access to the master user
-     *        account for a cluster if the password is lost. </note> </p>
+     *        response. </p> <note>
+     *        <p>
+     *        Operations never return the password, so this operation provides a
+     *        way to regain access to the master user account for a cluster if
+     *        the password is lost.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: Uses existing setting.
      *        </p>
@@ -1029,12 +1226,32 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be between 8 and 64 characters in length.</li>
-     *        <li>Must contain at least one uppercase letter.</li>
-     *        <li>Must contain at least one lowercase letter.</li>
-     *        <li>Must contain one number.</li>
-     *        <li>Can be any printable ASCII character (ASCII code 33 to 126)
-     *        except ' (single quote), " (double quote), \, /, @, or space.</li>
+     *        <li>
+     *        <p>
+     *        Must be between 8 and 64 characters in length.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain at least one uppercase letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain at least one lowercase letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain one number.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can be any printable ASCII character (ASCII code 33 to 126) except
+     *        ' (single quote), " (double quote), \, /, @, or space.
+     *        </p>
+     *        </li>
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -1048,10 +1265,14 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.
-     * <note> Operations never return the password, so this operation provides a
-     * way to regain access to the master user account for a cluster if the
-     * password is lost. </note>
      * </p>
+     * <note>
+     * <p>
+     * Operations never return the password, so this operation provides a way to
+     * regain access to the master user account for a cluster if the password is
+     * lost.
+     * </p>
+     * </note>
      * <p>
      * Default: Uses existing setting.
      * </p>
@@ -1059,12 +1280,32 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be between 8 and 64 characters in length.</li>
-     * <li>Must contain at least one uppercase letter.</li>
-     * <li>Must contain at least one lowercase letter.</li>
-     * <li>Must contain one number.</li>
-     * <li>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</li>
+     * <li>
+     * <p>
+     * Must be between 8 and 64 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one uppercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one lowercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain one number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be any printable ASCII character (ASCII code 33 to 126) except '
+     * (single quote), " (double quote), \, /, @, or space.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The new password for the cluster master user. This change is
@@ -1072,9 +1313,13 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *         the request and the completion of the request, the
      *         <code>MasterUserPassword</code> element exists in the
      *         <code>PendingModifiedValues</code> element of the operation
-     *         response. <note> Operations never return the password, so this
-     *         operation provides a way to regain access to the master user
-     *         account for a cluster if the password is lost. </note> </p>
+     *         response. </p> <note>
+     *         <p>
+     *         Operations never return the password, so this operation provides
+     *         a way to regain access to the master user account for a cluster
+     *         if the password is lost.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: Uses existing setting.
      *         </p>
@@ -1082,12 +1327,32 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be between 8 and 64 characters in length.</li>
-     *         <li>Must contain at least one uppercase letter.</li>
-     *         <li>Must contain at least one lowercase letter.</li>
-     *         <li>Must contain one number.</li>
-     *         <li>Can be any printable ASCII character (ASCII code 33 to 126)
-     *         except ' (single quote), " (double quote), \, /, @, or space.</li>
+     *         <li>
+     *         <p>
+     *         Must be between 8 and 64 characters in length.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must contain at least one uppercase letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must contain at least one lowercase letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must contain one number.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can be any printable ASCII character (ASCII code 33 to 126)
+     *         except ' (single quote), " (double quote), \, /, @, or space.
+     *         </p>
+     *         </li>
      */
 
     public String getMasterUserPassword() {
@@ -1101,10 +1366,14 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.
-     * <note> Operations never return the password, so this operation provides a
-     * way to regain access to the master user account for a cluster if the
-     * password is lost. </note>
      * </p>
+     * <note>
+     * <p>
+     * Operations never return the password, so this operation provides a way to
+     * regain access to the master user account for a cluster if the password is
+     * lost.
+     * </p>
+     * </note>
      * <p>
      * Default: Uses existing setting.
      * </p>
@@ -1112,12 +1381,32 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be between 8 and 64 characters in length.</li>
-     * <li>Must contain at least one uppercase letter.</li>
-     * <li>Must contain at least one lowercase letter.</li>
-     * <li>Must contain one number.</li>
-     * <li>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</li>
+     * <li>
+     * <p>
+     * Must be between 8 and 64 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one uppercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain at least one lowercase letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain one number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be any printable ASCII character (ASCII code 33 to 126) except '
+     * (single quote), " (double quote), \, /, @, or space.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param masterUserPassword
@@ -1126,9 +1415,13 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        the request and the completion of the request, the
      *        <code>MasterUserPassword</code> element exists in the
      *        <code>PendingModifiedValues</code> element of the operation
-     *        response. <note> Operations never return the password, so this
-     *        operation provides a way to regain access to the master user
-     *        account for a cluster if the password is lost. </note> </p>
+     *        response. </p> <note>
+     *        <p>
+     *        Operations never return the password, so this operation provides a
+     *        way to regain access to the master user account for a cluster if
+     *        the password is lost.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: Uses existing setting.
      *        </p>
@@ -1136,12 +1429,32 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be between 8 and 64 characters in length.</li>
-     *        <li>Must contain at least one uppercase letter.</li>
-     *        <li>Must contain at least one lowercase letter.</li>
-     *        <li>Must contain one number.</li>
-     *        <li>Can be any printable ASCII character (ASCII code 33 to 126)
-     *        except ' (single quote), " (double quote), \, /, @, or space.</li>
+     *        <li>
+     *        <p>
+     *        Must be between 8 and 64 characters in length.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain at least one uppercase letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain at least one lowercase letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain one number.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can be any printable ASCII character (ASCII code 33 to 126) except
+     *        ' (single quote), " (double quote), \, /, @, or space.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1397,7 +1710,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param preferredMaintenanceWindow
      *        The weekly time range (in UTC) during which system maintenance can
      *        occur, if necessary. If system maintenance is necessary during the
-     *        window, it may result in an outage. </p>
+     *        window, it may result in an outage.</p>
      *        <p>
      *        This maintenance window change is made immediately. If the new
      *        maintenance window indicates the current time, there must be at
@@ -1450,7 +1763,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @return The weekly time range (in UTC) during which system maintenance
      *         can occur, if necessary. If system maintenance is necessary
-     *         during the window, it may result in an outage. </p>
+     *         during the window, it may result in an outage.</p>
      *         <p>
      *         This maintenance window change is made immediately. If the new
      *         maintenance window indicates the current time, there must be at
@@ -1504,7 +1817,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param preferredMaintenanceWindow
      *        The weekly time range (in UTC) during which system maintenance can
      *        occur, if necessary. If system maintenance is necessary during the
-     *        window, it may result in an outage. </p>
+     *        window, it may result in an outage.</p>
      *        <p>
      *        This maintenance window change is made immediately. If the new
      *        maintenance window indicates the current time, there must be at
@@ -1554,7 +1867,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param clusterVersion
      *        The new version number of the Amazon Redshift engine to upgrade
-     *        to. </p>
+     *        to.</p>
      *        <p>
      *        For major version upgrades, if a non-default cluster parameter
      *        group is currently in use, a new cluster parameter group in the
@@ -1594,7 +1907,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return The new version number of the Amazon Redshift engine to upgrade
-     *         to. </p>
+     *         to.</p>
      *         <p>
      *         For major version upgrades, if a non-default cluster parameter
      *         group is currently in use, a new cluster parameter group in the
@@ -1635,7 +1948,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param clusterVersion
      *        The new version number of the Amazon Redshift engine to upgrade
-     *        to. </p>
+     *        to.</p>
      *        <p>
      *        For major version upgrades, if a non-default cluster parameter
      *        group is currently in use, a new cluster parameter group in the
@@ -1851,11 +2164,31 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>examplecluster</code>
@@ -1867,11 +2200,31 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>Alphabetic characters must be lowercase.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *        <li>Must be unique for all clusters within an AWS account.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alphabetic characters must be lowercase.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for all clusters within an AWS account.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>examplecluster</code>
@@ -1889,11 +2242,31 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>examplecluster</code>
@@ -1904,12 +2277,31 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         </p>
      *         </li>
-     *         <li>Alphabetic characters must be lowercase.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *         <li>Must be unique for all clusters within an AWS account.</li>
+     *         <li>
+     *         <p>
+     *         Alphabetic characters must be lowercase.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be unique for all clusters within an AWS account.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>examplecluster</code>
@@ -1927,11 +2319,31 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>Alphabetic characters must be lowercase.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for all clusters within an AWS account.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alphabetic characters must be lowercase.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all clusters within an AWS account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>examplecluster</code>
@@ -1943,11 +2355,31 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>Alphabetic characters must be lowercase.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *        <li>Must be unique for all clusters within an AWS account.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alphabetic characters must be lowercase.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for all clusters within an AWS account.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>examplecluster</code>
@@ -2115,6 +2547,152 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @param enhancedVpcRouting
+     *        An option that specifies whether to create the cluster with
+     *        enhanced VPC routing enabled. To create a cluster that uses
+     *        enhanced VPC routing, the cluster must be in a VPC. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *        >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *        Management Guide.</p>
+     *        <p>
+     *        If this option is <code>true</code>, enhanced VPC routing is
+     *        enabled.
+     *        </p>
+     *        <p>
+     *        Default: false
+     */
+
+    public void setEnhancedVpcRouting(Boolean enhancedVpcRouting) {
+        this.enhancedVpcRouting = enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @return An option that specifies whether to create the cluster with
+     *         enhanced VPC routing enabled. To create a cluster that uses
+     *         enhanced VPC routing, the cluster must be in a VPC. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *         >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *         Management Guide.</p>
+     *         <p>
+     *         If this option is <code>true</code>, enhanced VPC routing is
+     *         enabled.
+     *         </p>
+     *         <p>
+     *         Default: false
+     */
+
+    public Boolean getEnhancedVpcRouting() {
+        return this.enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @param enhancedVpcRouting
+     *        An option that specifies whether to create the cluster with
+     *        enhanced VPC routing enabled. To create a cluster that uses
+     *        enhanced VPC routing, the cluster must be in a VPC. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *        >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *        Management Guide.</p>
+     *        <p>
+     *        If this option is <code>true</code>, enhanced VPC routing is
+     *        enabled.
+     *        </p>
+     *        <p>
+     *        Default: false
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyClusterRequest withEnhancedVpcRouting(
+            Boolean enhancedVpcRouting) {
+        setEnhancedVpcRouting(enhancedVpcRouting);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @return An option that specifies whether to create the cluster with
+     *         enhanced VPC routing enabled. To create a cluster that uses
+     *         enhanced VPC routing, the cluster must be in a VPC. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *         >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *         Management Guide.</p>
+     *         <p>
+     *         If this option is <code>true</code>, enhanced VPC routing is
+     *         enabled.
+     *         </p>
+     *         <p>
+     *         Default: false
+     */
+
+    public Boolean isEnhancedVpcRouting() {
+        return this.enhancedVpcRouting;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -2166,7 +2744,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getPubliclyAccessible() != null)
             sb.append("PubliclyAccessible: " + getPubliclyAccessible() + ",");
         if (getElasticIp() != null)
-            sb.append("ElasticIp: " + getElasticIp());
+            sb.append("ElasticIp: " + getElasticIp() + ",");
+        if (getEnhancedVpcRouting() != null)
+            sb.append("EnhancedVpcRouting: " + getEnhancedVpcRouting());
         sb.append("}");
         return sb.toString();
     }
@@ -2291,6 +2871,13 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
         if (other.getElasticIp() != null
                 && other.getElasticIp().equals(this.getElasticIp()) == false)
             return false;
+        if (other.getEnhancedVpcRouting() == null
+                ^ this.getEnhancedVpcRouting() == null)
+            return false;
+        if (other.getEnhancedVpcRouting() != null
+                && other.getEnhancedVpcRouting().equals(
+                        this.getEnhancedVpcRouting()) == false)
+            return false;
         return true;
     }
 
@@ -2362,6 +2949,10 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest
                         : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode
                 + ((getElasticIp() == null) ? 0 : getElasticIp().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEnhancedVpcRouting() == null) ? 0
+                        : getEnhancedVpcRouting().hashCode());
         return hashCode;
     }
 

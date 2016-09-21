@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class CopyClusterSnapshotRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -33,8 +32,12 @@ public class CopyClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for a valid automated snapshot whose state is
-     * <code>available</code>.</li>
+     * <li>
+     * <p>
+     * Must be the identifier for a valid automated snapshot whose state is
+     * <code>available</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String sourceSnapshotIdentifier;
@@ -49,7 +52,11 @@ public class CopyClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for a valid cluster.</li>
+     * <li>
+     * <p>
+     * Must be the identifier for a valid cluster.
+     * </p>
+     * </li>
      * </ul>
      */
     private String sourceSnapshotClusterIdentifier;
@@ -61,11 +68,31 @@ public class CopyClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank.</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for the AWS account that is making the request.</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for the AWS account that is making the request.
+     * </p>
+     * </li>
      * </ul>
      */
     private String targetSnapshotIdentifier;
@@ -78,18 +105,26 @@ public class CopyClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for a valid automated snapshot whose state is
-     * <code>available</code>.</li>
+     * <li>
+     * <p>
+     * Must be the identifier for a valid automated snapshot whose state is
+     * <code>available</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceSnapshotIdentifier
-     *        The identifier for the source snapshot. </p>
+     *        The identifier for the source snapshot.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the identifier for a valid automated snapshot whose
-     *        state is <code>available</code>.</li>
+     *        <li>
+     *        <p>
+     *        Must be the identifier for a valid automated snapshot whose state
+     *        is <code>available</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setSourceSnapshotIdentifier(String sourceSnapshotIdentifier) {
@@ -104,17 +139,25 @@ public class CopyClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for a valid automated snapshot whose state is
-     * <code>available</code>.</li>
+     * <li>
+     * <p>
+     * Must be the identifier for a valid automated snapshot whose state is
+     * <code>available</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The identifier for the source snapshot. </p>
+     * @return The identifier for the source snapshot.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be the identifier for a valid automated snapshot whose
-     *         state is <code>available</code>.</li>
+     *         <li>
+     *         <p>
+     *         Must be the identifier for a valid automated snapshot whose state
+     *         is <code>available</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getSourceSnapshotIdentifier() {
@@ -129,18 +172,26 @@ public class CopyClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for a valid automated snapshot whose state is
-     * <code>available</code>.</li>
+     * <li>
+     * <p>
+     * Must be the identifier for a valid automated snapshot whose state is
+     * <code>available</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceSnapshotIdentifier
-     *        The identifier for the source snapshot. </p>
+     *        The identifier for the source snapshot.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the identifier for a valid automated snapshot whose
-     *        state is <code>available</code>.</li>
+     *        <li>
+     *        <p>
+     *        Must be the identifier for a valid automated snapshot whose state
+     *        is <code>available</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -162,19 +213,27 @@ public class CopyClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for a valid cluster.</li>
+     * <li>
+     * <p>
+     * Must be the identifier for a valid cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceSnapshotClusterIdentifier
      *        The identifier of the cluster the source snapshot was created
      *        from. This parameter is required if your IAM user has a policy
      *        containing a snapshot resource element that specifies anything
-     *        other than * for the cluster name. </p>
+     *        other than * for the cluster name.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the identifier for a valid cluster.</li>
+     *        <li>
+     *        <p>
+     *        Must be the identifier for a valid cluster.
+     *        </p>
+     *        </li>
      */
 
     public void setSourceSnapshotClusterIdentifier(
@@ -193,18 +252,26 @@ public class CopyClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for a valid cluster.</li>
+     * <li>
+     * <p>
+     * Must be the identifier for a valid cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the cluster the source snapshot was created
      *         from. This parameter is required if your IAM user has a policy
      *         containing a snapshot resource element that specifies anything
-     *         other than * for the cluster name. </p>
+     *         other than * for the cluster name.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be the identifier for a valid cluster.</li>
+     *         <li>
+     *         <p>
+     *         Must be the identifier for a valid cluster.
+     *         </p>
+     *         </li>
      */
 
     public String getSourceSnapshotClusterIdentifier() {
@@ -222,19 +289,27 @@ public class CopyClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for a valid cluster.</li>
+     * <li>
+     * <p>
+     * Must be the identifier for a valid cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceSnapshotClusterIdentifier
      *        The identifier of the cluster the source snapshot was created
      *        from. This parameter is required if your IAM user has a policy
      *        containing a snapshot resource element that specifies anything
-     *        other than * for the cluster name. </p>
+     *        other than * for the cluster name.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the identifier for a valid cluster.</li>
+     *        <li>
+     *        <p>
+     *        Must be the identifier for a valid cluster.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -253,25 +328,63 @@ public class CopyClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank.</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for the AWS account that is making the request.</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for the AWS account that is making the request.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param targetSnapshotIdentifier
-     *        The identifier given to the new manual snapshot. </p>
+     *        The identifier given to the new manual snapshot.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot be null, empty, or blank.</li>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        <li>
+     *        <p>
+     *        Cannot be null, empty, or blank.
+     *        </p>
      *        </li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *        <li>Must be unique for the AWS account that is making the request.
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for the AWS account that is making the request.
+     *        </p>
      *        </li>
      */
 
@@ -287,25 +400,63 @@ public class CopyClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank.</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for the AWS account that is making the request.</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for the AWS account that is making the request.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The identifier given to the new manual snapshot. </p>
+     * @return The identifier given to the new manual snapshot.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Cannot be null, empty, or blank.</li>
-     *         <li>Must contain from 1 to 255 alphanumeric characters or
-     *         hyphens.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *         <li>Must be unique for the AWS account that is making the
-     *         request.</li>
+     *         <li>
+     *         <p>
+     *         Cannot be null, empty, or blank.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be unique for the AWS account that is making the request.
+     *         </p>
+     *         </li>
      */
 
     public String getTargetSnapshotIdentifier() {
@@ -320,25 +471,63 @@ public class CopyClusterSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank.</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     * <li>Must be unique for the AWS account that is making the request.</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for the AWS account that is making the request.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param targetSnapshotIdentifier
-     *        The identifier given to the new manual snapshot. </p>
+     *        The identifier given to the new manual snapshot.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot be null, empty, or blank.</li>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        <li>
+     *        <p>
+     *        Cannot be null, empty, or blank.
+     *        </p>
      *        </li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-     *        <li>Must be unique for the AWS account that is making the request.
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for the AWS account that is making the request.
+     *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

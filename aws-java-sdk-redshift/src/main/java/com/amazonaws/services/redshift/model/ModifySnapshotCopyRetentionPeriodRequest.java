@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class ModifySnapshotCopyRetentionPeriodRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -68,7 +67,7 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends
      * @param clusterIdentifier
      *        The unique identifier of the cluster for which you want to change
      *        the retention period for automated snapshots that are copied to a
-     *        destination region. </p>
+     *        destination region.</p>
      *        <p>
      *        Constraints: Must be the valid name of an existing cluster that
      *        has cross-region snapshot copy enabled.
@@ -91,7 +90,7 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends
      * 
      * @return The unique identifier of the cluster for which you want to change
      *         the retention period for automated snapshots that are copied to a
-     *         destination region. </p>
+     *         destination region.</p>
      *         <p>
      *         Constraints: Must be the valid name of an existing cluster that
      *         has cross-region snapshot copy enabled.
@@ -115,7 +114,7 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends
      * @param clusterIdentifier
      *        The unique identifier of the cluster for which you want to change
      *        the retention period for automated snapshots that are copied to a
-     *        destination region. </p>
+     *        destination region.</p>
      *        <p>
      *        Constraints: Must be the valid name of an existing cluster that
      *        has cross-region snapshot copy enabled.
@@ -146,8 +145,8 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends
      * 
      * @param retentionPeriod
      *        The number of days to retain automated snapshots in the
-     *        destination region after they are copied from the source region.
-     *        </p>
+     *        destination region after they are copied from the source
+     *        region.</p>
      *        <p>
      *        If you decrease the retention period for automated snapshots that
      *        are copied to a destination region, Amazon Redshift will delete
@@ -179,8 +178,8 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends
      * </p>
      * 
      * @return The number of days to retain automated snapshots in the
-     *         destination region after they are copied from the source region.
-     *         </p>
+     *         destination region after they are copied from the source
+     *         region.</p>
      *         <p>
      *         If you decrease the retention period for automated snapshots that
      *         are copied to a destination region, Amazon Redshift will delete
@@ -213,8 +212,8 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends
      * 
      * @param retentionPeriod
      *        The number of days to retain automated snapshots in the
-     *        destination region after they are copied from the source region.
-     *        </p>
+     *        destination region after they are copied from the source
+     *        region.</p>
      *        <p>
      *        If you decrease the retention period for automated snapshots that
      *        are copied to a destination region, Amazon Redshift will delete

@@ -33,10 +33,22 @@ public class CreateClusterSecurityGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain no more than 255 alphanumeric characters or hyphens.</li>
-     * <li>Must not be "Default".</li>
-     * <li>Must be unique for all security groups that are created by your AWS
-     * account.</li>
+     * <li>
+     * <p>
+     * Must contain no more than 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not be "Default".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all security groups that are created by your AWS
+     * account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>examplesecuritygroup</code>
@@ -65,10 +77,22 @@ public class CreateClusterSecurityGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain no more than 255 alphanumeric characters or hyphens.</li>
-     * <li>Must not be "Default".</li>
-     * <li>Must be unique for all security groups that are created by your AWS
-     * account.</li>
+     * <li>
+     * <p>
+     * Must contain no more than 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not be "Default".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all security groups that are created by your AWS
+     * account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>examplesecuritygroup</code>
@@ -76,16 +100,27 @@ public class CreateClusterSecurityGroupRequest extends
      * 
      * @param clusterSecurityGroupName
      *        The name for the security group. Amazon Redshift stores the value
-     *        as a lowercase string. </p>
+     *        as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain no more than 255 alphanumeric characters or
-     *        hyphens.</li>
-     *        <li>Must not be "Default".</li>
-     *        <li>Must be unique for all security groups that are created by
-     *        your AWS account.</li>
+     *        <li>
+     *        <p>
+     *        Must contain no more than 255 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not be "Default".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for all security groups that are created by your
+     *        AWS account.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>examplesecuritygroup</code>
@@ -104,26 +139,49 @@ public class CreateClusterSecurityGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain no more than 255 alphanumeric characters or hyphens.</li>
-     * <li>Must not be "Default".</li>
-     * <li>Must be unique for all security groups that are created by your AWS
-     * account.</li>
+     * <li>
+     * <p>
+     * Must contain no more than 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not be "Default".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all security groups that are created by your AWS
+     * account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>examplesecuritygroup</code>
      * </p>
      * 
      * @return The name for the security group. Amazon Redshift stores the value
-     *         as a lowercase string. </p>
+     *         as a lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain no more than 255 alphanumeric characters or
-     *         hyphens.</li>
-     *         <li>Must not be "Default".</li>
-     *         <li>Must be unique for all security groups that are created by
-     *         your AWS account.</li>
+     *         <li>
+     *         <p>
+     *         Must contain no more than 255 alphanumeric characters or hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must not be "Default".
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be unique for all security groups that are created by your
+     *         AWS account.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>examplesecuritygroup</code>
@@ -142,10 +200,22 @@ public class CreateClusterSecurityGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain no more than 255 alphanumeric characters or hyphens.</li>
-     * <li>Must not be "Default".</li>
-     * <li>Must be unique for all security groups that are created by your AWS
-     * account.</li>
+     * <li>
+     * <p>
+     * Must contain no more than 255 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not be "Default".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be unique for all security groups that are created by your AWS
+     * account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>examplesecuritygroup</code>
@@ -153,16 +223,27 @@ public class CreateClusterSecurityGroupRequest extends
      * 
      * @param clusterSecurityGroupName
      *        The name for the security group. Amazon Redshift stores the value
-     *        as a lowercase string. </p>
+     *        as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain no more than 255 alphanumeric characters or
-     *        hyphens.</li>
-     *        <li>Must not be "Default".</li>
-     *        <li>Must be unique for all security groups that are created by
-     *        your AWS account.</li>
+     *        <li>
+     *        <p>
+     *        Must contain no more than 255 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not be "Default".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be unique for all security groups that are created by your
+     *        AWS account.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>examplesecuritygroup</code>

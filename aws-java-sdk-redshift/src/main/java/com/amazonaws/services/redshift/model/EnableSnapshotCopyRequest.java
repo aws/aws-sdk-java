@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class EnableSnapshotCopyRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -79,7 +78,7 @@ public class EnableSnapshotCopyRequest extends
      * 
      * @param clusterIdentifier
      *        The unique identifier of the source cluster to copy snapshots
-     *        from. </p>
+     *        from.</p>
      *        <p>
      *        Constraints: Must be the valid name of an existing cluster that
      *        does not already have cross-region snapshot copy enabled.
@@ -99,7 +98,7 @@ public class EnableSnapshotCopyRequest extends
      * </p>
      * 
      * @return The unique identifier of the source cluster to copy snapshots
-     *         from. </p>
+     *         from.</p>
      *         <p>
      *         Constraints: Must be the valid name of an existing cluster that
      *         does not already have cross-region snapshot copy enabled.
@@ -120,7 +119,7 @@ public class EnableSnapshotCopyRequest extends
      * 
      * @param clusterIdentifier
      *        The unique identifier of the source cluster to copy snapshots
-     *        from. </p>
+     *        from.</p>
      *        <p>
      *        Constraints: Must be the valid name of an existing cluster that
      *        does not already have cross-region snapshot copy enabled.
@@ -146,7 +145,7 @@ public class EnableSnapshotCopyRequest extends
      * </p>
      * 
      * @param destinationRegion
-     *        The destination region that you want to copy snapshots to. </p>
+     *        The destination region that you want to copy snapshots to.</p>
      *        <p>
      *        Constraints: Must be the name of a valid region. For more
      *        information, see <a href=
@@ -170,7 +169,7 @@ public class EnableSnapshotCopyRequest extends
      * >Regions and Endpoints</a> in the Amazon Web Services General Reference.
      * </p>
      * 
-     * @return The destination region that you want to copy snapshots to. </p>
+     * @return The destination region that you want to copy snapshots to.</p>
      *         <p>
      *         Constraints: Must be the name of a valid region. For more
      *         information, see <a href=
@@ -195,7 +194,7 @@ public class EnableSnapshotCopyRequest extends
      * </p>
      * 
      * @param destinationRegion
-     *        The destination region that you want to copy snapshots to. </p>
+     *        The destination region that you want to copy snapshots to.</p>
      *        <p>
      *        Constraints: Must be the name of a valid region. For more
      *        information, see <a href=
@@ -226,8 +225,8 @@ public class EnableSnapshotCopyRequest extends
      * 
      * @param retentionPeriod
      *        The number of days to retain automated snapshots in the
-     *        destination region after they are copied from the source region.
-     *        </p>
+     *        destination region after they are copied from the source
+     *        region.</p>
      *        <p>
      *        Default: 7.
      *        </p>
@@ -252,8 +251,8 @@ public class EnableSnapshotCopyRequest extends
      * </p>
      * 
      * @return The number of days to retain automated snapshots in the
-     *         destination region after they are copied from the source region.
-     *         </p>
+     *         destination region after they are copied from the source
+     *         region.</p>
      *         <p>
      *         Default: 7.
      *         </p>
@@ -279,8 +278,8 @@ public class EnableSnapshotCopyRequest extends
      * 
      * @param retentionPeriod
      *        The number of days to retain automated snapshots in the
-     *        destination region after they are copied from the source region.
-     *        </p>
+     *        destination region after they are copied from the source
+     *        region.</p>
      *        <p>
      *        Default: 7.
      *        </p>

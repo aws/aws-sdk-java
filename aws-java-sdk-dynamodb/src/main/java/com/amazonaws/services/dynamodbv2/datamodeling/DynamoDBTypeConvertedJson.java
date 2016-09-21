@@ -67,6 +67,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
  * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverted
  */
 @DynamoDBTypeConverted(converter=DynamoDBTypeConvertedJson.Converter.class)
+@DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.S)
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBTypeConvertedJson {
@@ -85,7 +86,7 @@ public @interface DynamoDBTypeConvertedJson {
         private static final ObjectWriter writer = mapper.writer();
         private final Class<T> targetType;
 
-        public Converter(final Class<T> targetType, final DynamoDBTypeConvertedJson annotation) {
+        public Converter(Class<T> targetType, DynamoDBTypeConvertedJson annotation) {
             this.targetType = annotation.targetType() == void.class ? targetType : (Class<T>)annotation.targetType();
         }
 

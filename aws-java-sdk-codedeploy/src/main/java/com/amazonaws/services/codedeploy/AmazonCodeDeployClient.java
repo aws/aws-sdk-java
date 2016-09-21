@@ -47,14 +47,19 @@ import com.amazonaws.services.codedeploy.model.transform.*;
  * Client for accessing CodeDeploy. All service calls made using this client are
  * blocking, and will not return until the service call completes.
  * <p>
- * <fullname>AWS CodeDeploy</fullname> <b>Overview</b>
+ * <fullname>AWS CodeDeploy</fullname>
+ * <p>
+ * <b>Overview</b>
+ * </p>
  * <p>
  * This reference guide provides descriptions of the AWS CodeDeploy APIs. For
  * more information about AWS CodeDeploy, see the <a
- * href="docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
- * Guide</a>.
+ * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+ * User Guide</a>.
  * </p>
+ * <p>
  * <b>Using the APIs</b>
+ * </p>
  * <p>
  * You can use the AWS CodeDeploy APIs to work with the following:
  * </p>
@@ -116,7 +121,7 @@ import com.amazonaws.services.codedeploy.model.transform.*;
  * web pages, executable files, and deployment scripts) along with an
  * application specification (AppSpec) file. (The AppSpec file is unique to AWS
  * CodeDeploy; it defines the deployment actions you want AWS CodeDeploy to
- * execute.) Ffor application revisions stored in Amazon S3 buckets, an
+ * execute.) For application revisions stored in Amazon S3 buckets, an
  * application revision is uniquely identified by its Amazon S3 object key and
  * its ETag, version, or both. For application revisions stored in GitHub
  * repositories, an application revision is uniquely identified by its
@@ -219,6 +224,12 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.codedeploy.model.InvalidBucketNameFilterException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidAutoRollbackConfigException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codedeploy.model.InvalidAutoRollbackConfigException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("RoleRequiredException")
                                     .withModeledClass(
                                             com.amazonaws.services.codedeploy.model.RoleRequiredException.class))
@@ -292,6 +303,12 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                                             "InvalidDeploymentIdException")
                                     .withModeledClass(
                                             com.amazonaws.services.codedeploy.model.InvalidDeploymentIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "AlarmsLimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codedeploy.model.AlarmsLimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -420,6 +437,12 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
+                                            "InvalidAlarmConfigException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codedeploy.model.InvalidAlarmConfigException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
                                             "DescriptionTooLongException")
                                     .withModeledClass(
                                             com.amazonaws.services.codedeploy.model.DescriptionTooLongException.class))
@@ -431,15 +454,15 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.codedeploy.model.DeploymentGroupNameRequiredException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidRoleException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codedeploy.model.InvalidRoleException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode(
                                             "RevisionDoesNotExistException")
                                     .withModeledClass(
                                             com.amazonaws.services.codedeploy.model.RevisionDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidRoleException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codedeploy.model.InvalidRoleException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -1217,6 +1240,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         user or AWS account.
      * @throws RevisionRequiredException
      *         The revision ID was not specified.
+     * @throws RevisionDoesNotExistException
+     *         The named revision does not exist with the applicable IAM user or
+     *         AWS account.
      * @throws InvalidRevisionException
      *         The revision was specified in an invalid format.
      * @throws InvalidDeploymentConfigNameException
@@ -1229,6 +1255,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         The description is too long.
      * @throws DeploymentLimitExceededException
      *         The number of allowed deployments was exceeded.
+     * @throws InvalidAutoRollbackConfigException
+     *         The automatic rollback configuration was specified in an invalid
+     *         format. For example, automatic rollback is enabled but an invalid
+     *         triggering event type or no event types were listed.
      * @sample AmazonCodeDeploy.CreateDeployment
      */
     @Override
@@ -1382,6 +1412,43 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         The trigger was specified in an invalid format.
      * @throws TriggerTargetsLimitExceededException
      *         The maximum allowed number of triggers was exceeded.
+     * @throws InvalidAlarmConfigException
+     *         The format of the alarm configuration is invalid. Possible causes
+     *         include:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The alarm list is null.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The alarm object is null.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The alarm name is empty or null or exceeds the 255 character
+     *         limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Two alarms with the same name have been specified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The alarm configuration is enabled but the alarm list is empty.
+     *         </p>
+     *         </li>
+     * @throws AlarmsLimitExceededException
+     *         The maximum number of alarms for a deployment group (10) was
+     *         exceeded.
+     * @throws InvalidAutoRollbackConfigException
+     *         The automatic rollback configuration was specified in an invalid
+     *         format. For example, automatic rollback is enabled but an invalid
+     *         triggering event type or no event types were listed.
      * @sample AmazonCodeDeploy.CreateDeploymentGroup
      */
     @Override
@@ -1478,8 +1545,12 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * <p>
      * Deletes a deployment configuration.
      * </p>
-     * <note>A deployment configuration cannot be deleted if it is currently in
-     * use. Predefined configurations cannot be deleted.</note>
+     * <note>
+     * <p>
+     * A deployment configuration cannot be deleted if it is currently in use.
+     * Predefined configurations cannot be deleted.
+     * </p>
+     * </note>
      * 
      * @param deleteDeploymentConfigRequest
      *        Represents the input of a delete deployment configuration
@@ -2864,6 +2935,43 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      *         The trigger was specified in an invalid format.
      * @throws TriggerTargetsLimitExceededException
      *         The maximum allowed number of triggers was exceeded.
+     * @throws InvalidAlarmConfigException
+     *         The format of the alarm configuration is invalid. Possible causes
+     *         include:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The alarm list is null.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The alarm object is null.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The alarm name is empty or null or exceeds the 255 character
+     *         limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Two alarms with the same name have been specified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The alarm configuration is enabled but the alarm list is empty.
+     *         </p>
+     *         </li>
+     * @throws AlarmsLimitExceededException
+     *         The maximum number of alarms for a deployment group (10) was
+     *         exceeded.
+     * @throws InvalidAutoRollbackConfigException
+     *         The automatic rollback configuration was specified in an invalid
+     *         format. For example, automatic rollback is enabled but an invalid
+     *         triggering event type or no event types were listed.
      * @sample AmazonCodeDeploy.UpdateDeploymentGroup
      */
     @Override

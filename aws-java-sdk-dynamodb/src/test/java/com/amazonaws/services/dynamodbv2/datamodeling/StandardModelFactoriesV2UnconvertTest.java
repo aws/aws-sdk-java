@@ -44,6 +44,7 @@ import com.amazonaws.services.s3.model.Region;
 public class StandardModelFactoriesV2UnconvertTest {
 
     protected static final DynamoDBMapperConfig CONFIG = new DynamoDBMapperConfig.Builder()
+        .withTypeConverterFactory(DynamoDBMapperConfig.DEFAULT.getTypeConverterFactory())
         .withConversionSchema(ConversionSchemas.V2)
         .build();
 
@@ -51,7 +52,7 @@ public class StandardModelFactoriesV2UnconvertTest {
     private static final DynamoDBMapperModelFactory models = factory.getModelFactory(CONFIG);
 
     protected <T> Object unconvert(Class<T> clazz, Method getter, Method setter, AttributeValue value) {
-        final StandardAnnotationMaps.FieldMap<T,Object> map = StandardAnnotationMaps.of(clazz, getter);
+        final StandardAnnotationMaps.FieldTypedMap<Object> map = StandardAnnotationMaps.of(getter, null);
         return models.getTableModel(clazz).field(map.attributeName()).unconvert(value);
     }
 

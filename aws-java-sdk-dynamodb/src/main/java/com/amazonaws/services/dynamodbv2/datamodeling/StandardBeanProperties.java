@@ -15,10 +15,11 @@
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.DynamoDBAttributeType;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.Reflect;
-import com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.FieldMap;
-import com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.TableMap;
-import com.amazonaws.services.dynamodbv2.datamodeling.StandardParameterTypes.ParamType;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.FieldTypedMap;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.TableTypedMap;
+import com.amazonaws.util.StringUtils;
 
 import java.lang.reflect.Method;
 import java.util.Collections;
@@ -34,57 +35,46 @@ import java.util.concurrent.ConcurrentMap;
 final class StandardBeanProperties {
 
     /**
-     * Beans cache.
-     */
-    private static final ConcurrentMap<Class<?>,Beans<?>> CACHE = new ConcurrentHashMap<Class<?>,Beans<?>>();
-
-    /**
      * Returns the bean mappings for a given class (caches the results).
      */
-    static final <T> Beans<T> of(final Class<T> clazz) {
-        if (!CACHE.containsKey(clazz)) {
-            final Beans<T> beans = StandardBeanProperties.of(clazz, false);
-            if (beans.annotations().typed() == false) {
-                return beans; //<- don't cache un-modeled types
-            }
-            CACHE.putIfAbsent(clazz, beans);
-        }
-        return (Beans<T>)CACHE.get(clazz);
+    @SuppressWarnings("unchecked")
+    static final <T> Beans<T> of(Class<T> clazz) {
+        return ((CachedBeans<T>)CachedBeans.CACHE).getBeans(clazz);
     }
 
     /**
-     * Returns the bean mappings for a given class (does not cache).
+     * Cache of {@link Beans} by class type.
      */
-    static final <T> Beans<T> of(final Class<T> clazz, final boolean inherited) {
-        return new Beans(StandardAnnotationMaps.of(clazz), map(clazz, inherited));
+    private static final class CachedBeans<T> {
+        private static final CachedBeans<Object> CACHE = new CachedBeans<Object>();
+        private final ConcurrentMap<Class<T>,Beans<T>> cache = new ConcurrentHashMap<Class<T>,Beans<T>>();
+
+        private final Beans<T> getBeans(Class<T> clazz) {
+            if (!cache.containsKey(clazz)) {
+                final TableTypedMap<T> annotations = StandardAnnotationMaps.<T>of(clazz);
+                final BeanMap<T,Object> map = new BeanMap<T,Object>(clazz, false);
+                cache.putIfAbsent(clazz, new Beans<T>(annotations, map));
+            }
+            return cache.get(clazz);
+        }
     }
 
     /**
      * Cache of {@link Bean} mappings by class type.
      */
-    static final class Beans<T> extends DynamoDBMapperTableModel.Properties.Immutable<T> {
+    static final class Beans<T> {
+        private final DynamoDBMapperTableModel.Properties<T> properties;
         private final Map<String,Bean<T,Object>> map;
-        private final TableMap<T> annotations;
 
-        /**
-         * Constructs the bean mappings.
-         */
-        private Beans(final TableMap<T> annotations, final Map<String,Bean<T,Object>> map) {
-            super(annotations);
+        private Beans(TableTypedMap<T> annotations, Map<String,Bean<T,Object>> map) {
+            this.properties = new DynamoDBMapperTableModel.Properties.Immutable<T>(annotations);
             this.map = Collections.unmodifiableMap(map);
-            this.annotations = annotations;
         }
 
-        /**
-         * Gets the annotations.
-         */
-        final TableMap<T> annotations() {
-            return this.annotations;
+        final DynamoDBMapperTableModel.Properties<T> properties() {
+            return this.properties;
         }
 
-        /**
-         * Gets the bean mappings.
-         */
         final Map<String,Bean<T,Object>> map() {
             return this.map;
         }
@@ -93,136 +83,179 @@ final class StandardBeanProperties {
     /**
      * Holds the reflection bean properties for a given property.
      */
-    static final class Bean<T,V> extends DynamoDBMapperFieldModel.Properties.Immutable<T,V> {
-        private final FieldMap<T,V> annotations;
+    static final class Bean<T,V> {
+        private final DynamoDBMapperFieldModel.Properties<V> properties;
+        private final ConversionType<V> type;
         private final Reflect<T,V> reflect;
-        private final ParamType<V> type;
-        private final Method getter;
 
-        /**
-         * Constructs an object property mapping for the specified method.
-         */
-        private Bean(final FieldMap<T,V> annotations, final Bean<T,T> declaring, final Method getter, final String name) {
-            super(new DynamoDBMapperFieldModel.Properties.Buildable(annotations)
-                .withId(new DynamoDBMapperFieldModel.Id(declaring.id(), name))
-                .withAttributeName(name)
-            );
-            this.reflect = StandardMethodReflects.of(getter, declaring.reflect(), declaring.targetType());
-            this.type = StandardParameterTypes.of(getter.getGenericReturnType());
-            this.annotations = annotations;
-            this.getter = getter;
+        private Bean(FieldTypedMap<V> annotations, Reflect<T,V> reflect, Method getter) {
+            this.properties = new DynamoDBMapperFieldModel.Properties.Immutable<V>(annotations);
+            this.type = ConversionType.<V>of(getter, annotations);
+            this.reflect = reflect;
         }
 
-        /**
-         * Constructs an object property mapping for the specified method.
-         */
-        private Bean(final FieldMap<T,V> annotations, final Method getter) {
-            super(new DynamoDBMapperFieldModel.Properties.Buildable(annotations)
-                .withId(new DynamoDBMapperFieldModel.Id(annotations.id(), annotations.attributeName()))
-            );
-            this.reflect = StandardMethodReflects.of(getter);
-            this.type = StandardParameterTypes.of(getter.getGenericReturnType());
-            this.annotations = annotations;
-            this.getter = getter;
+        final DynamoDBMapperFieldModel.Properties<V> properties() {
+            return this.properties;
         }
 
-        /**
-         * Gets the annotations.
-         */
-        final FieldMap<T,V> annotations() {
-            return this.annotations;
-        }
-
-        /**
-         * Gets the property's value type.
-         */
-        final Reflect<T,V> reflect() {
-            return this.reflect;
-        }
-
-        /**
-         * Gets the parameter type.
-         */
-        final ParamType<V> type() {
+        final ConversionType<V> type() {
             return this.type;
         }
 
-        /**
-         * Gets the getter method for this property.
-         */
-        @Deprecated
-        final Method getter() {
-            return this.getter;
+        final Reflect<T,V> reflect() {
+            return this.reflect;
         }
     }
 
     /**
-     * Returns the bean mappings for a given class (does not cache).
+     * Get/set reflection operations.
      */
-    private static final <T,V> Map<String,Bean<T,V>> map(final Class<T> clazz, final boolean inherited) {
-        final Map<String,Bean<T,V>> map = new LinkedHashMap<String,Bean<T,V>>();
-        for (final Method m : clazz.getMethods()) {
-            if (isGetter(m) == false) {
-                continue;
-            } else if (!inherited && m.getDeclaringClass() != clazz && !StandardAnnotationMaps.of(m.getDeclaringClass()).typed()) {
-                continue;
-            }
-            final FieldMap<T,V> annotations = StandardAnnotationMaps.of(clazz, m);
-            if (annotations.ignored()) {
-                continue;
-            }
-            flatten(new Bean(annotations, m), map);
-        }
-        return map;
-    }
+    static final class MethodReflect<T,V> implements Reflect<T,V> {
+        private final Method getter, setter;
 
-    /**
-     * Flattens or adds the bean to the mapping.
-     */
-    private static final <T,V> void flatten(final Bean<T,V> bean, final Map<String,Bean<T,V>> map) {
-        if (bean.annotations().flattened() == null) { //<- standard attribute
-            if (map.put(bean.attributeName(), bean) != null) {
-                throw new DynamoDBMappingException(bean.id().err("duplicate attribute name"));
-            }
-            return;
+        private MethodReflect(Method getter) {
+            this.setter = setterOf(getter);
+            this.getter = getter;
         }
-        final Bean<T,T> declaring = (Bean<T,T>)bean; //<- cast to declaring type
-        final Map<String,String> attributes = bean.annotations().attributes();
-        for (final Method m : declaring.targetType().getMethods()) {
-            if (isGetter(m) == false) {
-                continue;
+
+        @Override
+        public V get(T object) {
+            try {
+                return (V)getter.invoke(object);
+            } catch (final Exception e) {
+                throw new DynamoDBMappingException("could not invoke " + getter + " on " + object.getClass(), e);
             }
-            final FieldMap<T,V> annotations = StandardAnnotationMaps.of(declaring.targetType(), m);
-            String name = annotations.attributeName();
-            if (annotations.ignored() || (name = attributes.remove(name)) == null) {
-                continue;
-            }
-            flatten(new Bean(annotations, declaring, m, name), map);
         }
-        if (!attributes.isEmpty()) { //<- this should be empty by now
-            throw new DynamoDBMappingException(bean.id().err("contains unknown flattened attribute(s): " + attributes));
+
+        @Override
+        public void set(T object, V value) {
+            try {
+                setter.invoke(object, value);
+            } catch (final Exception e) {
+                throw new DynamoDBMappingException("could not invoke " + setter + " on " + object.getClass() +
+                    " with value " + value + " of type " + (value == null ? null : value.getClass()), e);
+            }
+        }
+
+        static Method setterOf(Method getter) {
+            try {
+                final String name = "set" + getter.getName().replaceFirst("^(get|is)","");
+                return getter.getDeclaringClass().getMethod(name, getter.getReturnType());
+            } catch (final Exception no) {}
+            return null;
         }
     }
 
     /**
-     * Returns true if the method is a valid getter property.
+     * Get/set reflection operations with a declaring property.
      */
-    private static final boolean isGetter(final Method method) {
-        if (method.getName().matches("^(get|is).+") == false) {
-            return false;
-        } else if (method.getParameterTypes().length != 0) {
-            return false;
-        } else if (method.getReturnType() == Void.TYPE) {
-            return false;
-        } else if (method.isBridge()) {
-            return false;
-        } else if (method.isSynthetic()) {
-            return false;
-        } else if (method.getDeclaringClass() == Object.class) {
-            return false;
-        } else {
-            return true;
+    static final class DeclaringReflect<T,V> implements Reflect<T,V> {
+        private final Reflect<T,V> reflect;
+        private final Reflect<T,T> declaring;
+        private final Class<T> targetType;
+
+        private DeclaringReflect(Method getter, Reflect<T,T> declaring, Class<T> targetType) {
+            this.reflect = new MethodReflect<T,V>(getter);
+            this.declaring = declaring;
+            this.targetType = targetType;
         }
+
+        @Override
+        public V get(T object) {
+            final T declaringObject = declaring.get(object);
+            if (declaringObject == null) {
+                return null;
+            }
+            return reflect.get(declaringObject);
+        }
+
+        @Override
+        public void set(T object, V value) {
+            T declaringObject = declaring.get(object);
+            if (declaringObject == null) {
+                declaring.set(object, (declaringObject = newInstance(targetType)));
+            }
+            reflect.set(declaringObject, value);
+        }
+
+        static <T> T newInstance(Class<T> targetType) {
+            try {
+                return targetType.newInstance();
+            } catch (final Exception e) {
+                throw new DynamoDBMappingException("could not instantiate " + targetType, e);
+            }
+        }
+    }
+
+    /**
+     * {@link Map} of {@link Bean}
+     */
+    static final class BeanMap<T,V> extends LinkedHashMap<String,Bean<T,V>> {
+        BeanMap(Class<T> clazz, boolean inherited) {
+            for (final Method method : clazz.getMethods()) {
+                if (canMap(method, inherited)) {
+                    final FieldTypedMap<V> annotations = StandardAnnotationMaps.<V>of(method, null);
+                    if (!annotations.ignored()) {
+                        final Reflect<T,V> reflect = new MethodReflect<T,V>(method);
+                        putOrFlatten(annotations, reflect, method);
+                    }
+                }
+            }
+        }
+
+        private void putOrFlatten(FieldTypedMap<V> annotations, Reflect<T,V> reflect, Method getter) {
+            if (annotations.flattened()) {
+                flatten((Class<T>)annotations.targetType(), annotations.attributes(), (Reflect<T,T>)reflect);
+            } else {
+                final Bean<T,V> bean = new Bean<T,V>(annotations, reflect, getter);
+                if (put(bean.properties().attributeName(), bean) != null) {
+                    throw new DynamoDBMappingException("duplicate attribute name");
+                }
+            }
+        }
+
+        private void flatten(Class<T> targetType, Map<String,String> attributes, Reflect<T,T> declaring) {
+            for (final Method method : targetType.getMethods()) {
+                if (canMap(method, true)) {
+                    String name = fieldNameOf(method);
+                    if ((name = attributes.remove(name)) == null) {
+                        continue;
+                    }
+                    final FieldTypedMap<V> annotations = StandardAnnotationMaps.<V>of(method, name);
+                    if (!annotations.ignored()) {
+                        final Reflect<T,V> reflect = new DeclaringReflect<T,V>(method, declaring, targetType);
+                        putOrFlatten(annotations, reflect, method);
+                    }
+                }
+            }
+            if (!attributes.isEmpty()) { //<- this should be empty by now
+                throw new DynamoDBMappingException("contains unknown flattened attribute(s): " + attributes);
+            }
+        }
+
+        private boolean canMap(Method method, boolean inherited) {
+            if (method.getName().matches("^(get|is).+") == false) {
+                return false;
+            } else if (method.getParameterTypes().length != 0) {
+                return false;
+            } else if (method.isBridge() || method.isSynthetic()) {
+                return false;
+            } else if (method.getDeclaringClass() == Object.class) {
+                return false;
+            } else if (!inherited && StandardAnnotationMaps.of(method.getDeclaringClass()).attributeType() != DynamoDBAttributeType.M) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
+    /**
+     * Gets the field name given the getter method.
+     */
+    static final String fieldNameOf(Method getter) {
+        final String name = getter.getName().replaceFirst("^(get|is)","");
+        return StringUtils.lowerCase(name.substring(0, 1)) + name.substring(1);
     }
 
 }

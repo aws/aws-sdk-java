@@ -37,26 +37,90 @@ public class Cluster implements Serializable, Cloneable {
     private String nodeType;
     /**
      * <p>
-     * The current state of the cluster. Possible values are:
-     * <ul>
-     * <li><code>available</code></li>
-     * <li><code>creating</code></li>
-     * <li><code>deleting</code></li>
-     * <li><code>final-snapshot</code></li>
-     * <li><code>hardware-failure</code></li>
-     * <li><code>incompatible-hsm</code></li>
-     * <li><code>incompatible-network</code></li>
-     * <li><code>incompatible-parameters</code></li>
-     * <li><code>incompatible-restore</code></li>
-     * <li><code>modifying</code></li>
-     * <li><code>rebooting</code></li>
-     * <li><code>renaming</code></li>
-     * <li><code>resizing</code></li>
-     * <li><code>rotating-keys</code></li>
-     * <li><code>storage-full</code></li>
-     * <li><code>updating-hsm</code></li>
-     * </ul>
+     * The current state of the cluster. Possible values are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>creating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>final-snapshot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>hardware-failure</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-hsm</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-network</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-parameters</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-restore</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>modifying</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rebooting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>renaming</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resizing</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rotating-keys</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>storage-full</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>updating-hsm</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String clusterStatus;
     /**
@@ -68,7 +132,7 @@ public class Cluster implements Serializable, Cloneable {
     /**
      * <p>
      * The master user name for the cluster. This name is used to connect to the
-     * database that is specified in <b>DBName</b>.
+     * database that is specified in the <b>DBName</b> parameter.
      * </p>
      */
     private String masterUsername;
@@ -76,8 +140,8 @@ public class Cluster implements Serializable, Cloneable {
      * <p>
      * The name of the initial database that was created when the cluster was
      * created. This same name is returned for the life of the cluster. If an
-     * initial database was not specified, a database named "dev" was created by
-     * default.
+     * initial database was not specified, a database named <code>dev</code>dev
+     * was created by default.
      * </p>
      */
     private String dBName;
@@ -107,17 +171,18 @@ public class Cluster implements Serializable, Cloneable {
      * <code>ClusterSecurityGroup.Status</code> subelements.
      * </p>
      * <p>
-     * Cluster security groups are used when the cluster is not created in a
-     * VPC. Clusters that are created in a VPC use VPC security groups, which
-     * are listed by the <b>VpcSecurityGroups</b> parameter.
+     * Cluster security groups are used when the cluster is not created in an
+     * Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC
+     * use VPC security groups, which are listed by the <b>VpcSecurityGroups</b>
+     * parameter.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ClusterSecurityGroupMembership> clusterSecurityGroups;
     /**
      * <p>
-     * A list of Virtual Private Cloud (VPC) security groups that are associated
-     * with the cluster. This parameter is returned only if the cluster is in a
-     * VPC.
+     * A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that
+     * are associated with the cluster. This parameter is returned only if the
+     * cluster is in a VPC.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VpcSecurityGroupMembership> vpcSecurityGroups;
@@ -149,14 +214,15 @@ public class Cluster implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
-     * The weekly time range (in UTC) during which system maintenance can occur.
+     * The weekly time range, in Universal Coordinated Time (UTC), during which
+     * system maintenance can occur.
      * </p>
      */
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * If present, changes to the cluster are pending. Specific pending changes
-     * are identified by subelements.
+     * A value that, if present, indicates that changes to the cluster are
+     * pending. Specific pending changes are identified by subelements.
      * </p>
      */
     private PendingModifiedValues pendingModifiedValues;
@@ -169,8 +235,9 @@ public class Cluster implements Serializable, Cloneable {
     private String clusterVersion;
     /**
      * <p>
-     * If <code>true</code>, major version upgrades will be applied
-     * automatically to the cluster during the maintenance window.
+     * A Boolean value that, if <code>true</code>, indicates that major version
+     * upgrades will be applied automatically to the cluster during the
+     * maintenance window.
      * </p>
      */
     private Boolean allowVersionUpgrade;
@@ -182,27 +249,31 @@ public class Cluster implements Serializable, Cloneable {
     private Integer numberOfNodes;
     /**
      * <p>
-     * If <code>true</code>, the cluster can be accessed from a public network.
+     * A Boolean value that, if <code>true</code>, indicates that the cluster
+     * can be accessed from a public network.
      * </p>
      */
     private Boolean publiclyAccessible;
     /**
      * <p>
-     * If <code>true</code>, data in the cluster is encrypted at rest.
+     * A Boolean value that, if <code>true</code>, indicates that data in the
+     * cluster is encrypted at rest.
      * </p>
      */
     private Boolean encrypted;
     /**
      * <p>
-     * Describes the status of a cluster restore action. Returns null if the
-     * cluster was not created by restoring a snapshot.
+     * A value that describes the status of a cluster restore action. This
+     * parameter returns null if the cluster was not created by restoring a
+     * snapshot.
      * </p>
      */
     private RestoreStatus restoreStatus;
     /**
      * <p>
-     * Reports whether the Amazon Redshift cluster has finished applying any HSM
-     * settings changes specified in a modify cluster command.
+     * A value that reports whether the Amazon Redshift cluster has finished
+     * applying any hardware security module (HSM) settings changes specified in
+     * a modify cluster command.
      * </p>
      * <p>
      * Values: active, applying
@@ -211,8 +282,8 @@ public class Cluster implements Serializable, Cloneable {
     private HsmStatus hsmStatus;
     /**
      * <p>
-     * Returns the destination region and retention period that are configured
-     * for cross-region snapshot copy.
+     * A value that returns the destination region and retention period that are
+     * configured for cross-region snapshot copy.
      * </p>
      */
     private ClusterSnapshotCopyStatus clusterSnapshotCopyStatus;
@@ -224,7 +295,7 @@ public class Cluster implements Serializable, Cloneable {
     private String clusterPublicKey;
     /**
      * <p>
-     * The nodes in a cluster.
+     * The nodes in the cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ClusterNode> clusterNodes;
@@ -248,11 +319,28 @@ public class Cluster implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key used to
-     * encrypt data in the cluster.
+     * The AWS Key Management Service (AWS KMS) key ID of the encryption key
+     * used to encrypt data in the cluster.
      * </p>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     */
+    private Boolean enhancedVpcRouting;
     /**
      * <p>
      * A list of AWS Identity and Access Management (IAM) roles that can be used
@@ -345,47 +433,175 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the cluster. Possible values are:
-     * <ul>
-     * <li><code>available</code></li>
-     * <li><code>creating</code></li>
-     * <li><code>deleting</code></li>
-     * <li><code>final-snapshot</code></li>
-     * <li><code>hardware-failure</code></li>
-     * <li><code>incompatible-hsm</code></li>
-     * <li><code>incompatible-network</code></li>
-     * <li><code>incompatible-parameters</code></li>
-     * <li><code>incompatible-restore</code></li>
-     * <li><code>modifying</code></li>
-     * <li><code>rebooting</code></li>
-     * <li><code>renaming</code></li>
-     * <li><code>resizing</code></li>
-     * <li><code>rotating-keys</code></li>
-     * <li><code>storage-full</code></li>
-     * <li><code>updating-hsm</code></li>
-     * </ul>
+     * The current state of the cluster. Possible values are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>creating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>final-snapshot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>hardware-failure</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-hsm</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-network</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-parameters</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-restore</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>modifying</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rebooting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>renaming</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resizing</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rotating-keys</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>storage-full</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>updating-hsm</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param clusterStatus
-     *        The current state of the cluster. Possible values are:
+     *        The current state of the cluster. Possible values are the
+     *        following:</p>
      *        <ul>
-     *        <li><code>available</code></li>
-     *        <li><code>creating</code></li>
-     *        <li><code>deleting</code></li>
-     *        <li><code>final-snapshot</code></li>
-     *        <li><code>hardware-failure</code></li>
-     *        <li><code>incompatible-hsm</code></li>
-     *        <li><code>incompatible-network</code></li>
-     *        <li><code>incompatible-parameters</code></li>
-     *        <li><code>incompatible-restore</code></li>
-     *        <li><code>modifying</code></li>
-     *        <li><code>rebooting</code></li>
-     *        <li><code>renaming</code></li>
-     *        <li><code>resizing</code></li>
-     *        <li><code>rotating-keys</code></li>
-     *        <li><code>storage-full</code></li>
-     *        <li><code>updating-hsm</code></li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <code>available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>creating</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>final-snapshot</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>hardware-failure</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>incompatible-hsm</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>incompatible-network</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>incompatible-parameters</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>incompatible-restore</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>modifying</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>rebooting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>renaming</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>resizing</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>rotating-keys</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>storage-full</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>updating-hsm</code>
+     *        </p>
+     *        </li>
      */
 
     public void setClusterStatus(String clusterStatus) {
@@ -394,46 +610,174 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the cluster. Possible values are:
-     * <ul>
-     * <li><code>available</code></li>
-     * <li><code>creating</code></li>
-     * <li><code>deleting</code></li>
-     * <li><code>final-snapshot</code></li>
-     * <li><code>hardware-failure</code></li>
-     * <li><code>incompatible-hsm</code></li>
-     * <li><code>incompatible-network</code></li>
-     * <li><code>incompatible-parameters</code></li>
-     * <li><code>incompatible-restore</code></li>
-     * <li><code>modifying</code></li>
-     * <li><code>rebooting</code></li>
-     * <li><code>renaming</code></li>
-     * <li><code>resizing</code></li>
-     * <li><code>rotating-keys</code></li>
-     * <li><code>storage-full</code></li>
-     * <li><code>updating-hsm</code></li>
-     * </ul>
+     * The current state of the cluster. Possible values are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>creating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>final-snapshot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>hardware-failure</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-hsm</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-network</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-parameters</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-restore</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>modifying</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rebooting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>renaming</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resizing</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rotating-keys</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>storage-full</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>updating-hsm</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The current state of the cluster. Possible values are:
+     * @return The current state of the cluster. Possible values are the
+     *         following:</p>
      *         <ul>
-     *         <li><code>available</code></li>
-     *         <li><code>creating</code></li>
-     *         <li><code>deleting</code></li>
-     *         <li><code>final-snapshot</code></li>
-     *         <li><code>hardware-failure</code></li>
-     *         <li><code>incompatible-hsm</code></li>
-     *         <li><code>incompatible-network</code></li>
-     *         <li><code>incompatible-parameters</code></li>
-     *         <li><code>incompatible-restore</code></li>
-     *         <li><code>modifying</code></li>
-     *         <li><code>rebooting</code></li>
-     *         <li><code>renaming</code></li>
-     *         <li><code>resizing</code></li>
-     *         <li><code>rotating-keys</code></li>
-     *         <li><code>storage-full</code></li>
-     *         <li><code>updating-hsm</code></li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         <code>available</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>creating</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deleting</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>final-snapshot</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>hardware-failure</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>incompatible-hsm</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>incompatible-network</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>incompatible-parameters</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>incompatible-restore</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>modifying</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>rebooting</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>renaming</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>resizing</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>rotating-keys</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>storage-full</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>updating-hsm</code>
+     *         </p>
+     *         </li>
      */
 
     public String getClusterStatus() {
@@ -442,47 +786,175 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the cluster. Possible values are:
-     * <ul>
-     * <li><code>available</code></li>
-     * <li><code>creating</code></li>
-     * <li><code>deleting</code></li>
-     * <li><code>final-snapshot</code></li>
-     * <li><code>hardware-failure</code></li>
-     * <li><code>incompatible-hsm</code></li>
-     * <li><code>incompatible-network</code></li>
-     * <li><code>incompatible-parameters</code></li>
-     * <li><code>incompatible-restore</code></li>
-     * <li><code>modifying</code></li>
-     * <li><code>rebooting</code></li>
-     * <li><code>renaming</code></li>
-     * <li><code>resizing</code></li>
-     * <li><code>rotating-keys</code></li>
-     * <li><code>storage-full</code></li>
-     * <li><code>updating-hsm</code></li>
-     * </ul>
+     * The current state of the cluster. Possible values are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>creating</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>final-snapshot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>hardware-failure</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-hsm</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-network</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-parameters</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>incompatible-restore</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>modifying</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rebooting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>renaming</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resizing</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rotating-keys</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>storage-full</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>updating-hsm</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param clusterStatus
-     *        The current state of the cluster. Possible values are:
+     *        The current state of the cluster. Possible values are the
+     *        following:</p>
      *        <ul>
-     *        <li><code>available</code></li>
-     *        <li><code>creating</code></li>
-     *        <li><code>deleting</code></li>
-     *        <li><code>final-snapshot</code></li>
-     *        <li><code>hardware-failure</code></li>
-     *        <li><code>incompatible-hsm</code></li>
-     *        <li><code>incompatible-network</code></li>
-     *        <li><code>incompatible-parameters</code></li>
-     *        <li><code>incompatible-restore</code></li>
-     *        <li><code>modifying</code></li>
-     *        <li><code>rebooting</code></li>
-     *        <li><code>renaming</code></li>
-     *        <li><code>resizing</code></li>
-     *        <li><code>rotating-keys</code></li>
-     *        <li><code>storage-full</code></li>
-     *        <li><code>updating-hsm</code></li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <code>available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>creating</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>final-snapshot</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>hardware-failure</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>incompatible-hsm</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>incompatible-network</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>incompatible-parameters</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>incompatible-restore</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>modifying</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>rebooting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>renaming</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>resizing</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>rotating-keys</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>storage-full</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>updating-hsm</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -539,12 +1011,12 @@ public class Cluster implements Serializable, Cloneable {
     /**
      * <p>
      * The master user name for the cluster. This name is used to connect to the
-     * database that is specified in <b>DBName</b>.
+     * database that is specified in the <b>DBName</b> parameter.
      * </p>
      * 
      * @param masterUsername
      *        The master user name for the cluster. This name is used to connect
-     *        to the database that is specified in <b>DBName</b>.
+     *        to the database that is specified in the <b>DBName</b> parameter.
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -554,11 +1026,12 @@ public class Cluster implements Serializable, Cloneable {
     /**
      * <p>
      * The master user name for the cluster. This name is used to connect to the
-     * database that is specified in <b>DBName</b>.
+     * database that is specified in the <b>DBName</b> parameter.
      * </p>
      * 
      * @return The master user name for the cluster. This name is used to
-     *         connect to the database that is specified in <b>DBName</b>.
+     *         connect to the database that is specified in the <b>DBName</b>
+     *         parameter.
      */
 
     public String getMasterUsername() {
@@ -568,12 +1041,12 @@ public class Cluster implements Serializable, Cloneable {
     /**
      * <p>
      * The master user name for the cluster. This name is used to connect to the
-     * database that is specified in <b>DBName</b>.
+     * database that is specified in the <b>DBName</b> parameter.
      * </p>
      * 
      * @param masterUsername
      *        The master user name for the cluster. This name is used to connect
-     *        to the database that is specified in <b>DBName</b>.
+     *        to the database that is specified in the <b>DBName</b> parameter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -587,15 +1060,15 @@ public class Cluster implements Serializable, Cloneable {
      * <p>
      * The name of the initial database that was created when the cluster was
      * created. This same name is returned for the life of the cluster. If an
-     * initial database was not specified, a database named "dev" was created by
-     * default.
+     * initial database was not specified, a database named <code>dev</code>dev
+     * was created by default.
      * </p>
      * 
      * @param dBName
      *        The name of the initial database that was created when the cluster
      *        was created. This same name is returned for the life of the
      *        cluster. If an initial database was not specified, a database
-     *        named "dev" was created by default.
+     *        named <code>dev</code>dev was created by default.
      */
 
     public void setDBName(String dBName) {
@@ -606,14 +1079,14 @@ public class Cluster implements Serializable, Cloneable {
      * <p>
      * The name of the initial database that was created when the cluster was
      * created. This same name is returned for the life of the cluster. If an
-     * initial database was not specified, a database named "dev" was created by
-     * default.
+     * initial database was not specified, a database named <code>dev</code>dev
+     * was created by default.
      * </p>
      * 
      * @return The name of the initial database that was created when the
      *         cluster was created. This same name is returned for the life of
      *         the cluster. If an initial database was not specified, a database
-     *         named "dev" was created by default.
+     *         named <code>dev</code>dev was created by default.
      */
 
     public String getDBName() {
@@ -624,15 +1097,15 @@ public class Cluster implements Serializable, Cloneable {
      * <p>
      * The name of the initial database that was created when the cluster was
      * created. This same name is returned for the life of the cluster. If an
-     * initial database was not specified, a database named "dev" was created by
-     * default.
+     * initial database was not specified, a database named <code>dev</code>dev
+     * was created by default.
      * </p>
      * 
      * @param dBName
      *        The name of the initial database that was created when the cluster
      *        was created. This same name is returned for the life of the
      *        cluster. If an initial database was not specified, a database
-     *        named "dev" was created by default.
+     *        named <code>dev</code>dev was created by default.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -775,9 +1248,10 @@ public class Cluster implements Serializable, Cloneable {
      * <code>ClusterSecurityGroup.Status</code> subelements.
      * </p>
      * <p>
-     * Cluster security groups are used when the cluster is not created in a
-     * VPC. Clusters that are created in a VPC use VPC security groups, which
-     * are listed by the <b>VpcSecurityGroups</b> parameter.
+     * Cluster security groups are used when the cluster is not created in an
+     * Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC
+     * use VPC security groups, which are listed by the <b>VpcSecurityGroups</b>
+     * parameter.
      * </p>
      * 
      * @return A list of cluster security group that are associated with the
@@ -786,9 +1260,9 @@ public class Cluster implements Serializable, Cloneable {
      *         <code>ClusterSecurityGroup.Status</code> subelements. </p>
      *         <p>
      *         Cluster security groups are used when the cluster is not created
-     *         in a VPC. Clusters that are created in a VPC use VPC security
-     *         groups, which are listed by the <b>VpcSecurityGroups</b>
-     *         parameter.
+     *         in an Amazon Virtual Private Cloud (VPC). Clusters that are
+     *         created in a VPC use VPC security groups, which are listed by the
+     *         <b>VpcSecurityGroups</b> parameter.
      */
 
     public java.util.List<ClusterSecurityGroupMembership> getClusterSecurityGroups() {
@@ -806,9 +1280,10 @@ public class Cluster implements Serializable, Cloneable {
      * <code>ClusterSecurityGroup.Status</code> subelements.
      * </p>
      * <p>
-     * Cluster security groups are used when the cluster is not created in a
-     * VPC. Clusters that are created in a VPC use VPC security groups, which
-     * are listed by the <b>VpcSecurityGroups</b> parameter.
+     * Cluster security groups are used when the cluster is not created in an
+     * Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC
+     * use VPC security groups, which are listed by the <b>VpcSecurityGroups</b>
+     * parameter.
      * </p>
      * 
      * @param clusterSecurityGroups
@@ -818,9 +1293,9 @@ public class Cluster implements Serializable, Cloneable {
      *        <code>ClusterSecurityGroup.Status</code> subelements. </p>
      *        <p>
      *        Cluster security groups are used when the cluster is not created
-     *        in a VPC. Clusters that are created in a VPC use VPC security
-     *        groups, which are listed by the <b>VpcSecurityGroups</b>
-     *        parameter.
+     *        in an Amazon Virtual Private Cloud (VPC). Clusters that are
+     *        created in a VPC use VPC security groups, which are listed by the
+     *        <b>VpcSecurityGroups</b> parameter.
      */
 
     public void setClusterSecurityGroups(
@@ -842,9 +1317,10 @@ public class Cluster implements Serializable, Cloneable {
      * <code>ClusterSecurityGroup.Status</code> subelements.
      * </p>
      * <p>
-     * Cluster security groups are used when the cluster is not created in a
-     * VPC. Clusters that are created in a VPC use VPC security groups, which
-     * are listed by the <b>VpcSecurityGroups</b> parameter.
+     * Cluster security groups are used when the cluster is not created in an
+     * Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC
+     * use VPC security groups, which are listed by the <b>VpcSecurityGroups</b>
+     * parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -860,9 +1336,9 @@ public class Cluster implements Serializable, Cloneable {
      *        <code>ClusterSecurityGroup.Status</code> subelements. </p>
      *        <p>
      *        Cluster security groups are used when the cluster is not created
-     *        in a VPC. Clusters that are created in a VPC use VPC security
-     *        groups, which are listed by the <b>VpcSecurityGroups</b>
-     *        parameter.
+     *        in an Amazon Virtual Private Cloud (VPC). Clusters that are
+     *        created in a VPC use VPC security groups, which are listed by the
+     *        <b>VpcSecurityGroups</b> parameter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -887,9 +1363,10 @@ public class Cluster implements Serializable, Cloneable {
      * <code>ClusterSecurityGroup.Status</code> subelements.
      * </p>
      * <p>
-     * Cluster security groups are used when the cluster is not created in a
-     * VPC. Clusters that are created in a VPC use VPC security groups, which
-     * are listed by the <b>VpcSecurityGroups</b> parameter.
+     * Cluster security groups are used when the cluster is not created in an
+     * Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC
+     * use VPC security groups, which are listed by the <b>VpcSecurityGroups</b>
+     * parameter.
      * </p>
      * 
      * @param clusterSecurityGroups
@@ -899,9 +1376,9 @@ public class Cluster implements Serializable, Cloneable {
      *        <code>ClusterSecurityGroup.Status</code> subelements. </p>
      *        <p>
      *        Cluster security groups are used when the cluster is not created
-     *        in a VPC. Clusters that are created in a VPC use VPC security
-     *        groups, which are listed by the <b>VpcSecurityGroups</b>
-     *        parameter.
+     *        in an Amazon Virtual Private Cloud (VPC). Clusters that are
+     *        created in a VPC use VPC security groups, which are listed by the
+     *        <b>VpcSecurityGroups</b> parameter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -914,14 +1391,14 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of Virtual Private Cloud (VPC) security groups that are associated
-     * with the cluster. This parameter is returned only if the cluster is in a
-     * VPC.
+     * A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that
+     * are associated with the cluster. This parameter is returned only if the
+     * cluster is in a VPC.
      * </p>
      * 
-     * @return A list of Virtual Private Cloud (VPC) security groups that are
-     *         associated with the cluster. This parameter is returned only if
-     *         the cluster is in a VPC.
+     * @return A list of Amazon Virtual Private Cloud (Amazon VPC) security
+     *         groups that are associated with the cluster. This parameter is
+     *         returned only if the cluster is in a VPC.
      */
 
     public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroups() {
@@ -933,15 +1410,15 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of Virtual Private Cloud (VPC) security groups that are associated
-     * with the cluster. This parameter is returned only if the cluster is in a
-     * VPC.
+     * A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that
+     * are associated with the cluster. This parameter is returned only if the
+     * cluster is in a VPC.
      * </p>
      * 
      * @param vpcSecurityGroups
-     *        A list of Virtual Private Cloud (VPC) security groups that are
-     *        associated with the cluster. This parameter is returned only if
-     *        the cluster is in a VPC.
+     *        A list of Amazon Virtual Private Cloud (Amazon VPC) security
+     *        groups that are associated with the cluster. This parameter is
+     *        returned only if the cluster is in a VPC.
      */
 
     public void setVpcSecurityGroups(
@@ -957,9 +1434,9 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of Virtual Private Cloud (VPC) security groups that are associated
-     * with the cluster. This parameter is returned only if the cluster is in a
-     * VPC.
+     * A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that
+     * are associated with the cluster. This parameter is returned only if the
+     * cluster is in a VPC.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -969,9 +1446,9 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param vpcSecurityGroups
-     *        A list of Virtual Private Cloud (VPC) security groups that are
-     *        associated with the cluster. This parameter is returned only if
-     *        the cluster is in a VPC.
+     *        A list of Amazon Virtual Private Cloud (Amazon VPC) security
+     *        groups that are associated with the cluster. This parameter is
+     *        returned only if the cluster is in a VPC.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -990,15 +1467,15 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of Virtual Private Cloud (VPC) security groups that are associated
-     * with the cluster. This parameter is returned only if the cluster is in a
-     * VPC.
+     * A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that
+     * are associated with the cluster. This parameter is returned only if the
+     * cluster is in a VPC.
      * </p>
      * 
      * @param vpcSecurityGroups
-     *        A list of Virtual Private Cloud (VPC) security groups that are
-     *        associated with the cluster. This parameter is returned only if
-     *        the cluster is in a VPC.
+     *        A list of Amazon Virtual Private Cloud (Amazon VPC) security
+     *        groups that are associated with the cluster. This parameter is
+     *        returned only if the cluster is in a VPC.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1237,12 +1714,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The weekly time range (in UTC) during which system maintenance can occur.
+     * The weekly time range, in Universal Coordinated Time (UTC), during which
+     * system maintenance can occur.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        The weekly time range (in UTC) during which system maintenance can
-     *        occur.
+     *        The weekly time range, in Universal Coordinated Time (UTC), during
+     *        which system maintenance can occur.
      */
 
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -1251,11 +1729,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The weekly time range (in UTC) during which system maintenance can occur.
+     * The weekly time range, in Universal Coordinated Time (UTC), during which
+     * system maintenance can occur.
      * </p>
      * 
-     * @return The weekly time range (in UTC) during which system maintenance
-     *         can occur.
+     * @return The weekly time range, in Universal Coordinated Time (UTC),
+     *         during which system maintenance can occur.
      */
 
     public String getPreferredMaintenanceWindow() {
@@ -1264,12 +1743,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The weekly time range (in UTC) during which system maintenance can occur.
+     * The weekly time range, in Universal Coordinated Time (UTC), during which
+     * system maintenance can occur.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        The weekly time range (in UTC) during which system maintenance can
-     *        occur.
+     *        The weekly time range, in Universal Coordinated Time (UTC), during
+     *        which system maintenance can occur.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1282,13 +1762,14 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If present, changes to the cluster are pending. Specific pending changes
-     * are identified by subelements.
+     * A value that, if present, indicates that changes to the cluster are
+     * pending. Specific pending changes are identified by subelements.
      * </p>
      * 
      * @param pendingModifiedValues
-     *        If present, changes to the cluster are pending. Specific pending
-     *        changes are identified by subelements.
+     *        A value that, if present, indicates that changes to the cluster
+     *        are pending. Specific pending changes are identified by
+     *        subelements.
      */
 
     public void setPendingModifiedValues(
@@ -1298,12 +1779,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If present, changes to the cluster are pending. Specific pending changes
-     * are identified by subelements.
+     * A value that, if present, indicates that changes to the cluster are
+     * pending. Specific pending changes are identified by subelements.
      * </p>
      * 
-     * @return If present, changes to the cluster are pending. Specific pending
-     *         changes are identified by subelements.
+     * @return A value that, if present, indicates that changes to the cluster
+     *         are pending. Specific pending changes are identified by
+     *         subelements.
      */
 
     public PendingModifiedValues getPendingModifiedValues() {
@@ -1312,13 +1794,14 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If present, changes to the cluster are pending. Specific pending changes
-     * are identified by subelements.
+     * A value that, if present, indicates that changes to the cluster are
+     * pending. Specific pending changes are identified by subelements.
      * </p>
      * 
      * @param pendingModifiedValues
-     *        If present, changes to the cluster are pending. Specific pending
-     *        changes are identified by subelements.
+     *        A value that, if present, indicates that changes to the cluster
+     *        are pending. Specific pending changes are identified by
+     *        subelements.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1378,13 +1861,15 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>true</code>, major version upgrades will be applied
-     * automatically to the cluster during the maintenance window.
+     * A Boolean value that, if <code>true</code>, indicates that major version
+     * upgrades will be applied automatically to the cluster during the
+     * maintenance window.
      * </p>
      * 
      * @param allowVersionUpgrade
-     *        If <code>true</code>, major version upgrades will be applied
-     *        automatically to the cluster during the maintenance window.
+     *        A Boolean value that, if <code>true</code>, indicates that major
+     *        version upgrades will be applied automatically to the cluster
+     *        during the maintenance window.
      */
 
     public void setAllowVersionUpgrade(Boolean allowVersionUpgrade) {
@@ -1393,12 +1878,14 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>true</code>, major version upgrades will be applied
-     * automatically to the cluster during the maintenance window.
+     * A Boolean value that, if <code>true</code>, indicates that major version
+     * upgrades will be applied automatically to the cluster during the
+     * maintenance window.
      * </p>
      * 
-     * @return If <code>true</code>, major version upgrades will be applied
-     *         automatically to the cluster during the maintenance window.
+     * @return A Boolean value that, if <code>true</code>, indicates that major
+     *         version upgrades will be applied automatically to the cluster
+     *         during the maintenance window.
      */
 
     public Boolean getAllowVersionUpgrade() {
@@ -1407,13 +1894,15 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>true</code>, major version upgrades will be applied
-     * automatically to the cluster during the maintenance window.
+     * A Boolean value that, if <code>true</code>, indicates that major version
+     * upgrades will be applied automatically to the cluster during the
+     * maintenance window.
      * </p>
      * 
      * @param allowVersionUpgrade
-     *        If <code>true</code>, major version upgrades will be applied
-     *        automatically to the cluster during the maintenance window.
+     *        A Boolean value that, if <code>true</code>, indicates that major
+     *        version upgrades will be applied automatically to the cluster
+     *        during the maintenance window.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1425,12 +1914,14 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>true</code>, major version upgrades will be applied
-     * automatically to the cluster during the maintenance window.
+     * A Boolean value that, if <code>true</code>, indicates that major version
+     * upgrades will be applied automatically to the cluster during the
+     * maintenance window.
      * </p>
      * 
-     * @return If <code>true</code>, major version upgrades will be applied
-     *         automatically to the cluster during the maintenance window.
+     * @return A Boolean value that, if <code>true</code>, indicates that major
+     *         version upgrades will be applied automatically to the cluster
+     *         during the maintenance window.
      */
 
     public Boolean isAllowVersionUpgrade() {
@@ -1480,12 +1971,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>true</code>, the cluster can be accessed from a public network.
+     * A Boolean value that, if <code>true</code>, indicates that the cluster
+     * can be accessed from a public network.
      * </p>
      * 
      * @param publiclyAccessible
-     *        If <code>true</code>, the cluster can be accessed from a public
-     *        network.
+     *        A Boolean value that, if <code>true</code>, indicates that the
+     *        cluster can be accessed from a public network.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -1494,11 +1986,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>true</code>, the cluster can be accessed from a public network.
+     * A Boolean value that, if <code>true</code>, indicates that the cluster
+     * can be accessed from a public network.
      * </p>
      * 
-     * @return If <code>true</code>, the cluster can be accessed from a public
-     *         network.
+     * @return A Boolean value that, if <code>true</code>, indicates that the
+     *         cluster can be accessed from a public network.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -1507,12 +2000,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>true</code>, the cluster can be accessed from a public network.
+     * A Boolean value that, if <code>true</code>, indicates that the cluster
+     * can be accessed from a public network.
      * </p>
      * 
      * @param publiclyAccessible
-     *        If <code>true</code>, the cluster can be accessed from a public
-     *        network.
+     *        A Boolean value that, if <code>true</code>, indicates that the
+     *        cluster can be accessed from a public network.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1524,11 +2018,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>true</code>, the cluster can be accessed from a public network.
+     * A Boolean value that, if <code>true</code>, indicates that the cluster
+     * can be accessed from a public network.
      * </p>
      * 
-     * @return If <code>true</code>, the cluster can be accessed from a public
-     *         network.
+     * @return A Boolean value that, if <code>true</code>, indicates that the
+     *         cluster can be accessed from a public network.
      */
 
     public Boolean isPubliclyAccessible() {
@@ -1537,11 +2032,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>true</code>, data in the cluster is encrypted at rest.
+     * A Boolean value that, if <code>true</code>, indicates that data in the
+     * cluster is encrypted at rest.
      * </p>
      * 
      * @param encrypted
-     *        If <code>true</code>, data in the cluster is encrypted at rest.
+     *        A Boolean value that, if <code>true</code>, indicates that data in
+     *        the cluster is encrypted at rest.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -1550,10 +2047,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>true</code>, data in the cluster is encrypted at rest.
+     * A Boolean value that, if <code>true</code>, indicates that data in the
+     * cluster is encrypted at rest.
      * </p>
      * 
-     * @return If <code>true</code>, data in the cluster is encrypted at rest.
+     * @return A Boolean value that, if <code>true</code>, indicates that data
+     *         in the cluster is encrypted at rest.
      */
 
     public Boolean getEncrypted() {
@@ -1562,11 +2061,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>true</code>, data in the cluster is encrypted at rest.
+     * A Boolean value that, if <code>true</code>, indicates that data in the
+     * cluster is encrypted at rest.
      * </p>
      * 
      * @param encrypted
-     *        If <code>true</code>, data in the cluster is encrypted at rest.
+     *        A Boolean value that, if <code>true</code>, indicates that data in
+     *        the cluster is encrypted at rest.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1578,10 +2079,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>true</code>, data in the cluster is encrypted at rest.
+     * A Boolean value that, if <code>true</code>, indicates that data in the
+     * cluster is encrypted at rest.
      * </p>
      * 
-     * @return If <code>true</code>, data in the cluster is encrypted at rest.
+     * @return A Boolean value that, if <code>true</code>, indicates that data
+     *         in the cluster is encrypted at rest.
      */
 
     public Boolean isEncrypted() {
@@ -1590,13 +2093,15 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the status of a cluster restore action. Returns null if the
-     * cluster was not created by restoring a snapshot.
+     * A value that describes the status of a cluster restore action. This
+     * parameter returns null if the cluster was not created by restoring a
+     * snapshot.
      * </p>
      * 
      * @param restoreStatus
-     *        Describes the status of a cluster restore action. Returns null if
-     *        the cluster was not created by restoring a snapshot.
+     *        A value that describes the status of a cluster restore action.
+     *        This parameter returns null if the cluster was not created by
+     *        restoring a snapshot.
      */
 
     public void setRestoreStatus(RestoreStatus restoreStatus) {
@@ -1605,12 +2110,14 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the status of a cluster restore action. Returns null if the
-     * cluster was not created by restoring a snapshot.
+     * A value that describes the status of a cluster restore action. This
+     * parameter returns null if the cluster was not created by restoring a
+     * snapshot.
      * </p>
      * 
-     * @return Describes the status of a cluster restore action. Returns null if
-     *         the cluster was not created by restoring a snapshot.
+     * @return A value that describes the status of a cluster restore action.
+     *         This parameter returns null if the cluster was not created by
+     *         restoring a snapshot.
      */
 
     public RestoreStatus getRestoreStatus() {
@@ -1619,13 +2126,15 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the status of a cluster restore action. Returns null if the
-     * cluster was not created by restoring a snapshot.
+     * A value that describes the status of a cluster restore action. This
+     * parameter returns null if the cluster was not created by restoring a
+     * snapshot.
      * </p>
      * 
      * @param restoreStatus
-     *        Describes the status of a cluster restore action. Returns null if
-     *        the cluster was not created by restoring a snapshot.
+     *        A value that describes the status of a cluster restore action.
+     *        This parameter returns null if the cluster was not created by
+     *        restoring a snapshot.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1637,17 +2146,18 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reports whether the Amazon Redshift cluster has finished applying any HSM
-     * settings changes specified in a modify cluster command.
+     * A value that reports whether the Amazon Redshift cluster has finished
+     * applying any hardware security module (HSM) settings changes specified in
+     * a modify cluster command.
      * </p>
      * <p>
      * Values: active, applying
      * </p>
      * 
      * @param hsmStatus
-     *        Reports whether the Amazon Redshift cluster has finished applying
-     *        any HSM settings changes specified in a modify cluster
-     *        command.</p>
+     *        A value that reports whether the Amazon Redshift cluster has
+     *        finished applying any hardware security module (HSM) settings
+     *        changes specified in a modify cluster command.</p>
      *        <p>
      *        Values: active, applying
      */
@@ -1658,16 +2168,17 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reports whether the Amazon Redshift cluster has finished applying any HSM
-     * settings changes specified in a modify cluster command.
+     * A value that reports whether the Amazon Redshift cluster has finished
+     * applying any hardware security module (HSM) settings changes specified in
+     * a modify cluster command.
      * </p>
      * <p>
      * Values: active, applying
      * </p>
      * 
-     * @return Reports whether the Amazon Redshift cluster has finished applying
-     *         any HSM settings changes specified in a modify cluster
-     *         command.</p>
+     * @return A value that reports whether the Amazon Redshift cluster has
+     *         finished applying any hardware security module (HSM) settings
+     *         changes specified in a modify cluster command.</p>
      *         <p>
      *         Values: active, applying
      */
@@ -1678,17 +2189,18 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reports whether the Amazon Redshift cluster has finished applying any HSM
-     * settings changes specified in a modify cluster command.
+     * A value that reports whether the Amazon Redshift cluster has finished
+     * applying any hardware security module (HSM) settings changes specified in
+     * a modify cluster command.
      * </p>
      * <p>
      * Values: active, applying
      * </p>
      * 
      * @param hsmStatus
-     *        Reports whether the Amazon Redshift cluster has finished applying
-     *        any HSM settings changes specified in a modify cluster
-     *        command.</p>
+     *        A value that reports whether the Amazon Redshift cluster has
+     *        finished applying any hardware security module (HSM) settings
+     *        changes specified in a modify cluster command.</p>
      *        <p>
      *        Values: active, applying
      * @return Returns a reference to this object so that method calls can be
@@ -1702,13 +2214,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the destination region and retention period that are configured
-     * for cross-region snapshot copy.
+     * A value that returns the destination region and retention period that are
+     * configured for cross-region snapshot copy.
      * </p>
      * 
      * @param clusterSnapshotCopyStatus
-     *        Returns the destination region and retention period that are
-     *        configured for cross-region snapshot copy.
+     *        A value that returns the destination region and retention period
+     *        that are configured for cross-region snapshot copy.
      */
 
     public void setClusterSnapshotCopyStatus(
@@ -1718,12 +2230,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the destination region and retention period that are configured
-     * for cross-region snapshot copy.
+     * A value that returns the destination region and retention period that are
+     * configured for cross-region snapshot copy.
      * </p>
      * 
-     * @return Returns the destination region and retention period that are
-     *         configured for cross-region snapshot copy.
+     * @return A value that returns the destination region and retention period
+     *         that are configured for cross-region snapshot copy.
      */
 
     public ClusterSnapshotCopyStatus getClusterSnapshotCopyStatus() {
@@ -1732,13 +2244,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the destination region and retention period that are configured
-     * for cross-region snapshot copy.
+     * A value that returns the destination region and retention period that are
+     * configured for cross-region snapshot copy.
      * </p>
      * 
      * @param clusterSnapshotCopyStatus
-     *        Returns the destination region and retention period that are
-     *        configured for cross-region snapshot copy.
+     *        A value that returns the destination region and retention period
+     *        that are configured for cross-region snapshot copy.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1792,10 +2304,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The nodes in a cluster.
+     * The nodes in the cluster.
      * </p>
      * 
-     * @return The nodes in a cluster.
+     * @return The nodes in the cluster.
      */
 
     public java.util.List<ClusterNode> getClusterNodes() {
@@ -1807,11 +2319,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The nodes in a cluster.
+     * The nodes in the cluster.
      * </p>
      * 
      * @param clusterNodes
-     *        The nodes in a cluster.
+     *        The nodes in the cluster.
      */
 
     public void setClusterNodes(java.util.Collection<ClusterNode> clusterNodes) {
@@ -1826,7 +2338,7 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The nodes in a cluster.
+     * The nodes in the cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1836,7 +2348,7 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param clusterNodes
-     *        The nodes in a cluster.
+     *        The nodes in the cluster.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1854,11 +2366,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The nodes in a cluster.
+     * The nodes in the cluster.
      * </p>
      * 
      * @param clusterNodes
-     *        The nodes in a cluster.
+     *        The nodes in the cluster.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2029,13 +2541,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key used to
-     * encrypt data in the cluster.
+     * The AWS Key Management Service (AWS KMS) key ID of the encryption key
+     * used to encrypt data in the cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (KMS) key ID of the encryption key
-     *        used to encrypt data in the cluster.
+     *        The AWS Key Management Service (AWS KMS) key ID of the encryption
+     *        key used to encrypt data in the cluster.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2044,12 +2556,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key used to
-     * encrypt data in the cluster.
+     * The AWS Key Management Service (AWS KMS) key ID of the encryption key
+     * used to encrypt data in the cluster.
      * </p>
      * 
-     * @return The AWS Key Management Service (KMS) key ID of the encryption key
-     *         used to encrypt data in the cluster.
+     * @return The AWS Key Management Service (AWS KMS) key ID of the encryption
+     *         key used to encrypt data in the cluster.
      */
 
     public String getKmsKeyId() {
@@ -2058,13 +2570,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key used to
-     * encrypt data in the cluster.
+     * The AWS Key Management Service (AWS KMS) key ID of the encryption key
+     * used to encrypt data in the cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (KMS) key ID of the encryption key
-     *        used to encrypt data in the cluster.
+     *        The AWS Key Management Service (AWS KMS) key ID of the encryption
+     *        key used to encrypt data in the cluster.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2072,6 +2584,151 @@ public class Cluster implements Serializable, Cloneable {
     public Cluster withKmsKeyId(String kmsKeyId) {
         setKmsKeyId(kmsKeyId);
         return this;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @param enhancedVpcRouting
+     *        An option that specifies whether to create the cluster with
+     *        enhanced VPC routing enabled. To create a cluster that uses
+     *        enhanced VPC routing, the cluster must be in a VPC. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *        >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *        Management Guide.</p>
+     *        <p>
+     *        If this option is <code>true</code>, enhanced VPC routing is
+     *        enabled.
+     *        </p>
+     *        <p>
+     *        Default: false
+     */
+
+    public void setEnhancedVpcRouting(Boolean enhancedVpcRouting) {
+        this.enhancedVpcRouting = enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @return An option that specifies whether to create the cluster with
+     *         enhanced VPC routing enabled. To create a cluster that uses
+     *         enhanced VPC routing, the cluster must be in a VPC. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *         >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *         Management Guide.</p>
+     *         <p>
+     *         If this option is <code>true</code>, enhanced VPC routing is
+     *         enabled.
+     *         </p>
+     *         <p>
+     *         Default: false
+     */
+
+    public Boolean getEnhancedVpcRouting() {
+        return this.enhancedVpcRouting;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @param enhancedVpcRouting
+     *        An option that specifies whether to create the cluster with
+     *        enhanced VPC routing enabled. To create a cluster that uses
+     *        enhanced VPC routing, the cluster must be in a VPC. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *        >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *        Management Guide.</p>
+     *        <p>
+     *        If this option is <code>true</code>, enhanced VPC routing is
+     *        enabled.
+     *        </p>
+     *        <p>
+     *        Default: false
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Cluster withEnhancedVpcRouting(Boolean enhancedVpcRouting) {
+        setEnhancedVpcRouting(enhancedVpcRouting);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the
+     * cluster must be in a VPC. For more information, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     * >Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management
+     * Guide.
+     * </p>
+     * <p>
+     * If this option is <code>true</code>, enhanced VPC routing is enabled.
+     * </p>
+     * <p>
+     * Default: false
+     * </p>
+     * 
+     * @return An option that specifies whether to create the cluster with
+     *         enhanced VPC routing enabled. To create a cluster that uses
+     *         enhanced VPC routing, the cluster must be in a VPC. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html"
+     *         >Enhanced VPC Routing</a> in the Amazon Redshift Cluster
+     *         Management Guide.</p>
+     *         <p>
+     *         If this option is <code>true</code>, enhanced VPC routing is
+     *         enabled.
+     *         </p>
+     *         <p>
+     *         Default: false
+     */
+
+    public Boolean isEnhancedVpcRouting() {
+        return this.enhancedVpcRouting;
     }
 
     /**
@@ -2242,6 +2899,8 @@ public class Cluster implements Serializable, Cloneable {
             sb.append("Tags: " + getTags() + ",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+        if (getEnhancedVpcRouting() != null)
+            sb.append("EnhancedVpcRouting: " + getEnhancedVpcRouting() + ",");
         if (getIamRoles() != null)
             sb.append("IamRoles: " + getIamRoles());
         sb.append("}");
@@ -2446,6 +3105,13 @@ public class Cluster implements Serializable, Cloneable {
         if (other.getKmsKeyId() != null
                 && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getEnhancedVpcRouting() == null
+                ^ this.getEnhancedVpcRouting() == null)
+            return false;
+        if (other.getEnhancedVpcRouting() != null
+                && other.getEnhancedVpcRouting().equals(
+                        this.getEnhancedVpcRouting()) == false)
+            return false;
         if (other.getIamRoles() == null ^ this.getIamRoles() == null)
             return false;
         if (other.getIamRoles() != null
@@ -2567,6 +3233,10 @@ public class Cluster implements Serializable, Cloneable {
                 + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode
                 + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEnhancedVpcRouting() == null) ? 0
+                        : getEnhancedVpcRouting().hashCode());
         hashCode = prime * hashCode
                 + ((getIamRoles() == null) ? 0 : getIamRoles().hashCode());
         return hashCode;

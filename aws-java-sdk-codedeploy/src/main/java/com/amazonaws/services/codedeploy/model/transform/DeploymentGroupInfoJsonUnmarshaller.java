@@ -112,6 +112,19 @@ public class DeploymentGroupInfoJsonUnmarshaller implements
                                     TriggerConfigJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
                 }
+                if (context.testExpression("alarmConfiguration", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo
+                            .setAlarmConfiguration(AlarmConfigurationJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("autoRollbackConfiguration",
+                        targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo
+                            .setAutoRollbackConfiguration(AutoRollbackConfigurationJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

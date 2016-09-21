@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class DisableSnapshotCopyRequest extends
         com.amazonaws.AmazonWebServiceRequest implements Serializable,
@@ -49,7 +48,7 @@ public class DisableSnapshotCopyRequest extends
      * 
      * @param clusterIdentifier
      *        The unique identifier of the source cluster that you want to
-     *        disable copying of snapshots to a destination region. </p>
+     *        disable copying of snapshots to a destination region.</p>
      *        <p>
      *        Constraints: Must be the valid name of an existing cluster that
      *        has cross-region snapshot copy enabled.
@@ -70,7 +69,7 @@ public class DisableSnapshotCopyRequest extends
      * </p>
      * 
      * @return The unique identifier of the source cluster that you want to
-     *         disable copying of snapshots to a destination region. </p>
+     *         disable copying of snapshots to a destination region.</p>
      *         <p>
      *         Constraints: Must be the valid name of an existing cluster that
      *         has cross-region snapshot copy enabled.
@@ -92,7 +91,7 @@ public class DisableSnapshotCopyRequest extends
      * 
      * @param clusterIdentifier
      *        The unique identifier of the source cluster that you want to
-     *        disable copying of snapshots to a destination region. </p>
+     *        disable copying of snapshots to a destination region.</p>
      *        <p>
      *        Constraints: Must be the valid name of an existing cluster that
      *        has cross-region snapshot copy enabled.

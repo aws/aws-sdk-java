@@ -187,6 +187,12 @@ public class RestoreFromClusterSnapshotRequestMarshaller
                             .getNodeType()));
         }
 
+        if (restoreFromClusterSnapshotRequest.getEnhancedVpcRouting() != null) {
+            request.addParameter("EnhancedVpcRouting", StringUtils
+                    .fromBoolean(restoreFromClusterSnapshotRequest
+                            .getEnhancedVpcRouting()));
+        }
+
         if (restoreFromClusterSnapshotRequest.getAdditionalInfo() != null) {
             request.addParameter("AdditionalInfo", StringUtils
                     .fromString(restoreFromClusterSnapshotRequest

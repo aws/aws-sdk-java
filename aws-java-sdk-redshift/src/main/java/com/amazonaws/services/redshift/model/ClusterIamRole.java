@@ -26,37 +26,49 @@ public class ClusterIamRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role. For example,
+     * The Amazon Resource Name (ARN) of the IAM role, for example,
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>.
      * </p>
      */
     private String iamRoleArn;
     /**
      * <p>
-     * Describes the status of the IAM role's association with an Amazon
-     * Redshift cluster.
+     * A value that describes the status of the IAM role's association with an
+     * Amazon Redshift cluster.
      * </p>
      * <p>
      * The following are possible statuses and descriptions.
-     * <ul>
-     * <li><code>in-sync</code>: The role is available for use by the cluster.</li>
-     * <li><code>adding</code>: The role is in the process of being associated
-     * with the cluster.</li>
-     * <li><code>removing</code>: The role is in the process of being
-     * disassociated with the cluster.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>in-sync</code>: The role is available for use by the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>adding</code>: The role is in the process of being associated with
+     * the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>removing</code>: The role is in the process of being disassociated
+     * with the cluster.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String applyStatus;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role. For example,
+     * The Amazon Resource Name (ARN) of the IAM role, for example,
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>.
      * </p>
      * 
      * @param iamRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role. For example,
+     *        The Amazon Resource Name (ARN) of the IAM role, for example,
      *        <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>.
      */
 
@@ -66,11 +78,11 @@ public class ClusterIamRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role. For example,
+     * The Amazon Resource Name (ARN) of the IAM role, for example,
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role. For example,
+     * @return The Amazon Resource Name (ARN) of the IAM role, for example,
      *         <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>.
      */
 
@@ -80,12 +92,12 @@ public class ClusterIamRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role. For example,
+     * The Amazon Resource Name (ARN) of the IAM role, for example,
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>.
      * </p>
      * 
      * @param iamRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role. For example,
+     *        The Amazon Resource Name (ARN) of the IAM role, for example,
      *        <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -98,33 +110,57 @@ public class ClusterIamRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the status of the IAM role's association with an Amazon
-     * Redshift cluster.
+     * A value that describes the status of the IAM role's association with an
+     * Amazon Redshift cluster.
      * </p>
      * <p>
      * The following are possible statuses and descriptions.
-     * <ul>
-     * <li><code>in-sync</code>: The role is available for use by the cluster.</li>
-     * <li><code>adding</code>: The role is in the process of being associated
-     * with the cluster.</li>
-     * <li><code>removing</code>: The role is in the process of being
-     * disassociated with the cluster.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>in-sync</code>: The role is available for use by the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>adding</code>: The role is in the process of being associated with
+     * the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>removing</code>: The role is in the process of being disassociated
+     * with the cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param applyStatus
-     *        Describes the status of the IAM role's association with an Amazon
-     *        Redshift cluster.</p>
+     *        A value that describes the status of the IAM role's association
+     *        with an Amazon Redshift cluster.</p>
      *        <p>
      *        The following are possible statuses and descriptions.
+     *        </p>
      *        <ul>
-     *        <li><code>in-sync</code>: The role is available for use by the
-     *        cluster.</li>
-     *        <li><code>adding</code>: The role is in the process of being
-     *        associated with the cluster.</li>
-     *        <li><code>removing</code>: The role is in the process of being
-     *        disassociated with the cluster.</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <code>in-sync</code>: The role is available for use by the
+     *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>adding</code>: The role is in the process of being
+     *        associated with the cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>removing</code>: The role is in the process of being
+     *        disassociated with the cluster.
+     *        </p>
+     *        </li>
      */
 
     public void setApplyStatus(String applyStatus) {
@@ -133,32 +169,56 @@ public class ClusterIamRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the status of the IAM role's association with an Amazon
-     * Redshift cluster.
+     * A value that describes the status of the IAM role's association with an
+     * Amazon Redshift cluster.
      * </p>
      * <p>
      * The following are possible statuses and descriptions.
-     * <ul>
-     * <li><code>in-sync</code>: The role is available for use by the cluster.</li>
-     * <li><code>adding</code>: The role is in the process of being associated
-     * with the cluster.</li>
-     * <li><code>removing</code>: The role is in the process of being
-     * disassociated with the cluster.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>in-sync</code>: The role is available for use by the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>adding</code>: The role is in the process of being associated with
+     * the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>removing</code>: The role is in the process of being disassociated
+     * with the cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Describes the status of the IAM role's association with an Amazon
-     *         Redshift cluster.</p>
+     * @return A value that describes the status of the IAM role's association
+     *         with an Amazon Redshift cluster.</p>
      *         <p>
      *         The following are possible statuses and descriptions.
+     *         </p>
      *         <ul>
-     *         <li><code>in-sync</code>: The role is available for use by the
-     *         cluster.</li>
-     *         <li><code>adding</code>: The role is in the process of being
-     *         associated with the cluster.</li>
-     *         <li><code>removing</code>: The role is in the process of being
-     *         disassociated with the cluster.</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         <code>in-sync</code>: The role is available for use by the
+     *         cluster.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>adding</code>: The role is in the process of being
+     *         associated with the cluster.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>removing</code>: The role is in the process of being
+     *         disassociated with the cluster.
+     *         </p>
+     *         </li>
      */
 
     public String getApplyStatus() {
@@ -167,33 +227,57 @@ public class ClusterIamRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the status of the IAM role's association with an Amazon
-     * Redshift cluster.
+     * A value that describes the status of the IAM role's association with an
+     * Amazon Redshift cluster.
      * </p>
      * <p>
      * The following are possible statuses and descriptions.
-     * <ul>
-     * <li><code>in-sync</code>: The role is available for use by the cluster.</li>
-     * <li><code>adding</code>: The role is in the process of being associated
-     * with the cluster.</li>
-     * <li><code>removing</code>: The role is in the process of being
-     * disassociated with the cluster.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>in-sync</code>: The role is available for use by the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>adding</code>: The role is in the process of being associated with
+     * the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>removing</code>: The role is in the process of being disassociated
+     * with the cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param applyStatus
-     *        Describes the status of the IAM role's association with an Amazon
-     *        Redshift cluster.</p>
+     *        A value that describes the status of the IAM role's association
+     *        with an Amazon Redshift cluster.</p>
      *        <p>
      *        The following are possible statuses and descriptions.
+     *        </p>
      *        <ul>
-     *        <li><code>in-sync</code>: The role is available for use by the
-     *        cluster.</li>
-     *        <li><code>adding</code>: The role is in the process of being
-     *        associated with the cluster.</li>
-     *        <li><code>removing</code>: The role is in the process of being
-     *        disassociated with the cluster.</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <code>in-sync</code>: The role is available for use by the
+     *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>adding</code>: The role is in the process of being
+     *        associated with the cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>removing</code>: The role is in the process of being
+     *        disassociated with the cluster.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

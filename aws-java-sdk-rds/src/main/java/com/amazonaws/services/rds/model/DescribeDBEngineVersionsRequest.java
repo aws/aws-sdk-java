@@ -103,12 +103,21 @@ public class DescribeDBEngineVersionsRequest extends
     private Boolean defaultOnly;
     /**
      * <p>
-     * If this parameter is specified, and if the requested engine supports the
-     * CharacterSetName parameter for CreateDBInstance, the response includes a
-     * list of supported character sets for each engine version.
+     * If this parameter is specified and the requested engine supports the
+     * <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>
+     * , the response includes a list of supported character sets for each
+     * engine version.
      * </p>
      */
     private Boolean listSupportedCharacterSets;
+    /**
+     * <p>
+     * If this parameter is specified and the requested engine supports the
+     * <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the
+     * response includes a list of supported time zones for each engine version.
+     * </p>
+     */
+    private Boolean listSupportedTimezones;
 
     /**
      * <p>
@@ -660,16 +669,17 @@ public class DescribeDBEngineVersionsRequest extends
 
     /**
      * <p>
-     * If this parameter is specified, and if the requested engine supports the
-     * CharacterSetName parameter for CreateDBInstance, the response includes a
-     * list of supported character sets for each engine version.
+     * If this parameter is specified and the requested engine supports the
+     * <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>
+     * , the response includes a list of supported character sets for each
+     * engine version.
      * </p>
      * 
      * @param listSupportedCharacterSets
-     *        If this parameter is specified, and if the requested engine
-     *        supports the CharacterSetName parameter for CreateDBInstance, the
-     *        response includes a list of supported character sets for each
-     *        engine version.
+     *        If this parameter is specified and the requested engine supports
+     *        the <code>CharacterSetName</code> parameter for
+     *        <code>CreateDBInstance</code>, the response includes a list of
+     *        supported character sets for each engine version.
      */
 
     public void setListSupportedCharacterSets(Boolean listSupportedCharacterSets) {
@@ -678,15 +688,16 @@ public class DescribeDBEngineVersionsRequest extends
 
     /**
      * <p>
-     * If this parameter is specified, and if the requested engine supports the
-     * CharacterSetName parameter for CreateDBInstance, the response includes a
-     * list of supported character sets for each engine version.
+     * If this parameter is specified and the requested engine supports the
+     * <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>
+     * , the response includes a list of supported character sets for each
+     * engine version.
      * </p>
      * 
-     * @return If this parameter is specified, and if the requested engine
-     *         supports the CharacterSetName parameter for CreateDBInstance, the
-     *         response includes a list of supported character sets for each
-     *         engine version.
+     * @return If this parameter is specified and the requested engine supports
+     *         the <code>CharacterSetName</code> parameter for
+     *         <code>CreateDBInstance</code>, the response includes a list of
+     *         supported character sets for each engine version.
      */
 
     public Boolean getListSupportedCharacterSets() {
@@ -695,16 +706,17 @@ public class DescribeDBEngineVersionsRequest extends
 
     /**
      * <p>
-     * If this parameter is specified, and if the requested engine supports the
-     * CharacterSetName parameter for CreateDBInstance, the response includes a
-     * list of supported character sets for each engine version.
+     * If this parameter is specified and the requested engine supports the
+     * <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>
+     * , the response includes a list of supported character sets for each
+     * engine version.
      * </p>
      * 
      * @param listSupportedCharacterSets
-     *        If this parameter is specified, and if the requested engine
-     *        supports the CharacterSetName parameter for CreateDBInstance, the
-     *        response includes a list of supported character sets for each
-     *        engine version.
+     *        If this parameter is specified and the requested engine supports
+     *        the <code>CharacterSetName</code> parameter for
+     *        <code>CreateDBInstance</code>, the response includes a list of
+     *        supported character sets for each engine version.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -717,19 +729,94 @@ public class DescribeDBEngineVersionsRequest extends
 
     /**
      * <p>
-     * If this parameter is specified, and if the requested engine supports the
-     * CharacterSetName parameter for CreateDBInstance, the response includes a
-     * list of supported character sets for each engine version.
+     * If this parameter is specified and the requested engine supports the
+     * <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>
+     * , the response includes a list of supported character sets for each
+     * engine version.
      * </p>
      * 
-     * @return If this parameter is specified, and if the requested engine
-     *         supports the CharacterSetName parameter for CreateDBInstance, the
-     *         response includes a list of supported character sets for each
-     *         engine version.
+     * @return If this parameter is specified and the requested engine supports
+     *         the <code>CharacterSetName</code> parameter for
+     *         <code>CreateDBInstance</code>, the response includes a list of
+     *         supported character sets for each engine version.
      */
 
     public Boolean isListSupportedCharacterSets() {
         return this.listSupportedCharacterSets;
+    }
+
+    /**
+     * <p>
+     * If this parameter is specified and the requested engine supports the
+     * <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the
+     * response includes a list of supported time zones for each engine version.
+     * </p>
+     * 
+     * @param listSupportedTimezones
+     *        If this parameter is specified and the requested engine supports
+     *        the <code>TimeZone</code> parameter for
+     *        <code>CreateDBInstance</code>, the response includes a list of
+     *        supported time zones for each engine version.
+     */
+
+    public void setListSupportedTimezones(Boolean listSupportedTimezones) {
+        this.listSupportedTimezones = listSupportedTimezones;
+    }
+
+    /**
+     * <p>
+     * If this parameter is specified and the requested engine supports the
+     * <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the
+     * response includes a list of supported time zones for each engine version.
+     * </p>
+     * 
+     * @return If this parameter is specified and the requested engine supports
+     *         the <code>TimeZone</code> parameter for
+     *         <code>CreateDBInstance</code>, the response includes a list of
+     *         supported time zones for each engine version.
+     */
+
+    public Boolean getListSupportedTimezones() {
+        return this.listSupportedTimezones;
+    }
+
+    /**
+     * <p>
+     * If this parameter is specified and the requested engine supports the
+     * <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the
+     * response includes a list of supported time zones for each engine version.
+     * </p>
+     * 
+     * @param listSupportedTimezones
+     *        If this parameter is specified and the requested engine supports
+     *        the <code>TimeZone</code> parameter for
+     *        <code>CreateDBInstance</code>, the response includes a list of
+     *        supported time zones for each engine version.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeDBEngineVersionsRequest withListSupportedTimezones(
+            Boolean listSupportedTimezones) {
+        setListSupportedTimezones(listSupportedTimezones);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If this parameter is specified and the requested engine supports the
+     * <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the
+     * response includes a list of supported time zones for each engine version.
+     * </p>
+     * 
+     * @return If this parameter is specified and the requested engine supports
+     *         the <code>TimeZone</code> parameter for
+     *         <code>CreateDBInstance</code>, the response includes a list of
+     *         supported time zones for each engine version.
+     */
+
+    public Boolean isListSupportedTimezones() {
+        return this.listSupportedTimezones;
     }
 
     /**
@@ -761,7 +848,9 @@ public class DescribeDBEngineVersionsRequest extends
             sb.append("DefaultOnly: " + getDefaultOnly() + ",");
         if (getListSupportedCharacterSets() != null)
             sb.append("ListSupportedCharacterSets: "
-                    + getListSupportedCharacterSets());
+                    + getListSupportedCharacterSets() + ",");
+        if (getListSupportedTimezones() != null)
+            sb.append("ListSupportedTimezones: " + getListSupportedTimezones());
         sb.append("}");
         return sb.toString();
     }
@@ -820,6 +909,13 @@ public class DescribeDBEngineVersionsRequest extends
                 && other.getListSupportedCharacterSets().equals(
                         this.getListSupportedCharacterSets()) == false)
             return false;
+        if (other.getListSupportedTimezones() == null
+                ^ this.getListSupportedTimezones() == null)
+            return false;
+        if (other.getListSupportedTimezones() != null
+                && other.getListSupportedTimezones().equals(
+                        this.getListSupportedTimezones()) == false)
+            return false;
         return true;
     }
 
@@ -851,6 +947,10 @@ public class DescribeDBEngineVersionsRequest extends
                 * hashCode
                 + ((getListSupportedCharacterSets() == null) ? 0
                         : getListSupportedCharacterSets().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getListSupportedTimezones() == null) ? 0
+                        : getListSupportedTimezones().hashCode());
         return hashCode;
     }
 

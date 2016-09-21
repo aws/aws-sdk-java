@@ -257,6 +257,12 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The name of a security configuration to apply to the cluster.
+     * </p>
+     */
+    private String securityConfiguration;
 
     /**
      * Default constructor for RunJobFlowRequest object. Callers should use the
@@ -2252,6 +2258,48 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The name of a security configuration to apply to the cluster.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of a security configuration to apply to the cluster.
+     */
+
+    public void setSecurityConfiguration(String securityConfiguration) {
+        this.securityConfiguration = securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of a security configuration to apply to the cluster.
+     * </p>
+     * 
+     * @return The name of a security configuration to apply to the cluster.
+     */
+
+    public String getSecurityConfiguration() {
+        return this.securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of a security configuration to apply to the cluster.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of a security configuration to apply to the cluster.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RunJobFlowRequest withSecurityConfiguration(
+            String securityConfiguration) {
+        setSecurityConfiguration(securityConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -2295,7 +2343,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getServiceRole() != null)
             sb.append("ServiceRole: " + getServiceRole() + ",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: " + getTags() + ",");
+        if (getSecurityConfiguration() != null)
+            sb.append("SecurityConfiguration: " + getSecurityConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -2400,6 +2450,13 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest
         if (other.getTags() != null
                 && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSecurityConfiguration() == null
+                ^ this.getSecurityConfiguration() == null)
+            return false;
+        if (other.getSecurityConfiguration() != null
+                && other.getSecurityConfiguration().equals(
+                        this.getSecurityConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -2458,6 +2515,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest
                 + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
         hashCode = prime * hashCode
                 + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSecurityConfiguration() == null) ? 0
+                        : getSecurityConfiguration().hashCode());
         return hashCode;
     }
 

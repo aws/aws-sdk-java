@@ -18,8 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * </p>
+ * <p/>
  */
 public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -41,8 +40,16 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the same region as the cluster</li>
-     * <li>The cluster must have read bucket and put object permissions</li>
+     * <li>
+     * <p>
+     * Must be in the same region as the cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The cluster must have read bucket and put object permissions
+     * </p>
+     * </li>
      * </ul>
      */
     private String bucketName;
@@ -54,16 +61,43 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot exceed 512 characters</li>
-     * <li>Cannot contain spaces( ), double quotes ("), single quotes ('), a
+     * <li>
+     * <p>
+     * Cannot exceed 512 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain spaces( ), double quotes ("), single quotes ('), a
      * backslash (\), or control characters. The hexadecimal codes for invalid
      * characters are:
+     * </p>
      * <ul>
-     * <li>x00 to x20</li>
-     * <li>x22</li>
-     * <li>x27</li>
-     * <li>x5c</li>
-     * <li>x7f or larger</li>
+     * <li>
+     * <p>
+     * x00 to x20
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x22
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x27
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x5c
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x7f or larger
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -79,8 +113,8 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param clusterIdentifier
-     *        The identifier of the cluster on which logging is to be started.
-     *        </p>
+     *        The identifier of the cluster on which logging is to be
+     *        started.</p>
      *        <p>
      *        Example: <code>examplecluster</code>
      */
@@ -97,8 +131,8 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest
      * Example: <code>examplecluster</code>
      * </p>
      * 
-     * @return The identifier of the cluster on which logging is to be started.
-     *         </p>
+     * @return The identifier of the cluster on which logging is to be
+     *         started.</p>
      *         <p>
      *         Example: <code>examplecluster</code>
      */
@@ -116,8 +150,8 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param clusterIdentifier
-     *        The identifier of the cluster on which logging is to be started.
-     *        </p>
+     *        The identifier of the cluster on which logging is to be
+     *        started.</p>
      *        <p>
      *        Example: <code>examplecluster</code>
      * @return Returns a reference to this object so that method calls can be
@@ -137,19 +171,35 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the same region as the cluster</li>
-     * <li>The cluster must have read bucket and put object permissions</li>
+     * <li>
+     * <p>
+     * Must be in the same region as the cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The cluster must have read bucket and put object permissions
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param bucketName
      *        The name of an existing S3 bucket where the log files are to be
-     *        stored. </p>
+     *        stored.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be in the same region as the cluster</li>
-     *        <li>The cluster must have read bucket and put object permissions</li>
+     *        <li>
+     *        <p>
+     *        Must be in the same region as the cluster
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The cluster must have read bucket and put object permissions
+     *        </p>
+     *        </li>
      */
 
     public void setBucketName(String bucketName) {
@@ -164,18 +214,34 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the same region as the cluster</li>
-     * <li>The cluster must have read bucket and put object permissions</li>
+     * <li>
+     * <p>
+     * Must be in the same region as the cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The cluster must have read bucket and put object permissions
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The name of an existing S3 bucket where the log files are to be
-     *         stored. </p>
+     *         stored.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be in the same region as the cluster</li>
-     *         <li>The cluster must have read bucket and put object permissions</li>
+     *         <li>
+     *         <p>
+     *         Must be in the same region as the cluster
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The cluster must have read bucket and put object permissions
+     *         </p>
+     *         </li>
      */
 
     public String getBucketName() {
@@ -190,19 +256,35 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the same region as the cluster</li>
-     * <li>The cluster must have read bucket and put object permissions</li>
+     * <li>
+     * <p>
+     * Must be in the same region as the cluster
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The cluster must have read bucket and put object permissions
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param bucketName
      *        The name of an existing S3 bucket where the log files are to be
-     *        stored. </p>
+     *        stored.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be in the same region as the cluster</li>
-     *        <li>The cluster must have read bucket and put object permissions</li>
+     *        <li>
+     *        <p>
+     *        Must be in the same region as the cluster
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The cluster must have read bucket and put object permissions
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -220,36 +302,90 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot exceed 512 characters</li>
-     * <li>Cannot contain spaces( ), double quotes ("), single quotes ('), a
+     * <li>
+     * <p>
+     * Cannot exceed 512 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain spaces( ), double quotes ("), single quotes ('), a
      * backslash (\), or control characters. The hexadecimal codes for invalid
      * characters are:
+     * </p>
      * <ul>
-     * <li>x00 to x20</li>
-     * <li>x22</li>
-     * <li>x27</li>
-     * <li>x5c</li>
-     * <li>x7f or larger</li>
+     * <li>
+     * <p>
+     * x00 to x20
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x22
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x27
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x5c
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x7f or larger
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
      * 
      * @param s3KeyPrefix
-     *        The prefix applied to the log file names. </p>
+     *        The prefix applied to the log file names.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot exceed 512 characters</li>
-     *        <li>Cannot contain spaces( ), double quotes ("), single quotes
-     *        ('), a backslash (\), or control characters. The hexadecimal codes
-     *        for invalid characters are:
+     *        <li>
+     *        <p>
+     *        Cannot exceed 512 characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain spaces( ), double quotes ("), single quotes ('), a
+     *        backslash (\), or control characters. The hexadecimal codes for
+     *        invalid characters are:
+     *        </p>
      *        <ul>
-     *        <li>x00 to x20</li>
-     *        <li>x22</li>
-     *        <li>x27</li>
-     *        <li>x5c</li>
-     *        <li>x7f or larger</li>
+     *        <li>
+     *        <p>
+     *        x00 to x20
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        x22
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        x27
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        x5c
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        x7f or larger
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      */
@@ -266,35 +402,89 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot exceed 512 characters</li>
-     * <li>Cannot contain spaces( ), double quotes ("), single quotes ('), a
+     * <li>
+     * <p>
+     * Cannot exceed 512 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain spaces( ), double quotes ("), single quotes ('), a
      * backslash (\), or control characters. The hexadecimal codes for invalid
      * characters are:
+     * </p>
      * <ul>
-     * <li>x00 to x20</li>
-     * <li>x22</li>
-     * <li>x27</li>
-     * <li>x5c</li>
-     * <li>x7f or larger</li>
+     * <li>
+     * <p>
+     * x00 to x20
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x22
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x27
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x5c
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x7f or larger
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
      * 
-     * @return The prefix applied to the log file names. </p>
+     * @return The prefix applied to the log file names.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Cannot exceed 512 characters</li>
-     *         <li>Cannot contain spaces( ), double quotes ("), single quotes
-     *         ('), a backslash (\), or control characters. The hexadecimal
-     *         codes for invalid characters are:
+     *         <li>
+     *         <p>
+     *         Cannot exceed 512 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot contain spaces( ), double quotes ("), single quotes ('), a
+     *         backslash (\), or control characters. The hexadecimal codes for
+     *         invalid characters are:
+     *         </p>
      *         <ul>
-     *         <li>x00 to x20</li>
-     *         <li>x22</li>
-     *         <li>x27</li>
-     *         <li>x5c</li>
-     *         <li>x7f or larger</li>
+     *         <li>
+     *         <p>
+     *         x00 to x20
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         x22
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         x27
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         x5c
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         x7f or larger
+     *         </p>
+     *         </li>
      *         </ul>
      *         </li>
      */
@@ -311,36 +501,90 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot exceed 512 characters</li>
-     * <li>Cannot contain spaces( ), double quotes ("), single quotes ('), a
+     * <li>
+     * <p>
+     * Cannot exceed 512 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain spaces( ), double quotes ("), single quotes ('), a
      * backslash (\), or control characters. The hexadecimal codes for invalid
      * characters are:
+     * </p>
      * <ul>
-     * <li>x00 to x20</li>
-     * <li>x22</li>
-     * <li>x27</li>
-     * <li>x5c</li>
-     * <li>x7f or larger</li>
+     * <li>
+     * <p>
+     * x00 to x20
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x22
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x27
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x5c
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x7f or larger
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
      * 
      * @param s3KeyPrefix
-     *        The prefix applied to the log file names. </p>
+     *        The prefix applied to the log file names.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot exceed 512 characters</li>
-     *        <li>Cannot contain spaces( ), double quotes ("), single quotes
-     *        ('), a backslash (\), or control characters. The hexadecimal codes
-     *        for invalid characters are:
+     *        <li>
+     *        <p>
+     *        Cannot exceed 512 characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain spaces( ), double quotes ("), single quotes ('), a
+     *        backslash (\), or control characters. The hexadecimal codes for
+     *        invalid characters are:
+     *        </p>
      *        <ul>
-     *        <li>x00 to x20</li>
-     *        <li>x22</li>
-     *        <li>x27</li>
-     *        <li>x5c</li>
-     *        <li>x7f or larger</li>
+     *        <li>
+     *        <p>
+     *        x00 to x20
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        x22
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        x27
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        x5c
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        x7f or larger
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
